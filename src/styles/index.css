@@ -1,0 +1,105 @@
+:root {
+  /* Colors */
+  --color-bg: #0b0d17;
+  --color-text: #f8fafc;
+  /* Slate 50 */
+  --color-text-muted: #cbd5e1;
+  /* Slate 300 - Higher contrast */
+  --color-primary: #22d3ee;
+  /* Cyan 400 - Brighter */
+  --color-secondary: #a78bfa;
+  /* Violet 400 - Softer */
+  --color-accent: #34d399;
+  /* Emerald 400 */
+  --color-danger: #fb7185;
+  /* Rose 400 */
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  /* Slightly more opaque */
+  --glass-border: rgba(255, 255, 255, 0.15);
+  /* More visible border */
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  /* Deeper shadow */
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  /* Increased spacing */
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.7;
+  /* Increased line height */
+  letter-spacing: 0.015em;
+  /* Better legibility */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}

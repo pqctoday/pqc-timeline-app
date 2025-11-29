@@ -67,6 +67,9 @@ export const useOpenSSL = () => {
         clearLogs(); // Auto-clear logs on new run
         addLog('info', `$ ${commandToExecute}`);
 
+        // Generate unique request ID for correlation
+        const requestId = `req_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+
         // Parse command string to args, respecting quotes
         const args: string[] = [];
         let match;
@@ -88,7 +91,8 @@ export const useOpenSSL = () => {
                 type: 'COMMAND',
                 command: cmd,
                 args,
-                files: files.map(f => ({ name: f.name, data: f.content }))
+                files: files.map(f => ({ name: f.name, data: f.content })),
+                requestId
             } as WorkerMessage);
         }
     }, [currentCommand, setIsProcessing, clearLogs, addLog, files]);

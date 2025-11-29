@@ -5,6 +5,9 @@ import * as MLDSA from '../../../wasm/liboqs_dsa';
 import * as WebCrypto from '../../../utils/webCrypto';
 import { bytesToHex } from '../../../utils/dataInputUtils';
 import type { ExecutionMode, ClassicalAlgorithm } from '../PlaygroundContext';
+import { createLogger } from '../../../utils/logger';
+
+const logger = createLogger('Playground');
 
 interface UseKeyGenerationProps {
     algorithm: 'ML-KEM' | 'ML-DSA';
@@ -59,9 +62,9 @@ export const useKeyGeneration = ({
 
                 if (algorithm === 'ML-KEM') {
                     algoName = `ML-KEM-${keySize}`;
-                    console.log('[Playground] Generating ML-KEM keys...', algoName);
+                    logger.debug(`Generating ML-KEM keys: ${algoName}`);
                     const keys = await MLKEM.generateKey({ name: algoName });
-                    console.log('[Playground] ML-KEM keys generated:', keys);
+                    logger.debug('ML-KEM keys generated', keys);
 
                     newKeys = [
                         {

@@ -3,6 +3,11 @@ import { useOpenSSLStore } from './store';
 import { useOpenSSL } from './hooks/useOpenSSL';
 import { Play, Settings, Key, FileText, Shield, Info, Folder, Download, Trash2, Edit2, ArrowUpDown, FileKey } from 'lucide-react';
 import clsx from 'clsx';
+import {
+    sanitizeCommonName,
+    sanitizeOrganization,
+    sanitizeCountryCode
+} from '../../utils/inputValidation';
 
 
 export const Workbench = () => {
@@ -63,8 +68,11 @@ export const Workbench = () => {
     useEffect(() => {
         let cmd = 'openssl';
 
-        // Helper to build Subject DN string
-        const subj = `/C=${country}/O=${org}/CN=${commonName}`;
+        // Helper to build Subject DN string with sanitized inputs
+        const sanitizedCountry = sanitizeCountryCode(country);
+        const sanitizedOrg = sanitizeOrganization(org);
+        const sanitizedCN = sanitizeCommonName(commonName);
+        const subj = `/C=${sanitizedCountry}/O=${sanitizedOrg}/CN=${sanitizedCN}`;
 
         if (category === 'genpkey') {
             // Generate descriptive filename with algorithm, variant, and timestamp
@@ -195,7 +203,7 @@ export const Workbench = () => {
                             useOpenSSLStore.getState().setEditingFile(configFile);
                         } else {
                             // If not found (e.g. not loaded yet), maybe show a toast or just nothing
-                            console.warn("openssl.cnf not found in memory yet");
+                            // openssl.cnf not found in memory yet, will be created on first use
                         }
                     }}
                     className="w-full p-3 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-muted hover:text-white transition-colors flex items-center gap-2 text-sm"
@@ -422,9 +430,10 @@ export const Workbench = () => {
                                 id="common-name-input"
                                 type="text"
                                 value={commonName}
-                                onChange={(e) => setCommonName(e.target.value)}
+                                onChange={(e) => setCommonName(sanitizeCommonName(e.target.value))}
                                 className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-primary"
                                 placeholder="e.g. example.com"
+                                maxLength={64}
                             />
                         </div>
 
@@ -435,8 +444,9 @@ export const Workbench = () => {
                                     id="org-input"
                                     type="text"
                                     value={org}
-                                    onChange={(e) => setOrg(e.target.value)}
+                                    onChange={(e) => setOrg(sanitizeOrganization(e.target.value))}
                                     className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-primary"
+                                    maxLength={64}
                                 />
                             </div>
                             <div className="space-y-3">
@@ -445,9 +455,10 @@ export const Workbench = () => {
                                     id="country-input"
                                     type="text"
                                     value={country}
-                                    onChange={(e) => setCountry(e.target.value)}
+                                    onChange={(e) => setCountry(sanitizeCountryCode(e.target.value))}
                                     maxLength={2}
-                                    className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-primary"
+                                    className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-sm text-white outline-none focus:border-primary uppercase"
+                                    placeholder="US"
                                 />
                             </div>
                         </div>

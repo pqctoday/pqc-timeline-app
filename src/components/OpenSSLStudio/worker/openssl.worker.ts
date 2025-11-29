@@ -165,7 +165,7 @@ const writeInputFiles = (module: EmscriptenModule, files: { name: string; data: 
             module.FS.writeFile('/' + file.name, file.data);
             writtenFiles.add(file.name);
         } catch (e) {
-            console.warn(`Failed to write input file ${file.name}:`, e);
+            // Failed to write input file - skip and continue
         }
     }
     return writtenFiles;
@@ -232,51 +232,49 @@ const getStrategy = (command: string): CommandStrategy => {
 // Main Execution
 // ----------------------------------------------------------------------------
 
-console.log("[Worker] Worker script loaded (Consolidated)");
-
-const executeCommand = async (command: string, args: string[], inputFiles: { name: string; data: Uint8Array }[] = []) => {
-    self.postMessage({ type: 'LOG', stream: 'stdout', message: `[Debug] executeCommand started: ${command}` });
+const executeCommand = async (command: string, args: string[], inputFiles: { name: string; data: Uint8Array }[] = [], requestId?: string) => {
+    self.postMessage({ type: 'LOG', stream: 'stdout', message: `[Debug] executeCommand started: ${command}`, requestId });
     let openSSLModule;
 
     try {
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Loading OpenSSL script..." });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Loading OpenSSL script...", requestId });
         await loadOpenSSLScript();
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Creating OpenSSL instance..." });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Creating OpenSSL instance...", requestId });
         openSSLModule = await createOpenSSLInstance();
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] OpenSSL instance created" });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] OpenSSL instance created", requestId });
     } catch (e: any) {
-        self.postMessage({ type: 'LOG', stream: 'stderr', message: `[Debug] Initialization failed: ${e.message}` });
+        self.postMessage({ type: 'LOG', stream: 'stderr', message: `[Debug] Initialization failed: ${e.message}`, requestId });
         throw new Error(`Failed to initialize OpenSSL: ${e.message}`);
     }
 
     try {
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Selecting strategy..." });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Selecting strategy...", requestId });
         const strategy = getStrategy(command);
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: `[Debug] Strategy selected: ${strategy.constructor.name}` });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: `[Debug] Strategy selected: ${strategy.constructor.name}`, requestId });
 
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Writing input files..." });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Writing input files...", requestId });
         const writtenFiles = writeInputFiles(openSSLModule, inputFiles);
 
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Preparing strategy..." });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Preparing strategy...", requestId });
         strategy.prepare(openSSLModule);
 
         const fullArgs = strategy.getArgs(command, args);
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: `[Debug] Full args: ${fullArgs.join(' ')}` });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: `[Debug] Full args: ${fullArgs.join(' ')}`, requestId });
 
-        self.postMessage({ type: 'LOG', stream: 'stdout', message: `Executing: openssl ${fullArgs.join(' ')}` });
+        self.postMessage({ type: 'LOG', stream: 'stdout', message: `Executing: openssl ${fullArgs.join(' ')}`, requestId });
 
         try {
-            self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Calling callMain..." });
+            self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] Calling callMain...", requestId });
             // @ts-ignore
             openSSLModule.callMain(fullArgs);
-            self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] callMain returned" });
+            self.postMessage({ type: 'LOG', stream: 'stdout', message: "[Debug] callMain returned", requestId });
         } catch (e: any) {
             if (e.name === 'ExitStatus') {
                 if (e.status !== 0) {
                     throw new Error(`OpenSSL exited with status ${e.status}`);
                 }
             } else {
-                console.error("OpenSSL Execution Error:", e);
+                self.postMessage({ type: 'LOG', stream: 'stderr', message: `OpenSSL Execution Error: ${e.message}`, requestId });
                 if (e.message && e.message.includes('Unreachable')) {
                     throw new Error(`WASM Crash: The operation caused a critical error (Unreachable code). This usually indicates a build incompatibility or memory issue with this specific algorithm.`);
                 }
@@ -302,9 +300,9 @@ const executeCommand = async (command: string, args: string[], inputFiles: { nam
         }
 
     } catch (error: any) {
-        self.postMessage({ type: 'ERROR', error: error.message || 'Execution failed' });
+        self.postMessage({ type: 'ERROR', error: error.message || 'Execution failed', requestId });
     } finally {
-        self.postMessage({ type: 'DONE' });
+        self.postMessage({ type: 'DONE', requestId });
     }
 };
 
@@ -315,10 +313,11 @@ self.addEventListener('message', async (event: MessageEvent<WorkerMessage>) => {
             await loadOpenSSLScript(event.data.url);
             self.postMessage({ type: 'READY' });
         } else if (type === 'COMMAND') {
-            const { command, args, files } = event.data as { type: 'COMMAND'; command: string; args: string[]; files?: { name: string; data: Uint8Array }[] };
-            await executeCommand(command, args, files);
+            const { command, args, files, requestId } = event.data as { type: 'COMMAND'; command: string; args: string[]; files?: { name: string; data: Uint8Array }[]; requestId?: string };
+            await executeCommand(command, args, files, requestId);
         }
     } catch (error: any) {
-        self.postMessage({ type: 'ERROR', error: error.message });
+        const requestId = event.data.type === 'COMMAND' ? (event.data as any).requestId : undefined;
+        self.postMessage({ type: 'ERROR', error: error.message, requestId });
     }
 });

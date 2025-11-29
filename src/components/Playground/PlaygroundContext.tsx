@@ -163,7 +163,7 @@ export const PlaygroundProvider: React.FC<{ children: React.ReactNode }> = ({ ch
             try {
                 return JSON.parse(saved);
             } catch (e) {
-                console.error(e);
+                // Corrupted sessionStorage data, return defaults
             }
         }
         return {
@@ -181,7 +181,11 @@ export const PlaygroundProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     };
     const addLog = (entry: Omit<LogEntry, 'id' | 'timestamp'>) => {
         const newEntry: LogEntry = { id: Math.random().toString(36).substring(2, 9), timestamp: new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit', fractionalSecondDigits: 3 }), ...entry };
-        setLogs(prev => [newEntry, ...prev]);
+        // Implement log rotation: keep only the most recent 1000 entries
+        setLogs(prev => {
+            const updated = [newEntry, ...prev];
+            return updated.length > 1000 ? updated.slice(0, 1000) : updated;
+        });
     };
     const clearLogs = () => setLogs([]);
     const clearKeys = () => {

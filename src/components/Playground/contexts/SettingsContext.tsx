@@ -201,7 +201,7 @@ export const SettingsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     useEffect(() => {
         if (executionMode === 'wasm' && !wasmLoaded) {
-            import('../../wasm/liboqs_dsa').then(module => {
+            import('../../../wasm/liboqs_dsa').then(module => {
                 module.load().then(() => setWasmLoaded(true));
             });
         }

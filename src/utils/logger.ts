@@ -49,7 +49,11 @@ const formatMessage = (context: string, message: string): string => {
  * Logger class with context
  */
 class Logger {
-  constructor(private context: string) {}
+  private context: string;
+
+  constructor(context: string) {
+    this.context = context;
+  }
 
   debug(message: string, ...args: unknown[]): void {
     if (shouldLog('debug')) {

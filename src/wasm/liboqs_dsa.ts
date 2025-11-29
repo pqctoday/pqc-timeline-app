@@ -77,7 +77,7 @@ const inferAlgorithmFromPublicKey = (publicKey: Uint8Array): string => {
  */
 export const clearInstanceCache = () => {
     logger.debug('Clearing WASM instance cache');
-    instanceCache.forEach((instancePromise, key) => {
+    instanceCache.forEach((instancePromise) => {
         instancePromise.then(instance => {
             if (instance.destroy) {
                 instance.destroy();

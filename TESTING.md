@@ -139,32 +139,36 @@ test('should navigate to playground', async ({ page }) => {
 
 ### Current CI Pipeline
 
-The `.github/workflows/ci.yml` runs:
+The project uses GitHub Actions for continuous integration. The workflow is defined in `.github/workflows/ci.yml`.
 
-- ✅ Linting
-- ✅ Formatting checks
-- ✅ Unit tests
-- ✅ Build verification
-- ✅ Security audit
+**Key Features:**
 
-### Recommended: Add E2E Tests to CI
+- **Containerized Environment**: Runs inside the official Playwright Docker container (`mcr.microsoft.com/playwright:v1.57.0-noble`) to ensure consistent test environments and faster execution.
+- **Automated Checks**:
+  - ✅ Linting (`npm run lint`)
+  - ✅ Formatting checks (`npm run format:check`)
+  - ✅ Unit tests (`npm run test`)
+  - ✅ Production build validation (`npm run build`)
+  - ✅ End-to-End tests (`npm run test:e2e`)
 
-Add to `.github/workflows/ci.yml`:
+**Configuration Snippet:**
 
 ```yaml
-- name: Install Playwright Browsers
-  run: npx playwright install --with-deps
-
-- name: Run E2E Tests
-  run: npm run test:e2e
-
-- name: Upload Playwright Report
-  if: always()
-  uses: actions/upload-artifact@v3
-  with:
-    name: playwright-report
-    path: playwright-report/
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.57.0-noble
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      # ... lint, build, test steps ...
+      - name: Run E2E Tests
+        run: npm run test:e2e
 ```
+
+Using the container eliminates the need for manual browser installation (`npx playwright install --with-deps`) and system package upgrades, significantly reducing build times and preventing timeouts.
 
 ## Test File Naming Conventions
 

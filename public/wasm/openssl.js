@@ -11,8 +11,8 @@ var createOpenSSLModule = (() => {
   return async function (moduleArg = {}) {
     var moduleRtn
 
-      // include: shell.js
-      // include: minimum_runtime_check.js
+    // include: shell.js
+    // include: minimum_runtime_check.js
     ;(function () {
       // "30.0.0" -> 300000
       function humanReadableVersionToPacked(str) {

@@ -278,10 +278,6 @@ function assert(condition, text) {
 
 // We used to include malloc/free by default in the past. Show a helpful error in
 // builds with assertions.
-function _free() {
-  // Show a helpful error since we used to include free by default in the past.
-  abort('free() called but not included in the build - add `_free` to EXPORTED_FUNCTIONS');
-}
 
 /**
  * Indicates whether filename is delivered via file protocol (as opposed to http/https)
@@ -448,7 +444,7 @@ function updateMemoryViews() {
   var b = wasmMemory.buffer;
   HEAP8 = new Int8Array(b);
   HEAP16 = new Int16Array(b);
-  HEAPU8 = new Uint8Array(b);
+  Module['HEAPU8'] = HEAPU8 = new Uint8Array(b);
   HEAPU16 = new Uint16Array(b);
   HEAP32 = new Int32Array(b);
   HEAPU32 = new Uint32Array(b);
@@ -6514,7 +6510,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'HEAPF32',
   'HEAPF64',
   'HEAP8',
-  'HEAPU8',
   'HEAP16',
   'HEAPU16',
   'HEAP32',
@@ -6773,8 +6768,12 @@ var _strerror = makeInvalidEarlyAccess('_strerror');
 var _main = Module['_main'] = makeInvalidEarlyAccess('_main');
 var _ntohs = makeInvalidEarlyAccess('_ntohs');
 var _fflush = makeInvalidEarlyAccess('_fflush');
-var _malloc = makeInvalidEarlyAccess('_malloc');
+var _free = Module['_free'] = makeInvalidEarlyAccess('_free');
+var _malloc = Module['_malloc'] = makeInvalidEarlyAccess('_malloc');
 var _execute_tls_simulation = Module['_execute_tls_simulation'] = makeInvalidEarlyAccess('_execute_tls_simulation');
+var _create_skey_from_bytes = Module['_create_skey_from_bytes'] = makeInvalidEarlyAccess('_create_skey_from_bytes');
+var _derive_skey_from_handle = Module['_derive_skey_from_handle'] = makeInvalidEarlyAccess('_derive_skey_from_handle');
+var _derive_skey = Module['_derive_skey'] = makeInvalidEarlyAccess('_derive_skey');
 var ___funcs_on_exit = makeInvalidEarlyAccess('___funcs_on_exit');
 var _emscripten_stack_get_end = makeInvalidEarlyAccess('_emscripten_stack_get_end');
 var _emscripten_stack_get_base = makeInvalidEarlyAccess('_emscripten_stack_get_base');
@@ -6796,8 +6795,12 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['__main_argc_argv'] != 'undefined', 'missing Wasm export: __main_argc_argv');
   assert(typeof wasmExports['ntohs'] != 'undefined', 'missing Wasm export: ntohs');
   assert(typeof wasmExports['fflush'] != 'undefined', 'missing Wasm export: fflush');
+  assert(typeof wasmExports['free'] != 'undefined', 'missing Wasm export: free');
   assert(typeof wasmExports['malloc'] != 'undefined', 'missing Wasm export: malloc');
   assert(typeof wasmExports['execute_tls_simulation'] != 'undefined', 'missing Wasm export: execute_tls_simulation');
+  assert(typeof wasmExports['create_skey_from_bytes'] != 'undefined', 'missing Wasm export: create_skey_from_bytes');
+  assert(typeof wasmExports['derive_skey_from_handle'] != 'undefined', 'missing Wasm export: derive_skey_from_handle');
+  assert(typeof wasmExports['derive_skey'] != 'undefined', 'missing Wasm export: derive_skey');
   assert(typeof wasmExports['__funcs_on_exit'] != 'undefined', 'missing Wasm export: __funcs_on_exit');
   assert(typeof wasmExports['emscripten_stack_get_end'] != 'undefined', 'missing Wasm export: emscripten_stack_get_end');
   assert(typeof wasmExports['emscripten_stack_get_base'] != 'undefined', 'missing Wasm export: emscripten_stack_get_base');
@@ -6815,8 +6818,12 @@ function assignWasmExports(wasmExports) {
   _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2);
   _ntohs = createExportWrapper('ntohs', 1);
   _fflush = createExportWrapper('fflush', 1);
-  _malloc = createExportWrapper('malloc', 1);
+  _free = Module['_free'] = createExportWrapper('free', 1);
+  _malloc = Module['_malloc'] = createExportWrapper('malloc', 1);
   _execute_tls_simulation = Module['_execute_tls_simulation'] = createExportWrapper('execute_tls_simulation', 3);
+  _create_skey_from_bytes = Module['_create_skey_from_bytes'] = createExportWrapper('create_skey_from_bytes', 3);
+  _derive_skey_from_handle = Module['_derive_skey_from_handle'] = createExportWrapper('derive_skey_from_handle', 3);
+  _derive_skey = Module['_derive_skey'] = createExportWrapper('derive_skey', 4);
   ___funcs_on_exit = createExportWrapper('__funcs_on_exit', 0);
   _emscripten_stack_get_end = wasmExports['emscripten_stack_get_end'];
   _emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'];

@@ -8,7 +8,7 @@ vi.mock('../../../../services/crypto/OpenSSLService', () => ({
   openSSLService: {
     execute: vi.fn().mockImplementation(async (command: string) => {
       // Mock responses based on command
-      if (command.includes('ecparam -name P-256 -genkey') || command.includes('genpkey')) {
+      if (command.includes('genpkey')) {
         return {
           stdout: '',
           stderr: '',
@@ -98,7 +98,7 @@ describe('EUDI Digital ID Integration', () => {
     // Initial state should be Wallet
     // The header in WalletComponent is "EUDI Wallet"
     // But there is also the main header "EUDI Digital Identity Wallet" in index.tsx
-    // Let's look for "Managed by: Garcia Rossi" which is unique to the Wallet view
+    // Let's look for "Managed by: María Elena García" which is unique to the Wallet view
     expect(screen.getByText(/Managed by:/i)).toBeDefined()
 
     // Navigate to PID Issuer

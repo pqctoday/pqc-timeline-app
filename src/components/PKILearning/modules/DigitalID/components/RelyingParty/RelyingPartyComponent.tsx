@@ -80,17 +80,20 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
     setLoading(true)
     addLog('Bank Verifying Proof...')
     await new Promise((r) => setTimeout(r, 1000))
-    addLog('✅ Signature Valid.')
-    addLog('✅ Trust Chain Valid (eIDAS Bridge).')
-    addLog('✅ Selective Disclosure Checked.')
+    addLog('Checking credential revocation status (StatusList)...')
+    await new Promise((r) => setTimeout(r, 500))
+    addLog('StatusList checked. No revocations found.')
+    addLog('Signature Valid.')
+    addLog('Trust Chain Valid (eIDAS Bridge).')
+    addLog('Selective Disclosure Checked.')
     setLoading(false)
     setStep('COMPLETE')
   }
 
   return (
-    <Card className="max-w-7xl mx-auto border-blue-200 shadow-xl">
-      <CardHeader className="bg-blue-50/50">
-        <CardTitle className="text-blue-800 flex items-center gap-2">
+    <Card className="max-w-7xl mx-auto border-tertiary/30 shadow-xl">
+      <CardHeader className="bg-tertiary/5">
+        <CardTitle className="text-tertiary flex items-center gap-2">
           <Landmark className="w-6 h-6" />
           Bank (Relying Party)
         </CardTitle>
@@ -102,25 +105,25 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
             {/* Steps Visualization */}
             <div className="space-y-4">
               <div
-                className={`p-3 rounded border flex items-center gap-3 ${step === 'START' ? 'bg-blue-50 border-blue-400' : 'bg-slate-50'}`}
+                className={`p-3 rounded border flex items-center gap-3 ${step === 'START' ? 'bg-tertiary/10 border-tertiary' : 'bg-muted/5'}`}
               >
-                <div className="bg-blue-100 p-1.5 rounded-full text-blue-600 font-bold text-xs">
+                <div className="bg-tertiary/20 p-1.5 rounded-full text-tertiary font-bold text-xs">
                   1
                 </div>
                 <span className="text-sm">Request</span>
               </div>
               <div
-                className={`p-3 rounded border flex items-center gap-3 ${step === 'DISCLOSURE' ? 'bg-blue-50 border-blue-400' : 'bg-slate-50'}`}
+                className={`p-3 rounded border flex items-center gap-3 ${step === 'DISCLOSURE' ? 'bg-tertiary/10 border-tertiary' : 'bg-muted/5'}`}
               >
-                <div className="bg-blue-100 p-1.5 rounded-full text-blue-600 font-bold text-xs">
+                <div className="bg-tertiary/20 p-1.5 rounded-full text-tertiary font-bold text-xs">
                   2
                 </div>
                 <span className="text-sm">Disclosure</span>
               </div>
               <div
-                className={`p-3 rounded border flex items-center gap-3 ${['PRESENTATION', 'VERIFICATION'].includes(step) ? 'bg-blue-50 border-blue-400' : 'bg-slate-50'}`}
+                className={`p-3 rounded border flex items-center gap-3 ${['PRESENTATION', 'VERIFICATION'].includes(step) ? 'bg-tertiary/10 border-tertiary' : 'bg-muted/5'}`}
               >
-                <div className="bg-blue-100 p-1.5 rounded-full text-blue-600 font-bold text-xs">
+                <div className="bg-tertiary/20 p-1.5 rounded-full text-tertiary font-bold text-xs">
                   3
                 </div>
                 <span className="text-sm">Proof & Verify</span>
@@ -130,14 +133,14 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
             {/* Actions */}
             <div className="mt-6 border-t pt-6">
               {step === 'START' && (
-                <Button onClick={handleStart} className="w-full bg-blue-600 hover:bg-blue-700">
+                <Button onClick={handleStart} className="w-full">
                   Login with Wallet
                 </Button>
               )}
 
               {step === 'DISCLOSURE' && (
                 <div className="space-y-4">
-                  <div className="bg-slate-100 p-3 rounded text-sm">
+                  <div className="bg-muted/10 p-3 rounded text-sm">
                     <p className="font-semibold mb-2 flex items-center gap-2">
                       <Eye className="w-4 h-4" /> Requested Data:
                     </p>
@@ -154,9 +157,9 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
 
               {step === 'PRESENTATION' && (
                 <div className="text-center py-4">
-                  <Loader2 className="animate-spin w-8 h-8 text-blue-500 mx-auto" />
+                  <Loader2 className="animate-spin w-8 h-8 text-tertiary mx-auto" />
                   <p className="text-sm mt-2 text-muted-foreground">
-                    Generating Zero-Knowledge Proof...
+                    Generating Device Binding Proof...
                   </p>
                 </div>
               )}

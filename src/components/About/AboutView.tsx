@@ -81,7 +81,7 @@ export function AboutView() {
                 </li>
                 <li className="flex justify-between items-center text-sm border-b border-border pb-1">
                   <span className="text-muted-foreground">Framer Motion</span>
-                  <span className="text-xs text-muted-foreground/60">v12.26.1</span>
+                  <span className="text-xs text-muted-foreground/60">v12.27.5</span>
                 </li>
                 <li className="flex justify-between items-center text-sm border-b border-border pb-1">
                   <span className="text-muted-foreground">Lucide React</span>
@@ -89,7 +89,7 @@ export function AboutView() {
                 </li>
                 <li className="flex justify-between items-center text-sm border-b border-border pb-1">
                   <span className="text-muted-foreground">Tailwind CSS</span>
-                  <span className="text-xs text-muted-foreground/60">v4.1.17</span>
+                  <span className="text-xs text-muted-foreground/60">v4.1.18</span>
                 </li>
                 <li className="flex justify-between items-center text-sm border-b border-border pb-1">
                   <span className="text-muted-foreground">clsx</span>
@@ -231,7 +231,7 @@ export function AboutView() {
               <ul className="space-y-2">
                 <li className="flex justify-between items-center text-sm border-b border-border pb-1">
                   <span className="text-muted-foreground">Vitest</span>
-                  <span className="text-xs text-muted-foreground/60">v4.0.16</span>
+                  <span className="text-xs text-muted-foreground/60">v4.0.17</span>
                 </li>
                 <li className="flex justify-between items-center text-sm border-b border-border pb-1">
                   <span className="text-muted-foreground">Playwright</span>

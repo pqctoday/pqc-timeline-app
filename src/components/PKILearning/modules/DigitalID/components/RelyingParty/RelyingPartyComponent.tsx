@@ -165,19 +165,16 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
               )}
 
               {step === 'VERIFICATION' && (
-                <Button
-                  onClick={handleVerification}
-                  className="w-full bg-green-600 hover:bg-green-700"
-                >
+                <Button onClick={handleVerification} className="w-full">
                   Check Verification Result
                 </Button>
               )}
 
               {step === 'COMPLETE' && (
-                <div className="bg-green-50 p-4 rounded border border-green-200 text-center">
-                  <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-2" />
-                  <h3 className="font-bold text-green-800">Account Opened!</h3>
-                  <p className="text-sm text-green-700 mb-4">
+                <div className="bg-success/5 p-4 rounded border border-success/30 text-center">
+                  <CheckCircle className="w-12 h-12 text-success mx-auto mb-2" />
+                  <h3 className="font-bold text-success">Account Opened!</h3>
+                  <p className="text-sm text-success mb-4">
                     Your identity has been verified successfully.
                   </p>
                   <Button onClick={onBack} variant="outline" size="sm">
@@ -189,15 +186,15 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
           </div>
 
           {/* Logs */}
-          <div className="flex flex-col h-[400px] border rounded-lg bg-slate-950 overflow-hidden lg:col-span-3">
+          <div className="flex flex-col h-[400px] border rounded-lg bg-card overflow-hidden lg:col-span-3">
             {/* Tabs */}
-            <div className="flex items-center border-b border-slate-800 bg-slate-900">
+            <div className="flex items-center border-b border-border bg-muted/30">
               <button
                 onClick={() => setActiveLogTab('protocol')}
                 className={`flex-1 px-4 py-2 text-xs font-medium transition-colors ${
                   activeLogTab === 'protocol'
-                    ? 'text-blue-400 bg-slate-800 border-b-2 border-blue-500'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                    ? 'text-tertiary bg-muted/50 border-b-2 border-tertiary'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
                 }`}
               >
                 PROTOCOL LOG
@@ -206,8 +203,8 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
                 onClick={() => setActiveLogTab('openssl')}
                 className={`flex-1 px-4 py-2 text-xs font-medium transition-colors ${
                   activeLogTab === 'openssl'
-                    ? 'text-green-400 bg-slate-800 border-b-2 border-green-500'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                    ? 'text-success bg-muted/50 border-b-2 border-success'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
                 }`}
               >
                 OPENSSL LOG
@@ -215,7 +212,7 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
             </div>
 
             {/* Content */}
-            <div className="flex-1 overflow-y-auto p-4 font-mono text-xs text-slate-50">
+            <div className="flex-1 overflow-y-auto p-4 font-mono text-xs text-foreground">
               {activeLogTab === 'protocol' ? (
                 <>
                   {logs.map((log, i) => (
@@ -230,7 +227,7 @@ export const RelyingPartyComponent: React.FC<RelyingPartyComponentProps> = ({ wa
               ) : (
                 <>
                   {opensslLogs.map((log, i) => (
-                    <div key={i} className="mb-2 whitespace-pre-wrap break-all text-green-200/90">
+                    <div key={i} className="mb-2 whitespace-pre-wrap break-all text-success/80">
                       {log}
                     </div>
                   ))}

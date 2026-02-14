@@ -237,13 +237,13 @@ export const AttestationIssuerComponent: React.FC<AttestationIssuerComponentProp
           {/* Logs */}
           <div className="flex flex-col h-[400px] border rounded-lg bg-card overflow-hidden lg:col-span-3">
             {/* Tabs */}
-            <div className="flex items-center border-b border-slate-800 bg-slate-900">
+            <div className="flex items-center border-b border-border bg-muted/30">
               <button
                 onClick={() => setActiveLogTab('protocol')}
                 className={`flex-1 px-4 py-2 text-xs font-medium transition-colors ${
                   activeLogTab === 'protocol'
-                    ? 'text-purple-400 bg-slate-800 border-b-2 border-purple-500'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                    ? 'text-secondary bg-muted/50 border-b-2 border-secondary'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
                 }`}
               >
                 PROTOCOL LOG
@@ -252,8 +252,8 @@ export const AttestationIssuerComponent: React.FC<AttestationIssuerComponentProp
                 onClick={() => setActiveLogTab('openssl')}
                 className={`flex-1 px-4 py-2 text-xs font-medium transition-colors ${
                   activeLogTab === 'openssl'
-                    ? 'text-green-400 bg-slate-800 border-b-2 border-green-500'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                    ? 'text-success bg-muted/50 border-b-2 border-success'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
                 }`}
               >
                 OPENSSL LOG
@@ -261,7 +261,7 @@ export const AttestationIssuerComponent: React.FC<AttestationIssuerComponentProp
             </div>
 
             {/* Content */}
-            <div className="flex-1 overflow-y-auto p-4 font-mono text-xs text-slate-50">
+            <div className="flex-1 overflow-y-auto p-4 font-mono text-xs text-foreground">
               {activeLogTab === 'protocol' ? (
                 <>
                   {logs.map((log: string, i: number) => (
@@ -274,7 +274,7 @@ export const AttestationIssuerComponent: React.FC<AttestationIssuerComponentProp
               ) : (
                 <>
                   {opensslLogs.map((log: string, i: number) => (
-                    <div key={i} className="mb-2 whitespace-pre-wrap break-all text-green-200/90">
+                    <div key={i} className="mb-2 whitespace-pre-wrap break-all text-success/80">
                       {log}
                     </div>
                   ))}

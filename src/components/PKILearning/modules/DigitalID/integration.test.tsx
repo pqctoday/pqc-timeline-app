@@ -10,16 +10,16 @@ vi.mock('../../../../services/crypto/OpenSSLService', () => ({
       // Mock responses based on command
       if (command.includes('genpkey')) {
         return {
-          stdout: '',
+          stdout: '-----BEGIN PRIVATE KEY-----\nMOCKPRIVATEKEYDATA\n-----END PRIVATE KEY-----',
           stderr: '',
-          files: [{ name: 'key.pem', data: new Uint8Array([1, 2, 3]) }],
+          files: [],
         }
       }
       if (command.includes('pkey -in') && command.includes('-pubout')) {
         return {
-          stdout: '',
+          stdout: '-----BEGIN PUBLIC KEY-----\nMOCKPUBLICKEYDATA\n-----END PUBLIC KEY-----',
           stderr: '',
-          files: [{ name: 'pubkey.pem', data: new Uint8Array([4, 5, 6]) }],
+          files: [],
         }
       }
       if (command.includes('dgst')) {

@@ -3021,6 +3021,58 @@
     "deepLink": "/learn/iot-ot-pqc"
   },
   {
+    "id": "glossary-285",
+    "source": "glossary",
+    "title": "Key Performance Indicator",
+    "content": "Term: Key Performance Indicator (KPI)\nDefinition: A quantifiable metric used to measure progress toward organizational objectives. In PQC programs, KPIs track inventory completion, migration progress, vendor readiness, compliance gaps, and budget utilization.\nCategory: concept | Complexity: beginner",
+    "category": "concept",
+    "metadata": {
+      "acronym": "KPI",
+      "complexity": "beginner",
+      "relatedModule": "/learn/pqc-governance"
+    },
+    "deepLink": "/learn/pqc-governance"
+  },
+  {
+    "id": "glossary-286",
+    "source": "glossary",
+    "title": "RACI Matrix",
+    "content": "Term: RACI Matrix (RACI)\nDefinition: A responsibility assignment matrix (Responsible, Accountable, Consulted, Informed) used in project governance to clarify roles and decision rights across stakeholders. Essential for cross-functional PQC migration programs.\nTechnical Note: In PQC governance, a typical RACI covers activities like crypto inventory, algorithm selection, vendor assessment, testing, and deployment across roles such as CISO, CTO, Enterprise Architect, and Compliance Officer.\nCategory: concept | Complexity: intermediate",
+    "category": "concept",
+    "metadata": {
+      "acronym": "RACI",
+      "complexity": "intermediate",
+      "relatedModule": "/learn/pqc-governance"
+    },
+    "deepLink": "/learn/pqc-governance"
+  },
+  {
+    "id": "glossary-287",
+    "source": "glossary",
+    "title": "Total Cost of Ownership",
+    "content": "Term: Total Cost of Ownership (TCO)\nDefinition: The complete cost of a technology investment over its lifetime, including acquisition, deployment, training, maintenance, and operational expenses. Critical for PQC migration business case development.\nCategory: concept | Complexity: beginner",
+    "category": "concept",
+    "metadata": {
+      "acronym": "TCO",
+      "complexity": "beginner",
+      "relatedModule": "/learn/pqc-business-case"
+    },
+    "deepLink": "/learn/pqc-business-case"
+  },
+  {
+    "id": "glossary-288",
+    "source": "glossary",
+    "title": "Return on Investment",
+    "content": "Term: Return on Investment (ROI)\nDefinition: A financial metric measuring the benefit generated relative to costs invested. For PQC migration, calculated as breach avoidance savings, compliance penalty avoidance, and operational efficiency gains minus migration costs.\nCategory: concept | Complexity: beginner",
+    "category": "concept",
+    "metadata": {
+      "acronym": "ROI",
+      "complexity": "beginner",
+      "relatedModule": "/learn/pqc-business-case"
+    },
+    "deepLink": "/learn/pqc-business-case"
+  },
+  {
     "id": "timeline-1",
     "source": "timeline",
     "title": "European Union — QARC Project Execution",
@@ -13435,6 +13487,60 @@
     "deepLink": "/learn/iot-ot-pqc"
   },
   {
+    "id": "module-pqc-risk-management",
+    "source": "modules",
+    "title": "PQC Risk Management",
+    "content": "Learning Module: PQC Risk Management\nDescription: Quantify quantum risk, build risk registers, model CRQC timeline scenarios, and generate risk heatmaps from real threat data.\nDuration: 45 min\nURL: /learn/pqc-risk-management",
+    "category": "learning",
+    "metadata": { "moduleId": "pqc-risk-management", "duration": "45 min" },
+    "deepLink": "/learn/pqc-risk-management"
+  },
+  {
+    "id": "module-pqc-business-case",
+    "source": "modules",
+    "title": "PQC Business Case",
+    "content": "Learning Module: PQC Business Case\nDescription: Build ROI models, simulate breach costs, and create board-ready pitch decks for PQC investment.\nDuration: 45 min\nURL: /learn/pqc-business-case",
+    "category": "learning",
+    "metadata": { "moduleId": "pqc-business-case", "duration": "45 min" },
+    "deepLink": "/learn/pqc-business-case"
+  },
+  {
+    "id": "module-pqc-governance",
+    "source": "modules",
+    "title": "PQC Governance & Policy",
+    "content": "Learning Module: PQC Governance & Policy\nDescription: Create RACI matrices, draft PQC policies, and design KPI dashboards for board reporting.\nDuration: 45 min\nURL: /learn/pqc-governance",
+    "category": "learning",
+    "metadata": { "moduleId": "pqc-governance", "duration": "45 min" },
+    "deepLink": "/learn/pqc-governance"
+  },
+  {
+    "id": "module-vendor-risk",
+    "source": "modules",
+    "title": "Vendor & Supply Chain Risk",
+    "content": "Learning Module: Vendor & Supply Chain Risk\nDescription: Score vendor PQC readiness from real product data, generate contract requirements, and map supply chain risk.\nDuration: 45 min\nURL: /learn/vendor-risk",
+    "category": "learning",
+    "metadata": { "moduleId": "vendor-risk", "duration": "45 min" },
+    "deepLink": "/learn/vendor-risk"
+  },
+  {
+    "id": "module-migration-program",
+    "source": "modules",
+    "title": "Migration Program Mgmt",
+    "content": "Learning Module: Migration Program Mgmt\nDescription: Build migration roadmaps with real country deadlines, plan stakeholder communications, and track KPIs.\nDuration: 45 min\nURL: /learn/migration-program",
+    "category": "learning",
+    "metadata": { "moduleId": "migration-program", "duration": "45 min" },
+    "deepLink": "/learn/migration-program"
+  },
+  {
+    "id": "module-compliance-strategy",
+    "source": "modules",
+    "title": "Compliance & Regulatory Strategy",
+    "content": "Learning Module: Compliance & Regulatory Strategy\nDescription: Map multi-jurisdiction requirements, build audit checklists, and construct compliance timelines from live framework data.\nDuration: 45 min\nURL: /learn/compliance-strategy",
+    "category": "learning",
+    "metadata": { "moduleId": "compliance-strategy", "duration": "45 min" },
+    "deepLink": "/learn/compliance-strategy"
+  },
+  {
     "id": "module-summary-api-security-jwt",
     "source": "module-summaries",
     "title": "API Security & JWT with PQC Module",
@@ -13451,6 +13557,18 @@
     "category": "learning-module",
     "metadata": { "moduleId": "code-signing", "moduleName": "Code Signing" },
     "deepLink": "/learn/code-signing"
+  },
+  {
+    "id": "module-summary-compliance-strategy",
+    "source": "module-summaries",
+    "title": "Compliance & Regulatory Strategy",
+    "content": "# Compliance & Regulatory Strategy\n\n## Overview\n\nThe Compliance & Regulatory Strategy module teaches executives how to navigate the complex and evolving landscape of PQC compliance requirements across jurisdictions. It covers jurisdiction mapping to identify applicable frameworks and deadline conflicts, audit readiness checklisting with 25 evidence items across 5 categories, and compliance timeline building that overlays organizational milestones on regulatory deadlines with gap analysis. The module integrates live data from the app's compliance framework database and country timeline system.\n\n## Key Concepts\n\n- **Major PQC Compliance Frameworks** — CNSA 2.0 (NSA, US national security systems), NIST IR 8547 (US federal guidance), ETSI (European standards), ANSSI (French national agency), BSI (German federal office)\n- **Compliance-First vs. Risk-First Strategy** — two approaches: compliance-first (driven by regulatory deadlines, ensures certification) vs. risk-first (driven by threat assessment, prioritizes highest-risk systems)\n- **Jurisdiction Mapping** — multi-select jurisdiction picker showing which compliance frameworks apply, earliest deadlines, and cross-jurisdiction conflicts (e.g., CNSA 2.0 vs. ETSI algorithm preferences, hybrid vs. pure PQC requirements)\n- **Conflict Detection** — identifies deadline divergence (>3 years apart), algorithm preference conflicts between frameworks, and hybrid vs. pure PQC requirement mismatches\n- **Audit Readiness** — 25-item checklist across 5 categories: cryptographic inventory (5), policy & governance (5), technical controls (5), vendor management (5), evidence & documentation (5)\n- **Compliance Timeline** — framework deadlines and country milestones overlaid with organizational milestones; gap analysis showing which deadlines are completed, on-track, or at-risk\n- **Key Compliance Deadlines** — NSA CNSA 2.0 software (2025-2030), NIST deprecation of classical algorithms (2030-2035), ANSSI hybrid requirements (2025-2030)\n\n## Workshop / Interactive Activities\n\nThe workshop has 3 interactive steps:\n\n1. **Jurisdiction Mapper** — select from 10 jurisdictions across 3 regions; see matching compliance frameworks, earliest deadlines, and automatically detected conflicts; export as Markdown/CSV\n2. **Audit Readiness Checklist** — 5-section, 25-item checklist with pre-populated items when assessment is complete; generates readiness percentage and structured evidence checklist; saves as executive document\n3. **Compliance Timeline Builder** — interactive timeline with external deadlines from country and framework data; gap analysis computing completion status for each deadline; visual indicators for at-risk deadlines\n\n## Related Standards\n\n- NSA CNSA 2.0 (Commercial National Security Algorithm Suite 2.0)\n- NIST IR 8547 (Transition to Post-Quantum Cryptography Standards)\n- ETSI TS 103 744 (Quantum-Safe Cryptography)\n- ANSSI Technical Position on PQC (2022, 2024 updates)\n- BSI Technical Guideline TR-02102 (Cryptographic Mechanisms)\n- NSM-10 (National Security Memorandum on Promoting U.S. Leadership in Quantum Computing)",
+    "category": "learning-module",
+    "metadata": {
+      "moduleId": "compliance-strategy",
+      "moduleName": "Compliance & Regulatory Strategy"
+    },
+    "deepLink": "/learn/compliance-strategy"
   },
   {
     "id": "module-summary-crypto-agility",
@@ -13543,6 +13661,15 @@
     "deepLink": "/learn/merkle-tree-certs"
   },
   {
+    "id": "module-summary-migration-program",
+    "source": "module-summaries",
+    "title": "Migration Program Management",
+    "content": "# Migration Program Management\n\n## Overview\n\nThe Migration Program Management module teaches executives how to plan, execute, and track a PQC migration program at enterprise scale. It covers roadmap building with milestone planning overlaid on real country and compliance deadlines, stakeholder communication planning with audience-specific messaging frameworks, and KPI tracking for measuring migration progress. The module aligns with NIST IR 8547's 7-phase migration framework and integrates live timeline data from the app's country deadline database.\n\n## Key Concepts\n\n- **NIST 7-Phase Migration Framework** — Discovery, Inventory, Prioritization, Planning, Pilot, Migration, Validation; the recommended phased approach to PQC transition\n- **Migration Roadmap** — Gantt-style timeline with organizational milestones overlaid on external compliance deadlines (CNSA 2.0, NIST, EU/ANSSI); enables gap analysis between planned milestones and regulatory requirements\n- **Stakeholder Communication** — structured framework covering stakeholder mapping, audience-specific messaging (board/C-suite, technical leadership, development teams, external partners), reporting cadence, and escalation criteria\n- **KPI Tracking** — six progress metrics: systems inventoried (15%), algorithms migrated (25%), vendors assessed (15%), compliance gaps closed (20%), budget vs. allocated (15%), risk trend (10%)\n- **Critical Success Factors** — executive sponsorship, cross-functional team formation, phased approach with gate reviews, measurable KPIs, and continuous communication\n- **Program vs. Project** — PQC migration is a multi-year program encompassing multiple projects across infrastructure layers, not a single project with a fixed timeline\n\n## Workshop / Interactive Activities\n\nThe workshop has 3 interactive steps:\n\n1. **Roadmap Builder** — interactive timeline planner with draggable milestones overlaid on country-specific compliance deadlines; default milestones for crypto inventory, TLS pilot, and full migration; exports as Markdown\n2. **Stakeholder Communications Planner** — 4-section artifact builder covering stakeholder map, message framework (per audience), communication cadence, and escalation criteria; produces a structured communications plan document\n3. **KPI Tracker Template** — interactive scorecard with 6 weighted dimensions; vendor readiness and risk trend auto-scored from live app data; exports with data source documentation\n\n## Related Standards\n\n- NIST IR 8547 (Transition to Post-Quantum Cryptography Standards)\n- NSA CNSA 2.0 (Commercial National Security Algorithm Suite 2.0)\n- PMI PMBOK (Project Management Body of Knowledge)\n- CISA Post-Quantum Cryptography Initiative",
+    "category": "learning-module",
+    "metadata": { "moduleId": "migration-program", "moduleName": "Migration Program Management" },
+    "deepLink": "/learn/migration-program"
+  },
+  {
     "id": "module-summary-pqc-101",
     "source": "module-summaries",
     "title": "PQC 101: Introduction to Post-Quantum Cryptography",
@@ -13559,6 +13686,33 @@
     "category": "learning-module",
     "metadata": { "moduleId": "pki-workshop", "moduleName": "PKI Workshop" },
     "deepLink": "/learn/pki-workshop"
+  },
+  {
+    "id": "module-summary-pqc-business-case",
+    "source": "module-summaries",
+    "title": "PQC Business Case",
+    "content": "# PQC Business Case\n\n## Overview\n\nThe PQC Business Case module helps CISOs and executives build a compelling financial justification for post-quantum cryptography migration. It covers ROI calculation with weighted cost dimensions, breach scenario simulation comparing classical vs. quantum-enabled breach costs, and a structured board pitch builder that produces exportable executive presentations. All workshops integrate live data from the app's migration catalog, compliance frameworks, and assessment engine.\n\n## Key Concepts\n\n- **PQC Migration Cost Categories** — four dimensions: migration costs (infrastructure layer upgrades), breach avoidance (quantum-enabled attack prevention), compliance penalties (regulatory fine avoidance), and operational/competitive advantages\n- **ROI Calculation** — weighted scorecard across 5 dimensions: migration cost by infrastructure (25%), breach avoidance savings (30%), compliance penalty avoidance (20%), operational efficiency (15%), competitive advantage (10%)\n- **Breach Cost Modeling** — industry-specific breach cost baselines multiplied by data record count, regulatory fines, and HNDL exposure years; compares \"breach today\" vs. \"quantum-enabled breach\" costs\n- **TCO (Total Cost of Ownership)** — full lifecycle cost including acquisition, deployment, training, maintenance, and ongoing operational expenses for PQC migration\n- **Board Communication** — structured executive pitch with sections for executive summary, risk overview, cost-benefit analysis, proposed timeline, budget request, and recommended actions\n- **Payback Period** — months until migration investment is recovered through breach avoidance and compliance savings\n\n## Workshop / Interactive Activities\n\nThe workshop has 3 interactive steps:\n\n1. **ROI Calculator** — interactive scorecard with 5 weighted dimensions, auto-scored from migration catalog data; shows estimated migration cost, annual benefit, payback period, and 3-year ROI percentage\n2. **Breach Scenario Simulator** — adjustable sliders for data records, regulatory fines, and HNDL years; compares classical vs. quantum breach costs with industry-specific baselines; generates key findings and cost-of-inaction analysis\n3. **Board Pitch Builder** — 6-section artifact builder pre-populated from assessment data; produces a formatted board memo with date, industry, country, and confidentiality classification; exports as Markdown\n\n## Related Standards\n\n- NIST IR 8547 (Transition to Post-Quantum Cryptography Standards)\n- Ponemon Institute Cost of a Data Breach methodology\n- FAIR (Factor Analysis of Information Risk)",
+    "category": "learning-module",
+    "metadata": { "moduleId": "pqc-business-case", "moduleName": "PQC Business Case" },
+    "deepLink": "/learn/pqc-business-case"
+  },
+  {
+    "id": "module-summary-pqc-governance",
+    "source": "module-summaries",
+    "title": "PQC Governance & Policy",
+    "content": "# PQC Governance & Policy\n\n## Overview\n\nThe PQC Governance & Policy module teaches executives how to establish organizational governance structures for post-quantum cryptography migration. It covers RACI matrix construction for PQC program roles, cryptographic policy generation with compliance-aligned templates, and KPI dashboard design for tracking migration progress. The module emphasizes cross-functional coordination between CISO, CTO, Enterprise Architect, Development, Compliance, and Procurement teams.\n\n## Key Concepts\n\n- **RACI Matrix** — Responsible, Accountable, Consulted, Informed assignment matrix mapping 7 migration activities (crypto inventory, risk assessment, vendor assessment, algorithm selection, testing, deployment, monitoring) across 6 organizational roles\n- **Governance Models** — three approaches: Centralized (single crypto authority), Federated (distributed decision-making with guidelines), and Hybrid (centralized policy with federated execution)\n- **Policy Hierarchy** — four-level framework: Enterprise Cryptographic Policy (top-level mandates), Key Management Policy (lifecycle and rotation), Vendor Crypto Requirements (supply chain obligations), Migration Timeline Policy (deadlines and phase gates)\n- **KPI Dashboard** — six key performance indicators: systems inventoried, algorithms migrated, vendor readiness, compliance gaps closed, training completion, budget utilization\n- **Policy Templates** — pre-structured documents with fill-in fields for organization name, effective dates, applicable frameworks, approved algorithms, prohibited algorithms, and exception processes\n- **Compliance Integration** — policies auto-populated with frameworks from the user's assessment (CNSA 2.0, NIST, ETSI, ANSSI) and country-specific deadlines\n\n## Workshop / Interactive Activities\n\nThe workshop has 3 interactive steps:\n\n1. **RACI Matrix Builder** — interactive 7×6 matrix with color-coded R/A/C/I dropdowns; includes legend, export to Markdown, and save to learning portfolio as an executive document\n2. **Policy Template Generator** — select from 4 policy types, fill in organization-specific details, and generate compliance-aligned policy drafts; auto-populates applicable frameworks and deadlines from assessment data\n3. **KPI Dashboard Builder** — interactive scorecard with 6 weighted KPI dimensions; vendor readiness auto-scored from migration catalog data; exports as Markdown with data source documentation\n\n## Related Standards\n\n- NIST IR 8547 (Transition to Post-Quantum Cryptography Standards)\n- NIST SP 800-53 (Security and Privacy Controls)\n- ISO 27001 (Information Security Management Systems)\n- COBIT (Control Objectives for Information and Related Technologies)",
+    "category": "learning-module",
+    "metadata": { "moduleId": "pqc-governance", "moduleName": "PQC Governance & Policy" },
+    "deepLink": "/learn/pqc-governance"
+  },
+  {
+    "id": "module-summary-pqc-risk-management",
+    "source": "module-summaries",
+    "title": "PQC Risk Management",
+    "content": "# PQC Risk Management\n\n## Overview\n\nThe PQC Risk Management module teaches CISOs and security leaders how to identify, quantify, and prioritize quantum computing risks to their organization. It covers CRQC (Cryptographically Relevant Quantum Computer) scenario planning with adjustable timelines from 2028-2045, building comprehensive risk registers for quantum-vulnerable cryptographic assets, and generating likelihood-by-impact risk heatmaps. The module integrates live data from the app's threat landscape, compliance frameworks, and assessment engine to provide personalized risk analysis.\n\n## Key Concepts\n\n- **CRQC Scenario Planning** — model the cascading impact of a cryptographically relevant quantum computer arriving in a given year; shows which algorithms break, which compliance deadlines are missed, and the HNDL (Harvest Now, Decrypt Later) exposure window\n- **Risk Register Construction** — systematic cataloging of cryptographic assets with fields for asset name, current algorithm, threat vector, likelihood (1-5), impact (1-5), and mitigation strategy; auto-calculates risk scores\n- **Risk Heatmap** — 5×5 likelihood-by-impact grid that visually plots risk register entries, color-coded by severity (Critical, High, Medium, Low)\n- **HNDL Exposure Window** — calculates how many years of harvested encrypted data could be decrypted based on data retention periods and estimated CRQC arrival date\n- **Threat Vectors** — six categories: HNDL interception, direct decryption, signature forgery, key compromise, protocol downgrade, supply chain insertion\n- **Risk Scoring** — Likelihood × Impact matrix producing four severity bands: Critical (20-25), High (12-19), Medium (6-11), Low (1-5)\n\n## Workshop / Interactive Activities\n\nThe workshop has 3 interactive steps:\n\n1. **CRQC Scenario Planner** — adjust a year slider (2028-2045) to model when a quantum computer could break current algorithms; see cascading impacts on 10 algorithms, 6 compliance deadlines, and HNDL exposure windows across 7 data retention periods\n2. **Risk Register Builder** — create a multi-row risk register with pre-populated examples (TLS certificates, database encryption, code signing, VPN tunnels); export as Markdown and save to learning portfolio\n3. **Risk Heatmap Generator** — automatically plots risk register entries on a 5×5 heatmap grid; click any cell to see detailed entries; view risk distribution summary across severity bands\n\n## Related Standards\n\n- NIST IR 8547 (Transition to Post-Quantum Cryptography Standards)\n- NSA CNSA 2.0 (Commercial National Security Algorithm Suite 2.0)\n- NIST SP 800-30 (Guide for Conducting Risk Assessments)\n- ISO 27005 (Information Security Risk Management)",
+    "category": "learning-module",
+    "metadata": { "moduleId": "pqc-risk-management", "moduleName": "PQC Risk Management" },
+    "deepLink": "/learn/pqc-risk-management"
   },
   {
     "id": "module-summary-qkd",
@@ -13604,6 +13758,15 @@
     "category": "learning-module",
     "metadata": { "moduleId": "vpn-ssh-pqc", "moduleName": "VPN & SSH PQC" },
     "deepLink": "/learn/vpn-ssh-pqc"
+  },
+  {
+    "id": "module-summary-vendor-risk",
+    "source": "module-summaries",
+    "title": "Vendor & Supply Chain Risk",
+    "content": "# Vendor & Supply Chain Risk\n\n## Overview\n\nThe Vendor & Supply Chain Risk module teaches executives how to assess, score, and manage cryptographic risk across their vendor ecosystem. It covers PQC readiness scorecards with six weighted dimensions, contract clause generation for quantum-safe procurement, and supply chain risk matrix visualization across infrastructure layers. The module integrates live data from the app's migration catalog to auto-score FIPS validation status and vendor PQC readiness.\n\n## Key Concepts\n\n- **Vendor PQC Scorecard** — six weighted dimensions: PQC Algorithm Support (25%), FIPS 140-3 Validation (20%), Published PQC Roadmap (15%), Crypto Agility (15%), SBOM/CBOM Delivery (10%), Hybrid Mode Support (15%)\n- **FIPS Validation Tiers** — four-tier assessment: Validated (CMVP-certified), Submitted (in CMVP queue), Legacy (FIPS 140-2 only), Self-Claim (vendor assertion without certification)\n- **CBOM (Cryptographic Bill of Materials)** — CycloneDX-standard inventory of all cryptographic algorithms, key sizes, and usage locations within a vendor's product; essential for assessing quantum vulnerability\n- **SBOM (Software Bill of Materials)** — complete inventory of software components and dependencies; complements CBOM for identifying cryptographic library dependencies\n- **Contract Clauses** — five categories of procurement protection: PQC timeline requirements, FIPS validation mandates, CBOM delivery obligations, crypto change notification, and audit rights\n- **Supply Chain Risk Matrix** — infrastructure-layer view showing PQC-ready products, FIPS-validated products, and hybrid-capable products as ratios per layer\n\n## Workshop / Interactive Activities\n\nThe workshop has 3 interactive steps:\n\n1. **Vendor Scorecard Builder** — interactive radar chart with 6 weighted dimensions; FIPS validation auto-scored from migration catalog data; saves assessment as executive document\n2. **Contract Clause Generator** — 5-section artifact builder producing legal-style contract articles (PQC Timeline, FIPS Validation, CBOM Delivery, Crypto Change Notification, Audit Rights) with customizable parameters\n3. **Supply Chain Risk Matrix** — heatmap visualization showing vendor PQC readiness across infrastructure layers; cells display count ratios with percentage-based color coding; includes per-layer detail table\n\n## Related Standards\n\n- NIST SP 800-161 (Cybersecurity Supply Chain Risk Management)\n- NIST IR 8547 (Transition to Post-Quantum Cryptography Standards)\n- CycloneDX CBOM Specification\n- FIPS 140-3 (Security Requirements for Cryptographic Modules)",
+    "category": "learning-module",
+    "metadata": { "moduleId": "vendor-risk", "moduleName": "Vendor & Supply Chain Risk" },
+    "deepLink": "/learn/vendor-risk"
   },
   {
     "id": "mc-apisecurityjwt-apisecurityexercises-0",
@@ -13668,7 +13831,7 @@
       "component": "HybridJWT",
       "filePath": "APISecurityJWT/workshop/HybridJWT.tsx"
     },
-    "deepLink": "/learn/api-security-jwt"
+    "deepLink": "/learn/api-security-jwt?tab=workshop"
   },
   {
     "id": "mc-apisecurityjwt-jweencryption-0",
@@ -13681,7 +13844,7 @@
       "component": "JWEEncryption",
       "filePath": "APISecurityJWT/workshop/JWEEncryption.tsx"
     },
-    "deepLink": "/learn/api-security-jwt"
+    "deepLink": "/learn/api-security-jwt?tab=workshop"
   },
   {
     "id": "mc-apisecurityjwt-jwtinspector-0",
@@ -13694,7 +13857,7 @@
       "component": "JWTInspector",
       "filePath": "APISecurityJWT/workshop/JWTInspector.tsx"
     },
-    "deepLink": "/learn/api-security-jwt"
+    "deepLink": "/learn/api-security-jwt?tab=workshop"
   },
   {
     "id": "mc-apisecurityjwt-pqcjwtsigning-0",
@@ -13707,7 +13870,7 @@
       "component": "PQCJWTSigning",
       "filePath": "APISecurityJWT/workshop/PQCJWTSigning.tsx"
     },
-    "deepLink": "/learn/api-security-jwt"
+    "deepLink": "/learn/api-security-jwt?tab=workshop"
   },
   {
     "id": "mc-apisecurityjwt-tokensizeanalyzer-0",
@@ -13720,7 +13883,7 @@
       "component": "TokenSizeAnalyzer",
       "filePath": "APISecurityJWT/workshop/TokenSizeAnalyzer.tsx"
     },
-    "deepLink": "/learn/api-security-jwt"
+    "deepLink": "/learn/api-security-jwt?tab=workshop"
   },
   {
     "id": "mc-data-apisecurityjwt-constants",
@@ -13850,7 +14013,7 @@
       "component": "BinarySigning",
       "filePath": "CodeSigning/workshop/BinarySigning.tsx"
     },
-    "deepLink": "/learn/code-signing"
+    "deepLink": "/learn/code-signing?tab=workshop"
   },
   {
     "id": "mc-codesigning-certchainbuilder-0",
@@ -13863,7 +14026,7 @@
       "component": "CertChainBuilder",
       "filePath": "CodeSigning/workshop/CertChainBuilder.tsx"
     },
-    "deepLink": "/learn/code-signing"
+    "deepLink": "/learn/code-signing?tab=workshop"
   },
   {
     "id": "mc-codesigning-packagesigning-0",
@@ -13876,7 +14039,7 @@
       "component": "PackageSigning",
       "filePath": "CodeSigning/workshop/PackageSigning.tsx"
     },
-    "deepLink": "/learn/code-signing"
+    "deepLink": "/learn/code-signing?tab=workshop"
   },
   {
     "id": "mc-codesigning-securebootchain-0",
@@ -13889,7 +14052,7 @@
       "component": "SecureBootChain",
       "filePath": "CodeSigning/workshop/SecureBootChain.tsx"
     },
-    "deepLink": "/learn/code-signing"
+    "deepLink": "/learn/code-signing?tab=workshop"
   },
   {
     "id": "mc-codesigning-securebootchain-1",
@@ -13902,7 +14065,7 @@
       "component": "SecureBootChain",
       "filePath": "CodeSigning/workshop/SecureBootChain.tsx"
     },
-    "deepLink": "/learn/code-signing"
+    "deepLink": "/learn/code-signing?tab=workshop"
   },
   {
     "id": "mc-codesigning-securebootchain-2",
@@ -13915,7 +14078,7 @@
       "component": "SecureBootChain",
       "filePath": "CodeSigning/workshop/SecureBootChain.tsx"
     },
-    "deepLink": "/learn/code-signing"
+    "deepLink": "/learn/code-signing?tab=workshop"
   },
   {
     "id": "mc-codesigning-sigstoreflow-0",
@@ -13928,7 +14091,7 @@
       "component": "SigstoreFlow",
       "filePath": "CodeSigning/workshop/SigstoreFlow.tsx"
     },
-    "deepLink": "/learn/code-signing"
+    "deepLink": "/learn/code-signing?tab=workshop"
   },
   {
     "id": "mc-codesigning-sigstoreflow-1",
@@ -13941,7 +14104,7 @@
       "component": "SigstoreFlow",
       "filePath": "CodeSigning/workshop/SigstoreFlow.tsx"
     },
-    "deepLink": "/learn/code-signing"
+    "deepLink": "/learn/code-signing?tab=workshop"
   },
   {
     "id": "mc-data-codesigning-constants",
@@ -13955,6 +14118,84 @@
       "filePath": "CodeSigning/constants.ts"
     },
     "deepLink": "/learn/code-signing"
+  },
+  {
+    "id": "mc-compliancestrategy-auditreadinesschecklist-0",
+    "source": "module-content",
+    "title": "Compliance & Regulatory Strategy — AuditReadinessChecklist",
+    "content": "Module: Compliance & Regulatory Strategy\nComponent: AuditReadinessChecklist\n\nbuildSections(isAssessmentComplete), [isAssessmentComplete]) const handleExport = (data: Record\nSome items have been pre-populated based on your completed assessment. Review and update as needed.\nEnsure all cryptographic assets are cataloged and documented for audit review.\nCryptographic Inventory Readiness\nVerify organizational policies and governance structures are in place for PQC migration.\nConfirm technical controls are deployed and tested for the PQC transition.\nAssess vendor PQC readiness and update contractual requirements.\nEnsure all required evidence and documentation is prepared for audit submission.\nEvidence & Documentation Readiness",
+    "category": "learning",
+    "metadata": {
+      "module": "ComplianceStrategy",
+      "component": "AuditReadinessChecklist",
+      "filePath": "ComplianceStrategy/components/AuditReadinessChecklist.tsx"
+    },
+    "deepLink": "/learn/compliance-strategy"
+  },
+  {
+    "id": "mc-compliancestrategy-compliancetimelinebuilder-0",
+    "source": "module-content",
+    "title": "Compliance & Regulatory Strategy — ComplianceTimelineBuilder",
+    "content": "Module: Compliance & Regulatory Strategy\nComponent: ComplianceTimelineBuilder\n\nm.category === 'Certification' || m.category === 'Renewal' ) let status: 'completed' | 'on-track' | 'at-risk' let gap: string if (d.year\ng.status === 'at-risk').length const onTrackCount = gapAnalysis.filter((g) => g.status === 'on-track').length const completedCount = gapAnalysis.filter((g) => g.status === 'completed').length return (\nAdd migration milestones above to see how they align with compliance deadlines.\nExport your compliance timeline and gap analysis as a document.",
+    "category": "learning",
+    "metadata": {
+      "module": "ComplianceStrategy",
+      "component": "ComplianceTimelineBuilder",
+      "filePath": "ComplianceStrategy/components/ComplianceTimelineBuilder.tsx"
+    },
+    "deepLink": "/learn/compliance-strategy"
+  },
+  {
+    "id": "mc-compliancestrategy-introduction-0",
+    "source": "module-content",
+    "title": "Compliance & Regulatory Strategy — Introduction",
+    "content": "Module: Compliance & Regulatory Strategy\nComponent: Introduction\n\nGovernments and standards bodies worldwide are establishing requirements for the transition to\n. For organizations operating across borders, navigating these overlapping and sometimes conflicting requirements is a critical challenge.\n“Federal agencies must identify and prioritize the migration of vulnerable cryptographic systems to quantum-resistant standards.”\n— NSM-10, National Security Memorandum on Quantum Computing (2022)\nare all publishing PQC transition guidance with concrete deadlines.\nPCI DSS, HIPAA, FedRAMP, and CMMC are incorporating quantum-safe requirements into their compliance frameworks.\nOrganizations operating in multiple jurisdictions must reconcile different algorithm preferences, timelines, and certification requirements.\nUnderstanding the major compliance frameworks driving PQC adoption is essential for building a multi-jurisdiction strategy.\nThe Commercial National Security Algorithm Suite 2.0 mandates PQC adoption for National Security Systems. Key deadlines: software/firmware signing by 2025, web/cloud/networking by 2030, legacy systems by 2033. Requires\nNIST's transition guidance for post-quantum cryptography standards. Recommends deprecating RSA and ECC by 2030 and disallowing them after 2035. Emphasizes cryptographic agility and hybrid approaches during the transition period.",
+    "category": "learning",
+    "metadata": {
+      "module": "ComplianceStrategy",
+      "component": "Introduction",
+      "filePath": "ComplianceStrategy/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/compliance-strategy"
+  },
+  {
+    "id": "mc-compliancestrategy-introduction-1",
+    "source": "module-content",
+    "title": "Compliance & Regulatory Strategy — Introduction",
+    "content": "Module: Compliance & Regulatory Strategy\nComponent: Introduction\n\nEuropean bodies have published PQC migration guidance. ANSSI recommends hybrid cryptography combining classical and PQC algorithms. BSI endorses ML-KEM and ML-DSA with specific parameter recommendations. ETSI provides interoperability guidance for hybrid key exchanges.\nOrganizations typically approach PQC migration from one of two angles. The optimal strategy often combines both, using compliance deadlines as hard constraints and risk scoring to prioritize within those constraints.\n&bull; Driven by regulatory deadlines and audit requirements\n&bull; Risk: may miss high-risk systems outside compliance scope\n&bull; Best for: regulated industries (finance, government, healthcare)\n&bull; Prioritizes highest-risk assets regardless of regulatory scope\n&bull; Risk: may not satisfy auditors without compliance mapping\n&bull; Best for: technology companies, defense, intelligence\nKey deadlines are converging across jurisdictions, creating a narrow window for organizations to complete their PQC migration.\nThis workshop guides you through building a comprehensive compliance strategy in three steps:\nMap jurisdictions, build audit checklists, and construct compliance timelines.",
+    "category": "learning",
+    "metadata": {
+      "module": "ComplianceStrategy",
+      "component": "Introduction",
+      "filePath": "ComplianceStrategy/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/compliance-strategy"
+  },
+  {
+    "id": "mc-compliancestrategy-jurisdictionmapper-0",
+    "source": "module-content",
+    "title": "Compliance & Regulatory Strategy — JurisdictionMapper",
+    "content": "Module: Compliance & Regulatory Strategy\nComponent: JurisdictionMapper\n\nCheck each jurisdiction where your organization operates or must comply with regulations.\nNo matching frameworks found for the selected jurisdictions. This may mean country-specific compliance data is not yet available.\n${earliestLabel} (${minYear}) has a deadline ${maxYear - minYear} years earlier than ${latestLabel} (${maxYear}). Your migration must meet the earliest deadline.\nCNSA 2.0 specifies ML-KEM-1024 and ML-DSA-87 minimum levels, while ANSSI/BSI recommend hybrid classical+PQC approaches. Ensure your deployment satisfies both the algorithm-level and hybrid requirements.\nANSSI (France) and BSI (Germany) emphasize hybrid mode as mandatory during transition, while NSA CNSA 2.0 focuses on pure PQC adoption. Plan for hybrid deployments that satisfy both.",
+    "category": "learning",
+    "metadata": {
+      "module": "ComplianceStrategy",
+      "component": "JurisdictionMapper",
+      "filePath": "ComplianceStrategy/components/JurisdictionMapper.tsx"
+    },
+    "deepLink": "/learn/compliance-strategy"
+  },
+  {
+    "id": "mc-compliancestrategy-index-0",
+    "source": "module-content",
+    "title": "Compliance & Regulatory Strategy — index",
+    "content": "Module: Compliance & Regulatory Strategy\nComponent: index\n\nApply what you learned in the workshop to these real-world compliance scenarios. Use the Workshop tab tools to model your answers.\nUse the Jurisdiction Mapper (Step 1), Audit Readiness Checklist (Step 2), and Compliance Timeline Builder (Step 3) in the Workshop tab to model your response.\nNavigate the complex landscape of PQC compliance requirements across jurisdictions and frameworks.\nMap applicable PQC frameworks and deadlines across your operating jurisdictions.\nBuild a compliance audit readiness checklist for your PQC migration.\nBuild a compliance timeline overlaying framework deadlines with your migration milestones.\nScenario: Multi-Jurisdiction Financial Institution\nScenario: Government Contractor Audit\nScenario: Healthcare PQC Compliance Timeline",
+    "category": "learning",
+    "metadata": {
+      "module": "ComplianceStrategy",
+      "component": "index",
+      "filePath": "ComplianceStrategy/index.tsx"
+    },
+    "deepLink": "/learn/compliance-strategy"
   },
   {
     "id": "mc-cryptoagility-cryptoagilityexercises-0",
@@ -14019,7 +14260,7 @@
       "component": "AbstractionLayerDemo",
       "filePath": "CryptoAgility/workshop/AbstractionLayerDemo.tsx"
     },
-    "deepLink": "/learn/crypto-agility"
+    "deepLink": "/learn/crypto-agility?tab=workshop"
   },
   {
     "id": "mc-cryptoagility-cbomscanner-0",
@@ -14032,7 +14273,7 @@
       "component": "CBOMScanner",
       "filePath": "CryptoAgility/workshop/CBOMScanner.tsx"
     },
-    "deepLink": "/learn/crypto-agility"
+    "deepLink": "/learn/crypto-agility?tab=workshop"
   },
   {
     "id": "mc-data-cryptoagility-architecturepatterns",
@@ -14149,7 +14390,7 @@
       "component": "BitcoinFlow",
       "filePath": "DigitalAssets/flows/BitcoinFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-bitcoinflow-1",
@@ -14162,7 +14403,7 @@
       "component": "BitcoinFlow",
       "filePath": "DigitalAssets/flows/BitcoinFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-bitcoinflow-2",
@@ -14175,7 +14416,7 @@
       "component": "BitcoinFlow",
       "filePath": "DigitalAssets/flows/BitcoinFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-hdwalletflow-0",
@@ -14188,7 +14429,7 @@
       "component": "HDWalletFlow",
       "filePath": "DigitalAssets/flows/HDWalletFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-pqclivecomparisonflow-0",
@@ -14201,7 +14442,7 @@
       "component": "PQCLiveComparisonFlow",
       "filePath": "DigitalAssets/flows/PQCLiveComparisonFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-pqcmigrationflow-0",
@@ -14214,7 +14455,7 @@
       "component": "PQCMigrationFlow",
       "filePath": "DigitalAssets/flows/PQCMigrationFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-pqcmigrationflow-1",
@@ -14227,7 +14468,7 @@
       "component": "PQCMigrationFlow",
       "filePath": "DigitalAssets/flows/PQCMigrationFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-pqcmigrationflow-2",
@@ -14240,7 +14481,7 @@
       "component": "PQCMigrationFlow",
       "filePath": "DigitalAssets/flows/PQCMigrationFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-pqcmigrationflow-3",
@@ -14253,7 +14494,7 @@
       "component": "PQCMigrationFlow",
       "filePath": "DigitalAssets/flows/PQCMigrationFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-pqcmigrationflow-4",
@@ -14266,7 +14507,7 @@
       "component": "PQCMigrationFlow",
       "filePath": "DigitalAssets/flows/PQCMigrationFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-solanaflow-0",
@@ -14279,7 +14520,7 @@
       "component": "SolanaFlow",
       "filePath": "DigitalAssets/flows/SolanaFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-solanaflow-1",
@@ -14292,7 +14533,7 @@
       "component": "SolanaFlow",
       "filePath": "DigitalAssets/flows/SolanaFlow.tsx"
     },
-    "deepLink": "/learn/digital-assets"
+    "deepLink": "/learn/digital-assets?tab=workshop"
   },
   {
     "id": "mc-digitalassets-useethereumkeygeneration-0",
@@ -14548,7 +14789,7 @@
       "component": "CMSEncryptionDemo",
       "filePath": "EmailSigning/workshop/CMSEncryptionDemo.tsx"
     },
-    "deepLink": "/learn/email-signing"
+    "deepLink": "/learn/email-signing?tab=workshop"
   },
   {
     "id": "mc-emailsigning-cmssigningdemo-0",
@@ -14561,7 +14802,7 @@
       "component": "CMSSigningDemo",
       "filePath": "EmailSigning/workshop/CMSSigningDemo.tsx"
     },
-    "deepLink": "/learn/email-signing"
+    "deepLink": "/learn/email-signing?tab=workshop"
   },
   {
     "id": "mc-emailsigning-smimecertviewer-0",
@@ -14574,7 +14815,7 @@
       "component": "SMIMECertViewer",
       "filePath": "EmailSigning/workshop/SMIMECertViewer.tsx"
     },
-    "deepLink": "/learn/email-signing"
+    "deepLink": "/learn/email-signing?tab=workshop"
   },
   {
     "id": "mc-data-emailsigning-emailsigningconstants",
@@ -14674,7 +14915,7 @@
       "component": "ESVWalkthroughDemo",
       "filePath": "Entropy/workshop/ESVWalkthroughDemo.tsx"
     },
-    "deepLink": "/learn/entropy-randomness"
+    "deepLink": "/learn/entropy-randomness?tab=workshop"
   },
   {
     "id": "mc-entropy-esvwalkthroughdemo-1",
@@ -14687,7 +14928,7 @@
       "component": "ESVWalkthroughDemo",
       "filePath": "Entropy/workshop/ESVWalkthroughDemo.tsx"
     },
-    "deepLink": "/learn/entropy-randomness"
+    "deepLink": "/learn/entropy-randomness?tab=workshop"
   },
   {
     "id": "mc-entropy-entropytestingdemo-0",
@@ -14700,7 +14941,7 @@
       "component": "EntropyTestingDemo",
       "filePath": "Entropy/workshop/EntropyTestingDemo.tsx"
     },
-    "deepLink": "/learn/entropy-randomness"
+    "deepLink": "/learn/entropy-randomness?tab=workshop"
   },
   {
     "id": "mc-entropy-qrngdemo-0",
@@ -14713,7 +14954,7 @@
       "component": "QRNGDemo",
       "filePath": "Entropy/workshop/QRNGDemo.tsx"
     },
-    "deepLink": "/learn/entropy-randomness"
+    "deepLink": "/learn/entropy-randomness?tab=workshop"
   },
   {
     "id": "mc-entropy-randomgenerationdemo-0",
@@ -14726,7 +14967,7 @@
       "component": "RandomGenerationDemo",
       "filePath": "Entropy/workshop/RandomGenerationDemo.tsx"
     },
-    "deepLink": "/learn/entropy-randomness"
+    "deepLink": "/learn/entropy-randomness?tab=workshop"
   },
   {
     "id": "mc-entropy-sourcecombiningdemo-0",
@@ -14739,7 +14980,7 @@
       "component": "SourceCombiningDemo",
       "filePath": "Entropy/workshop/SourceCombiningDemo.tsx"
     },
-    "deepLink": "/learn/entropy-randomness"
+    "deepLink": "/learn/entropy-randomness?tab=workshop"
   },
   {
     "id": "mc-data-entropy-entropyconstants",
@@ -14900,7 +15141,7 @@
       "component": "CompositeCertificateViewer",
       "filePath": "HybridCrypto/workshop/CompositeCertificateViewer.tsx"
     },
-    "deepLink": "/learn/hybrid-crypto"
+    "deepLink": "/learn/hybrid-crypto?tab=workshop"
   },
   {
     "id": "mc-hybridcrypto-hybridencryptiondemo-0",
@@ -14913,7 +15154,7 @@
       "component": "HybridEncryptionDemo",
       "filePath": "HybridCrypto/workshop/HybridEncryptionDemo.tsx"
     },
-    "deepLink": "/learn/hybrid-crypto"
+    "deepLink": "/learn/hybrid-crypto?tab=workshop"
   },
   {
     "id": "mc-hybridcrypto-hybridkeygeneration-0",
@@ -14926,7 +15167,7 @@
       "component": "HybridKeyGeneration",
       "filePath": "HybridCrypto/workshop/HybridKeyGeneration.tsx"
     },
-    "deepLink": "/learn/hybrid-crypto"
+    "deepLink": "/learn/hybrid-crypto?tab=workshop"
   },
   {
     "id": "mc-data-hybridcrypto-constants",
@@ -15026,7 +15267,7 @@
       "component": "CertChainBloatAnalyzer",
       "filePath": "IoTOT/workshop/CertChainBloatAnalyzer.tsx"
     },
-    "deepLink": "/learn/iot-ot-pqc"
+    "deepLink": "/learn/iot-ot-pqc?tab=workshop"
   },
   {
     "id": "mc-iotot-constrainedalgorithmexplorer-0",
@@ -15039,7 +15280,7 @@
       "component": "ConstrainedAlgorithmExplorer",
       "filePath": "IoTOT/workshop/ConstrainedAlgorithmExplorer.tsx"
     },
-    "deepLink": "/learn/iot-ot-pqc"
+    "deepLink": "/learn/iot-ot-pqc?tab=workshop"
   },
   {
     "id": "mc-iotot-firmwaresigningsimulator-0",
@@ -15052,7 +15293,7 @@
       "component": "FirmwareSigningSimulator",
       "filePath": "IoTOT/workshop/FirmwareSigningSimulator.tsx"
     },
-    "deepLink": "/learn/iot-ot-pqc"
+    "deepLink": "/learn/iot-ot-pqc?tab=workshop"
   },
   {
     "id": "mc-iotot-scadamigrationplanner-0",
@@ -15065,7 +15306,7 @@
       "component": "SCADAMigrationPlanner",
       "filePath": "IoTOT/workshop/SCADAMigrationPlanner.tsx"
     },
-    "deepLink": "/learn/iot-ot-pqc"
+    "deepLink": "/learn/iot-ot-pqc?tab=workshop"
   },
   {
     "id": "mc-data-iotot-constants",
@@ -15191,7 +15432,7 @@
       "component": "HSMSimulator",
       "filePath": "KeyManagement/workshop/HSMSimulator.tsx"
     },
-    "deepLink": "/learn/key-management"
+    "deepLink": "/learn/key-management?tab=workshop"
   },
   {
     "id": "mc-keymanagement-keylifecycledemo-0",
@@ -15204,7 +15445,7 @@
       "component": "KeyLifecycleDemo",
       "filePath": "KeyManagement/workshop/KeyLifecycleDemo.tsx"
     },
-    "deepLink": "/learn/key-management"
+    "deepLink": "/learn/key-management?tab=workshop"
   },
   {
     "id": "mc-keymanagement-keyrotationplanner-0",
@@ -15217,7 +15458,7 @@
       "component": "KeyRotationPlanner",
       "filePath": "KeyManagement/workshop/KeyRotationPlanner.tsx"
     },
-    "deepLink": "/learn/key-management"
+    "deepLink": "/learn/key-management?tab=workshop"
   },
   {
     "id": "mc-data-keymanagement-hsmvendordata",
@@ -15334,7 +15575,7 @@
       "component": "InclusionProofGenerator",
       "filePath": "MerkleTreeCerts/workshop/InclusionProofGenerator.tsx"
     },
-    "deepLink": "/learn/merkle-tree-certs"
+    "deepLink": "/learn/merkle-tree-certs?tab=workshop"
   },
   {
     "id": "mc-merkletreecerts-proofverifier-0",
@@ -15347,7 +15588,7 @@
       "component": "ProofVerifier",
       "filePath": "MerkleTreeCerts/workshop/ProofVerifier.tsx"
     },
-    "deepLink": "/learn/merkle-tree-certs"
+    "deepLink": "/learn/merkle-tree-certs?tab=workshop"
   },
   {
     "id": "mc-merkletreecerts-sizecomparison-0",
@@ -15360,7 +15601,85 @@
       "component": "SizeComparison",
       "filePath": "MerkleTreeCerts/workshop/SizeComparison.tsx"
     },
-    "deepLink": "/learn/merkle-tree-certs"
+    "deepLink": "/learn/merkle-tree-certs?tab=workshop"
+  },
+  {
+    "id": "mc-migrationprogram-introduction-0",
+    "source": "module-content",
+    "title": "Migration Program Management — Introduction",
+    "content": "Module: Migration Program Management\nComponent: Introduction\n\nis not a single project — it is a multi-year, cross-functional\nthat spans every system, vendor, and team that touches cryptography. Success requires structured planning, executive sponsorship, and continuous stakeholder alignment.\n“Migrating to post-quantum cryptography is as much an organizational challenge as it is a technical one. Agencies should establish a dedicated migration program with clear governance, milestones, and reporting structures.”\nA project delivers a specific output; a program coordinates multiple interdependent projects toward a strategic goal — full PQC readiness.\nThe longest sequence of dependent tasks determines your minimum migration timeline. Vendor PQC readiness is often the binding constraint.\nWithout C-suite commitment, PQC migration stalls. Budget, priority, and cross-department coordination require top-down authority.\ndefines a structured approach to PQC migration that serves as the foundation for enterprise migration programs. Each phase builds on the previous and has clear deliverables.\nEnterprise PQC migration programs that succeed share common characteristics. These success factors are drawn from early adopters and regulatory guidance.\nCISO or CTO-level ownership with regular board reporting. Migration budgets, cross-team authority, and organizational priority require executive mandate.\nSecurity, engineering, compliance, vendor management, and business stakeholders must all be represented. Crypto touches every layer of the stack.",
+    "category": "learning",
+    "metadata": {
+      "module": "MigrationProgram",
+      "component": "Introduction",
+      "filePath": "MigrationProgram/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/migration-program"
+  },
+  {
+    "id": "mc-migrationprogram-introduction-1",
+    "source": "module-content",
+    "title": "Migration Program Management — Introduction",
+    "content": "Module: Migration Program Management\nComponent: Introduction\n\nStart with hybrid deployments in low-risk systems, validate, then expand. Big-bang migrations are too risky for cryptographic infrastructure.\nTrack systems inventoried, algorithms migrated, vendor readiness, compliance gaps closed, and budget utilization. What gets measured gets managed.\nThis workshop provides three interactive tools that produce real, exportable artifacts for your PQC migration program:\nBuild a migration roadmap, plan stakeholder communications, and design a KPI tracker.",
+    "category": "learning",
+    "metadata": {
+      "module": "MigrationProgram",
+      "component": "Introduction",
+      "filePath": "MigrationProgram/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/migration-program"
+  },
+  {
+    "id": "mc-migrationprogram-kpitrackertemplate-0",
+    "source": "module-content",
+    "title": "Migration Program Management — KPITrackerTemplate",
+    "content": "Module: Migration Program Management\nComponent: KPITrackerTemplate\n\nVendors Assessed and Risk Trend are auto-scored from your Migrate catalog and assessment data. Adjust all dimensions with the sliders.\nExport your KPI tracker with current scores and data sources.\nPercentage of systems with completed crypto inventory\nPercentage of vulnerable algorithms replaced with PQC\nPercentage of vendors evaluated for PQC readiness\nFramework requirements addressed",
+    "category": "learning",
+    "metadata": {
+      "module": "MigrationProgram",
+      "component": "KPITrackerTemplate",
+      "filePath": "MigrationProgram/components/KPITrackerTemplate.tsx"
+    },
+    "deepLink": "/learn/migration-program"
+  },
+  {
+    "id": "mc-migrationprogram-roadmapbuilder-0",
+    "source": "module-content",
+    "title": "Migration Program Management — RoadmapBuilder",
+    "content": "Module: Migration Program Management\nComponent: RoadmapBuilder\n\nAdd your organization's milestones below. They will be overlaid on external regulatory deadlines so you can see how your plan aligns with compliance requirements.\nExport your migration roadmap with milestones and regulatory deadlines.",
+    "category": "learning",
+    "metadata": {
+      "module": "MigrationProgram",
+      "component": "RoadmapBuilder",
+      "filePath": "MigrationProgram/components/RoadmapBuilder.tsx"
+    },
+    "deepLink": "/learn/migration-program"
+  },
+  {
+    "id": "mc-migrationprogram-stakeholdercommsplanner-0",
+    "source": "module-content",
+    "title": "Migration Program Management — StakeholderCommsPlanner",
+    "content": "Module: Migration Program Management\nComponent: StakeholderCommsPlanner\n\nProgram Manager -> CISO -> Board Risk Committee). Include response time expectations for each level.', defaultValue: '', }, ], }, ] function renderCommsPreview( data: Record\nBuild a comprehensive stakeholder communication plan for your PQC migration program. Complete each section below, then switch to Preview mode to see the formatted document. Export to save to your learning portfolio.\nIdentify the key stakeholders in your PQC migration program and their concerns.\nCraft targeted messages for each audience tier. Tailor language, detail level, and focus areas.\nDefine the rhythm and format of program status reporting.\nDefine what triggers escalation and who gets notified.\nStakeholder Communications Plan",
+    "category": "learning",
+    "metadata": {
+      "module": "MigrationProgram",
+      "component": "StakeholderCommsPlanner",
+      "filePath": "MigrationProgram/components/StakeholderCommsPlanner.tsx"
+    },
+    "deepLink": "/learn/migration-program"
+  },
+  {
+    "id": "mc-migrationprogram-index-0",
+    "source": "module-content",
+    "title": "Migration Program Management — index",
+    "content": "Module: Migration Program Management\nComponent: index\n\nApply what you learned in the workshop to these real-world scenarios. Use the Workshop tab tools to model your answers.\nUse the Roadmap Builder (Step 1), Stakeholder Comms Planner (Step 2), and KPI Tracker (Step 3) in the Workshop tab to model your response.\nPlan, execute, and track enterprise-wide PQC migration programs with structured frameworks and stakeholder alignment.\nBuild a PQC migration roadmap with milestones overlaid on regulatory deadlines.\nCreate a stakeholder communication plan for your PQC migration program.\nDesign a migration program KPI tracker with live data integration.\nScenario: Financial Institution Migration\nScenario: Healthcare Provider PQC Rollout\nScenario: Government Agency Mandate",
+    "category": "learning",
+    "metadata": {
+      "module": "MigrationProgram",
+      "component": "index",
+      "filePath": "MigrationProgram/index.tsx"
+    },
+    "deepLink": "/learn/migration-program"
   },
   {
     "id": "mc-module1-introduction-algorithmcomparisontable-0",
@@ -15386,7 +15705,7 @@
       "component": "AlgorithmFamilyWorkshop",
       "filePath": "Module1-Introduction/AlgorithmFamilyWorkshop.tsx"
     },
-    "deepLink": "/learn/pqc-101"
+    "deepLink": "/learn/pqc-101?tab=workshop"
   },
   {
     "id": "mc-module1-introduction-keygenworkshop-0",
@@ -15399,7 +15718,7 @@
       "component": "KeyGenWorkshop",
       "filePath": "Module1-Introduction/KeyGenWorkshop.tsx"
     },
-    "deepLink": "/learn/pqc-101"
+    "deepLink": "/learn/pqc-101?tab=workshop"
   },
   {
     "id": "mc-module1-introduction-pqc101module-0",
@@ -15477,7 +15796,7 @@
       "component": "CSRGenerator",
       "filePath": "PKIWorkshop/CSRGenerator.tsx"
     },
-    "deepLink": "/learn/pki-workshop"
+    "deepLink": "/learn/pki-workshop?tab=workshop"
   },
   {
     "id": "mc-pkiworkshop-certsigner-0",
@@ -15597,6 +15916,214 @@
     "deepLink": "/learn/pki-workshop"
   },
   {
+    "id": "mc-pqcbusinesscase-boardpitchbuilder-0",
+    "source": "module-content",
+    "title": "PQC Business Case — BoardPitchBuilder",
+    "content": "Module: PQC Business Case\nComponent: BoardPitchBuilder\n\nFill in each section to create a professional board-ready memo. Fields are pre-populated with data from your assessment and the workshop steps above. Switch to Preview mode to see the formatted document, then export as Markdown or JSON.\nA concise overview of the PQC migration need and this investment proposal.\nQuantified assessment of the quantum risk facing the organization.\nFinancial justification showing migration cost vs. cost of inaction.\nRecommended migration phases and milestones.\nTotal investment requested for PQC migration.\nPrioritized next steps for the organization.\nPQC Migration Investment Proposal",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCBusinessCase",
+      "component": "BoardPitchBuilder",
+      "filePath": "PQCBusinessCase/components/BoardPitchBuilder.tsx"
+    },
+    "deepLink": "/learn/pqc-business-case"
+  },
+  {
+    "id": "mc-pqcbusinesscase-breachscenariosimulator-0",
+    "source": "module-content",
+    "title": "PQC Business Case — BreachScenarioSimulator",
+    "content": "Module: PQC Business Case\nComponent: BreachScenarioSimulator\n\nEvery year without PQC migration increases your exposure to quantum-enabled attacks. HNDL (Harvest Now, Decrypt Later) means adversaries are already collecting encrypted data that will become readable once quantum computers mature. The longer you wait, the more historical data is at risk.\nOrganizations that adopt PQC early benefit from reduced breach risk, compliance readiness, and crypto agility. The migration cost is a one-time investment; the breach cost savings compound annually. Early movers also gain competitive trust signals and avoid the rush when quantum deadlines approach.",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCBusinessCase",
+      "component": "BreachScenarioSimulator",
+      "filePath": "PQCBusinessCase/components/BreachScenarioSimulator.tsx"
+    },
+    "deepLink": "/learn/pqc-business-case?tab=workshop"
+  },
+  {
+    "id": "mc-pqcbusinesscase-introduction-0",
+    "source": "module-content",
+    "title": "PQC Business Case — Introduction",
+    "content": "Module: PQC Business Case\nComponent: Introduction\n\nmigration is not just a technical initiative — it requires significant organizational investment. A well-constructed business case translates technical risk into financial language that executives and boards understand.\n“Organizations that delay PQC migration face compounding costs: rising compliance penalties, increasing breach exposure from harvest-now-decrypt-later attacks, and the growing technical debt of maintaining legacy cryptographic systems.”\nWithout executive buy-in and adequate funding, PQC migration stalls. The business case bridges the gap between technical teams who understand the urgency and decision-makers who control budgets.\nBuilding a compelling case requires fluency in three financial frameworks that executives use to evaluate technology investments:\nThe complete cost of migration including software, hardware, training, consulting, downtime, and ongoing operational changes over the full lifecycle.\nReturn on investment weighted by the probability and magnitude of quantum-enabled breaches, regulatory fines, and competitive disadvantage from inaction.\nTranslating technical quantum risk into business language: revenue impact, market position, regulatory exposure, and fiduciary responsibility.\nPQC migration costs span four major categories. Each must be estimated and presented alongside the cost of\nThe workshop guides you through three steps to create a complete, data-driven PQC investment case:\nRun a guided PQC readiness assessment to feed into your business case",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCBusinessCase",
+      "component": "Introduction",
+      "filePath": "PQCBusinessCase/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/pqc-business-case"
+  },
+  {
+    "id": "mc-pqcbusinesscase-roicalculator-0",
+    "source": "module-content",
+    "title": "PQC Business Case — ROICalculator",
+    "content": "Module: PQC Business Case\nComponent: ROICalculator\n\nBased on average regulatory penalty exposure of $2M, scaled by applicable framework coverage.\nNote: These are educational estimates for planning purposes. Actual costs vary significantly by organization size, geography, and regulatory environment.\nMigration Cost by Infrastructure\nAuto-scored from ${data.totalProducts} products in the migration catalog. Higher = larger investment needed.\nEstimated savings from preventing quantum-enabled breaches. Adjust based on your data sensitivity.\nAuto-scored from ${data.frameworksByIndustry.length} applicable compliance frameworks. Higher = greater regulatory exposure.\nExpected efficiency gains from crypto agility, reduced complexity, and modernized infrastructure.\nMarket differentiation, customer trust, and partner ecosystem alignment from early PQC adoption.",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCBusinessCase",
+      "component": "ROICalculator",
+      "filePath": "PQCBusinessCase/components/ROICalculator.tsx"
+    },
+    "deepLink": "/learn/pqc-business-case?tab=workshop"
+  },
+  {
+    "id": "mc-pqcbusinesscase-index-0",
+    "source": "module-content",
+    "title": "PQC Business Case — index",
+    "content": "Module: PQC Business Case\nComponent: index\n\nQuantify costs, model ROI, and build compelling investment cases for post-quantum cryptography migration.\nWork through these scenarios to practice building PQC investment cases. Each exercise guides you through the workshop tools — click &quot;Go to Workshop&quot; to begin.\nCalculate the return on investment for PQC migration across your infrastructure.\nStep 2: Breach Scenario Simulator\nCompare breach costs today vs. quantum-enabled breaches of tomorrow.\nGenerate a board-ready executive brief for PQC investment approval.\n2. Regulatory Deadline Pressure",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCBusinessCase",
+      "component": "index",
+      "filePath": "PQCBusinessCase/index.tsx"
+    },
+    "deepLink": "/learn/pqc-business-case"
+  },
+  {
+    "id": "mc-pqcgovernance-introduction-0",
+    "source": "module-content",
+    "title": "PQC Governance & Policy — Introduction",
+    "content": "Module: PQC Governance & Policy\nComponent: Introduction\n\nis not just a technical upgrade — it's an enterprise-wide transformation that touches every system, vendor, and compliance obligation. Without formal governance, organizations risk fragmented migration efforts, missed deadlines, and security gaps.\n“Organizations should establish a governance structure that assigns clear roles and responsibilities for the cryptographic transition, including executive sponsorship.”\n— NIST IR 8547, Transition to Post-Quantum Cryptography Standards\nAlign security, engineering, compliance, and procurement teams on a unified migration roadmap.\nClear ownership of decisions — who selects algorithms, who approves exceptions, who tracks compliance.\nEnterprise-wide cryptographic standards prevent teams from making conflicting algorithm and library choices.\n(Responsible, Accountable, Consulted, Informed) is the standard tool for mapping governance roles to migration activities. Every PQC program needs clarity on who does the work, who owns the decision, who provides input, and who needs to know.\nEach activity should have exactly one &quot;A&quot; (Accountable) to avoid diffusion of responsibility. Multiple &quot;R&quot; and &quot;C&quot; assignments are common for cross-functional work.\nPQC governance requires a layered policy framework. Each layer provides increasing specificity, from enterprise-wide principles to team-level procedures.",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCGovernance",
+      "component": "Introduction",
+      "filePath": "PQCGovernance/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/pqc-governance"
+  },
+  {
+    "id": "mc-pqcgovernance-introduction-1",
+    "source": "module-content",
+    "title": "PQC Governance & Policy — Introduction",
+    "content": "Module: PQC Governance & Policy\nComponent: Introduction\n\nA single crypto governance team sets all policies, selects algorithms, and manages migration. Best for smaller organizations or those with a strong central security function.\nEach business unit or region manages its own PQC transition within guardrails. Governance board sets boundaries but delegates execution. Common in regulated multi-nationals.\nCentral team owns algorithm policy and compliance mapping. Business units own migration execution and testing. Most common model for large enterprises migrating to\nGovernance without measurement is aspirational. Effective PQC programs track key performance indicators across technical progress, risk reduction, compliance posture, and organizational readiness.\nBuild a RACI matrix, generate PQC policies, and design a governance KPI dashboard.",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCGovernance",
+      "component": "Introduction",
+      "filePath": "PQCGovernance/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/pqc-governance"
+  },
+  {
+    "id": "mc-pqcgovernance-kpidashboardbuilder-0",
+    "source": "module-content",
+    "title": "PQC Governance & Policy — KPIDashboardBuilder",
+    "content": "Module: PQC Governance & Policy\nComponent: KPIDashboardBuilder\n\nPercentage of systems scanned for cryptographic usage (CBOM coverage).\nPercentage of quantum-vulnerable algorithms replaced with PQC or hybrid alternatives.\nPQC-ready vendors as a percentage of total products (${execData.pqcReadyCount}/${execData.totalProducts} from catalog).\nPercentage of identified compliance gaps addressed (FIPS, CMMC, ANSSI, BSI).\nPercentage of relevant staff who have completed PQC awareness and technical training.\nPercentage of allocated PQC migration budget spent on plan (healthy range: 70-90%).",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCGovernance",
+      "component": "KPIDashboardBuilder",
+      "filePath": "PQCGovernance/components/KPIDashboardBuilder.tsx"
+    },
+    "deepLink": "/learn/pqc-governance"
+  },
+  {
+    "id": "mc-pqcgovernance-policytemplategenerator-0",
+    "source": "module-content",
+    "title": "PQC Governance & Policy — PolicyTemplateGenerator",
+    "content": "Module: PQC Governance & Policy\nComponent: PolicyTemplateGenerator\n\nSelect a policy type, fill in the template fields, and export a customized PQC policy document. Framework options are auto-populated from your assessment data when available.\nCryptographic Algorithm Policy\nDefine approved and prohibited algorithms for the organization.\nEstablish key lifecycle rules, HSM requirements, and PQC parameters.\nSet cryptographic readiness criteria for vendor procurement.\nDefine deadlines and phases for the PQC transition.\nOrganization and policy metadata.\nApplicable Standards / Frameworks\nAlgorithms approved for use in production systems.\nApproved Key Encapsulation Mechanisms\nAlgorithms that must be migrated away from.\nRules for key generation, storage, rotation, and destruction.\nFIPS 140-3 Level 2+ validation\nVendor Cryptographic Requirements\nMinimum cryptographic capabilities vendors must demonstrate.\nPublished PQC migration roadmap\nFIPS 140-3 validated crypto module\nCrypto-agile architecture (algorithm swappable)\nPhase deadlines for the PQC transition.\nPhase 1: Inventory & Assessment Complete By\nPhase 2: Hybrid Deployment Complete By\nPhase 3: Full PQC Migration Complete By\nCriteria for determining migration order.\nCompliance obligations (FIPS, CMMC, etc.)\nLong-term data retention requirements",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCGovernance",
+      "component": "PolicyTemplateGenerator",
+      "filePath": "PQCGovernance/components/PolicyTemplateGenerator.tsx"
+    },
+    "deepLink": "/learn/pqc-governance?tab=workshop"
+  },
+  {
+    "id": "mc-pqcgovernance-index-0",
+    "source": "module-content",
+    "title": "PQC Governance & Policy — index",
+    "content": "Module: PQC Governance & Policy\nComponent: index\n\nWork through these real-world governance scenarios. Each exercise presents a situation you're likely to encounter when establishing PQC governance in an enterprise.\nEstablish governance frameworks, define roles, and create policies that guide your organization's PQC transition.\nDefine roles and responsibilities for your PQC migration program.\nGenerate PQC policy templates customized to your organization.\nDesign a governance KPI dashboard to track your PQC migration progress.\n1. Centralized vs Federated Governance",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCGovernance",
+      "component": "index",
+      "filePath": "PQCGovernance/index.tsx"
+    },
+    "deepLink": "/learn/pqc-governance"
+  },
+  {
+    "id": "mc-pqcriskmanagement-crqcscenarioplanner-0",
+    "source": "module-content",
+    "title": "PQC Risk Management — CRQCScenarioPlanner",
+    "content": "Module: PQC Risk Management\nComponent: CRQCScenarioPlanner\n\nAdjust the slider to model when a cryptographically relevant quantum computer might arrive. See the cascading impacts on algorithms, compliance, and data exposure.\nData encrypted today with quantum-vulnerable algorithms can be stored by adversaries and decrypted when a CRQC arrives. The table below shows exposure for different data retention periods.",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCRiskManagement",
+      "component": "CRQCScenarioPlanner",
+      "filePath": "PQCRiskManagement/components/CRQCScenarioPlanner.tsx"
+    },
+    "deepLink": "/learn/pqc-risk-management"
+  },
+  {
+    "id": "mc-pqcriskmanagement-introduction-0",
+    "source": "module-content",
+    "title": "PQC Risk Management — Introduction",
+    "content": "Module: PQC Risk Management\nComponent: Introduction\n\nwill break the asymmetric cryptography that protects virtually all digital communications. Risk management provides the framework for understanding\n“Organizations should not wait for quantum computers to become a reality before taking action. The time to start planning for the transition to post-quantum cryptography is now.”\n— NIST IR 8547, Transition to Post-Quantum Cryptography Standards\nDiscover every cryptographic asset in your organization and map quantum vulnerability exposure.\nAssign likelihood and impact scores to each risk, calculate composite risk levels, and estimate exposure windows.\nRank risks by severity, align with compliance deadlines, and allocate migration resources where they matter most.\nPQC risk management introduces several concepts specific to quantum-era threats. Understanding these is essential for building an effective risk register.\nkey exchange. Expert estimates for CRQC arrival range from 2030 to 2045+, with a median around 2035. Your organization's planning horizon should be based on conservative estimates.\nattacks involve adversaries capturing encrypted data today with the intent to decrypt it once quantum computers become available. Data with long confidentiality requirements (healthcare records, classified information, financial data) is already at risk even though quantum computers don't yet exist.",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCRiskManagement",
+      "component": "Introduction",
+      "filePath": "PQCRiskManagement/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/pqc-risk-management"
+  },
+  {
+    "id": "mc-pqcriskmanagement-introduction-1",
+    "source": "module-content",
+    "title": "PQC Risk Management — Introduction",
+    "content": "Module: PQC Risk Management\nComponent: Introduction\n\non a 1–5 scale for each dimension, producing a risk score from 1 to 25. Likelihood considers the probability that the asset's algorithm will be broken within its required protection lifetime. Impact considers the business, regulatory, and reputational consequences of a breach.\nThis workshop walks you through a structured three-step quantum risk management process:\nFor CISOs and security leaders, quantum risk management is not a future concern — it's a present-day requirement. Regulatory bodies worldwide are setting migration deadlines, and the HNDL threat means sensitive data is already at risk.\nModel CRQC scenarios, build a risk register, and visualize your exposure on a heatmap.",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCRiskManagement",
+      "component": "Introduction",
+      "filePath": "PQCRiskManagement/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/pqc-risk-management"
+  },
+  {
+    "id": "mc-pqcriskmanagement-riskheatmapgenerator-0",
+    "source": "module-content",
+    "title": "PQC Risk Management — RiskHeatmapGenerator",
+    "content": "Module: PQC Risk Management\nComponent: RiskHeatmapGenerator\n\nCells with numbers indicate how many risk entries fall in that position. Click any cell to see the details.\nAdd entries in the Risk Register Builder (Step 2) to populate this heatmap.\nNo risk entries to display. Go to Step 2 (Risk Register Builder) to add risk entries, then return here to visualize them on the heatmap.",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCRiskManagement",
+      "component": "RiskHeatmapGenerator",
+      "filePath": "PQCRiskManagement/components/RiskHeatmapGenerator.tsx"
+    },
+    "deepLink": "/learn/pqc-risk-management?tab=workshop"
+  },
+  {
+    "id": "mc-pqcriskmanagement-riskregisterbuilder-0",
+    "source": "module-content",
+    "title": "PQC Risk Management — RiskRegisterBuilder",
+    "content": "Module: PQC Risk Management\nComponent: RiskRegisterBuilder\n\ne.likelihood * e.impact >= 20).length const high = riskEntries.filter( (e) => e.likelihood * e.impact >= 12 && e.likelihood * e.impact\nHarvest Now, Decrypt Later (HNDL)\nShor\\u2019s Algorithm (Key Exchange/Signing)\nGrover\\u2019s Algorithm (Symmetric Weakening)\nSignature Forgery (Code Signing / Certs)\nIdentity Impersonation (TLS / Auth)\nSupply Chain Attack (Firmware / Updates)",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCRiskManagement",
+      "component": "RiskRegisterBuilder",
+      "filePath": "PQCRiskManagement/components/RiskRegisterBuilder.tsx"
+    },
+    "deepLink": "/learn/pqc-risk-management"
+  },
+  {
+    "id": "mc-pqcriskmanagement-index-0",
+    "source": "module-content",
+    "title": "PQC Risk Management — index",
+    "content": "Module: PQC Risk Management\nComponent: index\n\nApply what you learned in the workshop to these real-world scenarios. Use the Workshop tab tools to model your answers.\nUse the CRQC Scenario Planner (Step 1) and Risk Register Builder (Step 2) in the Workshop tab to model your response.\nIdentify, quantify, and prioritize quantum computing risks to your organization’s cryptographic infrastructure.\nModel when a cryptographically relevant quantum computer could arrive and its cascading impacts.\nBuild a quantum risk register for your organization\\u2019s cryptographic assets.\nVisualize your quantum risk exposure across likelihood and impact dimensions.\nScenario: Financial Services HNDL\nScenario: Healthcare Data at Risk\nScenario: Government Compliance Deadline",
+    "category": "learning",
+    "metadata": {
+      "module": "PQCRiskManagement",
+      "component": "index",
+      "filePath": "PQCRiskManagement/index.tsx"
+    },
+    "deepLink": "/learn/pqc-risk-management"
+  },
+  {
     "id": "mc-qkd-qkdexercises-0",
     "source": "module-content",
     "title": "Quantum Key Distribution — QKDExercises",
@@ -15694,7 +16221,7 @@
       "component": "DeploymentExplorer",
       "filePath": "QKD/workshop/DeploymentExplorer.tsx"
     },
-    "deepLink": "/learn/qkd"
+    "deepLink": "/learn/qkd?tab=workshop"
   },
   {
     "id": "mc-qkd-hsmkeyderivationdemo-0",
@@ -15707,7 +16234,7 @@
       "component": "HSMKeyDerivationDemo",
       "filePath": "QKD/workshop/HSMKeyDerivationDemo.tsx"
     },
-    "deepLink": "/learn/qkd"
+    "deepLink": "/learn/qkd?tab=workshop"
   },
   {
     "id": "mc-qkd-postprocessingdemo-0",
@@ -15720,7 +16247,7 @@
       "component": "PostProcessingDemo",
       "filePath": "QKD/workshop/PostProcessingDemo.tsx"
     },
-    "deepLink": "/learn/qkd"
+    "deepLink": "/learn/qkd?tab=workshop"
   },
   {
     "id": "mc-qkd-protocolintegrationdemo-0",
@@ -15733,7 +16260,7 @@
       "component": "ProtocolIntegrationDemo",
       "filePath": "QKD/workshop/ProtocolIntegrationDemo.tsx"
     },
-    "deepLink": "/learn/qkd"
+    "deepLink": "/learn/qkd?tab=workshop"
   },
   {
     "id": "mc-qkd-protocolintegrationdemo-1",
@@ -15746,7 +16273,7 @@
       "component": "ProtocolIntegrationDemo",
       "filePath": "QKD/workshop/ProtocolIntegrationDemo.tsx"
     },
-    "deepLink": "/learn/qkd"
+    "deepLink": "/learn/qkd?tab=workshop"
   },
   {
     "id": "mc-data-qkd-qkddeployments",
@@ -15850,7 +16377,7 @@
       "component": "HNFLTimeline",
       "filePath": "QuantumThreats/workshop/HNFLTimeline.tsx"
     },
-    "deepLink": "/learn/quantum-threats"
+    "deepLink": "/learn/quantum-threats?tab=workshop"
   },
   {
     "id": "mc-quantumthreats-securityleveldegradation-0",
@@ -15863,7 +16390,7 @@
       "component": "SecurityLevelDegradation",
       "filePath": "QuantumThreats/workshop/SecurityLevelDegradation.tsx"
     },
-    "deepLink": "/learn/quantum-threats"
+    "deepLink": "/learn/quantum-threats?tab=workshop"
   },
   {
     "id": "mc-data-quantumthreats-algorithmvulnerabilities",
@@ -15980,7 +16507,7 @@
       "component": "LMSKeyGenDemo",
       "filePath": "StatefulSignatures/workshop/LMSKeyGenDemo.tsx"
     },
-    "deepLink": "/learn/stateful-signatures"
+    "deepLink": "/learn/stateful-signatures?tab=workshop"
   },
   {
     "id": "mc-statefulsignatures-statemanagementvisualizer-0",
@@ -15993,7 +16520,7 @@
       "component": "StateManagementVisualizer",
       "filePath": "StatefulSignatures/workshop/StateManagementVisualizer.tsx"
     },
-    "deepLink": "/learn/stateful-signatures"
+    "deepLink": "/learn/stateful-signatures?tab=workshop"
   },
   {
     "id": "mc-statefulsignatures-xmsskeygendemo-0",
@@ -16006,7 +16533,7 @@
       "component": "XMSSKeyGenDemo",
       "filePath": "StatefulSignatures/workshop/XMSSKeyGenDemo.tsx"
     },
-    "deepLink": "/learn/stateful-signatures"
+    "deepLink": "/learn/stateful-signatures?tab=workshop"
   },
   {
     "id": "mc-data-statefulsignatures-statefulsigsconstants",
@@ -16110,7 +16637,7 @@
       "component": "TLSNegotiationResults",
       "filePath": "TLSBasics/components/TLSNegotiationResults.tsx"
     },
-    "deepLink": "/learn/tls-basics"
+    "deepLink": "/learn/tls-basics?tab=workshop"
   },
   {
     "id": "mc-tlsbasics-tlssummary-0",
@@ -16241,6 +16768,84 @@
       "filePath": "VPNSSHModule/data/sshConstants.ts"
     },
     "deepLink": "/learn/vpn-ssh-pqc"
+  },
+  {
+    "id": "mc-vendorrisk-contractclausegenerator-0",
+    "source": "module-content",
+    "title": "Vendor & Supply Chain Risk — ContractClauseGenerator",
+    "content": "Module: Vendor & Supply Chain Risk\nComponent: ContractClauseGenerator\n\nBuild PQC-ready contract clauses for vendor agreements. Fill in each section with your organization's requirements, then switch to\nmode to see the generated contract language. Export as Markdown for legal review.\nDefine when vendors must achieve post-quantum cryptographic readiness.\n2026 — Aggressive (CNSA 2.0 early)\n2030 — CNSA 2.0 final deadline\nML-KEM (FIPS 203) — Key Encapsulation\nML-DSA (FIPS 204) — Digital Signatures\nSLH-DSA (FIPS 205) — Stateless Hash Signatures\nLMS/HSS (SP 800-208) — Stateful Hash Signatures\nRequire FIPS 140-3 validated cryptographic modules for all vendor products.\nRequired FIPS 140-3 Security Level\nValidation Achievement Timeline\nValidated Module Name and Version\nApproved Algorithm List (CAVP)\nMandate delivery of Cryptographic Bill of Materials for supply chain visibility.\nCycloneDX 1.6+ (with crypto extension)\nVendor-specific (with mapping)\nAll cryptographic algorithms and key sizes\nTLS/SSH/IPsec protocol versions\nCertificate types and validity\nCryptographic library dependencies\nQuantum vulnerability assessment per algorithm\nRequire advance notice for any changes to cryptographic implementations.\nInteroperability testing with buyer systems\nFIPS revalidation if module changes\nReserve the right to audit vendor cryptographic practices.\nOn-demand (with reasonable notice)\nCryptographic algorithm inventory\nCrypto incident response procedures\nPQC migration roadmap progress\nPQC Vendor Contract Requirements — ${new Date().toLocaleDateString()}",
+    "category": "learning",
+    "metadata": {
+      "module": "VendorRisk",
+      "component": "ContractClauseGenerator",
+      "filePath": "VendorRisk/components/ContractClauseGenerator.tsx"
+    },
+    "deepLink": "/learn/vendor-risk?tab=workshop"
+  },
+  {
+    "id": "mc-vendorrisk-introduction-0",
+    "source": "module-content",
+    "title": "Vendor & Supply Chain Risk — Introduction",
+    "content": "Module: Vendor & Supply Chain Risk\nComponent: Introduction\n\nYour organization's quantum readiness is only as strong as your weakest vendor. Third-party software, hardware, and cloud services form the backbone of enterprise cryptographic infrastructure. If a critical vendor lacks\n“Supply chain risks are among the most significant challenges for PQC migration. Organizations must evaluate vendors' cryptographic capabilities and ensure contractual commitments to post-quantum readiness.”\ntargets. Every unpatched vendor extends your exposure window.\nA single vendor dependency on classical-only crypto can block your entire PQC migration program.\nA vendor scorecard provides a structured, repeatable method for evaluating how well-prepared each vendor is for the post-quantum transition. Scores are weighted across dimensions that map to real migration risk factors.\n(Cryptographic Bill of Materials) extends the SBOM concept to track every cryptographic algorithm, key, certificate, and protocol used by a software product. Demanding CBOMs from vendors is the single most impactful step toward supply chain quantum readiness.\nAlgorithm inventory, key sizes, protocol versions, certificate types, and quantum vulnerability status per component.\nCycloneDX 1.6+ includes a crypto extension for machine-readable CBOM data. OWASP maintains the specification.\nInclude CBOM delivery requirements in vendor contracts with defined frequency, format, and scope expectations.",
+    "category": "learning",
+    "metadata": {
+      "module": "VendorRisk",
+      "component": "Introduction",
+      "filePath": "VendorRisk/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/vendor-risk"
+  },
+  {
+    "id": "mc-vendorrisk-introduction-1",
+    "source": "module-content",
+    "title": "Vendor & Supply Chain Risk — Introduction",
+    "content": "Module: Vendor & Supply Chain Risk\nComponent: Introduction\n\nNot all “FIPS compliance” claims are equal. Understanding the tiers helps you assess real vendor cryptographic maturity.\nA structured approach to evaluating vendors ensures consistent, auditable assessments across your supply chain. Follow this framework when engaging vendors on PQC readiness.\nFIPS, CNSA 2.0, and international PQC compliance requirements\nArchitecture patterns for algorithm-agile vendor integration\nBuild vendor scorecards, generate contract clauses, and map supply chain risk.",
+    "category": "learning",
+    "metadata": {
+      "module": "VendorRisk",
+      "component": "Introduction",
+      "filePath": "VendorRisk/components/Introduction.tsx"
+    },
+    "deepLink": "/learn/vendor-risk"
+  },
+  {
+    "id": "mc-vendorrisk-supplychainriskmatrix-0",
+    "source": "module-content",
+    "title": "Vendor & Supply Chain Risk — SupplyChainRiskMatrix",
+    "content": "Module: Vendor & Supply Chain Risk\nComponent: SupplyChainRiskMatrix\n\n0 ? Math.round((pqcReadyCount / totalProducts) * 100) : 0 const overallFipsPct = totalProducts > 0 ? Math.round((fipsValidatedCount / totalProducts) * 100) : 0 return (\nThis matrix maps vendor product capabilities across your infrastructure layers using real data from the migration catalog. Cell colors reflect readiness levels — green indicates strong coverage, red highlights gaps requiring vendor engagement.\n${layer}: ${pqcReady} of ${total} products PQC-ready (${pqcPct}%)\n${layer}: ${fipsValid} of ${total} products FIPS validated (${fipsPct}%)\n${layer}: ${hybrid} of ${total} products support hybrid mode (${hybridPct}%)\n${layer}: ${total} total products tracked",
+    "category": "learning",
+    "metadata": {
+      "module": "VendorRisk",
+      "component": "SupplyChainRiskMatrix",
+      "filePath": "VendorRisk/components/SupplyChainRiskMatrix.tsx"
+    },
+    "deepLink": "/learn/vendor-risk"
+  },
+  {
+    "id": "mc-vendorrisk-vendorscorecardbuilder-0",
+    "source": "module-content",
+    "title": "Vendor & Supply Chain Risk — VendorScorecardBuilder",
+    "content": "Module: Vendor & Supply Chain Risk\nComponent: VendorScorecardBuilder\n\nproducts in the migration catalog with current FIPS validation. Adjust all scores using the sliders, then export the completed scorecard.\nVendor supports NIST-approved PQC algorithms\nCryptographic modules have current FIPS validation\nVendor has a published PQC migration timeline\nProducts support algorithm swapping without major rework\nVendor provides Software/Crypto Bill of Materials\nProducts support hybrid classical+PQC operation\nVendor PQC Readiness Scorecard (${overall}/100)",
+    "category": "learning",
+    "metadata": {
+      "module": "VendorRisk",
+      "component": "VendorScorecardBuilder",
+      "filePath": "VendorRisk/components/VendorScorecardBuilder.tsx"
+    },
+    "deepLink": "/learn/vendor-risk"
+  },
+  {
+    "id": "mc-vendorrisk-index-0",
+    "source": "module-content",
+    "title": "Vendor & Supply Chain Risk — index",
+    "content": "Module: Vendor & Supply Chain Risk\nComponent: index\n\nApply what you learned in the workshop to these real-world scenarios. Use the Workshop tab tools to model your answers.\nUse the Vendor Scorecard (Step 1), Contract Clause Generator (Step 2), and Supply Chain Matrix (Step 3) in the Workshop tab to model your response.\nAssess vendor PQC readiness, build scorecards, and manage supply chain cryptographic risk.\nScore your vendors on PQC readiness dimensions.\nGenerate PQC-ready contract clauses for vendor agreements.\nMap vendor dependencies across your infrastructure layers.\nScenario: Critical Vendor Without PQC Roadmap\nScenario: Supply Chain Crypto Dependency Mapping\nScenario: Multi-Vendor FIPS Validation Gap",
+    "category": "learning",
+    "metadata": {
+      "module": "VendorRisk",
+      "component": "index",
+      "filePath": "VendorRisk/index.tsx"
+    },
+    "deepLink": "/learn/vendor-risk"
   },
   {
     "id": "source-1",
@@ -19083,6 +19688,222 @@
     "content": "Quiz Category: Quantum Key Distribution\n\nQ: Which of the following QKD deployments are correctly matched with their country? (Select all that apply)\n  A) Beijing-Shanghai Backbone — China\n  B) BT/Toshiba Metro Network — United Kingdom\n  C) EuroQCI — Switzerland\n  D) SK Telecom QKD Network — South Korea\nAnswer: A|B|D\nExplanation: The Beijing-Shanghai backbone (2,000 km, 32 trusted nodes) is Chinese, the BT/Toshiba network is in the UK, and the SK Telecom QKD network is in South Korea. EuroQCI is a pan-EU initiative (all 27 member states), not specifically Swiss.\n\nQ: What are the key differences between QKD and PQC as quantum-resistant approaches? (Select all that apply)\n  A) QKD provides information-theoretic security; PQC provides computational security\n  B) QKD runs on standard networks; PQC requires dedicated quantum channels\n  C) QKD requires dedicated quantum channels; PQC runs on standard networks\n  D) Both QKD and PQC can provide digital signatures\nAnswer: A|C\nExplanation: QKD provides information-theoretic security but requires dedicated quantum hardware and channels. PQC provides computational security and runs on standard computers and networks. QKD addresses only key distribution, while PQC also provides digital signatures.",
     "category": "quiz",
     "metadata": { "quizCategory": "qkd", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-risk-management-0",
+    "source": "quiz",
+    "title": "Quiz: pqc-risk-management",
+    "content": "Quiz Category: pqc-risk-management\n\nQ: What does CRQC stand for in PQC risk management?\n  A) Cryptographic Risk Quantification Calculator\n  B) Cryptographically Relevant Quantum Computer\n  C) Compliance Regulatory Quantum Certification\n  D) Critical Response Quantum Contingency\nAnswer: B\nExplanation: A Cryptographically Relevant Quantum Computer (CRQC) is a quantum computer powerful enough to break current public-key cryptography using Shor's Algorithm. Planning for when a CRQC might arrive is central to PQC risk management.\n\nQ: Which risk factor makes data vulnerable even before a quantum computer exists?\n  A) Weak symmetric key lengths\n  B) Harvest Now Decrypt Later (HNDL) attacks\n  C) Poor password hygiene\n  D) Unpatched software vulnerabilities\nAnswer: B\nExplanation: HNDL (Harvest Now, Decrypt Later) attacks involve adversaries collecting encrypted data today, storing it, and decrypting it once quantum computers become available. Data with long-term sensitivity is at immediate risk even though CRQCs don't yet exist.\n\nQ: In a quantum risk register, what two dimensions are typically used to calculate risk scores?\n  A) Cost and timeline\n  B) Likelihood and impact\n  C) Compliance and governance\n  D) Vendor and technology\nAnswer: B\nExplanation: A standard risk register calculates risk scores by multiplying Likelihood (probability of the threat materializing) by Impact (severity of consequences). In PQC, likelihood depends on CRQC timeline estimates, while impact depends on data sensitivity and algorithm exposure.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-risk-management", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-risk-management-1",
+    "source": "quiz",
+    "title": "Quiz: pqc-risk-management",
+    "content": "Quiz Category: pqc-risk-management\n\nQ: True or False: Organizations should wait until a CRQC exists before beginning their PQC risk assessment.\nAnswer: FALSE\nExplanation: False. Due to HNDL threats, organizations must assess and begin mitigating quantum risks now. Data encrypted today with vulnerable algorithms could be stored by adversaries and decrypted later. Risk assessments should begin immediately to allow adequate migration time.\n\nQ: Which assets should be prioritized highest in a quantum risk assessment?\n  A) All systems equally regardless of sensitivity\n  B) Systems using symmetric encryption only\n  C) Long-lived secrets and systems using public-key cryptography for sensitive data\n  D) Only externally-facing web servers\nAnswer: C\nExplanation: Long-lived secrets (data that must remain confidential for years) protected by public-key cryptography are the highest priority because they are vulnerable to both current HNDL attacks and future CRQC decryption. Symmetric-only systems face reduced but not eliminated risk.\n\nQ: Which of the following are valid threat vectors in a PQC risk register? (Select all that apply)\n  A) HNDL — bulk data interception for future decryption\n  B) Brute-force attacks on AES-256\n  C) Forged digital signatures using quantum-broken algorithms\n  D) Quantum attacks on TLS handshakes\nAnswer: A|C|D\nExplanation: HNDL attacks, signature forgery, and TLS handshake attacks are all valid quantum threat vectors involving public-key cryptography. Brute-forcing AES-256 is not practical even with quantum computers (Grover's only halves the effective key length to 128 bits).",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-risk-management", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-risk-management-2",
+    "source": "quiz",
+    "title": "Quiz: pqc-risk-management",
+    "content": "Quiz Category: pqc-risk-management\n\nQ: What is the HNDL exposure window?\n  A) The time between algorithm selection and NIST standardization\n  B) The period during which intercepted data remains vulnerable before quantum decryption becomes possible\n  C) The window for applying security patches after a vulnerability disclosure\n  D) The compliance deadline minus the current date\nAnswer: B\nExplanation: The HNDL exposure window is the gap between when data is intercepted and when a CRQC can decrypt it. If your data must remain confidential for 15 years and a CRQC arrives in 10 years, your HNDL window has already opened — meaning data intercepted today is at risk.\n\nQ: What is the recommended first step in a PQC risk management program?\n  A) Deploy PQC algorithms to production immediately\n  B) Conduct a cryptographic inventory of all systems and algorithms\n  C) Wait for all vendors to announce PQC support\n  D) Hire a quantum computing team\nAnswer: B\nExplanation: A cryptographic inventory is the essential first step — you cannot assess or mitigate risks you haven't identified. This includes cataloging all cryptographic algorithms, key lengths, certificate lifecycles, and protocol dependencies across the organization.\n\nQ: True or False: A risk heatmap for PQC should only consider technical impact and ignore business and regulatory consequences.\nAnswer: FALSE\nExplanation: False. A comprehensive PQC risk heatmap must consider multiple impact dimensions: technical (system compromise), business (revenue loss, reputational damage), regulatory (compliance penalties, audit failures), and operational (service disruption, recovery costs).",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-risk-management", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-risk-management-3",
+    "source": "quiz",
+    "title": "Quiz: pqc-risk-management",
+    "content": "Quiz Category: pqc-risk-management\n\nQ: When estimating CRQC timeline scenarios for risk planning, what is the generally recommended approach?\n  A) Use only the most optimistic estimate to create urgency\n  B) Use only the most pessimistic estimate to avoid unnecessary spending\n  C) Model multiple scenarios (optimistic, moderate, pessimistic) and plan for the moderate case\n  D) Ignore timeline estimates and focus only on compliance deadlines\nAnswer: C\nExplanation: Best practice is scenario-based planning with multiple CRQC timelines. An optimistic case (e.g., 2030) reveals urgent risks, a moderate case (e.g., 2035) guides primary planning, and a pessimistic case (e.g., 2045) provides a lower bound. This approach balances urgency with resource allocation.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-risk-management", "questionCount": "1" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-business-case-0",
+    "source": "quiz",
+    "title": "Quiz: pqc-business-case",
+    "content": "Quiz Category: pqc-business-case\n\nQ: What is the primary financial justification for PQC migration?\n  A) Reducing current IT headcount\n  B) Avoiding catastrophic future breach costs and compliance penalties\n  C) Eliminating the need for encryption entirely\n  D) Reducing cloud computing costs\nAnswer: B\nExplanation: The core business case for PQC migration centers on risk avoidance: preventing potentially devastating quantum-enabled breaches and associated costs (data loss, regulatory fines, reputational damage) that would far exceed the migration investment.\n\nQ: Which cost category typically represents the largest portion of a PQC migration budget?\n  A) Hardware upgrades for quantum computers\n  B) Software and infrastructure updates across the technology stack\n  C) Regulatory filing fees\n  D) Training materials and documentation\nAnswer: B\nExplanation: Software and infrastructure updates — including library upgrades, protocol changes, certificate system modifications, and testing — represent the bulk of migration costs. PQC runs on classical hardware, so quantum computer purchases are not needed.\n\nQ: True or False: A quantum-enabled data breach is expected to cost significantly more than a classical breach of similar scope.\nAnswer: TRUE\nExplanation: True. Quantum-enabled breaches can decrypt years of previously intercepted data simultaneously (HNDL), expose far more records, face heightened regulatory scrutiny, and cause greater reputational damage — all multiplying costs well beyond classical breach scenarios.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-business-case", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-business-case-1",
+    "source": "quiz",
+    "title": "Quiz: pqc-business-case",
+    "content": "Quiz Category: pqc-business-case\n\nQ: What metric best demonstrates PQC migration ROI to a board of directors?\n  A) Number of algorithms replaced\n  B) Risk-adjusted cost avoidance compared to migration investment\n  C) Number of FIPS certifications obtained\n  D) Lines of code changed\nAnswer: B\nExplanation: Boards understand risk-adjusted financial metrics. Presenting the total migration investment against the expected cost of a quantum-enabled breach (weighted by probability) provides a clear ROI that resonates with business decision-makers.\n\nQ: Which of the following should be included in a PQC business case cost model? (Select all that apply)\n  A) Cryptographic library and infrastructure upgrade costs\n  B) Staff training and skill development\n  C) Cost of quantum computer procurement\n  D) Compliance penalty avoidance estimates\nAnswer: A|B|D\nExplanation: A complete PQC business case includes infrastructure upgrade costs, training investments, and compliance penalty avoidance. Quantum computer procurement is NOT a cost — PQC algorithms run on classical hardware. This is a common misconception to address with executives.\n\nQ: What does TCO stand for in PQC migration planning?\n  A) Total Crypto Operations\n  B) Total Cost of Ownership\n  C) Technical Change Order\n  D) Transition Compliance Objective\nAnswer: B\nExplanation: Total Cost of Ownership (TCO) encompasses all direct and indirect costs of PQC migration over its full lifecycle: initial implementation, testing, deployment, training, ongoing maintenance, and operational overhead changes.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-business-case", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-business-case-2",
+    "source": "quiz",
+    "title": "Quiz: pqc-business-case",
+    "content": "Quiz Category: pqc-business-case\n\nQ: When presenting a PQC business case to the board, which communication approach is most effective?\n  A) Lead with detailed algorithm specifications and NIST standard numbers\n  B) Frame the discussion around business risk, financial impact, and competitive positioning\n  C) Present only the technical architecture changes needed\n  D) Focus exclusively on compliance deadlines without mentioning costs\nAnswer: B\nExplanation: Board members respond to business framing: risk quantification, financial impact modeling, competitive implications, and strategic positioning. Technical details should be available as backup but shouldn't lead the narrative. Connect PQC to outcomes the board already cares about.\n\nQ: True or False: PQC migration can be positioned as a competitive advantage, not just a cost center.\nAnswer: TRUE\nExplanation: True. Early PQC adoption can differentiate an organization: winning contracts requiring quantum-ready security, building customer trust, meeting compliance ahead of deadlines, and reducing future emergency migration costs that competitors will face.\n\nQ: What is the payback period concept in PQC migration ROI calculations?\n  A) The time until quantum computers become commercially available\n  B) The time until the migration investment is recovered through avoided costs and benefits\n  C) The NIST standardization timeline\n  D) The time between starting and completing the migration\nAnswer: B\nExplanation: Payback period measures how long until cumulative benefits (breach cost avoidance, compliance penalty avoidance, operational savings, competitive wins) exceed the total migration investment. Shorter payback periods indicate stronger business cases.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-business-case", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-business-case-3",
+    "source": "quiz",
+    "title": "Quiz: pqc-business-case",
+    "content": "Quiz Category: pqc-business-case\n\nQ: Which factor most increases the urgency of the PQC business case for a specific organization?\n  A) Having a large IT budget\n  B) Operating in a heavily regulated industry with long data retention requirements\n  C) Using only open-source software\n  D) Having completed a recent IT modernization\nAnswer: B\nExplanation: Heavily regulated industries (finance, healthcare, government) with long data retention face the highest urgency: their data is most valuable to adversaries, regulatory penalties for breaches are severe, and long retention periods maximize HNDL exposure.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-business-case", "questionCount": "1" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-governance-0",
+    "source": "quiz",
+    "title": "Quiz: pqc-governance",
+    "content": "Quiz Category: pqc-governance\n\nQ: What does RACI stand for in governance frameworks?\n  A) Risk Assessment and Compliance Index\n  B) Responsible, Accountable, Consulted, Informed\n  C) Regulatory Audit and Certification Inventory\n  D) Resource Allocation and Control Integration\nAnswer: B\nExplanation: RACI is a responsibility assignment matrix: Responsible (does the work), Accountable (owns the outcome), Consulted (provides input before decisions), Informed (kept updated after decisions). It ensures clear ownership across PQC migration activities.\n\nQ: In a PQC RACI matrix, who should typically be Accountable for the overall migration program?\n  A) The development team lead\n  B) The CISO or CTO\n  C) The compliance officer\n  D) The procurement manager\nAnswer: B\nExplanation: The CISO or CTO should be Accountable for the overall PQC migration because it spans security strategy, technology architecture, and organizational change. While many roles are Responsible for specific tasks, single accountability at the C-level ensures executive ownership and resource allocation.\n\nQ: True or False: A PQC cryptographic policy should specify which algorithms are approved and which are prohibited.\nAnswer: TRUE\nExplanation: True. An effective PQC cryptographic policy must explicitly list approved PQC algorithms (e.g., ML-KEM-768, ML-DSA-65) and prohibited classical algorithms (e.g., RSA < 3072 bits, ECDSA without hybrid mode), along with transition timelines and exception processes.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-governance", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-governance-1",
+    "source": "quiz",
+    "title": "Quiz: pqc-governance",
+    "content": "Quiz Category: pqc-governance\n\nQ: What is the primary benefit of centralized PQC governance compared to a distributed approach?\n  A) It eliminates the need for technical expertise in business units\n  B) It ensures consistent standards, policies, and timelines across the organization\n  C) It reduces the total cost of migration by half\n  D) It removes the need for a cryptographic inventory\nAnswer: B\nExplanation: Centralized governance ensures consistency: unified algorithm policies, coordinated timelines, standard testing procedures, and consolidated vendor management. Distributed governance risks fragmented approaches, incompatible implementations, and gaps in coverage.\n\nQ: Which elements should a PQC governance policy include? (Select all that apply)\n  A) Approved and prohibited algorithm lists\n  B) Exception and waiver processes\n  C) Quantum computer purchase specifications\n  D) Migration timeline with milestones\nAnswer: A|B|D\nExplanation: A PQC governance policy should include approved/prohibited algorithms, exception processes for systems that cannot immediately migrate, and a migration timeline. Quantum computer purchases are irrelevant — PQC runs on classical hardware.\n\nQ: What governance model best supports PQC migration in a large enterprise?\n  A) Fully centralized with no local autonomy\n  B) Fully distributed with no central coordination\n  C) Federated model with central policies and decentralized execution\n  D) Outsourced entirely to a managed security provider\nAnswer: C\nExplanation: A federated governance model provides the best balance: central teams set policies, standards, and timelines while business units and development teams execute within their domains. This respects organizational complexity while maintaining coherent standards.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-governance", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-governance-2",
+    "source": "quiz",
+    "title": "Quiz: pqc-governance",
+    "content": "Quiz Category: pqc-governance\n\nQ: How often should PQC governance KPIs be reported to executive leadership?\n  A) Only when migration is complete\n  B) Annually at budget planning\n  C) Monthly or quarterly with dashboard-style metrics\n  D) Only when problems arise\nAnswer: C\nExplanation: Regular monthly or quarterly KPI reporting keeps leadership informed of migration progress, surfaces blockers early, and maintains executive attention. Dashboard-style reporting with key metrics (% migrated, compliance gaps, vendor readiness, budget utilization) is most effective.\n\nQ: True or False: PQC governance should include a formal exception process for systems that cannot immediately migrate to PQC algorithms.\nAnswer: TRUE\nExplanation: True. Not all systems can migrate immediately — legacy systems, vendor dependencies, and contractual constraints create legitimate exceptions. A formal process ensures exceptions are documented, risk-accepted by appropriate authority, time-limited, and tracked for eventual resolution.\n\nQ: Which KPI is most critical for tracking PQC governance effectiveness?\n  A) Number of meetings held by the governance committee\n  B) Percentage of cryptographic assets migrated to PQC-approved algorithms\n  C) Total governance budget spent\n  D) Number of policy documents published\nAnswer: B\nExplanation: The percentage of cryptographic assets migrated to PQC-approved algorithms is the most meaningful outcome KPI — it directly measures progress toward the governance objective. Process metrics (meetings, documents, budget) are useful but don't capture actual migration progress.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-governance", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-pqc-governance-3",
+    "source": "quiz",
+    "title": "Quiz: pqc-governance",
+    "content": "Quiz Category: pqc-governance\n\nQ: What is the purpose of a cryptographic policy in PQC governance?\n  A) To list all employees who work on encryption\n  B) To define which cryptographic algorithms and practices are approved for use\n  C) To document the organization's quantum computing research\n  D) To track vendor pricing for security products\nAnswer: B\nExplanation: A cryptographic policy establishes the organization's approved algorithms, key lengths, protocols, and practices. In the PQC context, it defines the transition path from classical to quantum-resistant cryptography and sets compliance expectations.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "pqc-governance", "questionCount": "1" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-compliance-strategy-0",
+    "source": "quiz",
+    "title": "Quiz: compliance-strategy",
+    "content": "Quiz Category: compliance-strategy\n\nQ: Which US government directive requires transition to PQC algorithms for national security systems?\n  A) GDPR Article 32\n  B) CNSA 2.0 (Commercial National Security Algorithm Suite)\n  C) PCI DSS 4.0\n  D) SOC 2 Type II\nAnswer: B\nExplanation: CNSA 2.0, published by NSA, mandates the transition to quantum-resistant algorithms for all National Security Systems (NSS). It sets specific timelines: software/firmware using ML-KEM by 2025 and full transition to PQC by 2033.\n\nQ: What is the primary challenge of multi-jurisdiction PQC compliance?\n  A) Different countries use different programming languages\n  B) Varying timelines, approved algorithms, and requirements across jurisdictions\n  C) Only one country has PQC regulations\n  D) All jurisdictions have identical requirements\nAnswer: B\nExplanation: Multi-jurisdiction compliance is challenging because different countries and frameworks have varying timelines (CNSA 2.0 vs ANSSI vs BSI), different approved algorithm lists, and sometimes conflicting requirements. Organizations operating globally must navigate these overlaps and gaps.\n\nQ: True or False: Organizations in the financial sector face PQC compliance pressure from multiple overlapping frameworks.\nAnswer: TRUE\nExplanation: True. Financial institutions face PQC requirements from CNSA 2.0 (for government-adjacent operations), PCI DSS (payment security), SOX (financial reporting), industry-specific regulators (OCC, ECB), and potentially DORA (EU). Managing these overlapping requirements requires a coordinated compliance strategy.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "compliance-strategy", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-compliance-strategy-1",
+    "source": "quiz",
+    "title": "Quiz: compliance-strategy",
+    "content": "Quiz Category: compliance-strategy\n\nQ: What is a compliance-first approach to PQC migration?\n  A) Ignoring compliance and focusing only on technical security\n  B) Prioritizing migration activities based on regulatory deadlines and framework requirements\n  C) Waiting until regulators issue fines before taking action\n  D) Delegating all compliance work to external auditors\nAnswer: B\nExplanation: A compliance-first approach uses regulatory deadlines as the primary driver for migration prioritization. Systems subject to the earliest or most stringent requirements are migrated first. This contrasts with a risk-first approach that prioritizes based on threat exposure.\n\nQ: Which elements are essential for PQC audit readiness? (Select all that apply)\n  A) Complete cryptographic inventory documentation\n  B) Evidence of algorithm migration testing\n  C) Quantum computer performance benchmarks\n  D) Documented exception and waiver processes\nAnswer: A|B|D\nExplanation: Audit readiness requires documented proof of progress: a comprehensive cryptographic inventory, evidence that PQC algorithms have been tested and validated, and documented exception processes for systems not yet migrated. Quantum computer benchmarks are irrelevant to PQC compliance.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "compliance-strategy", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-compliance-strategy-2",
+    "source": "quiz",
+    "title": "Quiz: compliance-strategy",
+    "content": "Quiz Category: compliance-strategy\n\nQ: How do CNSA 2.0 and ANSSI recommendations differ in their approach to PQC transition?\n  A) CNSA 2.0 requires PQC only; ANSSI requires hybrid (classical + PQC) during transition\n  B) They are identical in all requirements\n  C) ANSSI does not address PQC at all\n  D) CNSA 2.0 applies only to civilian systems\nAnswer: A\nExplanation: CNSA 2.0 (NSA) mandates direct transition to PQC algorithms for national security systems. ANSSI (France) recommends a phased hybrid approach where classical and PQC algorithms are combined during the transition period. This difference can create compliance challenges for multinational organizations.\n\nQ: What is a compliance gap analysis in PQC migration?\n  A) Measuring the speed difference between classical and PQC algorithms\n  B) Identifying where current cryptographic practices fall short of regulatory requirements\n  C) Counting the number of compliance officers in the organization\n  D) Comparing vendor prices for compliance tools\nAnswer: B\nExplanation: A compliance gap analysis maps current cryptographic practices against each applicable framework's requirements, identifying where the organization falls short. This drives prioritization: the largest gaps in the most critical frameworks should be addressed first.\n\nQ: True or False: FIPS 140-3 validation is a binary requirement — a product either has it or doesn't.\nAnswer: FALSE\nExplanation: False. FIPS 140-3 validation exists on a spectrum: full CMVP validation (gold standard), modules in process (submitted but not yet validated), FIPS-mode operation (uses validated algorithms but module not separately validated), and partial compliance (FedRAMP, WebTrust). Different compliance frameworks accept different levels.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "compliance-strategy", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-compliance-strategy-3",
+    "source": "quiz",
+    "title": "Quiz: compliance-strategy",
+    "content": "Quiz Category: compliance-strategy\n\nQ: When building a PQC compliance timeline, what is the most critical risk to identify?\n  A) Budget overruns in the compliance department\n  B) Framework deadlines that fall before projected migration completion dates\n  C) The number of compliance consultants hired\n  D) Whether competitors have started their migration\nAnswer: B\nExplanation: The most critical risk is a timing gap: when a compliance deadline arrives before migration is complete, creating regulatory exposure. A compliance timeline must overlay framework deadlines with realistic migration milestones to identify and address these gaps proactively.\n\nQ: What role does evidence collection play in PQC compliance?\n  A) It is only needed if the organization is audited\n  B) It provides documented proof of compliance activities for regulators and auditors\n  C) It replaces the need for actual PQC migration\n  D) It is only relevant for government organizations\nAnswer: B\nExplanation: Evidence collection — test results, migration logs, policy documents, inventory records — must be ongoing and systematic. Regulators and auditors require documented proof that the organization is actively and effectively transitioning to PQC, not just planning to do so.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "compliance-strategy", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-migration-program-0",
+    "source": "quiz",
+    "title": "Quiz: migration-program",
+    "content": "Quiz Category: migration-program\n\nQ: How many phases does the NIST IR 8547 PQC migration framework define?\n  A) 3 phases\n  B) 5 phases\n  C) 7 phases\n  D) 10 phases\nAnswer: C\nExplanation: NIST IR 8547 defines a 7-phase migration framework: Discovery, Inventory, Prioritization, Planning, Pilot/Testing, Deployment/Migration, and Validation/Monitoring. Each phase has specific activities, deliverables, and success criteria.\n\nQ: What is the primary risk of skipping the pilot/testing phase in PQC migration?\n  A) Increased vendor costs\n  B) Performance regressions and interoperability failures in production\n  C) Delayed compliance reporting\n  D) Higher training costs\nAnswer: B\nExplanation: PQC algorithms have different performance characteristics (larger keys, different latency profiles) than classical algorithms. Skipping piloting can lead to production failures: broken TLS handshakes, certificate chain issues, performance degradation, and interoperability problems with partners.\n\nQ: True or False: PQC migration is primarily a technology project that doesn't require organizational change management.\nAnswer: FALSE\nExplanation: False. PQC migration requires significant organizational change: cross-functional coordination, updated policies, new skills, vendor negotiations, stakeholder communication, and budget allocation. Technical implementation is only one dimension of a successful migration program.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "migration-program", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-migration-program-1",
+    "source": "quiz",
+    "title": "Quiz: migration-program",
+    "content": "Quiz Category: migration-program\n\nQ: What is the critical path in a PQC migration program?\n  A) The sequence of activities that determines the minimum migration timeline\n  B) The most expensive activities in the budget\n  C) The path data takes through the network\n  D) The approval chain for policy documents\nAnswer: A\nExplanation: The critical path is the longest sequence of dependent activities that determines the earliest possible completion date. In PQC migration, it often runs through: vendor readiness → library updates → application integration → testing → deployment. Delays on the critical path directly delay the program.\n\nQ: Which stakeholders should receive regular PQC migration status updates? (Select all that apply)\n  A) Board of Directors / Executive Committee\n  B) Technical development teams\n  C) External regulatory bodies\n  D) Vendor and partner organizations\nAnswer: A|B|D\nExplanation: Internal stakeholders (board, technical teams) and external partners (vendors) need regular updates at appropriate levels of detail. Regulatory bodies typically receive updates during formal audits or scheduled reporting periods, not routine status updates.\n\nQ: What is a migration roadmap in PQC program management?\n  A) A geographic map of data center locations\n  B) A timeline showing milestones, dependencies, and deadlines for the PQC transition\n  C) A list of all quantum computing research papers\n  D) A vendor product catalog\nAnswer: B\nExplanation: A migration roadmap is a visual timeline showing key milestones, dependencies, resource needs, and regulatory deadlines. It helps stakeholders understand the overall plan, identify conflicts, and track progress against both internal goals and external deadlines.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "migration-program", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-migration-program-2",
+    "source": "quiz",
+    "title": "Quiz: migration-program",
+    "content": "Quiz Category: migration-program\n\nQ: What is the recommended approach for resource estimation in PQC migration programs?\n  A) Estimate once at the beginning and never revise\n  B) Use phased estimation with increasing precision as the program progresses\n  C) Only estimate costs for the final deployment phase\n  D) Base estimates solely on vendor quotes\nAnswer: B\nExplanation: Phased estimation (rolling-wave planning) starts with rough order-of-magnitude estimates for the full program and refines them as each phase completes and more is known. Early phases like discovery and inventory inform more accurate estimates for later phases like deployment.\n\nQ: True or False: A phased PQC migration approach (prioritizing high-risk systems first) is generally preferred over a big-bang migration.\nAnswer: TRUE\nExplanation: True. Phased migration reduces risk by allowing the organization to learn from early deployments, catch integration issues before they affect critical systems, and demonstrate value incrementally. Big-bang approaches concentrate risk and provide no opportunity for course correction.\n\nQ: What is the biggest risk to PQC migration program timelines?\n  A) Insufficient documentation\n  B) Vendor dependency — waiting for third-party software and hardware to support PQC\n  C) Too many project meetings\n  D) Excessive testing\nAnswer: B\nExplanation: Vendor dependency is the most common schedule risk: organizations cannot migrate systems until their vendors provide PQC-compatible updates. This is especially impactful for COTS (commercial off-the-shelf) products, HSMs, and cloud services. Early vendor engagement and contractual requirements are critical mitigations.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "migration-program", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-migration-program-3",
+    "source": "quiz",
+    "title": "Quiz: migration-program",
+    "content": "Quiz Category: migration-program\n\nQ: What communication approach works best for different stakeholder groups in PQC migration?\n  A) The same technical briefing for all audiences\n  B) Tailored messages: business impact for executives, technical details for engineers, timeline impacts for partners\n  C) Only communicate when milestones are completed\n  D) Communicate exclusively through email\nAnswer: B\nExplanation: Effective stakeholder communication requires tailored messaging: executives need business risk and financial framing, technical teams need architecture and implementation details, and partners need timeline and interoperability information. One-size-fits-all communication fails to engage any audience effectively.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "migration-program", "questionCount": "1" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-vendor-risk-0",
+    "source": "quiz",
+    "title": "Quiz: vendor-risk",
+    "content": "Quiz Category: vendor-risk\n\nQ: What is a vendor PQC readiness scorecard?\n  A) A quantum computing benchmark test for vendor hardware\n  B) A structured assessment of a vendor's preparedness for PQC transition\n  C) A vendor's financial credit rating\n  D) A scorecard for quantum algorithm performance\nAnswer: B\nExplanation: A vendor PQC readiness scorecard evaluates key dimensions: PQC algorithm support, FIPS validation status, published roadmap, crypto agility, SBOM/CBOM delivery, and hybrid mode support. It provides a standardized way to compare vendors and identify risk.\n\nQ: What does CBOM stand for and why is it important for PQC vendor assessment?\n  A) Certified Business Operations Manual — tracks vendor certifications\n  B) Cryptographic Bill of Materials — inventories all cryptographic components in a product\n  C) Corporate Budget Operations Model — tracks vendor spending\n  D) Compliance Board Oversight Matrix — documents governance roles\nAnswer: B\nExplanation: A Cryptographic Bill of Materials (CBOM) lists all cryptographic algorithms, libraries, and protocols used in a product. It is essential for PQC assessment because it reveals which vendor components use quantum-vulnerable algorithms and need migration.\n\nQ: True or False: If a vendor has FIPS 140-3 validation for their current products, they automatically support PQC algorithms.\nAnswer: FALSE\nExplanation: False. FIPS 140-3 validation certifies that a cryptographic module meets security requirements for its current algorithms. It does not guarantee PQC support. Vendors must separately implement, test, and obtain validation for PQC algorithms like ML-KEM and ML-DSA.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "vendor-risk", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-vendor-risk-1",
+    "source": "quiz",
+    "title": "Quiz: vendor-risk",
+    "content": "Quiz Category: vendor-risk\n\nQ: Which contract clauses should be included in vendor agreements regarding PQC? (Select all that apply)\n  A) PQC migration timeline commitments\n  B) CBOM delivery requirements\n  C) Exclusive use of vendor's quantum computers\n  D) Crypto change notification obligations\nAnswer: A|B|D\nExplanation: Key PQC contract clauses include: migration timeline commitments (when PQC support will be available), CBOM delivery (for visibility into cryptographic components), and crypto change notifications (advance notice of algorithm changes). Quantum computer use is irrelevant to PQC.\n\nQ: What is the primary supply chain risk in the PQC transition?\n  A) Vendors raising prices for PQC products\n  B) Critical infrastructure depending on vendors who lack PQC migration plans\n  C) Too many vendors offering PQC solutions\n  D) Open-source libraries being too secure\nAnswer: B\nExplanation: The primary supply chain risk is dependency on vendors without PQC roadmaps — if critical infrastructure relies on products that won't support PQC in time, the organization cannot complete its migration regardless of internal readiness.\n\nQ: How should a vendor's FIPS validation status be categorized for PQC risk assessment?\n  A) Binary: validated or not validated\n  B) Three tiers: Validated (CMVP), Partial (FIPS-mode/FedRAMP/WebTrust), No validation\n  C) Only the validation certificate number matters\n  D) FIPS validation is irrelevant to PQC\nAnswer: B\nExplanation: A three-tier classification captures the nuance: full CMVP validation (highest assurance), partial compliance (FIPS-mode operation, FedRAMP certification, WebTrust — meaningful but not equivalent), and no validation. Different compliance frameworks require different minimum tiers.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "vendor-risk", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-vendor-risk-2",
+    "source": "quiz",
+    "title": "Quiz: vendor-risk",
+    "content": "Quiz Category: vendor-risk\n\nQ: What is crypto agility in the context of vendor assessment?\n  A) How fast a vendor's encryption runs\n  B) A vendor's ability to swap cryptographic algorithms in their products without major rework\n  C) The agility of the vendor's sales team\n  D) How quickly a vendor responds to support tickets\nAnswer: B\nExplanation: Crypto agility in vendor products means the ability to update or replace cryptographic algorithms through configuration or minor updates rather than major product overhauls. Vendors with high crypto agility can adopt PQC algorithms faster with less disruption.\n\nQ: True or False: Organizations should assess their entire vendor ecosystem for PQC readiness, not just security product vendors.\nAnswer: TRUE\nExplanation: True. Cryptography is embedded throughout the technology stack — databases, messaging systems, cloud services, IoT devices, and more. Any vendor product that uses public-key cryptography for encryption, authentication, or integrity needs PQC assessment.\n\nQ: What should an organization do if a critical vendor has no published PQC roadmap?\n  A) Immediately terminate the vendor relationship\n  B) Ignore the risk since the vendor will eventually update\n  C) Engage the vendor formally, set contractual requirements, and develop contingency plans\n  D) Wait for industry analysts to evaluate the vendor\nAnswer: C\nExplanation: The best approach combines proactive engagement (request formal PQC roadmap, include requirements in contract renewals), risk mitigation (develop contingency plans, evaluate alternative vendors), and monitoring (track vendor progress). Abrupt termination or passive waiting both create unnecessary risk.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "vendor-risk", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-vendor-risk-3",
+    "source": "quiz",
+    "title": "Quiz: vendor-risk",
+    "content": "Quiz Category: vendor-risk\n\nQ: What is a Software Bill of Materials (SBOM) and why is it relevant to PQC vendor risk?\n  A) A vendor's revenue report\n  B) An inventory of all software components and dependencies in a product\n  C) A benchmark of software performance metrics\n  D) A document listing the vendor's employees\nAnswer: B\nExplanation: An SBOM lists all software components, libraries, and dependencies in a product. For PQC, it helps identify which cryptographic libraries are in use, their algorithm support, and whether they include quantum-vulnerable implementations that need migration.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "vendor-risk", "questionCount": "1" },
     "deepLink": "/learn/quiz"
   },
   {

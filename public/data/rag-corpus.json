@@ -13684,19 +13684,6 @@
     "deepLink": "/learn/api-security-jwt"
   },
   {
-    "id": "mc-apisecurityjwt-jweencryption-1",
-    "source": "module-content",
-    "title": "API Security & JWT — JWEEncryption",
-    "content": "Module: API Security & JWT\nComponent: JWEEncryption\n\nEncrypted Key (ML-KEM ct, ${mlKem768.ctBytes} B)",
-    "category": "learning",
-    "metadata": {
-      "module": "APISecurityJWT",
-      "component": "JWEEncryption",
-      "filePath": "APISecurityJWT/workshop/JWEEncryption.tsx"
-    },
-    "deepLink": "/learn/api-security-jwt"
-  },
-  {
     "id": "mc-apisecurityjwt-jwtinspector-0",
     "source": "module-content",
     "title": "API Security & JWT — JWTInspector",
@@ -13831,19 +13818,6 @@
     "source": "module-content",
     "title": "Code Signing — CodeSigningIntroduction",
     "content": "Module: Code Signing\nComponent: CodeSigningIntroduction\n\nand extends through bootloaders, the OS kernel, and runtime firmware. Each link in the chain verifies a cryptographic signature before passing execution to the next stage. If any signature fails, the boot process halts.\nFirmware signing is a critical PQC migration target because firmware keys have 10–20 year lifetimes, and devices deployed today will still be in the field when cryptographically relevant quantum computers arrive. An attacker who harvests firmware update signatures today could forge malicious firmware updates in the future.\nCompact signatures (2.5 KB) and tiny public keys (56 bytes) — ideal for hardware-constrained boot ROM. Fast verification (~0.1 ms). CNSA 2.0 compliant. Security derives solely from hash functions (minimal cryptographic assumptions). Trade-off: requires a monotonic state counter managed in an HSM or TPM.\nFully stateless — no counter, no state management burden. Simpler operations for environments where maintaining state is impractical (distributed build systems, CI/CD pipelines). Trade-off: larger signatures (3.3 KB) and public keys (1.9 KB). Not mandated by CNSA 2.0 for firmware signing.\nFor a deep dive into LMS/XMSS parameter selection, Merkle tree mechanics, and the state management challenge, see the\nBrowse FIPS 204 (ML-DSA), FIPS 205 (SLH-DSA), and signing standards\nLMS/XMSS deep dive, state management, and CNSA 2.0 timelines\nSign binaries, build certificate chains, explore Sigstore keyless signing, and verify secure boot trust chains.",
-    "category": "learning",
-    "metadata": {
-      "module": "CodeSigning",
-      "component": "CodeSigningIntroduction",
-      "filePath": "CodeSigning/components/CodeSigningIntroduction.tsx"
-    },
-    "deepLink": "/learn/code-signing"
-  },
-  {
-    "id": "mc-codesigning-codesigningintroduction-4",
-    "source": "module-content",
-    "title": "Code Signing — CodeSigningIntroduction",
-    "content": "Module: Code Signing\nComponent: CodeSigningIntroduction\n\nNew software/firmware should support and prefer CNSA 2.0 algorithms\nAll deployed NSS must use CNSA 2.0 signatures\nFull quantum-resistant enforcement",
     "category": "learning",
     "metadata": {
       "module": "CodeSigning",
@@ -14061,19 +14035,6 @@
     "deepLink": "/learn/crypto-agility"
   },
   {
-    "id": "mc-cryptoagility-migrationplanningexercise-0",
-    "source": "module-content",
-    "title": "Crypto Agility — MigrationPlanningExercise",
-    "content": "Module: Crypto Agility\nComponent: MigrationPlanningExercise\n\nWalk through the 7-phase PQC migration framework. Each phase includes specific tasks, framework alignment, and estimated timelines aligned with NIST IR 8547 and NSA CNSA 2.0.",
-    "category": "learning",
-    "metadata": {
-      "module": "CryptoAgility",
-      "component": "MigrationPlanningExercise",
-      "filePath": "CryptoAgility/workshop/MigrationPlanningExercise.tsx"
-    },
-    "deepLink": "/learn/crypto-agility"
-  },
-  {
     "id": "mc-data-cryptoagility-architecturepatterns",
     "source": "module-content",
     "title": "Crypto Agility — architecturePatterns (data)",
@@ -14117,19 +14078,6 @@
     "source": "module-content",
     "title": "Digital Assets — BlockchainCryptoIntroduction",
     "content": "Module: Digital Assets\nComponent: BlockchainCryptoIntroduction\n\nBitcoin uses a double-hash (SHA-256 then RIPEMD-160) to produce a 20-byte hash before encoding. Ethereum uses Keccak-256 (note: this is the original Keccak submission, not the NIST SHA3-256 standard — they differ in padding). Solana is the simplest: the 32-byte Ed25519 public key is directly Base58-encoded as the address.\nDigital signatures prove that a transaction was authorized by the holder of a private key without revealing the key itself. Each chain uses a different signature scheme with different trade-offs:\n— Bitcoin: double SHA-256. Ethereum: Keccak-256. Solana (Ed25519): the message is signed directly (hashing is internal to EdDSA).\nproduces (R, s) using a deterministic nonce derived from the private key and message — no random number generator needed.\n— Anyone can verify the signature using the signer's public key + the original message + the signature. This is the foundation of trustless transaction validation.\n(v) per EIP-155, allowing the signer's public key (and therefore address) to be recovered from the signature itself. This is why Ethereum transactions don't need to include the sender's public key.\nRather than managing separate private keys for each address,\nstandard converts random entropy into a 24-word mnemonic phrase for human-readable backup.\nAll segments hardened — Ed25519 does not support non-hardened derivation\n(EdDSA), and the elliptic curves underlying HD wallets — is vulnerable to",
-    "category": "learning",
-    "metadata": {
-      "module": "DigitalAssets",
-      "component": "BlockchainCryptoIntroduction",
-      "filePath": "DigitalAssets/components/BlockchainCryptoIntroduction.tsx"
-    },
-    "deepLink": "/learn/digital-assets"
-  },
-  {
-    "id": "mc-digitalassets-blockchaincryptointroduction-2",
-    "source": "module-content",
-    "title": "Digital Assets — BlockchainCryptoIntroduction",
-    "content": "Module: Digital Assets\nComponent: BlockchainCryptoIntroduction\n\n. Understanding these threats is essential before working with blockchain cryptography hands-on.",
     "category": "learning",
     "metadata": {
       "module": "DigitalAssets",
@@ -14871,7 +14819,7 @@
     "id": "mc-data-fiveg-constants",
     "source": "module-content",
     "title": "5G Security — constants (data)",
-    "content": "Module: 5G Security\nData: constants\n\n1. Home Network Key Generation (Profile A)\nThe Home Network (UDM) must first establish a long-term asymmetric key pair. For Profile A, 5G mandates the use of Curve25519 (X25519), a state-of-the-art elliptic curve tailored for speed and security. The private key remains effectively locked within the UDM's HSM, while the public key fits into 32 bytes.\n# Generate Curve25519 Private Key openssl genpkey -algorithm X25519 -out hn_priv.key # Derive Public Key (32 bytes) openssl pkey -in hn_priv.key -pubout -out hn_pub.key # Inspect Key Parameters openssl pkey -in hn_pub.key -pubout -text_pub\n[Home Network] Generating Profile A Key Pair... [Home Network] Private Key stored in HSM. [Home Network] Public Key: 0x8520f009... (32 bytes) ready for provisioning.\nThe standardized Home Network Public Key (HN_PubKey) is written into the USIM's secure file system (EF_SUCI_Calc_Info) during SIM card personalization. This allows the USIM to encrypt the subscriber identity in a way that only the Home Network can decrypt.\n# Simulated Provisioning API USIM.write('EF_SUCI_Calc_Info', { HN_PubKey: readFile('hn_pub.key'), ProtectionScheme: 'Profile A (X25519)', KeyId: 1 });\n[Provisioning] Writing to USIM EF_SUCI_Calc_Info... [Provisioning] Success. USIM now holds the network public key.\nWhen the phone initiates a connection, the USIM reads the HN_PubKey. This key identifies the destination of the encrypted identity.\n// USIM Internal Operation const suciInfo = USIM.readFile('EF_SUCI_Calc_Info'); const hnPubKey = suciInfo.HN_PubKey; // Curve25519 Public Key\n[USIM] Reading EF_SUCI_Calc_Info... [USIM] Scheme: Profile A (Curve25519) [USIM] HN Public Key: 0x8520f009... (32 bytes)\nThe USIM generates a fresh, temporary (ephemeral) X25519 key pair for this specific session. This ensures \"Forward Secrecy\" - even if the long-term key is compromised later, past sessions remain secure.\n# Generate Ephemeral Private Key openssl genpkey -algorithm X25519 -out eph_priv.key # Extract Ephemeral Public Key to send to Network openssl pkey -in eph_priv.key -pubout -out eph_pub.key\n[USIM] Generating Ephemeral Key Pair (X25519)... [USIM] Ephemeral PubKey: 0x1a2b3c4d... (32 bytes)\nThe USIM performs Elliptic Curve Diffie-Hellman (ECDH) using its ephemeral private key and the Home Network's public key. This results in a shared secret (Z) that is mathematically identical to what the Home Network will calculate.\n# Derive Shared Secret (Z) openssl pkeyutl -derive \\\\ -inkey eph_priv.key \\\\ -peerkey hn_pub.key \\\\ -out shared_secret.bin # View Raw Secret (for verifying) xxd -p shared_secret.bin\n[USIM] Executing ECDH... [USIM] Shared Secret (Z): [PROTECTED]\nThe shared secret (Z) is not used directly. Instead, it is passed through a Key Derivation Function (KDF) along with the ephemeral public key (SharedInfo) to generate two distinct keys: K_enc for encryption (AES-128, 128 bits) and K_mac for integrity (HMAC-SHA-256, 256 bits). The KDF runs two iterations of SHA-256.\n// ANSI X9.63 KDF (2 iterations, SharedInfo = EphPubKey) const block1 = SHA256(Z || 0x00000001 || EphPubKey); const block2 = SHA256(Z || 0x00000002 || EphPubKey); const K = Buffer.concat([block1, block2]); const K_enc = K.slice(0, 16); // 128-bit AES Key const K_mac = K.slice(16, 48); // 256-bit HMAC Key\n[USIM] Deriving Keys... [USIM] K_enc: 128-bit AES Key [USIM] K_mac: 256-bit HMAC Key\nThis is the Encryption Point. The cleartext MSIN is now encrypted using AES-128-CTR. From this point forward, the identity is concealed.\nopenssl enc -aes-128-ctr \\\\ -K <K_enc_hex> \\\\ -iv 00000000000000000000000000000000 \\\\ -in msin.txt -out encrypted_msin.bin\n[USIM] Encrypting MSIN... [USIM] Ciphertext: 0x4f8a2b1c9d... (5 bytes)\nAn HMAC-SHA-256 tag is computed over the ciphertext and header data to prevent tampering. The first 64 bits (8 bytes) are used as the tag.\n# Compute HMAC openssl dgst -sha256 -mac HMAC -macopt hexkey:<K_mac_hex> \\\\ -out mac_full.bin encrypted_msin.bin # Truncate to 8 bytes head -c 8 mac_full.bin > mac_tag.bin\nCompare the sensitive cleartext identity (SUPI) with the protected SUCI structure. The SUCI includes the ephemeral public key needed by the network to derive the decryption key.\nIMSI: 310260123456789 (MCC=310, MNC=260, MSIN=123456789)\nSubscriber Permanent Identifier (Cleartext). No dashes per 3GPP TS 23.003.\nRaw Hexadecimal of IMSI digits (310260123456789).\nEncrypted MSIN (AES-128-CTR). Unintelligible without Derived Key.\nHMAC Integrity Tag. Validates authenticity.\nConcealed Identifier. Safe for transmission.\nPartial Raw Hex of the full SUCI string.\nThe final SUCI is concatenated in the standard format: <MCC>.<MNC>.<RoutingIndicator>.<Scheme>.<HomeNetPubKeyID>.<EphPubKey>.<Ciphertext>.<MAC>.\n// Final SUCI String Construction const suci = [ type=0, mcc=310, mnc=260, routing=1, scheme=1, keyId=1, ephKey=0x1a2b..., cipher=0x4f8a..., mac=0xa1b2... ].join('-');\n[USIM] SUCI-0-310-260-1-1-0x1a2b...-0x4f8a...-0xa1b2...\n11. Network SIDF: Decrypt SUCI (Decryption Point)\nThe SUCI reaches the Home Network. The SIDF (Subscription Identifier De-concealing Function) uses the Network Private Key (HN_Priv) to derive the same shared secret, generate the same keys, and decrypt the SUCI back to the original SUPI.\n# Network Side Decryption # 1. Derive Shared Secret using HN_Priv openssl pkeyutl -derive -inkey hn_priv.key -peerkey eph_pub.key ... # 2. Decrypt MSIN openssl enc -d -aes-128-ctr -in ciphertext.bin ...\n[SIDF] Receiving SUCI... [SIDF] Deriving Keys... Matches USIM. [SIDF] Decrypting... [SIDF] SUPI Recovered: 310260123456789\n1. Home Network Key Generation (Profile B)\nFor Profile B, the Home Network generates a long-term key pair using the NIST P-256 (secp256r1) elliptic curve. This profile is common in legacy-compliant 5G deployments.\n# Generate P-256 Private Key openssl genpkey -algorithm EC \\\\ -pkeyopt ec_paramgen_curve:P-256 \\\\ -out hn_priv.key # Derive Public Key (65 bytes uncompressed) openssl pkey -in hn_priv.key -pubout -out hn_pub.key # Inspect Curve Parameters openssl pkey -in hn_pub.key -pubout -text_pub\n[Home Network] Generating Profile B Key Pair... [Home Network] NIST P-256 Key generated. [Home Network] Public Key: 0x04...... (65 bytes) ready.\nThe P-256 Public Key is provisioned to the USIM secure element (EF_SUCI_Calc_Info), along with the Profile B identifier.\n# Simulated Provisioning API USIM.write('EF_SUCI_Calc_Info', { HN_PubKey: readFile('hn_pub.key'), ProtectionScheme: 'Profile B (P-256)', KeyId: 2 });\n[Provisioning] Writing to USIM EF_SUCI_Calc_Info... [Provisioning] Success. USIM configured for Profile B.\nThe USIM reads the Home Network Public Key (HN_PubKey) for Profile B (P-256) from EF_SUCI_Calc_Info.\nconst suciInfo = USIM.readFile('EF_SUCI_Calc_Info'); const hnPubKey = suciInfo.HN_PubKey; // P-256 Public Key\n[USIM] Reading EF_SUCI_Calc_Info... [USIM] Scheme: Profile B (secp256r1) [USIM] HN Public Key: 0x04...... (65 bytes)\nGenerate a fresh ephemeral key pair using NIST P-256. This key pair is unique to this connection attempt.\n# Generate Ephemeral P-256 Private Key openssl genpkey -algorithm EC \\\\ -pkeyopt ec_paramgen_curve:P-256 \\\\ -out eph_priv.key # Extract Public Key openssl pkey -in eph_priv.key -pubout -out eph_pub.key\n[USIM] Generating Ephemeral Key Pair (P-256)... [USIM] Ephemeral PubKey: 0x04...... (65 bytes)\nPerform P-256 Diffie-Hellman Key Agreement. The USIM combines its ephemeral private key with the network's public key.\n# Derive Shared Secret (Z) openssl pkeyutl -derive \\\\ -inkey eph_priv.key \\\\ -peerkey hn_pub.key \\\\ -out shared_secret.bin\nThe shared secret (Z) is passed through ANSI X9.63 KDF with the ephemeral public key as SharedInfo. Two SHA-256 iterations produce K_enc (128-bit AES) and K_mac (256-bit HMAC).\nThis is the Encryption Point where the MSIN becomes ciphertext.\nopenssl dgst -sha256 -mac HMAC -macopt hexkey:<K_mac_hex> \\\\ -out mac_full.bin encrypted_msin.bin\nCompare the sensitive cleartext identity (SUPI) with the protected SUCI structure.\nSubscriber Permanent Identifier. No dashes per 3GPP TS 23.003.\nsuci-0-310-260-2-1-0x04...-0x4f...-0xa1...\nCombine parameters. Note the different scheme ID (2) and Public Key format.\nconst suci = { scheme: 2, eccPubKey: ephPubKey, ciphertext: encryptedMSIN, macTag: macTag };\n[USIM] SUCI-0-310-260-2-1-0x04...-0x4f8a...-0xa1b2...\nThe Home Network SIDF reverses the process using the Home Network Private Key.\n# Network Side Decryption # 1. Derive Shared Secret (Z) openssl pkeyutl -derive -inkey hn_priv.key -peerkey eph_pub.key ... # 2. Decrypt openssl enc -d -aes-128-ctr ...\n[SIDF] Processing SUCI (Profile B)... [SIDF] SUPI Recovered: 310260123456789\n1. Home Network Key Generation (Profile C)\nFor Profile C (Post-Quantum), the Home Network generates a key pair using ML-KEM (Kyber), a lattice-based algorithm resistant to quantum attacks.\n# Generate ML-KEM Private Key openssl genpkey -algorithm ML-KEM-768 -out hn_pqc.key # Derive Public Key (1184 bytes) openssl pkey -in hn_pqc.key -pubout -out hn_pqc.pub\n[Home Network] Generating Profile C (PQC) Key Pair... [Home Network] ML-KEM-768 Keys generated. [Home Network] Public Key: 1184 bytes.\nThe large ML-KEM Public Key (1184 bytes) is provisioned to the USIM secure file system.\n# Provisioning Logic USIM.write('EF_SUCI_Calc_Info', { HN_PubKey: readFile('hn_pqc.pub'), ProtectionScheme: 'Profile C (ML-KEM-768)', KeyId: 3 });\n[Provisioning] Writing large PQC key to USIM... [Provisioning] Success. USIM ready for Post-Quantum privacy.\nThe USIM reads the HN Public Key for Profile C (ML-KEM / Kyber PQC).\nconst suciInfo = USIM.readFile('EF_SUCI_Calc_Info'); const hnPubKey = suciInfo.HN_PubKey; // ML-KEM Public Key\n[USIM] Reading EF_SUCI_Calc_Info... [USIM] Scheme: Profile C (ML-KEM/Kyber) [USIM] HN Public Key: 0x... (1184 bytes)\nIn Hybrid Mode, the USIM generates an X25519 ephemeral key pair. In Pure PQC mode, this step is skipped (or prepares for Encapsulation).\n# Hybrid: Generate X25519 Ephemeral Key openssl genpkey -algorithm X25519 -out eph_priv.key # Pure PQC: # No classic ephemeral key needed.\n5. Compute Shared Secret (Hybrid / Encap)\nHybrid: Compute ECDH shared secret (Z_ecdh) AND Encapsulate PQC shared secret (Z_kem). Derive final Z = SHA256(Z_ecdh || Z_kem). Pure: Encapsulate only.\n# Hybrid: openssl pkeyutl -derive ... # Z_ecdh openssl pkeyutl -encap ... # Z_kem (Ciphertext) SHA256(Z_ecdh || Z_kem) # Pure: openssl pkeyutl -encap ...\n[USIM] Computing Hybrid Shared Secret...\nThe shared secret is passed through ANSI X9.63 KDF using SHA3-256 (higher security assurance for PQC). Two iterations produce K_enc (256-bit AES-256 from block1) and K_mac (256-bit HMAC-SHA3-256 from block2).\n# ANSI X9.63 KDF with SHA3-256 (2 iterations) block1 = SHA3_256(Z || 0x00000001 || SharedInfo) block2 = SHA3_256(Z || 0x00000002 || SharedInfo) K = block1 + block2 # Concatenated KDF output enc_key = K[0:32] # 256-bit AES Key (full block1) mac_key = K[32:64] # 256-bit HMAC Key (full block2)\n[USIM] Deriving Keys w/ SHA3... [USIM] K_enc: 256-bit AES Key [USIM] K_mac: 256-bit HMAC Key\nThis is the Encryption Point (AES-256-CTR).\nopenssl enc -aes-256-ctr \\\\ -K <K_enc_hex> -iv 0 \\\\ -in msin.txt -out encrypted_msin.bin\n[USIM] Encrypting MSIN (AES-256)... [USIM] Ciphertext: 0x...\nopenssl dgst -sha3-256 -mac HMAC \\\\ -macopt hexkey:<K_mac_hex> \\\\ -out mac_tag.bin encrypted_msin.bin\n9. Visual Inspection: SUPI vs SUCI (PQC)\nCompare the SUPI with the much larger PQC SUCI structure. Notice the ciphertext size (ML-KEM Encapsulation is 1088 bytes).\nCleartext Identity. No dashes per 3GPP TS 23.003.\nCombine parameters. Note significantly larger SUCI size.\nconst suci = { scheme: 3, ciphertext: ciphertext, encMSIN: encryptedMSIN, macTag: macTag };\n[USIM] SUCI-0-310-260-3-1-0x...(1KB+)-0x...\nFor Post-Quantum Profile C, the SIDF Decapsulates the shared secret using the ML-KEM Private Key and decrypts the MSIN.\n# Network Side Decaptulation (ML-KEM) openssl pkeyutl -decap \\\\ -inkey hn_pqc.key \\\\ -in ciphertext.bin \\\\ -secret shared_secret.bin # Decrypt openssl enc -d -aes-256-ctr ...\n[SIDF] Decapsulating ML-KEM Secret... [SIDF] Keys Derived. [SIDF] SUPI Recovered: 310260123456789\nThe UDM (Unified Data Management) retrieves the subscriber Key (K), Operator Key (OP), and Sequence Number (SQN) from the ARPF (Authentication credential Repository and Processing Function) inside the HSM. The SEAF (Security Anchor Function) in the serving AMF forwarded the SUPI after SUCI deconcealment. SQN prevents replay attacks — the USIM will reject authentication if SQN is not fresh.\n// Inside UDM/HSM (ARPF) const subProfile = HSM.getProfile(SUPI); const K = subProfile.Ki; // Never exposes K outside HSM const OP = HSM.getOP(); // Operator Key const SQN = subProfile.SQN;\n[HSM] Retrieving subscriber credentials... [HSM] Ki: [PROTECTED] [HSM] OP: [PROTECTED] [HSM] Current SQN: 0x00...01\nThe HSM generates a cryptographically secure 128-bit random number (RAND) to challenge the USIM. RAND is sent in cleartext to the UE via the SEAF — its secrecy is not required because the authentication relies on K (the shared secret), not RAND confidentiality.\n// Generate 128-bit random challenge const RAND = crypto.randomBytes(16);\n[HSM] Assessing TRNG... [HSM] Generated RAND: 0x23553CBE... (128 bits)\nUsing K, OPc, and RAND, the HSM computes the MILENAGE function set (f1-f5) per 3GPP TS 35.206. MILENAGE uses AES-128 internally — a symmetric algorithm that is quantum-resistant (Grover's algorithm only halves the effective key length to 64 bits, still computationally secure). This means 5G-AKA authentication itself does not require PQC upgrades, unlike SUCI concealment which relies on asymmetric crypto. On the UE side, the USIM performs the identical MILENAGE computation with its copy of K to verify the network and produce RES.\n// Execute MILENAGE algorithm (both UDM and USIM compute this) const { MAC, XRES, CK, IK, AK } = milenage(K, OPc, RAND, SQN, AMF); // f1: MAC-A — Network authentication (USIM verifies this) // f2: XRES — Expected response (network verifies USIM's RES) // f3: CK — Cipher Key (128-bit) // f4: IK — Integrity Key (128-bit) // f5: AK — Anonymity Key (conceals SQN in AUTN)\n[HSM] Computing MILENAGE (f1-f5)... [HSM] MAC-A: 0x4A9FFAC3... [HSM] XRES: 0xA54211D5... [HSM] CK: 0xB40BA9A3... [HSM] IK: 0xF769BCD7... [HSM] AK: 0xAA689C64...\nThe Authentication Token (AUTN) proves the network's identity to the UE — this is the 'mutual' in mutual authentication. AUTN = (SQN XOR AK) || AMF || MAC-A. The UE receives RAND + AUTN, recomputes MILENAGE with its own K, and verifies: (1) MAC-A matches (proving the network knows K), and (2) SQN is in the acceptable range (preventing replays). If verification passes, the USIM sends back RES. The SEAF compares HXRES* (hash of XRES*) to verify the UE without ever seeing the raw XRES.\n// Network Side: Construct AUTN const concealedSQN = XOR(SQN, AK); const AUTN = concealedSQN + AMF + MAC; // UE Side (mirror verification): // 1. Compute MILENAGE(K, OPc, RAND, ...) // 2. Recover SQN = concealedSQN XOR AK // 3. Verify MAC-A matches → network is authentic // 4. Verify SQN is fresh → not a replay // 5. Send RES back to network\n[HSM] Assembling AUTN... [HSM] Concealed SQN: 0x55F23ED0... [HSM] AUTN: 0x55F23ED08D0CB9B94A9FFAC354DFAFB3\nThe 5G anchor key (KAUSF) is derived from CK and IK bound to the Serving Network Name (SNN). This binding ensures keys cannot be reused across networks (preventing roaming attacks). KAUSF feeds the full 5G key hierarchy: KAUSF → KSEAF (anchor at serving network) → KAMF (at AMF) → KNASint/KNASenc (NAS signaling protection) → KgNB (radio layer). The SEAF in the serving AMF receives KSEAF and never sees KAUSF itself, enforcing home-network control.\n// KDF for 5G Anchor Key (TS 33.501 Annex A.2) // FC=0x6A binds to serving network name const SNN = \"5G:mnc260.mcc310.3gppnetwork.org\"; const KAUSF = HMAC_SHA256(CK || IK, FC || SNN || len(SNN) || SQN_xor_AK || 0x0006); // Downstream Key Hierarchy: // KAUSF → KSEAF → KAMF → KNASint, KNASenc, KgNB\n[UDM] Deriving 5G Anchor Key... [UDM] KAUSF: 0x8a9b... derived successfully. [UDM] Authentication Vector Ready: RAND, AUTN, XRES*, KAUSF\nIn a secure facility, the SIM manufacturer generates a unique subscriber key (Ki) for the new SIM card using a high-quality TRNG inside an HSM.\n// Inside Manufacturer HSM const Ki = crypto.generateRandom(128); // 128-bit Key\n[Factory HSM] Generating Subscriber Key... [Factory HSM] Ki Generated: [PROTECTED] [Factory HSM] ID: IMSI 310260123456789\nThe manufacturer computes the OPc (derived operator key) using the Operator's OP key and the unique Ki. Only OPc is written to the SIM, never the global OP.\n// Compute OPc per SIM const OPc = AES_Encrypt(Ki, OP) XOR OP;\n[Factory HSM] Computing OPc... [Factory HSM] OPc: 0xCD63CB71... [Factory HSM] OPc is unique to this SIM (bound to Ki).\nThe Ki, OPc, and other data are written into the USIM's secure tamper-resistant memory during the personalization phase.\n// Write to USIM Files USIM.write('EF_Ki', Ki); USIM.write('EF_OPc', OPc); USIM.write('EF_IMSI', '310260123456789');\n[Factory] Personalizing USIM... [Factory] Keys written to secure element. [Factory] Transport lock enabled.\nTo send the keys to the Mobile Network Operator (MNO), the Ki is encrypted with a pre-agreed Transport Key (TK). This ensures Ki is never exposed during transit.\n// Encrypt Ki for output file const eKi = AES_Encrypt(TransportKey, Ki); // Generate Output Record const record = { IMSI: '310260123456789', eKi: eKi, OPc: OPc };\n[Factory HSM] Encrypting export batch... [Factory HSM] eKi generated. [Factory HSM] Output file 'out_batch_2025.enc' created.\nThe MNO receives the file and decrypts the Ki inside their own HSM using the Transport Key, then stores it securely for future authentication.\n// MNO Import Process const record = file.readRecord(); const Ki = HSM.decrypt(TransportKey, record.eKi); HSM.store(record.IMSI, Ki);\n[MNO HSM] Importing key batch... [MNO HSM] Decrypting eKi... Success. [MNO HSM] Ki stored in secure repository. [MNO HSM] Subscriber provisioning complete.",
+    "content": "Module: 5G Security\nData: constants\n\n1. Home Network Key Generation (Profile A)\nThe Home Network (UDM) must first establish a long-term asymmetric key pair. For Profile A, 5G mandates the use of Curve25519 (X25519), a state-of-the-art elliptic curve tailored for speed and security. The private key remains effectively locked within the UDM's HSM, while the public key fits into 32 bytes.\n# Generate Curve25519 Private Key openssl genpkey -algorithm X25519 -out hn_priv.key # Derive Public Key (32 bytes) openssl pkey -in hn_priv.key -pubout -out hn_pub.key # Inspect Key Parameters openssl pkey -in hn_pub.key -pubout -text_pub\n[Home Network] Generating Profile A Key Pair... [Home Network] Private Key stored in HSM. [Home Network] Public Key: 0x8520f009... (32 bytes) ready for provisioning.\nThe standardized Home Network Public Key (HN_PubKey) is written into the USIM's secure file system (EF_SUCI_Calc_Info) during SIM card personalization. This allows the USIM to encrypt the subscriber identity in a way that only the Home Network can decrypt.\n# Simulated Provisioning API USIM.write('EF_SUCI_Calc_Info', { HN_PubKey: readFile('hn_pub.key'), ProtectionScheme: 'Profile A (X25519)', KeyId: 1 });\n[Provisioning] Writing to USIM EF_SUCI_Calc_Info... [Provisioning] Success. USIM now holds the network public key.\nWhen the phone initiates a connection, the USIM reads the HN_PubKey. This key identifies the destination of the encrypted identity.\n// USIM Internal Operation const suciInfo = USIM.readFile('EF_SUCI_Calc_Info'); const hnPubKey = suciInfo.HN_PubKey; // Curve25519 Public Key\n[USIM] Reading EF_SUCI_Calc_Info... [USIM] Scheme: Profile A (Curve25519) [USIM] HN Public Key: 0x8520f009... (32 bytes)\nThe USIM generates a fresh, temporary (ephemeral) X25519 key pair for this specific session. This ensures \"Forward Secrecy\" - even if the long-term key is compromised later, past sessions remain secure.\n# Generate Ephemeral Private Key openssl genpkey -algorithm X25519 -out eph_priv.key # Extract Ephemeral Public Key to send to Network openssl pkey -in eph_priv.key -pubout -out eph_pub.key\n[USIM] Generating Ephemeral Key Pair (X25519)... [USIM] Ephemeral PubKey: 0x1a2b3c4d... (32 bytes)\nThe USIM performs Elliptic Curve Diffie-Hellman (ECDH) using its ephemeral private key and the Home Network's public key. This results in a shared secret (Z) that is mathematically identical to what the Home Network will calculate.\n# Derive Shared Secret (Z) openssl pkeyutl -derive \\\\ -inkey eph_priv.key \\\\ -peerkey hn_pub.key \\\\ -out shared_secret.bin # View Raw Secret (for verifying) xxd -p shared_secret.bin\n[USIM] Executing ECDH... [USIM] Shared Secret (Z): [PROTECTED]\nThe shared secret (Z) is not used directly. Instead, it is passed through a Key Derivation Function (KDF) along with the ephemeral public key (SharedInfo) to generate two distinct keys: K_enc for encryption (AES-128, 128 bits) and K_mac for integrity (HMAC-SHA-256, 256 bits). The KDF runs two iterations of SHA-256.\n// ANSI X9.63 KDF (2 iterations, Share\n...(truncated)",
     "category": "learning",
     "metadata": { "module": "FiveG", "component": "constants", "filePath": "FiveG/constants.ts" },
     "deepLink": "/learn/5g-security"
@@ -15094,19 +15042,6 @@
     "deepLink": "/learn/iot-ot-pqc"
   },
   {
-    "id": "mc-iotot-dtlshandshakevisualizer-0",
-    "source": "module-content",
-    "title": "IoT & OT Security — DTLSHandshakeVisualizer",
-    "content": "Module: IoT & OT Security\nComponent: DTLSHandshakeVisualizer\n\nConfigure a DTLS 1.3 handshake by selecting KEM and signature algorithms. Compare the total handshake size against classical baselines and observe the fragmentation impact.",
-    "category": "learning",
-    "metadata": {
-      "module": "IoTOT",
-      "component": "DTLSHandshakeVisualizer",
-      "filePath": "IoTOT/workshop/DTLSHandshakeVisualizer.tsx"
-    },
-    "deepLink": "/learn/iot-ot-pqc"
-  },
-  {
     "id": "mc-iotot-firmwaresigningsimulator-0",
     "source": "module-content",
     "title": "IoT & OT Security — FirmwareSigningSimulator",
@@ -15288,7 +15223,7 @@
     "id": "mc-data-keymanagement-hsmvendordata",
     "source": "module-content",
     "title": "Key Management — hsmVendorData (data)",
-    "content": "Module: Key Management\nData: hsmVendorData\n\nFull PQC support in firmware 7.9.2+. Supports hybrid key generation and composite certificates. Luna Client 10.9.2+ required for PKCS#11 PQC mechanisms.\nPQC support via CodeSafe SDK and nShield 5 firmware. Supports PQC-ready certificate enrollment. Integration with Entrust PKI for hybrid certificate issuance.\nPQC support via Q-safe firmware extension. Highest physical security (Level 4). Supports custom PQC algorithm loading through CryptoServer SDK. Available in network and PCIe form factors.\nHigh-throughput PCIe HSM with hardware PQC acceleration. PQC algorithms in beta firmware. Used in cloud infrastructure and financial transaction processing.\nPQC support through AWS Crypto Tools SDK integration. Native PKCS#11 PQC mechanisms not yet available. AWS KMS provides PQC TLS endpoints. Managed service with multi-AZ redundancy.\nBased on Thales Luna hardware. PQC roadmap aligned with Thales firmware updates. Azure Key Vault Managed HSM provides a higher-level abstraction. PQC preview expected 2026.\nC_GenerateKeyPair( hSession, &mechanism, // CKM_ML_KEM_KEY_PAIR_GEN publicTemplate, // CKA_TOKEN, CKA_ENCRYPT, CKA_WRAP privateTemplate, // CKA_PRIVATE, CKA_SENSITIVE, CKA_DECRYPT &hPublicKey, &hPrivateKey )\nGenerate an ML-KEM-768 key pair inside the HSM boundary.\nThe private key never leaves the HSM. CKA_SENSITIVE=TRUE ensures the private key cannot be exported in plaintext. CKA_EXTRACTABLE=FALSE prevents any form of export. The HSM uses its internal DRBG seeded with hardware entropy.\nCKR_OK Public Key Handle: 0x00000042 Private Key Handle: 0x00000043 Algorithm: ML-KEM-768 Public Key Size: 1,184 bytes Token Object: YES (persistent)\nC_GetAttributeValue( hSession, hPublicKey, // Handle from step 1 publicKeyTemplate, // CKA_VALUE 1 // Attribute count )\nExtract the ML-KEM-768 public key for distribution.\nPublic keys can always be exported (CKA_SENSITIVE does not apply). The 1,184-byte public key is used by peers to encapsulate shared secrets. In a TLS 1.3 handshake, this would be sent in the key_share extension of the ServerHello message.\nCKR_OK Attribute: CKA_VALUE Length: 1,184 bytes Key Type: CKK_ML_KEM Exportable: YES (public key)\nC_WrapKey( hSession, &mechanism, // CKM_ML_KEM_ENCAPSULATE hPublicKey, // Wrapping key (ML-KEM public) hSessionKey, // Key to wrap (AES-256 session key) wrappedKey, // Output: ciphertext (1,088 bytes) &wrappedKeyLen )\nUse ML-KEM encapsulation to wrap an AES-256 session key.\nUnlike RSA-OAEP which directly wraps the key, ML-KEM is a two-step process: encapsulation produces a ciphertext and a 32-byte shared secret, then the shared secret is used as a KEK to wrap the session key. The PKCS#11 C_WrapKey call abstracts both steps. The 1,088-byte ciphertext is sent to the private key holder. PKCS#11 3.2 PQC mechanism mappings are still being finalized by OASIS.\nCKR_OK Wrapped Key Length: 1,088 bytes Mechanism: CKM_ML_KEM_ENCAPSULATE KEM Ciphertext: 1,088 bytes Shared Secret: 32 bytes (internal)\nC_UnwrapKey( hSession, &mechanism, // CKM_ML_KEM_DECAPSULATE hPrivateKey, // Unwrapping key (ML-KEM private) wrappedKey, // Input: ciphertext from step 3 wrappedKeyLen, sessionTemplate, // CKA_CLASS=SECRET_KEY, CKA_KEY_TYPE=AES 4, &hRecoveredKey )\nDecapsulate to recover the AES-256 session key.\nThe private key performs ML-KEM decapsulation inside the HSM boundary. The shared secret is derived, then used to unwrap the session key. The private key handle references a non-extractable object, so the decapsulation operation happens entirely within the HSM.\nCKR_OK Recovered Key Handle: 0x00000044 Key Type: CKK_AES Key Size: 256 bits CKA_SENSITIVE: TRUE\nC_Sign( hSession, data, // Message to sign dataLen, // Message length signature, // Output buffer &signatureLen // ML-DSA-65: 3,309 bytes ) // After C_SignInit(hSession, &mechanism, hSignKey) // mechanism = CKM_ML_DSA\nCreate a digital signature using ML-DSA-65.\nML-DSA-65 produces 3,309-byte signatures (vs 64 bytes for ECDSA P-256). The signing key must have been generated with CKM_ML_DSA_KEY_PAIR_GEN. Signing is performed inside the HSM; only the signature is returned. ML-DSA is a stateless scheme, unlike LMS/XMSS which require the HSM to track per-signature state to prevent catastrophic key reuse.\nCKR_OK Signature Length: 3,309 bytes Algorithm: ML-DSA-65 NIST Level: 3 Hedged Signing: YES (rnd ≠ 0, per FIPS 204 §3.5.2) Note: Hedged mode recommended for side-channel protection\nC_Verify( hSession, data, // Original message dataLen, signature, // Signature from step 5 signatureLen // 3,309 bytes ) // After C_VerifyInit(hSession, &mechanism, hVerifyKey) // mechanism = CKM_ML_DSA\nVerify the ML-DSA-65 signature against the original data.\nVerification can be performed with the public key outside the HSM, but using the HSM ensures the operation uses validated, certified code. Verification is faster than signing for ML-DSA. The operation returns CKR_OK for valid signatures or CKR_SIGNATURE_INVALID.\nCKR_OK Verification: VALID Algorithm: ML-DSA-65 Public Key Size: 1,952 bytes Signature Valid: TRUE\nbg-success/10 text-success border-success/20\nbg-warning/10 text-warning border-warning/20\nbg-muted/50 text-muted-foreground border-border\nbg-primary/10 text-primary border-primary/20",
+    "content": "Module: Key Management\nData: hsmVendorData\n\nFull PQC support in firmware 7.9.2+. Supports hybrid key generation and composite certificates. Luna Client 10.9.2+ required for PKCS#11 PQC mechanisms.\nPQC support via CodeSafe SDK and nShield 5 firmware. Supports PQC-ready certificate enrollment. Integration with Entrust PKI for hybrid certificate issuance.\nPQC support via Q-safe firmware extension. Highest physical security (Level 4). Supports custom PQC algorithm loading through CryptoServer SDK. Available in network and PCIe form factors.\nHigh-throughput PCIe HSM with hardware PQC acceleration. PQC algorithms in beta firmware. Used in cloud infrastructure and financial transaction processing.\nPQC support through AWS Crypto Tools SDK integration. Native PKCS#11 PQC mechanisms not yet available. AWS KMS provides PQC TLS endpoints. Managed service with multi-AZ redundancy.\nBased on Thales Luna hardware. PQC roadmap aligned with Thales firmware updates. Azure Key Vault Managed HSM provides a higher-level abstraction. PQC preview expected 2026.\nC_GenerateKeyPair( hSession, &mechanism, // CKM_ML_KEM_KEY_PAIR_GEN publicTemplate, // CKA_TOKEN, CKA_ENCRYPT, CKA_WRAP privateTemplate, // CKA_PRIVATE, CKA_SENSITIVE, CKA_DECRYPT &hPublicKey, &hPrivateKey )\nGenerate an ML-KEM-768 key pair inside the HSM boundary.\nThe private key never leaves the HSM. CKA_SENSITIVE=TRUE ensures the private key cannot be exported in plaintext. CKA_EXTRACTABLE=FALSE prevents any form of export. The HSM uses its internal DRBG seeded with hardware entropy.\nCKR_OK Public Key Handle: 0x00000042 Private Key Handle: 0x00000043 Algorithm: ML-KEM-768 Public Key Size: 1,184 bytes Token Object: YES (persistent)\nC_GetAttributeValue( hSession, hPublicKey, // Handle from step 1 publicKeyTemplate, // CKA_VALUE 1 // Attribute count )\nExtract the ML-KEM-768 public key for distribution.\nPublic keys can always be exported (CKA_SENSITIVE does not apply). The 1,184-byte public key is used by peers to encapsulate shared secrets. In a TLS 1.3 handshake, this would be sent in the key_share extension of the ServerHello message.\nCKR_OK Attribute: CKA_VALUE Length: 1,184 bytes Key Type: CKK_ML_KEM Exportable: YES (public key)\nC_WrapKey( hSession, &mechanism, // CKM_ML_KEM_ENCAPSULATE hPublicKey, // Wrapping key (ML-KEM public) hSessionKey, // Key to wrap (AES-256 session key) wrappedKey, // Output: ciphertext (1,088 bytes) &wrappedKeyLen )\nUse ML-KEM encapsulation to wrap an AES-256 session key.\nUnlike RSA-OAEP which directly wraps the key, ML-KEM is a two-step process: encapsulation produces a ciphertext and a 32-byte shared secret, then the shared secret is used as a KEK to wrap the session key. The PKCS#11 C_WrapKey call abstracts both steps. The 1,088-byte ciphertext is sent to the private key holder. PKCS#11 3.2 PQC mechanism mappings are still being finalized by OASIS.\nCKR_OK Wrapped Key Length: 1,088 bytes Mechanism: CKM_ML_KEM_ENCAPSULATE KEM Ciphertext: 1,088 bytes Shared Secret: 32 bytes (internal)\nC_UnwrapKey( hSession, &mechanism, // CKM_\n...(truncated)",
     "category": "learning",
     "metadata": {
       "module": "KeyManagement",
@@ -15301,7 +15236,7 @@
     "id": "mc-data-keymanagement-keymanagementconstants",
     "source": "module-content",
     "title": "Key Management — keyManagementConstants (data)",
-    "content": "Module: Key Management\nData: keyManagementConstants\n\nCryptographic keys are created using approved random number generators (DRBG) within a secure environment, typically an HSM. Key generation must use sufficient entropy and comply with algorithm-specific parameter requirements.\nRSA: Generate two large primes (p, q), compute n = p*q, derive public/private exponents. ECDSA: Select random scalar k on chosen curve. Fast generation, small keys.\nML-KEM: Generate matrix A from seed, sample secret vectors. ML-DSA: Generate matrix A, secret vectors s1/s2. Generation is fast but produces significantly larger keys (1,184 bytes for ML-KEM-768 public key vs 256 bytes for RSA-2048).\nPublic keys are distributed to communicating parties via certificates, key servers, or direct exchange. Private keys may be distributed to authorized backup systems. Secure channels and authentication are required.\nX.509 certificates carry RSA/ECDSA public keys. Certificate sizes are small (1-2 KB). Distribution via CAs, LDAP, or key servers is well-established.\nPQC certificates are significantly larger: an ML-DSA-65 certificate contains a 1,952-byte public key plus a 3,309-byte signature, totaling ~5.5 KB vs ~1.5 KB for ECDSA. This impacts bandwidth, handshake sizes (TLS), and storage in certificate chains. Hybrid certificates (classical + PQC) are even larger.\nKeys must be stored securely with appropriate access controls. Private keys should be protected by HSMs or encrypted key stores. Key metadata (algorithm, expiration, usage constraints) must be maintained.\nRSA-2048 private key: 1,192 bytes. ECDSA P-256 private key: 32 bytes. Easily fits in HSM key slots, PKCS#12 files, and key management databases.\nML-KEM-768 private key: 2,400 bytes. ML-DSA-65 private key: 4,032 bytes. HSM storage capacity may need expansion. Key databases and backup systems must handle 3-10x larger keys. PKCS#12 files grow substantially with hybrid key pairs.\nKeys are used for their designated cryptographic operations: encryption, signing, key agreement, or authentication. Usage must comply with key type restrictions and algorithm specifications.\nRSA keys can encrypt, sign, and wrap. ECDSA signs only. ECDH performs key agreement. Operations are fast and well-understood. One key type often serves multiple purposes.\nPQC enforces stricter separation: ML-KEM is KEM-only (no direct encryption), ML-DSA is signature-only. No single PQC algorithm replaces all RSA capabilities. Organizations need separate key pairs for key establishment vs. signing.\nKeys are periodically replaced to limit exposure from potential compromise. Rotation involves generating new keys, re-encrypting or re-signing with new keys, and securely transitioning from old to new keys.\nAutomated rotation every 1-3 years for most use cases. Certificate renewal via ACME or manual CSR. Re-encryption of stored data is fast with small keys.\nPQC rotation requires more bandwidth (larger keys and certificates), more HSM operations, and longer re-encryption windows. Hybrid deployments require rotating both classical and PQC key pairs. Rotation schedules may need adjustment for the larger computational overhead.\nExpired or retired keys are preserved for verifying old signatures or decrypting archived data. Archived keys must remain accessible but protected. Retention periods depend on data sensitivity and regulatory requirements.\nArchive RSA/ECDSA keys in encrypted vaults or HSM partitions. Small key sizes mean minimal storage overhead. Verification of old signatures requires maintaining algorithm support.\nArchival storage requirements increase 3-10x per key. Organizations transitioning to PQC must archive both classical and PQC keys during the hybrid period. Long-term archives may span decades, requiring forward-compatible storage formats.\nKeys are securely destroyed when no longer needed. Destruction must be irreversible and include all copies (primary, backup, cached). HSMs provide certified zeroization. Key destruction is logged for audit compliance.\nHSM zeroization, secure memory wiping, and physical destruction of media. Small key sizes mean fewer storage locations to sanitize.\nLarger PQC keys may exist in more memory locations and caches. Ensure all copies of lattice-based keys (which are larger) are properly zeroized. Dual-key (hybrid) destruction must cover both the classical and PQC components.\nGenerate RSA key pair (2048/3072/4096 bits)\nRSA OAEP encryption/decryption for key wrapping\nML-KEM encapsulation to produce shared secret\nML-KEM decapsulation to recover shared secret\nServer certificates for web services and APIs. Short-lived to limit compromise impact.\n90 days (recommended); max 398 days until March 2026, then 200 days per CA/B Forum SC-081v3, reducing to 47 days by 2029\nKeys used to sign software releases, firmware updates, and container images.\nCA keys used to issue end-entity certificates. Long-lived with strict HSM protection.\nTrust anchors. Longest-lived keys with highest security requirements.\nSymmetric keys used for encrypting data at rest or in transit.\nKeys used to wrap/unwrap other keys. Critical for key hierarchy security.\nEuropean agencies strongly recommend Hybrid implementations (Classical + PQC) during the transition to post-quantum cryptography to mitigate the risk of new algorithms being broken.\nInitial Public Draft: deprecate 112-bit classical crypto (RSA-2048, etc.) after 2030, disallow all classical public-key crypto (RSA, ECDSA, EdDSA, DH, ECDH) after 2035. Final dates may adjust.\nCryptographic inventory required (Req. 12.3.3)\nICT risk management framework including cryptographic risk assessment",
+    "content": "Module: Key Management\nData: keyManagementConstants\n\nCryptographic keys are created using approved random number generators (DRBG) within a secure environment, typically an HSM. Key generation must use sufficient entropy and comply with algorithm-specific parameter requirements.\nRSA: Generate two large primes (p, q), compute n = p*q, derive public/private exponents. ECDSA: Select random scalar k on chosen curve. Fast generation, small keys.\nML-KEM: Generate matrix A from seed, sample secret vectors. ML-DSA: Generate matrix A, secret vectors s1/s2. Generation is fast but produces significantly larger keys (1,184 bytes for ML-KEM-768 public key vs 256 bytes for RSA-2048).\nPublic keys are distributed to communicating parties via certificates, key servers, or direct exchange. Private keys may be distributed to authorized backup systems. Secure channels and authentication are required.\nX.509 certificates carry RSA/ECDSA public keys. Certificate sizes are small (1-2 KB). Distribution via CAs, LDAP, or key servers is well-established.\nPQC certificates are significantly larger: an ML-DSA-65 certificate contains a 1,952-byte public key plus a 3,309-byte signature, totaling ~5.5 KB vs ~1.5 KB for ECDSA. This impacts bandwidth, handshake sizes (TLS), and storage in certificate chains. Hybrid certificates (classical + PQC) are even larger.\nKeys must be stored securely with appropriate access controls. Private keys should be protected by HSMs or encrypted key stores. Key metadata (algorithm, expiration, usage constraints) must be maintained.\nRSA-2048 private key: 1,192 bytes. ECDSA P-256 private key: 32 bytes. Easily fits in HSM key slots, PKCS#12 files, and key management databases.\nML-KEM-768 private key: 2,400 bytes. ML-DSA-65 private key: 4,032 bytes. HSM storage capacity may need expansion. Key databases and backup systems must handle 3-10x larger keys. PKCS#12 files grow substantially with hybrid key pairs.\nKeys are used for their designated cryptographic operations: encryption, signing, key agreement, or authentication. Usage must comply with key type restrictions and algorithm specifications.\nRSA keys can encrypt, sign, and wrap. ECDSA signs only. ECDH performs key agreement. Operations are fast and well-understood. One key type often serves multiple purposes.\nPQC enforces stricter separation: ML-KEM is KEM-only (no direct encryption), ML-DSA is signature-only. No single PQC algorithm replaces all RSA capabilities. Organizations need separate key pairs for key establishment vs. signing.\nKeys are periodically replaced to limit exposure from potential compromise. Rotation involves generating new keys, re-encrypting or re-signing with new keys, and securely transitioning from old to new keys.\nAutomated rotation every 1-3 years for most use cases. Certificate renewal via ACME or manual CSR. Re-encryption of stored data is fast with small keys.\nPQC rotation requires more bandwidth (larger keys and certificates), more HSM operations, and longer re-encryption windows. Hybrid deployments require rotating both c\n...(truncated)",
     "category": "learning",
     "metadata": {
       "module": "KeyManagement",
@@ -15402,19 +15337,6 @@
     "deepLink": "/learn/merkle-tree-certs"
   },
   {
-    "id": "mc-merkletreecerts-merkletreebuilder-0",
-    "source": "module-content",
-    "title": "Merkle Tree Certificates — MerkleTreeBuilder",
-    "content": "Module: Merkle Tree Certificates\nComponent: MerkleTreeBuilder\n\nAdd certificate leaves, then build the tree to see SHA-256 hashes computed at each level. Hover over any node to see its full hash.",
-    "category": "learning",
-    "metadata": {
-      "module": "MerkleTreeCerts",
-      "component": "MerkleTreeBuilder",
-      "filePath": "MerkleTreeCerts/workshop/MerkleTreeBuilder.tsx"
-    },
-    "deepLink": "/learn/merkle-tree-certs"
-  },
-  {
     "id": "mc-merkletreecerts-proofverifier-0",
     "source": "module-content",
     "title": "Merkle Tree Certificates — ProofVerifier",
@@ -15476,19 +15398,6 @@
       "module": "Module1-Introduction",
       "component": "KeyGenWorkshop",
       "filePath": "Module1-Introduction/KeyGenWorkshop.tsx"
-    },
-    "deepLink": "/learn/pqc-101"
-  },
-  {
-    "id": "mc-module1-introduction-pqc101exercises-0",
-    "source": "module-content",
-    "title": "PQC 101 — PQC101Exercises",
-    "content": "Module: PQC 101\nComponent: PQC101Exercises\n\nAfter reading the Learn section and exploring the Workshop, test your understanding with these review questions.",
-    "category": "learning",
-    "metadata": {
-      "module": "Module1-Introduction",
-      "component": "PQC101Exercises",
-      "filePath": "Module1-Introduction/PQC101Exercises.tsx"
     },
     "deepLink": "/learn/pqc-101"
   },
@@ -15558,19 +15467,6 @@
     "deepLink": "/learn/pqc-101"
   },
   {
-    "id": "mc-pkiworkshop-crlgenerator-0",
-    "source": "module-content",
-    "title": "PKI Workshop — CRLGenerator",
-    "content": "Module: PKI Workshop\nComponent: CRLGenerator\n\nCreate an empty Certificate Revocation List signed by your Root CA",
-    "category": "learning",
-    "metadata": {
-      "module": "PKIWorkshop",
-      "component": "CRLGenerator",
-      "filePath": "PKIWorkshop/CRLGenerator.tsx"
-    },
-    "deepLink": "/learn/pki-workshop"
-  },
-  {
     "id": "mc-pkiworkshop-csrgenerator-0",
     "source": "module-content",
     "title": "PKI Workshop — CSRGenerator",
@@ -15606,19 +15502,6 @@
       "module": "PKIWorkshop",
       "component": "MTCComparison",
       "filePath": "PKIWorkshop/MTCComparison.tsx"
-    },
-    "deepLink": "/learn/pki-workshop"
-  },
-  {
-    "id": "mc-pkiworkshop-rootcagenerator-0",
-    "source": "module-content",
-    "title": "PKI Workshop — RootCAGenerator",
-    "content": "Module: PKI Workshop\nComponent: RootCAGenerator\n\nGenerate strong keypair • Select algorithm • Long-term security\nRoot CAs typically use larger key sizes for long-term security.\nCreate self-signed cert • Set validity period • Establish trust anchor",
-    "category": "learning",
-    "metadata": {
-      "module": "PKIWorkshop",
-      "component": "RootCAGenerator",
-      "filePath": "PKIWorkshop/RootCAGenerator.tsx"
     },
     "deepLink": "/learn/pki-workshop"
   },
@@ -15866,23 +15749,10 @@
     "deepLink": "/learn/qkd"
   },
   {
-    "id": "mc-qkd-protocolintegrationdemo-2",
-    "source": "module-content",
-    "title": "Quantum Key Distribution — ProtocolIntegrationDemo",
-    "content": "Module: Quantum Key Distribution\nComponent: ProtocolIntegrationDemo\n\ncan integrate QKD without protocol changes. Select a protocol to see the exact injection point, the relevant RFC clause, and a live simulation using a randomly generated mock QKD secret.",
-    "category": "learning",
-    "metadata": {
-      "module": "QKD",
-      "component": "ProtocolIntegrationDemo",
-      "filePath": "QKD/workshop/ProtocolIntegrationDemo.tsx"
-    },
-    "deepLink": "/learn/qkd"
-  },
-  {
     "id": "mc-data-qkd-qkddeployments",
     "source": "module-content",
     "title": "Quantum Key Distribution — qkdDeployments (data)",
-    "content": "Module: Quantum Key Distribution\nData: qkdDeployments\n\nWorld's longest terrestrial QKD network linking Beijing, Jinan, Hefei, and Shanghai with 32 trusted relay nodes. Used for government and financial communications.\n7,600 km (ground-to-ground via satellite)\nFirst quantum communication satellite (Mozi/Micius). Demonstrated intercontinental QKD between China and Austria via satellite relay in 2017.\nhttps://doi.org/10.1103/PhysRevLett.120.030501\nShandong Institute of Quantum Science & Technology\nOne of the earliest metropolitan QKD networks, connecting government offices in Jinan with quantum-secured communications.\nEuroQCI (European Quantum Communication Infrastructure)\nPan-European quantum communication infrastructure combining terrestrial fiber and the EAGLE-1 satellite. All 27 EU member states signed the EuroQCI declaration.\nhttps://digital-strategy.ec.europa.eu/en/policies/european-quantum-communication-infrastructure-euroqci\nLong-running field trial (2009-2011) demonstrating QKD over deployed telecom fiber in the Geneva metropolitan area. Proved operational reliability over 21 months.\nhttps://doi.org/10.1088/1367-2630/13/12/123001\nMetropolitan QKD network in Madrid integrating multiple QKD vendors on existing Telefonica fiber infrastructure. Part of EuroQCI national program.\nhttps://doi.org/10.1109/JLT.2023.3346750\nCommercial QKD trial on BT's live fiber network connecting data centers in London and Cambridge. Demonstrated QKD coexisting with classical data traffic on the same fiber.\nhttps://newsroom.bt.com/bt-and-toshiba-launch-worlds-first-commercial-quantum-secured-metro-network/\nUK national quantum network testbed connecting Bristol, Cambridge, and London. Used for research into quantum networking and multi-node QKD.\nESA-supported UK industry satellite QKD mission aiming to deliver quantum key distribution as a service from orbit.\nhttps://www.esa.int/Applications/Connectivity_and_Secure_Communications/QKDSat_Secure_communication_via_quantum_cryptography\nCommercial QKD deployment by SK Telecom securing its LTE/5G backbone infrastructure. Partnered with ID Quantique for QKD equipment.\nhttps://www.sktelecom.com/en/press/press_detail.do?idx=1311\nMulti-vendor QKD testbed in Tokyo demonstrating interoperability between different QKD systems (NEC, Toshiba, NTT, IDQ). Part of the UQCC project.\nSmall Optical Communication Satellite (SOCRATES) carrying the SOTA laser terminal. Demonstrated space-to-ground quantum-limited communication from LEO in 2016.\nhttps://doi.org/10.1038/nphoton.2017.107\nCubeSat (3U) that demonstrated generation of polarization-entangled photon pairs in low-Earth orbit. Proved miniaturized entangled-photon sources can operate in the space environment.\nQuantum Encryption and Science Satellite (QEYSSat) microsatellite mission led by the Canadian Space Agency and the University of Waterloo Institute for Quantum Computing. Aims to demonstrate satellite-based QKD.\nhttps://www.asc-csa.gc.ca/eng/satellites/qeyssat.asp\nQKD field trial securing financial communications over deployed fiber in the New York metropolitan area. Demonstrated QKD for blockchain network protection.\nhttps://www.jpmorgan.com/technology/technology-blog/quantum-key-distribution\nUS Department of Energy (Fermilab, BNL, ORNL)\nDOE-funded quantum network testbeds at national laboratories including Fermilab (Chicago), Brookhaven, and Oak Ridge. Research into quantum repeaters and entanglement distribution.\nhttps://www.energy.gov/science/doe-explainsquantum-networks\nAWS research initiative focusing on quantum memory, repeaters, and scalable quantum networking technologies to eventually construct a global quantum internet.\nhttps://aws.amazon.com/blogs/quantum-computing/announcing-the-aws-center-for-quantum-networking/\nMajor terrestrial quantum network in the US connecting UChicago, Argonne National Laboratory, and other partners. Demonstrated multi-node quantum entanglement distribution.",
+    "content": "Module: Quantum Key Distribution\nData: qkdDeployments\n\nWorld's longest terrestrial QKD network linking Beijing, Jinan, Hefei, and Shanghai with 32 trusted relay nodes. Used for government and financial communications.\n7,600 km (ground-to-ground via satellite)\nFirst quantum communication satellite (Mozi/Micius). Demonstrated intercontinental QKD between China and Austria via satellite relay in 2017.\nhttps://doi.org/10.1103/PhysRevLett.120.030501\nShandong Institute of Quantum Science & Technology\nOne of the earliest metropolitan QKD networks, connecting government offices in Jinan with quantum-secured communications.\nEuroQCI (European Quantum Communication Infrastructure)\nPan-European quantum communication infrastructure combining terrestrial fiber and the EAGLE-1 satellite. All 27 EU member states signed the EuroQCI declaration.\nhttps://digital-strategy.ec.europa.eu/en/policies/european-quantum-communication-infrastructure-euroqci\nLong-running field trial (2009-2011) demonstrating QKD over deployed telecom fiber in the Geneva metropolitan area. Proved operational reliability over 21 months.\nhttps://doi.org/10.1088/1367-2630/13/12/123001\nMetropolitan QKD network in Madrid integrating multiple QKD vendors on existing Telefonica fiber infrastructure. Part of EuroQCI national program.\nhttps://doi.org/10.1109/JLT.2023.3346750\nCommercial QKD trial on BT's live fiber network connecting data centers in London and Cambridge. Demonstrated QKD coexisting with classical data traffic on the same fiber.\nhttps://newsroom.bt.com/bt-and-toshiba-launch-worlds-first-commercial-quantum-secured-metro-network/\nUK national quantum network testbed connecting Bristol, Cambridge, and London. Used for research into quantum networking and multi-node QKD.\nESA-supported UK industry satellite QKD mission aiming to deliver quantum key distribution as a service from orbit.\nhttps://www.esa.int/Applications/Connectivity_and_Secure_Communications/QKDSat_Secure_communication_via_quantum_cryptography\nCommercial QKD deployment by SK Telecom securing its LTE/5G backbone infrastructure. Partnered with ID Quantique for QKD equipment.\nhttps://www.sktelecom.com/en/press/press_detail.do?idx=1311\nMulti-vendor QKD testbed in Tokyo demonstrating interoperability between different QKD systems (NEC, Toshiba, NTT, IDQ). Part of the UQCC project.\nSmall Optical Communication Satellite (SOCRATES) carrying the SOTA laser terminal. Demonstrated space-to-ground quantum-limited communication from LEO in 2016.\nhttps://doi.org/10.1038/nphoton.2017.107\nCubeSat (3U) that demonstrated generation of polarization-entangled photon pairs in low-Earth orbit. Proved miniaturized entangled-photon sources can operate in the space environment.\nQuantum Encryption and Science Satellite (QEYSSat) microsatellite mission led by the Canadian Space Agency and the University of Waterloo Institute for Quantum Computing. Aims to demonstrate satellite-based QKD.\nhttps://www.asc-csa.gc.ca/eng/satellites/qeyssat.asp\nQKD field trial securing financial communications over deployed fiber\n...(truncated)",
     "category": "learning",
     "metadata": {
       "module": "QKD",
@@ -15970,32 +15840,6 @@
     "deepLink": "/learn/quantum-threats"
   },
   {
-    "id": "mc-quantumthreats-algorithmvulnerabilitymatrix-0",
-    "source": "module-content",
-    "title": "Quantum Threats — AlgorithmVulnerabilityMatrix",
-    "content": "Module: Quantum Threats\nComponent: AlgorithmVulnerabilityMatrix\n\nHow each algorithm family is affected by Shor's and Grover's quantum algorithms.\nZero post-quantum security (Shor's solves in polynomial time)",
-    "category": "learning",
-    "metadata": {
-      "module": "QuantumThreats",
-      "component": "AlgorithmVulnerabilityMatrix",
-      "filePath": "QuantumThreats/workshop/AlgorithmVulnerabilityMatrix.tsx"
-    },
-    "deepLink": "/learn/quantum-threats"
-  },
-  {
-    "id": "mc-quantumthreats-hndltimeline-0",
-    "source": "module-content",
-    "title": "Quantum Threats — HNDLTimeline",
-    "content": "Module: Quantum Threats\nComponent: HNDLTimeline\n\nCalculate when you must migrate to PQC based on your data's confidentiality requirements and the expected arrival of a Cryptographically Relevant Quantum Computer (CRQC).",
-    "category": "learning",
-    "metadata": {
-      "module": "QuantumThreats",
-      "component": "HNDLTimeline",
-      "filePath": "QuantumThreats/workshop/HNDLTimeline.tsx"
-    },
-    "deepLink": "/learn/quantum-threats"
-  },
-  {
     "id": "mc-quantumthreats-hnfltimeline-0",
     "source": "module-content",
     "title": "Quantum Threats — HNFLTimeline",
@@ -16005,19 +15849,6 @@
       "module": "QuantumThreats",
       "component": "HNFLTimeline",
       "filePath": "QuantumThreats/workshop/HNFLTimeline.tsx"
-    },
-    "deepLink": "/learn/quantum-threats"
-  },
-  {
-    "id": "mc-quantumthreats-keysizeanalyzer-0",
-    "source": "module-content",
-    "title": "Quantum Threats — KeySizeAnalyzer",
-    "content": "Module: Quantum Threats\nComponent: KeySizeAnalyzer\n\nCompare two algorithms side-by-side to see how their security profiles differ under quantum attack.",
-    "category": "learning",
-    "metadata": {
-      "module": "QuantumThreats",
-      "component": "KeySizeAnalyzer",
-      "filePath": "QuantumThreats/workshop/KeySizeAnalyzer.tsx"
     },
     "deepLink": "/learn/quantum-threats"
   },
@@ -16191,19 +16022,6 @@
     "deepLink": "/learn/stateful-signatures"
   },
   {
-    "id": "mc-tlsbasics-tlsbasicsmodule-0",
-    "source": "module-content",
-    "title": "TLS Basics — TLSBasicsModule",
-    "content": "Module: TLS Basics\nComponent: TLSBasicsModule\n\nLearn about TLS 1.3, configure handshake parameters, and explore PQC migration trade-offs.",
-    "category": "learning",
-    "metadata": {
-      "module": "TLSBasics",
-      "component": "TLSBasicsModule",
-      "filePath": "TLSBasics/TLSBasicsModule.tsx"
-    },
-    "deepLink": "/learn/tls-basics"
-  },
-  {
     "id": "mc-tlsbasics-tlsclientpanel-0",
     "source": "module-content",
     "title": "TLS Basics — TLSClientPanel",
@@ -16217,19 +16035,6 @@
     "deepLink": "/learn/tls-basics"
   },
   {
-    "id": "mc-tlsbasics-tlsserverpanel-0",
-    "source": "module-content",
-    "title": "TLS Basics — TLSServerPanel",
-    "content": "Module: TLS Basics\nComponent: TLSServerPanel\n\nsetServerMessage(e.target.value)} placeholder=\"Enter message...\" />\nc.charCodeAt(0).toString(16).padStart(2, '0')) .join('') : msg return (",
-    "category": "learning",
-    "metadata": {
-      "module": "TLSBasics",
-      "component": "TLSServerPanel",
-      "filePath": "TLSBasics/TLSServerPanel.tsx"
-    },
-    "deepLink": "/learn/tls-basics"
-  },
-  {
     "id": "mc-tlsbasics-cryptologdisplay-0",
     "source": "module-content",
     "title": "TLS Basics — CryptoLogDisplay",
@@ -16239,32 +16044,6 @@
       "module": "TLSBasics",
       "component": "CryptoLogDisplay",
       "filePath": "TLSBasics/components/CryptoLogDisplay.tsx"
-    },
-    "deepLink": "/learn/tls-basics"
-  },
-  {
-    "id": "mc-tlsbasics-keyoverview-0",
-    "source": "module-content",
-    "title": "TLS Basics — KeyOverview",
-    "content": "Module: TLS Basics\nComponent: KeyOverview\n\n${side === 'client' ? 'Client' : 'Server'} Identity Certificate\n${side === 'client' ? 'Client' : 'Server'} Root CA",
-    "category": "learning",
-    "metadata": {
-      "module": "TLSBasics",
-      "component": "KeyOverview",
-      "filePath": "TLSBasics/components/KeyOverview.tsx"
-    },
-    "deepLink": "/learn/tls-basics"
-  },
-  {
-    "id": "mc-tlsbasics-tlscomparisontable-0",
-    "source": "module-content",
-    "title": "TLS Basics — TLSComparisonTable",
-    "content": "Module: TLS Basics\nComponent: TLSComparisonTable\n\nRun simulations with different configurations to compare overhead.",
-    "category": "learning",
-    "metadata": {
-      "module": "TLSBasics",
-      "component": "TLSComparisonTable",
-      "filePath": "TLSBasics/components/TLSComparisonTable.tsx"
     },
     "deepLink": "/learn/tls-basics"
   },
@@ -16421,19 +16200,6 @@
       "module": "VPNSSHModule",
       "component": "index",
       "filePath": "VPNSSHModule/index.tsx"
-    },
-    "deepLink": "/learn/vpn-ssh-pqc"
-  },
-  {
-    "id": "mc-vpnsshmodule-protocolcomparisontable-0",
-    "source": "module-content",
-    "title": "VPN & SSH PQC — ProtocolComparisonTable",
-    "content": "Module: VPN & SSH PQC\nComponent: ProtocolComparisonTable\n\ne.handshakeBytes)) const widthPercent = (entry.handshakeBytes / maxBytes) * 100 return (",
-    "category": "learning",
-    "metadata": {
-      "module": "VPNSSHModule",
-      "component": "ProtocolComparisonTable",
-      "filePath": "VPNSSHModule/simulate/ProtocolComparisonTable.tsx"
     },
     "deepLink": "/learn/vpn-ssh-pqc"
   },
@@ -19347,6 +19113,213 @@
     "deepLink": "/assess"
   },
   {
+    "id": "assess-guide-industry",
+    "source": "assessment",
+    "title": "Assessment: Industry Selection",
+    "content": "PQC Assessment Wizard — Step 1: Industry Selection\n\nThe Industry Selection step determines which compliance frameworks, threat scenarios, and migration priorities are relevant to your organization. Different industries face varying levels of quantum risk — for example, Financial Services and Government/Defense face the highest urgency due to long-lived data and regulatory mandates.",
+    "category": "assessment-guide",
+    "metadata": { "step": "0", "stepName": "industry" },
+    "deepLink": "/assess?step=0"
+  },
+  {
+    "id": "assess-guide-country",
+    "source": "assessment",
+    "title": "Assessment: Country Selection",
+    "content": "PQC Assessment Wizard — Step 2: Country Selection\n\nThe Country Selection step identifies which national PQC mandates and deadlines apply. Countries like the United States (CNSA 2.0), France (ANSSI), and Germany (BSI) have specific PQC migration timelines. This selection also filters compliance frameworks to show only relevant regulations.",
+    "category": "assessment-guide",
+    "metadata": { "step": "1", "stepName": "country" },
+    "deepLink": "/assess?step=1"
+  },
+  {
+    "id": "assess-guide-crypto",
+    "source": "assessment",
+    "title": "Assessment: Current Cryptographic Usage",
+    "content": "PQC Assessment Wizard — Step 3: Current Cryptographic Usage\n\nThe Current Cryptographic Usage step identifies which classical algorithms your organization uses (RSA, ECDSA, ECDH, AES, SHA-2, etc.). This determines which PQC replacements are needed — RSA/ECDSA require ML-DSA or SLH-DSA for signatures, while ECDH requires ML-KEM for key exchange.",
+    "category": "assessment-guide",
+    "metadata": { "step": "2", "stepName": "crypto" },
+    "deepLink": "/assess?step=2"
+  },
+  {
+    "id": "assess-guide-sensitivity",
+    "source": "assessment",
+    "title": "Assessment: Data Sensitivity",
+    "content": "PQC Assessment Wizard — Step 4: Data Sensitivity\n\nData Sensitivity drives urgency assessment. Organizations handling Top Secret, classified, financial, or health data face higher HNDL (Harvest Now, Decrypt Later) risk because adversaries may already be collecting encrypted data for future quantum decryption. Multiple sensitivity levels can be selected — the highest level determines the risk score.",
+    "category": "assessment-guide",
+    "metadata": { "step": "3", "stepName": "sensitivity" },
+    "deepLink": "/assess?step=3"
+  },
+  {
+    "id": "assess-guide-compliance",
+    "source": "assessment",
+    "title": "Assessment: Compliance Frameworks",
+    "content": "PQC Assessment Wizard — Step 5: Compliance Frameworks\n\nThe Compliance step identifies which regulatory frameworks apply to your organization (CNSA 2.0, NIST guidelines, ANSSI requirements, BSI recommendations, etc.). Frameworks are filtered by your selected industry and country. Each framework has different PQC adoption deadlines and requirements.",
+    "category": "assessment-guide",
+    "metadata": { "step": "4", "stepName": "compliance" },
+    "deepLink": "/assess?step=4"
+  },
+  {
+    "id": "assess-guide-migration",
+    "source": "assessment",
+    "title": "Assessment: Migration Status",
+    "content": "PQC Assessment Wizard — Step 6: Migration Status\n\nThe Migration Status step assesses how far along your organization is in the PQC transition: Not Started, Planning, Pilot/Testing, Partial Deployment, or Fully Migrated. Organizations in earlier stages receive higher urgency scores to encourage action.",
+    "category": "assessment-guide",
+    "metadata": { "step": "5", "stepName": "migration" },
+    "deepLink": "/assess?step=5"
+  },
+  {
+    "id": "assess-guide-use-cases",
+    "source": "assessment",
+    "title": "Assessment: Use Cases",
+    "content": "PQC Assessment Wizard — Step 7: Use Cases\n\nThe Use Cases step identifies specific cryptographic applications in your organization: TLS/HTTPS, VPN/IPsec, email signing, code signing, PKI/certificates, IoT device authentication, database encryption, etc. Each use case maps to specific PQC algorithms and migration complexity.",
+    "category": "assessment-guide",
+    "metadata": { "step": "6", "stepName": "use-cases" },
+    "deepLink": "/assess?step=6"
+  },
+  {
+    "id": "assess-guide-retention",
+    "source": "assessment",
+    "title": "Assessment: Data Retention",
+    "content": "PQC Assessment Wizard — Step 8: Data Retention\n\nData Retention periods directly impact HNDL risk exposure. Data that must remain confidential for 10+ years (e.g., health records, state secrets, financial archives) faces the highest quantum threat since quantum computers could decrypt it within its retention window. Multiple retention levels can be selected.",
+    "category": "assessment-guide",
+    "metadata": { "step": "7", "stepName": "retention" },
+    "deepLink": "/assess?step=7"
+  },
+  {
+    "id": "assess-guide-scale",
+    "source": "assessment",
+    "title": "Assessment: Organization Scale",
+    "content": "PQC Assessment Wizard — Step 9: Organization Scale\n\nOrganization Scale affects migration complexity and timeline. Large enterprises with thousands of endpoints, multiple data centers, and complex supply chains require longer migration timelines and more comprehensive crypto-agility frameworks than smaller organizations.",
+    "category": "assessment-guide",
+    "metadata": { "step": "8", "stepName": "scale" },
+    "deepLink": "/assess?step=8"
+  },
+  {
+    "id": "assess-guide-agility",
+    "source": "assessment",
+    "title": "Assessment: Crypto Agility",
+    "content": "PQC Assessment Wizard — Step 10: Crypto Agility\n\nCrypto Agility measures your organization's ability to quickly swap cryptographic algorithms. Organizations with centralized key management, automated certificate rotation, and modular crypto libraries can migrate faster. Low agility increases migration risk and timeline.",
+    "category": "assessment-guide",
+    "metadata": { "step": "9", "stepName": "agility" },
+    "deepLink": "/assess?step=9"
+  },
+  {
+    "id": "assess-guide-infrastructure",
+    "source": "assessment",
+    "title": "Assessment: Infrastructure Assessment",
+    "content": "PQC Assessment Wizard — Step 11: Infrastructure Assessment\n\nThe Infrastructure step evaluates which systems need PQC upgrades: HSMs, load balancers, firewalls, certificate authorities, databases, cloud services, IoT devices. Hardware-bound systems (HSMs, embedded devices) require longer migration timelines due to firmware/hardware replacement cycles.",
+    "category": "assessment-guide",
+    "metadata": { "step": "10", "stepName": "infrastructure" },
+    "deepLink": "/assess?step=10"
+  },
+  {
+    "id": "assess-guide-vendors",
+    "source": "assessment",
+    "title": "Assessment: Vendor Dependencies",
+    "content": "PQC Assessment Wizard — Step 12: Vendor Dependencies\n\nVendor Dependencies identifies third-party products and services in your cryptographic supply chain. Organizations dependent on vendor timelines for PQC support face additional risk. The Migrate Catalog can help identify PQC-ready alternatives.",
+    "category": "assessment-guide",
+    "metadata": { "step": "11", "stepName": "vendors" },
+    "deepLink": "/assess?step=11"
+  },
+  {
+    "id": "assess-guide-timeline",
+    "source": "assessment",
+    "title": "Assessment: Target Timeline",
+    "content": "PQC Assessment Wizard — Step 13: Target Timeline\n\nThe Target Timeline step sets your organization's PQC migration deadline based on regulatory requirements, risk tolerance, and industry benchmarks. Country-aligned options show relevant national deadlines (e.g., CNSA 2.0 2030/2033 milestones, ANSSI 2025 hybrid requirement).",
+    "category": "assessment-guide",
+    "metadata": { "step": "12", "stepName": "timeline" },
+    "deepLink": "/assess?step=12"
+  },
+  {
+    "id": "getting-started-developers",
+    "source": "documentation",
+    "title": "Getting Started for Developers",
+    "content": "Getting Started with PQC for Developers\n\nStart with the PQC 101 module to understand the quantum threat and why migration matters. Then explore ML-KEM key generation in the Playground — you can generate real PQC keypairs in your browser. The TLS Basics module shows how ML-KEM integrates with TLS 1.3 handshakes. For hands-on practice, OpenSSL Studio provides a full WASM-based OpenSSL 3.6 terminal for generating PQC keys and certificates. The Algorithm Reference page compares all NIST-standardized algorithms with performance benchmarks.",
+    "category": "getting-started",
+    "metadata": { "audience": "developers" },
+    "deepLink": "/learn/pqc-101"
+  },
+  {
+    "id": "getting-started-organizations",
+    "source": "documentation",
+    "title": "Getting Started for Organizations",
+    "content": "Getting Started with PQC for Organizations\n\nBegin with the Assessment wizard to evaluate your organization's quantum risk posture — it analyzes industry, data sensitivity, compliance requirements, and infrastructure to generate a prioritized migration plan. Review the Compliance page for regulatory frameworks (CNSA 2.0, ANSSI, BSI guidelines) and their deadlines. The Migrate Catalog lists PQC-ready products across 7 infrastructure layers, including HSMs, TLS libraries, and certificate authorities. The Threat Landscape page shows industry-specific quantum risks to help build the business case.",
+    "category": "getting-started",
+    "metadata": { "audience": "organizations" },
+    "deepLink": "/assess"
+  },
+  {
+    "id": "getting-started-learners",
+    "source": "documentation",
+    "title": "Getting Started for Learners",
+    "content": "Getting Started with PQC for Learners\n\nThe Learn section has 19 modules covering PQC fundamentals to advanced topics. Start with PQC 101 for an overview, then Quantum Threats to understand Shor's and Grover's algorithms. Key modules include: Hybrid Cryptography (transition strategy), Crypto Agility (algorithm flexibility), TLS Basics (web security), and Key Management (enterprise practices). Each module includes interactive demonstrations and a Workshop tab for hands-on exercises. Test your knowledge with the Quiz covering all 19 module topics. The Glossary provides definitions for 100+ PQC terms.",
+    "category": "getting-started",
+    "metadata": { "audience": "learners" },
+    "deepLink": "/learn"
+  },
+  {
+    "id": "playground-overview",
+    "source": "documentation",
+    "title": "PQC Playground — Interactive Crypto Demos",
+    "content": "PQC Playground Overview\n\nThe PQC Playground is an interactive browser-based tool for generating real post-quantum cryptographic keys, encrypting data, and signing messages. All operations run locally in the browser using WebAssembly (WASM) — no data leaves your machine. Available operations: Key Generation, Encryption/Decryption (KEM), and Digital Signatures.\n\nSupported algorithms: ML-KEM-512/768/1024 (key encapsulation), ML-DSA-44/65/87 (digital signatures), SLH-DSA-SHA2-128s/192s/256s (hash-based signatures), X25519 (classical ECDH), P-256 (classical ECDSA), RSA-2048/4096 (classical). All generated keys are for educational purposes only — not for production use.",
+    "category": "playground",
+    "metadata": { "feature": "overview" },
+    "deepLink": "/playground"
+  },
+  {
+    "id": "playground-keygen",
+    "source": "documentation",
+    "title": "Playground — Key Generation",
+    "content": "Key Generation in the PQC Playground\n\nSelect any algorithm to generate a keypair instantly in your browser. The playground shows public key size, private key size, and generation time for each algorithm. Compare PQC key sizes with classical equivalents — ML-KEM-768 public keys are 1,184 bytes vs RSA-2048 at 256 bytes, while ML-DSA-65 public keys are 1,952 bytes vs ECDSA P-256 at 64 bytes. Use the algorithm selector dropdown to switch between algorithms, or use the URL parameter: /playground?algo=ML-KEM.",
+    "category": "playground",
+    "metadata": { "feature": "keygen" },
+    "deepLink": "/playground"
+  },
+  {
+    "id": "playground-kem",
+    "source": "documentation",
+    "title": "Playground — Key Encapsulation (KEM)",
+    "content": "Key Encapsulation in the PQC Playground\n\nML-KEM (FIPS 203) key encapsulation generates a shared secret between two parties. The playground demonstrates: 1) Generate a keypair, 2) Encapsulate — create a ciphertext + shared secret using the public key, 3) Decapsulate — recover the shared secret using the private key. Compare ciphertext sizes: ML-KEM-768 produces 1,088-byte ciphertexts vs X25519 at 32 bytes. The shared secret is always 32 bytes regardless of parameter set.",
+    "category": "playground",
+    "metadata": { "feature": "kem" },
+    "deepLink": "/playground?algo=ML-KEM"
+  },
+  {
+    "id": "playground-signatures",
+    "source": "documentation",
+    "title": "Playground — Digital Signatures",
+    "content": "Digital Signatures in the PQC Playground\n\nML-DSA (FIPS 204) and SLH-DSA (FIPS 205) digital signatures can be generated and verified in the playground. Enter a message, sign it with a private key, then verify the signature with the public key. Compare signature sizes: ML-DSA-65 signatures are 3,309 bytes, SLH-DSA-SHA2-128s signatures are 7,856 bytes, vs ECDSA P-256 at 64 bytes. ML-DSA is faster but SLH-DSA is based on hash functions only (conservative security assumption).",
+    "category": "playground",
+    "metadata": { "feature": "signatures" },
+    "deepLink": "/playground?algo=ML-DSA"
+  },
+  {
+    "id": "openssl-studio-overview",
+    "source": "documentation",
+    "title": "OpenSSL Studio — Browser-Based WASM Terminal",
+    "content": "OpenSSL Studio Overview\n\nOpenSSL Studio provides a full OpenSSL 3.6.0 terminal running in the browser via WebAssembly (WASM). It supports PQC algorithms through the OQS provider, enabling hands-on practice with post-quantum key generation, certificate creation, and cryptographic operations without installing anything. All operations execute locally in the browser with SharedArrayBuffer support.",
+    "category": "openssl-studio",
+    "metadata": { "feature": "overview" },
+    "deepLink": "/openssl"
+  },
+  {
+    "id": "openssl-studio-keygen",
+    "source": "documentation",
+    "title": "OpenSSL Studio — PQC Key Generation Commands",
+    "content": "PQC Key Generation with OpenSSL Studio\n\nGenerate PQC keys using modern OpenSSL 3.x commands:\n- ML-KEM: openssl genpkey -algorithm mlkem768 -out mlkem768_key.pem\n- ML-DSA: openssl genpkey -algorithm mldsa65 -out mldsa65_key.pem\n- SLH-DSA: openssl genpkey -algorithm slhdsa-sha2-128s -out slhdsa_key.pem\n- Extract public key: openssl pkey -in key.pem -pubout -out pub.pem\n\nUse genpkey (not genrsa/ecparam) — modern OpenSSL commands support all PQC algorithms through the OQS provider.",
+    "category": "openssl-studio",
+    "metadata": { "feature": "keygen" },
+    "deepLink": "/openssl"
+  },
+  {
+    "id": "openssl-studio-certs",
+    "source": "documentation",
+    "title": "OpenSSL Studio — PQC Certificate Operations",
+    "content": "PQC Certificate Operations with OpenSSL Studio\n\nCreate PQC certificates and CSRs:\n- Self-signed cert: openssl req -x509 -new -key mldsa65_key.pem -out cert.pem -days 365 -subj \"/CN=PQC Test\"\n- CSR: openssl req -new -key mldsa65_key.pem -out csr.pem -subj \"/CN=PQC Test\"\n- Verify cert: openssl x509 -in cert.pem -text -noout\n- Sign data: openssl pkeyutl -sign -inkey mldsa65_key.pem -in data.txt -out sig.bin\n- Verify signature: openssl pkeyutl -verify -pubin -inkey pub.pem -in data.txt -sigfile sig.bin\n\nAll certificates use ML-DSA-65 or other PQC algorithms for signing, demonstrating post-quantum PKI workflows.",
+    "category": "openssl-studio",
+    "metadata": { "feature": "certificates" },
+    "deepLink": "/openssl"
+  },
+  {
     "id": "priority-critical",
     "source": "priority-matrix",
     "title": "Migration Priority: Critical",
@@ -19408,5 +19381,123 @@
     "category": "certification",
     "metadata": { "certType": "Common Criteria", "certCount": "1" },
     "deepLink": "/compliance?cert=cc-s3sse2a--s3sse2a-20250522--anssi-cc-2024-26-r01--sxmd"
+  },
+  {
+    "id": "cert-vendor-amazon-web-services-inc-",
+    "source": "certifications",
+    "title": "Amazon Web Services, Inc. — PQC Certifications",
+    "content": "Vendor: Amazon Web Services, Inc.\nProduct: AWS-LC\nCertifications:\n\n- ACVP: AWS-LC Cryptographic Module (static build) (C_SHA)\n  Cert ID: A6295\n  PQC Algorithms: ML-KEM\n  Status: Active | Date: 2024-11-25\n\n- ACVP: AWS-LC Cryptographic Module (static build) (C_SHA3)\n  Cert ID: A7917\n  PQC Algorithms: ML-KEM, ML-DSA\n  Status: Active | Date: 2026-01-21",
+    "category": "certification",
+    "metadata": {
+      "vendor": "Amazon Web Services, Inc.",
+      "softwareName": "AWS-LC",
+      "certCount": "2"
+    },
+    "deepLink": "/compliance?cert=A6295"
+  },
+  {
+    "id": "cert-vendor-apple-inc-",
+    "source": "certifications",
+    "title": "Apple Inc. — PQC Certifications",
+    "content": "Vendor: Apple Inc.\nProduct: Apple PQ3 / CoreCrypto\nCertifications:\n\n- ACVP: Apple corecrypto Module [Apple silicon, Kernel, Software, SL1] (vng_hwassist)\n  Cert ID: A7637\n  PQC Algorithms: ML-KEM, ML-DSA\n  Status: Active | Date: 2025-10-31\n\n- ACVP: Apple corecrypto Module [Apple silicon, Secure Key Store, Hardware, SL2] (c_ltc)\n  Cert ID: A7649\n  PQC Algorithms: ML-KEM, ML-DSA\n  Status: Active | Date: 2025-10-31\n\n- ACVP: Apple corecrypto Module [Apple silicon, User, Software, SL1] (vng_hwassist)\n  Cert ID: A7645\n  PQC Algorithms: ML-KEM, ML-DSA\n  Status: Active | Date: 2025-10-31",
+    "category": "certification",
+    "metadata": {
+      "vendor": "Apple Inc.",
+      "softwareName": "Apple PQ3 / CoreCrypto",
+      "certCount": "3"
+    },
+    "deepLink": "/compliance?cert=A7637"
+  },
+  {
+    "id": "cert-vendor-legion-of-the-bouncy-castle-inc-",
+    "source": "certifications",
+    "title": "Legion of the Bouncy Castle Inc. — PQC Certifications",
+    "content": "Vendor: Legion of the Bouncy Castle Inc.\nProduct: Bouncy Castle C# .NET\nCertifications:\n\n- FIPS 140-3: BC-FJA (Bouncy Castle FIPS Java API)\n  Cert ID: 4943\n  PQC Algorithms: LMS\n  Level: FIPS 140-3 L3\n  Status: Active | Date: 2025-01-17\n\n- FIPS 140-3: BC-FJA (Bouncy Castle FIPS Java API)\n  Cert ID: 4943\n  PQC Algorithms: LMS\n  Level: FIPS 140-3 L3\n  Status: Active | Date: 2025-01-17\n\n- FIPS 140-3: BC-FJA (Bouncy Castle FIPS Java API)\n  Cert ID: 4943\n  PQC Algorithms: LMS\n  Level: FIPS 140-3 L3\n  Status: Active | Date: 2025-01-17",
+    "category": "certification",
+    "metadata": {
+      "vendor": "Legion of the Bouncy Castle Inc.",
+      "softwareName": "Bouncy Castle C# .NET",
+      "certCount": "3"
+    },
+    "deepLink": "/compliance?cert=4943"
+  },
+  {
+    "id": "cert-vendor-check-point-software-technologies-ltd-",
+    "source": "certifications",
+    "title": "Check Point Software Technologies Ltd. — PQC Certifications",
+    "content": "Vendor: Check Point Software Technologies Ltd.\nProduct: Check Point Quantum\nCertifications:\n\n- FIPS 140-3: Quantum Security Gateway Cryptographic Library\n  Cert ID: 4264\n  PQC Algorithms: Potentially PQC (Name Match)\n  Level: FIPS 140-3 L3\n  Status: Active | Date: 2022-07-15",
+    "category": "certification",
+    "metadata": {
+      "vendor": "Check Point Software Technologies Ltd.",
+      "softwareName": "Check Point Quantum",
+      "certCount": "1"
+    },
+    "deepLink": "/compliance?cert=4264"
+  },
+  {
+    "id": "cert-vendor-entrust-corporation",
+    "source": "certifications",
+    "title": "Entrust Corporation — PQC Certifications",
+    "content": "Vendor: Entrust Corporation\nProduct: Entrust KeyControl\nCertifications:\n\n- ACVP: PQSDK\n  Cert ID: A7990\n  PQC Algorithms: LMS\n  Status: Active | Date: 2026-01-30\n\n- ACVP: PQSDK\n  Cert ID: A7990\n  PQC Algorithms: LMS\n  Status: Active | Date: 2026-01-30",
+    "category": "certification",
+    "metadata": {
+      "vendor": "Entrust Corporation",
+      "softwareName": "Entrust KeyControl",
+      "certCount": "2"
+    },
+    "deepLink": "/compliance?cert=A7990"
+  },
+  {
+    "id": "cert-vendor-pqshield-ltd",
+    "source": "certifications",
+    "title": "PQShield LTD — PQC Certifications",
+    "content": "Vendor: PQShield LTD\nProduct: PQShield PQSDK\nCertifications:\n\n- FIPS 140-3: PQCryptoLib\n  Cert ID: 4800\n  PQC Algorithms: Potentially PQC (Name Match)\n  Level: FIPS 140-3 L3\n  Status: Active | Date: 2024-09-16",
+    "category": "certification",
+    "metadata": { "vendor": "PQShield LTD", "softwareName": "PQShield PQSDK", "certCount": "1" },
+    "deepLink": "/compliance?cert=4800"
+  },
+  {
+    "id": "cert-vendor-samsung-electronics-co-ltd-scheme-fr-",
+    "source": "certifications",
+    "title": "Samsung Electronics Co., Ltd. (Scheme: FR) — PQC Certifications",
+    "content": "Vendor: Samsung Electronics Co., Ltd. (Scheme: FR)\nProduct: Samsung S3SSE2A eSE\nCertifications:\n\n- Common Criteria: S3SSE2A (S3SSE2A_20250522)(ANSSI-CC-2024/26-R01)\n  Cert ID: cc-s3sse2a--s3sse2a-20250522--anssi-cc-2024-26-r01--sxmd\n  PQC Algorithms: ML-DSA\n  Level: EAL5+,ADV_IMP.2,ADV_INT.3,ADV_TDS.5,ALC_CMC.5,ALC_DVS.2,ALC_TAT.3,ASE_TSS.2,ATE_COV.3,ATE_FUN.2,AVA_VAN.5\n  Status: Active | Date: 2025-10-01",
+    "category": "certification",
+    "metadata": {
+      "vendor": "Samsung Electronics Co., Ltd. (Scheme: FR)",
+      "softwareName": "Samsung S3SSE2A eSE",
+      "certCount": "1"
+    },
+    "deepLink": "/compliance?cert=cc-s3sse2a--s3sse2a-20250522--anssi-cc-2024-26-r01--sxmd"
+  },
+  {
+    "id": "cert-vendor-thales",
+    "source": "certifications",
+    "title": "Thales — PQC Certifications",
+    "content": "Vendor: Thales\nProduct: Thales Luna HSM\nCertifications:\n\n- ACVP: Thales Luna K7 Cryptographic Library\n  Cert ID: A7358\n  PQC Algorithms: ML-KEM, ML-DSA, LMS\n  Status: Active | Date: 2025-09-02",
+    "category": "certification",
+    "metadata": { "vendor": "Thales", "softwareName": "Thales Luna HSM", "certCount": "1" },
+    "deepLink": "/compliance?cert=A7358"
+  },
+  {
+    "id": "cert-vendor-thales-trusted-cyber-technologies",
+    "source": "certifications",
+    "title": "Thales Trusted Cyber Technologies — PQC Certifications",
+    "content": "Vendor: Thales Trusted Cyber Technologies\nProduct: Thales Luna T-Series HSM\nCertifications:\n\n- ACVP: Luna T7 Firmware Cryptographic Library\n  Cert ID: A7457\n  PQC Algorithms: LMS\n  Status: Active | Date: 2025-09-29\n\n- ACVP: Luna T7 Hybrid (HW/FW) Cryptographic Library\n  Cert ID: A7458\n  PQC Algorithms: LMS\n  Status: Active | Date: 2025-09-29\n\n- ACVP: Luna T7 Firmware Cryptographic Library\n  Cert ID: A7879\n  PQC Algorithms: ML-KEM, ML-DSA, LMS\n  Status: Active | Date: 2026-01-16\n\n- ACVP: Luna T7 Hybrid (HW/FW) Cryptographic Library\n  Cert ID: A7880\n  PQC Algorithms: ML-KEM, ML-DSA, LMS\n  Status: Active | Date: 2026-01-16",
+    "category": "certification",
+    "metadata": {
+      "vendor": "Thales Trusted Cyber Technologies",
+      "softwareName": "Thales Luna T-Series HSM",
+      "certCount": "4"
+    },
+    "deepLink": "/compliance?cert=A7457"
+  },
+  {
+    "id": "cert-vendor-utimaco-is-gmbh",
+    "source": "certifications",
+    "title": "Utimaco IS GmbH — PQC Certifications",
+    "content": "Vendor: Utimaco IS GmbH\nProduct: Utimaco ESKM\nCertifications:\n\n- ACVP: Stateful hash based Module - HBS\n  Cert ID: A7401\n  PQC Algorithms: LMS\n  Status: Active | Date: 2025-09-17\n\n- ACVP: Stateful hash based Module - HBS\n  Cert ID: A7401\n  PQC Algorithms: LMS\n  Status: Active | Date: 2025-09-17",
+    "category": "certification",
+    "metadata": { "vendor": "Utimaco IS GmbH", "softwareName": "Utimaco ESKM", "certCount": "2" },
+    "deepLink": "/compliance?cert=A7401"
   }
 ]

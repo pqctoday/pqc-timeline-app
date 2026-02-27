@@ -201,7 +201,8 @@
     "title": "HQC",
     "content": "Term: HQC\nDefinition: Hamming Quasi-Cyclic, a code-based KEM selected by NIST as an additional standard. Uses error-correcting codes for security.\nCategory: algorithm | Complexity: advanced",
     "category": "algorithm",
-    "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "" }
+    "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/learn/pqc-101" },
+    "deepLink": "/learn/pqc-101"
   },
   {
     "id": "glossary-22",
@@ -209,7 +210,8 @@
     "title": "Classic McEliece",
     "content": "Term: Classic McEliece\nDefinition: A code-based KEM with very large public keys but extremely conservative security assumptions. One of the oldest post-quantum proposals.\nCategory: algorithm | Complexity: advanced",
     "category": "algorithm",
-    "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "" }
+    "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/learn/pqc-101" },
+    "deepLink": "/learn/pqc-101"
   },
   {
     "id": "glossary-23",
@@ -217,8 +219,12 @@
     "title": "XMSS",
     "content": "Term: XMSS (XMSS)\nDefinition: eXtended Merkle Signature Scheme, a stateful hash-based digital signature algorithm standardized in RFC 8391 and NIST SP 800-208.\nTechnical Note: Like LMS, XMSS is stateful and each key can only sign a limited number of messages. Required by CNSA 2.0 for firmware and software signing.\nCategory: algorithm | Complexity: advanced",
     "category": "algorithm",
-    "metadata": { "acronym": "XMSS", "complexity": "advanced", "relatedModule": "/library" },
-    "deepLink": "/library"
+    "metadata": {
+      "acronym": "XMSS",
+      "complexity": "advanced",
+      "relatedModule": "/learn/stateful-signatures"
+    },
+    "deepLink": "/learn/stateful-signatures"
   },
   {
     "id": "glossary-24",
@@ -242,17 +248,27 @@
     "id": "glossary-26",
     "source": "glossary",
     "title": "Shor's Algorithm",
-    "content": "Term: Shor's Algorithm\nDefinition: A quantum algorithm that can efficiently factor large numbers and compute discrete logarithms, breaking RSA and ECC.\nCategory: algorithm | Complexity: intermediate",
+    "content": "Term: Shor's Algorithm (Shor)\nDefinition: A quantum algorithm that can efficiently factor large numbers and compute discrete logarithms, breaking RSA and ECC.\nCategory: algorithm | Complexity: intermediate",
     "category": "algorithm",
-    "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "" }
+    "metadata": {
+      "acronym": "Shor",
+      "complexity": "intermediate",
+      "relatedModule": "/learn/quantum-threats"
+    },
+    "deepLink": "/learn/quantum-threats"
   },
   {
     "id": "glossary-27",
     "source": "glossary",
     "title": "Grover's Algorithm",
-    "content": "Term: Grover's Algorithm\nDefinition: A quantum algorithm that speeds up brute-force searches, effectively halving the security level of symmetric ciphers and hash functions.\nCategory: algorithm | Complexity: intermediate",
+    "content": "Term: Grover's Algorithm (Grover)\nDefinition: A quantum algorithm that speeds up brute-force searches, effectively halving the security level of symmetric ciphers and hash functions.\nCategory: algorithm | Complexity: intermediate",
     "category": "algorithm",
-    "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "" }
+    "metadata": {
+      "acronym": "Grover",
+      "complexity": "intermediate",
+      "relatedModule": "/learn/quantum-threats"
+    },
+    "deepLink": "/learn/quantum-threats"
   },
   {
     "id": "glossary-28",
@@ -645,8 +661,12 @@
     "title": "NIST IR 8547",
     "content": "Term: NIST IR 8547\nDefinition: NIST Internal Report establishing the PQC transition timeline: deprecation of classical asymmetric crypto by 2030, disallowment by 2035.\nTechnical Note: Covers RSA, ECDSA, ECDH, EdDSA, DH, and DSA. The most authoritative U.S. government PQC migration deadline document.\nCategory: standard | Complexity: intermediate",
     "category": "standard",
-    "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
-    "deepLink": "/library"
+    "metadata": {
+      "acronym": "",
+      "complexity": "intermediate",
+      "relatedModule": "/learn/compliance-strategy"
+    },
+    "deepLink": "/learn/compliance-strategy"
   },
   {
     "id": "glossary-67",
@@ -1232,8 +1252,12 @@
     "title": "Cryptographic Inventory",
     "content": "Term: Cryptographic Inventory\nDefinition: A comprehensive catalog of all cryptographic algorithms, protocols, keys, and certificates in an organization, essential for planning PQC migration.\nCategory: concept | Complexity: beginner",
     "category": "concept",
-    "metadata": { "acronym": "", "complexity": "beginner", "relatedModule": "/assess" },
-    "deepLink": "/assess"
+    "metadata": {
+      "acronym": "",
+      "complexity": "beginner",
+      "relatedModule": "/learn/migration-program"
+    },
+    "deepLink": "/learn/migration-program"
   },
   {
     "id": "glossary-126",
@@ -1259,8 +1283,12 @@
     "title": "SBOM",
     "content": "Term: SBOM (SBOM)\nDefinition: Software Bill of Materials, a formal inventory of all components in a software product. Increasingly required alongside CBOM for security compliance.\nCategory: concept | Complexity: intermediate",
     "category": "concept",
-    "metadata": { "acronym": "SBOM", "complexity": "intermediate", "relatedModule": "/threats" },
-    "deepLink": "/threats"
+    "metadata": {
+      "acronym": "SBOM",
+      "complexity": "intermediate",
+      "relatedModule": "/learn/vendor-risk"
+    },
+    "deepLink": "/learn/vendor-risk"
   },
   {
     "id": "glossary-129",
@@ -1400,7 +1428,12 @@
     "title": "Triple-DES",
     "content": "Term: Triple-DES (3DES)\nDefinition: A legacy symmetric cipher that applies DES three times to each block. Being phased out in favor of AES due to its small 64-bit block size.\nTechnical Note: Still found in legacy payment systems (DUKPT) and some government systems. NIST deprecated 3DES after December 31, 2023.\nCategory: algorithm | Complexity: intermediate",
     "category": "algorithm",
-    "metadata": { "acronym": "3DES", "complexity": "intermediate", "relatedModule": "" }
+    "metadata": {
+      "acronym": "3DES",
+      "complexity": "intermediate",
+      "relatedModule": "/learn/pqc-101"
+    },
+    "deepLink": "/learn/pqc-101"
   },
   {
     "id": "glossary-144",
@@ -1954,9 +1987,9 @@
     "metadata": {
       "acronym": "CRQC",
       "complexity": "beginner",
-      "relatedModule": "/learn/quantum-threats"
+      "relatedModule": "/learn/pqc-risk-management"
     },
-    "deepLink": "/learn/quantum-threats"
+    "deepLink": "/learn/pqc-risk-management"
   },
   {
     "id": "glossary-197",
@@ -2252,8 +2285,12 @@
     "title": "Crypto Discovery",
     "content": "Term: Crypto Discovery\nDefinition: The automated process of scanning an organization's systems to identify all cryptographic algorithms, keys, certificates, and protocols in use. The first step in PQC migration.\nTechnical Note: Tools like SandboxAQ AQtive Guard and IBM Guardium automate crypto discovery to build a Cryptographic Bill of Materials (CBOM).\nCategory: concept | Complexity: beginner",
     "category": "concept",
-    "metadata": { "acronym": "", "complexity": "beginner", "relatedModule": "/assess" },
-    "deepLink": "/assess"
+    "metadata": {
+      "acronym": "",
+      "complexity": "beginner",
+      "relatedModule": "/learn/migration-program"
+    },
+    "deepLink": "/learn/migration-program"
   },
   {
     "id": "glossary-224",
@@ -5487,11 +5524,11 @@
     "id": "library-3GPP-PQC-Study-2025",
     "source": "library",
     "title": "Study on Preparing for Transition to Post Quantum Cryptography in 3GPP",
-    "content": "Title: Study on Preparing for Transition to Post Quantum Cryptography in 3GPP\nDescription: 3GPP study on integrating standalone or hybrid PQC algorithms into existing 5G security protocols. References TR 33.938 Cryptographic Inventory.\nType: Research/Report | Status: Study Item Approved\nAuthors: 3GPP SA3\nAlgorithm Family: Hybrid PQC approaches\nSecurity Levels: L3,L5\nMigration Urgency: High\nIndustries: Mobile Networks; Telecom; 5G\nRegion: Global\nPublished: 2025-05-01 | Updated: 2025-05-01",
+    "content": "Title: Study on Preparing for Transition to Post Quantum Cryptography in 3GPP\nDescription: 3GPP study on integrating standalone or hybrid PQC algorithms into existing 5G security protocols. References TR 33.841 PQC Study. Covers hybrid PQC for TLS, IPSec, IKEv2 in 5G.\nType: Research/Report | Status: Study Item Approved\nAuthors: 3GPP SA3\nAlgorithm Family: Hybrid PQC approaches\nSecurity Levels: L3,L5\nMigration Urgency: High\nIndustries: Mobile Networks; Telecom; 5G\nRegion: Global\nPublished: 2025-05-01 | Updated: 2025-05-01",
     "category": "Research/Report",
     "metadata": {
       "referenceId": "3GPP-PQC-Study-2025",
-      "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.839/",
+      "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.841/",
       "algorithmFamily": "Hybrid PQC approaches"
     },
     "deepLink": "/library?ref=3GPP-PQC-Study-2025"
@@ -5552,7 +5589,7 @@
     "id": "library-FIPS 205",
     "source": "library",
     "title": "Stateless Hash-Based Digital Signature Standard (SLH-DSA)",
-    "content": "Title: Stateless Hash-Based Digital Signature Standard (SLH-DSA)\nDescription: Specifies SLH-DSA (SPHINCS+) stateless hash-based signatures with 12 parameter sets.\nType: Algorithm | Status: Final Standard\nAuthors: NIST\nAlgorithm Family: Hash-based (stateless)\nSecurity Levels: L1,L3,L5\nMigration Urgency: Medium\nIndustries: Firmware; Critical Infrastructure; Software Updates; Long-term Archival\nRegion: USA; Global\nPublished: 2023-08-24 | Updated: 2024-08-13",
+    "content": "Title: Stateless Hash-Based Digital Signature Standard (SLH-DSA)\nDescription: Specifies SLH-DSA (SPHINCS+) stateless hash-based signatures with 12 parameter sets. The stateless alternative to LMS/XMSS — no state management required, but larger signatures.\nType: Algorithm | Status: Final Standard\nAuthors: NIST\nAlgorithm Family: Hash-based (stateless)\nSecurity Levels: L1,L3,L5\nMigration Urgency: Medium\nIndustries: Firmware; Critical Infrastructure; Software Updates; Long-term Archival\nRegion: USA; Global\nPublished: 2023-08-24 | Updated: 2024-08-13",
     "category": "Algorithm",
     "metadata": {
       "referenceId": "FIPS 205",
@@ -5565,11 +5602,11 @@
     "id": "library-FIPS 206",
     "source": "library",
     "title": "FFT over NTRU-Lattice-Based Digital Signature Algorithm (FN-DSA)",
-    "content": "Title: FFT over NTRU-Lattice-Based Digital Signature Algorithm (FN-DSA)\nDescription: Specifies FN-DSA (FALCON) compact signature algorithm with two parameter sets (512, 1024). Currently in public draft stage; final standard expected in 2026. Offers significantly smaller signatures than ML-DSA, suited for constrained environments.\nType: Algorithm | Status: Initial Public Draft\nAuthors: NIST\nAlgorithm Family: Lattice-based (NTRU)\nSecurity Levels: L1,L5\nMigration Urgency: High\nIndustries: Constrained Devices; IoT; Embedded Systems; Mobile\nRegion: USA; Global\nPublished: 2025-01-01 | Updated: 2025-12-09",
+    "content": "Title: FFT over NTRU-Lattice-Based Digital Signature Algorithm (FN-DSA)\nDescription: Specifies FN-DSA (FALCON) compact signature algorithm with two parameter sets (512, 1024). Finalized October 2024. Offers significantly smaller signatures than ML-DSA, well-suited for constrained environments.\nType: Algorithm | Status: Final Standard\nAuthors: NIST\nAlgorithm Family: Lattice-based (NTRU)\nSecurity Levels: L1,L5\nMigration Urgency: High\nIndustries: Constrained Devices; IoT; Embedded Systems; Mobile\nRegion: USA; Global\nPublished: 2025-01-01 | Updated: 2025-12-09",
     "category": "Algorithm",
     "metadata": {
       "referenceId": "FIPS 206",
-      "url": "https://csrc.nist.gov/projects/post-quantum-cryptography",
+      "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.206.pdf",
       "algorithmFamily": "Lattice-based (NTRU)"
     },
     "deepLink": "/library?ref=FIPS%20206"
@@ -5604,7 +5641,7 @@
     "id": "library-NIST SP 800-227",
     "source": "library",
     "title": "Recommendations for Key-Encapsulation Mechanisms",
-    "content": "Title: Recommendations for Key-Encapsulation Mechanisms\nDescription: Guidance for implementing KEMs securely including hybrid KEMs and FIPS 140 validation requirements.\nType: Compliance/Guidance | Status: Final\nAuthors: NIST\nAlgorithm Family: Lattice-based\nSecurity Levels: L1,L3,L5\nMigration Urgency: High\nIndustries: IT; Finance; Gov; Cloud; HSM Vendors\nRegion: USA; Global\nPublished: 2025-01-06 | Updated: 2025-09-18",
+    "content": "Title: Recommendations for Key-Encapsulation Mechanisms\nDescription: Guidance for implementing KEMs securely including hybrid KEMs and FIPS 140 validation requirements.\nType: Compliance/Guidance | Status: Final\nAuthors: NIST\nAlgorithm Family: Lattice-based\nSecurity Levels: L1,L3,L5\nMigration Urgency: High\nIndustries: IT; Finance; Gov; Cloud; HSM Vendors\nRegion: USA; Global\nPublished: 2025-09-18 | Updated: 2025-09-18",
     "category": "Compliance/Guidance",
     "metadata": {
       "referenceId": "NIST SP 800-227",
@@ -5721,7 +5758,7 @@
     "id": "library-RFC 9814",
     "source": "library",
     "title": "Use of SLH-DSA in CMS",
-    "content": "Title: Use of SLH-DSA in CMS\nDescription: Defines SPHINCS+ (SLH-DSA) usage in Cryptographic Message Syntax.\nType: Protocol | Status: Proposed Standard\nAuthors: IETF LAMPS\nAlgorithm Family: Hash-based (stateless)\nSecurity Levels: L1,L3,L5\nMigration Urgency: Medium\nIndustries: IT; Critical Infrastructure; Archival\nRegion: International\nPublished: 2025-07-19 | Updated: 2025-07-19",
+    "content": "Title: Use of SLH-DSA in CMS\nDescription: Defines SPHINCS+ (SLH-DSA), the stateless hash-based signature standard, usage in Cryptographic Message Syntax. Included for comparison with stateful LMS/XMSS schemes.\nType: Protocol | Status: Proposed Standard\nAuthors: IETF LAMPS\nAlgorithm Family: Hash-based (stateless)\nSecurity Levels: L1,L3,L5\nMigration Urgency: Medium\nIndustries: IT; Critical Infrastructure; Archival\nRegion: International\nPublished: 2025-07-19 | Updated: 2025-07-19",
     "category": "Protocol",
     "metadata": {
       "referenceId": "RFC 9814",
@@ -5733,8 +5770,8 @@
   {
     "id": "library-RFC 9858",
     "source": "library",
-    "title": "LMS Algorithm Identifiers for Alternative Hash Functions",
-    "content": "Title: LMS Algorithm Identifiers for Alternative Hash Functions\nDescription: Extends RFC 8554 with SHA-3 and SHAKE hash function options for LMS.\nType: Algorithm | Status: Standards Track\nAuthors: IETF CFRG\nAlgorithm Family: Hash-based (stateful)\nSecurity Levels: L1-L5\nMigration Urgency: Low\nIndustries: Firmware; IoT\nRegion: International\nPublished: 2025-04-01 | Updated: 2025-04-01",
+    "title": "Additional Parameter Sets for HSS/LMS Hash-Based Signatures",
+    "content": "Title: Additional Parameter Sets for HSS/LMS Hash-Based Signatures\nDescription: Adds SHA-256/192, SHAKE256/256, and SHAKE256/192 parameter sets for LMS/HSS, reducing signature sizes by 35-40% compared to the original RFC 8554 SHA-256 parameter sets.\nType: Algorithm | Status: Standards Track\nAuthors: IETF CFRG\nAlgorithm Family: Hash-based (stateful)\nSecurity Levels: L1-L5\nMigration Urgency: Low\nIndustries: Firmware; IoT\nRegion: International\nPublished: 2025-04-01 | Updated: 2025-04-01",
     "category": "Algorithm",
     "metadata": {
       "referenceId": "RFC 9858",
@@ -5773,7 +5810,7 @@
     "id": "library-draft-ietf-tls-ecdhe-mlkem-04",
     "source": "library",
     "title": "Post-quantum hybrid ECDHE-MLKEM Key Agreement for TLSv1.3",
-    "content": "Title: Post-quantum hybrid ECDHE-MLKEM Key Agreement for TLSv1.3\nDescription: Specifies X25519MLKEM768 SecP256r1MLKEM768 and SecP384r1MLKEM1024 hybrid groups for TLS 1.3. Updated to Standards Track category with normative hybrid framework and RFC 9847 references. Expires Aug 2026.\nType: Protocol | Status: Internet-Draft (Standards Track)\nAuthors: IETF TLS WG\nAlgorithm Family: Lattice + ECDH\nSecurity Levels: L1,L3,L5\nMigration Urgency: High\nIndustries: Web; Cloud; Enterprise\nRegion: International\nPublished: 2024-03-01 | Updated: 2026-02-08",
+    "content": "Title: Post-quantum hybrid ECDHE-MLKEM Key Agreement for TLSv1.3\nDescription: Specifies X25519MLKEM768, SecP256r1MLKEM768, and SecP384r1MLKEM1024 hybrid groups for TLS 1.3. Normative hybrid framework: draft-ietf-tls-hybrid-design (also in RFC Ed Queue). Both drafts in final pre-publication stage as of Feb 2026.\nType: Protocol | Status: Internet-Draft (Standards Track)\nAuthors: IETF TLS WG\nAlgorithm Family: Lattice + ECDH\nSecurity Levels: L1,L3,L5\nMigration Urgency: High\nIndustries: Web; Cloud; Enterprise\nRegion: International\nPublished: 2024-03-01 | Updated: 2026-02-08",
     "category": "Protocol",
     "metadata": {
       "referenceId": "draft-ietf-tls-ecdhe-mlkem-04",
@@ -5796,36 +5833,36 @@
     "deepLink": "/library?ref=draft-ietf-tls-mlkem-07"
   },
   {
-    "id": "library-draft-ietf-ipsecme-ikev2-mlkem-03",
+    "id": "library-draft-ietf-ipsecme-ikev2-mlkem",
     "source": "library",
     "title": "Post-quantum Hybrid Key Exchange with ML-KEM in IKEv2",
     "content": "Title: Post-quantum Hybrid Key Exchange with ML-KEM in IKEv2\nDescription: Specifies ML-KEM in IKEv2 for quantum-resistant VPN and IPsec key establishment.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF IPSECME WG\nAlgorithm Family: Lattice-based\nSecurity Levels: L1,L3,L5\nMigration Urgency: High\nIndustries: VPN; Enterprise; Government; Cloud\nRegion: International\nPublished: 2023-11-01 | Updated: 2025-09-29",
     "category": "Protocol",
     "metadata": {
-      "referenceId": "draft-ietf-ipsecme-ikev2-mlkem-03",
+      "referenceId": "draft-ietf-ipsecme-ikev2-mlkem",
       "url": "https://datatracker.ietf.org/doc/draft-ietf-ipsecme-ikev2-mlkem/",
       "algorithmFamily": "Lattice-based"
     },
-    "deepLink": "/library?ref=draft-ietf-ipsecme-ikev2-mlkem-03"
+    "deepLink": "/library?ref=draft-ietf-ipsecme-ikev2-mlkem"
   },
   {
-    "id": "library-draft-yang-tls-hybrid-sm2-mlkem-02",
+    "id": "library-draft-yang-tls-hybrid-sm2-mlkem-03",
     "source": "library",
     "title": "Hybrid Post-quantum Key Exchange SM2-MLKEM for TLSv1.3",
-    "content": "Title: Hybrid Post-quantum Key Exchange SM2-MLKEM for TLSv1.3\nDescription: Defines curveSM2MLKEM768 hybrid for TLS 1.3 combining Chinese SM2 curve with ML-KEM.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF Individual Submission\nAlgorithm Family: SM2 + Lattice\nSecurity Levels: L3\nMigration Urgency: Medium\nIndustries: China; Asia-Pacific; Government\nRegion: China; Asia\nPublished: 2024-08-01 | Updated: 2025-02-12",
+    "content": "Title: Hybrid Post-quantum Key Exchange SM2-MLKEM for TLSv1.3\nDescription: Defines curveSM2MLKEM768 hybrid for TLS 1.3 combining Chinese SM2 curve with ML-KEM.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF Individual Submission\nAlgorithm Family: SM2 + Lattice\nSecurity Levels: L3\nMigration Urgency: Medium\nIndustries: China; Asia-Pacific; Government\nRegion: China; Asia\nPublished: 2024-08-01 | Updated: 2025-11-15",
     "category": "Protocol",
     "metadata": {
-      "referenceId": "draft-yang-tls-hybrid-sm2-mlkem-02",
+      "referenceId": "draft-yang-tls-hybrid-sm2-mlkem-03",
       "url": "https://datatracker.ietf.org/doc/draft-yang-tls-hybrid-sm2-mlkem/",
       "algorithmFamily": "SM2 + Lattice"
     },
-    "deepLink": "/library?ref=draft-yang-tls-hybrid-sm2-mlkem-02"
+    "deepLink": "/library?ref=draft-yang-tls-hybrid-sm2-mlkem-03"
   },
   {
     "id": "library-draft-ietf-lamps-kyber-certificates-11",
     "source": "library",
-    "title": "Algorithm Identifiers for ML-KEM in X.509 PKI",
-    "content": "Title: Algorithm Identifiers for ML-KEM in X.509 PKI\nDescription: Defines X.509 OIDs and structures for ML-KEM public keys in certificates.\nType: PKI/Certificate | Status: Internet-Draft\nAuthors: IETF LAMPS\nAlgorithm Family: Lattice-based\nSecurity Levels: L1,L3,L5\nMigration Urgency: High\nIndustries: Web PKI; IoT; Enterprise\nRegion: International\nPublished: 2022-06-03 | Updated: 2025-07-22",
+    "title": "Internet X.509 PKI — Algorithm Identifiers for ML-KEM",
+    "content": "Title: Internet X.509 PKI — Algorithm Identifiers for ML-KEM\nDescription: Defines X.509 OIDs and structures for ML-KEM public keys in certificates.\nType: PKI/Certificate | Status: Internet-Draft (RFC Ed Queue, AUTH48)\nAuthors: IETF LAMPS\nAlgorithm Family: Lattice-based\nSecurity Levels: L1,L3,L5\nMigration Urgency: High\nIndustries: Web PKI; IoT; Enterprise\nRegion: International\nPublished: 2022-06-03 | Updated: 2025-07-22",
     "category": "PKI/Certificate",
     "metadata": {
       "referenceId": "draft-ietf-lamps-kyber-certificates-11",
@@ -6180,7 +6217,7 @@
     "category": "Algorithm",
     "metadata": {
       "referenceId": "ISO/IEC 14888-4:2024",
-      "url": "https://www.iso.org/standard/80966.html",
+      "url": "https://www.iso.org/standard/80492.html",
       "algorithmFamily": "Hash-based (stateful)"
     },
     "deepLink": "/library?ref=ISO%2FIEC%2014888-4%3A2024"
@@ -6297,23 +6334,23 @@
     "category": "Guidance",
     "metadata": {
       "referenceId": "Japan CRYPTREC Report 2024",
-      "url": "https://www.cryptrec.go.jp/en/",
+      "url": "https://www.cryptrec.go.jp/report/cryptrec-gl-2007-2024.pdf",
       "algorithmFamily": "N/A"
     },
     "deepLink": "/library?ref=Japan%20CRYPTREC%20Report%202024"
   },
   {
-    "id": "library-Singapore IMDA Cyber Security Guide",
+    "id": "library-Singapore-CSA-Quantum-Safe-Handbook",
     "source": "library",
-    "title": "Post-Quantum Cryptography Readiness Guide",
-    "content": "Title: Post-Quantum Cryptography Readiness Guide\nDescription: Singapore guidance for organizations preparing for PQC transition.\nType: Guidance | Status: Guidance\nAuthors: IMDA Singapore\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Telecom; Finance; Critical Info Infrastructure\nRegion: Singapore; ASEAN\nPublished: 2024-06-01 | Updated: 2024-06-01",
+    "title": "Quantum-Safe Handbook and Quantum Readiness Index",
+    "content": "Title: Quantum-Safe Handbook and Quantum Readiness Index\nDescription: Singapore guidance for organizations preparing for PQC transition.\nType: Guidance | Status: Guidance\nAuthors: CSA Singapore\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Telecom; Finance; Critical Info Infrastructure\nRegion: Singapore; ASEAN\nPublished: 2024-06-01 | Updated: 2024-06-01",
     "category": "Guidance",
     "metadata": {
-      "referenceId": "Singapore IMDA Cyber Security Guide",
+      "referenceId": "Singapore-CSA-Quantum-Safe-Handbook",
       "url": "https://www.csa.gov.sg/resources/publications/quantum-safe-handbook-and-quantum-readiness-index/",
       "algorithmFamily": "N/A"
     },
-    "deepLink": "/library?ref=Singapore%20IMDA%20Cyber%20Security%20Guide"
+    "deepLink": "/library?ref=Singapore-CSA-Quantum-Safe-Handbook"
   },
   {
     "id": "library-Australia ASD PQC Guidance",
@@ -6342,30 +6379,17 @@
     "deepLink": "/library?ref=Canada%20CSE%20PQC%20Guidance"
   },
   {
-    "id": "library-GSMA FS.50 PQC Guidelines",
+    "id": "library-GSMA PQ.03 PQC Guidelines",
     "source": "library",
-    "title": "Post-Quantum Cryptography Integration in Mobile Networks",
-    "content": "Title: Post-Quantum Cryptography Integration in Mobile Networks\nDescription: Guidance for integrating PQC into TLS, IKE, and 5G infrastructure.\nType: Guidance | Status: Permanent Reference Document\nAuthors: GSMA\nAlgorithm Family: Hybrid approaches\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Mobile Networks; Telecom; 5G\nRegion: Global\nPublished: 2024-10-01 | Updated: 2024-10-01",
+    "title": "Post-Quantum Cryptography Guidelines for Telecom Use Cases",
+    "content": "Title: Post-Quantum Cryptography Guidelines for Telecom Use Cases\nDescription: Guidance for integrating PQC into TLS, IKE, and 5G infrastructure.\nType: Guidance | Status: Permanent Reference Document\nAuthors: GSMA\nAlgorithm Family: Hybrid approaches\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Mobile Networks; Telecom; 5G\nRegion: Global\nPublished: 2024-10-01 | Updated: 2024-10-01",
     "category": "Guidance",
     "metadata": {
-      "referenceId": "GSMA FS.50 PQC Guidelines",
+      "referenceId": "GSMA PQ.03 PQC Guidelines",
       "url": "https://www.gsma.com/newsroom/wp-content/uploads/PQ.03-Post-Quantum-Cryptography-Guidelines-for-Telecom-Use-Cases-v2.0-2.pdf",
       "algorithmFamily": "Hybrid approaches"
     },
-    "deepLink": "/library?ref=GSMA%20FS.50%20PQC%20Guidelines"
-  },
-  {
-    "id": "library-CA/Browser Forum Ballot SC-PQC",
-    "source": "library",
-    "title": "Post-Quantum Algorithm Requirements for Public Trust Certificates",
-    "content": "Title: Post-Quantum Algorithm Requirements for Public Trust Certificates\nDescription: CA/Browser Forum requirements for ML-DSA certificates in Web PKI.\nType: Compliance/Policy | Status: Ballot/Draft\nAuthors: CA/Browser Forum\nAlgorithm Family: Lattice-based\nSecurity Levels: L3,L5\nMigration Urgency: High\nIndustries: Web PKI; Certificate Authorities; Browsers\nRegion: Global\nPublished: 2025-06-01 | Updated: 2025-11-01",
-    "category": "Compliance/Policy",
-    "metadata": {
-      "referenceId": "CA/Browser Forum Ballot SC-PQC",
-      "url": "https://cabforum.org/",
-      "algorithmFamily": "Lattice-based"
-    },
-    "deepLink": "/library?ref=CA%2FBrowser%20Forum%20Ballot%20SC-PQC"
+    "deepLink": "/library?ref=GSMA%20PQ.03%20PQC%20Guidelines"
   },
   {
     "id": "library-IEEE 1609.2 Amendment",
@@ -6381,17 +6405,17 @@
     "deepLink": "/library?ref=IEEE%201609.2%20Amendment"
   },
   {
-    "id": "library-3GPP TS 33.501 Rel-19",
+    "id": "library-3GPP TS 33.501",
     "source": "library",
-    "title": "Security Architecture and Procedures for 5G - PQC Enhancements",
-    "content": "Title: Security Architecture and Procedures for 5G - PQC Enhancements\nDescription: 5G security architecture updates incorporating PQC algorithms.\nType: Protocol | Status: Technical Specification\nAuthors: 3GPP\nAlgorithm Family: Hybrid approaches\nSecurity Levels: L3,L5\nMigration Urgency: High\nIndustries: Mobile Networks; 5G; Telecom\nRegion: Global\nPublished: 2025-06-01 | Updated: 2025-12-01",
+    "title": "Security Architecture and Procedures for 5G System",
+    "content": "Title: Security Architecture and Procedures for 5G System\nDescription: 5G security architecture specification. PQC enhancements are being introduced via ongoing 3GPP work items (see TR 33.841). Covers authentication, key hierarchy, and SUCI protection.\nType: Protocol | Status: Technical Specification\nAuthors: 3GPP\nAlgorithm Family: Hybrid approaches\nSecurity Levels: L3,L5\nMigration Urgency: High\nIndustries: Mobile Networks; 5G; Telecom\nRegion: Global\nPublished: 2025-06-01 | Updated: 2025-12-01",
     "category": "Protocol",
     "metadata": {
-      "referenceId": "3GPP TS 33.501 Rel-19",
-      "url": "https://www.etsi.org/deliver/etsi_ts/133500_133599/133501/17.05.00_60/ts_133501v170500p.pdf",
+      "referenceId": "3GPP TS 33.501",
+      "url": "https://www.3gpp.org/dynareport/33501.htm",
       "algorithmFamily": "Hybrid approaches"
     },
-    "deepLink": "/library?ref=3GPP%20TS%2033.501%20Rel-19"
+    "deepLink": "/library?ref=3GPP%20TS%2033.501"
   },
   {
     "id": "library-IETF RFC 8391",
@@ -6462,8 +6486,8 @@
     "id": "library-Samsung-Thales-ML-KEM-eSE-2026",
     "source": "library",
     "title": "Samsung/Thales Post-Quantum Embedded Secure Element (S3SSE2A)",
-    "content": "Title: Samsung/Thales Post-Quantum Embedded Secure Element (S3SSE2A)\nDescription: Samsung System LSI and Thales bring ML-KEM quantum-resistant capabilities to embedded Secure Element (eSE). Two dedicated PQC hardware accelerators 18x faster than software. CES Best Cybersecurity Innovation Award winner. EAL6+ certification target. Crypto-agile architecture.\nType: Algorithm | Status: Released\nAuthors: Samsung System LSI; Thales\nAlgorithm Family: Lattice-based\nSecurity Levels: L3,L5\nMigration Urgency: High\nIndustries: IoT; Embedded Systems; Mobile; Hardware Security\nRegion: Global\nPublished: 2026-01-06 | Updated: 2026-01-06",
-    "category": "Algorithm",
+    "content": "Title: Samsung/Thales Post-Quantum Embedded Secure Element (S3SSE2A)\nDescription: Samsung System LSI and Thales bring ML-KEM quantum-resistant capabilities to embedded Secure Element (eSE). Two dedicated PQC hardware accelerators 18x faster than software. CES Best Cybersecurity Innovation Award winner. EAL6+ certification target. Crypto-agile architecture.\nType: Industry News | Status: Released\nAuthors: Samsung System LSI; Thales\nAlgorithm Family: Lattice-based\nSecurity Levels: L3,L5\nMigration Urgency: High\nIndustries: IoT; Embedded Systems; Mobile; Hardware Security\nRegion: Global\nPublished: 2026-01-06 | Updated: 2026-01-06",
+    "category": "Industry News",
     "metadata": {
       "referenceId": "Samsung-Thales-ML-KEM-eSE-2026",
       "url": "https://www.businesswire.com/news/home/20260106145232/en/Thales-Powers-CES-Winning-Post-Quantum-Chip-From-Samsung-Electronics",
@@ -6526,12 +6550,12 @@
   {
     "id": "library-EO-14306",
     "source": "library",
-    "title": "Executive Order 14306 - Strengthening the Nation's Cybersecurity (PQC Provisions)",
-    "content": "Title: Executive Order 14306 - Strengthening the Nation's Cybersecurity (PQC Provisions)\nDescription: Trump administration EO directing DHS/CISA to publish PQC product categories. Requires TLS 1.3 adoption by 2030. Amends EO 13694 and EO 14144. Retains PQC migration provisions from Biden era.\nType: Compliance/Policy | Status: Executive Order\nAuthors: White House\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Federal Government; All Sectors\nRegion: USA\nPublished: 2025-06-06 | Updated: 2025-06-06",
+    "title": "Executive Order 14306 — Sustaining Select Cybersecurity Efforts (PQC Provisions)",
+    "content": "Title: Executive Order 14306 — Sustaining Select Cybersecurity Efforts (PQC Provisions)\nDescription: Trump administration EO directing DHS/CISA to publish PQC product categories. Requires TLS 1.3 adoption by 2030. Amends EO 13694 and EO 14144. Retains PQC migration provisions from Biden era.\nType: Compliance/Policy | Status: Executive Order\nAuthors: White House\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Federal Government; All Sectors\nRegion: USA\nPublished: 2025-06-06 | Updated: 2025-06-06",
     "category": "Compliance/Policy",
     "metadata": {
       "referenceId": "EO-14306",
-      "url": "https://www.cisa.gov/news-events/news/cisa-releases-product-categories-list-propel-post-quantum-cryptography-adoption-pursuant-president",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/06/sustaining-select-efforts-to-strengthen-the-nations-cybersecurity-and-amending-executive-order-13694-and-executive-order-14144/",
       "algorithmFamily": "N/A"
     },
     "deepLink": "/library?ref=EO-14306"
@@ -6553,7 +6577,7 @@
     "id": "library-draft-kampanakis-curdle-ssh-pq-ke",
     "source": "library",
     "title": "Post-Quantum Key Exchange for SSH using ML-KEM",
-    "content": "Title: Post-Quantum Key Exchange for SSH using ML-KEM\nDescription: Defines mlkem768x25519-sha256 hybrid SSH key exchange combining ML-KEM-768 (FIPS 203) with X25519. Implemented in OpenSSH 9.9+.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF CURDLE WG\nAlgorithm Family: Lattice-based\nSecurity Levels: L3\nMigration Urgency: High\nIndustries: Remote Access; Enterprise; Government\nRegion: International\nPublished: 2024-03-01 | Updated: 2024-03-01",
+    "content": "Title: Post-Quantum Key Exchange for SSH using ML-KEM\nDescription: Defines mlkem768x25519-sha256 hybrid SSH key exchange combining ML-KEM-768 (FIPS 203) with X25519. Implemented in OpenSSH 9.9+.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF CURDLE WG\nAlgorithm Family: Lattice-based\nSecurity Levels: L3\nMigration Urgency: High\nIndustries: Remote Access; Enterprise; Government\nRegion: International\nPublished: 2024-03-01 | Updated: 2024-07-15",
     "category": "Protocol",
     "metadata": {
       "referenceId": "draft-kampanakis-curdle-ssh-pq-ke",
@@ -6566,7 +6590,7 @@
     "id": "library-draft-josefsson-ntruprime-ssh",
     "source": "library",
     "title": "NTRU Prime Key Agreement for SSH",
-    "content": "Title: NTRU Prime Key Agreement for SSH\nDescription: Defines sntrup761x25519-sha512 hybrid SSH key exchange using Streamlined NTRU Prime with X25519. Default algorithm in OpenSSH 9.0+.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF Individual Submission\nAlgorithm Family: Lattice-based (NTRU)\nSecurity Levels: L3\nMigration Urgency: Medium\nIndustries: Remote Access; Enterprise\nRegion: International\nPublished: 2022-01-01 | Updated: 2022-01-01",
+    "content": "Title: NTRU Prime Key Agreement for SSH\nDescription: Defines sntrup761x25519-sha512 hybrid SSH key exchange using Streamlined NTRU Prime with X25519. Default algorithm in OpenSSH 9.0+.\nType: Protocol | Status: Internet-Draft (Individual Submission)\nAuthors: IETF Individual Submission\nAlgorithm Family: Lattice-based (NTRU)\nSecurity Levels: L3\nMigration Urgency: Medium\nIndustries: Remote Access; Enterprise\nRegion: International\nPublished: 2022-01-01 | Updated: 2022-01-01",
     "category": "Protocol",
     "metadata": {
       "referenceId": "draft-josefsson-ntruprime-ssh",
@@ -6578,8 +6602,8 @@
   {
     "id": "library-draft-ietf-pquip-hbs-state",
     "source": "library",
-    "title": "Stateful Hash-Based Signature State Management",
-    "content": "Title: Stateful Hash-Based Signature State Management\nDescription: Guidance on managing stateful HBS (LMS/XMSS) state to prevent catastrophic key reuse. Covers state persistence and distributed signing strategies.\nType: Guidance | Status: Internet-Draft\nAuthors: IETF PQUIP WG\nAlgorithm Family: Hash-based (stateful)\nSecurity Levels: L1-L5\nMigration Urgency: Medium\nIndustries: Firmware; Critical Infrastructure; Secure Boot\nRegion: International\nPublished: 2024-01-01 | Updated: 2024-01-01",
+    "title": "Hash-based Signatures: State and Backup Management",
+    "content": "Title: Hash-based Signatures: State and Backup Management\nDescription: Guidance on managing stateful HBS (LMS/XMSS) state to prevent catastrophic key reuse. Covers state persistence and distributed signing strategies.\nType: Guidance | Status: In IESG Review\nAuthors: IETF PQUIP WG\nAlgorithm Family: Hash-based (stateful)\nSecurity Levels: L1-L5\nMigration Urgency: Medium\nIndustries: Firmware; Critical Infrastructure; Secure Boot\nRegion: International\nPublished: 2024-01-01 | Updated: 2026-02-24",
     "category": "Guidance",
     "metadata": {
       "referenceId": "draft-ietf-pquip-hbs-state",
@@ -6592,7 +6616,7 @@
     "id": "library-draft-sfluhrer-ipsecme-ikev2-mldsa-00",
     "source": "library",
     "title": "Post-quantum Digital Signatures with ML-DSA in IKEv2",
-    "content": "Title: Post-quantum Digital Signatures with ML-DSA in IKEv2\nDescription: Defines ML-DSA (FIPS 204) for IKE_AUTH phase digital signatures in IKEv2. Companion to draft-ietf-ipsecme-ikev2-mlkem. Enables fully post-quantum IKEv2 authentication.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF IPSECME WG\nAlgorithm Family: Lattice-based\nSecurity Levels: L2,L3,L5\nMigration Urgency: High\nIndustries: VPN; Enterprise; Government\nRegion: International\nPublished: 2025-01-01 | Updated: 2025-01-01",
+    "content": "Title: Post-quantum Digital Signatures with ML-DSA in IKEv2\nDescription: Defines ML-DSA (FIPS 204) for IKE_AUTH phase digital signatures in IKEv2. Companion to draft-ietf-ipsecme-ikev2-mlkem. Enables fully post-quantum IKEv2 authentication.\nType: Protocol | Status: Internet-Draft (Individual Submission)\nAuthors: IETF IPSECME WG\nAlgorithm Family: Lattice-based\nSecurity Levels: L2,L3,L5\nMigration Urgency: High\nIndustries: VPN; Enterprise; Government\nRegion: International\nPublished: 2025-01-01 | Updated: 2025-01-01",
     "category": "Protocol",
     "metadata": {
       "referenceId": "draft-sfluhrer-ipsecme-ikev2-mldsa-00",
@@ -6602,17 +6626,17 @@
     "deepLink": "/library?ref=draft-sfluhrer-ipsecme-ikev2-mldsa-00"
   },
   {
-    "id": "library-draft-ietf-tls-mldsa",
+    "id": "library-draft-ietf-tls-mldsa-01",
     "source": "library",
     "title": "ML-DSA for TLS 1.3",
-    "content": "Title: ML-DSA for TLS 1.3\nDescription: Defines ML-DSA (FIPS 204) signature algorithms for use in TLS 1.3 authentication. Enables post-quantum certificate-based authentication in TLS alongside ML-KEM key exchange.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF TLS WG\nAlgorithm Family: Lattice-based\nSecurity Levels: L2,L3,L5\nMigration Urgency: High\nIndustries: Web; Cloud; Enterprise; Government\nRegion: International\nPublished: 2025-01-01 | Updated: 2025-01-01",
+    "content": "Title: ML-DSA for TLS 1.3\nDescription: Defines ML-DSA (FIPS 204) signature algorithms for use in TLS 1.3 authentication. Enables post-quantum certificate-based authentication in TLS alongside ML-KEM key exchange.\nType: Protocol | Status: Internet-Draft\nAuthors: IETF TLS WG\nAlgorithm Family: Lattice-based\nSecurity Levels: L2,L3,L5\nMigration Urgency: High\nIndustries: Web; Cloud; Enterprise; Government\nRegion: International\nPublished: 2025-01-01 | Updated: 2025-09-26",
     "category": "Protocol",
     "metadata": {
-      "referenceId": "draft-ietf-tls-mldsa",
+      "referenceId": "draft-ietf-tls-mldsa-01",
       "url": "https://datatracker.ietf.org/doc/draft-ietf-tls-mldsa/",
       "algorithmFamily": "Lattice-based"
     },
-    "deepLink": "/library?ref=draft-ietf-tls-mldsa"
+    "deepLink": "/library?ref=draft-ietf-tls-mldsa-01"
   },
   {
     "id": "library-RFC 9690",
@@ -6670,7 +6694,7 @@
     "id": "library-NIST-SP-800-90C",
     "source": "library",
     "title": "SP 800-90C: Recommendation for Random Bit Generator (RBG) Constructions",
-    "content": "Title: SP 800-90C: Recommendation for Random Bit Generator (RBG) Constructions\nDescription: NIST standard specifying constructions for Random Bit Generators (RBGs) that combine entropy sources with DRBGs. Defines RBG1, RBG2, RBG3, and RBGC classes for defense-in-depth randomness.\nType: Standard | Status: Published\nAuthors: NIST\nAlgorithm Family: N/A\nSecurity Levels: \nMigration Urgency: High\nIndustries: All Industries\nRegion: USA; Global\nPublished: 2025-09-25 | Updated: 2025-09-25",
+    "content": "Title: SP 800-90C: Recommendation for Random Bit Generator (RBG) Constructions\nDescription: NIST standard specifying constructions for Random Bit Generators (RBGs) that combine entropy sources with DRBGs. Defines RBG1, RBG2, RBG3, and RBGC classes for defense-in-depth randomness.\nType: Standard | Status: Published\nAuthors: NIST\nAlgorithm Family: N/A\nSecurity Levels: \nMigration Urgency: High\nIndustries: All Industries\nRegion: USA; Global\nPublished: 2024-09-25 | Updated: 2024-09-25",
     "category": "Standard",
     "metadata": {
       "referenceId": "NIST-SP-800-90C",
@@ -6708,8 +6732,8 @@
   {
     "id": "library-ETSI-GS-QKD-004",
     "source": "library",
-    "title": "ETSI GS QKD 004 - Application Interface",
-    "content": "Title: ETSI GS QKD 004 - Application Interface\nDescription: Specifies the application programming interface for accessing QKD-generated keys from applications.\nType: Protocol | Status: Published\nAuthors: ETSI ISG QKD\nAlgorithm Family: QKD\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Software Development; Telecom; Finance\nRegion: Europe; International\nPublished: 2010-12-01 | Updated: 2020-08-01",
+    "title": "ETSI GS QKD 004 - Application Interface (V2.1.1)",
+    "content": "Title: ETSI GS QKD 004 - Application Interface (V2.1.1)\nDescription: Specifies the application programming interface for accessing QKD-generated keys from applications.\nType: Protocol | Status: Published\nAuthors: ETSI ISG QKD\nAlgorithm Family: QKD\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Software Development; Telecom; Finance\nRegion: Europe; International\nPublished: 2020-08-01 | Updated: 2020-08-01",
     "category": "Protocol",
     "metadata": {
       "referenceId": "ETSI-GS-QKD-004",
@@ -6812,8 +6836,8 @@
   {
     "id": "library-ETSI-GS-QKD-018",
     "source": "library",
-    "title": "ETSI GS QKD 018 - Orchestration Interface of Software Defined Networks (Part 2)",
-    "content": "Title: ETSI GS QKD 018 - Orchestration Interface of Software Defined Networks (Part 2)\nDescription: Extended orchestration capabilities for QKD in SDN including service-level agreements and quality of service.\nType: Protocol | Status: Published\nAuthors: ETSI ISG QKD\nAlgorithm Family: QKD\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Telecom; Cloud Providers; SDN Vendors\nRegion: Europe; International\nPublished: 2024-01-01 | Updated: 2024-01-01",
+    "title": "ETSI GS QKD 018 - Orchestration Interface of Software Defined Networks",
+    "content": "Title: ETSI GS QKD 018 - Orchestration Interface of Software Defined Networks\nDescription: Orchestration interface for managing QKD resources in SDN environments. Defines YANG data models for interoperability between QKD network layer, SDN controllers, and orchestrators. Enables multi-domain key routing and programmable quantum networks.\nType: Protocol | Status: Published\nAuthors: ETSI ISG QKD\nAlgorithm Family: QKD\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Telecom; Cloud Providers; SDN Vendors\nRegion: Europe; International\nPublished: 2022-04-01 | Updated: 2022-04-01",
     "category": "Protocol",
     "metadata": {
       "referenceId": "ETSI-GS-QKD-018",
@@ -7044,14 +7068,53 @@
     "deepLink": "/library?ref=OpenSSL-3x-Docs"
   },
   {
+    "id": "library-BIP-141",
+    "source": "library",
+    "title": "BIP-141: Segregated Witness (Consensus Layer)",
+    "content": "Title: BIP-141: Segregated Witness (Consensus Layer)\nDescription: Activates Segregated Witness on Bitcoin separating signature data (witness) from transaction inputs. Introduces SegWit witness versioning (v0 P2WPKH/P2WSH, v1 Taproot). BIP-360 (P2QRH) introduces SegWit v3 (bc1r...) as a quantum-resistant output type building directly on this witness versioning scheme.\nType: Standard | Status: Final\nAuthors: Eric Lombrozo; Johnson Lau; Pieter Wuille (Bitcoin Core)\nAlgorithm Family: Classical\nSecurity Levels: 128-bit\nMigration Urgency: Low\nIndustries: Finance; Digital Assets; Web3; Research\nRegion: Global\nPublished: 2015-12-21 | Updated: 2021-10-05",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "BIP-141",
+      "url": "https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki",
+      "algorithmFamily": "Classical"
+    },
+    "deepLink": "/library?ref=BIP-141"
+  },
+  {
+    "id": "library-BIP-340",
+    "source": "library",
+    "title": "BIP-340: Schnorr Signatures for secp256k1",
+    "content": "Title: BIP-340: Schnorr Signatures for secp256k1\nDescription: Defines 64-byte Schnorr signatures for secp256k1 with provable security, batch verification, and key aggregation (MuSig2). Required foundation for Taproot (BIP-341). BIP-360 (P2QRH) targets Taproot's Schnorr key-spend path as the primary quantum vulnerability to replace with post-quantum signatures.\nType: Specification | Status: Final\nAuthors: Pieter Wuille; Jonas Nick; Tim Ruffing (Bitcoin Core)\nAlgorithm Family: Classical\nSecurity Levels: 128-bit\nMigration Urgency: Medium\nIndustries: Finance; Digital Assets; Web3; Research\nRegion: Global\nPublished: 2020-01-19 | Updated: 2022-03-01",
+    "category": "Specification",
+    "metadata": {
+      "referenceId": "BIP-340",
+      "url": "https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki",
+      "algorithmFamily": "Classical"
+    },
+    "deepLink": "/library?ref=BIP-340"
+  },
+  {
+    "id": "library-BIP-341",
+    "source": "library",
+    "title": "BIP-341: Taproot: SegWit Version 1 Spending Rules",
+    "content": "Title: BIP-341: Taproot: SegWit Version 1 Spending Rules\nDescription: Activates Taproot on Bitcoin (block 709632). Defines SegWit v1 spending with a Schnorr key-spend path and Merklized Abstract Syntax Tree (MAST) script-spend path. BIP-360 (P2QRH) specifically removes the key-spend path as quantum-vulnerable under Shor's algorithm and proposes a SegWit v3 (bc1r...) replacement.\nType: Standard | Status: Final\nAuthors: Pieter Wuille; Jonas Nick; Anthony Towns (Bitcoin Core)\nAlgorithm Family: Classical\nSecurity Levels: 128-bit\nMigration Urgency: Medium\nIndustries: Finance; Digital Assets; Web3\nRegion: Global\nPublished: 2020-01-19 | Updated: 2022-03-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "BIP-341",
+      "url": "https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki",
+      "algorithmFamily": "Classical"
+    },
+    "deepLink": "/library?ref=BIP-341"
+  },
+  {
     "id": "library-Bitcoin-BIP360-P2QRH",
     "source": "library",
     "title": "Bitcoin BIP-360: Pay to Quantum Resistant Hash (P2QRH)",
-    "content": "Title: Bitcoin BIP-360: Pay to Quantum Resistant Hash (P2QRH)\nDescription: Proposes a new Bitcoin output type (SegWit v3, bc1r...) using post-quantum signatures (ML-DSA or FALCON-512) via a soft fork. Removes the quantum-vulnerable key-spend path from Taproot. Authored by Hunter Beast to address the HNFL risk to Bitcoin public keys.\nType: Proposal/Draft | Status: Draft\nAuthors: Hunter Beast; Bitcoin Core Community\nAlgorithm Family: Lattice-based; Hash-based\nSecurity Levels: L1;L3\nMigration Urgency: High\nIndustries: Finance; Digital Assets; Web3; Research\nRegion: Global\nPublished: 2024-06-01 | Updated: 2025-12-18",
+    "content": "Title: Bitcoin BIP-360: Pay to Quantum Resistant Hash (P2QRH)\nDescription: Proposes a new Bitcoin output type (SegWit v3, bc1r...) using post-quantum signatures via a soft fork. Removes the quantum-vulnerable key-spend path from Taproot. Exact PQC algorithms to be standardized in a companion BIP; ML-DSA and FALCON-512 are leading candidates under community discussion. Authored by Hunter Beast to address the HNFL risk to Bitcoin public keys.\nType: Proposal/Draft | Status: Draft\nAuthors: Hunter Beast; Bitcoin Core Community\nAlgorithm Family: Lattice-based; Hash-based\nSecurity Levels: L1;L3\nMigration Urgency: High\nIndustries: Finance; Digital Assets; Web3; Research\nRegion: Global\nPublished: 2024-06-01 | Updated: 2025-12-18",
     "category": "Proposal/Draft",
     "metadata": {
       "referenceId": "Bitcoin-BIP360-P2QRH",
-      "url": "https://delvingbitcoin.org/t/changes-to-bip-360-pay-to-quantum-resistant-hash-p2qrh/1811",
+      "url": "https://github.com/bitcoin/bips/blob/master/bip-0360.mediawiki",
       "algorithmFamily": "Lattice-based; Hash-based"
     },
     "deepLink": "/library?ref=Bitcoin-BIP360-P2QRH"
@@ -7073,7 +7136,7 @@
     "id": "library-Ethereum-EIP7702",
     "source": "library",
     "title": "EIP-7702: Set Code for EOA",
-    "content": "Title: EIP-7702: Set Code for EOA\nDescription: Allows EOAs to set executable code via signed authorisation tuples (Pectra hard fork). Provides a bridge for migrating existing Ethereum accounts to quantum-resistant signing without full account migration — enabling PQC contract verification per transaction.\nType: Standard | Status: Final\nAuthors: Vitalik Buterin; Sam Wilson; Ansgar Dietrichs; Ethereum Foundation\nAlgorithm Family: Classical (PQC-extensible)\nSecurity Levels: \nMigration Urgency: High\nIndustries: Finance; Digital Assets; Web3\nRegion: Global\nPublished: 2024-05-07 | Updated: 2025-01-01",
+    "content": "Title: EIP-7702: Set Code for EOA\nDescription: Allows EOAs to set executable code via signed authorisation tuples (Pectra hard fork). Provides a bridge for PQC migration: a delegated smart contract can verify ML-DSA or FALCON signatures on behalf of the EOA, enabling quantum-safe signing without full account migration. Note: EIP-7702 authorisation tuples are themselves signed with secp256k1; quantum resistance is provided by the delegated contract's verification logic.\nType: Standard | Status: Final\nAuthors: Vitalik Buterin; Sam Wilson; Ansgar Dietrichs; Ethereum Foundation\nAlgorithm Family: Classical (PQC-extensible)\nSecurity Levels: \nMigration Urgency: High\nIndustries: Finance; Digital Assets; Web3\nRegion: Global\nPublished: 2024-05-07 | Updated: 2025-01-01",
     "category": "Standard",
     "metadata": {
       "referenceId": "Ethereum-EIP7702",
@@ -7111,15 +7174,28 @@
   {
     "id": "library-IETF-MTC-Draft-09",
     "source": "library",
-    "title": "Merkle Tree Certificates for TLS (draft-davidben-tls-merkle-tree-certs-09)",
-    "content": "Title: Merkle Tree Certificates for TLS (draft-davidben-tls-merkle-tree-certs-09)\nDescription: IETF Internet-Draft defining Merkle Tree Certificates (MTCs) for TLS. Replaces individual per-certificate CA signatures with a single signed Merkle tree root and compact inclusion proofs, reducing PQC TLS handshake authentication data by 63-74%.\nType: Standard | Status: Internet-Draft\nAuthors: David Benjamin (Google); Cloudflare\nAlgorithm Family: Hash-based (SHA-256)\nSecurity Levels: \nMigration Urgency: High\nIndustries: IT; Telecom; Finance; Web Infrastructure\nRegion: Global\nPublished: 2024-06-01 | Updated: 2026-02-01",
+    "title": "Merkle Tree Certificates for TLS (draft-ietf-plants-merkle-tree-certs-01)",
+    "content": "Title: Merkle Tree Certificates for TLS (draft-ietf-plants-merkle-tree-certs-01)\nDescription: IETF Internet-Draft defining Merkle Tree Certificates (MTCs) for TLS, adopted by the IETF PLANTS working group as draft-ietf-plants-merkle-tree-certs-01 (February 2026). Replaces individual per-certificate CA signatures with a single signed Merkle tree root and compact inclusion proofs, reducing PQC TLS handshake authentication data by 63-74%.\nType: Standard | Status: Internet-Draft (IETF PLANTS WG)\nAuthors: David Benjamin (Google); Cloudflare\nAlgorithm Family: Hash-based (SHA-256)\nSecurity Levels: \nMigration Urgency: High\nIndustries: IT; Telecom; Finance; Web Infrastructure\nRegion: Global\nPublished: 2024-06-01 | Updated: 2026-02-18",
     "category": "Standard",
     "metadata": {
       "referenceId": "IETF-MTC-Draft-09",
-      "url": "https://datatracker.ietf.org/doc/draft-davidben-tls-merkle-tree-certs/",
+      "url": "https://datatracker.ietf.org/doc/draft-ietf-plants-merkle-tree-certs/",
       "algorithmFamily": "Hash-based (SHA-256)"
     },
     "deepLink": "/library?ref=IETF-MTC-Draft-09"
+  },
+  {
+    "id": "library-RFC-9162",
+    "source": "library",
+    "title": "Certificate Transparency Version 2.0",
+    "content": "Title: Certificate Transparency Version 2.0\nDescription: IETF Standards Track RFC defining Certificate Transparency Version 2.0. Obsoletes RFC 6962. Foundational for understanding the transparency log model that Merkle Tree Certificates extend for post-quantum TLS optimization. Specifies TLS extensions for CT log artifacts and certificate inclusion proofs.\nType: Standard | Status: Standards Track RFC\nAuthors: IETF\nAlgorithm Family: Hash-based\nSecurity Levels: \nMigration Urgency: Medium\nIndustries: IT; Web Infrastructure; Telecom; Finance\nRegion: Global\nPublished: 2021-12-01 | Updated: 2021-12-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "RFC-9162",
+      "url": "https://www.rfc-editor.org/rfc/rfc9162",
+      "algorithmFamily": "Hash-based"
+    },
+    "deepLink": "/library?ref=RFC-9162"
   },
   {
     "id": "library-Cloudflare-MTC-Blog",
@@ -7161,30 +7237,589 @@
     "deepLink": "/library?ref=Cloudflare-PQ-Internet-2025"
   },
   {
+    "id": "library-eIDAS-2-Regulation",
+    "source": "library",
+    "title": "eIDAS 2.0 Regulation (EU 2024/1183)",
+    "content": "Title: eIDAS 2.0 Regulation (EU 2024/1183)\nDescription: EU regulation establishing the European Digital Identity framework mandating EUDI Wallets for all member states by late 2026. Requires private sector acceptance by late 2027. Introduces Qualified Electronic Attestations of Attributes (QEAA) and specifies the trust framework for digital identity across EU. Supersedes eIDAS 1.0.\nType: Regulation | Status: In Force\nAuthors: European Parliament; Council of the European Union\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Finance; Healthcare; Telecom; Identity\nRegion: EU\nPublished: 2024-05-30 | Updated: 2024-05-30",
+    "category": "Regulation",
+    "metadata": {
+      "referenceId": "eIDAS-2-Regulation",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1183",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=eIDAS-2-Regulation"
+  },
+  {
+    "id": "library-EUDI-Wallet-ARF",
+    "source": "library",
+    "title": "EUDI Wallet Architecture and Reference Framework (ARF)",
+    "content": "Title: EUDI Wallet Architecture and Reference Framework (ARF)\nDescription: Technical architecture and reference framework for the European Digital Identity Wallet. Defines credential formats (mso_mdoc per ISO 18013-5 and SD-JWT VC per RFC 9901) trust framework protocol requirements (OpenID4VCI OpenID4VP) and cryptographic security requirements. Specifies PQC migration roadmap: Dec 2026 national roadmaps Dec 2030 high-risk migration Dec 2035 full transition.\nType: Technical Specification | Status: Living Document\nAuthors: European Commission; eIDAS Expert Group\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Identity; Technology; Finance\nRegion: EU\nPublished: 2023-01-01 | Updated: 2025-06-01",
+    "category": "Technical Specification",
+    "metadata": {
+      "referenceId": "EUDI-Wallet-ARF",
+      "url": "https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=EUDI-Wallet-ARF"
+  },
+  {
+    "id": "library-ISO-18013-5-mDL",
+    "source": "library",
+    "title": "ISO/IEC 18013-5:2021 — Mobile Driving Licence (mDL) Application",
+    "content": "Title: ISO/IEC 18013-5:2021 — Mobile Driving Licence (mDL) Application\nDescription: International standard defining the mso_mdoc credential format for mobile driving licences and identity documents. Specifies binary CBOR encoding document structure namespace (eu.europa.ec.eudi.pid.1 for EUDI PID) and cryptographic protection via Mobile Security Objects (MSO) signed by the issuer. Foundational for EUDI Wallet PID credentials and proximity presentations via NFC and BLE.\nType: Standard | Status: Published Standard\nAuthors: ISO/IEC JTC1 SC17\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Identity; Automotive; Transport\nRegion: Global\nPublished: 2021-09-01 | Updated: 2021-09-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "ISO-18013-5-mDL",
+      "url": "https://www.iso.org/standard/69084.html",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=ISO-18013-5-mDL"
+  },
+  {
+    "id": "library-RFC-9901-SD-JWT-VC",
+    "source": "library",
+    "title": "RFC 9901 — SD-JWT-based Verifiable Credentials (SD-JWT VC)",
+    "content": "Title: RFC 9901 — SD-JWT-based Verifiable Credentials (SD-JWT VC)\nDescription: IETF RFC defining SD-JWT-based Verifiable Credentials format (vc+sd-jwt). Specifies credential structure selective disclosure mechanism claims key binding JWT and the holder binding proof. Adopted by EUDI Wallet ARF for online attestations (education diplomas professional qualifications). Text-based JSON encoding optimised for remote online services.\nType: RFC | Status: Published RFC\nAuthors: IETF OAuth Working Group\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Identity; Finance; Technology\nRegion: Global\nPublished: 2025-06-01 | Updated: 2025-06-01",
+    "category": "RFC",
+    "metadata": {
+      "referenceId": "RFC-9901-SD-JWT-VC",
+      "url": "https://www.rfc-editor.org/rfc/rfc9901",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=RFC-9901-SD-JWT-VC"
+  },
+  {
+    "id": "library-IETF-SD-JWT-Draft",
+    "source": "library",
+    "title": "Selective Disclosure for JWTs (SD-JWT) — draft-ietf-oauth-selective-disclosure-jwt",
+    "content": "Title: Selective Disclosure for JWTs (SD-JWT) — draft-ietf-oauth-selective-disclosure-jwt\nDescription: IETF specification defining the selective disclosure mechanism for JWT claims using salted SHA-256 hashes. Enables minimal disclosure (only requested attributes revealed) and unlinkability (batch-issued credentials prevent correlation). Core privacy-by-design mechanism used in SD-JWT VC credentials for the EUDI Wallet ecosystem.\nType: Draft Standard | Status: IETF Draft Standard\nAuthors: IETF OAuth Working Group\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Technology; Identity; Finance; Government\nRegion: Global\nPublished: 2022-01-01 | Updated: 2025-06-01",
+    "category": "Draft Standard",
+    "metadata": {
+      "referenceId": "IETF-SD-JWT-Draft",
+      "url": "https://datatracker.ietf.org/doc/draft-ietf-oauth-selective-disclosure-jwt/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=IETF-SD-JWT-Draft"
+  },
+  {
+    "id": "library-OpenID4VCI-Spec",
+    "source": "library",
+    "title": "OpenID for Verifiable Credential Issuance (OpenID4VCI)",
+    "content": "Title: OpenID for Verifiable Credential Issuance (OpenID4VCI)\nDescription: OpenID Foundation specification defining how credential issuers expose APIs for digital credential issuance. Specifies credential offer flow pre-authorisation code flow authorisation code flow and credential endpoint. Defines proof of possession using key binding JWTs. Mandatory protocol for all EUDI Wallet credential issuers (PID providers attestation issuers).\nType: Protocol Specification | Status: Final\nAuthors: OpenID Foundation\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Technology; Identity; Government; Finance\nRegion: Global\nPublished: 2023-01-01 | Updated: 2025-06-01",
+    "category": "Protocol Specification",
+    "metadata": {
+      "referenceId": "OpenID4VCI-Spec",
+      "url": "https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=OpenID4VCI-Spec"
+  },
+  {
+    "id": "library-OpenID4VP-Spec",
+    "source": "library",
+    "title": "OpenID for Verifiable Presentations (OpenID4VP)",
+    "content": "Title: OpenID for Verifiable Presentations (OpenID4VP)\nDescription: OpenID Foundation specification defining how holders present verifiable credentials to relying parties. Specifies the authorization request presentation definition (DIF PE) and presentation submission. Enables selective disclosure presentations where holders reveal only the credential attributes required by the relying party. Mandatory for EUDI Wallet credential presentation flows.\nType: Protocol Specification | Status: Final\nAuthors: OpenID Foundation\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Technology; Identity; Government; Finance\nRegion: Global\nPublished: 2022-01-01 | Updated: 2025-06-01",
+    "category": "Protocol Specification",
+    "metadata": {
+      "referenceId": "OpenID4VP-Spec",
+      "url": "https://openid.net/specs/openid-4-verifiable-presentations-1_0.html",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=OpenID4VP-Spec"
+  },
+  {
+    "id": "library-IETF-Token-Status-List",
+    "source": "library",
+    "title": "OAuth Status List — draft-ietf-oauth-status-list",
+    "content": "Title: OAuth Status List — draft-ietf-oauth-status-list\nDescription: IETF specification for a compact bit-array status list to check validity states of credentials (valid revoked suspended). Provides privacy-preserving revocation: the verifier cannot determine which specific credential is being checked from the status list position alone. Used in EUDI Wallet ecosystem for credential revocation checking without revealing holder identity to the issuer.\nType: Draft Standard | Status: IETF Draft Standard\nAuthors: IETF OAuth Working Group\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Technology; Identity; Government\nRegion: Global\nPublished: 2023-01-01 | Updated: 2025-06-01",
+    "category": "Draft Standard",
+    "metadata": {
+      "referenceId": "IETF-Token-Status-List",
+      "url": "https://datatracker.ietf.org/doc/draft-ietf-oauth-status-list/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=IETF-Token-Status-List"
+  },
+  {
+    "id": "library-ENISA-EUDI-Wallet-Security",
+    "source": "library",
+    "title": "Security of the EUDI Wallet Architecture — ENISA",
+    "content": "Title: Security of the EUDI Wallet Architecture — ENISA\nDescription: ENISA analysis of security risks and mitigations for the European Digital Identity Wallet architecture. Identifies EUDI Wallet providers as high-impact targets for early PQC adoption. Covers security requirements for credential formats trust framework key management (WSCD/WSCA) and protocol security. Provides recommendations for member state EUDI Wallet implementations.\nType: Research/Report | Status: Published\nAuthors: ENISA\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Identity; Technology; Finance\nRegion: EU\nPublished: 2024-06-01 | Updated: 2024-06-01",
+    "category": "Research/Report",
+    "metadata": {
+      "referenceId": "ENISA-EUDI-Wallet-Security",
+      "url": "https://www.enisa.europa.eu/publications/security-of-the-eudi-wallet-architecture",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=ENISA-EUDI-Wallet-Security"
+  },
+  {
+    "id": "library-CSC-API-v2-Spec",
+    "source": "library",
+    "title": "Cloud Signature Consortium API v2 Specification",
+    "content": "Title: Cloud Signature Consortium API v2 Specification\nDescription: Cloud Signature Consortium API v2 for remote digital signature services. Defines endpoints for credential listing (/csc/v2/credentials/list) credential information (/csc/v2/credentials/info) authorization (/csc/v2/credentials/authorize) and hash signing (/csc/v2/signatures/signHash). Supports Qualified Electronic Signatures (QES) via remote HSMs. Adopted by eIDAS trust service providers (QTSPs) for EUDI Wallet-compatible SCAL2 signature services.\nType: Technical Specification | Status: Published\nAuthors: Cloud Signature Consortium\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Finance; Legal; Technology\nRegion: EU; Global\nPublished: 2022-01-01 | Updated: 2024-01-01",
+    "category": "Technical Specification",
+    "metadata": {
+      "referenceId": "CSC-API-v2-Spec",
+      "url": "https://cloudsignatureconsortium.org/resources/download-api-specifications/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=CSC-API-v2-Spec"
+  },
+  {
+    "id": "library-ETSI-EN-319-411",
+    "source": "library",
+    "title": "ETSI EN 319 411 — Requirements for Trust Service Providers Issuing Certificates",
+    "content": "Title: ETSI EN 319 411 — Requirements for Trust Service Providers Issuing Certificates\nDescription: ETSI standard defining policy and security requirements for Qualified Trust Service Providers (QTSPs) issuing qualified certificates under eIDAS. Forms the basis for European CA auditing under WebTrust/ETSI audit schemes and the EUDI Trust Framework for credential issuer accreditation. Part 1 covers general requirements; Part 2 covers NCP/NCP+/QCP/eIDAS policies.\nType: Standard | Status: Published Standard\nAuthors: ETSI\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Finance; Legal; PKI\nRegion: EU\nPublished: 2016-02-01 | Updated: 2021-04-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "ETSI-EN-319-411",
+      "url": "https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.03.01_60/en_31941101v010301p.pdf",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=ETSI-EN-319-411"
+  },
+  {
+    "id": "library-NIST-SP-800-63-3",
+    "source": "library",
+    "title": "NIST SP 800-63-3 — Digital Identity Guidelines",
+    "content": "Title: NIST SP 800-63-3 — Digital Identity Guidelines\nDescription: NIST framework for digital identity management. SP 800-63A covers identity proofing and enrollment (Identity Assurance Levels IAL1/2/3). SP 800-63B covers authentication (Authenticator Assurance Levels AAL1/2/3). SP 800-63C covers federation (Federation Assurance Levels FAL1/2/3). Referenced in EUDI Wallet implementations for IAL/AAL equivalency mapping with European LoA (Low Substantial High).\nType: Guideline | Status: Published\nAuthors: NIST\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Government; Finance; Healthcare; Technology\nRegion: USA; Global\nPublished: 2017-06-22 | Updated: 2017-06-22",
+    "category": "Guideline",
+    "metadata": {
+      "referenceId": "NIST-SP-800-63-3",
+      "url": "https://pages.nist.gov/800-63-3/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=NIST-SP-800-63-3"
+  },
+  {
+    "id": "library-NIST-SP-800-131A-Rev3",
+    "source": "library",
+    "title": "Transitioning the Use of Cryptographic Algorithms and Key Lengths (Rev 3)",
+    "content": "Title: Transitioning the Use of Cryptographic Algorithms and Key Lengths (Rev 3)\nDescription: Algorithm deprecation roadmap: SHA-1 and RSA/ECC <128-bit disallowed after 2030. Establishes federal algorithm retirement calendar aligned with PQC transition. References FIPS 203/204/205 as post-2030 replacements.\nType: Compliance/Guidance | Status: Initial Public Draft\nAuthors: NIST\nAlgorithm Family: RSA; ECC; SHA; AES\nSecurity Levels: \nMigration Urgency: High\nIndustries: All industries\nRegion: Global\nPublished: 2024-11-01 | Updated: 2024-11-01",
+    "category": "Compliance/Guidance",
+    "metadata": {
+      "referenceId": "NIST-SP-800-131A-Rev3",
+      "url": "https://csrc.nist.gov/pubs/sp/800/131/a/r3/ipd",
+      "algorithmFamily": "RSA; ECC; SHA; AES"
+    },
+    "deepLink": "/library?ref=NIST-SP-800-131A-Rev3"
+  },
+  {
+    "id": "library-India-DST-Quantum-Safe-Roadmap-2026",
+    "source": "library",
+    "title": "Implementation of Quantum Safe Ecosystem in India — Report of the Task Force",
+    "content": "Title: Implementation of Quantum Safe Ecosystem in India — Report of the Task Force\nDescription: India's national PQC migration roadmap from the Department of Science & Technology. Sets 2027–2029 migration timelines for Critical Information Infrastructure. Recommends hybrid PQC+QKD approach with industry-specific deadlines. First major non-Western official quantum-safe roadmap.\nType: Compliance/Policy | Status: Published\nAuthors: India Ministry of Science & Technology (DST)\nAlgorithm Family: ML-KEM; ML-DSA; QKD\nSecurity Levels: \nMigration Urgency: High\nIndustries: Government; Finance; Telecom; Critical Infrastructure\nRegion: India; APAC\nPublished: 2026-02-04 | Updated: 2026-02-04",
+    "category": "Compliance/Policy",
+    "metadata": {
+      "referenceId": "India-DST-Quantum-Safe-Roadmap-2026",
+      "url": "https://dst.gov.in/sites/default/files/Report_TaskForce_PQMigration_4Feb26%20(v1).pdf",
+      "algorithmFamily": "ML-KEM; ML-DSA; QKD"
+    },
+    "deepLink": "/library?ref=India-DST-Quantum-Safe-Roadmap-2026"
+  },
+  {
+    "id": "library-WEF-2026-Quantum-Security-Leaders",
+    "source": "library",
+    "title": "Why quantum security is a question leaders cannot ignore",
+    "content": "Title: Why quantum security is a question leaders cannot ignore\nDescription: World Economic Forum perspective for C-suite and board audiences on quantum security strategic risk. Frames PQC migration as a board-level priority with competitive and regulatory dimensions. Part of WEF's ongoing series on quantum readiness for business leaders.\nType: Guidance | Status: Published\nAuthors: World Economic Forum (WEF)\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: All industries\nRegion: Global\nPublished: 2026-02-01 | Updated: 2026-02-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "WEF-2026-Quantum-Security-Leaders",
+      "url": "https://www.weforum.org/stories/2026/02/quantum-security-question-leaders-cannot-ignore/",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=WEF-2026-Quantum-Security-Leaders"
+  },
+  {
+    "id": "library-NIST-SP-800-22-R1A",
+    "source": "library",
+    "title": "SP 800-22 Rev. 1a: A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications",
+    "content": "Title: SP 800-22 Rev. 1a: A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications\nDescription: NIST statistical test suite defining 15 statistical tests (Monobit, Runs, Chi-Squared, DFT, Serial, and more) for evaluating randomness quality of bit sequences produced by cryptographic RBGs. Used for validating entropy source output quality prior to NIST ESV submission.\nType: Standard | Status: Published\nAuthors: NIST\nAlgorithm Family: N/A\nSecurity Levels: \nMigration Urgency: Medium\nIndustries: All Industries\nRegion: USA; Global\nPublished: 2010-04-01 | Updated: 2010-04-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "NIST-SP-800-22-R1A",
+      "url": "https://csrc.nist.gov/pubs/sp/800/22/r1a/final",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=NIST-SP-800-22-R1A"
+  },
+  {
+    "id": "library-BSI-AIS-20-31",
+    "source": "library",
+    "title": "AIS 20/AIS 31: Functionality Classes and Evaluation Methodology for Deterministic and Physical Random Number Generators",
+    "content": "Title: AIS 20/AIS 31: Functionality Classes and Evaluation Methodology for Deterministic and Physical Random Number Generators\nDescription: BSI (Germany) standard defining functionality classes DRG.1–DRG.4 for deterministic RNGs and PTG.1–PTG.3 for physical/true RNGs. AIS 31 compliance is required for Common Criteria RNG evaluations and is cited by QRNG hardware certifications including ID Quantique Quantis.\nType: Standard | Status: Published\nAuthors: BSI\nAlgorithm Family: N/A\nSecurity Levels: \nMigration Urgency: Medium\nIndustries: All Industries\nRegion: Europe; Global\nPublished: 2011-09-01 | Updated: 2024-09-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "BSI-AIS-20-31",
+      "url": "https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Certification/Interpretations/AIS_20_AIS_31_Functionality_classes_for_random_number_generators_e.html",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=BSI-AIS-20-31"
+  },
+  {
+    "id": "library-GRI-Quantum-Threat-Timeline-2024",
+    "source": "library",
+    "title": "2024 Quantum Threat Timeline Report",
+    "content": "Title: 2024 Quantum Threat Timeline Report\nDescription: Annual expert survey projecting the probability and timeline of a cryptographically-relevant quantum computer (CRQC). Projects 5–15% probability by 2030 and 50% by 2034–2039. Foundational source for Mosca's Theorem and HNDL/HNFL risk calculations.\nType: Research/Report | Status: Final Report\nAuthors: Global Risk Institute\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Finance; Critical Infrastructure; All\nRegion: Global\nPublished: 2024-11-14 | Updated: 2024-11-14",
+    "category": "Research/Report",
+    "metadata": {
+      "referenceId": "GRI-Quantum-Threat-Timeline-2024",
+      "url": "https://globalriskinstitute.org/publication/2024-quantum-threat-timeline-report/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=GRI-Quantum-Threat-Timeline-2024"
+  },
+  {
+    "id": "library-RFC 5652",
+    "source": "library",
+    "title": "Cryptographic Message Syntax (CMS)",
+    "content": "Title: Cryptographic Message Syntax (CMS)\nDescription: Core CMS standard defining SignedData, EnvelopedData, and AuthEnvelopedData structures. Foundation for S/MIME email signing and encryption. All PQC CMS RFCs (9629, 9882, 9814, 9708, 9690) extend this format.\nType: Protocol | Status: Proposed Standard\nAuthors: IETF SMIME WG\nAlgorithm Family: Classical\nSecurity Levels: Various\nMigration Urgency: High\nIndustries: Email; Document Signing; Code Signing; PKI\nRegion: International\nPublished: 2009-09-01 | Updated: 2009-09-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "RFC 5652",
+      "url": "https://www.rfc-editor.org/rfc/rfc5652.html",
+      "algorithmFamily": "Classical"
+    },
+    "deepLink": "/library?ref=RFC%205652"
+  },
+  {
+    "id": "library-RFC 5083",
+    "source": "library",
+    "title": "Using Advanced Encryption Standard (AES) Counter with CBC-MAC (AES-CCM) and AES Galois/Counter Mode (AES-GCM) Algorithms in the Cryptographic Message Syntax (CMS)",
+    "content": "Title: Using Advanced Encryption Standard (AES) Counter with CBC-MAC (AES-CCM) and AES Galois/Counter Mode (AES-GCM) Algorithms in the Cryptographic Message Syntax (CMS)\nDescription: Defines AuthEnvelopedData content type for AEAD-based encryption in CMS. The authenticated-enveloped structure with AES-GCM provides both confidentiality and integrity — the preferred encryption mode for PQC email migration via RFC 9629.\nType: Protocol | Status: Proposed Standard\nAuthors: IETF SMIME WG\nAlgorithm Family: Classical / Symmetric\nSecurity Levels: Various\nMigration Urgency: High\nIndustries: Email; Document Signing; Secure Messaging\nRegion: International\nPublished: 2007-11-01 | Updated: 2007-11-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "RFC 5083",
+      "url": "https://www.rfc-editor.org/rfc/rfc5083.html",
+      "algorithmFamily": "Classical / Symmetric"
+    },
+    "deepLink": "/library?ref=RFC%205083"
+  },
+  {
+    "id": "library-IETF RFC 7296",
+    "source": "library",
+    "title": "Internet Key Exchange Protocol Version 2 (IKEv2)",
+    "content": "Title: Internet Key Exchange Protocol Version 2 (IKEv2)\nDescription: Defines IKEv2 for establishing IPsec Security Associations. Foundational protocol for VPN key exchange; all PQC IKEv2 extensions (RFC 9370, draft-ietf-ipsecme-ikev2-mlkem) build on this specification.\nType: Protocol | Status: Standards Track RFC\nAuthors: IETF IPSECME\nAlgorithm Family: Diffie-Hellman; RSA; ECDH\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: VPN; IPsec; Enterprise; Government; Critical Infrastructure\nRegion: International\nPublished: 2014-10-01 | Updated: 2014-10-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "IETF RFC 7296",
+      "url": "https://www.rfc-editor.org/rfc/rfc7296.html",
+      "algorithmFamily": "Diffie-Hellman; RSA; ECDH"
+    },
+    "deepLink": "/library?ref=IETF%20RFC%207296"
+  },
+  {
+    "id": "library-IETF RFC 8731",
+    "source": "library",
+    "title": "Use of Curve25519 and Curve448 in the Secure Shell (SSH) Protocol",
+    "content": "Title: Use of Curve25519 and Curve448 in the Secure Shell (SSH) Protocol\nDescription: Defines curve25519-sha256 and curve448-sha512 key exchange for SSH. The classical KEX baseline that mlkem768x25519-sha256 hybrid extends for post-quantum SSH in OpenSSH 9.9+.\nType: Protocol | Status: Standards Track RFC\nAuthors: IETF CURDLE WG\nAlgorithm Family: Elliptic Curve (X25519)\nSecurity Levels: L3\nMigration Urgency: High\nIndustries: Remote Access; Enterprise; Government; DevOps\nRegion: International\nPublished: 2020-02-01 | Updated: 2020-02-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "IETF RFC 8731",
+      "url": "https://www.rfc-editor.org/rfc/rfc8731.html",
+      "algorithmFamily": "Elliptic Curve (X25519)"
+    },
+    "deepLink": "/library?ref=IETF%20RFC%208731"
+  },
+  {
+    "id": "library-Rosenpass-Protocol",
+    "source": "library",
+    "title": "Rosenpass: Formally Verified Post-Quantum Protocol for WireGuard",
+    "content": "Title: Rosenpass: Formally Verified Post-Quantum Protocol for WireGuard\nDescription: Defines the Rosenpass protocol for adding PQC to WireGuard. Runs a separate ML-KEM-768 + Classic McEliece handshake and injects the combined shared secret as a WireGuard pre-shared key (PSK). Formally verified with ProVerif.\nType: Protocol | Status: White Paper\nAuthors: Rosenpass e.V.\nAlgorithm Family: Lattice-based (ML-KEM); Code-based (Classic McEliece)\nSecurity Levels: L1; L5\nMigration Urgency: High\nIndustries: VPN; Privacy; Enterprise; Consumer\nRegion: International\nPublished: 2023-02-01 | Updated: 2024-06-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "Rosenpass-Protocol",
+      "url": "https://rosenpass.eu/whitepaper.pdf",
+      "algorithmFamily": "Lattice-based (ML-KEM); Code-based (Classic McEliece)"
+    },
+    "deepLink": "/library?ref=Rosenpass-Protocol"
+  },
+  {
+    "id": "library-NSA-QKD-Advisory-2023",
+    "source": "library",
+    "title": "NSA Quantum Key Distribution and Quantum Cryptography",
+    "content": "Title: NSA Quantum Key Distribution and Quantum Cryptography\nDescription: NSA advisory explaining why it does not recommend QKD for national security systems. States that QKD addresses only the key distribution problem, requires special-purpose equipment, introduces trusted node vulnerabilities, and has side-channel risks in real implementations. Recommends PQC (CNSA 2.0 algorithms) as the primary solution. Key reference for balanced QKD vs PQC evaluation.\nType: Guidance | Status: Published\nAuthors: National Security Agency (NSA)\nAlgorithm Family: QKD\nSecurity Levels: All\nMigration Urgency: High\nIndustries: Government;Defense;Finance\nRegion: Global\nPublished: 2023-10-24 | Updated: 2023-10-24",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "NSA-QKD-Advisory-2023",
+      "url": "https://media.defense.gov/2023/Oct/24/2003324189/-1/-1/0/QUANTUM_KEY_DISTRIBUTION_QUANTUM_CRYPTOGRAPHY_20231024.PDF",
+      "algorithmFamily": "QKD"
+    },
+    "deepLink": "/library?ref=NSA-QKD-Advisory-2023"
+  },
+  {
+    "id": "library-IETF RFC 4253",
+    "source": "library",
+    "title": "The Secure Shell (SSH) Transport Layer Protocol",
+    "content": "Title: The Secure Shell (SSH) Transport Layer Protocol\nDescription: Defines the SSH transport layer including key exchange, server authentication, and encryption. The key exchange phase is where QKD-derived pre-shared keys can be injected via the ext-info mechanism or future SSH KEX extensions. Foundational standard for understanding QKD integration into SSH.\nType: Protocol | Status: Standards Track RFC\nAuthors: IETF\nAlgorithm Family: SSH\nSecurity Levels: All\nMigration Urgency: Medium\nIndustries: All\nRegion: Global\nPublished: 2006-01-01 | Updated: 2006-01-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "IETF RFC 4253",
+      "url": "https://www.rfc-editor.org/rfc/rfc4253.html",
+      "algorithmFamily": "SSH"
+    },
+    "deepLink": "/library?ref=IETF%20RFC%204253"
+  },
+  {
+    "id": "library-IEEE-802-1AE-2018",
+    "source": "library",
+    "title": "IEEE 802.1AE-2018: MAC Security (MACsec)",
+    "content": "Title: IEEE 802.1AE-2018: MAC Security (MACsec)\nDescription: Defines MACsec — IEEE Layer 2 encryption standard for Ethernet networks. MACsec uses AES-GCM-128/256 for confidentiality and integrity. QKD-derived keys can be injected as Secure Association Keys (SAKs) via the MACsec Key Agreement (MKA) protocol, making MACsec a natural integration point for QKD in enterprise and telecom networks.\nType: Protocol | Status: IEEE Standard\nAuthors: IEEE 802.1 Working Group\nAlgorithm Family: AES-GCM; QKD integration\nSecurity Levels: AES-128; AES-256\nMigration Urgency: Medium\nIndustries: Finance;Government;Telecom;Enterprise\nRegion: Global\nPublished: 2006-08-01 | Updated: 2018-12-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "IEEE-802-1AE-2018",
+      "url": "https://standards.ieee.org/ieee/802.1AE/6095/",
+      "algorithmFamily": "AES-GCM; QKD integration"
+    },
+    "deepLink": "/library?ref=IEEE-802-1AE-2018"
+  },
+  {
     "id": "library-draft-ietf-jose-pqc-kem",
     "source": "library",
-    "title": "Post-Quantum Key Encapsulation Mechanisms (PQ KEMs) for JOSE and COSE",
-    "content": "Title: Post-Quantum Key Encapsulation Mechanisms (PQ KEMs) for JOSE and COSE\nDescription: Defines how to use ML-KEM and other PQC KEMs within JOSE/JWE and COSE/COSE_Encrypt for quantum-safe token encryption. Introduces new alg identifiers for ML-KEM-512, ML-KEM-768, ML-KEM-1024 in JWE and COSE.\nType: Protocol | Status: Active Internet-Draft\nAuthors: IETF JOSE WG\nAlgorithm Family: Lattice-based\nSecurity Levels: L1,L3,L5\nMigration Urgency: High\nIndustries: IT; Software Development; APIs; Identity Management; Finance\nRegion: International\nPublished: 2024-06-01 | Updated: 2025-12-09",
-    "category": "Protocol",
+    "title": "Use of Post-Quantum Key Encapsulation Mechanisms in JOSE",
+    "content": "Title: Use of Post-Quantum Key Encapsulation Mechanisms in JOSE\nDescription: Defines how to use ML-KEM (FIPS 203) within JOSE/JWE for quantum-safe token encryption. Introduces alg identifiers ML-KEM-512, ML-KEM-768, ML-KEM-1024 for JWE key agreement, replacing quantum-vulnerable ECDH-ES. Companion to draft-ietf-jose-pqc-algorithms for signature migration.\nType: Standard (Draft) | Status: Internet-Draft\nAuthors: IETF JOSE WG\nAlgorithm Family: ML-KEM\nSecurity Levels: L1;L3;L5\nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs\nRegion: Global\nPublished: 2024-01-01 | Updated: 2025-11-01",
+    "category": "Standard (Draft)",
     "metadata": {
       "referenceId": "draft-ietf-jose-pqc-kem",
       "url": "https://datatracker.ietf.org/doc/draft-ietf-jose-pqc-kem/",
-      "algorithmFamily": "Lattice-based"
+      "algorithmFamily": "ML-KEM"
     },
     "deepLink": "/library?ref=draft-ietf-jose-pqc-kem"
+  },
+  {
+    "id": "library-draft-ietf-jose-pqc-algorithms",
+    "source": "library",
+    "title": "Use of Post-Quantum Algorithms in JOSE",
+    "content": "Title: Use of Post-Quantum Algorithms in JOSE\nDescription: Defines how to use ML-DSA (FIPS 204) and SLH-DSA (FIPS 205) as digital signature algorithms in JOSE JWS. Specifies alg identifiers ML-DSA-44, ML-DSA-65, ML-DSA-87, SLH-DSA-SHA2-128s and others for signing JWTs. The critical standard enabling PQC JWT signing across all JOSE implementations.\nType: Standard (Draft) | Status: Internet-Draft\nAuthors: IETF JOSE WG\nAlgorithm Family: ML-DSA;SLH-DSA\nSecurity Levels: L1;L2;L3;L5\nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs\nRegion: Global\nPublished: 2024-01-01 | Updated: 2026-01-01",
+    "category": "Standard (Draft)",
+    "metadata": {
+      "referenceId": "draft-ietf-jose-pqc-algorithms",
+      "url": "https://datatracker.ietf.org/doc/draft-ietf-jose-pqc-algorithms/",
+      "algorithmFamily": "ML-DSA;SLH-DSA"
+    },
+    "deepLink": "/library?ref=draft-ietf-jose-pqc-algorithms"
   },
   {
     "id": "library-RFC 8725",
     "source": "library",
     "title": "JSON Web Token Best Current Practices",
-    "content": "Title: JSON Web Token Best Current Practices\nDescription: Documents security pitfalls and best practices for JWT usage including alg confusion attacks, none-algorithm vulnerabilities, audience validation, and expiry enforcement. Essential pre-PQC hardening baseline before migrating JWT signing to PQC algorithms.\nType: Guidance | Status: Best Current Practice\nAuthors: IETF OAUTH WG\nAlgorithm Family: Classical\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT; Software Development; APIs; Identity Management; Finance\nRegion: International\nPublished: 2020-02-01 | Updated: 2020-02-01",
+    "content": "Title: JSON Web Token Best Current Practices\nDescription: Documents security pitfalls and best practices for JWT usage including algorithm confusion attacks, none-algorithm vulnerabilities, audience validation, and expiry enforcement. Essential security hardening baseline before migrating JWT signing algorithms to PQC alternatives.\nType: Guidance | Status: Best Current Practice\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs\nRegion: Global\nPublished: 2020-02-01 | Updated: 2020-02-01",
     "category": "Guidance",
     "metadata": {
       "referenceId": "RFC 8725",
       "url": "https://www.rfc-editor.org/rfc/rfc8725.html",
-      "algorithmFamily": "Classical"
+      "algorithmFamily": ""
     },
     "deepLink": "/library?ref=RFC%208725"
+  },
+  {
+    "id": "library-RFC 7519",
+    "source": "library",
+    "title": "JSON Web Token (JWT)",
+    "content": "Title: JSON Web Token (JWT)\nDescription: Defines JWT as a compact URL-safe representation of claims between parties. Specifies the three-part structure (header.payload.signature), registered claim names (iss, sub, aud, exp, iat), and how JWS and JWE are used for signing and encryption. Foundation document for all JWT-based PQC migration work.\nType: Standard | Status: Proposed Standard\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs\nRegion: Global\nPublished: 2015-05-01 | Updated: 2015-05-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "RFC 7519",
+      "url": "https://www.rfc-editor.org/rfc/rfc7519.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%207519"
+  },
+  {
+    "id": "library-RFC 7515",
+    "source": "library",
+    "title": "JSON Web Signature (JWS)",
+    "content": "Title: JSON Web Signature (JWS)\nDescription: Defines the JWS standard for representing digitally signed content in JSON. Specifies the compact serialization (header.payload.signature) used in every signed JWT and the alg header parameter registry that PQC JOSE drafts extend with ML-DSA and SLH-DSA identifiers.\nType: Standard | Status: Proposed Standard\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs\nRegion: Global\nPublished: 2015-05-01 | Updated: 2015-05-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "RFC 7515",
+      "url": "https://www.rfc-editor.org/rfc/rfc7515.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%207515"
+  },
+  {
+    "id": "library-RFC 7516",
+    "source": "library",
+    "title": "JSON Web Encryption (JWE)",
+    "content": "Title: JSON Web Encryption (JWE)\nDescription: Defines the JWE standard for encrypting arbitrary content using JSON data structures. Specifies the 5-part compact serialization and key agreement mechanisms (ECDH-ES, RSA-OAEP) that ML-KEM replaces in PQC migration. Core reference for JWE encryption and PQC token confidentiality.\nType: Standard | Status: Proposed Standard\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs\nRegion: Global\nPublished: 2015-05-01 | Updated: 2015-05-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "RFC 7516",
+      "url": "https://www.rfc-editor.org/rfc/rfc7516.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%207516"
+  },
+  {
+    "id": "library-RFC 7517",
+    "source": "library",
+    "title": "JSON Web Key (JWK)",
+    "content": "Title: JSON Web Key (JWK)\nDescription: Defines the JWK format for representing cryptographic keys as JSON. JWKS endpoints publish public keys for JWT signature verification. PQC migration significantly increases JWKS response sizes: ML-DSA-65 public keys are 1952 bytes vs 65 bytes for P-256, challenging HTTP header limits and caching strategies.\nType: Standard | Status: Proposed Standard\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs\nRegion: Global\nPublished: 2015-05-01 | Updated: 2015-05-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "RFC 7517",
+      "url": "https://www.rfc-editor.org/rfc/rfc7517.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%207517"
+  },
+  {
+    "id": "library-RFC 7518",
+    "source": "library",
+    "title": "JSON Web Algorithms (JWA)",
+    "content": "Title: JSON Web Algorithms (JWA)\nDescription: Defines the algorithm registry for JOSE including RS256, ES256, ECDH-ES, AES-GCM, and HMAC. All currently registered signature and key agreement algorithms are quantum-vulnerable to Shor's algorithm. PQC JOSE drafts extend this registry with ML-DSA and ML-KEM algorithm identifiers.\nType: Standard | Status: Proposed Standard\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs\nRegion: Global\nPublished: 2015-05-01 | Updated: 2015-05-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "RFC 7518",
+      "url": "https://www.rfc-editor.org/rfc/rfc7518.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%207518"
+  },
+  {
+    "id": "library-RFC 6749",
+    "source": "library",
+    "title": "The OAuth 2.0 Authorization Framework",
+    "content": "Title: The OAuth 2.0 Authorization Framework\nDescription: Defines the OAuth 2.0 authorization framework enabling secure delegated access using access tokens. Access tokens and ID tokens issued by authorization servers are typically JWTs signed with RSA or ECDSA. PQC migration requires updating JWT signing across all OAuth authorization servers and resource server token validation.\nType: Standard | Status: Proposed Standard\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: IT;Finance;Identity Management;APIs;Government\nRegion: Global\nPublished: 2012-10-01 | Updated: 2012-10-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "RFC 6749",
+      "url": "https://www.rfc-editor.org/rfc/rfc6749.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%206749"
+  },
+  {
+    "id": "library-RFC 9449",
+    "source": "library",
+    "title": "OAuth 2.0 Demonstrating Proof of Possession (DPoP)",
+    "content": "Title: OAuth 2.0 Demonstrating Proof of Possession (DPoP)\nDescription: Defines DPoP for binding OAuth 2.0 tokens to a client public key using signed proof-of-possession JWTs. DPoP proof JWTs use ECDSA signatures that are quantum-vulnerable. Migration to ML-DSA-signed DPoP proofs requires JOSE PQC standardization and results in significantly larger proof headers per request.\nType: Standard | Status: Proposed Standard\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: Medium\nIndustries: IT;Finance;Identity Management;APIs;Government\nRegion: Global\nPublished: 2023-09-01 | Updated: 2023-09-01",
+    "category": "Standard",
+    "metadata": {
+      "referenceId": "RFC 9449",
+      "url": "https://www.rfc-editor.org/rfc/rfc9449.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%209449"
+  },
+  {
+    "id": "library-NIST-SP-800-57-Pt1-R5",
+    "source": "library",
+    "title": "Recommendation for Key Management: Part 1 – General (Revision 5)",
+    "content": "Title: Recommendation for Key Management: Part 1 – General (Revision 5)\nDescription: Primary NIST key management guideline covering key lifecycle (generation, distribution, storage, usage, rotation, archival, destruction), key types, cryptoperiods, FIPS 140 integration, and key compromise procedures. Foundation for all enterprise key management policy and HSM deployment.\nType: Compliance/Guidance | Status: Final\nAuthors: NIST\nAlgorithm Family: All\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Finance; Healthcare; Defense; Enterprise IT\nRegion: USA; Global\nPublished: 2020-05-04 | Updated: 2020-05-04",
+    "category": "Compliance/Guidance",
+    "metadata": {
+      "referenceId": "NIST-SP-800-57-Pt1-R5",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf",
+      "algorithmFamily": "All"
+    },
+    "deepLink": "/library?ref=NIST-SP-800-57-Pt1-R5"
+  },
+  {
+    "id": "library-KMIP-V2-1-OASIS",
+    "source": "library",
+    "title": "Key Management Interoperability Protocol (KMIP) Version 2.1",
+    "content": "Title: Key Management Interoperability Protocol (KMIP) Version 2.1\nDescription: KMIP v2.1 defines a protocol for communication between key management systems and cryptographic clients. Supports key lifecycle operations (create, locate, get, activate, revoke, destroy) over TLS. Widely implemented by enterprise HSMs (Thales, Utimaco, Entrust) and KMS solutions. Enables interoperability between key management infrastructure during PQC migration.\nType: Protocol | Status: OASIS Standard\nAuthors: OASIS KMIP Technical Committee\nAlgorithm Family: Symmetric; Asymmetric; PQC (forthcoming)\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government; Finance; Enterprise IT; HSM Vendors\nRegion: Global\nPublished: 2021-06-20 | Updated: 2021-06-20",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "KMIP-V2-1-OASIS",
+      "url": "https://docs.oasis-open.org/kmip/kmip-spec/v2.1/os/kmip-spec-v2.1-os.html",
+      "algorithmFamily": "Symmetric; Asymmetric; PQC (forthcoming)"
+    },
+    "deepLink": "/library?ref=KMIP-V2-1-OASIS"
+  },
+  {
+    "id": "library-RFC 7228",
+    "source": "library",
+    "title": "Terminology for Constrained-Node Networks",
+    "content": "Title: Terminology for Constrained-Node Networks\nDescription: Defines terminology and device classes (Class 0-2) for constrained-node IoT networks, including RAM/Flash constraints. Foundation for IoT PQC algorithm selection.\nType: Protocol | Status: Informational\nAuthors: IETF\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: Low\nIndustries: IoT; Embedded Systems; Industrial\nRegion: International\nPublished: 2014-05-01 | Updated: 2014-05-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "RFC 7228",
+      "url": "https://www.rfc-editor.org/rfc/rfc7228.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%207228"
+  },
+  {
+    "id": "library-RFC 9019",
+    "source": "library",
+    "title": "A Firmware Update Architecture for Internet of Things (SUIT)",
+    "content": "Title: A Firmware Update Architecture for Internet of Things (SUIT)\nDescription: Defines the SUIT manifest format for secure firmware updates on constrained IoT devices. Specifies metadata fields used in PQC firmware signing workflows.\nType: Protocol | Status: Informational\nAuthors: IETF SUIT\nAlgorithm Family: Hash-based (stateful)\nSecurity Levels: L1-L5\nMigration Urgency: Medium\nIndustries: IoT; Embedded Systems; Firmware\nRegion: International\nPublished: 2021-04-01 | Updated: 2021-04-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "RFC 9019",
+      "url": "https://www.rfc-editor.org/rfc/rfc9019.html",
+      "algorithmFamily": "Hash-based (stateful)"
+    },
+    "deepLink": "/library?ref=RFC%209019"
+  },
+  {
+    "id": "library-RFC 9147",
+    "source": "library",
+    "title": "The Datagram Transport Layer Security (DTLS) Protocol Version 1.3",
+    "content": "Title: The Datagram Transport Layer Security (DTLS) Protocol Version 1.3\nDescription: Specifies DTLS 1.3 — the UDP-based variant of TLS 1.3 used for CoAP and constrained IoT communications. Key reference for PQC handshake overhead analysis on constrained devices.\nType: Protocol | Status: Proposed Standard\nAuthors: IETF TLS\nAlgorithm Family: Lattice-based\nSecurity Levels: L1-L5\nMigration Urgency: High\nIndustries: IoT; Embedded Systems; Industrial\nRegion: International\nPublished: 2022-04-01 | Updated: 2022-04-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "RFC 9147",
+      "url": "https://www.rfc-editor.org/rfc/rfc9147.html",
+      "algorithmFamily": "Lattice-based"
+    },
+    "deepLink": "/library?ref=RFC%209147"
+  },
+  {
+    "id": "library-RFC 8879",
+    "source": "library",
+    "title": "TLS Certificate Compression",
+    "content": "Title: TLS Certificate Compression\nDescription: Defines certificate compression for TLS 1.3, reducing PQC certificate chain overhead by ~30%. Key mitigation for certificate bloat on constrained IoT devices.\nType: Protocol | Status: Proposed Standard\nAuthors: IETF TLS\nAlgorithm Family: Lattice-based\nSecurity Levels: L1-L5\nMigration Urgency: Medium\nIndustries: IoT; Embedded Systems; PKI\nRegion: International\nPublished: 2020-11-01 | Updated: 2020-11-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "RFC 8879",
+      "url": "https://www.rfc-editor.org/rfc/rfc8879.html",
+      "algorithmFamily": "Lattice-based"
+    },
+    "deepLink": "/library?ref=RFC%208879"
+  },
+  {
+    "id": "library-RFC 7250",
+    "source": "library",
+    "title": "Using Raw Public Keys in Transport Layer Security (TLS) and DTLS",
+    "content": "Title: Using Raw Public Keys in Transport Layer Security (TLS) and DTLS\nDescription: Allows TLS/DTLS to use raw public keys instead of X.509 certificates, eliminating certificate chain overhead on ultra-constrained IoT devices. ~70% size reduction.\nType: Protocol | Status: Proposed Standard\nAuthors: IETF TLS\nAlgorithm Family: \nSecurity Levels: L1-L5\nMigration Urgency: Medium\nIndustries: IoT; Embedded Systems\nRegion: International\nPublished: 2014-06-01 | Updated: 2014-06-01",
+    "category": "Protocol",
+    "metadata": {
+      "referenceId": "RFC 7250",
+      "url": "https://www.rfc-editor.org/rfc/rfc7250.html",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=RFC%207250"
+  },
+  {
+    "id": "library-IEC 62443",
+    "source": "library",
+    "title": "IEC 62443: Industrial Automation and Control Systems Security",
+    "content": "Title: IEC 62443: Industrial Automation and Control Systems Security\nDescription: Multi-part standard series for OT/ICS/SCADA cybersecurity covering security levels, zones, conduits, and lifecycle requirements. Foundation for SCADA PQC migration planning.\nType: Algorithm | Status: International Standard\nAuthors: IEC\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: Industrial; Critical Infrastructure; OT/ICS\nRegion: International\nPublished: 2010-01-01 | Updated: 2024-01-01",
+    "category": "Algorithm",
+    "metadata": {
+      "referenceId": "IEC 62443",
+      "url": "https://www.iec.ch/homepage",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=IEC%2062443"
+  },
+  {
+    "id": "library-NIST SP 800-82 Rev. 3",
+    "source": "library",
+    "title": "Guide to Operational Technology (OT) Security",
+    "content": "Title: Guide to Operational Technology (OT) Security\nDescription: NIST guidance for securing industrial control systems (ICS), SCADA, DCS, and OT networks. Covers the Purdue model, network architecture, and security controls for critical infrastructure.\nType: Algorithm | Status: Final\nAuthors: NIST\nAlgorithm Family: \nSecurity Levels: \nMigration Urgency: High\nIndustries: Industrial; Critical Infrastructure; Government\nRegion: US; International\nPublished: 2023-09-01 | Updated: 2023-09-01",
+    "category": "Algorithm",
+    "metadata": {
+      "referenceId": "NIST SP 800-82 Rev. 3",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf",
+      "algorithmFamily": ""
+    },
+    "deepLink": "/library?ref=NIST%20SP%20800-82%20Rev.%203"
   },
   {
     "id": "algo-ml-kem-512",
@@ -9844,7 +10479,7 @@
     "id": "software-leancrypto",
     "source": "migrate",
     "title": "leancrypto",
-    "content": "Software: leancrypto\nCategory: Cryptographic Libraries (Application)\nPQC Support: Yes (SHA-3 SHAKE Ascon HQC)\nPQC Capabilities: Minimal functionality cryptographic library for bare-metal embedded systems. Now includes HQC and SHA-3/SHAKE PQC primitives.\nFIPS Validated: Yes (CAVP for Hash)\nMigration Priority: High\nLicense: Open Source — GPL-2.0+/BSD/Leancrypto\nVersion: Current (2025)\nPlatforms: Embedded Bare-metal Linux\nIndustries: All industries\nBrief: Lean crypto library optimized for small footprint embedded environments.",
+    "content": "Software: leancrypto\nCategory: Cryptographic Libraries (Application)\nPQC Support: Yes (ML-KEM ML-DSA HQC SHA-3 SHAKE Ascon)\nPQC Capabilities: Minimal functionality cryptographic library for bare-metal embedded systems. Supports ML-KEM and ML-DSA (FIPS 203/204) alongside HQC, SHA-3/SHAKE, and Ascon primitives; used as GnuTLS PQC backend.\nFIPS Validated: Yes (CAVP for Hash)\nMigration Priority: High\nLicense: Open Source — GPL-2.0+/BSD/Leancrypto\nVersion: Current (2025)\nPlatforms: Embedded Bare-metal Linux\nIndustries: All industries\nBrief: Lean crypto library optimized for small footprint embedded environments.",
     "category": "Application",
     "metadata": {
       "categoryName": "Cryptographic Libraries",
@@ -9896,7 +10531,7 @@
     "id": "software-citadel-pqcrypto",
     "source": "migrate",
     "title": "citadel_pqcrypto",
-    "content": "Software: citadel_pqcrypto\nCategory: Cryptographic Libraries (Application)\nPQC Support: Yes (Kyber NTRU+)\nPQC Capabilities: Rust library for Citadel Protocol with multi-layered encryption and anti-replay protection. Features novel 3D matrix ratcheting and scramcryption.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — Apache-2.0/MIT\nVersion: Current (2025)\nPlatforms: Cross-platform\nIndustries: All industries\nBrief: PQC library for Citadel Protocol with built-in anti-replay and ratcheting.",
+    "content": "Software: citadel_pqcrypto\nCategory: Cryptographic Libraries (Application)\nPQC Support: Yes (ML-KEM NTRU+)\nPQC Capabilities: Rust library for Citadel Protocol with multi-layered encryption and anti-replay protection. Features novel 3D matrix ratcheting and scramcryption.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — Apache-2.0/MIT\nVersion: Current (2025)\nPlatforms: Cross-platform\nIndustries: All industries\nBrief: PQC library for Citadel Protocol with built-in anti-replay and ratcheting.",
     "category": "Application",
     "metadata": {
       "categoryName": "Cryptographic Libraries",
@@ -9922,7 +10557,7 @@
     "id": "software-aws-lc",
     "source": "migrate",
     "title": "AWS-LC",
-    "content": "Software: AWS-LC\nCategory: Cryptographic Libraries (Application,Security Stack)\nPQC Support: Yes (ML-KEM ML-DSA)\nPQC Capabilities: AWS's open-source crypto library derived from BoringSSL. First to achieve FIPS 140-3 validation for ML-KEM. Powers AWS KMS Secrets Manager and Certificate Manager. Hybrid PQ KeyShares enabled by default in v1.68.0.\nFIPS Validated: Yes (FIPS 140-3)\nMigration Priority: Critical\nLicense: Open Source — Apache-2.0/ISC\nVersion: v1.68.0 (2026-02-20)\nPlatforms: Linux AWS Cloud\nIndustries: All industries\nBrief: FIPS 140-3 validated crypto library for AWS services. Includes optimized ML-KEM and ML-DSA.",
+    "content": "Software: AWS-LC\nCategory: Cryptographic Libraries (Application,Security Stack)\nPQC Support: Yes (ML-KEM ML-DSA)\nPQC Capabilities: AWS's open-source crypto library derived from BoringSSL. FIPS 140-3 validated with ML-KEM and ML-DSA support. Powers AWS KMS, Secrets Manager, and Certificate Manager. Hybrid PQ KeyShares enabled by default in v1.68.0.\nFIPS Validated: Yes (FIPS 140-3)\nMigration Priority: Critical\nLicense: Open Source — Apache-2.0/ISC\nVersion: v1.68.0 (2026-02-20)\nPlatforms: Linux AWS Cloud\nIndustries: All industries\nBrief: FIPS 140-3 validated crypto library for AWS services. Includes optimized ML-KEM and ML-DSA. Hybrid PQ KeyShares enabled by default.",
     "category": "Application,Security Stack",
     "metadata": {
       "categoryName": "Cryptographic Libraries",
@@ -10013,11 +10648,11 @@
     "id": "software-utimaco-securityserver",
     "source": "migrate",
     "title": "Utimaco SecurityServer",
-    "content": "Software: Utimaco SecurityServer\nCategory: Hardware Security Module (HSM) Software (Hardware)\nPQC Support: Yes (PQC roadmap)\nPQC Capabilities: PQC roadmap includes support for NIST algorithms. German HSM vendor positioning for post-quantum transition in European markets and critical infrastructure.\nFIPS Validated: Yes (FIPS 140-2 L3)\nMigration Priority: Critical\nLicense: Commercial — Commercial\nVersion: 5.x (2025)\nPlatforms: Linux Windows\nIndustries: Finance, Government, Healthcare, Defense\nBrief: General purpose HSM platform for enterprise cryptographic operations and key management.",
+    "content": "Software: Utimaco SecurityServer\nCategory: Hardware Security Module (HSM) Software (Hardware)\nPQC Support: Yes (ML-KEM, ML-DSA, XMSS, LMS)\nPQC Capabilities: Full PQC support via Q-safe firmware extension (v5.0+). Supports ML-KEM-512/768/1024, ML-DSA-44/65/87, XMSS, and LMS. Highest physical security at FIPS 140-2 Level 4. Supports custom PQC algorithm loading through CryptoServer SDK. Available in network and PCIe form factors.\nFIPS Validated: Yes (FIPS 140-2 L4)\nMigration Priority: Critical\nLicense: Commercial — Commercial\nVersion: 5.x (2025)\nPlatforms: Linux Windows\nIndustries: Finance, Government, Healthcare, Defense\nBrief: General purpose HSM platform for enterprise cryptographic operations and key management.",
     "category": "Hardware",
     "metadata": {
       "categoryName": "Hardware Security Module (HSM) Software",
-      "fipsValidated": "Yes (FIPS 140-2 L3)",
+      "fipsValidated": "Yes (FIPS 140-2 L4)",
       "repositoryUrl": ""
     },
     "deepLink": "/migrate?q=Utimaco%20SecurityServer"
@@ -10026,11 +10661,11 @@
     "id": "software-hashicorp-vault",
     "source": "migrate",
     "title": "HashiCorp Vault",
-    "content": "Software: HashiCorp Vault\nCategory: Key Management Systems (KMS) (Security Stack)\nPQC Support: Yes (ML-DSA SLH-DSA in Transit experimental)\nPQC Capabilities: Experimental support for ML-DSA and SLH-DSA in Transit secrets engine. Enables quantum-resistant signing-as-a-service for protecting data in transit. Early adoption in enterprise secrets management.\nFIPS Validated: Yes (Enterprise HSM)\nMigration Priority: Critical\nLicense: Commercial — BUSL-1.1/Enterprise\nVersion: 1.21.2 (2026-01-07)\nPlatforms: Linux Windows macOS Kubernetes\nIndustries: All industries\nBrief: Enterprise secrets management encryption-as-a-service and privileged access management. Supports PKI SSH transit encryption.",
+    "content": "Software: HashiCorp Vault\nCategory: Key Management Systems (KMS) (Security Stack)\nPQC Support: Yes (ML-DSA SLH-DSA in Transit experimental)\nPQC Capabilities: Experimental support for ML-DSA and SLH-DSA in Transit secrets engine. Enables quantum-resistant signing-as-a-service for protecting data in transit. Early adoption in enterprise secrets management.\nFIPS Validated: Yes (Enterprise FIPS 140-3 build)\nMigration Priority: Critical\nLicense: Commercial — BUSL-1.1/Enterprise\nVersion: 1.21.2 (2026-01-07)\nPlatforms: Linux Windows macOS Kubernetes\nIndustries: All industries\nBrief: Enterprise secrets management encryption-as-a-service and privileged access management. Supports PKI SSH transit encryption.",
     "category": "Security Stack",
     "metadata": {
       "categoryName": "Key Management Systems (KMS)",
-      "fipsValidated": "Yes (Enterprise HSM)",
+      "fipsValidated": "Yes (Enterprise FIPS 140-3 build)",
       "repositoryUrl": "https://github.com/hashicorp/vault"
     },
     "deepLink": "/migrate?q=HashiCorp%20Vault"
@@ -10091,11 +10726,11 @@
     "id": "software-keyfactor-ejbca",
     "source": "migrate",
     "title": "Keyfactor EJBCA",
-    "content": "Software: Keyfactor EJBCA\nCategory: Public Key Infrastructure (PKI) Software (Security Stack)\nPQC Support: Yes\nPQC Capabilities: Commercial PKI platform with full PQC certificate lifecycle management. Supports quantum-safe certificate issuance, renewal, and revocation for enterprise PKI infrastructure.\nFIPS Validated: Yes (FIPS 140-2)\nMigration Priority: Critical\nLicense: Commercial — Commercial\nVersion: Enterprise 9.x (2025)\nPlatforms: Cloud Linux Windows\nIndustries: All industries\nBrief: Commercial enterprise PKI platform with cloud deployment HSM integration and crypto agility features.",
+    "content": "Software: Keyfactor EJBCA\nCategory: Public Key Infrastructure (PKI) Software (Security Stack)\nPQC Support: Yes\nPQC Capabilities: Commercial PKI platform with full PQC certificate lifecycle management. Supports quantum-safe certificate issuance, renewal, and revocation for enterprise PKI infrastructure. EJBCA v9.3.4+ provides FIPS 140-3 compatibility via Bouncy Castle FIPS Java API (BC-FJA). The EJBCA Hardware Appliance includes a FIPS 140-2 Level 3 certified HSM.\nFIPS Validated: Yes (FIPS 140-3 via BC-FJA; FIPS 140-2 appliance HSM)\nMigration Priority: Critical\nLicense: Commercial — Commercial\nVersion: Enterprise 9.x (2025)\nPlatforms: Cloud Linux Windows\nIndustries: All industries\nBrief: Commercial enterprise PKI platform with cloud deployment HSM integration and crypto agility features.",
     "category": "Security Stack",
     "metadata": {
       "categoryName": "Public Key Infrastructure (PKI) Software",
-      "fipsValidated": "Yes (FIPS 140-2)",
+      "fipsValidated": "Yes (FIPS 140-3 via BC-FJA; FIPS 140-2 appliance HSM)",
       "repositoryUrl": "https://github.com/Keyfactor/ejbca-ce"
     },
     "deepLink": "/migrate?q=Keyfactor%20EJBCA"
@@ -10182,7 +10817,7 @@
     "id": "software-wolfssl",
     "source": "migrate",
     "title": "wolfSSL",
-    "content": "Software: wolfSSL\nCategory: TLS/SSL Implementation Software (Application,Security Stack)\nPQC Support: Yes (ML-DSA ML-KEM Kyber)\nPQC Capabilities: Embedded-focused TLS library with ML-DSA, ML-KEM, and Kyber support. Optimized for resource-constrained environments like IoT devices and embedded systems. Enables quantum-safe communications in automotive, industrial, and edge computing.\nFIPS Validated: Yes (FIPS 140-3)\nMigration Priority: Critical\nLicense: Commercial — GPLv3/Commercial\nVersion: 5.8.4 (2025-11-21)\nPlatforms: Embedded Linux Windows RTOS ESP32 STM32\nIndustries: All industries\nBrief: Lightweight portable TLS/SSL library for embedded devices to cloud. Supports TLS 1.3 DTLS 1.3 with small footprint. Includes wolfCrypt crypto engine.",
+    "content": "Software: wolfSSL\nCategory: TLS/SSL Implementation Software (Application,Security Stack)\nPQC Support: Yes (ML-DSA ML-KEM LMS HSS XMSS XMSSMT)\nPQC Capabilities: wolfCrypt embedded crypto library with ML-DSA, ML-KEM, LMS/HSS, and XMSS/XMSSMT support. Fastest stateful hash-based signature benchmarks — faster than Cisco hash-sigs reference. wolfBoot uses LMS/HSS for quantum-safe secure firmware boot signing on embedded/IoT devices. wolfPKCS11 provides PKCS#11 API for HSM-backed stateful key state management. Widely deployed in automotive, industrial, and aerospace.\nFIPS Validated: Yes (FIPS 140-3)\nMigration Priority: Critical\nLicense: Commercial — GPLv3/Commercial\nVersion: 5.8.4 (2025-11-21)\nPlatforms: Embedded Linux Windows RTOS ESP32 STM32\nIndustries: All industries\nBrief: Lightweight portable TLS/SSL library for embedded devices to cloud. Supports TLS 1.3 DTLS 1.3 with small footprint. Includes wolfCrypt crypto engine.",
     "category": "Application,Security Stack",
     "metadata": {
       "categoryName": "TLS/SSL Implementation Software",
@@ -10247,7 +10882,7 @@
     "id": "software-wolfssh",
     "source": "migrate",
     "title": "wolfSSH",
-    "content": "Software: wolfSSH\nCategory: SSH Implementation Software (Application)\nPQC Support: Yes (Kyber Ed25519)\nPQC Capabilities: SSH implementation with Kyber and Ed25519 hybrid support. Provides quantum-resistant secure shell connections for embedded systems and IoT devices.\nFIPS Validated: No\nMigration Priority: High\nLicense: Commercial — GPLv3/Commercial\nVersion: 1.4.22 (2026-01-06)\nPlatforms: Embedded Linux Windows Zephyr\nIndustries: All industries\nBrief: Small fast portable SSH implementation with SCP and SFTP support. Designed for embedded and resource-constrained environments.",
+    "content": "Software: wolfSSH\nCategory: SSH Implementation Software (Application)\nPQC Support: Yes (ML-KEM Hybrid)\nPQC Capabilities: SSH implementation with ML-KEM and Ed25519 hybrid support. Provides quantum-resistant secure shell connections for embedded systems and IoT devices.\nFIPS Validated: No\nMigration Priority: High\nLicense: Commercial — GPLv3/Commercial\nVersion: 1.4.22 (2026-01-06)\nPlatforms: Embedded Linux Windows Zephyr\nIndustries: All industries\nBrief: Small fast portable SSH implementation with SCP and SFTP support. Designed for embedded and resource-constrained environments.",
     "category": "Application",
     "metadata": {
       "categoryName": "SSH Implementation Software",
@@ -10429,7 +11064,7 @@
     "id": "software-check-point-quantum",
     "source": "migrate",
     "title": "Check Point Quantum",
-    "content": "Software: Check Point Quantum\nCategory: Network Security Software (Network)\nPQC Support: Yes (ML-KEM Quantum-safe VPN)\nPQC Capabilities: R82 recommended release with QSKE (Quantum Safe Key Exchange) using ML-KEM (Kyber512/768/1024). Default MKE proposal configures DH group 15 + Kyber768. Supports quantum-safe key exchange for IKEv2 site-to-site VPNs. Remote access VPN PQC support on roadmap for Windows macOS and Linux clients.\nFIPS Validated: Yes (Trusted)\nMigration Priority: Critical\nLicense: Proprietary — Commercial\nVersion: R82 (2026-02)\nPlatforms: Check Point Hardware\nIndustries: Enterprise\nBrief: Firewall software with ML-KEM quantum-safe VPN key exchange. R82 recommended release with active 2026 updates.",
+    "content": "Software: Check Point Quantum\nCategory: Network Security Software (Network)\nPQC Support: Yes (ML-KEM Quantum-safe VPN)\nPQC Capabilities: R82 recommended release with QSKE (Quantum Safe Key Exchange) using ML-KEM (ML-KEM-512/768/1024). Default MKE proposal configures DH group 15 + ML-KEM-768. Supports quantum-safe key exchange for IKEv2 site-to-site VPNs. Remote access VPN PQC support on roadmap for Windows macOS and Linux clients.\nFIPS Validated: Yes (Trusted)\nMigration Priority: Critical\nLicense: Proprietary — Commercial\nVersion: R82 (2026-02)\nPlatforms: Check Point Hardware\nIndustries: Enterprise\nBrief: Firewall software with ML-KEM quantum-safe VPN key exchange. R82 recommended release with active 2026 updates.",
     "category": "Network",
     "metadata": {
       "categoryName": "Network Security Software",
@@ -10494,11 +11129,11 @@
     "id": "software-tuta-mail",
     "source": "migrate",
     "title": "Tuta Mail",
-    "content": "Software: Tuta Mail\nCategory: Secure Messaging and Communication (Application)\nPQC Support: Yes (TutaCrypt Hybrid ML-KEM)\nPQC Capabilities: TutaCrypt protocol upgraded from Kyber to ML-KEM compatibility following NIST standardization. Hybrid encryption combining ML-KEM with X25519 ECDH. Enabled by default for all new accounts. Over 50% of existing users migrated to TutaCrypt protocol. Side-channel vulnerability mitigations applied to encryption libraries.\nFIPS Validated: Yes (Trusted)\nMigration Priority: High\nLicense: Open Source — GPLv3\nVersion: Current (2026-01)\nPlatforms: Cross-platform\nIndustries: Consumer\nBrief: Encrypted email service using TutaCrypt (ML-KEM hybrid) protocol. Over 50% user migration complete.",
+    "content": "Software: Tuta Mail\nCategory: Secure Messaging and Communication (Application)\nPQC Support: Yes (TutaCrypt Hybrid ML-KEM)\nPQC Capabilities: TutaCrypt protocol upgraded from Kyber to ML-KEM compatibility following NIST standardization. Hybrid encryption combining ML-KEM with X25519 ECDH. Enabled by default for all new accounts. Over 50% of existing users migrated to TutaCrypt protocol. Side-channel vulnerability mitigations applied to encryption libraries.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — GPLv3\nVersion: Current (2026-01)\nPlatforms: Cross-platform\nIndustries: Consumer\nBrief: Encrypted email service using TutaCrypt (ML-KEM hybrid) protocol. Over 50% user migration complete.",
     "category": "Application",
     "metadata": {
       "categoryName": "Secure Messaging and Communication",
-      "fipsValidated": "Yes (Trusted)",
+      "fipsValidated": "No",
       "repositoryUrl": ""
     },
     "deepLink": "/migrate?q=Tuta%20Mail"
@@ -10637,7 +11272,7 @@
     "id": "software-marvell-liquidsecurity-2",
     "source": "migrate",
     "title": "Marvell LiquidSecurity 2",
-    "content": "Software: Marvell LiquidSecurity 2\nCategory: Hardware Security Module (HSM) Software (Hardware)\nPQC Support: Planned\nPQC Capabilities: Cloud HSM adapter providing hardware-accelerated cryptographic operations. No public PQC algorithm support announced. Focuses on cloud-scale key management and TLS offloading.\nFIPS Validated: Yes (FIPS 140-2 L3)\nMigration Priority: High\nLicense: Commercial — Commercial\nVersion: LiquidSecurity 2 (2024)\nPlatforms: Cloud Hardware\nIndustries: Cloud, Finance, Enterprise\nBrief: Cloud HSM adapter for hyperscale environments. PQC firmware updates expected as NIST standards mature.",
+    "content": "Software: Marvell LiquidSecurity 2\nCategory: Hardware Security Module (HSM) Software (Hardware)\nPQC Support: Yes (Beta)\nPQC Capabilities: High-throughput PCIe HSM with hardware PQC acceleration. Beta firmware supports ML-KEM-768, ML-DSA-65, and LMS. Used in cloud infrastructure and financial transaction processing. FIPS 140-3 Level 3 validated hardware.\nFIPS Validated: Yes (FIPS 140-2 L3)\nMigration Priority: High\nLicense: Commercial — Commercial\nVersion: LiquidSecurity 2 (2024)\nPlatforms: Cloud Hardware\nIndustries: Cloud, Finance, Enterprise\nBrief: Cloud HSM adapter for hyperscale environments. PQC firmware updates expected as NIST standards mature.",
     "category": "Hardware",
     "metadata": {
       "categoryName": "Hardware Security Module (HSM) Software",
@@ -11014,7 +11649,7 @@
     "id": "software-proton-mail",
     "source": "migrate",
     "title": "Proton Mail",
-    "content": "Software: Proton Mail\nCategory: Email Encryption Software (Application)\nPQC Support: Yes (Kyber/ML-KEM Hybrid)\nPQC Capabilities: First major email provider to deploy post-quantum encryption. Uses hybrid Curve25519 + Kyber key encapsulation for end-to-end encrypted email. Initially deployed with CRYSTALS-Kyber (pre-NIST standard) September 2023.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — Open Source (Server proprietary)\nVersion: 4.x (2023-09)\nPlatforms: Web iOS Android\nIndustries: Consumer, Enterprise, Government\nBrief: First email provider with production PQC encryption protecting emails against quantum threats.",
+    "content": "Software: Proton Mail\nCategory: Email Encryption Software (Application)\nPQC Support: Yes (ML-KEM Hybrid)\nPQC Capabilities: First major email provider to deploy post-quantum encryption. Initially deployed with CRYSTALS-Kyber in September 2023; migrated to NIST-standardized ML-KEM (FIPS 203) following its August 2024 standardization. Uses hybrid Curve25519 + ML-KEM key encapsulation for end-to-end encrypted email.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — Open Source (Server proprietary)\nVersion: 4.x (2023-09)\nPlatforms: Web iOS Android\nIndustries: Consumer, Enterprise, Government\nBrief: First email provider with production PQC encryption protecting emails against quantum threats.",
     "category": "Application",
     "metadata": {
       "categoryName": "Email Encryption Software",
@@ -11183,7 +11818,7 @@
     "id": "software-gpg-code-signing",
     "source": "migrate",
     "title": "GPG Code Signing",
-    "content": "Software: GPG Code Signing\nCategory: Code Signing and Software Integrity (Application)\nPQC Support: Yes (ML-KEM-768+X25519 Composite KEM)\nPQC Capabilities: GnuPG 2.5.x supports PQC composite key encapsulation per LibrePGP specification. ML-KEM-768+X25519 and ML-KEM-1024+X448 composites for quantum-resistant encryption (FIPS-203 compliant since v2.5.1). PQC signatures (ML-DSA) not yet implemented. Note: follows LibrePGP v5 keys not IETF OpenPGP RFC 9580 v6 format; interoperability constraints exist.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — GPLv3\nVersion: 2.5.18 (2024-09)\nPlatforms: Linux macOS Windows\nIndustries: All industries\nBrief: OpenPGP with PQC composite key encapsulation (ML-KEM). PQC code signing signatures not yet available.",
+    "content": "Software: GPG Code Signing\nCategory: Code Signing and Software Integrity (Application)\nPQC Support: No (PQC signing not yet available; ML-KEM added for encryption only)\nPQC Capabilities: GnuPG 2.5.x supports PQC composite key encapsulation per LibrePGP specification. ML-KEM-768+X25519 and ML-KEM-1024+X448 composites for quantum-resistant encryption (FIPS-203 compliant since v2.5.1). PQC signatures (ML-DSA) not yet implemented. Note: follows LibrePGP v5 keys not IETF OpenPGP RFC 9580 v6 format; interoperability constraints exist.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — GPLv3\nVersion: 2.5.18 (2024-09)\nPlatforms: Linux macOS Windows\nIndustries: All industries\nBrief: OpenPGP with PQC composite key encapsulation (ML-KEM). PQC code signing signatures not yet available.",
     "category": "Application",
     "metadata": {
       "categoryName": "Code Signing and Software Integrity",
@@ -11365,7 +12000,7 @@
     "id": "software-kong-api-gateway",
     "source": "migrate",
     "title": "Kong API Gateway",
-    "content": "Software: Kong API Gateway\nCategory: API Security and JWT Libraries (Application)\nPQC Support: Planned (Gateway API proposals)\nPQC Capabilities: Microservice API gateway. Active proposals in the Kubernetes Gateway API community to add ML-KEM-768 to TLS resources. Quantum-safe mTLS possible by utilizing its underlying NGINX/OpenSSL 3.2+ foundation.\nFIPS Validated: No\nMigration Priority: Critical\nLicense: Open Source — Apache-2.0/Commercial\nVersion: 3.9.x (2025-06)\nPlatforms: Linux Kubernetes Cloud\nIndustries: All industries\nBrief: API gateway built on NGINX. PQC mTLS available via underlying crypto library updates.",
+    "content": "Software: Kong API Gateway\nCategory: API Security and JWT Libraries (Application)\nPQC Support: Planned (via OpenSSL 3.5+)\nPQC Capabilities: Microservice API gateway built on NGINX/OpenSSL. PQC TLS transport achievable via NGINX compiled with OpenSSL 3.5+ (ML-KEM hybrid support). Kong JWT plugin validates tokens using classical ECDSA/RSA. PQC JWT signing blocked pending IETF draft-ietf-jose-pqc-algorithms finalization.\nFIPS Validated: No\nMigration Priority: Critical\nLicense: Open Source — Apache-2.0/Commercial\nVersion: 3.9.x (2025-06)\nPlatforms: Linux Kubernetes Cloud\nIndustries: All industries\nBrief: API gateway built on NGINX. PQC mTLS available via underlying crypto library updates.",
     "category": "Application",
     "metadata": {
       "categoryName": "API Security and JWT Libraries",
@@ -11690,7 +12325,7 @@
     "id": "software-aws-cloudhsm",
     "source": "migrate",
     "title": "AWS CloudHSM",
-    "content": "Software: AWS CloudHSM\nCategory: Cloud Hardware Security Module (HSM) (Cloud)\nPQC Support: Planned\nPQC Capabilities: Dedicated managed HSM service in AWS. Uses Marvell LiquidSecurity HSM hardware (FIPS 140-2 L3). AWS-LC with ML-KEM/ML-DSA available for application-layer operations but CloudHSM hardware firmware PQC support not yet confirmed. AWS roadmap indicates quantum-safe HSM capabilities aligned with NIST standards.\nFIPS Validated: Yes (FIPS 140-2 L3)\nMigration Priority: Critical\nLicense: Commercial — Commercial (AWS)\nVersion: Current (2025)\nPlatforms: AWS Cloud\nIndustries: Finance Healthcare Government\nBrief: AWS dedicated cloud HSM. FIPS 140-2 L3 hardware. PQC firmware support on roadmap aligned with NIST standards.",
+    "content": "Software: AWS CloudHSM\nCategory: Cloud Hardware Security Module (HSM) (Cloud)\nPQC Support: Limited (ML-KEM-768, ML-DSA-65 via SDK)\nPQC Capabilities: Dedicated managed HSM service in AWS (FIPS 140-2 L3). ML-KEM-768 and ML-DSA-65 available through AWS Crypto Tools SDK integration. Native PKCS#11 PQC mechanisms not yet available in firmware. AWS KMS provides PQC TLS endpoints with ML-KEM hybrid. Managed service with multi-AZ redundancy.\nFIPS Validated: Yes (FIPS 140-2 L3)\nMigration Priority: Critical\nLicense: Commercial — Commercial (AWS)\nVersion: Current (2025)\nPlatforms: AWS Cloud\nIndustries: Finance Healthcare Government\nBrief: AWS dedicated cloud HSM. FIPS 140-2 L3 hardware. PQC firmware support on roadmap aligned with NIST standards.",
     "category": "Cloud",
     "metadata": {
       "categoryName": "Cloud Hardware Security Module (HSM)",
@@ -11755,7 +12390,7 @@
     "id": "software-id-quantique-cerberis-xgr-qkd",
     "source": "migrate",
     "title": "ID Quantique Cerberis XGR QKD",
-    "content": "Software: ID Quantique Cerberis XGR QKD\nCategory: Quantum Key Distribution Software (Hardware)\nPQC Support: Yes (QKD + PQC hybrid)\nPQC Capabilities: Commercial QKD system for metropolitan and campus networks. Supports CV-QKD (Continuous Variable) and DV-QKD (Discrete Variable BB84). Integrates with ETSI QKD API standards for network interoperability. Supports hybrid QKD+PQC key generation for defense-in-depth quantum-safe key exchange. Deployed in Swiss banking (PostFinance), government networks, and data centers.\nFIPS Validated: No\nMigration Priority: High\nLicense: Commercial — Commercial\nVersion: Cerberis XGR (2024)\nPlatforms: Optical Fiber (SMF) Network Appliance\nIndustries: Finance Government Defense Telecom\nBrief: Leading commercial QKD system with CV and DV modes. ETSI API compliant for network integration. Deployed in banking and government with hybrid QKD+PQC capability.",
+    "content": "Software: ID Quantique Cerberis XGR QKD\nCategory: Quantum Key Distribution Software (Hardware)\nPQC Support: Yes (QKD + PQC hybrid)\nPQC Capabilities: Commercial QKD system for metropolitan and campus networks. Supports DV-QKD (Discrete Variable) using the COW (Coherent One-Way) and BB84 protocols. Integrates with ETSI QKD API standards for network interoperability. Supports hybrid QKD+PQC key generation for defense-in-depth quantum-safe key exchange. Deployed in Swiss banking (PostFinance), government networks, and data centers.\nFIPS Validated: No\nMigration Priority: High\nLicense: Commercial — Commercial\nVersion: Cerberis XGR (2024)\nPlatforms: Optical Fiber (SMF) Network Appliance\nIndustries: Finance Government Defense Telecom\nBrief: Leading commercial QKD system with CV and DV modes. ETSI API compliant for network integration. Deployed in banking and government with hybrid QKD+PQC capability.",
     "category": "Hardware",
     "metadata": {
       "categoryName": "Quantum Key Distribution Software",
@@ -11768,7 +12403,7 @@
     "id": "software-toshiba-qkd-system",
     "source": "migrate",
     "title": "Toshiba QKD System",
-    "content": "Software: Toshiba QKD System\nCategory: Quantum Key Distribution Software (Hardware)\nPQC Support: Yes (QKD + PQC hybrid)\nPQC Capabilities: Toshiba QKD system using differential phase shift (DPS) protocol achieving world-record key rates. Supports high-speed QKD over standard SMF up to 600 km (with relay). Deployed in Tokyo QKD network and UK National Quantum Network. Toshiba Europe chairs ETSI ISG QKD standards committee. Integrates with PQC for hybrid quantum-safe key distribution in enterprise and government networks.\nFIPS Validated: No\nMigration Priority: High\nLicense: Commercial — Commercial\nVersion: Multiplexed QKD v2 (2025)\nPlatforms: Optical Fiber Network Appliance\nIndustries: Government Defense Finance Telecom\nBrief: High-speed QKD with world-record key rates. ETSI standards leader. Deployed in Tokyo and UK national quantum networks with PQC hybrid capability.",
+    "content": "Software: Toshiba QKD System\nCategory: Quantum Key Distribution Software (Hardware)\nPQC Support: Yes (QKD + PQC hybrid)\nPQC Capabilities: Toshiba QKD system using differential phase shift (DPS) protocol achieving world-record key rates. Supports high-speed QKD over standard SMF up to 600 km via Twin Field QKD protocol (no trusted relay nodes required). Deployed in Tokyo QKD network and UK National Quantum Network. Toshiba Europe chairs ETSI ISG QKD standards committee. Integrates with PQC for hybrid quantum-safe key distribution in enterprise and government networks.\nFIPS Validated: No\nMigration Priority: High\nLicense: Commercial — Commercial\nVersion: Multiplexed QKD v2 (2025)\nPlatforms: Optical Fiber Network Appliance\nIndustries: Government Defense Finance Telecom\nBrief: High-speed QKD with world-record key rates. ETSI standards leader. Deployed in Tokyo and UK national quantum networks with PQC hybrid capability.",
     "category": "Hardware",
     "metadata": {
       "categoryName": "Quantum Key Distribution Software",
@@ -11938,11 +12573,11 @@
     "id": "software-crypto4a-qxhsm",
     "source": "migrate",
     "title": "Crypto4A QxHSM",
-    "content": "Software: Crypto4A QxHSM\nCategory: Hardware Security Module (HSM) Software (Hardware)\nPQC Support: Yes (ML-KEM FIPS 203 ML-DSA FIPS 204 SLH-DSA FIPS 205 LMS)\nPQC Capabilities: World's first FIPS 140-2 Level 3+ validated PQC-capable HSM. Powered by the QASM cryptographic core natively supporting all NIST PQC standards: ML-KEM (FIPS 203), ML-DSA (FIPS 204), SLH-DSA (FIPS 205), and LMS stateful hash-based signatures. QxHSM v4.4 (Dec 2024) added ML-DSA and full NIST PQC OID support. QxOS 5 firmware (June 2025) delivers next-generation quantum-safe HSM platform. FIPS 140-3 Level 3 certification submitted March 2025. Available in desktop (QxBMC-1), 1U three-blade (QxBMC-3), and 4U twelve-blade (QxBMC-12) chassis. Engineered, manufactured, and assembled in Canada.\nFIPS Validated: Yes (FIPS 140-2 L3+ / FIPS 140-3 L3 submitted)\nMigration Priority: Critical\nLicense: Commercial — Commercial\nVersion: QxOS 5 (2025-06)\nPlatforms: Linux Hardware\nIndustries: Finance, Government, Defense, Enterprise\nBrief: First PQC-capable HSM to achieve FIPS 140-2 Level 3+ validation. Supports all NIST PQC algorithms via the QASM cryptographic core. Canadian sovereign hardware designed for government and enterprise quantum-safe deployments.",
+    "content": "Software: Crypto4A QxHSM\nCategory: Hardware Security Module (HSM) Software (Hardware)\nPQC Support: Yes (ML-KEM FIPS 203 ML-DSA FIPS 204 SLH-DSA FIPS 205 LMS)\nPQC Capabilities: First HSM submitted for FIPS 140-3 Level 3 certification with all NIST PQC algorithms. Powered by the QASM cryptographic core natively supporting ML-KEM (FIPS 203), ML-DSA (FIPS 204), SLH-DSA (FIPS 205), and LMS stateful hash-based signatures. QxHSM v4.4 (Dec 2024) added ML-DSA and full NIST PQC OID support. QxOS 5 firmware (June 2025) delivers next-generation quantum-safe HSM platform. FIPS 140-3 Level 3 certification submitted March 2025, currently in NIST MIP list. Available in desktop (QxBMC-1), 1U three-blade (QxBMC-3), and 4U twelve-blade (QxBMC-12) chassis. Engineered, manufactured, and assembled in Canada.\nFIPS Validated: Pending (FIPS 140-3 L3 submitted Mar 2025)\nMigration Priority: Critical\nLicense: Commercial — Commercial\nVersion: QxOS 5 (2025-06)\nPlatforms: Linux Hardware\nIndustries: Finance, Government, Defense, Enterprise\nBrief: PQC-capable HSM with FIPS 140-3 Level 3 certification pending (submitted March 2025). Supports all NIST PQC algorithms via the QASM cryptographic core. Canadian sovereign hardware designed for government and enterprise quantum-safe deployments.",
     "category": "Hardware",
     "metadata": {
       "categoryName": "Hardware Security Module (HSM) Software",
-      "fipsValidated": "Yes (FIPS 140-2 L3+ / FIPS 140-3 L3 submitted)",
+      "fipsValidated": "Pending (FIPS 140-3 L3 submitted Mar 2025)",
       "repositoryUrl": ""
     },
     "deepLink": "/migrate?q=Crypto4A%20QxHSM"
@@ -12198,7 +12833,7 @@
     "id": "software-nokia-quantum-safe-networks",
     "source": "migrate",
     "title": "Nokia Quantum-Safe Networks",
-    "content": "Software: Nokia Quantum-Safe Networks\nCategory: 5G & Telecom Security (Network)\nPQC Support: Planned (PQC + QKD defense-in-depth)\nPQC Capabilities: Nokia defense-in-depth approach combining PQC and QKD for quantum-safe 5G networks. NetGuard suite includes Certificate Manager and Identity Access Manager for telecom security. Quantum-safe optical transport via PSE-V encryption modules. Satellite QKD partnership with Colt testing commercial launch planned 2027. Active 3GPP standards contributor.\nFIPS Validated: No\nMigration Priority: Critical\nLicense: Proprietary — Commercial\nVersion: Current (2025)\nPlatforms: Nokia 5G Core AirFrame Cloud\nIndustries: Telecom Government Defense Enterprise\nBrief: Nokia quantum-safe networking combining PQC QKD and symmetric key infrastructure. Defense-in-depth for 5G optical and enterprise networks.",
+    "content": "Software: Nokia Quantum-Safe Networks\nCategory: 5G & Telecom Security (Network)\nPQC Support: Planned (PQC + QKD defense-in-depth)\nPQC Capabilities: Nokia defense-in-depth approach combining PQC and QKD for quantum-safe 5G networks. NetGuard suite includes Certificate Manager and Identity Access Manager for telecom security. Quantum-safe optical transport via PSE-V encryption modules. Satellite QKD trial with Colt and Honeywell (announced Jun 2025; LEO QKD demo Q3 2026, production launch Q3 2027). Active 3GPP standards contributor.\nFIPS Validated: No\nMigration Priority: Critical\nLicense: Proprietary — Commercial\nVersion: Current (2025)\nPlatforms: Nokia 5G Core AirFrame Cloud\nIndustries: Telecom Government Defense Enterprise\nBrief: Nokia quantum-safe networking combining PQC QKD and symmetric key infrastructure. Defense-in-depth for 5G optical and enterprise networks. Satellite QKD trial with Colt and Honeywell targeting 2026-2027.",
     "category": "Network",
     "metadata": {
       "categoryName": "5G & Telecom Security",
@@ -12302,7 +12937,7 @@
     "id": "software-microsoft-entra-verified-id",
     "source": "migrate",
     "title": "Microsoft Entra Verified ID",
-    "content": "Software: Microsoft Entra Verified ID\nCategory: Digital Identity & Verifiable Credentials (Cloud,Security Stack)\nPQC Support: Planned (PQC via CNG/SymCrypt by 2026)\nPQC Capabilities: Microsoft decentralized identity service for W3C Verifiable Credentials issuance and verification. PQC primitives (ML-KEM ML-DSA) available in underlying Windows CNG and SymCrypt but not yet exposed in Verified ID credential signing. Microsoft quantum-safe roadmap targets PQC transition by 2029 per CNSA 2.0.\nFIPS Validated: Yes (CNG FIPS 140-3)\nMigration Priority: Critical\nLicense: Commercial — Commercial (SaaS)\nVersion: Current (2025)\nPlatforms: Azure Cloud Windows\nIndustries: Government Enterprise Healthcare Finance\nBrief: Microsoft decentralized identity for Verifiable Credentials. PQC via CNG/SymCrypt on roadmap. Entra PQC transition targeted by 2026.",
+    "content": "Software: Microsoft Entra Verified ID\nCategory: Digital Identity & Verifiable Credentials (Cloud,Security Stack)\nPQC Support: Planned (PQC via CNG/SymCrypt; CNSA 2.0 transition by 2029)\nPQC Capabilities: Microsoft decentralized identity service for W3C Verifiable Credentials issuance and verification. PQC primitives (ML-KEM ML-DSA) available in underlying Windows CNG and SymCrypt but not yet exposed in Verified ID credential signing. Microsoft quantum-safe roadmap targets PQC transition by 2029 per CNSA 2.0.\nFIPS Validated: Yes (CNG FIPS 140-3)\nMigration Priority: Critical\nLicense: Commercial — Commercial (SaaS)\nVersion: Current (2025)\nPlatforms: Azure Cloud Windows\nIndustries: Government Enterprise Healthcare Finance\nBrief: Microsoft decentralized identity for Verifiable Credentials. PQC via CNG/SymCrypt on roadmap. Entra PQC transition targeted by 2026.",
     "category": "Cloud,Security Stack",
     "metadata": {
       "categoryName": "Digital Identity & Verifiable Credentials",
@@ -12414,6 +13049,136 @@
       "repositoryUrl": ""
     },
     "deepLink": "/migrate?q=NXP%20JCOP%204.5%20P71D600"
+  },
+  {
+    "id": "software-pyjwt",
+    "source": "migrate",
+    "title": "PyJWT",
+    "content": "Software: PyJWT\nCategory: API Security and JWT Libraries (Application)\nPQC Support: No\nPQC Capabilities: Python's most widely used JWT library. No PQC algorithm support. Implements RS256, ES256, EdDSA, and HMAC signing via the Python cryptography package. PQC integration dependent on the cryptography library adding ML-DSA/ML-KEM support and IETF JOSE PQC standards finalization.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — MIT\nVersion: 2.10.1 (2025-02)\nPlatforms: Python 3.8+\nIndustries: All industries\nBrief: Python JWT library. No PQC. Awaiting IETF JOSE PQC specification and Python cryptography library support.",
+    "category": "Application",
+    "metadata": {
+      "categoryName": "API Security and JWT Libraries",
+      "fipsValidated": "No",
+      "repositoryUrl": "https://github.com/jpadilla/pyjwt"
+    },
+    "deepLink": "/migrate?q=PyJWT"
+  },
+  {
+    "id": "software-libreswan",
+    "source": "migrate",
+    "title": "Libreswan",
+    "content": "Software: Libreswan\nCategory: VPN and IPsec Software (Network)\nPQC Support: Yes (ML-KEM experimental via liboqs)\nPQC Capabilities: Linux IPsec/IKEv2 implementation with experimental PQC support via liboqs plugin. Supports hybrid IKEv2 key exchange using the RFC 9370 Additional Key Exchange framework with ML-KEM. Default IPsec stack in Red Hat Enterprise Linux, Fedora, and OpenWRT. Production PQC roadmap tied to draft-ietf-ipsecme-ikev2-mlkem standardization.\nFIPS Validated: No (FIPS mode via NSS/OpenSSL)\nMigration Priority: High\nLicense: Open Source — GPLv2\nVersion: 4.15 (2025)\nPlatforms: Linux RHEL Fedora OpenWRT\nIndustries: Enterprise Government Education\nBrief: Default IPsec stack for Red Hat Enterprise Linux and Fedora. Supports IKEv1/IKEv2 with experimental PQC via liboqs hybrid mode. Widely deployed in enterprise Linux and network gateway environments.",
+    "category": "Network",
+    "metadata": {
+      "categoryName": "VPN and IPsec Software",
+      "fipsValidated": "No (FIPS mode via NSS/OpenSSL)",
+      "repositoryUrl": "https://github.com/libreswan/libreswan"
+    },
+    "deepLink": "/migrate?q=Libreswan"
+  },
+  {
+    "id": "software-softhsm2",
+    "source": "migrate",
+    "title": "SoftHSM2",
+    "content": "Software: SoftHSM2\nCategory: Hardware Security Module (HSM) Software (Hardware)\nPQC Support: Yes (via liboqs/OpenSSL)\nPQC Capabilities: Open-source software HSM implementing the PKCS#11 interface. Primary tool for testing and developing PKCS#11 applications without physical HSM hardware. Supports PQC via liboqs-provider for OpenSSL integration. Used for testing PKCS#11 PQC mechanism workflows before deploying to physical HSMs (Thales Luna, Entrust nShield). Maintained by OpenDNSSEC project.\nFIPS Validated: No (software-only)\nMigration Priority: Medium\nLicense: Open Source — BSD-2-Clause\nVersion: 2.6.1 (2024)\nPlatforms: Linux macOS Windows\nIndustries: All industries\nBrief: Open-source software PKCS#11 HSM for testing and development. Supports PQC via liboqs-provider. Enables PKCS#11 workflow testing without physical HSM hardware.",
+    "category": "Hardware",
+    "metadata": {
+      "categoryName": "Hardware Security Module (HSM) Software",
+      "fipsValidated": "No (software-only)",
+      "repositoryUrl": "https://github.com/opendnssec/SoftHSMv2"
+    },
+    "deepLink": "/migrate?q=SoftHSM2"
+  },
+  {
+    "id": "software-hash-sigs",
+    "source": "migrate",
+    "title": "hash-sigs",
+    "content": "Software: hash-sigs\nCategory: Post-Quantum Cryptography Libraries (Application)\nPQC Support: Yes (LMS HSS)\nPQC Capabilities: Reference C implementation of LMS and HSS stateful hash-based signatures per RFC 8554, by David McGrew (Cisco) — co-author of RFC 8554. Supports all NIST SP 800-208 parameter sets. Full key generation, signing, and verification. Used as integration basis by multiple downstream projects including wolfSSL.\nFIPS Validated: No\nMigration Priority: High\nLicense: Public Domain — Public Domain\nVersion: Current (2024)\nPlatforms: Cross-platform (C)\nIndustries: Firmware; Critical Infrastructure; Code Signing\nBrief: The canonical LMS/HSS reference implementation from Cisco. Directly cited by NIST SP 800-208 and IETF RFC 8554. Essential starting point for organizations implementing stateful hash-based signatures for firmware or code signing.",
+    "category": "Application",
+    "metadata": {
+      "categoryName": "Post-Quantum Cryptography Libraries",
+      "fipsValidated": "No",
+      "repositoryUrl": "https://github.com/cisco/hash-sigs"
+    },
+    "deepLink": "/migrate?q=hash-sigs"
+  },
+  {
+    "id": "software-xmss-reference",
+    "source": "migrate",
+    "title": "xmss-reference",
+    "content": "Software: xmss-reference\nCategory: Post-Quantum Cryptography Libraries (Application)\nPQC Support: Yes (XMSS XMSSMT)\nPQC Capabilities: Official C reference implementation of XMSS and XMSS^MT per RFC 8391, maintained by the original XMSS authors. Covers all RFC 8391 parameter sets with SHA-2 and SHAKE hash functions. Includes key generation, signing, verification, and state persistence. Canonical source used to validate other XMSS implementations.\nFIPS Validated: No\nMigration Priority: High\nLicense: CC0 / Public Domain — CC0\nVersion: Current (2024)\nPlatforms: Cross-platform (C)\nIndustries: Firmware; Critical Infrastructure; Code Signing\nBrief: The official XMSS and XMSS^MT reference implementation from the RFC 8391 authors. Covers all NIST SP 800-208 XMSS parameter sets. Essential reference for validating XMSS support or building compliant implementations.",
+    "category": "Application",
+    "metadata": {
+      "categoryName": "Post-Quantum Cryptography Libraries",
+      "fipsValidated": "No",
+      "repositoryUrl": "https://github.com/XMSS/xmss-reference"
+    },
+    "deepLink": "/migrate?q=xmss-reference"
+  },
+  {
+    "id": "software-eudi-reference-wallet",
+    "source": "migrate",
+    "title": "EUDI Reference Wallet",
+    "content": "Software: EUDI Reference Wallet\nCategory: Digital Identity & Verifiable Credentials (Application)\nPQC Support: Planned (PQC via ARF PQC roadmap)\nPQC Capabilities: European Commission open-source reference implementation of the EUDI Wallet for Android and iOS. Implements eIDAS 2.0 EUDI Wallet specification with OpenID4VCI credential issuance and OpenID4VP credential presentation. Supports mso_mdoc (ISO 18013-5) and SD-JWT VC (RFC 9901) formats. PQC integration planned per EU ARF roadmap: ML-DSA replacing ECDSA by Dec 2030 for high-risk cases and Dec 2035 full transition. Current cryptography: ECDSA P-256.\nFIPS Validated: No\nMigration Priority: Critical\nLicense: Open Source — Apache-2.0\nVersion: Current (2024)\nPlatforms: Android iOS\nIndustries: Government; Identity; EU Member States\nBrief: European Commission reference EUDI Wallet for Android and iOS. OpenID4VCI/VP protocol support for eIDAS 2.0 credential lifecycle. Reference implementation for all national EUDI Wallet deployments.",
+    "category": "Application",
+    "metadata": {
+      "categoryName": "Digital Identity & Verifiable Credentials",
+      "fipsValidated": "No",
+      "repositoryUrl": "https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui"
+    },
+    "deepLink": "/migrate?q=EUDI%20Reference%20Wallet"
+  },
+  {
+    "id": "software-sphereon-ssi-sdk",
+    "source": "migrate",
+    "title": "Sphereon SSI SDK",
+    "content": "Software: Sphereon SSI SDK\nCategory: Digital Identity & Verifiable Credentials (Application)\nPQC Support: Planned (PQC-compatible architecture)\nPQC Capabilities: TypeScript/JavaScript SSI SDK supporting OpenID4VCI OpenID4VP and DIF Presentation Exchange specifications. Implements W3C Verifiable Credentials SD-JWT VC and mDL (ISO 18013-5) credential formats. EUDI Wallet ARF compliant. Used in POTENTIAL Large-Scale Pilot (EU-funded 2023-2025). PQC integration planned as IETF JOSE/COSE PQC algorithm registrations finalize for ML-DSA credential signatures.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — Apache-2.0\nVersion: Current (2024)\nPlatforms: Node.js TypeScript JavaScript React Native\nIndustries: Government; Identity; Technology; Finance\nBrief: Open-source TypeScript SSI SDK for EUDI Wallet-compliant credential issuance and presentation. OpenID4VCI/VP with SD-JWT VC and mDL. Used in EU POTENTIAL Large-Scale Pilot.",
+    "category": "Application",
+    "metadata": {
+      "categoryName": "Digital Identity & Verifiable Credentials",
+      "fipsValidated": "No",
+      "repositoryUrl": "https://github.com/Sphereon-Opensource/SSI-SDK"
+    },
+    "deepLink": "/migrate?q=Sphereon%20SSI%20SDK"
+  },
+  {
+    "id": "software-hyperledger-aries-aca-py-",
+    "source": "migrate",
+    "title": "Hyperledger Aries (ACA-Py)",
+    "content": "Software: Hyperledger Aries (ACA-Py)\nCategory: Digital Identity & Verifiable Credentials (Application)\nPQC Support: Planned (ML-DSA for VC signatures)\nPQC Capabilities: Python-based SSI agent framework (Aries Cloud Agent Python) under Linux Foundation Hyperledger project. Supports OpenID4VCI OpenID4VP W3C Verifiable Credentials and AnonCreds credential formats. Active EUDI Wallet protocol development targeting eIDAS 2.0 compliance. PQC ML-DSA credential signatures planned as IETF JOSE/COSE PQC algorithm registrations finalize. Deployed in government digital identity programs across Canada Australia and EU.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source — Apache-2.0\nVersion: 1.x (2025)\nPlatforms: Python Docker Linux Kubernetes\nIndustries: Government; Identity; Finance; Healthcare\nBrief: Leading open-source SSI agent framework (Hyperledger/Linux Foundation). OpenID4VCI/VP and AnonCreds support. Active EUDI Wallet protocol development. Deployed in government identity programs.",
+    "category": "Application",
+    "metadata": {
+      "categoryName": "Digital Identity & Verifiable Credentials",
+      "fipsValidated": "No",
+      "repositoryUrl": "https://github.com/hyperledger/aries-cloudagent-python"
+    },
+    "deepLink": "/migrate?q=Hyperledger%20Aries%20(ACA-Py)"
+  },
+  {
+    "id": "software-credebl",
+    "source": "migrate",
+    "title": "CREDEBL",
+    "content": "Software: CREDEBL\nCategory: Digital Identity & Verifiable Credentials (Application)\nPQC Support: Planned (PQC via W3C VC PQC roadmap)\nPQC Capabilities: Open-source enterprise digital credential management platform (AYANWORKS) supporting W3C Verifiable Credentials AnonCreds and OpenID4VCI issuance. Provides issuer holder and verifier services via REST API with multi-tenancy. Designed for government and enterprise digital identity programs with EUDI Wallet-compatible deployment. Modular architecture supports future PQC credential signature migration as W3C VC and IETF JOSE PQC standards mature.\nFIPS Validated: No\nMigration Priority: Medium\nLicense: Open Source — Apache-2.0\nVersion: Current (2024)\nPlatforms: Docker Kubernetes Node.js Linux\nIndustries: Government; Identity; Enterprise; Healthcare\nBrief: Enterprise open-source verifiable credential platform. W3C VCs AnonCreds and OpenID4VCI issuance via REST API. Multi-tenant. Government-focused digital identity deployments.",
+    "category": "Application",
+    "metadata": {
+      "categoryName": "Digital Identity & Verifiable Credentials",
+      "fipsValidated": "No",
+      "repositoryUrl": "https://github.com/credebl"
+    },
+    "deepLink": "/migrate?q=CREDEBL"
+  },
+  {
+    "id": "software-paradym-animo-solutions-",
+    "source": "migrate",
+    "title": "Paradym (Animo Solutions)",
+    "content": "Software: Paradym (Animo Solutions)\nCategory: Digital Identity & Verifiable Credentials (Application)\nPQC Support: Planned (PQC-compatible via EUDI ARF roadmap)\nPQC Capabilities: EUDI Wallet-certified SDK and workflow automation platform by Animo Solutions. Supports OpenID4VCI OpenID4VP W3C Verifiable Credentials SD-JWT VC and ISO 18013-5 mDL credential formats. EUDI Wallet ARF conformant. Used in NOBID and EWC EU Large-Scale Pilots (2023-2025). PQC integration planned as EUDI ARF PQC requirements finalize following the Dec 2026 national roadmap deadline.\nFIPS Validated: No\nMigration Priority: High\nLicense: Open Source/Commercial — Apache-2.0/Commercial\nVersion: Current (2024)\nPlatforms: iOS Android Node.js TypeScript\nIndustries: Government; Identity; Finance; Healthcare\nBrief: EUDI-certified wallet SDK by Animo Solutions. OpenID4VCI/VP SD-JWT VC and mDL support. Used in NOBID and EWC EU Large-Scale Pilots.",
+    "category": "Application",
+    "metadata": {
+      "categoryName": "Digital Identity & Verifiable Credentials",
+      "fipsValidated": "No",
+      "repositoryUrl": "https://github.com/animo"
+    },
+    "deepLink": "/migrate?q=Paradym%20(Animo%20Solutions)"
   },
   {
     "id": "leader-1",
@@ -13763,7 +14528,7 @@
     "id": "module-summary-vendor-risk",
     "source": "module-summaries",
     "title": "Vendor & Supply Chain Risk",
-    "content": "# Vendor & Supply Chain Risk\n\n## Overview\n\nThe Vendor & Supply Chain Risk module teaches executives how to assess, score, and manage cryptographic risk across their vendor ecosystem. It covers PQC readiness scorecards with six weighted dimensions, contract clause generation for quantum-safe procurement, and supply chain risk matrix visualization across infrastructure layers. The module integrates live data from the app's migration catalog to auto-score FIPS validation status and vendor PQC readiness.\n\n## Key Concepts\n\n- **Vendor PQC Scorecard** — six weighted dimensions: PQC Algorithm Support (25%), FIPS 140-3 Validation (20%), Published PQC Roadmap (15%), Crypto Agility (15%), SBOM/CBOM Delivery (10%), Hybrid Mode Support (15%)\n- **FIPS Validation Tiers** — four-tier assessment: Validated (CMVP-certified), Submitted (in CMVP queue), Legacy (FIPS 140-2 only), Self-Claim (vendor assertion without certification)\n- **CBOM (Cryptographic Bill of Materials)** — CycloneDX-standard inventory of all cryptographic algorithms, key sizes, and usage locations within a vendor's product; essential for assessing quantum vulnerability\n- **SBOM (Software Bill of Materials)** — complete inventory of software components and dependencies; complements CBOM for identifying cryptographic library dependencies\n- **Contract Clauses** — five categories of procurement protection: PQC timeline requirements, FIPS validation mandates, CBOM delivery obligations, crypto change notification, and audit rights\n- **Supply Chain Risk Matrix** — infrastructure-layer view showing PQC-ready products, FIPS-validated products, and hybrid-capable products as ratios per layer\n\n## Workshop / Interactive Activities\n\nThe workshop has 3 interactive steps:\n\n1. **Vendor Scorecard Builder** — interactive radar chart with 6 weighted dimensions; FIPS validation auto-scored from migration catalog data; saves assessment as executive document\n2. **Contract Clause Generator** — 5-section artifact builder producing legal-style contract articles (PQC Timeline, FIPS Validation, CBOM Delivery, Crypto Change Notification, Audit Rights) with customizable parameters\n3. **Supply Chain Risk Matrix** — heatmap visualization showing vendor PQC readiness across infrastructure layers; cells display count ratios with percentage-based color coding; includes per-layer detail table\n\n## Related Standards\n\n- NIST SP 800-161 (Cybersecurity Supply Chain Risk Management)\n- NIST IR 8547 (Transition to Post-Quantum Cryptography Standards)\n- CycloneDX CBOM Specification\n- FIPS 140-3 (Security Requirements for Cryptographic Modules)",
+    "content": "# Vendor & Supply Chain Risk\n\n## Overview\n\nThe Vendor & Supply Chain Risk module teaches executives how to assess, score, and manage cryptographic risk across their vendor ecosystem. It covers PQC readiness scorecards with six weighted dimensions, contract clause generation for quantum-safe procurement, and supply chain risk matrix visualization across infrastructure layers. The module integrates live data from the app's migration catalog to auto-score FIPS validation status and vendor PQC readiness.\n\n## Key Concepts\n\n- **Vendor PQC Scorecard** — six weighted dimensions: PQC Algorithm Support (25%), FIPS 140-3 Validation (20%), Published PQC Roadmap (15%), Crypto Agility (15%), SBOM/CBOM Delivery (10%), Hybrid Mode Support (15%)\n- **FIPS Validation Tiers** — four-tier assessment: FIPS 140-3 Validated (CMVP-certified under current standard), FIPS 140-3 Submitted (in CMVP queue), FIPS 140-2 Validated (certified under prior standard; NIST stopped accepting new 140-2 submissions in 2021), FIPS Mode / Self-Claim (vendor assertion without certification)\n- **CBOM (Cryptographic Bill of Materials)** — CycloneDX-standard inventory of all cryptographic algorithms, key sizes, and usage locations within a vendor's product; essential for assessing quantum vulnerability\n- **SBOM (Software Bill of Materials)** — complete inventory of software components and dependencies; complements CBOM for identifying cryptographic library dependencies\n- **Contract Clauses** — five categories of procurement protection: PQC timeline requirements, FIPS validation mandates, CBOM delivery obligations, crypto change notification, and audit rights\n- **Supply Chain Risk Matrix** — infrastructure-layer view showing four columns per layer: PQC-ready products, FIPS-validated products, hybrid-capable products, and total products; cells are percentage-coded by readiness\n\n## Workshop / Interactive Activities\n\nThe workshop has 3 interactive steps:\n\n1. **Vendor Scorecard Builder** — interactive scorecard with 6 weighted slider dimensions; FIPS validation auto-scored from migration catalog data; saves assessment as executive document\n2. **Contract Clause Generator** — 5-section artifact builder producing legal-style contract articles (PQC Timeline, FIPS Validation, CBOM Delivery, Crypto Change Notification, Audit Rights) with customizable parameters\n3. **Supply Chain Risk Matrix** — heatmap visualization showing vendor PQC readiness across infrastructure layers; cells display count ratios with percentage-based color coding; includes per-layer detail table\n\n## Related Standards\n\n- NIST SP 800-161 (Cybersecurity Supply Chain Risk Management)\n- NIST IR 8547 (Transition to Post-Quantum Cryptography Standards)\n- CycloneDX CBOM Specification\n- FIPS 140-3 (Security Requirements for Cryptographic Modules)",
     "category": "learning-module",
     "metadata": { "moduleId": "vendor-risk", "moduleName": "Vendor & Supply Chain Risk" },
     "deepLink": "/learn/vendor-risk"
@@ -16773,7 +17538,7 @@
     "id": "mc-vendorrisk-contractclausegenerator-0",
     "source": "module-content",
     "title": "Vendor & Supply Chain Risk — ContractClauseGenerator",
-    "content": "Module: Vendor & Supply Chain Risk\nComponent: ContractClauseGenerator\n\nBuild PQC-ready contract clauses for vendor agreements. Fill in each section with your organization's requirements, then switch to\nmode to see the generated contract language. Export as Markdown for legal review.\nDefine when vendors must achieve post-quantum cryptographic readiness.\n2026 — Aggressive (CNSA 2.0 early)\n2030 — CNSA 2.0 final deadline\nML-KEM (FIPS 203) — Key Encapsulation\nML-DSA (FIPS 204) — Digital Signatures\nSLH-DSA (FIPS 205) — Stateless Hash Signatures\nLMS/HSS (SP 800-208) — Stateful Hash Signatures\nRequire FIPS 140-3 validated cryptographic modules for all vendor products.\nRequired FIPS 140-3 Security Level\nValidation Achievement Timeline\nValidated Module Name and Version\nApproved Algorithm List (CAVP)\nMandate delivery of Cryptographic Bill of Materials for supply chain visibility.\nCycloneDX 1.6+ (with crypto extension)\nVendor-specific (with mapping)\nAll cryptographic algorithms and key sizes\nTLS/SSH/IPsec protocol versions\nCertificate types and validity\nCryptographic library dependencies\nQuantum vulnerability assessment per algorithm\nRequire advance notice for any changes to cryptographic implementations.\nInteroperability testing with buyer systems\nFIPS revalidation if module changes\nReserve the right to audit vendor cryptographic practices.\nOn-demand (with reasonable notice)\nCryptographic algorithm inventory\nCrypto incident response procedures\nPQC migration roadmap progress\nPQC Vendor Contract Requirements — ${new Date().toLocaleDateString()}",
+    "content": "Module: Vendor & Supply Chain Risk\nComponent: ContractClauseGenerator\n\nBuild PQC-ready contract clauses for vendor agreements. Fill in each section with your organization's requirements, then switch to\nmode to see the generated contract language. Export as Markdown for legal review.\nDefine when vendors must achieve post-quantum cryptographic readiness.\n2026 — CNSA 2.0 networking equipment (NSS)\n2027 — Internal target (no major standards deadline)\n2030 — NIST IR 8547 RSA/ECC deprecation / CNSA 2.0 web & cloud (NSS)\n2033 — CNSA 2.0 final NSS deadline\nML-KEM (FIPS 203) — Key Encapsulation\nML-DSA (FIPS 204) — Digital Signatures\nSLH-DSA (FIPS 205) — Stateless Hash Signatures\nLMS/HSS (SP 800-208) — Stateful Hash Signatures\nRequire FIPS 140-3 validated cryptographic modules for all vendor products.\nRequired FIPS 140-3 Security Level\nValidation Achievement Timeline\nValidated Module Name and Version\nApproved Algorithm List (CAVP)\nMandate delivery of Cryptographic Bill of Materials for supply chain visibility.\nCycloneDX 1.6+ (with crypto extension)\nVendor-specific (with mapping)\nAll cryptographic algorithms and key sizes\nTLS/SSH/IPsec protocol versions\nCertificate types and validity\nCryptographic library dependencies\nQuantum vulnerability assessment per algorithm\nRequire advance notice for any changes to cryptographic implementations.\nInteroperability testing with buyer systems\nFIPS revalidation if module changes\nReserve the right to audit vendor cryptographic practices.\nOn-demand (with reasonable notice)\nCryptographic algorithm inventory\nCrypto incident response procedures",
     "category": "learning",
     "metadata": {
       "module": "VendorRisk",
@@ -16786,7 +17551,7 @@
     "id": "mc-vendorrisk-introduction-0",
     "source": "module-content",
     "title": "Vendor & Supply Chain Risk — Introduction",
-    "content": "Module: Vendor & Supply Chain Risk\nComponent: Introduction\n\nYour organization's quantum readiness is only as strong as your weakest vendor. Third-party software, hardware, and cloud services form the backbone of enterprise cryptographic infrastructure. If a critical vendor lacks\n“Supply chain risks are among the most significant challenges for PQC migration. Organizations must evaluate vendors' cryptographic capabilities and ensure contractual commitments to post-quantum readiness.”\ntargets. Every unpatched vendor extends your exposure window.\nA single vendor dependency on classical-only crypto can block your entire PQC migration program.\nA vendor scorecard provides a structured, repeatable method for evaluating how well-prepared each vendor is for the post-quantum transition. Scores are weighted across dimensions that map to real migration risk factors.\n(Cryptographic Bill of Materials) extends the SBOM concept to track every cryptographic algorithm, key, certificate, and protocol used by a software product. Demanding CBOMs from vendors is the single most impactful step toward supply chain quantum readiness.\nAlgorithm inventory, key sizes, protocol versions, certificate types, and quantum vulnerability status per component.\nCycloneDX 1.6+ includes a crypto extension for machine-readable CBOM data. OWASP maintains the specification.\nInclude CBOM delivery requirements in vendor contracts with defined frequency, format, and scope expectations.",
+    "content": "Module: Vendor & Supply Chain Risk\nComponent: Introduction\n\nYour organization's quantum readiness is only as strong as your weakest vendor. Third-party software, hardware, and cloud services form the backbone of enterprise cryptographic infrastructure. If a critical vendor lacks\n“Supply chain risks are among the most significant challenges for PQC migration. Organizations must evaluate vendors' cryptographic capabilities and ensure contractual commitments to post-quantum readiness.”\ntargets. Every unpatched vendor extends your exposure window.\nA single vendor dependency on classical-only crypto can block your entire PQC migration program.\nA vendor scorecard provides a structured, repeatable method for evaluating how well-prepared each vendor is for the post-quantum transition. Scores are weighted across dimensions that map to real migration risk factors.\n(Cryptographic Bill of Materials) extends the SBOM concept to track every cryptographic algorithm, key, certificate, and protocol used by a software product. Demanding CBOMs from vendors is the single most impactful step toward supply chain quantum readiness.\nAlgorithm inventory, key sizes, protocol versions, certificate types, and quantum vulnerability status per component.\nCycloneDX 1.6+ includes a crypto extension for machine-readable CBOM data. The CycloneDX community (cyclonedx.org) maintains the specification, originally an OWASP project.\nInclude CBOM delivery requirements in vendor contracts with defined frequency, format, and scope expectations.",
     "category": "learning",
     "metadata": {
       "module": "VendorRisk",
@@ -19883,27 +20648,144 @@
     "id": "quiz-vendor-risk-1",
     "source": "quiz",
     "title": "Quiz: vendor-risk",
-    "content": "Quiz Category: vendor-risk\n\nQ: Which contract clauses should be included in vendor agreements regarding PQC? (Select all that apply)\n  A) PQC migration timeline commitments\n  B) CBOM delivery requirements\n  C) Exclusive use of vendor's quantum computers\n  D) Crypto change notification obligations\nAnswer: A|B|D\nExplanation: Key PQC contract clauses include: migration timeline commitments (when PQC support will be available), CBOM delivery (for visibility into cryptographic components), and crypto change notifications (advance notice of algorithm changes). Quantum computer use is irrelevant to PQC.\n\nQ: What is the primary supply chain risk in the PQC transition?\n  A) Vendors raising prices for PQC products\n  B) Critical infrastructure depending on vendors who lack PQC migration plans\n  C) Too many vendors offering PQC solutions\n  D) Open-source libraries being too secure\nAnswer: B\nExplanation: The primary supply chain risk is dependency on vendors without PQC roadmaps — if critical infrastructure relies on products that won't support PQC in time, the organization cannot complete its migration regardless of internal readiness.\n\nQ: How should a vendor's FIPS validation status be categorized for PQC risk assessment?\n  A) Binary: validated or not validated\n  B) Three tiers: Validated (CMVP), Partial (FIPS-mode/FedRAMP/WebTrust), No validation\n  C) Only the validation certificate number matters\n  D) FIPS validation is irrelevant to PQC\nAnswer: B\nExplanation: A three-tier classification captures the nuance: full CMVP validation (highest assurance), partial compliance (FIPS-mode operation, FedRAMP certification, WebTrust — meaningful but not equivalent), and no validation. Different compliance frameworks require different minimum tiers.",
+    "content": "Quiz Category: vendor-risk\n\nQ: Which contract clauses should be included in vendor agreements regarding PQC? (Select all that apply)\n  A) PQC migration timeline commitments\n  B) CBOM delivery requirements\n  C) Exclusive use of vendor's quantum computers\n  D) Crypto change notification obligations\nAnswer: A|B|D\nExplanation: Key PQC contract clauses include: migration timeline commitments (when PQC support will be available), CBOM delivery (for visibility into cryptographic components), and crypto change notifications (advance notice of algorithm changes). Quantum computer use is irrelevant to PQC.\n\nQ: What is the primary supply chain risk in the PQC transition?\n  A) Vendors raising prices for PQC products\n  B) Critical infrastructure depending on vendors who lack PQC migration plans\n  C) Too many vendors offering PQC solutions\n  D) Open-source libraries being too secure\nAnswer: B\nExplanation: The primary supply chain risk is dependency on vendors without PQC roadmaps — if critical infrastructure relies on products that won't support PQC in time, the organization cannot complete its migration regardless of internal readiness.",
     "category": "quiz",
-    "metadata": { "quizCategory": "vendor-risk", "questionCount": "3" },
+    "metadata": { "quizCategory": "vendor-risk", "questionCount": "2" },
     "deepLink": "/learn/quiz"
   },
   {
     "id": "quiz-vendor-risk-2",
     "source": "quiz",
     "title": "Quiz: vendor-risk",
-    "content": "Quiz Category: vendor-risk\n\nQ: What is crypto agility in the context of vendor assessment?\n  A) How fast a vendor's encryption runs\n  B) A vendor's ability to swap cryptographic algorithms in their products without major rework\n  C) The agility of the vendor's sales team\n  D) How quickly a vendor responds to support tickets\nAnswer: B\nExplanation: Crypto agility in vendor products means the ability to update or replace cryptographic algorithms through configuration or minor updates rather than major product overhauls. Vendors with high crypto agility can adopt PQC algorithms faster with less disruption.\n\nQ: True or False: Organizations should assess their entire vendor ecosystem for PQC readiness, not just security product vendors.\nAnswer: TRUE\nExplanation: True. Cryptography is embedded throughout the technology stack — databases, messaging systems, cloud services, IoT devices, and more. Any vendor product that uses public-key cryptography for encryption, authentication, or integrity needs PQC assessment.\n\nQ: What should an organization do if a critical vendor has no published PQC roadmap?\n  A) Immediately terminate the vendor relationship\n  B) Ignore the risk since the vendor will eventually update\n  C) Engage the vendor formally, set contractual requirements, and develop contingency plans\n  D) Wait for industry analysts to evaluate the vendor\nAnswer: C\nExplanation: The best approach combines proactive engagement (request formal PQC roadmap, include requirements in contract renewals), risk mitigation (develop contingency plans, evaluate alternative vendors), and monitoring (track vendor progress). Abrupt termination or passive waiting both create unnecessary risk.",
+    "content": "Quiz Category: vendor-risk\n\nQ: How should a vendor's FIPS validation status be categorized for PQC risk assessment?\n  A) Two tiers: Validated or Not Validated (binary pass/fail)\n  B) Three tiers: Validated (CMVP), Partial (FIPS-mode/FedRAMP/WebTrust), No validation\n  C) Four tiers: FIPS 140-3 Validated, FIPS 140-3 Submitted, FIPS 140-2 Legacy, FIPS Mode/Self-Claim\n  D) FIPS validation is irrelevant to PQC vendor risk\nAnswer: C\nExplanation: The vendor risk module distinguishes four tiers: FIPS 140-3 Validated = CMVP-certified (highest assurance); FIPS 140-3 Submitted = in CMVP testing queue (commitment demonstrated but not yet certified); FIPS 140-2 Validated = legacy validation (NIST stopped accepting new 140-2 submissions September 2021, migration to 140-3 required); FIPS Mode/Self-Claim = vendor asserts FIPS-compatible operation with no CMVP certificate (lowest assurance). Each tier carries different procurement risk implications.\n\nQ: What is crypto agility in the context of vendor assessment?\n  A) How fast a vendor's encryption runs\n  B) A vendor's ability to swap cryptographic algorithms in their products without major rework\n  C) The agility of the vendor's sales team\n  D) How quickly a vendor responds to support tickets\nAnswer: B\nExplanation: Crypto agility in vendor products means the ability to update or replace cryptographic algorithms through configuration or minor updates rather than major product overhauls. Vendors with high crypto agility can adopt PQC algorithms faster with less disruption.",
     "category": "quiz",
-    "metadata": { "quizCategory": "vendor-risk", "questionCount": "3" },
+    "metadata": { "quizCategory": "vendor-risk", "questionCount": "2" },
     "deepLink": "/learn/quiz"
   },
   {
     "id": "quiz-vendor-risk-3",
     "source": "quiz",
     "title": "Quiz: vendor-risk",
-    "content": "Quiz Category: vendor-risk\n\nQ: What is a Software Bill of Materials (SBOM) and why is it relevant to PQC vendor risk?\n  A) A vendor's revenue report\n  B) An inventory of all software components and dependencies in a product\n  C) A benchmark of software performance metrics\n  D) A document listing the vendor's employees\nAnswer: B\nExplanation: An SBOM lists all software components, libraries, and dependencies in a product. For PQC, it helps identify which cryptographic libraries are in use, their algorithm support, and whether they include quantum-vulnerable implementations that need migration.",
+    "content": "Quiz Category: vendor-risk\n\nQ: True or False: Organizations should assess their entire vendor ecosystem for PQC readiness, not just security product vendors.\nAnswer: TRUE\nExplanation: True. Cryptography is embedded throughout the technology stack — databases, messaging systems, cloud services, IoT devices, and more. Any vendor product that uses public-key cryptography for encryption, authentication, or integrity needs PQC assessment.\n\nQ: What should an organization do if a critical vendor has no published PQC roadmap?\n  A) Immediately terminate the vendor relationship\n  B) Ignore the risk since the vendor will eventually update\n  C) Engage the vendor formally, set contractual requirements, and develop contingency plans\n  D) Wait for industry analysts to evaluate the vendor\nAnswer: C\nExplanation: The best approach combines proactive engagement (request formal PQC roadmap, include requirements in contract renewals), risk mitigation (develop contingency plans, evaluate alternative vendors), and monitoring (track vendor progress). Abrupt termination or passive waiting both create unnecessary risk.\n\nQ: What is a Software Bill of Materials (SBOM) and why is it relevant to PQC vendor risk?\n  A) A vendor's revenue report\n  B) An inventory of all software components and dependencies in a product\n  C) A benchmark of software performance metrics\n  D) A document listing the vendor's employees\nAnswer: B\nExplanation: An SBOM lists all software components, libraries, and dependencies in a product. For PQC, it helps identify which cryptographic libraries are in use, their algorithm support, and whether they include quantum-vulnerable implementations that need migration.",
     "category": "quiz",
-    "metadata": { "quizCategory": "vendor-risk", "questionCount": "1" },
+    "metadata": { "quizCategory": "vendor-risk", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-code-signing-0",
+    "source": "quiz",
+    "title": "Quiz: Code Signing",
+    "content": "Quiz Category: Code Signing\n\nQ: Which supply chain attack compromised approximately 18,000 organizations by distributing malicious code inside a legitimately signed software update?\n  A) Codecov (2021)\n  B) 3CX (2023)\n  C) SolarWinds (2020)\n  D) Log4Shell (2021)\nAnswer: C\nExplanation: The SolarWinds attack (2020) injected malicious code into the Orion platform build pipeline. The trojanized update was signed with SolarWinds' legitimate code-signing certificate, allowing it to bypass signature verification and propagate to ~18,000 customer networks before detection.\n\nQ: What is the primary security advantage of Sigstore keyless signing compared to traditional certificate-based code signing?\n  A) Signatures are smaller than classical ECDSA\n  B) Ephemeral keys tied to OIDC identity eliminate long-lived private key management\n  C) The signing process requires no cryptographic hash\n  D) Keyless signing does not use certificates\nAnswer: B\nExplanation: Sigstore issues short-lived ephemeral keys (~20 minute validity) bound to an OIDC identity. After signing, the private key is destroyed. The certificate and signing event are recorded in the Rekor transparency log. This eliminates the risk of private key theft or misuse that plagues traditional long-lived code signing certificates.\n\nQ: True or False: CNSA 2.0 mandates ML-DSA-65 as the required algorithm for firmware signing in national security systems (NSS).\nAnswer: FALSE\nExplanation: False. CNSA 2.0 mandates LMS/HSS (RFC 8554, NIST SP 800-208) for firmware and software signing in NSS — not ML-DSA. LMS offers a 56-byte public key and ~0.1 ms verification time, making it ideal for constrained firmware verification. ML-DSA is stateless and acceptable where LMS state management is impractical, but it is not the CNSA 2.0 mandate.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "code-signing", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-code-signing-1",
+    "source": "quiz",
+    "title": "Quiz: Code Signing",
+    "content": "Quiz Category: Code Signing\n\nQ: How does an ML-DSA-65 signature compare in size to an ECDSA P-256 signature?\n  A) Roughly the same size (~64 bytes)\n  B) About 3x larger (~192 bytes)\n  C) About 52x larger (~3,309 bytes)\n  D) About 2x larger (~128 bytes)\nAnswer: C\nExplanation: ML-DSA-65 (FIPS 204) produces 3,309-byte signatures versus ECDSA P-256's 64 bytes — approximately 52x larger. This has significant implications for certificate chain sizes, CI/CD pipeline bandwidth, and systems that embed signatures in package metadata. PQC signatures are 38-123x larger than classical ECDSA depending on the parameter set.\n\nQ: Which package manager ecosystem adopted ML-DSA-87 + Ed448 hybrid composite signing as of RHEL 10?\n  A) npm (via Sigstore)\n  B) PyPI (via Sigstore)\n  C) RPM (Red Hat)\n  D) Maven Central\nAnswer: C\nExplanation: Red Hat adopted ML-DSA-87+Ed448 hybrid composite signing in RHEL 10's RPM package manager. npm and PyPI integrate PQC via Sigstore keyless signing. Maven Central and APK (Android) have no published PQC roadmap as of 2025.\n\nQ: What role does the Rekor transparency log play in the Sigstore signing ecosystem?\n  A) It encrypts the signing private key for storage\n  B) It is an immutable append-only log of signing events enabling auditability and retrospective verification\n  C) It generates quantum-safe hash functions for artifact digests\n  D) It automatically revokes expired code signing certificates\nAnswer: B\nExplanation: Rekor is an immutable, append-only transparency log that records all Sigstore signing events — including certificates, signer identities, artifact digests, and timestamps. It enables any party to verify that a signature was produced at a specific time by a specific identity, and to detect whether certificates were issued or used after compromise.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "code-signing", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-code-signing-2",
+    "source": "quiz",
+    "title": "Quiz: Code Signing",
+    "content": "Quiz Category: Code Signing\n\nQ: True or False: LMS/HSS is a stateless signature scheme, meaning private key state does not need to be tracked between signatures.\nAnswer: FALSE\nExplanation: False. LMS/HSS (NIST SP 800-208, RFC 8554) is stateful — each one-time key in the Merkle tree can only be used once. The signer must maintain a counter tracking which one-time keys have been consumed. If state is lost or the same key is reused, security is catastrophically compromised. State management typically uses an HSM or TPM with a monotonic counter.\n\nQ: Which of the following are steps in a Sigstore keyless signing flow? (Select all that apply)\n  A) OIDC identity verification with an identity provider\n  B) Ephemeral ML-DSA key generation (valid ~20 minutes)\n  C) Rekor transparency log entry recording the signing event\n  D) HSM-bound persistent private key storage\nAnswer: A|B|C\nExplanation: Sigstore keyless signing: (1) OIDC authentication to prove identity, (2) ephemeral key generation (~20 minute validity), (3) Fulcio CA issues a short-lived certificate binding the key to the identity, (4) artifact is signed, (5) signing event is logged to Rekor, (6) private key is destroyed. There is deliberately NO persistent HSM storage — eliminating long-lived key compromise is the core security property.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "code-signing", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-code-signing-3",
+    "source": "quiz",
+    "title": "Quiz: Code Signing",
+    "content": "Quiz Category: Code Signing\n\nQ: In a firmware signing certificate chain (Root CA → Intermediate CA → Code Signing cert), which ML-DSA parameter set should be used for the Root CA?\n  A) ML-DSA-44 (NIST Level 2, 2,420 B signature)\n  B) ML-DSA-65 (NIST Level 3, 3,309 B signature)\n  C) ML-DSA-87 (NIST Level 5, 4,627 B signature)\n  D) SLH-DSA-SHA2-128s (7,856 B signature)\nAnswer: C\nExplanation: ML-DSA-87 (NIST Level 5) is used for Root CA certificates because Root CAs have 20-year validity periods requiring maximum security margin. Intermediate CAs use ML-DSA-65 (10-year validity). End-entity code signing certificates use ML-DSA-44 (1-year validity). Security level is matched to validity period: longer-lived certificates face longer exposure windows and need higher security parameters.\n\nQ: What Extended Key Usage (EKU) OID designates a certificate for code signing?\n  A) 1.3.6.1.5.5.7.3.1 (serverAuth)\n  B) 1.3.6.1.5.5.7.3.2 (clientAuth)\n  C) 1.3.6.1.5.5.7.3.3 (codeSigning)\n  D) 1.3.6.1.5.5.7.3.4 (emailProtection)\nAnswer: C\nExplanation: OID 1.3.6.1.5.5.7.3.3 designates a certificate for code signing. This EKU is required for certificates used to sign software packages, firmware, and executables. The same OID applies whether the certificate uses classical ECDSA or post-quantum ML-DSA — the EKU identifies the certificate's purpose, not the algorithm.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "code-signing", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-api-security-jwt-0",
+    "source": "quiz",
+    "title": "Quiz: API Security & JWT",
+    "content": "Quiz Category: API Security & JWT\n\nQ: What are the three dot-separated sections of a JWT?\n  A) Certificate, payload, signature\n  B) Header, payload, signature\n  C) Header, algorithm, payload\n  D) Nonce, claims, timestamp\nAnswer: B\nExplanation: A JWT consists of three base64url-encoded sections: Header (metadata including the algorithm, e.g., {\"alg\":\"ES256\",\"typ\":\"JWT\"}), Payload (claims: sub, iss, exp, custom claims), and Signature (cryptographic proof). Format: BASE64URL(Header).BASE64URL(Payload).BASE64URL(Signature). The header's alg field must be updated when migrating to ML-DSA.\n\nQ: A JWT signed with ML-DSA-65 is approximately how much larger than an equivalent ES256 (ECDSA P-256) JWT?\n  A) 2x larger (~600 bytes)\n  B) 5x larger (~1.5 KB)\n  C) 16x larger (~4.7 KB)\n  D) The same size (~300 bytes)\nAnswer: C\nExplanation: An ML-DSA-65 JWT is approximately 4.7 KB versus ~300 bytes for ES256 — roughly 16x larger. ML-DSA-65 alone contributes a 1,952-byte public key and a 3,309-byte signature, dwarfing ECDSA P-256's 32-byte key and 64-byte signature. This size increase must be factored into HTTP header budgets, token storage, and API bandwidth planning.\n\nQ: True or False: Ed25519 (EdDSA) used in JWTs is quantum-resistant and does not need to be migrated to PQC algorithms.\nAnswer: FALSE\nExplanation: False. Ed25519 is based on elliptic curve cryptography (Edwards curves) and is vulnerable to Shor's algorithm on a cryptographically-relevant quantum computer. All current JWT signing algorithms — RS256, ES256, and EdDSA — rely on RSA or elliptic curve mathematics and must be migrated to ML-DSA or equivalent post-quantum algorithms.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "api-security-jwt", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-api-security-jwt-1",
+    "source": "quiz",
+    "title": "Quiz: API Security & JWT",
+    "content": "Quiz Category: API Security & JWT\n\nQ: Which PQC algorithm replaces ECDH-ES for key agreement in PQC-enhanced JWE (JSON Web Encryption)?\n  A) ML-DSA-65 (a signature algorithm, not key agreement)\n  B) SLH-DSA-SHA2-128s\n  C) ML-KEM-768\n  D) XMSS\nAnswer: C\nExplanation: ML-KEM-768 (FIPS 203, NIST Level 3) replaces ECDH-ES for key encapsulation in JWE. It produces a 1,184-byte public key and 1,088-byte ciphertext. The established shared secret is then used to encrypt content with AES-GCM. Key distinction: ML-DSA is for signatures (JWS), ML-KEM is for key encapsulation/encryption (JWE).\n\nQ: What is the primary challenge PQC-signed JWTs create for OAuth 2.0 access tokens delivered in HTTP headers?\n  A) Tokens expire too quickly with PQC\n  B) Token refresh becomes computationally expensive\n  C) PQC JWT sizes can exceed the 8 KB HTTP header limit enforced by many servers and proxies\n  D) OAuth 2.0 does not support JWT-based access tokens\nAnswer: C\nExplanation: An ML-DSA-65 access token JWT is approximately 4.7 KB. When access tokens, refresh tokens, and DPoP proofs are combined in HTTP headers, total size can approach or exceed the 8 KB header limit enforced by nginx, Apache, and most proxies. Mitigations include opaque tokens (introspection-based), smaller ML-DSA-44 parameters, or increasing server header size limits.\n\nQ: In a JWT JOSE header, which field specifies the signing algorithm?\n  A) typ\n  B) kid\n  C) alg\n  D) iss\nAnswer: C\nExplanation: The `alg` field in the JOSE header specifies the cryptographic algorithm used to sign the JWT — for example, \"ES256\" (ECDSA P-256), \"EdDSA\" (Ed25519), or \"ML-DSA-65\" for post-quantum. The `kid` (Key ID) identifies which key to use for verification, `typ` specifies the token type (\"JWT\"), and `iss` is a payload claim (issuer), not a header field.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "api-security-jwt", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-api-security-jwt-2",
+    "source": "quiz",
+    "title": "Quiz: API Security & JWT",
+    "content": "Quiz Category: API Security & JWT\n\nQ: True or False: DPoP proof tokens bound to ML-DSA keys add negligible overhead per API request because they are short-lived.\nAnswer: FALSE\nExplanation: False. Each DPoP proof (RFC 9449) is a fully signed JWT. With ML-DSA-65, each DPoP proof is approximately 4 KB. At high API call volumes (thousands of requests per second), this multiplies into substantial bandwidth and compute overhead compared to ~300-byte classical DPoP proofs. Optimizations include using the smaller ML-DSA-44 parameter set or hybrid signing strategies.\n\nQ: Which OAuth 2.0 / OIDC components are significantly impacted by PQC signature sizes? (Select all that apply)\n  A) Access tokens (JWS-signed JWTs)\n  B) ID tokens (JWS-signed JWTs)\n  C) JWKS public key endpoints (publish signing keys)\n  D) Authorization codes (short-lived opaque values)\nAnswer: A|B|C\nExplanation: Access tokens, ID tokens (all JWS-signed JWTs), and JWKS endpoints (which publish signing public keys — each ML-DSA-65 key is ~1.9 KB) all grow significantly. Authorization codes are short-lived opaque random strings — they are not JWTs, contain no cryptographic material, and are completely unaffected by PQC algorithm sizes.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "api-security-jwt", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-api-security-jwt-3",
+    "source": "quiz",
+    "title": "Quiz: API Security & JWT",
+    "content": "Quiz Category: API Security & JWT\n\nQ: What is the recommended migration strategy for deploying PQC JWT signatures in a service mesh with mixed classical/PQC API consumers?\n  A) Replace all tokens immediately with ML-DSA-65 (breaking change)\n  B) Issue dual classical+PQC hybrid JWTs signed by both ES256 and ML-DSA-65\n  C) Stop using JWTs entirely and switch to opaque tokens only\n  D) Wait for IETF JOSE PQC RFC finalization before any migration\nAnswer: B\nExplanation: Hybrid JWTs carry both a classical signature (ES256 or EdDSA for legacy consumers) and a PQC signature (ML-DSA-65 for quantum-safe consumers). This enables graceful transition: legacy clients verify the classical signature, PQC-aware clients verify both. This mirrors hybrid TLS key exchange — providing backward compatibility while establishing quantum security. Immediate cutover creates service outages; waiting indefinitely leaves HNDL exposure unaddressed.\n\nQ: Which RFC defines JSON Web Signature (JWS) — the standard governing how JWT digital signatures are structured?\n  A) RFC 7519 (JWT format)\n  B) RFC 7515 (JWS)\n  C) RFC 7516 (JWE)\n  D) RFC 7518 (JWA algorithms)\nAnswer: B\nExplanation: RFC 7515 defines JSON Web Signature (JWS), specifying how digital signatures are applied to JWT payloads. RFC 7519 defines the JWT token format itself, RFC 7516 defines JSON Web Encryption (JWE) for encrypted tokens, and RFC 7518 defines the JSON Web Algorithms (JWA) registry — the catalog of alg values including \"RS256\", \"ES256\", and future \"ML-DSA-65\" entries.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "api-security-jwt", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-iot-ot-pqc-0",
+    "source": "quiz",
+    "title": "Quiz: iot-ot-pqc",
+    "content": "Quiz Category: iot-ot-pqc\n\nQ: According to RFC 7228, which constrained-device class is defined by approximately 10 KB RAM and 100 KB flash — examples being sensor tags and RFID devices?\n  A) Class 1\n  B) Class 0\n  C) Class 2\n  D) Class 3\nAnswer: B\nExplanation: RFC 7228 Class 0 devices have ~10 KB RAM and ~100 KB flash — the most constrained category. Examples include RFID tags, environmental sensors, and asset trackers. Full TLS and most PQC algorithms are infeasible; communication typically occurs via gateway-mediated protocols or pre-shared keys established during device provisioning.\n\nQ: Which PQC KEM is the most feasible option for Class 1-2 IoT devices with ~3-6 KB available RAM?\n  A) ML-KEM-1024 (~10 KB RAM required)\n  B) FrodoKEM-640 (~180 KB RAM required)\n  C) ML-KEM-512 (~3 KB RAM required)\n  D) ML-KEM-768 (~6 KB RAM required)\nAnswer: C\nExplanation: ML-KEM-512 (NIST Level 1) requires approximately 3 KB RAM with 800-byte public keys and 768-byte ciphertext — the smallest ML-KEM variant and the only one feasible on Class 1 devices. FrodoKEM-640 requires 180 KB RAM, completely infeasible for IoT. ML-KEM-768 at ~6 KB RAM is borderline for Class 2 but exceeds Class 1 capacity.\n\nQ: True or False: A PQC certificate chain using ML-DSA-65 is similar in size to a classical ECDSA P-256 chain and presents no significant challenge for constrained IoT devices.\nAnswer: FALSE\nExplanation: False. A classical ECDSA P-256 certificate chain is approximately 3 KB, while a PQC ML-DSA-65 chain grows to ~22 KB — over 7x larger. For Class 1 devices with only 10 KB total RAM, a 22 KB cert chain exceeds the entire device memory. Mitigations include Merkle Tree Certificates (85% reduction), certificate compression via RFC 8879, and TLS session resumption (PSK).",
+    "category": "quiz",
+    "metadata": { "quizCategory": "iot-ot-pqc", "questionCount": "3" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-iot-ot-pqc-1",
+    "source": "quiz",
+    "title": "Quiz: iot-ot-pqc",
+    "content": "Quiz Category: iot-ot-pqc\n\nQ: Which IoT communication protocol makes PQC key exchange fundamentally impossible due to a maximum payload size of 222 bytes?\n  A) CoAP + DTLS 1.3 (1,024 B max payload)\n  B) MQTT 5.0 + TLS 1.3 (65,535 B max payload)\n  C) LoRaWAN 1.1 (222 B max payload)\n  D) Matter / Thread (1,280 B IPv6 MTU)\nAnswer: C\nExplanation: LoRaWAN 1.1 has a maximum payload of 222 bytes. ML-KEM-512's ciphertext alone is 768 bytes — more than 3x the maximum. PQC key exchange is impossible over LoRaWAN. IoT devices on LoRaWAN must use pre-shared keys (PSK) provisioned through a secure out-of-band channel, with QKD or PQC-protected key establishment occurring at the provisioning stage.\n\nQ: In the Purdue Model for ICS/SCADA environments, which layers have the highest PQC migration priority due to internet-facing exposure and short asset lifecycles?\n  A) Level 0 (Physical Process — 25-year lifecycle, air-gapped)\n  B) Level 1-2 (Basic Control and Area Supervisory — isolated, 15-20 years)\n  C) Level 3.5 / 4 / 5 (DMZ, Enterprise IT, Enterprise Network — internet-facing, 3-5 years)\n  D) All Purdue Model levels have equal PQC priority\nAnswer: C\nExplanation: Purdue Model levels 3.5 (DMZ), 4 (Enterprise IT), and 5 (Enterprise Network) are all internet-facing with 3-5 year asset lifecycles — the highest PQC migration priority. Levels 0-2 are air-gapped or isolated with 15-25 year lifecycles; they have lower immediate quantum risk and more constrained upgrade paths due to operational criticality and hardware age.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "iot-ot-pqc", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-iot-ot-pqc-2",
+    "source": "quiz",
+    "title": "Quiz: iot-ot-pqc",
+    "content": "Quiz Category: iot-ot-pqc\n\nQ: Which PQC signature algorithm has the smallest public key size (56 bytes) and is CNSA 2.0's mandated choice for firmware signing in national security systems?\n  A) ML-DSA-44 (1,312-byte public key)\n  B) FN-DSA-512 (FALCON, 897-byte public key)\n  C) XMSS (68-byte public key)\n  D) LMS (56-byte public key)\nAnswer: D\nExplanation: LMS (Leighton-Micali Signatures, RFC 8554 / NIST SP 800-208) has a 56-byte public key — the smallest among all PQC signature schemes. Fast verification (~0.1 ms) and the tiny public key make it ideal for firmware verification on constrained devices. CNSA 2.0 mandates LMS/HSS for NSS firmware/software signing with a 2025 preference and 2030 mandate.\n\nQ: True or False: FN-DSA (FALCON) produces the most compact PQC signatures among stateless schemes and is safe for deployment on Class 0 devices with 10 KB RAM.\nAnswer: FALSE\nExplanation: False. FN-DSA-512 (FALCON) does produce the most compact stateless PQC signatures (~666 bytes vs ML-DSA-44's 2,420 bytes) and requires only ~1.5 KB RAM — suitable for Class 1-3. However, FALCON is NOT recommended for Class 0 devices because its Gaussian sampling algorithm requires careful floating-point or high-precision integer arithmetic, creating implementation complexity and timing side-channel risks on simple microcontrollers.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "iot-ot-pqc", "questionCount": "2" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-iot-ot-pqc-3",
+    "source": "quiz",
+    "title": "Quiz: iot-ot-pqc",
+    "content": "Quiz Category: iot-ot-pqc\n\nQ: Which techniques can reduce PQC certificate chain sizes for constrained IoT devices? (Select all that apply)\n  A) Merkle Tree Certificates (replace PQC sigs with ~300 B Merkle proofs, ~85% reduction)\n  B) Certificate compression via RFC 8879 (zlib/Brotli, 25-35% reduction)\n  C) TLS session resumption with PSK (RFC 8446, eliminates cert exchange on reconnect)\n  D) Using larger RSA-8192 certificates for stronger forward secrecy\nAnswer: A|B|C\nExplanation: Three viable mitigations exist: (1) Merkle Tree Certificates replace PQC signatures with ~300-byte Merkle inclusion proofs (85% reduction); (2) RFC 8879 certificate compression uses zlib/Brotli on the TLS handshake (25-35% reduction); (3) TLS PSK session resumption (RFC 8446) eliminates the full certificate exchange on subsequent connections (90% reduction). Larger RSA certificates make the problem dramatically worse.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "iot-ot-pqc", "questionCount": "1" },
+    "deepLink": "/learn/quiz"
+  },
+  {
+    "id": "quiz-iot-ot-pqc-4",
+    "source": "quiz",
+    "title": "Quiz: iot-ot-pqc",
+    "content": "Quiz Category: iot-ot-pqc\n\nQ: A Class 1 smart meter (10 KB RAM, NB-IoT narrow-band) needs to authenticate to a grid operator via DTLS 1.3. What is the recommended PQC approach?\n  A) Full ML-KEM-768 + ML-DSA-65 DTLS handshake on every connection\n  B) Pre-shared key (PSK) provisioned at manufacturing with PQC-derived keys and session resumption on reconnect\n  C) No PQC is needed since smart meters communicate over private cellular networks\n  D) Use FrodoKEM-640 for maximum security against quantum attacks\nAnswer: B\nExplanation: For Class 1 devices on NB-IoT (low bandwidth, low power), a full PQC DTLS handshake (~22 KB exchange, 15+ IPv6 fragments) is impractical. PSK provisioned at manufacturing (using PQC key derivation) with DTLS session resumption on subsequent connections eliminates the heavyweight handshake. Smart meters are NOT isolated — they use cellular networks exposed to HNDL attacks. FrodoKEM-640 requires 180 KB RAM, completely exceeding Class 1 capacity.\n\nQ: What does the SUIT Manifest (RFC 9019) provide for IoT firmware security?\n  A) A quantum-safe encryption algorithm for firmware images\n  B) A signed metadata wrapper enabling secure over-the-air (OTA) firmware delivery for constrained devices\n  C) A new certificate format replacing X.509 for IoT\n  D) A network bootstrap protocol for provisioning IoT devices\nAnswer: B\nExplanation: The SUIT (Software Updates for Internet of Things) Manifest (RFC 9019) wraps firmware with cryptographically signed metadata: version, component identity, payload digest, size, and conditions (vendor ID, class ID). It enables constrained devices to securely receive OTA firmware updates, verifying authenticity and integrity before installation — without requiring full TLS infrastructure. SUIT manifests are signed with LMS or ML-DSA depending on device class.",
+    "category": "quiz",
+    "metadata": { "quizCategory": "iot-ot-pqc", "questionCount": "2" },
     "deepLink": "/learn/quiz"
   },
   {

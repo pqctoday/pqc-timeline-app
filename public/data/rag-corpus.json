@@ -3118,7 +3118,7 @@
     "metadata": {
       "country": "European Union",
       "org": "EU Horizon",
-      "sourceUrl": "https://www.vut.cz/"
+      "sourceUrl": "https://cordis.europa.eu/project/id/101225691"
     },
     "deepLink": "/timeline?country=European%20Union"
   },
@@ -3131,7 +3131,7 @@
     "metadata": {
       "country": "Global",
       "org": "IBM",
-      "sourceUrl": "https://www.ibm.com/quantum/quantum-safe"
+      "sourceUrl": "https://www.ibm.com/new/product-blog/empowering-cios-to-accelerate-crypto-agility-with-ibm-quantum-safe-explorer"
     },
     "deepLink": "/timeline?country=Global"
   },
@@ -3141,7 +3141,11 @@
     "title": "Global — IBM Heron R2 Processor Available",
     "content": "Country: Global\nOrganization: International Business Machines Corporation\nType: Milestone | Phase: POC\nPeriod: 2025–2025\nTitle: IBM Heron R2 Processor Available\nDescription: IBM makes Heron R2 processor available with 156 qubits designed to enable more complex quantum circuits with low error rates facilitating quantum utility at scale.",
     "category": "POC",
-    "metadata": { "country": "Global", "org": "IBM", "sourceUrl": "https://www.ibm.com/quantum" },
+    "metadata": {
+      "country": "Global",
+      "org": "IBM",
+      "sourceUrl": "https://www.ibm.com/quantum/blog/qdc-2024"
+    },
     "deepLink": "/timeline?country=Global"
   },
   {
@@ -3150,7 +3154,11 @@
     "title": "Global — IBM Next-Gen Processor Development",
     "content": "Country: Global\nOrganization: International Business Machines Corporation\nType: Milestone | Phase: Research\nPeriod: 2025–2025\nTitle: IBM Next-Gen Processor Development\nDescription: IBM advances development of its next-generation modular quantum processor incorporating features for high-efficiency quantum error correction targeting early 2026 testing milestones.",
     "category": "Research",
-    "metadata": { "country": "Global", "org": "IBM", "sourceUrl": "https://www.ibm.com/quantum" },
+    "metadata": {
+      "country": "Global",
+      "org": "IBM",
+      "sourceUrl": "https://www.ibm.com/quantum/blog/qdc-2024"
+    },
     "deepLink": "/timeline?country=Global"
   },
   {
@@ -3159,7 +3167,11 @@
     "title": "Global — IBM Kookaburra Processor Released",
     "content": "Country: Global\nOrganization: International Business Machines Corporation\nType: Milestone | Phase: POC\nPeriod: 2026–2026\nTitle: IBM Kookaburra Processor Released\nDescription: IBM releases Kookaburra first modular 1386-qubit processor designed to store and process encoded information combining quantum memory with logic operations.",
     "category": "POC",
-    "metadata": { "country": "Global", "org": "IBM", "sourceUrl": "https://www.ibm.com/quantum" },
+    "metadata": {
+      "country": "Global",
+      "org": "IBM",
+      "sourceUrl": "https://www.ibm.com/quantum/blog/qdc-2024"
+    },
     "deepLink": "/timeline?country=Global"
   },
   {
@@ -3168,7 +3180,11 @@
     "title": "Global — IBM Quantum Advantage Target",
     "content": "Country: Global\nOrganization: International Business Machines Corporation\nType: Milestone | Phase: Research\nPeriod: 2026–2026\nTitle: IBM Quantum Advantage Target\nDescription: IBM targets achieving and verifying quantum advantage demonstrating verifiable speed-ups over classical computing for meaningful tasks.",
     "category": "Research",
-    "metadata": { "country": "Global", "org": "IBM", "sourceUrl": "https://www.ibm.com/quantum" },
+    "metadata": {
+      "country": "Global",
+      "org": "IBM",
+      "sourceUrl": "https://www.ibm.com/quantum/blog/qdc-2024"
+    },
     "deepLink": "/timeline?country=Global"
   },
   {
@@ -3193,7 +3209,7 @@
     "metadata": {
       "country": "Global",
       "org": "Microsoft",
-      "sourceUrl": "https://www.microsoft.com/"
+      "sourceUrl": "https://azure.microsoft.com/en-us/blog/quantum/2025/02/19/microsoft-unveils-majorana-1-the-worlds-first-quantum-processor-powered-by-topological-qubits/"
     },
     "deepLink": "/timeline?country=Global"
   },
@@ -3219,7 +3235,7 @@
     "metadata": {
       "country": "Global",
       "org": "Microsoft",
-      "sourceUrl": "https://www.microsoft.com/"
+      "sourceUrl": "https://www.microsoft.com/en-us/security/blog/"
     },
     "deepLink": "/timeline?country=Global"
   },
@@ -3258,7 +3274,7 @@
     "metadata": {
       "country": "Global",
       "org": "PQShield",
-      "sourceUrl": "https://www.pqshield.com/"
+      "sourceUrl": "https://pqshield.com/pqshield-launches-ultrapq-suite-for-deeply-specialized-implementations-of-post-quantum-cryptography/"
     },
     "deepLink": "/timeline?country=Global"
   },
@@ -3271,7 +3287,7 @@
     "metadata": {
       "country": "Global",
       "org": "PQShield",
-      "sourceUrl": "https://www.pqshield.com/"
+      "sourceUrl": "https://pqshield.com/pqshield-hits-100-research-papers-pushing-post-quantum-cryptography-from-theory-to-reality/"
     },
     "deepLink": "/timeline?country=Global"
   },
@@ -3284,7 +3300,7 @@
     "metadata": {
       "country": "Global",
       "org": "PQShield",
-      "sourceUrl": "https://www.pqshield.com/"
+      "sourceUrl": "https://pqshield.com/pqshield-and-carahsoft-partner-to-make-powerful-post-quantum-cryptography-solutions-available-to-government-agencies/"
     },
     "deepLink": "/timeline?country=Global"
   },
@@ -3297,7 +3313,7 @@
     "metadata": {
       "country": "Global",
       "org": "PQShield",
-      "sourceUrl": "https://www.pqshield.com/"
+      "sourceUrl": "https://pqshield.com/pqshield-launches-ultrapq-suite-for-deeply-specialized-implementations-of-post-quantum-cryptography/"
     },
     "deepLink": "/timeline?country=Global"
   },
@@ -3323,7 +3339,7 @@
     "metadata": {
       "country": "United States",
       "org": "SandboxAQ",
-      "sourceUrl": "https://www.sandboxaq.com/"
+      "sourceUrl": "https://www.sandboxaq.com/press/sandboxaq-achieves-fedramp-ready-status-powering-enterprise-readiness-across-the-defense-and-public-sector"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -3336,7 +3352,7 @@
     "metadata": {
       "country": "United States",
       "org": "SandboxAQ/MITRE/LF",
-      "sourceUrl": "https://www.sandboxaq.com/"
+      "sourceUrl": "https://www.sandboxaq.com/press/rwpqc-2025-brings-together-industry-leaders-to-advance-cybersecurity-and-quantum-innovation"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -3349,7 +3365,7 @@
     "metadata": {
       "country": "Global",
       "org": "NXP/PQShield",
-      "sourceUrl": "https://www.pqshield.com/"
+      "sourceUrl": "https://pqshield.com/pqshield-launches-ultrapq-suite-for-deeply-specialized-implementations-of-post-quantum-cryptography/"
     },
     "deepLink": "/timeline?country=Global"
   },
@@ -3583,7 +3599,7 @@
     "metadata": {
       "country": "China",
       "org": "CACR",
-      "sourceUrl": "https://www.sdxcentral.com/articles/analysis/china-russia-to-adopt-slightly-different-pqc-standards-from-us/2022/10/"
+      "sourceUrl": "https://en.qapp.tech/help/cacr"
     },
     "deepLink": "/timeline?country=China"
   },
@@ -3635,7 +3651,7 @@
     "metadata": {
       "country": "Czech Republic",
       "org": "NUKIB",
-      "sourceUrl": "https://www.nukib.cz/en/"
+      "sourceUrl": "https://nukib.gov.cz/download/publications_en/Minimum%20Requirements%20for%20Cryptographic%20Algorithms.pdf"
     },
     "deepLink": "/timeline?country=Czech%20Republic"
   },
@@ -3999,7 +4015,7 @@
     "metadata": {
       "country": "International",
       "org": "GSMA",
-      "sourceUrl": "https://www.gsma.com/solutions-and-impact/technologies/security/gsma_resources/post-quantum-cryptography-guidelines-for-telecom-use-cases-pq-03-2/"
+      "sourceUrl": "https://www.gsma.com/newsroom/wp-content/uploads//PQ.03-Post-Quantum-Cryptography-Guidelines-for-Telecom-Use-Cases-v2.0-2.pdf"
     },
     "deepLink": "/timeline?country=International"
   },
@@ -4090,7 +4106,7 @@
     "metadata": {
       "country": "India",
       "org": "CERT-In",
-      "sourceUrl": "https://www.cert-in.org.in/"
+      "sourceUrl": "https://www.cert-in.org.in/PDF/TechnicalGuidelines-on-SBOM,QBOM&CBOM,AIBOM_and_HBOM_ver2.0.pdf"
     },
     "deepLink": "/timeline?country=India"
   },
@@ -4129,7 +4145,7 @@
     "metadata": {
       "country": "Israel",
       "org": "INCD",
-      "sourceUrl": "https://www.gov.il/en/departments/incd/govil-landing-page"
+      "sourceUrl": "https://www.gov.il/BlobFolder/news/cyber_strategy_2025/en/israel_national_cybersecurity_strategy_feb2025.pdf"
     },
     "deepLink": "/timeline?country=Israel"
   },
@@ -4307,7 +4323,7 @@
     "metadata": {
       "country": "New Zealand",
       "org": "GCSB/NCSC",
-      "sourceUrl": "https://www.nzism.gcsb.govt.nz/"
+      "sourceUrl": "https://www.ncsc.govt.nz/news/nzism-v3-9-release/"
     },
     "deepLink": "/timeline?country=New%20Zealand"
   },
@@ -4372,7 +4388,7 @@
     "metadata": {
       "country": "South Korea",
       "org": "NIS/KISA",
-      "sourceUrl": "https://kpqc.cryptolab.co.kr/"
+      "sourceUrl": "https://www.kpqc.or.kr/competition_02.html"
     },
     "deepLink": "/timeline?country=South%20Korea"
   },
@@ -4489,7 +4505,7 @@
     "metadata": {
       "country": "United Kingdom",
       "org": "CMORG",
-      "sourceUrl": "https://www.cmorg.org.uk/"
+      "sourceUrl": "https://www.cmorg.org.uk/sites/default/files/2025-06/CMORG%20-%20Guidance%20for%20Post-Quantum%20Cryptography%20-%20April%202025%20-%20TLP%20CLEAR%20(1).pdf"
     },
     "deepLink": "/timeline?country=United%20Kingdom"
   },
@@ -4593,7 +4609,7 @@
     "metadata": {
       "country": "United States",
       "org": "Congress",
-      "sourceUrl": "https://www.congress.gov/bill/117th-congress/house-bill/7535"
+      "sourceUrl": "https://www.govinfo.gov/content/pkg/PLAW-117publ260/pdf/PLAW-117publ260.pdf"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4606,7 +4622,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4619,7 +4635,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4684,7 +4700,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2025/May/30/2003728741/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS.PDF"
+      "sourceUrl": "https://pqshield.com/nsa-releases-update-to-cnsa-2-0/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4723,7 +4739,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4736,7 +4752,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4840,7 +4856,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4866,7 +4882,7 @@
     "metadata": {
       "country": "United States",
       "org": "NIST NCCoE",
-      "sourceUrl": "https://www.nccoe.nist.gov/crypto-agility-considerations-migrating-post-quantum-cryptographic-algorithms"
+      "sourceUrl": "https://csrc.nist.gov/projects/post-quantum-cryptography"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4879,7 +4895,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4905,7 +4921,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071836/-1/-1/0/CSI_CNSA_2.0_FAQ_.PDF"
+      "sourceUrl": "https://pqshield.com/what-is-cnsa-2-0-the-nsas-post-quantum-roadmap/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4931,7 +4947,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4944,7 +4960,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071836/-1/-1/0/CSI_CNSA_2.0_FAQ_.PDF"
+      "sourceUrl": "https://pqshield.com/what-is-cnsa-2-0-the-nsas-post-quantum-roadmap/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4957,7 +4973,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4970,7 +4986,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071834/-1/-1/0/CSA_CNSA_2.0_ALGORITHMS_.PDF"
+      "sourceUrl": "https://www.quantum.gov/nsa-releases-future-quantum-resistant-algorithm-requirements-for-national-security-systems/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -4996,7 +5012,7 @@
     "metadata": {
       "country": "United States",
       "org": "NSA",
-      "sourceUrl": "https://media.defense.gov/2022/Sep/07/2003071836/-1/-1/0/CSI_CNSA_2.0_FAQ_.PDF"
+      "sourceUrl": "https://pqshield.com/what-is-cnsa-2-0-the-nsas-post-quantum-roadmap/"
     },
     "deepLink": "/timeline?country=United%20States"
   },
@@ -5048,7 +5064,7 @@
     "metadata": {
       "country": "International",
       "org": "Samsung/Thales",
-      "sourceUrl": "https://www.thalesgroup.com/"
+      "sourceUrl": "https://www.asdnews.com/news/defense/2026/01/06/thales-powers-ceswinning-postquantum-chip-samsung-electronics"
     },
     "deepLink": "/timeline?country=International"
   },
@@ -5191,7 +5207,7 @@
     "metadata": {
       "country": "Hong Kong",
       "org": "HKMA",
-      "sourceUrl": "https://brdr.hkma.gov.hk/eng/doc-ldg/docId/getPdf/20250716-3-EN/20250716-3-EN.pdf"
+      "sourceUrl": "https://www.hkma.gov.hk/eng/news-and-media/speeches/2025/07/20250716-1/"
     },
     "deepLink": "/timeline?country=Hong%20Kong"
   },
@@ -7820,6 +7836,292 @@
       "algorithmFamily": ""
     },
     "deepLink": "/library?ref=NIST%20SP%20800-82%20Rev.%203"
+  },
+  {
+    "id": "library-NSM-10",
+    "source": "library",
+    "title": "National Security Memorandum 10 — Promoting U.S. Leadership in Quantum Computing",
+    "content": "Title: National Security Memorandum 10 — Promoting U.S. Leadership in Quantum Computing\nDescription: US National Security Memorandum directing federal agencies to inventory cryptographic systems and transition to PQC. Established key milestones for quantum-resistant standards adoption.\nType: Compliance/Policy | Status: Final\nAuthors: White House\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Critical\nIndustries: Government & Defense; Finance & Banking; Technology; Critical Infrastructure\nRegion: United States\nPublished: 2022-05-04 | Updated: 2022-05-04",
+    "category": "Compliance/Policy",
+    "metadata": {
+      "referenceId": "NSM-10",
+      "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2022/05/04/national-security-memorandum-on-promoting-united-states-leadership-in-quantum-computing-while-mitigating-risks-to-vulnerable-cryptographic-systems/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=NSM-10"
+  },
+  {
+    "id": "library-OMB-M-23-02",
+    "source": "library",
+    "title": "OMB Memorandum M-23-02 — Migrating to Post-Quantum Cryptography",
+    "content": "Title: OMB Memorandum M-23-02 — Migrating to Post-Quantum Cryptography\nDescription: OMB memo requiring federal agencies to submit cryptographic system inventories per NSM-10. Sets deadlines for PQC migration planning across US government systems.\nType: Compliance/Policy | Status: Final\nAuthors: OMB; White House\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Critical\nIndustries: Government & Defense; Technology; Finance & Banking\nRegion: United States\nPublished: 2022-11-18 | Updated: 2022-11-18",
+    "category": "Compliance/Policy",
+    "metadata": {
+      "referenceId": "OMB-M-23-02",
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2022/11/M-23-02-M-Memo-on-Migrating-to-Post-Quantum-Cryptography.pdf",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=OMB-M-23-02"
+  },
+  {
+    "id": "library-QCCPA-2022",
+    "source": "library",
+    "title": "Quantum Computing Cybersecurity Preparedness Act (H.R.7535)",
+    "content": "Title: Quantum Computing Cybersecurity Preparedness Act (H.R.7535)\nDescription: US legislation requiring OMB to prioritize PQC migration across federal agencies. Established annual reporting requirements and directed NIST to maintain updated PQC guidance.\nType: Regulation | Status: Enacted\nAuthors: US Congress\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Critical\nIndustries: Government & Defense\nRegion: United States\nPublished: 2022-12-21 | Updated: 2022-12-21",
+    "category": "Regulation",
+    "metadata": {
+      "referenceId": "QCCPA-2022",
+      "url": "https://www.congress.gov/bill/117th-congress/house-bill/7535",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=QCCPA-2022"
+  },
+  {
+    "id": "library-WH-PQC-Report-2024",
+    "source": "library",
+    "title": "White House Report on Post-Quantum Cryptography (July 2024)",
+    "content": "Title: White House Report on Post-Quantum Cryptography (July 2024)\nDescription: White House report estimating $7.1B government-wide PQC migration cost. Provides status of agency inventories, migration planning, and budget projections through 2035.\nType: Guidance | Status: Final\nAuthors: White House; ONCD\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Critical\nIndustries: Government & Defense; Finance & Banking; Technology\nRegion: United States\nPublished: 2024-07-01 | Updated: 2024-07-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "WH-PQC-Report-2024",
+      "url": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/07/REF_PQC-Report_FINAL_Send.pdf",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=WH-PQC-Report-2024"
+  },
+  {
+    "id": "library-EO-14144",
+    "source": "library",
+    "title": "Executive Order 14144 — Strengthening and Promoting Innovation in the Nation's Cybersecurity",
+    "content": "Title: Executive Order 14144 — Strengthening and Promoting Innovation in the Nation's Cybersecurity\nDescription: Biden administration executive order on cybersecurity including PQC provisions. Mandates PQC-ready systems for federal agencies and sets security standards for critical infrastructure.\nType: Regulation | Status: Final\nAuthors: White House\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Critical\nIndustries: Government & Defense; Technology; Critical Infrastructure\nRegion: United States\nPublished: 2025-01-16 | Updated: 2025-01-16",
+    "category": "Regulation",
+    "metadata": {
+      "referenceId": "EO-14144",
+      "url": "https://www.federalregister.gov/documents/2025/01/17/2025-01470/strengthening-and-promoting-innovation-in-the-nations-cybersecurity",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=EO-14144"
+  },
+  {
+    "id": "library-BIS-Paper-158",
+    "source": "library",
+    "title": "BIS Paper 158 — Quantum-Readiness Roadmap for Financial Systems",
+    "content": "Title: BIS Paper 158 — Quantum-Readiness Roadmap for Financial Systems\nDescription: Bank for International Settlements paper outlining quantum-readiness roadmap for global financial systems. Covers cryptographic inventory, migration timelines, and cross-border interoperability for central banks.\nType: Guidance | Status: Published\nAuthors: BIS; Bank for International Settlements\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Finance & Banking; Government & Defense\nRegion: Global\nPublished: 2025-01-01 | Updated: 2025-01-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "BIS-Paper-158",
+      "url": "https://www.bis.org/publ/bppdf/bispap158.htm",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=BIS-Paper-158"
+  },
+  {
+    "id": "library-EU-NIS-CG-Roadmap-v1.1",
+    "source": "library",
+    "title": "EU NIS Cooperation Group — Coordinated Implementation Roadmap for PQC Transition v1.1",
+    "content": "Title: EU NIS Cooperation Group — Coordinated Implementation Roadmap for PQC Transition v1.1\nDescription: EU NIS Cooperation Group coordinated roadmap v1.1 for PQC transition across EU member states. Provides harmonized timelines, priority sectors, and cross-border coordination mechanisms.\nType: Compliance/Policy | Status: Published\nAuthors: EU NIS Cooperation Group; European Commission; ENISA\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Technology; Finance & Banking; Critical Infrastructure\nRegion: European Union\nPublished: 2025-01-01 | Updated: 2025-01-01",
+    "category": "Compliance/Policy",
+    "metadata": {
+      "referenceId": "EU-NIS-CG-Roadmap-v1.1",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=EU-NIS-CG-Roadmap-v1.1"
+  },
+  {
+    "id": "library-G7-CEG-Financial-PQC-2026",
+    "source": "library",
+    "title": "G7 Cyber Expert Group — Advancing a Coordinated Approach to PQC Transition for the Financial Sector",
+    "content": "Title: G7 Cyber Expert Group — Advancing a Coordinated Approach to PQC Transition for the Financial Sector\nDescription: G7 Cyber Expert Group (chaired by US Treasury and Bank of England) releases cross-border PQC transition framework for global financial sector. Covers interoperability, shared timelines, and cryptographic agility.\nType: Guidance | Status: Published\nAuthors: G7 CEG; US Treasury; Bank of England\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Finance & Banking; Government & Defense\nRegion: Global; G7\nPublished: 2026-01-01 | Updated: 2026-01-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "G7-CEG-Financial-PQC-2026",
+      "url": "https://home.treasury.gov/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=G7-CEG-Financial-PQC-2026"
+  },
+  {
+    "id": "library-PKI-Consortium-PQC-2025",
+    "source": "library",
+    "title": "PKI Consortium PQC Conference 2025 — Conclusions and Call to Action",
+    "content": "Title: PKI Consortium PQC Conference 2025 — Conclusions and Call to Action\nDescription: World's largest PQC conference (2500+ delegates, 30+ countries) concluded in Kuala Lumpur. Issued urgent call for global migration. Includes Malaysia national PQC plan announcement.\nType: Guidance | Status: Published\nAuthors: PKI Consortium\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Technology; Finance & Banking; Telecommunications\nRegion: Global\nPublished: 2025-11-04 | Updated: 2025-11-04",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "PKI-Consortium-PQC-2025",
+      "url": "https://pkic.org/2025/11/04/post-quantum-cryptography-conference-2025-concludes-with-urgent-call-for-global-migration-to-quantum-resistant-encryption-systems/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=PKI-Consortium-PQC-2025"
+  },
+  {
+    "id": "library-India-DST-NQM-Roadmap",
+    "source": "library",
+    "title": "India DST Task Force Report — Phased Roadmap for Migration to Post-Quantum Cryptography under NQM",
+    "content": "Title: India DST Task Force Report — Phased Roadmap for Migration to Post-Quantum Cryptography under NQM\nDescription: India DST Task Force under National Quantum Mission publishes phased roadmap for PQC migration. CII foundations by 2027, high-priority systems by 2028, full CII by 2029, nationwide by 2033.\nType: Guidance | Status: Published\nAuthors: DST India; National Quantum Mission; CERT-In\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Technology; Critical Infrastructure; Telecommunications; Finance & Banking\nRegion: India; APAC\nPublished: 2026-02-04 | Updated: 2026-02-04",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "India-DST-NQM-Roadmap",
+      "url": "https://dst.gov.in/sites/default/files/Report_TaskForce_PQMigration_4Feb26%20(v1).pdf",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=India-DST-NQM-Roadmap"
+  },
+  {
+    "id": "library-India-TEC-910018-2025",
+    "source": "library",
+    "title": "India TEC Technical Report TEC 910018:2025 — Migration to Post-Quantum Cryptography",
+    "content": "Title: India TEC Technical Report TEC 910018:2025 — Migration to Post-Quantum Cryptography\nDescription: Telecommunications Engineering Centre (India) technical report on migrating telecom infrastructure to PQC. Covers algorithm selection, protocol migration, and hybrid approaches for Indian telecom operators.\nType: Guidance | Status: Published\nAuthors: TEC India; Department of Telecommunications\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Telecommunications; Government & Defense\nRegion: India\nPublished: 2025-01-01 | Updated: 2025-01-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "India-TEC-910018-2025",
+      "url": "https://www.tec.gov.in/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=India-TEC-910018-2025"
+  },
+  {
+    "id": "library-HKMA-Fintech-Blueprint-2026",
+    "source": "library",
+    "title": "HKMA Fintech Promotion Blueprint (From Adoption to Advancement) — Quantum Preparedness Index",
+    "content": "Title: HKMA Fintech Promotion Blueprint (From Adoption to Advancement) — Quantum Preparedness Index\nDescription: HKMA Fintech Promotion Blueprint launched February 2026. Includes Quantum Preparedness Index as flagship initiative for Hong Kong banking sector PQC readiness assessment and migration planning.\nType: Guidance | Status: Published\nAuthors: HKMA; Hong Kong Monetary Authority\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Finance & Banking; Technology\nRegion: Hong Kong; APAC\nPublished: 2026-02-03 | Updated: 2026-02-03",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "HKMA-Fintech-Blueprint-2026",
+      "url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/02/20260203-3/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=HKMA-Fintech-Blueprint-2026"
+  },
+  {
+    "id": "library-Malaysia-NACSA-PQC-2025",
+    "source": "library",
+    "title": "Malaysia National PQC Migration Plan 2025-2030",
+    "content": "Title: Malaysia National PQC Migration Plan 2025-2030\nDescription: Malaysia Ministry of Digital and NACSA publish first ASEAN national PQC migration plan (2025-2030). Includes proof-of-concept sandbox program for Malaysian government and critical infrastructure.\nType: Compliance/Policy | Status: Published\nAuthors: NACSA Malaysia; Malaysia Ministry of Digital\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Technology; Critical Infrastructure; Telecommunications\nRegion: Malaysia; ASEAN\nPublished: 2025-11-01 | Updated: 2025-11-01",
+    "category": "Compliance/Policy",
+    "metadata": {
+      "referenceId": "Malaysia-NACSA-PQC-2025",
+      "url": "https://www.nacsa.gov.my/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=Malaysia-NACSA-PQC-2025"
+  },
+  {
+    "id": "library-HK-CI-Ordinance-2025",
+    "source": "library",
+    "title": "Hong Kong Protection of Critical Infrastructure (Computer System) Ordinance",
+    "content": "Title: Hong Kong Protection of Critical Infrastructure (Computer System) Ordinance\nDescription: Hong Kong Legislative Council enacts critical infrastructure cybersecurity legislation requiring operators to protect computer systems including cryptographic controls relevant to PQC migration.\nType: Regulation | Status: Enacted\nAuthors: Hong Kong LegCo; HKMA\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Critical Infrastructure; Finance & Banking; Telecommunications; Energy & Utilities\nRegion: Hong Kong\nPublished: 2025-06-27 | Updated: 2025-06-27",
+    "category": "Regulation",
+    "metadata": {
+      "referenceId": "HK-CI-Ordinance-2025",
+      "url": "https://www.info.gov.hk/gia/general/202506/27/P2025062700238.htm",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=HK-CI-Ordinance-2025"
+  },
+  {
+    "id": "library-Czech-NUKIB-Crypto-Rec-2023",
+    "source": "library",
+    "title": "NUKIB Minimum Requirements for Cryptographic Algorithms — Post-Quantum Readiness",
+    "content": "Title: NUKIB Minimum Requirements for Cryptographic Algorithms — Post-Quantum Readiness\nDescription: Czech cybersecurity agency NUKIB publishes cryptographic algorithm requirements including PQC guidance. Sets 2027 deadline for key establishment migration and recommends hybrid PQC approaches.\nType: Compliance/Policy | Status: Published\nAuthors: NUKIB Czech Republic\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Technology; Finance & Banking\nRegion: Czech Republic; European Union\nPublished: 2023-01-01 | Updated: 2024-01-01",
+    "category": "Compliance/Policy",
+    "metadata": {
+      "referenceId": "Czech-NUKIB-Crypto-Rec-2023",
+      "url": "https://nukib.gov.cz/en/information-security/publications-and-standards/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=Czech-NUKIB-Crypto-Rec-2023"
+  },
+  {
+    "id": "library-UAE-DESC-PQC-Guideline",
+    "source": "library",
+    "title": "Dubai Electronic Security Center — Post-Quantum Cryptography Guideline",
+    "content": "Title: Dubai Electronic Security Center — Post-Quantum Cryptography Guideline\nDescription: Dubai Electronic Security Center (DESC) launches PQC guideline at GISEC Global 2025 to prepare Dubai digital infrastructure for quantum threats. Migration framework for Dubai government and private sector.\nType: Guidance | Status: Published\nAuthors: DESC; Dubai Electronic Security Center\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Technology; Finance & Banking; Critical Infrastructure\nRegion: UAE; Middle East\nPublished: 2025-05-01 | Updated: 2025-05-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "UAE-DESC-PQC-Guideline",
+      "url": "https://www.desc.gov.ae/dubai-electronic-security-center-launches-new-innovative-projects-at-gisec-global-2025/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=UAE-DESC-PQC-Guideline"
+  },
+  {
+    "id": "library-UAE-CSC-Encryption-Policy",
+    "source": "library",
+    "title": "UAE Cybersecurity Council — National Encryption Policy and Executive Regulation",
+    "content": "Title: UAE Cybersecurity Council — National Encryption Policy and Executive Regulation\nDescription: UAE Cybersecurity Council approves National Encryption Policy requiring government entities to create cryptographic asset inventories and PQC migration plans. First Gulf state with formal PQC requirements.\nType: Regulation | Status: Published\nAuthors: UAE Cybersecurity Council\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Critical\nIndustries: Government & Defense; Technology; Finance & Banking; Critical Infrastructure\nRegion: UAE; Middle East\nPublished: 2025-11-01 | Updated: 2025-11-01",
+    "category": "Regulation",
+    "metadata": {
+      "referenceId": "UAE-CSC-Encryption-Policy",
+      "url": "https://www.uaecsc.gov.ae/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=UAE-CSC-Encryption-Policy"
+  },
+  {
+    "id": "library-Saudi-NCA-ECC2-2024",
+    "source": "library",
+    "title": "Saudi Arabia National Cybersecurity Authority — Essential Cybersecurity Controls ECC-2:2024",
+    "content": "Title: Saudi Arabia National Cybersecurity Authority — Essential Cybersecurity Controls ECC-2:2024\nDescription: Saudi Arabia NCA releases updated Essential Cybersecurity Controls 2024 with expanded cryptography domain covering PQC awareness. Applicable to all Saudi government entities and critical infrastructure.\nType: Regulation | Status: Published\nAuthors: Saudi NCA; National Cybersecurity Authority Saudi Arabia\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Government & Defense; Finance & Banking; Critical Infrastructure; Energy & Utilities\nRegion: Saudi Arabia; Middle East\nPublished: 2024-01-01 | Updated: 2024-01-01",
+    "category": "Regulation",
+    "metadata": {
+      "referenceId": "Saudi-NCA-ECC2-2024",
+      "url": "https://nca.gov.sa/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=Saudi-NCA-ECC2-2024"
+  },
+  {
+    "id": "library-Microsoft-QSP-Roadmap-2025",
+    "source": "library",
+    "title": "Microsoft Quantum Safe Program (QSP) — Product Roadmap to 2033",
+    "content": "Title: Microsoft Quantum Safe Program (QSP) — Product Roadmap to 2033\nDescription: Microsoft publishes comprehensive QSP roadmap detailing transition to quantum-safe cryptography across all products through 2033. Covers Windows platform, Azure, signing services, and core infrastructure.\nType: Guidance | Status: Published\nAuthors: Microsoft\nAlgorithm Family: Lattice-based; Hash-based\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Technology; Government & Defense; Finance & Banking\nRegion: Global\nPublished: 2025-01-01 | Updated: 2025-01-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "Microsoft-QSP-Roadmap-2025",
+      "url": "https://www.microsoft.com/en-us/security/blog/",
+      "algorithmFamily": "Lattice-based; Hash-based"
+    },
+    "deepLink": "/library?ref=Microsoft-QSP-Roadmap-2025"
+  },
+  {
+    "id": "library-PQCC-Migration-Roadmap-2025",
+    "source": "library",
+    "title": "Post-Quantum Cryptography Coalition (PQCC) PQC Migration Roadmap",
+    "content": "Title: Post-Quantum Cryptography Coalition (PQCC) PQC Migration Roadmap\nDescription: PQCC publishes PQC Migration Roadmap with four-category framework: Preparation, Prioritization, Migration, and Sustainment. Practical guidance for organizations at any stage of PQC transition.\nType: Guidance | Status: Published\nAuthors: PQCC; Post-Quantum Cryptography Coalition\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Technology; Finance & Banking; Healthcare; Critical Infrastructure\nRegion: Global\nPublished: 2025-05-01 | Updated: 2025-05-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "PQCC-Migration-Roadmap-2025",
+      "url": "https://pqcc.org/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=PQCC-Migration-Roadmap-2025"
+  },
+  {
+    "id": "library-PQCC-Inventory-Workbook-2025",
+    "source": "library",
+    "title": "Post-Quantum Cryptography Coalition (PQCC) PQC Inventory Workbook",
+    "content": "Title: Post-Quantum Cryptography Coalition (PQCC) PQC Inventory Workbook\nDescription: PQCC publishes structured workbook to assist organizations in creating centralized cryptographic inventories for PQC migration planning. Covers asset identification, risk prioritization, and migration scheduling.\nType: Guidance | Status: Published\nAuthors: PQCC; Post-Quantum Cryptography Coalition\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Government & Defense; Technology; Finance & Banking; Healthcare\nRegion: Global\nPublished: 2025-06-01 | Updated: 2025-06-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "PQCC-Inventory-Workbook-2025",
+      "url": "https://pqcc.org/",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=PQCC-Inventory-Workbook-2025"
+  },
+  {
+    "id": "library-Singapore-NQSN-Plus",
+    "source": "library",
+    "title": "Singapore National Quantum-Safe Network Plus (NQSN+)",
+    "content": "Title: Singapore National Quantum-Safe Network Plus (NQSN+)\nDescription: Singapore IMDA, CSA, and GovTech launch National Quantum-Safe Network Plus (NQSN+) to pilot quantum-safe networking solutions. Connects government, financial sector, and critical infrastructure operators.\nType: Guidance | Status: Active Programme\nAuthors: IMDA Singapore; CSA Singapore; GovTech Singapore\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Telecommunications; Government & Defense; Finance & Banking; Critical Infrastructure\nRegion: Singapore; ASEAN\nPublished: 2023-06-01 | Updated: 2023-06-01",
+    "category": "Guidance",
+    "metadata": {
+      "referenceId": "Singapore-NQSN-Plus",
+      "url": "https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/quantum-safe-technologies",
+      "algorithmFamily": "N/A"
+    },
+    "deepLink": "/library?ref=Singapore-NQSN-Plus"
   },
   {
     "id": "algo-ml-kem-512",

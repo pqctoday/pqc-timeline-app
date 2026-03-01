@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-01T20:58:43.843Z",
-  "chunkCount": 2098,
+  "generatedAt": "2026-03-01T22:17:10.224Z",
+  "chunkCount": 2125,
   "chunks": [
     {
       "id": "glossary-0",
@@ -23067,6 +23067,288 @@
         "refId": "Japan:CRYPTREC — PQC Guideline GL-2004-2022",
         "collection": "timeline"
       }
+    },
+    {
+      "id": "doc-enrichment-Japan:NEDO — K Program PQC Research",
+      "source": "document-enrichment",
+      "title": "K Program PQC Research — Document Analysis",
+      "content": "Title: K Program PQC Research\nAuthors: New Energy and Industrial Technology Development Organization\nPublication Date: 2024-07-01\nDocument Status: Validated\nMain Topic: NEDO K Program research on PQC implementation technologies. Final standardization documents due 2026.\nMigration Timeline Info: Milestones: 2024–2026: K Program research; 2026: Final standardization documents due\nApplicable Regions / Bodies: Regions: Japan; Bodies: NEDO, CRC, AIST, FFRI Security Inc, Preferred Networks Inc, Fujitsu, NTT, Mitsubishi Electronics, University of Tokyo, etc.\nLeaders Contributions Mentioned: Dr. Shuichi Katsumata (Lead Cryptography Researcher, PQShield), Dr. Ali El Kaafarani (CEO, PQShield), Tsutomu Matsumoto (AIST Fellow / Director of CPSEC)\nPQC Products Mentioned: PQMicroLib-Core, PQCryptoLib-Core, PQCryptoLib-SDK, PQPlatform-CoPro, PQPlatform-TrustSys, PQPerform-Flare, PQPerform-Inferno, PQPerform-Flex\nProtocols Covered: Ring signatures, threshold signatures, threshold encryption\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: NIST, IETF (Internet Engineering Task Force)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "Japan:NEDO — K Program PQC Research", "collection": "timeline" }
+    },
+    {
+      "id": "doc-enrichment-Japan:METI/NISC — Cybersecurity Industry Policy Package",
+      "source": "document-enrichment",
+      "title": "Cybersecurity Industry Policy Package — Document Analysis",
+      "content": "Title: Cybersecurity Industry Policy Package\nAuthors: METI and NISC\nPublication Date: 2025-03-01\nDocument Status: New\nMain Topic: Japan's National Cyber Defense Push to prepare for quantum threats through post-quantum cryptographic (PQC) standards and infrastructure.\nPQC Algorithms Covered: CRYSTALS-Kyber, Dilithium (as part of NIST standardization process).\nQuantum Threats Addressed: Shor's Algorithm, Harvest Now Decrypt Later.\nMigration Timeline Info: None detected.\nApplicable Regions / Bodies: Regions: Japan; Bodies: METI, NISC, NICT.\nLeaders Contributions Mentioned: NEC, NICT, Toshiba, NTT Communications.\nPQC Products Mentioned: Integrated PQC systems by NEC and Toshiba, NTT Communications' PQC-based system.\nProtocols Covered: None detected.\nInfrastructure Layers: Key Management, Public Key Infrastructure (PKI).\nStandardization Bodies: NIST (referenced for PQC algorithm standardization).\nCompliance Frameworks Referenced: None detected.",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "Japan:METI/NISC — Cybersecurity Industry Policy Package",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-New Zealand:GCSB/NCSC — NZISM v3.9 Published",
+      "source": "document-enrichment",
+      "title": "NZISM v3.9 Published — Document Analysis",
+      "content": "Title: NZISM v3.9 Published\nAuthors: Government Communications Security Bureau / NCSC\nPublication Date: 2025-11-01\nDocument Status: New\nMain Topic: NZISM v3.9 includes Section 2.4 on PQC preparation with 19 agencies implementing.\nMigration Timeline Info: November 2025: Release of NZISM v3.9 with PQC preparation section; 19 agencies implementing.\nApplicable Regions / Bodies: Regions: New Zealand; Bodies: 19 agencies (specific names not mentioned)\nProtocols Covered: WPA3\nStandardization Bodies: NIST",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "New Zealand:GCSB/NCSC — NZISM v3.9 Published",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-South Korea:NIS/KISA — KpqC Competition Results",
+      "source": "document-enrichment",
+      "title": "KpqC Competition Results — Document Analysis",
+      "content": "Title: KpqC Competition Results\nAuthors: National Intelligence Service / KISA\nPublication Date: 2025-01-16\nDocument Status: New\nMain Topic: Korea Post-Quantum Cryptography Competition winners announced January 16, 2025.\nPQC Algorithms Covered: HAETAE, AIMer, SMAUG-T, NTRU+\nApplicable Regions / Bodies: Regions: South Korea; Bodies: KpqC (Korea Post-Quantum Cryptography Competition)\nStandardization Bodies: KpqC",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "South Korea:NIS/KISA — KpqC Competition Results",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United Kingdom:NCSC — PQC White Paper Updated",
+      "source": "document-enrichment",
+      "title": "PQC White Paper Updated — Document Analysis",
+      "content": "Title: PQC White Paper Updated\nAuthors: National Cyber Security Centre\nPublication Date: 2024-08-01\nDocument Status: Validated",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United Kingdom:NCSC — PQC White Paper Updated",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United Kingdom:NCSC — PQC Migration Roadmap Published",
+      "source": "document-enrichment",
+      "title": "PQC Migration Roadmap Published — Document Analysis",
+      "content": "Title: PQC Migration Roadmap Published\nAuthors: National Cyber Security Centre\nPublication Date: 2025-03-20\nDocument Status: Validated\nMain Topic: NCSC publishes comprehensive three-phase PQC migration roadmap with specific milestones through 2035.\nApplicable Regions / Bodies: Regions: None detected; Bodies: None detected",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United Kingdom:NCSC — PQC Migration Roadmap Published",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United Kingdom:DSIT — CNI Perspectives Report",
+      "source": "document-enrichment",
+      "title": "CNI Perspectives Report — Document Analysis",
+      "content": "Title: CNI Perspectives Report\nAuthors: Department for Science Innovation and Technology\nPublication Date: 2025-11-27\nDocument Status: New\nMain Topic: DSIT publishes Perspectives on the Plan for PQC Transition covering five CNI sectors.\nApplicable Regions / Bodies: Regions: United Kingdom; Bodies: Department for Science, Innovation and Technology (DSIT), National Cyber Security Centre (NCSC)",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United Kingdom:DSIT — CNI Perspectives Report",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United States:White House — NSM-10 Published",
+      "source": "document-enrichment",
+      "title": "NSM-10 Published — Document Analysis",
+      "content": "Title: NSM-10 Published\nAuthors: Executive Office of the President\nPublication Date: 2022-05-04\nDocument Status: Validated\nMain Topic: National Security Memorandum (NSM-10) on promoting U.S. leadership in quantum computing and mitigating risks from cryptanalytically relevant quantum computers (CRQCs).\nQuantum Threats Addressed: CRQC, Harvest Now Decrypt Later, Shor's Algorithm\nMigration Timeline Info: Milestones: 2035: Mitigate quantum risk for federal systems | 2024: NIST standards for post-quantum cryptography\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, NSA\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: NIST",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United States:White House — NSM-10 Published",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United States:NSA — CNSA 2.0 Published",
+      "source": "document-enrichment",
+      "title": "CNSA 2.0 Algorithms Revised — Document Analysis",
+      "content": "Title: CNSA 2.0 Algorithms Revised\nAuthors: National Security Agency\nPublication Date: 2025-05-30\nDocument Status: Validated",
+      "category": "document-enrichment",
+      "metadata": { "refId": "United States:NSA — CNSA 2.0 Published", "collection": "timeline" }
+    },
+    {
+      "id": "doc-enrichment-United States:White House — Executive Order 14144",
+      "source": "document-enrichment",
+      "title": "Executive Order 14306 Issued — Document Analysis",
+      "content": "Title: Executive Order 14306 Issued\nAuthors: Executive Office of the President\nPublication Date: 2025-06-06\nDocument Status: New\nMain Topic: Executive Order 14306 amending cybersecurity policies with post-quantum cryptographic migration requirements.\nQuantum Threats Addressed: CRQC, Shor's Algorithm\nMigration Timeline Info: Milestones: 2030: PQC required for federal systems | 2025: Complete inventory\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, NSA, CISA\nProtocols Covered: TLS 1.3\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: NIST",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United States:White House — Executive Order 14144",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United States:NIST — FIPS 206 (FN-DSA) Draft Submitted",
+      "source": "document-enrichment",
+      "title": "FIPS 206 (FN-DSA) Draft Submitted — Document Analysis",
+      "content": "Title: FIPS 206 (FN-DSA) Draft Submitted\nAuthors: National Institute of Standards and Technology\nPublication Date: 2025-08-28\nDocument Status: New\nMain Topic: NIST submits draft standard for FN-DSA (FIPS 206) based on FALCON algorithm for approval.\nPQC Algorithms Covered: FN-DSA\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST\nStandardization Bodies: NIST",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United States:NIST — FIPS 206 (FN-DSA) Draft Submitted",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United States:NSA — NSS Acquisitions CNSA 2.0 Required",
+      "source": "document-enrichment",
+      "title": "NSS Acquisitions CNSA 2.0 Required — Document Analysis",
+      "content": "Title: NSS Acquisitions CNSA 2.0 Required\nAuthors: National Security Agency\nPublication Date: 2024-12-01\nDocument Status: Validated",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United States:NSA — NSS Acquisitions CNSA 2.0 Required",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-International:PKI Consortium — PKI Consortium PQC Conference 2025 Conclusions",
+      "source": "document-enrichment",
+      "title": "PKI Consortium PQC Conference 2025 Conclusions — Document Analysis",
+      "content": "Title: PKI Consortium PQC Conference 2025 Conclusions\nAuthors: Public Key Infrastructure Consortium\nPublication Date: 2025-11-03\nDocument Status: Completed\nMain Topic: World's largest PQC conference concluded in Kuala Lumpur with 2500+ delegates from 30+ countries. Issued urgent global call for immediate action on PQC migration.\nQuantum Threats Addressed: Shor's Algorithm, Harvest Now Decrypt Later\nApplicable Regions / Bodies: Regions: ASEAN; Bodies: Ministry of Digital Malaysia, National Cyber Security Agency (NACSA)\nLeaders Contributions Mentioned: Paul van Brouwershaven (Chair of PKI Consortium and PQC Working Group), Chris Bailey (Board and Executive Council Chair of PKI Consortium)\nInfrastructure Layers: PKI, Key Management",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "International:PKI Consortium — PKI Consortium PQC Conference 2025 Conclusions",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-International:Samsung/Thales — ML-KEM Embedded Secure Element Breakthrough",
+      "source": "document-enrichment",
+      "title": "ML-KEM Embedded Secure Element Breakthrough — Document Analysis",
+      "content": "Title: ML-KEM Embedded Secure Element Breakthrough\nAuthors: Samsung System LSI and Thales\nPublication Date: 2026-01-06\nDocument Status: New\nMain Topic: Samsung System LSI and Thales announce breakthrough in embedded security with ML-KEM quantum-resistant capabilities for IoT and embedded systems.\nPQC Algorithms Covered: ML-KEM\nQuantum Threats Addressed: Harvest Now Decrypt Later\nLeaders Contributions Mentioned: Eva Rudin (Thales), Hwa Yeal Yu (Samsung Electronics)\nPQC Products Mentioned: S3SSE2A (industry’s first PQC total solution)",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "International:Samsung/Thales — ML-KEM Embedded Secure Element Breakthrough",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-International:IETF — RFC 9794 PQC Hybrid Terminology",
+      "source": "document-enrichment",
+      "title": "RFC 9794 PQC Hybrid Terminology — Document Analysis",
+      "content": "Title: RFC 9794 PQC Hybrid Terminology\nAuthors: Internet Engineering Task Force\nPublication Date: 2025-06-01\nDocument Status: Validated\nMain Topic: IETF publishes RFC 9794 to standardize terminology for hybrid post-quantum and traditional cryptographic schemes.\nPQC Algorithms Covered: ML-KEM, ML-DSA\nQuantum Threats Addressed: CRQC, Shor's Algorithm\nApplicable Regions / Bodies: Regions: None detected; Bodies: IETF, UK National Cyber Security Centre, Naval Postgraduate School\nProtocols Covered: TLS\nStandardization Bodies: IETF",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "International:IETF — RFC 9794 PQC Hybrid Terminology",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-International:PQCC — PQC Inventory Workbook Published",
+      "source": "document-enrichment",
+      "title": "PQC Inventory Workbook Published — Document Analysis",
+      "content": "Title: PQC Inventory Workbook Published\nAuthors: Post-Quantum Cryptography Coalition\nPublication Date: 2025-06-12\nDocument Status: Validated\nMain Topic: PQCC publishes PQC Inventory Workbook to assist organizations in creating centralized inventory for tracking cryptographic migration efforts.\nMigration Timeline Info: Milestones: 2025: Complete inventory\nApplicable Regions / Bodies: Regions: None detected; Bodies: IBM, Microsoft, MITRE, PQShield, SandboxAQ",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "International:PQCC — PQC Inventory Workbook Published",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United States:Congress — National Quantum Initiative Reauthorization Act",
+      "source": "document-enrichment",
+      "title": "National Quantum Initiative Reauthorization Act — Document Analysis",
+      "content": "Title: National Quantum Initiative Reauthorization Act\nAuthors: United States Congress\nPublication Date: 2026-01-08\nDocument Status: New",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United States:Congress — National Quantum Initiative Reauthorization Act",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-Hong Kong:LegCo — Critical Infrastructure Cybersecurity Ordinance",
+      "source": "document-enrichment",
+      "title": "Critical Infrastructure Cybersecurity Ordinance — Document Analysis",
+      "content": "Title: Critical Infrastructure Cybersecurity Ordinance\nAuthors: Legislative Council of Hong Kong\nPublication Date: 2025-06-27\nDocument Status: New\nMain Topic: Protection of Critical Infrastructures (Computer Systems) Ordinance passed by Legislative Council on March 19, 2025, effective January 1, 2026.\nApplicable Regions / Bodies: Regions: Hong Kong; Bodies: Legislative Council, Secretary for Security",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "Hong Kong:LegCo — Critical Infrastructure Cybersecurity Ordinance",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-Hong Kong:HKMA — HKMA Fintech Adoption Report: PQC Commitment",
+      "source": "document-enrichment",
+      "title": "HKMA Fintech Adoption Report: PQC Commitment — Document Analysis",
+      "content": "Title: HKMA Fintech Adoption Report: PQC Commitment\nAuthors: Hong Kong Monetary Authority\nPublication Date: 2025-07-16\nDocument Status: New\nMain Topic: HKMA publishes Fintech Adoption: Progress and Future Directions report, highlighting low engagement with quantum computing (7% of Hong Kong banks) and commitment to promoting post-quantum cryptography (PQC) as the primary quantum-safety mechanism.\nApplicable Regions / Bodies: Regions: Hong Kong; Bodies: Hong Kong Monetary Authority (HKMA)",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "Hong Kong:HKMA — HKMA Fintech Adoption Report: PQC Commitment",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-Hong Kong:HKMA — Fintech 2030 Strategy: PQC Resilience Pillar",
+      "source": "document-enrichment",
+      "title": "Fintech 2030 Strategy: PQC Resilience Pillar — Document Analysis",
+      "content": "Title: Fintech 2030 Strategy: PQC Resilience Pillar\nAuthors: Hong Kong Monetary Authority\nPublication Date: 2025-11-03\nDocument Status: New\nMain Topic: HKMA unveils Fintech 2030 strategy with PQC Resilience pillar\nApplicable Regions / Bodies: Regions: Hong Kong; Bodies: Hong Kong Monetary Authority (HKMA)",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "Hong Kong:HKMA — Fintech 2030 Strategy: PQC Resilience Pillar",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-Hong Kong:HKMA — Fintech Promotion Blueprint: Quantum Preparedness",
+      "source": "document-enrichment",
+      "title": "Fintech Promotion Blueprint: Quantum Preparedness — Document Analysis",
+      "content": "Title: Fintech Promotion Blueprint: Quantum Preparedness\nAuthors: See document\nMain Topic: Hong Kong Monetary Authority (HKMA) unveils Fintech Promotion Blueprint: From adoption to advancement\nApplicable Regions / Bodies: Regions: Hong Kong; Bodies: Hong Kong Monetary Authority (HKMA)\nLeaders Contributions Mentioned: Arthur Yuen, Deputy Chief Executive of the HKMA",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "Hong Kong:HKMA — Fintech Promotion Blueprint: Quantum Preparedness",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-Singapore:IMDA — NQSN+ Launched",
+      "source": "document-enrichment",
+      "title": "NQSN+ Launched — Document Analysis",
+      "content": "Title: NQSN+ Launched\nAuthors: Infocomm Media Development Authority\nPublication Date: 2023-06-01\nDocument Status: New\nMain Topic: Deputy PM Heng Swee Keat launches National Quantum-Safe Network Plus (NQSN+) at ATxSG 2023.\nApplicable Regions / Bodies: Regions: Singapore; Bodies: IMDA, Centre for Quantum Technologies (CQT), Singtel, SPTel, SpeQtral, International Telecommunication Union (ITU)\nLeaders Contributions Mentioned: Deputy PM Heng Swee Keat\nStandardization Bodies: IMDA, Centre for Quantum Technologies (CQT), International Telecommunication Union (ITU)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "Singapore:IMDA — NQSN+ Launched", "collection": "timeline" }
+    },
+    {
+      "id": "doc-enrichment-Japan:NCO — Government PQC Transition Deadline",
+      "source": "document-enrichment",
+      "title": "Government PQC Transition Deadline — Document Analysis",
+      "content": "Title: Government PQC Transition Deadline\nAuthors: National Cyber Command Office\nPublication Date: 2025-10-01\nDocument Status: New\nMain Topic: Japan's National Cyber Command Office sets 2035 as deadline for government agencies to complete PQC transition, aligning with US, UK, and Canada timelines.\nQuantum Threats Addressed: Harvest Now Decrypt Later (HNDL)\nMigration Timeline Info: Deadline: 2035 for government agencies to complete PQC transition. Implementation roadmap planned for FY2026.\nApplicable Regions / Bodies: Regions: Japan, United States, United Kingdom, Canada; Bodies: Japan's National Cyber Command Office (NCO), CRYPTREC, AIST, NEDO\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: NIST, CRYPTREC\nCompliance Frameworks Referenced: FIPS 140-3",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "Japan:NCO — Government PQC Transition Deadline",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-Malaysia:NACSA — National PQC Migration",
+      "source": "document-enrichment",
+      "title": "National PQC Migration — Document Analysis",
+      "content": "Title: National PQC Migration\nAuthors: National Cyber Security Agency of Malaysia\nPublication Date: 2025-10-28\nDocument Status: New\nApplicable Regions / Bodies: Regions: Malaysia, ASEAN; Bodies: PKI Consortium, Ministry of Digital (Malaysia), NACSA\nLeaders Contributions Mentioned: Paul van Brouwershaven, Chair of the PKI Consortium and its Post-Quantum Cryptography Working Group\nInfrastructure Layers: PKI, Key Management",
+      "category": "document-enrichment",
+      "metadata": { "refId": "Malaysia:NACSA — National PQC Migration", "collection": "timeline" }
+    },
+    {
+      "id": "doc-enrichment-United Arab Emirates:DESC — Dubai PQC Guideline Launched",
+      "source": "document-enrichment",
+      "title": "Dubai PQC Guideline Launched — Document Analysis",
+      "content": "Title: Dubai PQC Guideline Launched\nAuthors: Dubai Electronic Security Center\nPublication Date: 2025-05-01\nDocument Status: New\nMain Topic: Dubai Electronic Security Center (DESC) launches Post-Quantum Cryptography (PQC) Guideline to prepare Dubai’s digital infrastructure against quantum threats.\nApplicable Regions / Bodies: Regions: United Arab Emirates (UAE); Bodies: Dubai Electronic Security Center (DESC)\nLeaders Contributions Mentioned: H.E. Yousuf Hamad Al Shaibani, Chief Executive of DESC",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United Arab Emirates:DESC — Dubai PQC Guideline Launched",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-United Arab Emirates:UAE CSC — National Encryption Policy Approved",
+      "source": "document-enrichment",
+      "title": "National Encryption Policy Approved — Document Analysis",
+      "content": "Title: National Encryption Policy Approved\nAuthors: UAE Cybersecurity Council\nPublication Date: 2025-11-26\nDocument Status: New\nMain Topic: UAE Cybersecurity Council approves National Encryption Policy and Executive Regulation.\nMigration Timeline Info: Milestones: 2026: Submit migration roadmaps\nApplicable Regions / Bodies: Regions: United Arab Emirates; Bodies: UAE Cybersecurity Council\nPQC Products Mentioned: PQMicroLib-Core, PQCryptoLib-Core, PQCryptoLib-SDK, PQPlatform-CoPro, PQPlatform-TrustSys, PQPerform-Flare, PQPerform-Inferno, PQPerform-Flex\nInfrastructure Layers: Key Management",
+      "category": "document-enrichment",
+      "metadata": {
+        "refId": "United Arab Emirates:UAE CSC — National Encryption Policy Approved",
+        "collection": "timeline"
+      }
+    },
+    {
+      "id": "doc-enrichment-Jordan:CBJ — Financial Sector PQC Roadmap",
+      "source": "document-enrichment",
+      "title": "Financial Sector PQC Roadmap — Document Analysis",
+      "content": "Title: Financial Sector PQC Roadmap\nAuthors: Central Bank of Jordan\nPublication Date: 2026-01-05\nDocument Status: New\nMain Topic: Central Bank of Jordan publishes sector-wide roadmap for transitioning banks to quantum-resistant encryption.\nQuantum Threats Addressed: Shor's Algorithm\nApplicable Regions / Bodies: Regions: Jordan; Bodies: Central Bank of Jordan\nInfrastructure Layers: Key Management",
+      "category": "document-enrichment",
+      "metadata": { "refId": "Jordan:CBJ — Financial Sector PQC Roadmap", "collection": "timeline" }
     },
     {
       "id": "doc-enrichment-AERO-001",

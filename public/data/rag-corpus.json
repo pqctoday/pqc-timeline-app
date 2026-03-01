@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-01T06:42:49.370Z",
-  "chunkCount": 2353,
+  "generatedAt": "2026-03-01T14:35:06.621Z",
+  "chunkCount": 2360,
   "chunks": [
     {
       "id": "glossary-0",
@@ -164,6 +164,15 @@
     {
       "id": "glossary-15",
       "source": "glossary",
+      "title": "DSA",
+      "content": "Term: DSA (DSA)\nDefinition: Digital Signature Algorithm, a classical FIPS 186 signature scheme based on discrete logarithms. Deprecated by NIST IR 8547 alongside RSA and ECDSA due to quantum vulnerability.\nTechnical Note: Broken by Shor's algorithm. Common key sizes: 1024–3072 bits. No longer approved for new systems after 2030 per NIST IR 8547.\nCategory: algorithm | Complexity: beginner",
+      "category": "algorithm",
+      "metadata": { "acronym": "DSA", "complexity": "beginner", "relatedModule": "/algorithms" },
+      "deepLink": "/algorithms"
+    },
+    {
+      "id": "glossary-16",
+      "source": "glossary",
       "title": "Elliptic Curve Cryptography",
       "content": "Term: Elliptic Curve Cryptography (ECC)\nDefinition: A classical public-key algorithm using the mathematics of elliptic curves. More efficient than RSA but equally vulnerable to quantum attacks.\nTechnical Note: Common curves: P-256, P-384, P-521, secp256k1 (Bitcoin), Curve25519.\nCategory: algorithm | Complexity: intermediate",
       "category": "algorithm",
@@ -175,7 +184,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-16",
+      "id": "glossary-17",
       "source": "glossary",
       "title": "ML-KEM",
       "content": "Term: ML-KEM\nDefinition: Module-Lattice-Based Key Encapsulation Mechanism, the NIST-standardized PQC algorithm for key exchange (formerly Kyber). Defined in FIPS 203.\nTechnical Note: Variants: ML-KEM-512 (128-bit security), ML-KEM-768 (192-bit), ML-KEM-1024 (256-bit).\nCategory: algorithm | Complexity: intermediate",
@@ -184,7 +193,7 @@
       "deepLink": "/playground"
     },
     {
-      "id": "glossary-17",
+      "id": "glossary-18",
       "source": "glossary",
       "title": "ML-DSA",
       "content": "Term: ML-DSA\nDefinition: Module-Lattice-Based Digital Signature Algorithm, the NIST-standardized PQC algorithm for digital signatures (formerly Dilithium). Defined in FIPS 204.\nTechnical Note: Variants: ML-DSA-44, ML-DSA-65, ML-DSA-87 corresponding to security levels 2, 3, 5.\nCategory: algorithm | Complexity: intermediate",
@@ -193,7 +202,7 @@
       "deepLink": "/playground"
     },
     {
-      "id": "glossary-18",
+      "id": "glossary-19",
       "source": "glossary",
       "title": "SLH-DSA",
       "content": "Term: SLH-DSA\nDefinition: Stateless Hash-Based Digital Signature Algorithm, a conservative NIST-standardized hash-based PQC signature scheme (formerly SPHINCS+). Defined in FIPS 205.\nTechnical Note: 12 variants: combinations of SHA-256/SHAKE, 128/192/256-bit security, and fast/small trade-offs.\nCategory: algorithm | Complexity: advanced",
@@ -202,24 +211,25 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-19",
+      "id": "glossary-20",
       "source": "glossary",
       "title": "FN-DSA",
-      "content": "Term: FN-DSA\nDefinition: FFT over NTRU-Lattice-Based Digital Signature Algorithm (formerly Falcon), a compact PQC signature scheme. Defined in the draft FIPS 206.\nTechnical Note: Variants: FN-DSA-512 (Level 1) and FN-DSA-1024 (Level 5). Known for very small signatures but requires careful floating-point implementation.\nCategory: algorithm | Complexity: advanced",
+      "content": "Term: FN-DSA\nDefinition: FFT over NTRU-Lattice-Based Digital Signature Algorithm (formerly Falcon), a compact PQC signature scheme. Defined in FIPS 206, published October 2024.\nTechnical Note: Variants: FN-DSA-512 (Level 1) and FN-DSA-1024 (Level 5). Known for very small signatures but requires careful floating-point implementation.\nCategory: algorithm | Complexity: advanced",
       "category": "algorithm",
       "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/algorithms" },
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-20",
+      "id": "glossary-21",
       "source": "glossary",
       "title": "FrodoKEM",
       "content": "Term: FrodoKEM\nDefinition: A conservative lattice-based KEM algorithm based on the \"plain\" Learning With Errors problem, offering strong security guarantees at the cost of larger key sizes.\nCategory: algorithm | Complexity: advanced",
       "category": "algorithm",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "" }
+      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/algorithms" },
+      "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-21",
+      "id": "glossary-22",
       "source": "glossary",
       "title": "HQC",
       "content": "Term: HQC\nDefinition: Hamming Quasi-Cyclic, a code-based KEM selected by NIST as an additional standard. Uses error-correcting codes for security.\nCategory: algorithm | Complexity: advanced",
@@ -228,7 +238,7 @@
       "deepLink": "/learn/pqc-101"
     },
     {
-      "id": "glossary-22",
+      "id": "glossary-23",
       "source": "glossary",
       "title": "Classic McEliece",
       "content": "Term: Classic McEliece\nDefinition: A code-based KEM with very large public keys but extremely conservative security assumptions. One of the oldest post-quantum proposals.\nCategory: algorithm | Complexity: advanced",
@@ -237,7 +247,7 @@
       "deepLink": "/learn/pqc-101"
     },
     {
-      "id": "glossary-23",
+      "id": "glossary-24",
       "source": "glossary",
       "title": "XMSS",
       "content": "Term: XMSS (XMSS)\nDefinition: eXtended Merkle Signature Scheme, a stateful hash-based digital signature algorithm standardized in RFC 8391 and NIST SP 800-208.\nTechnical Note: Like LMS, XMSS is stateful and each key can only sign a limited number of messages. Required by CNSA 2.0 for firmware and software signing.\nCategory: algorithm | Complexity: advanced",
@@ -250,7 +260,7 @@
       "deepLink": "/learn/stateful-signatures"
     },
     {
-      "id": "glossary-24",
+      "id": "glossary-25",
       "source": "glossary",
       "title": "LMS/HSS",
       "content": "Term: LMS/HSS (LMS)\nDefinition: Leighton-Micali Signature / Hierarchical Signature System. A stateful hash-based signature scheme for firmware and software signing.\nTechnical Note: Standardized in RFC 8554. \"Stateful\" means each key can only sign a limited number of messages.\nCategory: algorithm | Complexity: advanced",
@@ -259,7 +269,7 @@
       "deepLink": "/openssl"
     },
     {
-      "id": "glossary-25",
+      "id": "glossary-26",
       "source": "glossary",
       "title": "AES",
       "content": "Term: AES (AES)\nDefinition: Advanced Encryption Standard, a symmetric encryption algorithm. Relatively safe from quantum attacks (just double the key size: AES-256).\nTechnical Note: Quantum attacks via Grover's algorithm halve the effective security level, so AES-128 becomes ~64-bit. AES-256 remains secure.\nCategory: algorithm | Complexity: beginner",
@@ -268,26 +278,13 @@
       "deepLink": "/learn/pqc-101"
     },
     {
-      "id": "glossary-26",
-      "source": "glossary",
-      "title": "Shor's Algorithm",
-      "content": "Term: Shor's Algorithm (Shor)\nDefinition: A quantum algorithm that can efficiently factor large numbers and compute discrete logarithms, breaking RSA and ECC.\nCategory: algorithm | Complexity: intermediate",
-      "category": "algorithm",
-      "metadata": {
-        "acronym": "Shor",
-        "complexity": "intermediate",
-        "relatedModule": "/learn/quantum-threats"
-      },
-      "deepLink": "/learn/quantum-threats"
-    },
-    {
       "id": "glossary-27",
       "source": "glossary",
-      "title": "Grover's Algorithm",
-      "content": "Term: Grover's Algorithm (Grover)\nDefinition: A quantum algorithm that speeds up brute-force searches, effectively halving the security level of symmetric ciphers and hash functions.\nCategory: algorithm | Complexity: intermediate",
+      "title": "Shor's Algorithm",
+      "content": "Term: Shor's Algorithm\nDefinition: A quantum algorithm that can efficiently factor large numbers and compute discrete logarithms, breaking RSA and ECC.\nCategory: algorithm | Complexity: intermediate",
       "category": "algorithm",
       "metadata": {
-        "acronym": "Grover",
+        "acronym": "",
         "complexity": "intermediate",
         "relatedModule": "/learn/quantum-threats"
       },
@@ -295,6 +292,19 @@
     },
     {
       "id": "glossary-28",
+      "source": "glossary",
+      "title": "Grover's Algorithm",
+      "content": "Term: Grover's Algorithm\nDefinition: A quantum algorithm that speeds up brute-force searches, effectively halving the security level of symmetric ciphers and hash functions.\nCategory: algorithm | Complexity: intermediate",
+      "category": "algorithm",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/quantum-threats"
+      },
+      "deepLink": "/learn/quantum-threats"
+    },
+    {
+      "id": "glossary-29",
       "source": "glossary",
       "title": "ECDSA",
       "content": "Term: ECDSA (ECDSA)\nDefinition: Elliptic Curve Digital Signature Algorithm, a classical signature scheme used in TLS, Bitcoin, and many other systems. Quantum-vulnerable.\nCategory: algorithm | Complexity: intermediate",
@@ -307,7 +317,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-29",
+      "id": "glossary-30",
       "source": "glossary",
       "title": "ECDH",
       "content": "Term: ECDH (ECDH)\nDefinition: Elliptic Curve Diffie-Hellman, a classical key agreement protocol. Quantum-vulnerable and being replaced by ML-KEM.\nCategory: algorithm | Complexity: intermediate",
@@ -315,7 +325,7 @@
       "metadata": { "acronym": "ECDH", "complexity": "intermediate", "relatedModule": "" }
     },
     {
-      "id": "glossary-30",
+      "id": "glossary-31",
       "source": "glossary",
       "title": "X25519",
       "content": "Term: X25519\nDefinition: An elliptic curve Diffie-Hellman key exchange function using Curve25519. Widely used in TLS 1.3 and the basis for hybrid PQC key exchange.\nTechnical Note: Combined with ML-KEM-768 to form the X25519MLKEM768 hybrid key exchange, now deployed by major browsers and cloud providers.\nCategory: algorithm | Complexity: intermediate",
@@ -324,7 +334,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-31",
+      "id": "glossary-32",
       "source": "glossary",
       "title": "X448",
       "content": "Term: X448\nDefinition: An elliptic curve Diffie-Hellman key exchange function using Curve448, providing higher security than X25519. Quantum-vulnerable.\nCategory: algorithm | Complexity: advanced",
@@ -333,7 +343,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-32",
+      "id": "glossary-33",
       "source": "glossary",
       "title": "Ed25519",
       "content": "Term: Ed25519\nDefinition: A high-performance digital signature algorithm using the Edwards curve Curve25519. Used in SSH, TLS, and Solana.\nCategory: algorithm | Complexity: intermediate",
@@ -346,7 +356,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-33",
+      "id": "glossary-34",
       "source": "glossary",
       "title": "Ed448",
       "content": "Term: Ed448\nDefinition: An EdDSA signature algorithm using the Edwards curve Curve448, providing 224-bit security. Quantum-vulnerable.\nCategory: algorithm | Complexity: advanced",
@@ -355,7 +365,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-34",
+      "id": "glossary-35",
       "source": "glossary",
       "title": "SHA-256",
       "content": "Term: SHA-256\nDefinition: Secure Hash Algorithm producing a 256-bit digest. Used extensively in Bitcoin and TLS. Quantum-safe at current key sizes.\nCategory: algorithm | Complexity: beginner",
@@ -368,7 +378,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-35",
+      "id": "glossary-36",
       "source": "glossary",
       "title": "HKDF",
       "content": "Term: HKDF (HKDF)\nDefinition: HMAC-based Key Derivation Function, used to derive cryptographic keys from a shared secret. Essential in TLS 1.3.\nCategory: algorithm | Complexity: intermediate",
@@ -381,7 +391,7 @@
       "deepLink": "/learn/tls-basics"
     },
     {
-      "id": "glossary-36",
+      "id": "glossary-37",
       "source": "glossary",
       "title": "TLS",
       "content": "Term: TLS (TLS)\nDefinition: Transport Layer Security, the protocol that secures HTTPS web traffic. TLS 1.3 is the current version.\nTechnical Note: PQC integration uses hybrid key exchange (e.g., X25519 + ML-KEM-768) to maintain backward compatibility.\nCategory: protocol | Complexity: beginner",
@@ -394,7 +404,7 @@
       "deepLink": "/learn/tls-basics"
     },
     {
-      "id": "glossary-37",
+      "id": "glossary-38",
       "source": "glossary",
       "title": "X.509",
       "content": "Term: X.509\nDefinition: The standard format for public key certificates used in TLS, email signing, and code signing.\nCategory: protocol | Complexity: intermediate",
@@ -407,7 +417,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-38",
+      "id": "glossary-39",
       "source": "glossary",
       "title": "Public Key Infrastructure",
       "content": "Term: Public Key Infrastructure (PKI)\nDefinition: The system of Certificate Authorities, digital certificates, and registration authorities that manages public keys and enables secure communication.\nCategory: protocol | Complexity: beginner",
@@ -420,7 +430,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-39",
+      "id": "glossary-40",
       "source": "glossary",
       "title": "Certificate Signing Request",
       "content": "Term: Certificate Signing Request (CSR)\nDefinition: A message sent to a Certificate Authority to request a digital certificate. Contains the public key and identity information.\nCategory: protocol | Complexity: intermediate",
@@ -433,7 +443,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-40",
+      "id": "glossary-41",
       "source": "glossary",
       "title": "Certificate Authority",
       "content": "Term: Certificate Authority (CA)\nDefinition: A trusted organization that issues digital certificates, verifying the identity of certificate holders.\nCategory: protocol | Complexity: beginner",
@@ -446,7 +456,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-41",
+      "id": "glossary-42",
       "source": "glossary",
       "title": "Key Encapsulation Mechanism",
       "content": "Term: Key Encapsulation Mechanism (KEM)\nDefinition: A method to securely establish a shared secret key between two parties. The PQC replacement for traditional key exchange.\nTechnical Note: Unlike Diffie-Hellman, KEMs work via encapsulation (encrypt a random secret with a public key) and decapsulation (decrypt with the private key).\nCategory: protocol | Complexity: intermediate",
@@ -459,7 +469,7 @@
       "deepLink": "/playground"
     },
     {
-      "id": "glossary-42",
+      "id": "glossary-43",
       "source": "glossary",
       "title": "5G-AKA",
       "content": "Term: 5G-AKA\nDefinition: 5G Authentication and Key Agreement protocol, the primary authentication mechanism in 5G networks.\nCategory: protocol | Complexity: advanced",
@@ -472,7 +482,7 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-43",
+      "id": "glossary-44",
       "source": "glossary",
       "title": "SUCI",
       "content": "Term: SUCI (SUCI)\nDefinition: Subscription Concealed Identifier, a privacy-protecting identifier used in 5G that encrypts the subscriber's permanent identity.\nCategory: protocol | Complexity: advanced",
@@ -485,7 +495,7 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-44",
+      "id": "glossary-45",
       "source": "glossary",
       "title": "OpenID4VCI",
       "content": "Term: OpenID4VCI\nDefinition: OpenID for Verifiable Credential Issuance, a protocol for issuing digital credentials to wallets.\nCategory: protocol | Complexity: advanced",
@@ -494,7 +504,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-45",
+      "id": "glossary-46",
       "source": "glossary",
       "title": "OpenID4VP",
       "content": "Term: OpenID4VP\nDefinition: OpenID for Verifiable Presentations, a protocol for presenting digital credentials from a wallet to a verifier.\nCategory: protocol | Complexity: advanced",
@@ -503,7 +513,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-46",
+      "id": "glossary-47",
       "source": "glossary",
       "title": "SSH",
       "content": "Term: SSH (SSH)\nDefinition: Secure Shell, a protocol for encrypted remote login and command execution. PQC integration adds ML-KEM hybrid key exchange.\nCategory: protocol | Complexity: beginner",
@@ -512,7 +522,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-47",
+      "id": "glossary-48",
       "source": "glossary",
       "title": "IPsec",
       "content": "Term: IPsec (IPsec)\nDefinition: Internet Protocol Security, a protocol suite for encrypting and authenticating IP traffic. Used in VPNs and site-to-site connections.\nTechnical Note: PQC integration via IKEv2 multiple key exchange (RFC 9370) adds ML-KEM alongside classical DH.\nCategory: protocol | Complexity: intermediate",
@@ -521,7 +531,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-48",
+      "id": "glossary-49",
       "source": "glossary",
       "title": "IKEv2",
       "content": "Term: IKEv2 (IKEv2)\nDefinition: Internet Key Exchange version 2, the protocol used to establish security associations in IPsec VPNs. PQC migration adds ML-KEM key exchange.\nCategory: protocol | Complexity: intermediate",
@@ -530,7 +540,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-49",
+      "id": "glossary-50",
       "source": "glossary",
       "title": "EMV",
       "content": "Term: EMV (EMV)\nDefinition: Europay/Mastercard/Visa, the global standard for chip-based payment card authentication. Uses RSA and ECC signatures that are quantum-vulnerable.\nTechnical Note: Over 14 billion EMV cards are in circulation globally. Offline authentication relies on RSA/ECC signatures vulnerable to quantum forgery.\nCategory: protocol | Complexity: intermediate",
@@ -539,7 +549,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-50",
+      "id": "glossary-51",
       "source": "glossary",
       "title": "S/MIME",
       "content": "Term: S/MIME (S/MIME)\nDefinition: Secure/Multipurpose Internet Mail Extensions, a standard for email encryption and digital signing. PQC integration via ML-KEM and ML-DSA.\nCategory: protocol | Complexity: intermediate",
@@ -552,7 +562,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-51",
+      "id": "glossary-52",
       "source": "glossary",
       "title": "CMS",
       "content": "Term: CMS (CMS)\nDefinition: Cryptographic Message Syntax, a standard for digitally signed, encrypted, or authenticated data. Foundation for S/MIME and code signing.\nTechnical Note: Multiple IETF RFCs define PQC integration: RFC 9629 (KEM in CMS), RFC 9882 (ML-DSA in CMS), RFC 9814 (SLH-DSA in CMS).\nCategory: protocol | Complexity: advanced",
@@ -561,7 +571,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-52",
+      "id": "glossary-53",
       "source": "glossary",
       "title": "OpenPGP",
       "content": "Term: OpenPGP\nDefinition: An open standard for email encryption and signing based on PGP. PQC integration adds composite ML-KEM+ECC encryption and ML-DSA+ECC signatures.\nCategory: protocol | Complexity: intermediate",
@@ -570,16 +580,25 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-53",
+      "id": "glossary-54",
       "source": "glossary",
       "title": "Signal Protocol",
-      "content": "Term: Signal Protocol (PQXDH)\nDefinition: The encryption protocol used by Signal, WhatsApp, and other messengers. Updated with PQXDH to add ML-KEM-1024 for post-quantum security.\nCategory: protocol | Complexity: intermediate",
+      "content": "Term: Signal Protocol\nDefinition: The encryption protocol used by Signal, WhatsApp, and other messengers. Updated with PQXDH to add ML-KEM-1024 for post-quantum security.\nCategory: protocol | Complexity: intermediate",
+      "category": "protocol",
+      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/migrate" },
+      "deepLink": "/migrate"
+    },
+    {
+      "id": "glossary-55",
+      "source": "glossary",
+      "title": "PQXDH",
+      "content": "Term: PQXDH (PQXDH)\nDefinition: Post-Quantum Extended Diffie-Hellman, the post-quantum key agreement protocol used by Signal (and optionally WhatsApp). Combines X25519 with ML-KEM-1024 to establish session keys.\nTechnical Note: Deployed by Signal in September 2023. The shared secret is derived from both the classical X25519 exchange and an ML-KEM-1024 encapsulation, ensuring security if either algorithm is broken.\nCategory: protocol | Complexity: intermediate",
       "category": "protocol",
       "metadata": { "acronym": "PQXDH", "complexity": "intermediate", "relatedModule": "/migrate" },
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-54",
+      "id": "glossary-56",
       "source": "glossary",
       "title": "FIDO2 / WebAuthn",
       "content": "Term: FIDO2 / WebAuthn\nDefinition: Web authentication standards enabling passwordless login using public-key cryptography. Currently relies on quantum-vulnerable ECDSA/EdDSA.\nCategory: protocol | Complexity: intermediate",
@@ -588,7 +607,20 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-55",
+      "id": "glossary-57",
+      "source": "glossary",
+      "title": "RFC 8446",
+      "content": "Term: RFC 8446\nDefinition: The IETF standard defining TLS version 1.3, published August 2018. TLS 1.3 removed legacy cipher suites, mandated forward secrecy, and reduced the handshake to 1 round-trip.\nTechnical Note: TLS 1.3 is the foundation for PQC key exchange integration. RFC 8446 defines the \"key_share\" extension that hybrid PQC groups (e.g., X25519MLKEM768) plug into without protocol changes.\nCategory: standard | Complexity: intermediate",
+      "category": "standard",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/tls-basics"
+      },
+      "deepLink": "/learn/tls-basics"
+    },
+    {
+      "id": "glossary-58",
       "source": "glossary",
       "title": "FIPS 203",
       "content": "Term: FIPS 203\nDefinition: The NIST standard defining ML-KEM (Module-Lattice-Based Key Encapsulation Mechanism), published August 2024.\nCategory: standard | Complexity: intermediate",
@@ -597,7 +629,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-56",
+      "id": "glossary-59",
       "source": "glossary",
       "title": "FIPS 204",
       "content": "Term: FIPS 204\nDefinition: The NIST standard defining ML-DSA (Module-Lattice-Based Digital Signature Algorithm), published August 2024.\nCategory: standard | Complexity: intermediate",
@@ -606,7 +638,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-57",
+      "id": "glossary-60",
       "source": "glossary",
       "title": "FIPS 205",
       "content": "Term: FIPS 205\nDefinition: The NIST standard defining SLH-DSA (Stateless Hash-Based Digital Signature Algorithm), published August 2024.\nCategory: standard | Complexity: intermediate",
@@ -615,7 +647,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-58",
+      "id": "glossary-61",
       "source": "glossary",
       "title": "FIPS 140-3",
       "content": "Term: FIPS 140-3\nDefinition: The U.S. government standard for validating cryptographic modules. Hardware and software must pass FIPS 140-3 testing to be used in federal systems.\nCategory: standard | Complexity: intermediate",
@@ -624,7 +656,7 @@
       "deepLink": "/compliance"
     },
     {
-      "id": "glossary-59",
+      "id": "glossary-62",
       "source": "glossary",
       "title": "CNSA 2.0",
       "content": "Term: CNSA 2.0\nDefinition: NSA's Commercial National Security Algorithm Suite 2.0, mandating PQC adoption timelines for national security systems.\nCategory: standard | Complexity: intermediate",
@@ -633,7 +665,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-60",
+      "id": "glossary-63",
       "source": "glossary",
       "title": "Common Criteria",
       "content": "Term: Common Criteria\nDefinition: An international standard (ISO/IEC 15408) for evaluating the security properties of IT products, used globally for government procurement.\nCategory: standard | Complexity: intermediate",
@@ -642,7 +674,7 @@
       "deepLink": "/compliance"
     },
     {
-      "id": "glossary-61",
+      "id": "glossary-64",
       "source": "glossary",
       "title": "eIDAS 2.0",
       "content": "Term: eIDAS 2.0\nDefinition: The EU regulation establishing a framework for electronic identification and trust services, including the European Digital Identity Wallet.\nCategory: standard | Complexity: intermediate",
@@ -655,7 +687,16 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-62",
+      "id": "glossary-65",
+      "source": "glossary",
+      "title": "NIS2 Directive",
+      "content": "Term: NIS2 Directive\nDefinition: The EU Network and Information Security Directive 2 (Directive 2022/2555), requiring operators of essential services and digital service providers to implement strong cryptographic controls. Transposed into national law across EU member states by October 2024.\nTechnical Note: NIS2 mandates risk-based security measures including encryption and cryptographic key management. ENISA guidance links NIS2 obligations directly to PQC migration timelines, making it a key compliance driver for EU organisations.\nCategory: standard | Complexity: intermediate",
+      "category": "standard",
+      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/compliance" },
+      "deepLink": "/compliance"
+    },
+    {
+      "id": "glossary-66",
       "source": "glossary",
       "title": "ACVP",
       "content": "Term: ACVP (ACVP)\nDefinition: Automated Cryptographic Validation Protocol, used by NIST to test that cryptographic implementations produce correct results.\nCategory: standard | Complexity: advanced",
@@ -664,7 +705,7 @@
       "deepLink": "/compliance"
     },
     {
-      "id": "glossary-63",
+      "id": "glossary-67",
       "source": "glossary",
       "title": "PKCS#12",
       "content": "Term: PKCS#12\nDefinition: A file format for storing a private key together with its X.509 certificate, commonly used for importing/exporting credentials.\nCategory: standard | Complexity: intermediate",
@@ -673,16 +714,16 @@
       "deepLink": "/openssl"
     },
     {
-      "id": "glossary-64",
+      "id": "glossary-68",
       "source": "glossary",
       "title": "FIPS 206",
-      "content": "Term: FIPS 206\nDefinition: The draft NIST standard defining FN-DSA (FFT over NTRU-Lattice-Based Digital Signature Algorithm, formerly Falcon). Expected finalization in 2025-2026.\nCategory: standard | Complexity: intermediate",
+      "content": "Term: FIPS 206\nDefinition: The NIST standard defining FN-DSA (FFT over NTRU-Lattice-Based Digital Signature Algorithm, formerly Falcon), published October 2024.\nCategory: standard | Complexity: intermediate",
       "category": "standard",
       "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
       "deepLink": "/library"
     },
     {
-      "id": "glossary-65",
+      "id": "glossary-69",
       "source": "glossary",
       "title": "FIPS 186-5",
       "content": "Term: FIPS 186-5\nDefinition: The NIST Digital Signature Standard defining RSA, ECDSA, and EdDSA. Being deprecated in favor of PQC signature algorithms per NIST IR 8547.\nCategory: standard | Complexity: intermediate",
@@ -691,7 +732,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-66",
+      "id": "glossary-70",
       "source": "glossary",
       "title": "NIST IR 8547",
       "content": "Term: NIST IR 8547\nDefinition: NIST Internal Report establishing the PQC transition timeline: deprecation of classical asymmetric crypto by 2030, disallowment by 2035.\nTechnical Note: Covers RSA, ECDSA, ECDH, EdDSA, DH, and DSA. The most authoritative U.S. government PQC migration deadline document.\nCategory: standard | Complexity: intermediate",
@@ -704,7 +745,20 @@
       "deepLink": "/learn/compliance-strategy"
     },
     {
-      "id": "glossary-67",
+      "id": "glossary-71",
+      "source": "glossary",
+      "title": "NIST SP 800-131A",
+      "content": "Term: NIST SP 800-131A\nDefinition: NIST Special Publication providing guidance on transitioning the use of cryptographic algorithms and key lengths. Defines which algorithms are approved, deprecated, or disallowed for federal use.\nTechnical Note: Revision 3 (2019) deprecated SHA-1 and 2TDEA. A future revision is expected to align with NIST IR 8547 timelines, formally disallowing RSA, ECDSA, and DH after 2035.\nCategory: standard | Complexity: intermediate",
+      "category": "standard",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/compliance-strategy"
+      },
+      "deepLink": "/learn/compliance-strategy"
+    },
+    {
+      "id": "glossary-72",
       "source": "glossary",
       "title": "NIST SP 800-208",
       "content": "Term: NIST SP 800-208\nDefinition: NIST recommendation for stateful hash-based signature schemes LMS and XMSS, used for firmware signing and secure boot.\nCategory: standard | Complexity: advanced",
@@ -713,7 +767,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-68",
+      "id": "glossary-73",
       "source": "glossary",
       "title": "RFC 9629",
       "content": "Term: RFC 9629\nDefinition: IETF standard defining how to use Key Encapsulation Mechanisms (KEMs) in the Cryptographic Message Syntax (CMS) for encrypted messaging.\nCategory: standard | Complexity: advanced",
@@ -722,7 +776,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-69",
+      "id": "glossary-74",
       "source": "glossary",
       "title": "PCI DSS",
       "content": "Term: PCI DSS (PCI DSS)\nDefinition: Payment Card Industry Data Security Standard, requiring strong cryptography for cardholder data protection. Quantum threatens its RSA/ECC foundations.\nCategory: standard | Complexity: intermediate",
@@ -735,7 +789,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-70",
+      "id": "glossary-75",
       "source": "glossary",
       "title": "HIPAA",
       "content": "Term: HIPAA (HIPAA)\nDefinition: Health Insurance Portability and Accountability Act, the U.S. law requiring encryption of protected health information. Patient data faces HNDL risk.\nCategory: standard | Complexity: intermediate",
@@ -744,7 +798,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-71",
+      "id": "glossary-76",
       "source": "glossary",
       "title": "CMVP",
       "content": "Term: CMVP (CMVP)\nDefinition: Cryptographic Module Validation Program, the NIST/CSE program that tests and certifies cryptographic modules for government use under FIPS 140-3.\nCategory: standard | Complexity: advanced",
@@ -753,7 +807,7 @@
       "deepLink": "/compliance"
     },
     {
-      "id": "glossary-72",
+      "id": "glossary-77",
       "source": "glossary",
       "title": "IEC 62443",
       "content": "Term: IEC 62443\nDefinition: International standard series for industrial automation and control systems (IACS) cybersecurity. Critical for IoT and energy sector PQC migration.\nCategory: standard | Complexity: advanced",
@@ -762,7 +816,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-73",
+      "id": "glossary-78",
       "source": "glossary",
       "title": "NIST",
       "content": "Term: NIST (NIST)\nDefinition: National Institute of Standards and Technology, the U.S. agency leading PQC standardization through its Post-Quantum Cryptography project.\nCategory: organization | Complexity: beginner",
@@ -771,7 +825,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-74",
+      "id": "glossary-79",
       "source": "glossary",
       "title": "ETSI",
       "content": "Term: ETSI (ETSI)\nDefinition: European Telecommunications Standards Institute, producing PQC migration guides and standards for European industry.\nCategory: organization | Complexity: intermediate",
@@ -780,7 +834,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-75",
+      "id": "glossary-80",
       "source": "glossary",
       "title": "IETF",
       "content": "Term: IETF (IETF)\nDefinition: Internet Engineering Task Force, developing PQC integration into internet protocols like TLS, SSH, and IKEv2.\nCategory: organization | Complexity: intermediate",
@@ -789,7 +843,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-76",
+      "id": "glossary-81",
       "source": "glossary",
       "title": "ANSSI",
       "content": "Term: ANSSI (ANSSI)\nDefinition: French National Cybersecurity Agency, publishing PQC recommendations and cryptographic certifications for France and Europe.\nCategory: organization | Complexity: intermediate",
@@ -802,7 +856,7 @@
       "deepLink": "/compliance"
     },
     {
-      "id": "glossary-77",
+      "id": "glossary-82",
       "source": "glossary",
       "title": "BSI",
       "content": "Term: BSI (BSI)\nDefinition: German Federal Office for Information Security, providing PQC migration guidelines and recommendations for German government systems.\nCategory: organization | Complexity: intermediate",
@@ -811,7 +865,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-78",
+      "id": "glossary-83",
       "source": "glossary",
       "title": "3GPP",
       "content": "Term: 3GPP (3GPP)\nDefinition: The partnership project that develops specifications for mobile telecommunications including 5G security architecture.\nCategory: organization | Complexity: intermediate",
@@ -824,7 +878,7 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-79",
+      "id": "glossary-84",
       "source": "glossary",
       "title": "NSA",
       "content": "Term: NSA (NSA)\nDefinition: National Security Agency, the U.S. intelligence agency that publishes CNSA 2.0 and mandates PQC adoption timelines for national security systems.\nCategory: organization | Complexity: beginner",
@@ -833,7 +887,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-80",
+      "id": "glossary-85",
       "source": "glossary",
       "title": "CISA",
       "content": "Term: CISA (CISA)\nDefinition: Cybersecurity and Infrastructure Security Agency, the U.S. agency coordinating PQC migration for critical infrastructure and publishing product category lists.\nCategory: organization | Complexity: beginner",
@@ -842,7 +896,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-81",
+      "id": "glossary-86",
       "source": "glossary",
       "title": "ENISA",
       "content": "Term: ENISA (ENISA)\nDefinition: European Union Agency for Cybersecurity, publishing PQC guidelines and coordinating quantum-safe transitions across EU member states.\nCategory: organization | Complexity: intermediate",
@@ -851,7 +905,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-82",
+      "id": "glossary-87",
       "source": "glossary",
       "title": "GSMA",
       "content": "Term: GSMA (GSMA)\nDefinition: Global System for Mobile Communications Association, leading the Post-Quantum Telco Network Taskforce for PQC integration in mobile networks.\nCategory: organization | Complexity: intermediate",
@@ -860,7 +914,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-83",
+      "id": "glossary-88",
       "source": "glossary",
       "title": "CA/Browser Forum",
       "content": "Term: CA/Browser Forum\nDefinition: An industry body of Certificate Authorities and browser vendors that governs Web PKI certificate standards, including PQC certificate adoption rules.\nCategory: organization | Complexity: intermediate",
@@ -869,7 +923,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-84",
+      "id": "glossary-89",
       "source": "glossary",
       "title": "NCSC",
       "content": "Term: NCSC (NCSC)\nDefinition: UK National Cyber Security Centre, publishing PQC migration guidance and a 2035 deadline for full transition to quantum-safe cryptography.\nCategory: organization | Complexity: intermediate",
@@ -878,7 +932,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-85",
+      "id": "glossary-90",
       "source": "glossary",
       "title": "OSCCA",
       "content": "Term: OSCCA (OSCCA)\nDefinition: China's Office of State Commercial Cryptography Administration, managing China's independent cryptographic standards including SM2 and PQC competitions.\nCategory: organization | Complexity: advanced",
@@ -887,7 +941,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-86",
+      "id": "glossary-91",
       "source": "glossary",
       "title": "ISO/IEC JTC 1",
       "content": "Term: ISO/IEC JTC 1\nDefinition: Joint Technical Committee 1 of ISO and IEC, the international standards body for information technology including cryptographic standards (SC 27).\nCategory: organization | Complexity: advanced",
@@ -896,7 +950,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-87",
+      "id": "glossary-92",
       "source": "glossary",
       "title": "Lattice-Based Cryptography",
       "content": "Term: Lattice-Based Cryptography\nDefinition: A family of PQC algorithms based on the hardness of problems involving mathematical lattices. The basis for ML-KEM and ML-DSA.\nTechnical Note: Key problems: Learning With Errors (LWE), Module-LWE, Ring-LWE. Offer good performance and key sizes.\nCategory: concept | Complexity: intermediate",
@@ -905,7 +959,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-88",
+      "id": "glossary-93",
       "source": "glossary",
       "title": "Hash-Based Signatures",
       "content": "Term: Hash-Based Signatures\nDefinition: Digital signature schemes whose security relies only on the properties of hash functions. Very conservative security but can be stateful.\nTechnical Note: Stateful: LMS/XMSS (must track which keys are used). Stateless: SLH-DSA/SPHINCS+ (larger signatures).\nCategory: concept | Complexity: intermediate",
@@ -918,7 +972,7 @@
       "deepLink": "/learn/stateful-signatures"
     },
     {
-      "id": "glossary-89",
+      "id": "glossary-94",
       "source": "glossary",
       "title": "Code-Based Cryptography",
       "content": "Term: Code-Based Cryptography\nDefinition: PQC algorithms based on the hardness of decoding random linear error-correcting codes. Used by Classic McEliece and HQC.\nCategory: concept | Complexity: advanced",
@@ -927,7 +981,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-90",
+      "id": "glossary-95",
       "source": "glossary",
       "title": "Security Level",
       "content": "Term: Security Level\nDefinition: NIST defines 5 security levels for PQC algorithms. Level 1 ≈ AES-128, Level 3 ≈ AES-192, Level 5 ≈ AES-256.\nTechnical Note: Level 1: comparable to breaking AES-128. Level 5: comparable to breaking AES-256. Most deployments use Level 3.\nCategory: concept | Complexity: intermediate",
@@ -936,7 +990,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-91",
+      "id": "glossary-96",
       "source": "glossary",
       "title": "Key Exchange",
       "content": "Term: Key Exchange\nDefinition: The process by which two parties establish a shared secret key over an insecure channel. In PQC, replaced by Key Encapsulation Mechanisms.\nCategory: concept | Complexity: beginner",
@@ -945,7 +999,7 @@
       "deepLink": "/learn/tls-basics"
     },
     {
-      "id": "glossary-92",
+      "id": "glossary-97",
       "source": "glossary",
       "title": "Quantum Advantage",
       "content": "Term: Quantum Advantage\nDefinition: The point at which a quantum computer can solve a specific problem faster than any classical computer. Also called \"quantum supremacy.\"\nCategory: concept | Complexity: beginner",
@@ -958,7 +1012,7 @@
       "deepLink": "/learn/quantum-threats"
     },
     {
-      "id": "glossary-93",
+      "id": "glossary-98",
       "source": "glossary",
       "title": "WebAssembly",
       "content": "Term: WebAssembly (WASM)\nDefinition: A binary instruction format that enables near-native performance in web browsers. Used by PQC Today to run OpenSSL and liboqs in-browser.\nCategory: concept | Complexity: intermediate",
@@ -967,7 +1021,7 @@
       "deepLink": "/openssl"
     },
     {
-      "id": "glossary-94",
+      "id": "glossary-99",
       "source": "glossary",
       "title": "HSM",
       "content": "Term: HSM (HSM)\nDefinition: Hardware Security Module, a dedicated physical device for managing and protecting cryptographic keys. Must be updated for PQC support.\nCategory: concept | Complexity: intermediate",
@@ -976,7 +1030,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-95",
+      "id": "glossary-100",
       "source": "glossary",
       "title": "Entanglement",
       "content": "Term: Entanglement\nDefinition: A quantum phenomenon where two qubits become correlated so measuring one instantly determines the state of the other, regardless of distance.\nCategory: concept | Complexity: beginner",
@@ -985,7 +1039,7 @@
       "deepLink": "/learn/pqc-101"
     },
     {
-      "id": "glossary-96",
+      "id": "glossary-101",
       "source": "glossary",
       "title": "HD Wallet",
       "content": "Term: HD Wallet (HD)\nDefinition: Hierarchical Deterministic Wallet, a cryptocurrency wallet that generates all key pairs from a single seed phrase using BIP32/39/44 standards.\nCategory: concept | Complexity: intermediate",
@@ -998,7 +1052,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-97",
+      "id": "glossary-102",
       "source": "glossary",
       "title": "BIP39",
       "content": "Term: BIP39\nDefinition: Bitcoin Improvement Proposal 39 defines mnemonic seed phrases (12 or 24 words) used to back up and restore cryptocurrency wallets.\nCategory: concept | Complexity: intermediate",
@@ -1011,7 +1065,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-98",
+      "id": "glossary-103",
       "source": "glossary",
       "title": "EUDI Wallet",
       "content": "Term: EUDI Wallet\nDefinition: European Union Digital Identity Wallet, a mobile wallet for storing and presenting digital credentials under the eIDAS 2.0 framework.\nCategory: concept | Complexity: intermediate",
@@ -1024,7 +1078,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-99",
+      "id": "glossary-104",
       "source": "glossary",
       "title": "Qualified Electronic Signature",
       "content": "Term: Qualified Electronic Signature (QES)\nDefinition: A digital signature with the legal equivalence of a handwritten signature under EU law, requiring a qualified certificate and a secure creation device.\nCategory: concept | Complexity: advanced",
@@ -1037,7 +1091,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-100",
+      "id": "glossary-105",
       "source": "glossary",
       "title": "MILENAGE",
       "content": "Term: MILENAGE\nDefinition: The set of cryptographic functions (f1–f5) used in 5G authentication. Based on AES and generates authentication vectors.\nCategory: concept | Complexity: advanced",
@@ -1050,7 +1104,7 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-101",
+      "id": "glossary-106",
       "source": "glossary",
       "title": "Encapsulation / Decapsulation",
       "content": "Term: Encapsulation / Decapsulation\nDefinition: The two operations of a Key Encapsulation Mechanism. Encapsulation creates a shared secret using a public key; decapsulation recovers it using the private key.\nTechnical Note: Unlike Diffie-Hellman key exchange, KEMs are asymmetric: the sender encapsulates, the receiver decapsulates. This is the core operation of ML-KEM.\nCategory: concept | Complexity: intermediate",
@@ -1059,7 +1113,7 @@
       "deepLink": "/playground"
     },
     {
-      "id": "glossary-102",
+      "id": "glossary-107",
       "source": "glossary",
       "title": "Learning With Errors",
       "content": "Term: Learning With Errors (LWE)\nDefinition: A mathematical problem believed to be hard for quantum computers, forming the security foundation of ML-KEM, ML-DSA, and FrodoKEM.\nTechnical Note: Variants include Ring-LWE (structured, faster) and Module-LWE (used in ML-KEM/ML-DSA, balancing security and performance).\nCategory: concept | Complexity: advanced",
@@ -1068,7 +1122,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-103",
+      "id": "glossary-108",
       "source": "glossary",
       "title": "NTRU Lattice",
       "content": "Term: NTRU Lattice (NTRU)\nDefinition: A lattice-based cryptographic family using polynomial rings, providing the mathematical basis for FN-DSA (Falcon). One of the earliest PQC proposals (1996).\nCategory: concept | Complexity: advanced",
@@ -1077,7 +1131,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-104",
+      "id": "glossary-109",
       "source": "glossary",
       "title": "Hybrid Key Exchange",
       "content": "Term: Hybrid Key Exchange\nDefinition: Combining a classical key exchange (e.g., X25519) with a PQC KEM (e.g., ML-KEM-768) in a single handshake, ensuring security even if one algorithm is broken.\nTechnical Note: Deployed today as X25519MLKEM768 in Chrome, Firefox, and major cloud providers. IETF draft-ietf-tls-ecdhe-mlkem defines the TLS 1.3 integration.\nCategory: concept | Complexity: intermediate",
@@ -1086,7 +1140,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-105",
+      "id": "glossary-110",
       "source": "glossary",
       "title": "Composite Certificate",
       "content": "Term: Composite Certificate\nDefinition: An X.509 certificate containing both classical and PQC keys/signatures, enabling backward compatibility while providing post-quantum security.\nTechnical Note: Defined in IETF drafts: composite ML-KEM (draft-ietf-lamps-pq-composite-kem) and composite ML-DSA (draft-ietf-lamps-pq-composite-sigs).\nCategory: concept | Complexity: advanced",
@@ -1099,7 +1153,7 @@
       "deepLink": "/learn/hybrid-crypto"
     },
     {
-      "id": "glossary-106",
+      "id": "glossary-111",
       "source": "glossary",
       "title": "Hybrid Certificate",
       "content": "Term: Hybrid Certificate\nDefinition: An X.509 certificate using both classical and PQC algorithms during the transition period, maintaining interoperability with legacy systems.\nCategory: concept | Complexity: intermediate",
@@ -1108,7 +1162,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-107",
+      "id": "glossary-112",
       "source": "glossary",
       "title": "SCADA",
       "content": "Term: SCADA (SCADA)\nDefinition: Supervisory Control and Data Acquisition, industrial control systems used in power grids, water treatment, and manufacturing. Quantum-vulnerable via legacy crypto.\nCategory: concept | Complexity: intermediate",
@@ -1121,7 +1175,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-108",
+      "id": "glossary-113",
       "source": "glossary",
       "title": "V2X Communication",
       "content": "Term: V2X Communication (V2X)\nDefinition: Vehicle-to-Everything communication, enabling cars to exchange safety data with infrastructure and other vehicles. Uses ECDSA P-256 certificates that are quantum-vulnerable.\nCategory: concept | Complexity: advanced",
@@ -1130,7 +1184,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-109",
+      "id": "glossary-114",
       "source": "glossary",
       "title": "CBDC",
       "content": "Term: CBDC (CBDC)\nDefinition: Central Bank Digital Currency, a digital form of fiat money issued by central banks. Requires quantum-safe cryptography for long-term trust.\nCategory: concept | Complexity: advanced",
@@ -1139,7 +1193,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-110",
+      "id": "glossary-115",
       "source": "glossary",
       "title": "CBOM",
       "content": "Term: CBOM (CBOM)\nDefinition: Cryptographic Bill of Materials, a comprehensive inventory of all cryptographic algorithms, keys, and certificates used in an organization or product.\nTechnical Note: Essential first step in PQC migration. Enables organizations to identify quantum-vulnerable crypto and prioritize replacements.\nCategory: concept | Complexity: intermediate",
@@ -1148,7 +1202,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-111",
+      "id": "glossary-116",
       "source": "glossary",
       "title": "DRM",
       "content": "Term: DRM (DRM)\nDefinition: Digital Rights Management, technology protecting copyrighted content through encryption. Systems like Widevine, PlayReady, and FairPlay face quantum threats to their key hierarchies.\nCategory: concept | Complexity: beginner",
@@ -1157,7 +1211,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-112",
+      "id": "glossary-117",
       "source": "glossary",
       "title": "KMS",
       "content": "Term: KMS (KMS)\nDefinition: Key Management System, software for generating, storing, rotating, and auditing cryptographic keys. Must be upgraded to support PQC key sizes and algorithms.\nCategory: concept | Complexity: intermediate",
@@ -1166,7 +1220,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-113",
+      "id": "glossary-118",
       "source": "glossary",
       "title": "TPM",
       "content": "Term: TPM (TPM)\nDefinition: Trusted Platform Module, a hardware chip providing secure key storage, platform integrity measurement, and cryptographic operations. PQC support being added via TCG specifications.\nCategory: concept | Complexity: intermediate",
@@ -1175,7 +1229,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-114",
+      "id": "glossary-119",
       "source": "glossary",
       "title": "Code Signing",
       "content": "Term: Code Signing\nDefinition: Digitally signing software executables and scripts to verify their authenticity and integrity. PQC migration replaces RSA/ECDSA signatures with ML-DSA or SLH-DSA.\nCategory: concept | Complexity: intermediate",
@@ -1188,7 +1242,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-115",
+      "id": "glossary-120",
       "source": "glossary",
       "title": "Secure Boot",
       "content": "Term: Secure Boot\nDefinition: A hardware-enforced chain of trust that verifies each component in the boot process is signed by a trusted authority. Requires PQC-capable signature verification.\nCategory: concept | Complexity: intermediate",
@@ -1201,7 +1255,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-116",
+      "id": "glossary-121",
       "source": "glossary",
       "title": "UEFI",
       "content": "Term: UEFI (UEFI)\nDefinition: Unified Extensible Firmware Interface — the modern firmware interface between hardware and OS. UEFI Secure Boot enforces signature verification on bootloaders and drivers before execution.\nCategory: concept | Complexity: intermediate",
@@ -1214,7 +1268,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-117",
+      "id": "glossary-122",
       "source": "glossary",
       "title": "QKD",
       "content": "Term: QKD (QKD)\nDefinition: Quantum Key Distribution, a method of distributing encryption keys using quantum physics rather than mathematical hardness. Distinct from PQC and requires specialized hardware.\nTechnical Note: QKD (e.g., BB84 protocol) uses photons to detect eavesdropping. Unlike PQC, it requires dedicated fiber or satellite links and cannot run on standard networks.\nCategory: concept | Complexity: advanced",
@@ -1223,7 +1277,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-118",
+      "id": "glossary-123",
       "source": "glossary",
       "title": "BB84",
       "content": "Term: BB84\nDefinition: The first quantum key distribution protocol, proposed by Bennett and Brassard in 1984. Uses four quantum states in two conjugate bases to establish a shared secret key.\nTechnical Note: Alice encodes random bits in rectilinear (+) or diagonal (x) bases. Bob measures in a randomly chosen basis. After basis reconciliation over a classical channel, only matching-basis bits form the sifted key.\nCategory: protocol | Complexity: advanced",
@@ -1232,7 +1286,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-119",
+      "id": "glossary-124",
       "source": "glossary",
       "title": "QBER",
       "content": "Term: QBER (QBER)\nDefinition: Quantum Bit Error Rate, the fraction of sifted key bits where Alice and Bob disagree despite using the same measurement basis. A QBER above ~11% indicates eavesdropping.\nTechnical Note: In BB84, an eavesdropper measuring in the wrong basis introduces a 25% error rate on intercepted qubits. The theoretical QBER threshold for secure key generation is approximately 11%.\nCategory: concept | Complexity: advanced",
@@ -1241,7 +1295,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-120",
+      "id": "glossary-125",
       "source": "glossary",
       "title": "Sifted Key",
       "content": "Term: Sifted Key\nDefinition: The subset of raw key bits where both parties used the same measurement basis during QKD. Typically about half the transmitted bits survive sifting.\nCategory: concept | Complexity: advanced",
@@ -1250,7 +1304,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-121",
+      "id": "glossary-126",
       "source": "glossary",
       "title": "Privacy Amplification",
       "content": "Term: Privacy Amplification\nDefinition: A post-processing step in QKD that uses universal hash functions to distill a shorter, provably secret key from a partially compromised key by removing any information an eavesdropper may have obtained.\nTechnical Note: The output key length depends on the estimated information leakage. Uses hash functions (e.g., SHA-256) to compress the corrected key, reducing Eve's knowledge to negligible levels.\nCategory: concept | Complexity: advanced",
@@ -1259,7 +1313,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-122",
+      "id": "glossary-127",
       "source": "glossary",
       "title": "No-Cloning Theorem",
       "content": "Term: No-Cloning Theorem\nDefinition: A fundamental quantum mechanics result proving it is impossible to create an identical copy of an unknown quantum state, providing the theoretical basis for QKD security.\nCategory: concept | Complexity: intermediate",
@@ -1268,7 +1322,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-123",
+      "id": "glossary-128",
       "source": "glossary",
       "title": "Trusted Node",
       "content": "Term: Trusted Node\nDefinition: A physically secured relay point in a QKD network where keys are decrypted and re-encrypted to extend range beyond single-link limits (typically ~100 km for fiber).\nTechnical Note: Trusted nodes are a practical necessity but a security concern: compromising any node reveals all keys routed through it. This is a major architectural limitation of current QKD networks.\nCategory: concept | Complexity: advanced",
@@ -1277,7 +1331,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-124",
+      "id": "glossary-129",
       "source": "glossary",
       "title": "EuroQCI",
       "content": "Term: EuroQCI (EuroQCI)\nDefinition: The European Quantum Communication Infrastructure initiative, a pan-EU program to deploy a quantum communication network across all 27 member states combining terrestrial fiber and satellite links.\nCategory: organization | Complexity: intermediate",
@@ -1290,7 +1344,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-125",
+      "id": "glossary-130",
       "source": "glossary",
       "title": "Cryptographic Inventory",
       "content": "Term: Cryptographic Inventory\nDefinition: A comprehensive catalog of all cryptographic algorithms, protocols, keys, and certificates in an organization, essential for planning PQC migration.\nCategory: concept | Complexity: beginner",
@@ -1303,7 +1357,7 @@
       "deepLink": "/learn/migration-program"
     },
     {
-      "id": "glossary-126",
+      "id": "glossary-131",
       "source": "glossary",
       "title": "OTA Updates",
       "content": "Term: OTA Updates (OTA)\nDefinition: Over-the-Air updates, the process of remotely delivering firmware or software to devices. Signature verification must be quantum-safe to prevent forgery.\nCategory: concept | Complexity: beginner",
@@ -1312,7 +1366,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-127",
+      "id": "glossary-132",
       "source": "glossary",
       "title": "EHR",
       "content": "Term: EHR (EHR)\nDefinition: Electronic Health Records, digital patient medical records that require long-term confidentiality. Prime targets for Harvest Now, Decrypt Later attacks.\nCategory: concept | Complexity: beginner",
@@ -1321,7 +1375,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-128",
+      "id": "glossary-133",
       "source": "glossary",
       "title": "SBOM",
       "content": "Term: SBOM (SBOM)\nDefinition: Software Bill of Materials, a formal inventory of all components in a software product. Increasingly required alongside CBOM for security compliance.\nCategory: concept | Complexity: intermediate",
@@ -1334,7 +1388,7 @@
       "deepLink": "/learn/vendor-risk"
     },
     {
-      "id": "glossary-129",
+      "id": "glossary-134",
       "source": "glossary",
       "title": "ADS-B",
       "content": "Term: ADS-B (ADS-B)\nDefinition: Automatic Dependent Surveillance-Broadcast, the primary aircraft surveillance technology. Currently lacks cryptographic authentication, making it a quantum-era concern.\nCategory: concept | Complexity: advanced",
@@ -1343,7 +1397,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-130",
+      "id": "glossary-135",
       "source": "glossary",
       "title": "TEE",
       "content": "Term: TEE (TEE)\nDefinition: Trusted Execution Environment, an isolated processing environment on a processor that protects code and data. Must be updated for PQC algorithm support.\nCategory: concept | Complexity: advanced",
@@ -1352,7 +1406,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-131",
+      "id": "glossary-136",
       "source": "glossary",
       "title": "DUKPT",
       "content": "Term: DUKPT (DUKPT)\nDefinition: Derived Unique Key Per Transaction, a key management scheme for payment terminals that derives a unique encryption key for each transaction. Currently uses Triple-DES.\nCategory: concept | Complexity: advanced",
@@ -1361,7 +1415,7 @@
       "deepLink": "/threats"
     },
     {
-      "id": "glossary-132",
+      "id": "glossary-137",
       "source": "glossary",
       "title": "Keccak-256",
       "content": "Term: Keccak-256\nDefinition: The hash function used by Ethereum, based on the SHA-3 algorithm family. Produces 256-bit digests.\nCategory: algorithm | Complexity: intermediate",
@@ -1374,7 +1428,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-133",
+      "id": "glossary-138",
       "source": "glossary",
       "title": "secp256k1",
       "content": "Term: secp256k1\nDefinition: The elliptic curve used by Bitcoin for digital signatures. Quantum-vulnerable and a key concern for cryptocurrency PQC migration.\nCategory: algorithm | Complexity: intermediate",
@@ -1387,7 +1441,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-134",
+      "id": "glossary-139",
       "source": "glossary",
       "title": "Kyber",
       "content": "Term: Kyber\nDefinition: The original name (CRYSTALS-Kyber) for the lattice-based KEM standardized by NIST as ML-KEM in FIPS 203. Often still referenced in older documents and libraries.\nTechnical Note: Kyber was selected from the NIST PQC competition Round 3. It was renamed to ML-KEM for the final standard.\nCategory: algorithm | Complexity: beginner",
@@ -1396,7 +1450,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-135",
+      "id": "glossary-140",
       "source": "glossary",
       "title": "Dilithium",
       "content": "Term: Dilithium\nDefinition: The original name (CRYSTALS-Dilithium) for the lattice-based signature scheme standardized by NIST as ML-DSA in FIPS 204.\nTechnical Note: Dilithium was selected from the NIST PQC competition Round 3. It was renamed to ML-DSA for the final standard.\nCategory: algorithm | Complexity: beginner",
@@ -1405,7 +1459,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-136",
+      "id": "glossary-141",
       "source": "glossary",
       "title": "Falcon",
       "content": "Term: Falcon\nDefinition: The original name for the NTRU-lattice-based signature scheme standardized by NIST as FN-DSA in the draft FIPS 206. Known for compact signatures.\nTechnical Note: Falcon uses fast Fourier transforms over NTRU lattices. Renamed to FN-DSA for the final standard.\nCategory: algorithm | Complexity: intermediate",
@@ -1414,7 +1468,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-137",
+      "id": "glossary-142",
       "source": "glossary",
       "title": "SPHINCS+",
       "content": "Term: SPHINCS+\nDefinition: The original name for the stateless hash-based signature scheme standardized by NIST as SLH-DSA in FIPS 205. Very conservative security assumptions.\nTechnical Note: SPHINCS+ relies only on the security of its underlying hash function, making it a strong fallback if lattice assumptions are broken.\nCategory: algorithm | Complexity: intermediate",
@@ -1423,7 +1477,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-138",
+      "id": "glossary-143",
       "source": "glossary",
       "title": "BIKE",
       "content": "Term: BIKE (BIKE)\nDefinition: Bit Flipping Key Encapsulation, a code-based KEM that was a NIST PQC Round 4 candidate. Uses quasi-cyclic moderate-density parity-check codes.\nCategory: algorithm | Complexity: advanced",
@@ -1432,7 +1486,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-139",
+      "id": "glossary-144",
       "source": "glossary",
       "title": "SHA-3",
       "content": "Term: SHA-3\nDefinition: The third generation Secure Hash Algorithm standard (FIPS 202), based on the Keccak sponge construction. Includes SHA3-256, SHA3-512, and SHAKE variants.\nTechnical Note: SHA-3 provides an independent alternative to SHA-2 with different mathematical foundations. Used in SLH-DSA parameter sets.\nCategory: algorithm | Complexity: intermediate",
@@ -1441,15 +1495,16 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-140",
+      "id": "glossary-145",
       "source": "glossary",
       "title": "SHAKE",
       "content": "Term: SHAKE\nDefinition: Extendable-Output Functions from the SHA-3 family (SHAKE128, SHAKE256). Unlike fixed-length hashes, SHAKE can produce output of any desired length.\nTechnical Note: Used in SLH-DSA-SHAKE parameter sets and as a key derivation mechanism in several PQC algorithms.\nCategory: algorithm | Complexity: intermediate",
       "category": "algorithm",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "" }
+      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/algorithms" },
+      "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-141",
+      "id": "glossary-146",
       "source": "glossary",
       "title": "EdDSA",
       "content": "Term: EdDSA\nDefinition: Edwards-curve Digital Signature Algorithm, the family of signature schemes including Ed25519 and Ed448. Offers high performance and resistance to side-channel attacks.\nTechnical Note: EdDSA is deterministic (no random nonce), reducing implementation risks. Quantum-vulnerable via Shor's algorithm.\nCategory: algorithm | Complexity: intermediate",
@@ -1458,15 +1513,20 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-142",
+      "id": "glossary-147",
       "source": "glossary",
       "title": "ChaCha20-Poly1305",
       "content": "Term: ChaCha20-Poly1305\nDefinition: A modern authenticated encryption with associated data (AEAD) cipher combining the ChaCha20 stream cipher with the Poly1305 authenticator. Quantum-safe at current key sizes.\nTechnical Note: Widely used in TLS 1.3, WireGuard, and SSH as an alternative to AES-GCM. Efficient in software without hardware AES acceleration.\nCategory: algorithm | Complexity: intermediate",
       "category": "algorithm",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "" }
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/tls-basics"
+      },
+      "deepLink": "/learn/tls-basics"
     },
     {
-      "id": "glossary-143",
+      "id": "glossary-148",
       "source": "glossary",
       "title": "Triple-DES",
       "content": "Term: Triple-DES (3DES)\nDefinition: A legacy symmetric cipher that applies DES three times to each block. Being phased out in favor of AES due to its small 64-bit block size.\nTechnical Note: Still found in legacy payment systems (DUKPT) and some government systems. NIST deprecated 3DES after December 31, 2023.\nCategory: algorithm | Complexity: intermediate",
@@ -1479,7 +1539,7 @@
       "deepLink": "/learn/pqc-101"
     },
     {
-      "id": "glossary-144",
+      "id": "glossary-149",
       "source": "glossary",
       "title": "P-256",
       "content": "Term: P-256\nDefinition: A NIST standard elliptic curve (also called secp256r1 or prime256v1) widely used in TLS, FIDO2, and government systems. Quantum-vulnerable.\nTechnical Note: Part of the Suite B / CNSA 1.0 algorithms. Combined with ML-KEM-768 in the SecP256r1MLKEM768 hybrid key exchange.\nCategory: algorithm | Complexity: intermediate",
@@ -1488,7 +1548,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-145",
+      "id": "glossary-150",
       "source": "glossary",
       "title": "P-384",
       "content": "Term: P-384\nDefinition: A NIST standard elliptic curve (secp384r1) offering 192-bit security. Used in high-security TLS configurations and government systems. Quantum-vulnerable.\nTechnical Note: Combined with ML-KEM-1024 in the SecP384r1MLKEM1024 hybrid key exchange for NIST Level 5 security.\nCategory: algorithm | Complexity: intermediate",
@@ -1497,15 +1557,16 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-146",
+      "id": "glossary-151",
       "source": "glossary",
       "title": "Ascon",
       "content": "Term: Ascon\nDefinition: A lightweight authenticated encryption cipher selected by NIST as the standard for constrained environments (IoT, embedded devices). Very low resource requirements.\nCategory: algorithm | Complexity: advanced",
       "category": "algorithm",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "" }
+      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/learn/iot-ot-pqc" },
+      "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-147",
+      "id": "glossary-152",
       "source": "glossary",
       "title": "RIPEMD-160",
       "content": "Term: RIPEMD-160\nDefinition: A 160-bit cryptographic hash function used in Bitcoin address generation (combined with SHA-256). Quantum-safe at current output sizes.\nCategory: algorithm | Complexity: advanced",
@@ -1518,7 +1579,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-148",
+      "id": "glossary-153",
       "source": "glossary",
       "title": "SM2",
       "content": "Term: SM2\nDefinition: China's national standard elliptic curve public-key algorithm for digital signatures and key exchange, managed by OSCCA. Quantum-vulnerable.\nTechnical Note: Combined with ML-KEM-768 in the curveSM2MLKEM768 hybrid key exchange for Chinese PQC migration.\nCategory: algorithm | Complexity: advanced",
@@ -1527,7 +1588,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-149",
+      "id": "glossary-154",
       "source": "glossary",
       "title": "PBKDF2",
       "content": "Term: PBKDF2\nDefinition: Password-Based Key Derivation Function 2, used to derive cryptographic keys from passwords. Applies a pseudorandom function (typically HMAC-SHA) iteratively.\nTechnical Note: Used in BIP39 to derive seed bytes from mnemonic phrases (2048 iterations of HMAC-SHA512).\nCategory: algorithm | Complexity: intermediate",
@@ -1540,7 +1601,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-150",
+      "id": "glossary-155",
       "source": "glossary",
       "title": "QUIC",
       "content": "Term: QUIC\nDefinition: A modern transport protocol built on UDP, providing encrypted connections with lower latency than TCP+TLS. The foundation of HTTP/3.\nTechnical Note: QUIC integrates TLS 1.3 directly, so PQC migration via hybrid key exchange (X25519MLKEM768) applies to QUIC connections as well.\nCategory: protocol | Complexity: intermediate",
@@ -1549,7 +1610,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-151",
+      "id": "glossary-156",
       "source": "glossary",
       "title": "WireGuard",
       "content": "Term: WireGuard\nDefinition: A modern, high-performance VPN protocol using state-of-the-art cryptography (ChaCha20, Curve25519). PQC integration is being developed.\nTechnical Note: PQC migration involves adding ML-KEM hybrid key exchange to the Noise protocol framework used by WireGuard.\nCategory: protocol | Complexity: intermediate",
@@ -1558,7 +1619,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-152",
+      "id": "glossary-157",
       "source": "glossary",
       "title": "DTLS",
       "content": "Term: DTLS (DTLS)\nDefinition: Datagram Transport Layer Security, the UDP equivalent of TLS. Used in IoT (CoAP), WebRTC, and VPN protocols. DTLS 1.3 adds PQC support.\nCategory: protocol | Complexity: intermediate",
@@ -1571,7 +1632,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-153",
+      "id": "glossary-158",
       "source": "glossary",
       "title": "mTLS",
       "content": "Term: mTLS\nDefinition: Mutual TLS, a TLS mode where both client and server present certificates for authentication. Common in microservices, zero-trust architectures, and API security.\nTechnical Note: PQC migration for mTLS requires updating both client and server certificates to PQC or hybrid algorithms.\nCategory: protocol | Complexity: intermediate",
@@ -1584,7 +1645,7 @@
       "deepLink": "/learn/tls-basics"
     },
     {
-      "id": "glossary-154",
+      "id": "glossary-159",
       "source": "glossary",
       "title": "OCSP",
       "content": "Term: OCSP (OCSP)\nDefinition: Online Certificate Status Protocol, used to check whether an X.509 certificate has been revoked. An alternative to Certificate Revocation Lists (CRLs).\nCategory: protocol | Complexity: intermediate",
@@ -1597,7 +1658,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-155",
+      "id": "glossary-160",
       "source": "glossary",
       "title": "DNSSEC",
       "content": "Term: DNSSEC (DNSSEC)\nDefinition: DNS Security Extensions, a suite of protocols that add cryptographic authentication to DNS responses. Uses digital signatures to prevent DNS spoofing.\nTechnical Note: PQC migration is challenging due to DNS packet size limits. Larger PQC signatures may require protocol changes or new transport mechanisms.\nCategory: protocol | Complexity: intermediate",
@@ -1610,7 +1671,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-156",
+      "id": "glossary-161",
       "source": "glossary",
       "title": "ACME",
       "content": "Term: ACME (ACME)\nDefinition: Automatic Certificate Management Environment, the protocol used by Let's Encrypt and other CAs to automate certificate issuance and renewal.\nTechnical Note: ACME will need updates to support PQC certificate types as the Web PKI transitions to quantum-safe algorithms.\nCategory: protocol | Complexity: intermediate",
@@ -1619,7 +1680,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-157",
+      "id": "glossary-162",
       "source": "glossary",
       "title": "PQ3",
       "content": "Term: PQ3\nDefinition: Apple's post-quantum secure messaging protocol for iMessage, providing Level 3 security with ML-KEM key exchange and periodic re-keying.\nTechnical Note: PQ3 uses a ratcheting design that regularly re-establishes quantum-safe shared secrets, protecting past and future messages.\nCategory: protocol | Complexity: intermediate",
@@ -1628,7 +1689,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-158",
+      "id": "glossary-163",
       "source": "glossary",
       "title": "MACsec",
       "content": "Term: MACsec (MACsec)\nDefinition: IEEE 802.1AE Media Access Control Security, providing Layer 2 encryption for Ethernet frames. Used to secure LAN traffic between switches and endpoints.\nTechnical Note: MACsec relies on AES-GCM (quantum-safe) for encryption but uses ECDH/ECDSA for key agreement, requiring PQC migration for the key exchange.\nCategory: protocol | Complexity: advanced",
@@ -1637,7 +1698,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-159",
+      "id": "glossary-164",
       "source": "glossary",
       "title": "KMIP",
       "content": "Term: KMIP (KMIP)\nDefinition: Key Management Interoperability Protocol, an OASIS standard for communication between key management systems and cryptographic clients.\nTechnical Note: KMIP 2.1+ includes support for post-quantum key types and algorithms.\nCategory: protocol | Complexity: advanced",
@@ -1646,7 +1707,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-160",
+      "id": "glossary-165",
       "source": "glossary",
       "title": "CMP",
       "content": "Term: CMP (CMP)\nDefinition: Certificate Management Protocol (RFC 4210), used for managing X.509 certificates including enrollment, updates, and revocation. PQC support via RFC 9810.\nCategory: protocol | Complexity: advanced",
@@ -1655,7 +1716,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-161",
+      "id": "glossary-166",
       "source": "glossary",
       "title": "JWT",
       "content": "Term: JWT (JWT)\nDefinition: JSON Web Token, a compact token format for securely transmitting claims between parties. Widely used in API authentication and OAuth 2.0.\nTechnical Note: JWTs typically use RSA or ECDSA signatures which are quantum-vulnerable. PQC JWT support (ML-DSA) is being standardized via JOSE working group.\nCategory: protocol | Complexity: intermediate",
@@ -1668,7 +1729,7 @@
       "deepLink": "/learn/api-security-jwt"
     },
     {
-      "id": "glossary-162",
+      "id": "glossary-167",
       "source": "glossary",
       "title": "JSON Web Signature",
       "content": "Term: JSON Web Signature (JWS)\nDefinition: A standard (RFC 7515) for digitally signing JSON payloads. JWS is the mechanism that makes JWTs tamper-proof — the signature covers the JOSE header and payload.\nTechnical Note: PQC migration requires new JWS algorithm identifiers (e.g., ML-DSA-44, ML-DSA-65) registered via the IETF JOSE PQC draft. Signature sizes grow from 64 bytes (ES256) to ~2,420 bytes (ML-DSA-44).\nCategory: protocol | Complexity: intermediate",
@@ -1681,7 +1742,7 @@
       "deepLink": "/learn/api-security-jwt"
     },
     {
-      "id": "glossary-163",
+      "id": "glossary-168",
       "source": "glossary",
       "title": "JSON Web Encryption",
       "content": "Term: JSON Web Encryption (JWE)\nDefinition: A standard (RFC 7516) for encrypting JSON payloads. JWE provides confidentiality for JWT claims using a two-layer encryption model: a Key Encryption Key (KEK) wraps a Content Encryption Key (CEK).\nTechnical Note: PQC migration replaces ECDH-ES key agreement with ML-KEM encapsulation. The KEM ciphertext replaces the encrypted key in JWE compact serialization.\nCategory: protocol | Complexity: intermediate",
@@ -1694,7 +1755,7 @@
       "deepLink": "/learn/api-security-jwt"
     },
     {
-      "id": "glossary-164",
+      "id": "glossary-169",
       "source": "glossary",
       "title": "JOSE",
       "content": "Term: JOSE\nDefinition: JSON Object Signing and Encryption, the IETF framework encompassing JWS, JWE, JWK, and JWA specifications. JOSE defines how to sign, encrypt, and represent cryptographic keys in JSON format.\nTechnical Note: The IETF JOSE working group is standardizing PQC algorithm identifiers (ML-DSA, ML-KEM, SLH-DSA) for use in JOSE headers. The framework was designed for algorithm agility — only the \"alg\" header value changes.\nCategory: protocol | Complexity: intermediate",
@@ -1707,7 +1768,7 @@
       "deepLink": "/learn/api-security-jwt"
     },
     {
-      "id": "glossary-165",
+      "id": "glossary-170",
       "source": "glossary",
       "title": "OpenID Connect",
       "content": "Term: OpenID Connect (OIDC)\nDefinition: An identity layer built on OAuth 2.0 that provides authentication via ID tokens (JWTs). Widely used for single sign-on across web and mobile applications.\nTechnical Note: OIDC ID tokens are signed JWTs. PQC migration requires authorization servers to sign ID tokens with ML-DSA and clients to verify PQC signatures. JWKS endpoints must serve PQC public keys.\nCategory: protocol | Complexity: intermediate",
@@ -1720,7 +1781,7 @@
       "deepLink": "/learn/api-security-jwt"
     },
     {
-      "id": "glossary-166",
+      "id": "glossary-171",
       "source": "glossary",
       "title": "Demonstrating Proof-of-Possession",
       "content": "Term: Demonstrating Proof-of-Possession (DPoP)\nDefinition: An OAuth 2.0 extension (RFC 9449) that binds access tokens to a specific client by requiring a proof-of-possession JWT with each API request, preventing token theft and replay attacks.\nTechnical Note: Each DPoP proof is a JWS signed with the client's key. With PQC, every API request includes a ~4 KB ML-DSA signature in addition to the access token, potentially exceeding HTTP header size limits.\nCategory: protocol | Complexity: advanced",
@@ -1733,7 +1794,7 @@
       "deepLink": "/learn/api-security-jwt"
     },
     {
-      "id": "glossary-167",
+      "id": "glossary-172",
       "source": "glossary",
       "title": "JSON Web Key Set",
       "content": "Term: JSON Web Key Set (JWKS)\nDefinition: A JSON document (RFC 7517) containing a set of public keys used to verify JWTs. Authorization servers publish JWKS endpoints so resource servers can fetch signing keys.\nTechnical Note: ML-DSA public keys are ~2 KB each (vs 32 bytes for EC). JWKS payloads grow significantly during PQC migration, especially with key rotation maintaining multiple active keys.\nCategory: protocol | Complexity: intermediate",
@@ -1746,7 +1807,7 @@
       "deepLink": "/learn/api-security-jwt"
     },
     {
-      "id": "glossary-168",
+      "id": "glossary-173",
       "source": "glossary",
       "title": "Root CA",
       "content": "Term: Root CA\nDefinition: The top-level Certificate Authority in a PKI trust hierarchy. A Root CA issues a self-signed certificate that serves as the trust anchor — all certificates in the chain ultimately derive their trust from it.\nTechnical Note: Root CAs are installed in OS and browser trust stores. PQC migration for Root CAs is highest priority since a compromised root breaks the entire chain. CNSA 2.0 requires Root CAs to use ML-DSA-87 by 2030.\nCategory: concept | Complexity: beginner",
@@ -1759,11 +1820,11 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-169",
+      "id": "glossary-174",
       "source": "glossary",
       "title": "Sigstore",
-      "content": "Term: Sigstore\nDefinition: An open-source project (Linux Foundation) for keyless code signing. Developers authenticate with their existing identity (GitHub, Google) and receive short-lived certificates, eliminating long-term key management.\nTechnical Note: Sigstore centralizes crypto in two services: Fulcio (CA) and Rekor (transparency log). Upgrading these to ML-DSA automatically provides PQC protection to all downstream ecosystems (npm, PyPI, Kubernetes).\nCategory: concept | Complexity: intermediate",
-      "category": "concept",
+      "content": "Term: Sigstore\nDefinition: An open-source project (Linux Foundation) for keyless code signing. Developers authenticate with their existing identity (GitHub, Google) and receive short-lived certificates, eliminating long-term key management.\nTechnical Note: Sigstore centralizes crypto in two services: Fulcio (CA) and Rekor (transparency log). Upgrading these to ML-DSA automatically provides PQC protection to all downstream ecosystems (npm, PyPI, Kubernetes).\nCategory: organization | Complexity: intermediate",
+      "category": "organization",
       "metadata": {
         "acronym": "",
         "complexity": "intermediate",
@@ -1772,7 +1833,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-170",
+      "id": "glossary-175",
       "source": "glossary",
       "title": "Fulcio",
       "content": "Term: Fulcio\nDefinition: The Certificate Authority component of Sigstore. Fulcio issues short-lived (~20 minute) X.509 certificates that bind an OIDC identity to an ephemeral signing key.\nTechnical Note: Fulcio is the primary PQC upgrade point in the Sigstore ecosystem. Migrating Fulcio to ML-DSA certificates automatically protects all downstream consumers without developer intervention.\nCategory: concept | Complexity: advanced",
@@ -1785,7 +1846,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-171",
+      "id": "glossary-176",
       "source": "glossary",
       "title": "Rekor",
       "content": "Term: Rekor\nDefinition: The transparency log component of Sigstore. Rekor is an immutable, append-only log that records every signing event — signature, certificate, and artifact hash — for public auditability.\nTechnical Note: PQC migration increases Rekor entry sizes significantly (~200 bytes for ECDSA vs ~3,600 bytes for ML-DSA-65). Storage overhead is the primary cost of PQC migration in Sigstore.\nCategory: concept | Complexity: advanced",
@@ -1798,7 +1859,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-172",
+      "id": "glossary-177",
       "source": "glossary",
       "title": "Keyless Signing",
       "content": "Term: Keyless Signing\nDefinition: A code signing approach where no long-term private keys are managed by the developer. Identity-based trust (via OIDC) replaces key-based trust, with ephemeral keys generated per-signing event.\nCategory: concept | Complexity: intermediate",
@@ -1811,7 +1872,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-173",
+      "id": "glossary-178",
       "source": "glossary",
       "title": "Time Stamping Authority",
       "content": "Term: Time Stamping Authority (TSA)\nDefinition: A trusted service (RFC 3161) that proves a digital signature was created at a specific time. Essential for code signing, where signatures must remain valid after certificate expiration.\nTechnical Note: PQC migration requires TSAs to issue timestamps signed with quantum-safe algorithms. A quantum-vulnerable timestamp means an attacker could backdate forged signatures.\nCategory: concept | Complexity: intermediate",
@@ -1824,7 +1885,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-174",
+      "id": "glossary-179",
       "source": "glossary",
       "title": "Extended Key Usage",
       "content": "Term: Extended Key Usage (EKU)\nDefinition: An X.509 certificate extension that restricts the purposes for which a certificate can be used — for example, Code Signing (OID 1.3.6.1.5.5.7.3.3), Server Authentication, or Client Authentication.\nCategory: concept | Complexity: intermediate",
@@ -1837,7 +1898,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-175",
+      "id": "glossary-180",
       "source": "glossary",
       "title": "Software Supply Chain",
       "content": "Term: Software Supply Chain\nDefinition: The entire pipeline from source code to deployed software, including dependencies, build systems, artifact registries, signing infrastructure, and distribution channels. Every link in this chain is a potential attack surface.\nCategory: concept | Complexity: beginner",
@@ -1850,11 +1911,11 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-176",
+      "id": "glossary-181",
       "source": "glossary",
       "title": "SLSA",
-      "content": "Term: SLSA (SLSA)\nDefinition: Supply-chain Levels for Software Artifacts — a security framework (originally from Google) that defines increasing levels of supply chain integrity guarantees, from basic build provenance to fully hermetic, reproducible builds.\nTechnical Note: SLSA levels depend on cryptographic attestations signed during the build process. If those signatures use quantum-vulnerable algorithms (ECDSA, RSA), the entire SLSA guarantee collapses once quantum computers can forge attestations.\nCategory: concept | Complexity: intermediate",
-      "category": "concept",
+      "content": "Term: SLSA (SLSA)\nDefinition: Supply-chain Levels for Software Artifacts — a security framework (originally from Google) that defines increasing levels of supply chain integrity guarantees, from basic build provenance to fully hermetic, reproducible builds.\nTechnical Note: SLSA levels depend on cryptographic attestations signed during the build process. If those signatures use quantum-vulnerable algorithms (ECDSA, RSA), the entire SLSA guarantee collapses once quantum computers can forge attestations.\nCategory: standard | Complexity: intermediate",
+      "category": "standard",
       "metadata": {
         "acronym": "SLSA",
         "complexity": "intermediate",
@@ -1863,11 +1924,11 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-177",
+      "id": "glossary-182",
       "source": "glossary",
       "title": "in-toto",
-      "content": "Term: in-toto\nDefinition: An open-source framework for securing the integrity of software supply chains by defining and cryptographically verifying each step of the build and release process. Each step produces a signed attestation (a \"link\") forming a verifiable chain.\nTechnical Note: in-toto link metadata is signed with the functionary's private key. PQC migration requires upgrading all functionary keys to ML-DSA to prevent quantum forgery of supply chain attestations.\nCategory: concept | Complexity: advanced",
-      "category": "concept",
+      "content": "Term: in-toto\nDefinition: An open-source framework for securing the integrity of software supply chains by defining and cryptographically verifying each step of the build and release process. Each step produces a signed attestation (a \"link\") forming a verifiable chain.\nTechnical Note: in-toto link metadata is signed with the functionary's private key. PQC migration requires upgrading all functionary keys to ML-DSA to prevent quantum forgery of supply chain attestations.\nCategory: standard | Complexity: advanced",
+      "category": "standard",
       "metadata": {
         "acronym": "",
         "complexity": "advanced",
@@ -1876,7 +1937,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-178",
+      "id": "glossary-183",
       "source": "glossary",
       "title": "Build Provenance",
       "content": "Term: Build Provenance\nDefinition: A cryptographically signed attestation documenting how a software artifact was built — including the source repository, build system, entry point, and build parameters. Answers the question \"who built this and how?\"\nTechnical Note: Build provenance is a core requirement of SLSA Level 1+. Without quantum-safe signatures on provenance attestations, an adversary with a quantum computer could forge provenance for malicious artifacts.\nCategory: concept | Complexity: intermediate",
@@ -1889,7 +1950,7 @@
       "deepLink": "/learn/code-signing"
     },
     {
-      "id": "glossary-179",
+      "id": "glossary-184",
       "source": "glossary",
       "title": "NIST SP 800-227",
       "content": "Term: NIST SP 800-227\nDefinition: NIST Special Publication providing recommendations for Key Encapsulation Mechanism (KEM) implementation, including guidance on parameter selection and secure use of ML-KEM.\nCategory: standard | Complexity: advanced",
@@ -1898,7 +1959,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-180",
+      "id": "glossary-185",
       "source": "glossary",
       "title": "NIST IR 8545",
       "content": "Term: NIST IR 8545\nDefinition: NIST Internal Report documenting the selection of HQC as an additional KEM standard, providing a code-based alternative to lattice-based ML-KEM.\nCategory: standard | Complexity: advanced",
@@ -1907,7 +1968,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-181",
+      "id": "glossary-186",
       "source": "glossary",
       "title": "RFC 9370",
       "content": "Term: RFC 9370\nDefinition: IETF standard defining multiple key exchanges in IKEv2, enabling hybrid classical + PQC key exchange for IPsec VPNs.\nTechnical Note: Allows adding ML-KEM alongside classical Diffie-Hellman in a single IKEv2 handshake without breaking backward compatibility.\nCategory: standard | Complexity: advanced",
@@ -1916,7 +1977,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-182",
+      "id": "glossary-187",
       "source": "glossary",
       "title": "RFC 9881",
       "content": "Term: RFC 9881\nDefinition: IETF standard defining how to use ML-DSA digital signatures in X.509 certificates and Certificate Revocation Lists (CRLs).\nCategory: standard | Complexity: advanced",
@@ -1925,7 +1986,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-183",
+      "id": "glossary-188",
       "source": "glossary",
       "title": "RFC 9882",
       "content": "Term: RFC 9882\nDefinition: IETF standard defining the use of ML-DSA signatures in the Cryptographic Message Syntax (CMS), enabling PQC-signed messages and documents.\nCategory: standard | Complexity: advanced",
@@ -1934,7 +1995,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-184",
+      "id": "glossary-189",
       "source": "glossary",
       "title": "ISO/IEC 18013-5",
       "content": "Term: ISO/IEC 18013-5\nDefinition: International standard for mobile driving licences (mDL), defining the data model, security mechanisms, and device engagement protocols for digital identity documents.\nCategory: standard | Complexity: advanced",
@@ -1943,7 +2004,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-185",
+      "id": "glossary-190",
       "source": "glossary",
       "title": "BSI TR-02102",
       "content": "Term: BSI TR-02102\nDefinition: German Federal Office for Information Security (BSI) Technical Guideline series on cryptographic recommendations, covering TLS, IPsec, SSH, and general algorithms.\nTechnical Note: TR-02102-1 covers general recommendations; TR-02102-2 through TR-02102-4 provide protocol-specific PQC migration guidance.\nCategory: standard | Complexity: intermediate",
@@ -1952,7 +2013,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-186",
+      "id": "glossary-191",
       "source": "glossary",
       "title": "PQCA",
       "content": "Term: PQCA (PQCA)\nDefinition: Post-Quantum Cryptographic Alliance, a Linux Foundation project bringing together industry and academia to advance PQC adoption through open-source software.\nCategory: organization | Complexity: intermediate",
@@ -1961,7 +2022,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-187",
+      "id": "glossary-192",
       "source": "glossary",
       "title": "OQS",
       "content": "Term: OQS (OQS)\nDefinition: Open Quantum Safe, an open-source project providing C library (liboqs) implementations of post-quantum algorithms and integrations with OpenSSL, BoringSSL, and other libraries.\nCategory: organization | Complexity: intermediate",
@@ -1970,7 +2031,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-188",
+      "id": "glossary-193",
       "source": "glossary",
       "title": "ASD",
       "content": "Term: ASD (ASD)\nDefinition: Australian Signals Directorate, Australia's national cybersecurity agency. Published aggressive PQC migration timelines with a 2030 deadline for full transition — five years ahead of the US.\nCategory: organization | Complexity: intermediate",
@@ -1979,7 +2040,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-189",
+      "id": "glossary-194",
       "source": "glossary",
       "title": "CCCS",
       "content": "Term: CCCS (CCCS)\nDefinition: Canadian Centre for Cyber Security, Canada's technical authority on cybersecurity. Published the ITSM.40.001 PQC migration roadmap for the Government of Canada.\nCategory: organization | Complexity: intermediate",
@@ -1988,7 +2049,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-190",
+      "id": "glossary-195",
       "source": "glossary",
       "title": "CRYPTREC",
       "content": "Term: CRYPTREC (CRYPTREC)\nDefinition: Cryptography Research and Evaluation Committees, Japan's organization for evaluating and recommending cryptographic algorithms for government use.\nCategory: organization | Complexity: intermediate",
@@ -2001,7 +2062,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-191",
+      "id": "glossary-196",
       "source": "glossary",
       "title": "KpqC",
       "content": "Term: KpqC (KpqC)\nDefinition: Korean Post-Quantum Cryptography project, South Korea's national initiative to develop and standardize its own PQC algorithms including HAETAE, AIMer, SMAUG-T, and NTRU+.\nCategory: organization | Complexity: intermediate",
@@ -2010,7 +2071,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-192",
+      "id": "glossary-197",
       "source": "glossary",
       "title": "ITU-T",
       "content": "Term: ITU-T (ITU-T)\nDefinition: International Telecommunication Union — Telecommunication Standardization Sector. Study Group 17 (SG17) is developing PQC standards for telecommunications infrastructure.\nCategory: organization | Complexity: intermediate",
@@ -2019,7 +2080,7 @@
       "deepLink": "/library"
     },
     {
-      "id": "glossary-193",
+      "id": "glossary-198",
       "source": "glossary",
       "title": "NCCoE",
       "content": "Term: NCCoE (NCCoE)\nDefinition: NIST National Cybersecurity Center of Excellence, collaborating with industry to develop practical PQC migration guidance and reference architectures.\nCategory: organization | Complexity: intermediate",
@@ -2028,7 +2089,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-194",
+      "id": "glossary-199",
       "source": "glossary",
       "title": "BIS",
       "content": "Term: BIS (BIS)\nDefinition: Bank for International Settlements, the international financial institution that published the quantum-readiness roadmap (Paper 158) for the global financial system.\nCategory: organization | Complexity: intermediate",
@@ -2037,7 +2098,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-195",
+      "id": "glossary-200",
       "source": "glossary",
       "title": "CACR",
       "content": "Term: CACR (CACR)\nDefinition: Chinese Association for Cryptologic Research, the organization that ran China's independent PQC competition and is shaping the NGCC (Next-Generation Commercial Cryptographic) standards program.\nCategory: organization | Complexity: advanced",
@@ -2046,7 +2107,7 @@
       "deepLink": "/timeline"
     },
     {
-      "id": "glossary-196",
+      "id": "glossary-201",
       "source": "glossary",
       "title": "CRQC",
       "content": "Term: CRQC (CRQC)\nDefinition: Cryptographically Relevant Quantum Computer, a hypothetical future quantum computer powerful enough to break RSA, ECC, and other classical public-key cryptography.\nTechnical Note: Estimates vary, but a CRQC would need thousands of stable logical qubits. Most timelines estimate 2030-2040 for CRQC capability.\nCategory: concept | Complexity: beginner",
@@ -2059,7 +2120,7 @@
       "deepLink": "/learn/pqc-risk-management"
     },
     {
-      "id": "glossary-197",
+      "id": "glossary-202",
       "source": "glossary",
       "title": "Forward Secrecy",
       "content": "Term: Forward Secrecy\nDefinition: A property of key exchange protocols where compromise of long-term keys does not compromise past session keys. Each session uses ephemeral keys that are discarded.\nTechnical Note: Also called Perfect Forward Secrecy (PFS). Critical for TLS 1.3 and a reason hybrid PQC key exchange is preferred over static key transport.\nCategory: concept | Complexity: intermediate",
@@ -2072,7 +2133,7 @@
       "deepLink": "/learn/tls-basics"
     },
     {
-      "id": "glossary-198",
+      "id": "glossary-203",
       "source": "glossary",
       "title": "Side-Channel Attack",
       "content": "Term: Side-Channel Attack\nDefinition: An attack that exploits physical characteristics of a cryptographic implementation (timing, power consumption, electromagnetic emissions) rather than mathematical weaknesses.\nTechnical Note: PQC algorithms like FN-DSA require careful floating-point implementation to resist side-channel attacks. Constant-time implementations are essential.\nCategory: concept | Complexity: intermediate",
@@ -2081,7 +2142,7 @@
       "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-199",
+      "id": "glossary-204",
       "source": "glossary",
       "title": "Certificate Chain",
       "content": "Term: Certificate Chain\nDefinition: A linked sequence of X.509 certificates from a leaf (end-entity) certificate up through intermediates to a trusted root CA, establishing a chain of trust.\nCategory: concept | Complexity: beginner",
@@ -2094,7 +2155,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-200",
+      "id": "glossary-205",
       "source": "glossary",
       "title": "Root of Trust",
       "content": "Term: Root of Trust\nDefinition: A foundational component (hardware or software) that is inherently trusted and used as the starting point for a chain of trust in a system.\nTechnical Note: PQC migration requires updating roots of trust (TPM, secure boot firmware, root CA certificates) to quantum-safe algorithms.\nCategory: concept | Complexity: intermediate",
@@ -2103,7 +2164,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-201",
+      "id": "glossary-206",
       "source": "glossary",
       "title": "Key Rotation",
       "content": "Term: Key Rotation\nDefinition: The practice of periodically replacing cryptographic keys with new ones, limiting the exposure window if a key is compromised.\nTechnical Note: PQC migration involves key rotation from classical to hybrid or pure PQC keys across all cryptographic infrastructure.\nCategory: concept | Complexity: beginner",
@@ -2112,7 +2173,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-202",
+      "id": "glossary-207",
       "source": "glossary",
       "title": "Non-Repudiation",
       "content": "Term: Non-Repudiation\nDefinition: A property of digital signatures that prevents a signer from denying they signed a message. Essential for legal documents, contracts, and financial transactions.\nCategory: concept | Complexity: beginner",
@@ -2125,7 +2186,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-203",
+      "id": "glossary-208",
       "source": "glossary",
       "title": "SD-JWT",
       "content": "Term: SD-JWT (SD-JWT)\nDefinition: Selective Disclosure JSON Web Token, a credential format that allows holders to reveal only specific claims from a signed token without exposing all data.\nTechnical Note: Used in the EUDI Wallet ecosystem alongside mdoc format. Each claim is individually salted and hashed for privacy.\nCategory: concept | Complexity: advanced",
@@ -2138,7 +2199,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-204",
+      "id": "glossary-209",
       "source": "glossary",
       "title": "mDL",
       "content": "Term: mDL (mDL)\nDefinition: Mobile Driver's License, a digital credential stored on a smartphone conforming to ISO/IEC 18013-5. Uses mdoc format with cryptographic device binding.\nCategory: concept | Complexity: intermediate",
@@ -2151,7 +2212,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-205",
+      "id": "glossary-210",
       "source": "glossary",
       "title": "mdoc",
       "content": "Term: mdoc\nDefinition: Mobile Document, a CBOR-based verifiable credential format defined in ISO/IEC 18013-5. Uses Mobile Security Objects (MSO) for issuer-signed data integrity.\nCategory: concept | Complexity: advanced",
@@ -2160,7 +2221,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-206",
+      "id": "glossary-211",
       "source": "glossary",
       "title": "CBOR",
       "content": "Term: CBOR (CBOR)\nDefinition: Concise Binary Object Representation, a compact binary data serialization format (RFC 8949). Used in mdoc credentials, IoT protocols, and WebAuthn attestations.\nCategory: concept | Complexity: advanced",
@@ -2173,7 +2234,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-207",
+      "id": "glossary-212",
       "source": "glossary",
       "title": "Verifiable Credential",
       "content": "Term: Verifiable Credential (VC)\nDefinition: A tamper-proof digital credential that can be cryptographically verified. Issued by a trusted authority and held in a digital wallet for presentation to verifiers.\nTechnical Note: W3C Verifiable Credentials and ISO mdoc are the two major formats. PQC migration requires updating the signature algorithms used by issuers.\nCategory: concept | Complexity: intermediate",
@@ -2186,7 +2247,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-208",
+      "id": "glossary-213",
       "source": "glossary",
       "title": "Selective Disclosure",
       "content": "Term: Selective Disclosure\nDefinition: The ability to reveal only specific attributes from a digital credential without exposing all contained data. A key privacy feature of SD-JWT and mdoc formats.\nCategory: concept | Complexity: intermediate",
@@ -2199,7 +2260,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-209",
+      "id": "glossary-214",
       "source": "glossary",
       "title": "BIP32",
       "content": "Term: BIP32\nDefinition: Bitcoin Improvement Proposal 32, defining Hierarchical Deterministic (HD) wallets. Enables deriving an entire tree of key pairs from a single master seed.\nTechnical Note: Uses HMAC-SHA512 for key derivation. Supports hardened and normal derivation paths (e.g., m/44'/0'/0'/0/0).\nCategory: concept | Complexity: intermediate",
@@ -2212,7 +2273,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-210",
+      "id": "glossary-215",
       "source": "glossary",
       "title": "UTXO",
       "content": "Term: UTXO (UTXO)\nDefinition: Unspent Transaction Output, Bitcoin's model for tracking coin ownership. Each transaction consumes existing UTXOs and creates new ones.\nTechnical Note: PQC migration for Bitcoin must handle UTXOs locked by quantum-vulnerable ECDSA scripts, potentially requiring a network-wide migration.\nCategory: concept | Complexity: intermediate",
@@ -2225,7 +2286,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-211",
+      "id": "glossary-216",
       "source": "glossary",
       "title": "SUPI",
       "content": "Term: SUPI (SUPI)\nDefinition: Subscription Permanent Identifier, a 5G subscriber's permanent identity (usually based on IMSI). Protected by encrypting it as SUCI before transmission.\nTechnical Note: SUCI conceals the SUPI using ECIES (Profile A/B) or ML-KEM (Profile C) to prevent IMSI-catching attacks.\nCategory: concept | Complexity: advanced",
@@ -2238,23 +2299,25 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-212",
+      "id": "glossary-217",
       "source": "glossary",
       "title": "Fully Homomorphic Encryption",
       "content": "Term: Fully Homomorphic Encryption (FHE)\nDefinition: An encryption scheme that allows computations to be performed on ciphertext, producing encrypted results that match operations on the plaintext.\nTechnical Note: FHE is lattice-based and believed to be quantum-safe. Used for privacy-preserving cloud computing, but remains computationally expensive.\nCategory: concept | Complexity: advanced",
       "category": "concept",
-      "metadata": { "acronym": "FHE", "complexity": "advanced", "relatedModule": "" }
+      "metadata": { "acronym": "FHE", "complexity": "advanced", "relatedModule": "/algorithms" },
+      "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-213",
+      "id": "glossary-218",
       "source": "glossary",
       "title": "Zero-Knowledge Proof",
       "content": "Term: Zero-Knowledge Proof (ZKP)\nDefinition: A cryptographic method where one party proves knowledge of a value without revealing the value itself. Used in privacy-preserving authentication and blockchain.\nTechnical Note: PQC-compatible ZKP constructions (e.g., lattice-based, hash-based) are active areas of research for quantum-safe privacy systems.\nCategory: concept | Complexity: advanced",
       "category": "concept",
-      "metadata": { "acronym": "ZKP", "complexity": "advanced", "relatedModule": "" }
+      "metadata": { "acronym": "ZKP", "complexity": "advanced", "relatedModule": "/algorithms" },
+      "deepLink": "/algorithms"
     },
     {
-      "id": "glossary-214",
+      "id": "glossary-219",
       "source": "glossary",
       "title": "DER",
       "content": "Term: DER (DER)\nDefinition: Distinguished Encoding Rules, a binary encoding format for ASN.1 data structures. The standard encoding for X.509 certificates, keys, and ECDSA signatures.\nCategory: concept | Complexity: advanced",
@@ -2267,7 +2330,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-215",
+      "id": "glossary-220",
       "source": "glossary",
       "title": "PEM",
       "content": "Term: PEM (PEM)\nDefinition: Privacy Enhanced Mail, a Base64-encoded format for storing cryptographic objects (certificates, keys, CSRs). Recognized by \"-----BEGIN CERTIFICATE-----\" headers.\nCategory: concept | Complexity: intermediate",
@@ -2276,7 +2339,7 @@
       "deepLink": "/openssl"
     },
     {
-      "id": "glossary-216",
+      "id": "glossary-221",
       "source": "glossary",
       "title": "Derivation Path",
       "content": "Term: Derivation Path\nDefinition: A hierarchical path notation (e.g., m/44'/0'/0'/0/0) used in HD wallets to deterministically derive child keys from a master key following BIP32/BIP44 standards.\nCategory: concept | Complexity: intermediate",
@@ -2289,7 +2352,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-217",
+      "id": "glossary-222",
       "source": "glossary",
       "title": "Quantum Error Correction",
       "content": "Term: Quantum Error Correction\nDefinition: Techniques to protect quantum information from decoherence and errors during computation. Essential for building practical, large-scale quantum computers.\nTechnical Note: Current quantum computers lack sufficient error correction for cryptanalysis. Advances in error correction directly affect CRQC timelines.\nCategory: concept | Complexity: intermediate",
@@ -2302,7 +2365,7 @@
       "deepLink": "/learn/quantum-threats"
     },
     {
-      "id": "glossary-218",
+      "id": "glossary-223",
       "source": "glossary",
       "title": "Interoperability",
       "content": "Term: Interoperability\nDefinition: The ability of different cryptographic implementations, libraries, and systems to work together correctly. Critical during PQC migration when classical and quantum-safe systems must coexist.\nCategory: concept | Complexity: beginner",
@@ -2311,7 +2374,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-219",
+      "id": "glossary-224",
       "source": "glossary",
       "title": "Hybrid Mode",
       "content": "Term: Hybrid Mode\nDefinition: An operational mode where both classical and post-quantum cryptographic algorithms run in parallel, ensuring security even if one algorithm is broken.\nTechnical Note: Recommended by NIST, BSI, and ANSSI as the preferred transition strategy. Applied to key exchange, signatures, and certificates.\nCategory: concept | Complexity: beginner",
@@ -2320,7 +2383,7 @@
       "deepLink": "/migrate"
     },
     {
-      "id": "glossary-220",
+      "id": "glossary-225",
       "source": "glossary",
       "title": "QTSP",
       "content": "Term: QTSP (QTSP)\nDefinition: Qualified Trust Service Provider, an organization authorized under eIDAS 2.0 to issue qualified electronic signatures, seals, timestamps, and certificates.\nCategory: concept | Complexity: advanced",
@@ -2333,7 +2396,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-221",
+      "id": "glossary-226",
       "source": "glossary",
       "title": "Attestation",
       "content": "Term: Attestation\nDefinition: A cryptographically signed statement vouching for the authenticity or properties of a device, key, or credential. Used in FIDO2, TPM, and digital identity systems.\nCategory: concept | Complexity: intermediate",
@@ -2346,7 +2409,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-222",
+      "id": "glossary-227",
       "source": "glossary",
       "title": "Key Binding",
       "content": "Term: Key Binding\nDefinition: Cryptographic proof that a credential is bound to a specific holder's key, preventing unauthorized transfer or replay of digital credentials.\nCategory: concept | Complexity: advanced",
@@ -2355,7 +2418,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-223",
+      "id": "glossary-228",
       "source": "glossary",
       "title": "Crypto Discovery",
       "content": "Term: Crypto Discovery\nDefinition: The automated process of scanning an organization's systems to identify all cryptographic algorithms, keys, certificates, and protocols in use. The first step in PQC migration.\nTechnical Note: Tools like SandboxAQ AQtive Guard and IBM Guardium automate crypto discovery to build a Cryptographic Bill of Materials (CBOM).\nCategory: concept | Complexity: beginner",
@@ -2368,7 +2431,7 @@
       "deepLink": "/learn/migration-program"
     },
     {
-      "id": "glossary-224",
+      "id": "glossary-229",
       "source": "glossary",
       "title": "RLP",
       "content": "Term: RLP (RLP)\nDefinition: Recursive Length Prefix, Ethereum's serialization encoding for transactions, blocks, and account state. Used to encode transaction data before signing with ECDSA.\nCategory: concept | Complexity: advanced",
@@ -2381,7 +2444,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-225",
+      "id": "glossary-230",
       "source": "glossary",
       "title": "Base58Check",
       "content": "Term: Base58Check\nDefinition: A Bitcoin-specific encoding format that converts binary data to a human-readable alphanumeric string with a built-in checksum for error detection.\nTechnical Note: Omits confusable characters (0, O, I, l). Used for Bitcoin addresses, WIF private keys, and extended public/private keys.\nCategory: concept | Complexity: advanced",
@@ -2394,7 +2457,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-226",
+      "id": "glossary-231",
       "source": "glossary",
       "title": "Harvest Now, Forge Later",
       "content": "Term: Harvest Now, Forge Later (HNFL)\nDefinition: An attack strategy where adversaries record digitally signed data today, planning to forge signatures once quantum computers can break the signing algorithm.\nTechnical Note: While HNDL targets confidentiality (encrypted data), HNFL targets authenticity and integrity — firmware updates, certificates, and legal documents signed with RSA/ECDSA become forgeable.\nCategory: concept | Complexity: beginner",
@@ -2407,7 +2470,7 @@
       "deepLink": "/learn/pqc-101"
     },
     {
-      "id": "glossary-227",
+      "id": "glossary-232",
       "source": "glossary",
       "title": "X25519MLKEM768",
       "content": "Term: X25519MLKEM768\nDefinition: A hybrid key exchange algorithm combining X25519 (classical ECDH) with ML-KEM-768 (post-quantum KEM). Both shared secrets are combined via HKDF so the result is secure if either algorithm holds.\nTechnical Note: Deployed in Chrome, Firefox, and Cloudflare TLS 1.3. Uses concatenated shared secrets fed through HKDF-SHA256 for the final key.\nCategory: algorithm | Complexity: intermediate",
@@ -2420,7 +2483,7 @@
       "deepLink": "/learn/hybrid-crypto"
     },
     {
-      "id": "glossary-228",
+      "id": "glossary-233",
       "source": "glossary",
       "title": "Cipher Suite",
       "content": "Term: Cipher Suite\nDefinition: A named combination of cryptographic algorithms used together in a TLS connection — specifying the key exchange, authentication, bulk encryption, and hash algorithms.\nTechnical Note: TLS 1.3 cipher suites (e.g., TLS_AES_256_GCM_SHA384) are simpler than TLS 1.2, separating key exchange from the cipher suite. PQC adds new key exchange groups like X25519MLKEM768.\nCategory: concept | Complexity: beginner",
@@ -2429,7 +2492,7 @@
       "deepLink": "/learn/tls-basics"
     },
     {
-      "id": "glossary-229",
+      "id": "glossary-234",
       "source": "glossary",
       "title": "TLS Handshake",
       "content": "Term: TLS Handshake\nDefinition: The initial negotiation between client and server that establishes a secure TLS connection — agreeing on cipher suites, exchanging keys, and authenticating the server.\nTechnical Note: TLS 1.3 completes in 1 round-trip (1-RTT). PQC key exchange increases ClientHello size significantly (ML-KEM public keys are ~1,184 bytes vs 32 bytes for X25519).\nCategory: concept | Complexity: beginner",
@@ -2438,7 +2501,7 @@
       "deepLink": "/learn/tls-basics"
     },
     {
-      "id": "glossary-230",
+      "id": "glossary-235",
       "source": "glossary",
       "title": "Rosenpass",
       "content": "Term: Rosenpass\nDefinition: A post-quantum key exchange protocol designed as a companion to WireGuard VPN. Performs a separate ML-KEM key exchange and feeds the resulting key into WireGuard.\nTechnical Note: Rosenpass runs alongside WireGuard rather than modifying it, adding PQC protection without changing the WireGuard protocol itself.\nCategory: protocol | Complexity: advanced",
@@ -2451,7 +2514,7 @@
       "deepLink": "/learn/vpn-ssh-pqc"
     },
     {
-      "id": "glossary-231",
+      "id": "glossary-236",
       "source": "glossary",
       "title": "sntrup761",
       "content": "Term: sntrup761\nDefinition: A lattice-based key encapsulation mechanism used in OpenSSH hybrid key exchange. Combined with X25519 to provide post-quantum protection for SSH connections.\nTechnical Note: Available in OpenSSH since version 9.0 as sntrup761x25519-sha512. Being superseded by mlkem768x25519-sha256 in newer OpenSSH versions.\nCategory: algorithm | Complexity: advanced",
@@ -2464,7 +2527,7 @@
       "deepLink": "/learn/vpn-ssh-pqc"
     },
     {
-      "id": "glossary-232",
+      "id": "glossary-237",
       "source": "glossary",
       "title": "SignedData",
       "content": "Term: SignedData\nDefinition: A CMS (Cryptographic Message Syntax) structure defined in RFC 5652 that carries digitally signed content. The foundation of S/MIME email signatures.\nTechnical Note: Contains the original content, signer certificates, and one or more SignerInfo structures with the actual signatures. PQC migration requires updating the signature algorithms.\nCategory: protocol | Complexity: intermediate",
@@ -2477,7 +2540,7 @@
       "deepLink": "/learn/email-signing"
     },
     {
-      "id": "glossary-233",
+      "id": "glossary-238",
       "source": "glossary",
       "title": "EnvelopedData",
       "content": "Term: EnvelopedData\nDefinition: A CMS structure for encrypted content using key transport (RSA) or key agreement (ECDH). Being superseded by AuthEnvelopedData with KEM-based encryption for PQC.\nTechnical Note: Traditional EnvelopedData uses RSA key transport, which is vulnerable to quantum attacks. RFC 9629 defines KEMRecipientInfo as the PQC replacement.\nCategory: protocol | Complexity: intermediate",
@@ -2490,7 +2553,7 @@
       "deepLink": "/learn/email-signing"
     },
     {
-      "id": "glossary-234",
+      "id": "glossary-239",
       "source": "glossary",
       "title": "KEMRecipientInfo",
       "content": "Term: KEMRecipientInfo\nDefinition: A CMS recipient info type defined in RFC 9629 that uses Key Encapsulation Mechanisms (KEMs) instead of RSA key transport for encrypting content-encryption keys.\nTechnical Note: Enables ML-KEM-based encryption in S/MIME and CMS. The sender encapsulates a shared secret to the recipient's KEM public key, then derives the content-encryption key.\nCategory: protocol | Complexity: advanced",
@@ -2503,7 +2566,7 @@
       "deepLink": "/learn/email-signing"
     },
     {
-      "id": "glossary-235",
+      "id": "glossary-240",
       "source": "glossary",
       "title": "Certificate Revocation List",
       "content": "Term: Certificate Revocation List (CRL)\nDefinition: A signed list published by a Certificate Authority containing the serial numbers of certificates that have been revoked before their expiration date.\nTechnical Note: CRLs are periodically published and can become large. OCSP provides real-time revocation checking as an alternative. PQC migration requires CRLs to be signed with quantum-safe algorithms.\nCategory: protocol | Complexity: beginner",
@@ -2516,7 +2579,7 @@
       "deepLink": "/learn/pki-workshop"
     },
     {
-      "id": "glossary-236",
+      "id": "glossary-241",
       "source": "glossary",
       "title": "NIST SP 800-57",
       "content": "Term: NIST SP 800-57\nDefinition: NIST Special Publication 800-57: Recommendation for Key Management. Defines the seven-stage key lifecycle (pre-operational, operational, post-operational, etc.) and cryptoperiod guidance.\nCategory: standard | Complexity: intermediate",
@@ -2529,7 +2592,7 @@
       "deepLink": "/learn/key-management"
     },
     {
-      "id": "glossary-237",
+      "id": "glossary-242",
       "source": "glossary",
       "title": "PKCS#11",
       "content": "Term: PKCS#11\nDefinition: A standard API (also called Cryptoki) for accessing cryptographic hardware like Hardware Security Modules (HSMs), smart cards, and tokens.\nTechnical Note: Defines C-language function calls for key generation, signing, encryption, and object management. PQC algorithm support in PKCS#11 is being standardized by OASIS.\nCategory: standard | Complexity: intermediate",
@@ -2542,7 +2605,7 @@
       "deepLink": "/learn/key-management"
     },
     {
-      "id": "glossary-238",
+      "id": "glossary-243",
       "source": "glossary",
       "title": "Key Lifecycle",
       "content": "Term: Key Lifecycle\nDefinition: The complete management process for cryptographic keys from creation to destruction, typically comprising 7 stages: generation, storage, activation, rotation, deactivation, compromise response, and destruction.\nTechnical Note: Defined by NIST SP 800-57. PQC migration adds complexity — organizations must plan parallel classical and PQC key lifecycles during the transition period.\nCategory: concept | Complexity: beginner",
@@ -2555,7 +2618,7 @@
       "deepLink": "/learn/key-management"
     },
     {
-      "id": "glossary-239",
+      "id": "glossary-244",
       "source": "glossary",
       "title": "Merkle Tree",
       "content": "Term: Merkle Tree\nDefinition: A binary tree of hash values where each leaf contains a hash of a data block and each internal node contains a hash of its children. The foundation of stateful hash-based signature schemes.\nTechnical Note: In LMS/XMSS, each leaf holds a one-time signature key pair. The tree height determines the maximum number of signatures (2^h). The root hash serves as the public key.\nCategory: concept | Complexity: intermediate",
@@ -2568,7 +2631,7 @@
       "deepLink": "/learn/stateful-signatures"
     },
     {
-      "id": "glossary-240",
+      "id": "glossary-245",
       "source": "glossary",
       "title": "Winternitz One-Time Signature",
       "content": "Term: Winternitz One-Time Signature (WOTS+)\nDefinition: A hash-based one-time signature scheme used as the building block for LMS and XMSS. Each key pair can only sign one message safely.\nTechnical Note: The Winternitz parameter (w) controls the trade-off between signature size and computation time. Larger w = smaller signatures but more hash operations.\nCategory: algorithm | Complexity: advanced",
@@ -2581,7 +2644,7 @@
       "deepLink": "/learn/stateful-signatures"
     },
     {
-      "id": "glossary-241",
+      "id": "glossary-246",
       "source": "glossary",
       "title": "One-Time Signature",
       "content": "Term: One-Time Signature (OTS)\nDefinition: A signature scheme where each private key must be used to sign exactly one message. Reusing a key leaks information that allows signature forgery.\nTechnical Note: LMS and XMSS use Merkle trees of OTS keys to enable multiple signatures from a single public key. Strict state management is required to prevent key reuse.\nCategory: concept | Complexity: intermediate",
@@ -2594,7 +2657,7 @@
       "deepLink": "/learn/stateful-signatures"
     },
     {
-      "id": "glossary-242",
+      "id": "glossary-247",
       "source": "glossary",
       "title": "P2PKH",
       "content": "Term: P2PKH\nDefinition: Pay-to-Public-Key-Hash, a Bitcoin address format (starting with \"1\") that hides the public key behind a hash until the first spending transaction.\nTechnical Note: Provides some quantum protection for unspent outputs since the public key is not exposed. Once spent, the public key is revealed on the immutable blockchain and becomes harvestable.\nCategory: concept | Complexity: intermediate",
@@ -2607,7 +2670,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-243",
+      "id": "glossary-248",
       "source": "glossary",
       "title": "BIP44",
       "content": "Term: BIP44\nDefinition: Bitcoin Improvement Proposal 44, defining a multi-account hierarchy for deterministic wallets using derivation paths like m/44'/0'/0'/0/0 (purpose/coin/account/change/index).\nTechnical Note: Builds on BIP32 (HD wallets) and BIP43 (purpose field). Enables standard derivation paths across different cryptocurrencies and wallet implementations.\nCategory: standard | Complexity: intermediate",
@@ -2620,7 +2683,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-244",
+      "id": "glossary-249",
       "source": "glossary",
       "title": "ECIES",
       "content": "Term: ECIES (ECIES)\nDefinition: Elliptic Curve Integrated Encryption Scheme, used in 5G networks to conceal subscriber identity (SUCI). Combines ECDH key agreement with symmetric encryption.\nTechnical Note: 5G defines three SUCI protection profiles: Profile A (ECIES with Curve25519), Profile B (ECIES with P-256), and Profile C (ML-KEM for post-quantum protection).\nCategory: algorithm | Complexity: intermediate",
@@ -2633,7 +2696,7 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-245",
+      "id": "glossary-250",
       "source": "glossary",
       "title": "AUSF",
       "content": "Term: AUSF (AUSF)\nDefinition: Authentication Server Function, a 5G core network function that handles subscriber authentication using the 5G-AKA protocol and interfaces with the UDM for credential verification.\nCategory: concept | Complexity: advanced",
@@ -2646,7 +2709,7 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-246",
+      "id": "glossary-251",
       "source": "glossary",
       "title": "SIDF",
       "content": "Term: SIDF (SIDF)\nDefinition: Subscription Identifier De-concealing Function, the 5G core component that decrypts the SUCI (concealed subscriber ID) back to the SUPI (permanent ID) using the home network private key.\nTechnical Note: SIDF uses ECIES (Profile A/B) or ML-KEM (Profile C) decapsulation to recover the subscriber identity. A key target for PQC migration in 5G networks.\nCategory: concept | Complexity: advanced",
@@ -2659,7 +2722,7 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-247",
+      "id": "glossary-252",
       "source": "glossary",
       "title": "UDM",
       "content": "Term: UDM (UDM)\nDefinition: Unified Data Management, a 5G core network function that stores subscriber profiles, authentication credentials, and subscription data. Works with the AUSF for 5G-AKA authentication.\nCategory: concept | Complexity: advanced",
@@ -2672,7 +2735,7 @@
       "deepLink": "/learn/5g-security"
     },
     {
-      "id": "glossary-248",
+      "id": "glossary-253",
       "source": "glossary",
       "title": "Person Identification Data",
       "content": "Term: Person Identification Data (PID)\nDefinition: The foundational digital identity credential in the EUDI Wallet ecosystem, containing core attributes like name, date of birth, and nationality issued by a national authority.\nTechnical Note: PID is the prerequisite for all other attestations (diplomas, driving licenses). Must be cryptographically bound to the wallet holder's key to prevent transfer.\nCategory: concept | Complexity: intermediate",
@@ -2685,7 +2748,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-249",
+      "id": "glossary-254",
       "source": "glossary",
       "title": "Relying Party",
       "content": "Term: Relying Party\nDefinition: An entity (organization, service, or application) that relies on a digital credential presented by a holder to make trust decisions — such as granting access or completing a transaction.\nTechnical Note: In the EUDI ecosystem, relying parties use OpenID4VP to request and verify credentials. They can only request attributes they are authorized to see (selective disclosure).\nCategory: concept | Complexity: beginner",
@@ -2694,7 +2757,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-250",
+      "id": "glossary-255",
       "source": "glossary",
       "title": "Wallet Instance Attestation",
       "content": "Term: Wallet Instance Attestation (WIA)\nDefinition: A cryptographic proof that a digital identity wallet app is a genuine, certified instance running on a secure device. Required by issuers before they will provision credentials.\nTechnical Note: Attests to the wallet's integrity, certification status, and device security. Prevents credential issuance to compromised or counterfeit wallet applications.\nCategory: concept | Complexity: advanced",
@@ -2707,7 +2770,7 @@
       "deepLink": "/learn/digital-id"
     },
     {
-      "id": "glossary-251",
+      "id": "glossary-256",
       "source": "glossary",
       "title": "Entropy",
       "content": "Term: Entropy\nDefinition: A measure of unpredictability or randomness in data. In cryptography, high entropy means data is difficult to predict, which is essential for secure key generation and nonce creation.\nTechnical Note: Min-entropy is the most conservative measure: -log2(max probability of any single outcome). NIST SP 800-90B defines methods for estimating entropy of physical noise sources.\nCategory: concept | Complexity: beginner",
@@ -2720,7 +2783,7 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-252",
+      "id": "glossary-257",
       "source": "glossary",
       "title": "CSPRNG",
       "content": "Term: CSPRNG (CSPRNG)\nDefinition: Cryptographically Secure Pseudo-Random Number Generator. A PRNG whose output is computationally indistinguishable from true randomness, suitable for cryptographic key generation.\nTechnical Note: Typically implemented as DRBGs (SP 800-90A) seeded from hardware entropy sources. Examples: /dev/urandom (Linux), CryptGenRandom (Windows), crypto.getRandomValues (Web Crypto API).\nCategory: concept | Complexity: intermediate",
@@ -2733,7 +2796,7 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-253",
+      "id": "glossary-258",
       "source": "glossary",
       "title": "DRBG",
       "content": "Term: DRBG (DRBG)\nDefinition: Deterministic Random Bit Generator. An algorithm that produces a sequence of pseudorandom bits from a secret seed value. NIST SP 800-90A defines three approved mechanisms: CTR_DRBG, Hash_DRBG, and HMAC_DRBG.\nTechnical Note: CTR_DRBG (AES-based) is the most widely deployed, used by OpenSSL and the Linux kernel. All three mechanisms use symmetric primitives and are quantum-safe.\nCategory: algorithm | Complexity: advanced",
@@ -2746,7 +2809,7 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-254",
+      "id": "glossary-259",
       "source": "glossary",
       "title": "TRNG",
       "content": "Term: TRNG (TRNG)\nDefinition: True Random Number Generator. A hardware device that generates random numbers from physical phenomena such as thermal noise, shot noise, or clock jitter.\nTechnical Note: Intel RDRAND/RDSEED, ARM RNDR, and TPM RNG are common TRNG implementations. TRNG output is not affected by quantum computers since it relies on physical processes, not computational assumptions.\nCategory: concept | Complexity: intermediate",
@@ -2759,7 +2822,7 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-255",
+      "id": "glossary-260",
       "source": "glossary",
       "title": "QRNG",
       "content": "Term: QRNG (QRNG)\nDefinition: Quantum Random Number Generator. A device that generates random numbers from quantum mechanical phenomena such as photon detection, vacuum fluctuations, or quantum beam splitting.\nTechnical Note: QRNG randomness is guaranteed by the laws of quantum physics (Born rule). Commercial products are available from ID Quantique, Toshiba, and others. The Australian National University (ANU) operates a public QRNG service.\nCategory: concept | Complexity: advanced",
@@ -2772,7 +2835,7 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-256",
+      "id": "glossary-261",
       "source": "glossary",
       "title": "Min-Entropy",
       "content": "Term: Min-Entropy\nDefinition: The most conservative measure of entropy, defined as the negative base-2 logarithm of the probability of the most likely outcome. Used by NIST SP 800-90B for entropy source validation.\nTechnical Note: For a uniform byte distribution, min-entropy = 8 bits per byte. Real entropy sources typically achieve 6-8 bits per byte before conditioning. The NIST SP 800-90B EntropyAssessment tool computes min-entropy estimates.\nCategory: concept | Complexity: advanced",
@@ -2785,7 +2848,7 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-257",
+      "id": "glossary-262",
       "source": "glossary",
       "title": "SP 800-90A",
       "content": "Term: SP 800-90A\nDefinition: NIST Special Publication defining three Deterministic Random Bit Generator (DRBG) mechanisms: CTR_DRBG (AES-based), Hash_DRBG (SHA-based), and HMAC_DRBG. Published June 2015 (Rev. 1).\nTechnical Note: All three DRBGs use symmetric primitives and are quantum-safe. CTR_DRBG is the default in OpenSSL. Rev. 2 is in draft, adding XOF_DRBG (SHAKE-based) and removing TDES/SHA-1.\nCategory: standard | Complexity: advanced",
@@ -2798,7 +2861,7 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-258",
+      "id": "glossary-263",
       "source": "glossary",
       "title": "SP 800-90B",
       "content": "Term: SP 800-90B\nDefinition: NIST Special Publication providing methods for validating entropy sources used as input to DRBGs. Defines health tests (repetition count, adaptive proportion) and min-entropy estimation procedures. Published January 2018.\nTechnical Note: The NIST Entropy Source Validation (ESV) program under CMVP uses SP 800-90B to certify hardware entropy sources. The NIST EntropyAssessment tool on GitHub implements the min-entropy assessment methods.\nCategory: standard | Complexity: advanced",
@@ -2811,7 +2874,7 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-259",
+      "id": "glossary-264",
       "source": "glossary",
       "title": "SP 800-90C",
       "content": "Term: SP 800-90C\nDefinition: NIST Special Publication describing constructions for Random Bit Generators (RBGs) that combine entropy sources with DRBGs. Defines RBG1, RBG2, RBG3, and RBGC construction classes. Published September 2025.\nTechnical Note: Completes the SP 800-90 series. Specifies how to combine multiple independent entropy sources for defense-in-depth, using XOR and conditioning functions to ensure combined output retains entropy even if one source is compromised.\nCategory: standard | Complexity: advanced",
@@ -2824,7 +2887,29 @@
       "deepLink": "/learn/entropy-randomness"
     },
     {
-      "id": "glossary-260",
+      "id": "glossary-265",
+      "source": "glossary",
+      "title": "Certificate Transparency",
+      "content": "Term: Certificate Transparency (CT)\nDefinition: An open framework (RFC 9162) that requires all publicly-trusted TLS certificates to be logged in publicly auditable logs, enabling detection of misissued certificates.\nTechnical Note: CT logs are Merkle trees of certificate records. The Merkle Tree Certificate (MTC) design builds directly on CT infrastructure, replacing individual certificate signatures with batch Merkle inclusion proofs.\nCategory: protocol | Complexity: intermediate",
+      "category": "protocol",
+      "metadata": {
+        "acronym": "CT",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/merkle-tree-certs"
+      },
+      "deepLink": "/learn/merkle-tree-certs"
+    },
+    {
+      "id": "glossary-266",
+      "source": "glossary",
+      "title": "Hybrid Public Key Encryption",
+      "content": "Term: Hybrid Public Key Encryption (HPKE)\nDefinition: A standardized framework (RFC 9180) for hybrid public-key encryption that combines a KEM, a key derivation function, and an AEAD cipher into a composable primitive.\nTechnical Note: HPKE is used in TLS ECH (Encrypted Client Hello), MLS messaging, and several IETF PQC drafts. It can be instantiated with ML-KEM for post-quantum security by substituting the KEM component.\nCategory: protocol | Complexity: advanced",
+      "category": "protocol",
+      "metadata": { "acronym": "HPKE", "complexity": "advanced", "relatedModule": "/library" },
+      "deepLink": "/library"
+    },
+    {
+      "id": "glossary-267",
       "source": "glossary",
       "title": "SCT",
       "content": "Term: SCT (SCT)\nDefinition: Signed Certificate Timestamp — a cryptographic proof from a Certificate Transparency log server that a certificate has been submitted and will be publicly logged. Required by Chrome for all TLS certificates since 2018.\nTechnical Note: SCTs are embedded in certificates (via a TLS extension or OCSP stapling) and signed by the CT log's private key. In the Merkle Tree Certificate (MTC) design, SCTs are replaced by Merkle inclusion proofs, which also prove CT log membership without a separate signature.\nCategory: concept | Complexity: intermediate",
@@ -2837,7 +2922,7 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-261",
+      "id": "glossary-268",
       "source": "glossary",
       "title": "Merkle Tree Certificate",
       "content": "Term: Merkle Tree Certificate (MTC)\nDefinition: A certificate format that replaces individual per-certificate digital signatures with a compact inclusion proof in a Merkle tree. A single CA signature on the tree root covers the entire batch, dramatically reducing TLS handshake sizes for post-quantum algorithms.\nTechnical Note: For a batch of ~4.4 million certificates, the inclusion proof is 736 bytes (23 sibling hashes × 32 bytes). This achieves 63–74% size reduction compared to traditional X.509 certificate chains with ML-DSA signatures.\nCategory: concept | Complexity: advanced",
@@ -2850,7 +2935,7 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-262",
+      "id": "glossary-269",
       "source": "glossary",
       "title": "Merkle Tree Certificate Authority",
       "content": "Term: Merkle Tree Certificate Authority (MTCA)\nDefinition: A Certificate Authority that collects certificate assertions into a Merkle tree, signs the root hash, and distributes inclusion proofs to subscribers. The MTCA replaces individual certificate signatures with batch-level tree signing.\nTechnical Note: The MTCA role is defined in draft-ietf-plants-merkle-tree-certs. Unlike traditional CAs that sign each certificate individually, an MTCA signs once per batch. A transparency service publishes signed roots for client synchronization.\nCategory: concept | Complexity: advanced",
@@ -2863,7 +2948,7 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-263",
+      "id": "glossary-270",
       "source": "glossary",
       "title": "Inclusion Proof",
       "content": "Term: Inclusion Proof\nDefinition: A compact chain of sibling hashes from a leaf to the root of a Merkle tree, proving that a specific item (such as a certificate) is part of the committed batch. Verification requires only hash recomputation, not signature verification.\nTechnical Note: The proof size is O(log₂ N) where N is the number of leaves. For 2²³ (~8.4 million) leaves, the proof contains 23 sibling hashes (736 bytes at 32 bytes per SHA-256 hash). Domain-separated hashing (0x00 for leaves, 0x01 for internal nodes per RFC 9162) prevents second-preimage attacks.\nCategory: concept | Complexity: intermediate",
@@ -2876,7 +2961,7 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-264",
+      "id": "glossary-271",
       "source": "glossary",
       "title": "Certificate Bloat",
       "content": "Term: Certificate Bloat\nDefinition: The significant increase in TLS certificate chain sizes caused by post-quantum signature algorithms. An ML-DSA-44 signature is 2,420 bytes compared to 64 bytes for ECDSA P-256, leading to 18–36 KB PQC TLS chain overhead that can break constrained clients and degrade connection setup times.\nCategory: concept | Complexity: intermediate",
@@ -2889,7 +2974,7 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-265",
+      "id": "glossary-272",
       "source": "glossary",
       "title": "Batch Signing",
       "content": "Term: Batch Signing\nDefinition: A cryptographic technique where a single digital signature covers multiple items simultaneously by signing a hash that commits to the entire set. In Merkle Tree Certificates, the CA signs the tree root once to authenticate potentially millions of certificates.\nCategory: concept | Complexity: intermediate",
@@ -2902,7 +2987,7 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-266",
+      "id": "glossary-273",
       "source": "glossary",
       "title": "Domain-Separated Hashing",
       "content": "Term: Domain-Separated Hashing\nDefinition: A technique that prepends a unique prefix byte to hash inputs depending on their type, preventing one type of hash from being confused with another. In Merkle trees, leaf hashes use prefix 0x00 and internal node hashes use prefix 0x01, as specified in RFC 9162.\nTechnical Note: Without domain separation, an attacker could construct a leaf whose hash matches an internal node, enabling second-preimage attacks. The 0x00/0x01 prefix convention is defined in RFC 9162 (Certificate Transparency v2).\nCategory: concept | Complexity: advanced",
@@ -2915,7 +3000,7 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-267",
+      "id": "glossary-274",
       "source": "glossary",
       "title": "IETF PLANTS Working Group",
       "content": "Term: IETF PLANTS Working Group (PLANTS)\nDefinition: The IETF working group responsible for standardizing Merkle Tree Certificates and related post-quantum PKI infrastructure. Adopted draft-ietf-plants-merkle-tree-certs in January 2026.\nCategory: organization | Complexity: intermediate",
@@ -2928,7 +3013,7 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-268",
+      "id": "glossary-275",
       "source": "glossary",
       "title": "Cosigner Quorum",
       "content": "Term: Cosigner Quorum\nDefinition: A trust mechanism in Merkle Tree Certificate deployments where relying parties accept a signed subtree only after a configured set of external witnesses (cosigners) have co-signed it, preventing a compromised CA from silently issuing fraudulent certificates.\nCategory: concept | Complexity: advanced",
@@ -2941,20 +3026,20 @@
       "deepLink": "/learn/merkle-tree-certs"
     },
     {
-      "id": "glossary-269",
+      "id": "glossary-276",
       "source": "glossary",
       "title": "BIP-360",
-      "content": "Term: BIP-360 (P2QRH)\nDefinition: Pay to Quantum Resistant Hash, a proposed Bitcoin soft fork that introduces a new native SegWit v3 output type using NIST PQC signature algorithms (ML-DSA or FN-DSA) instead of secp256k1 ECDSA. Proposed by Hunter Beast in 2024.\nTechnical Note: P2QRH addresses use bech32m encoding (bc1r…). The PQC public key is hashed (SHA-256 then HASH160) until spending time, when the full public key and PQC signature are revealed in the witness data. Transaction witness sizes increase 9–46× depending on the algorithm.\nCategory: standard | Complexity: advanced",
+      "content": "Term: BIP-360\nDefinition: Pay to Quantum Resistant Hash, a proposed Bitcoin soft fork that introduces a new native SegWit v3 output type using NIST PQC signature algorithms (ML-DSA or FN-DSA) instead of secp256k1 ECDSA. Proposed by Hunter Beast in 2024.\nTechnical Note: P2QRH addresses use bech32m encoding (bc1r…). The PQC public key is hashed (SHA-256 then HASH160) until spending time, when the full public key and PQC signature are revealed in the witness data. Transaction witness sizes increase 9–46× depending on the algorithm.\nCategory: standard | Complexity: advanced",
       "category": "standard",
       "metadata": {
-        "acronym": "P2QRH",
+        "acronym": "",
         "complexity": "advanced",
         "relatedModule": "/learn/digital-assets"
       },
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-270",
+      "id": "glossary-277",
       "source": "glossary",
       "title": "Account Abstraction",
       "content": "Term: Account Abstraction (AA)\nDefinition: An Ethereum protocol feature (EIP-4337) that enables smart contract wallets with arbitrary signature verification logic. This allows users to switch from ECDSA to PQC signatures (ML-DSA or FN-DSA) today without a protocol hard fork.\nTechnical Note: EIP-4337 smart accounts verify PQC signatures on-chain at higher gas cost (~300k–500k gas per PQC signature vs ~21k for ECDSA). Combined with EIP-7702 (code delegation for EOAs), this provides a two-phase PQC migration path for Ethereum.\nCategory: concept | Complexity: advanced",
@@ -2967,7 +3052,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-271",
+      "id": "glossary-278",
       "source": "glossary",
       "title": "Solana Improvement Document",
       "content": "Term: Solana Improvement Document (SIMD)\nDefinition: The formal proposal process for Solana protocol changes, analogous to Bitcoin BIPs and Ethereum EIPs. As of early 2026, no SIMD for PQC has been ratified, making Solana's quantum migration path the least defined of the three major blockchains.\nCategory: standard | Complexity: intermediate",
@@ -2980,7 +3065,7 @@
       "deepLink": "/learn/digital-assets"
     },
     {
-      "id": "glossary-272",
+      "id": "glossary-279",
       "source": "glossary",
       "title": "Information-Theoretic Security",
       "content": "Term: Information-Theoretic Security\nDefinition: A security guarantee that holds regardless of the adversary's computational power, including quantum computers. QKD achieves this for key distribution because its security is derived from the laws of quantum physics rather than mathematical hardness assumptions.\nTechnical Note: Distinguished from computational security (used by PQC), which assumes the adversary has bounded computational resources. Information-theoretic security means that even with unlimited computing power, an attacker cannot break the scheme.\nCategory: concept | Complexity: advanced",
@@ -2989,7 +3074,7 @@
       "deepLink": "/learn/qkd"
     },
     {
-      "id": "glossary-273",
+      "id": "glossary-280",
       "source": "glossary",
       "title": "MQTT",
       "content": "Term: MQTT (MQTT)\nDefinition: Message Queuing Telemetry Transport, a lightweight publish/subscribe messaging protocol for IoT. MQTT 5.0 supports TLS 1.3 transport security.\nCategory: protocol | Complexity: intermediate",
@@ -3002,7 +3087,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-274",
+      "id": "glossary-281",
       "source": "glossary",
       "title": "LoRaWAN",
       "content": "Term: LoRaWAN\nDefinition: Long Range Wide Area Network, a low-power WAN protocol for IoT. Uses AES-128 pre-shared keys. Maximum payload of 222 bytes makes PQC KEM infeasible inline.\nCategory: protocol | Complexity: intermediate",
@@ -3015,7 +3100,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-275",
+      "id": "glossary-282",
       "source": "glossary",
       "title": "Matter",
       "content": "Term: Matter\nDefinition: Smart home interoperability standard (formerly Project CHIP). Uses the CASE protocol with ECDSA P-256 for device attestation. PQC migration requires protocol specification update.\nCategory: protocol | Complexity: intermediate",
@@ -3028,7 +3113,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-276",
+      "id": "glossary-283",
       "source": "glossary",
       "title": "SUIT",
       "content": "Term: SUIT (SUIT)\nDefinition: Software Updates for Internet of Things (RFC 9019). A CBOR-based manifest format for secure firmware updates, providing metadata, conditions, and signature verification for OTA delivery.\nCategory: standard | Complexity: advanced",
@@ -3041,7 +3126,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-277",
+      "id": "glossary-284",
       "source": "glossary",
       "title": "RFC 7228",
       "content": "Term: RFC 7228\nDefinition: Terminology for Constrained-Node Networks. Defines device Class 0/1/2 based on RAM and Flash memory constraints, used to categorize IoT device capabilities for protocol selection.\nCategory: standard | Complexity: intermediate",
@@ -3054,7 +3139,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-278",
+      "id": "glossary-285",
       "source": "glossary",
       "title": "Purdue Model",
       "content": "Term: Purdue Model\nDefinition: Reference architecture for industrial control system (ICS) networks. Defines 6 levels from physical process (Level 0) to enterprise network (Level 5), guiding security zone segmentation and PQC migration priority.\nCategory: concept | Complexity: intermediate",
@@ -3067,7 +3152,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-279",
+      "id": "glossary-286",
       "source": "glossary",
       "title": "CoAP",
       "content": "Term: CoAP (CoAP)\nDefinition: Constrained Application Protocol, a lightweight RESTful protocol designed for IoT devices. Runs over UDP with DTLS for security. Maximum payload of ~1,024 bytes makes PQC key exchange challenging.\nCategory: protocol | Complexity: intermediate",
@@ -3080,7 +3165,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-280",
+      "id": "glossary-287",
       "source": "glossary",
       "title": "NB-IoT",
       "content": "Term: NB-IoT (NB-IoT)\nDefinition: Narrowband IoT, a cellular connectivity standard for low-power wide-area (LPWA) devices. Offers 62.5 kbps uplink bandwidth, making PQC handshake overhead a significant concern.\nCategory: protocol | Complexity: intermediate",
@@ -3093,7 +3178,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-281",
+      "id": "glossary-288",
       "source": "glossary",
       "title": "Programmable Logic Controller",
       "content": "Term: Programmable Logic Controller (PLC)\nDefinition: An industrial computer that controls manufacturing processes, assembly lines, and infrastructure equipment. PLCs sit at Purdue Level 1 and typically use pre-shared keys or DNP3-SA for authentication.\nCategory: concept | Complexity: intermediate",
@@ -3106,7 +3191,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-282",
+      "id": "glossary-289",
       "source": "glossary",
       "title": "Remote Terminal Unit",
       "content": "Term: Remote Terminal Unit (RTU)\nDefinition: A microprocessor-controlled device that interfaces field devices (sensors, actuators) to a SCADA system. RTUs sit at Purdue Level 1 with asset lifecycles of 15–25 years.\nCategory: concept | Complexity: intermediate",
@@ -3119,7 +3204,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-283",
+      "id": "glossary-290",
       "source": "glossary",
       "title": "Human-Machine Interface",
       "content": "Term: Human-Machine Interface (HMI)\nDefinition: A user interface panel or software application that allows operators to monitor and control industrial processes. HMIs sit at Purdue Level 2, typically using RSA-2048 or TLS 1.2.\nCategory: concept | Complexity: intermediate",
@@ -3132,7 +3217,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-284",
+      "id": "glossary-291",
       "source": "glossary",
       "title": "Electronic Control Unit",
       "content": "Term: Electronic Control Unit (ECU)\nDefinition: An embedded computer in a vehicle that controls one or more electrical systems (engine, brakes, infotainment). Automotive ECUs communicate via CAN bus and face PQC migration challenges for V2X and firmware signing.\nCategory: concept | Complexity: intermediate",
@@ -3145,7 +3230,7 @@
       "deepLink": "/learn/iot-ot-pqc"
     },
     {
-      "id": "glossary-285",
+      "id": "glossary-292",
       "source": "glossary",
       "title": "Key Performance Indicator",
       "content": "Term: Key Performance Indicator (KPI)\nDefinition: A quantifiable metric used to measure progress toward organizational objectives. In PQC programs, KPIs track inventory completion, migration progress, vendor readiness, compliance gaps, and budget utilization.\nCategory: concept | Complexity: beginner",
@@ -3158,7 +3243,7 @@
       "deepLink": "/learn/pqc-governance"
     },
     {
-      "id": "glossary-286",
+      "id": "glossary-293",
       "source": "glossary",
       "title": "RACI Matrix",
       "content": "Term: RACI Matrix (RACI)\nDefinition: A responsibility assignment matrix (Responsible, Accountable, Consulted, Informed) used in project governance to clarify roles and decision rights across stakeholders. Essential for cross-functional PQC migration programs.\nTechnical Note: In PQC governance, a typical RACI covers activities like crypto inventory, algorithm selection, vendor assessment, testing, and deployment across roles such as CISO, CTO, Enterprise Architect, and Compliance Officer.\nCategory: concept | Complexity: intermediate",
@@ -3171,7 +3256,7 @@
       "deepLink": "/learn/pqc-governance"
     },
     {
-      "id": "glossary-287",
+      "id": "glossary-294",
       "source": "glossary",
       "title": "Total Cost of Ownership",
       "content": "Term: Total Cost of Ownership (TCO)\nDefinition: The complete cost of a technology investment over its lifetime, including acquisition, deployment, training, maintenance, and operational expenses. Critical for PQC migration business case development.\nCategory: concept | Complexity: beginner",
@@ -3184,7 +3269,7 @@
       "deepLink": "/learn/pqc-business-case"
     },
     {
-      "id": "glossary-288",
+      "id": "glossary-295",
       "source": "glossary",
       "title": "Return on Investment",
       "content": "Term: Return on Investment (ROI)\nDefinition: A financial metric measuring the benefit generated relative to costs invested. For PQC migration, calculated as breach avoidance savings, compliance penalty avoidance, and operational efficiency gains minus migration costs.\nCategory: concept | Complexity: beginner",

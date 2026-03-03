@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-03T14:39:01.326Z",
-  "chunkCount": 2304,
+  "generatedAt": "2026-03-03T14:54:25.695Z",
+  "chunkCount": 2308,
   "chunks": [
     {
       "id": "glossary-0",
@@ -17972,6 +17972,18 @@
       }
     },
     {
+      "id": "mc-kmspqc-kmsmigrationrunbook-0",
+      "source": "module-content",
+      "title": "KmsPqc — KmsMigrationRunbook",
+      "content": "Module: KmsPqc\nComponent: KmsMigrationRunbook\n\n\\\\', ' --rotation-period-in-days 90', ].join('\\n') } return [ '# AWS KMS — Re-encrypt data with new PQC key', 'aws kms re-encrypt \\\\', ' --source-key-id\n\\\\', ' --value @policy.json', ].join('\\n') } return [ '# Azure Key Vault — Re-encrypt with new PQC key', '# 1. Decrypt with old key', 'az keyvault key decrypt \\\\', ' --vault-name\n', '', '# 2. Re-encrypt with new PQC key', 'az keyvault key encrypt \\\\', ' --vault-name\n\\\\', ' --location=global \\\\', ' --algorithm=ML-KEM-768', ].join('\\n') } return [ '# GCP Cloud KMS — Re-encrypt with new key version', 'gcloud kms re-encrypt \\\\', ' --key=\n/rotate', ].join('\\n') } return [ '# HashiCorp Vault — Re-wrap ciphertext with latest key version', 'vault write transit/rewrap/\nNote: PQC key types in cloud KMS services are subject to availability and may require preview/beta enrollment.\nCatalog all encryption keys by type and usage\nIdentify keys with data-at-rest obligations\nMap key aliases and cross-account access policies\nDocument key rotation schedules\nCreate new PQC keys in target KMS\nRe-encrypt data encryption keys with new PQC keys\nUpdate application configurations to use new key ARNs/IDs\nVerify decryption with new keys succeeds\nAudit log verification \\u2014 confirm new key usage\nPerformance benchmark: compare encrypt/decrypt latency\nVerify backup and disaster recovery with PQC keys\nUpdate documentation and runbooks",
+      "category": "learning",
+      "metadata": {
+        "module": "KmsPqc",
+        "component": "KmsMigrationRunbook",
+        "filePath": "KmsPqc/workshop/KmsMigrationRunbook.tsx"
+      }
+    },
+    {
       "id": "mc-kmspqc-kmsrotationplanner-0",
       "source": "module-content",
       "title": "KmsPqc — KmsRotationPlanner",
@@ -18149,6 +18161,19 @@
         "filePath": "MerkleTreeCerts/workshop/SizeComparison.tsx"
       },
       "deepLink": "/learn/merkle-tree-certs?tab=workshop"
+    },
+    {
+      "id": "mc-migrationprogram-deploymentplaybook-0",
+      "source": "module-content",
+      "title": "Migration Program Management — DeploymentPlaybook",
+      "content": "Module: Migration Program Management\nComponent: DeploymentPlaybook\n\nSet up feature flags for PQC algorithm toggle\nConfigure monitoring dashboards for handshake metrics\nPrepare rollback automation scripts\nDocument current baseline latency and error rates\nNotify operations team and set maintenance window\nRoute 1% of traffic through PQC-enabled endpoint\nMonitor latency impact (expect 2-5% increase for hybrid)\nCompare error rates against baseline\nValidate client compatibility across browser matrix\nRun for minimum 24 hours before proceeding\nUpdate HSTS preload entries if applicable\nToggle feature flag to disable PQC\nVerify classical-only handshakes resume\nPreserve PQC logs for post-mortem analysis\nEscalation path: on-call lead \\u2192 security team \\u2192 vendor support\nPost-incident review within 48 hours",
+      "category": "learning",
+      "metadata": {
+        "module": "MigrationProgram",
+        "component": "DeploymentPlaybook",
+        "filePath": "MigrationProgram/components/DeploymentPlaybook.tsx"
+      },
+      "deepLink": "/learn/migration-program"
     },
     {
       "id": "mc-migrationprogram-introduction-0",
@@ -18368,6 +18393,19 @@
         "module": "PKIWorkshop",
         "component": "MTCComparison",
         "filePath": "PKIWorkshop/MTCComparison.tsx"
+      },
+      "deepLink": "/learn/pki-workshop"
+    },
+    {
+      "id": "mc-pkiworkshop-certrotationchecklist-0",
+      "source": "module-content",
+      "title": "PKI Workshop — CertRotationChecklist",
+      "content": "Module: PKI Workshop\nComponent: CertRotationChecklist\n\nBackup current CA certificates and private keys\nVerify new PQC/hybrid CA chain with `openssl verify`\nTest hybrid certificate compatibility with target clients\nConfirm OCSP responder supports new algorithm OIDs\nReview CRL distribution points for new CA\nGenerate new root CA with PQC algorithm (ML-DSA-65 or hybrid)\nIssue new intermediate CA certificates\nRe-key all end-entity certificates\nUpdate trust stores on all servers and clients\nDeploy to staging environment first\nVerify TLS handshakes complete successfully\nMonitor error rates for 24 hours\nValidate certificate chain in browser dev tools\nConfirm automated renewal processes work\nRestore original CA certificates from backup\nRe-deploy previous trust stores\nVerify rollback handshakes succeed\nDocument incident and root cause",
+      "category": "learning",
+      "metadata": {
+        "module": "PKIWorkshop",
+        "component": "CertRotationChecklist",
+        "filePath": "PKIWorkshop/components/CertRotationChecklist.tsx"
       },
       "deepLink": "/learn/pki-workshop"
     },
@@ -19133,6 +19171,19 @@
         "filePath": "TLSBasics/components/CryptoLogDisplay.tsx"
       },
       "deepLink": "/learn/tls-basics"
+    },
+    {
+      "id": "mc-tlsbasics-tlsconfiggenerator-0",
+      "source": "module-content",
+      "title": "TLS Basics — TLSConfigGenerator",
+      "content": "Module: TLS Basics\nComponent: TLSConfigGenerator\n\nServerName example.com # Enable TLS 1.3 only SSLProtocol TLSv1.3 # Classical key exchange groups SSLOpenSSLConfCmd Groups X25519:P-256 # Certificate and key paths SSLCertificateFile /etc/apache2/ssl/server.crt SSLCertificateKeyFile /etc/apache2/ssl/server.key SSLEngine on\nServerName example.com # Enable TLS 1.3 only SSLProtocol TLSv1.3 # Hybrid PQC + classical key exchange # X25519MLKEM768: ML-KEM-768 combined with X25519 # Falls back to X25519 and P-256 for non-PQC clients SSLOpenSSLConfCmd Groups X25519MLKEM768:X25519:P-256 # Certificate and key paths SSLCertificateFile /etc/apache2/ssl/server.crt SSLCertificateKeyFile /etc/apache2/ssl/server.key SSLEngine on\nServerName example.com # Enable TLS 1.3 only SSLProtocol TLSv1.3 # Pure PQC key exchange — no classical fallback # MLKEM768: FIPS 203 ML-KEM at 128-bit security level # MLKEM1024: FIPS 203 ML-KEM at 192-bit security level # WARNING: clients without PQC support will fail to connect SSLOpenSSLConfCmd Groups MLKEM768:MLKEM1024 # Certificate and key paths SSLCertificateFile /etc/apache2/ssl/server.crt SSLCertificateKeyFile /etc/apache2/ssl/server.key SSLEngine on",
+      "category": "learning",
+      "metadata": {
+        "module": "TLSBasics",
+        "component": "TLSConfigGenerator",
+        "filePath": "TLSBasics/components/TLSConfigGenerator.tsx"
+      },
+      "deepLink": "/learn/tls-basics?tab=workshop"
     },
     {
       "id": "mc-tlsbasics-tlsexercises-0",

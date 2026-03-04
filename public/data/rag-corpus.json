@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-03T23:10:37.861Z",
-  "chunkCount": 2514,
+  "generatedAt": "2026-03-04T03:42:22.390Z",
+  "chunkCount": 2498,
   "chunks": [
     {
       "id": "glossary-0",
@@ -16424,7 +16424,7 @@
       "id": "mc-compliancestrategy-introduction-4",
       "source": "module-content",
       "title": "Compliance & Regulatory Strategy — Introduction",
-      "content": "Module: Compliance & Regulatory Strategy\nComponent: Introduction\n\nA CBOM is a comprehensive inventory of all cryptographic assets in an organization's systems — algorithms, key sizes, protocols, certificates, and their locations. Generating a CBOM is a critical first step for PQC compliance because you cannot migrate what you haven't inventoried. Studies show 70% of organizations lack a complete cryptographic inventory.\n86% of executives are unprepared for quantum threats (February 2025), highlighting a significant gap between the urgency of PQC compliance and organizational readiness.\nThis workshop guides you through building a comprehensive compliance strategy in three steps:\nMap jurisdictions, build audit checklists, and construct compliance timelines.",
+      "content": "Module: Compliance & Regulatory Strategy\nComponent: Introduction\n\nA CBOM is a comprehensive inventory of all cryptographic assets in an organization's systems — algorithms, key sizes, protocols, certificates, and their locations. Generating a CBOM is a critical first step for PQC compliance because you cannot migrate what you haven't inventoried. Studies show 70% of organizations lack a complete cryptographic inventory.\n86% of executives are unprepared for quantum threats (February 2025), highlighting a significant gap between the urgency of PQC compliance and organizational readiness.\nThis workshop guides you through building a comprehensive compliance strategy in three steps:\nMap jurisdictions, build audit checklists, and construct compliance timelines.\nCompliance Landscape & Key Frameworks\nCompliance vs Risk Approach & Major Deadlines\nCountry Deadlines, Dependencies & Workshop",
       "category": "learning",
       "metadata": {
         "module": "ComplianceStrategy",
@@ -17204,7 +17204,7 @@
       "id": "mc-emailsigning-emailsigningintroduction-1",
       "source": "module-content",
       "title": "Email Signing — EmailSigningIntroduction",
-      "content": "Module: Email Signing\nComponent: EmailSigningIntroduction\n\nS/MIME certificates carry specific extensions that bind an email address to a key pair and declare the permitted operations (signing vs encryption). PQC introduces new considerations for key usage and algorithm negotiation.\nfor signing and encryption. This is especially true for PQC migration, where signing keys (ML-DSA) and encryption keys (ML-KEM) use fundamentally different algorithms. The\nattribute in signed messages advertises supported algorithms, enabling gradual PQC rollout.\nMigrating email security to PQC is uniquely challenging because S/MIME requires\n— both sender and recipient must support the same algorithms. This creates a chicken-and-egg problem that doesn't exist in TLS (where servers can unilaterally upgrade).\nExplore S/MIME certificates, CMS signing structures, and KEM-based encryption.",
+      "content": "Module: Email Signing\nComponent: EmailSigningIntroduction\n\nS/MIME certificates carry specific extensions that bind an email address to a key pair and declare the permitted operations (signing vs encryption). PQC introduces new considerations for key usage and algorithm negotiation.\nfor signing and encryption. This is especially true for PQC migration, where signing keys (ML-DSA) and encryption keys (ML-KEM) use fundamentally different algorithms. The\nattribute in signed messages advertises supported algorithms, enabling gradual PQC rollout.\nMigrating email security to PQC is uniquely challenging because S/MIME requires\n— both sender and recipient must support the same algorithms. This creates a chicken-and-egg problem that doesn't exist in TLS (where servers can unilaterally upgrade).\nExplore S/MIME certificates, CMS signing structures, and KEM-based encryption.\nCertificate Requirements & Migration",
       "category": "learning",
       "metadata": {
         "module": "EmailSigning",
@@ -18463,7 +18463,7 @@
       "id": "mc-migrationprogram-introduction-1",
       "source": "module-content",
       "title": "Migration Program Management — Introduction",
-      "content": "Module: Migration Program Management\nComponent: Introduction\n\nSecurity, engineering, compliance, vendor management, and business stakeholders must all be represented. Crypto touches every layer of the stack.\nStart with hybrid deployments in low-risk systems, validate, then expand. Big-bang migrations are too risky for cryptographic infrastructure.\nTrack systems inventoried, algorithms migrated, vendor readiness, compliance gaps closed, and budget utilization. What gets measured gets managed.\nThis workshop provides three interactive tools that produce real, exportable artifacts for your PQC migration program:\nBuild a migration roadmap, plan stakeholder communications, and design a KPI tracker.",
+      "content": "Module: Migration Program Management\nComponent: Introduction\n\nSecurity, engineering, compliance, vendor management, and business stakeholders must all be represented. Crypto touches every layer of the stack.\nStart with hybrid deployments in low-risk systems, validate, then expand. Big-bang migrations are too risky for cryptographic infrastructure.\nTrack systems inventoried, algorithms migrated, vendor readiness, compliance gaps closed, and budget utilization. What gets measured gets managed.\nThis workshop provides three interactive tools that produce real, exportable artifacts for your PQC migration program:\nBuild a migration roadmap, plan stakeholder communications, and design a KPI tracker.\nProgram Overview & 7-Phase Framework\nCritical Success Factors & Workshop",
       "category": "learning",
       "metadata": {
         "module": "MigrationProgram",
@@ -18853,7 +18853,7 @@
       "id": "mc-pqcgovernance-introduction-1",
       "source": "module-content",
       "title": "PQC Governance & Policy — Introduction",
-      "content": "Module: PQC Governance & Policy\nComponent: Introduction\n\nPQC governance requires a layered policy framework. Each layer provides increasing specificity, from enterprise-wide principles to team-level procedures.\nA single crypto governance team sets all policies, selects algorithms, and manages migration. Best for smaller organizations or those with a strong central security function.\nEach business unit or region manages its own PQC transition within guardrails. Governance board sets boundaries but delegates execution. Common in regulated multi-nationals.\nCentral team owns algorithm policy and compliance mapping. Business units own migration execution and testing. Most common model for large enterprises migrating to\nPQC migration inevitably creates conflicts: business units resist migration timelines, vendors miss readiness deadlines, and teams disagree on algorithm choices. A defined escalation path prevents these conflicts from stalling the program.\nGovernance without measurement is aspirational. Effective PQC programs track key performance indicators across technical progress, risk reduction, compliance posture, and organizational readiness.\nBuild a RACI matrix, generate PQC policies, and design a governance KPI dashboard.",
+      "content": "Module: PQC Governance & Policy\nComponent: Introduction\n\nPQC governance requires a layered policy framework. Each layer provides increasing specificity, from enterprise-wide principles to team-level procedures.\nA single crypto governance team sets all policies, selects algorithms, and manages migration. Best for smaller organizations or those with a strong central security function.\nEach business unit or region manages its own PQC transition within guardrails. Governance board sets boundaries but delegates execution. Common in regulated multi-nationals.\nCentral team owns algorithm policy and compliance mapping. Business units own migration execution and testing. Most common model for large enterprises migrating to\nPQC migration inevitably creates conflicts: business units resist migration timelines, vendors miss readiness deadlines, and teams disagree on algorithm choices. A defined escalation path prevents these conflicts from stalling the program.\nGovernance without measurement is aspirational. Effective PQC programs track key performance indicators across technical progress, risk reduction, compliance posture, and organizational readiness.\nBuild a RACI matrix, generate PQC policies, and design a governance KPI dashboard.\nWhy Governance, RACI & Policy Hierarchy\nGovernance Models, Escalation & KPIs",
       "category": "learning",
       "metadata": {
         "module": "PQCGovernance",
@@ -19343,7 +19343,7 @@
       "id": "mc-statefulsignatures-statefulsigsintroduction-2",
       "source": "module-content",
       "title": "Stateful Signatures — StatefulSigsIntroduction",
-      "content": "Module: Stateful Signatures\nComponent: StatefulSigsIntroduction\n\nrandomizes each internal node by XOR’ing inputs with PRF-derived bitmasks before hashing, providing domain separation and multi-target attack resistance. These add ~4&times; the hash computations of LMS but yield the tighter second-preimage-only security proof.\nBoth LMS and XMSS are approved by NIST SP 800-208. Regulatory preference: NSA CNSA 2.0 favors LMS/HSS; BSI guidelines favor XMSS/XMSS^MT.\nThe critical operational challenge with stateful schemes is that the signer\n. Each leaf index can be used exactly once. If state is lost, reset, or duplicated, the same OTS key may be used twice —\nIf a one-time signature key is reused (signing two different messages with the same leaf), an attacker can compute enough of the OTS private key to forge arbitrary signatures. This is not a theoretical weakness — it is a\nof the scheme. There is no recovery; the entire key must be revoked.\n, not competing. Stateful schemes win on size and speed in controlled environments; SLH-DSA wins wherever state management is impractical.\nDetailed specs for all PQC algorithms including LMS and XMSS\nPQC-ready libraries and tools with stateful signature support\nPractical guidance on state, backup, and recovery for LMS/XMSS deployments\nExplore LMS and XMSS key generation, compare parameter sets, and simulate state management.",
+      "content": "Module: Stateful Signatures\nComponent: StatefulSigsIntroduction\n\nrandomizes each internal node by XOR’ing inputs with PRF-derived bitmasks before hashing, providing domain separation and multi-target attack resistance. These add ~4&times; the hash computations of LMS but yield the tighter second-preimage-only security proof.\nBoth LMS and XMSS are approved by NIST SP 800-208. Regulatory preference: NSA CNSA 2.0 favors LMS/HSS; BSI guidelines favor XMSS/XMSS^MT.\nThe critical operational challenge with stateful schemes is that the signer\n. Each leaf index can be used exactly once. If state is lost, reset, or duplicated, the same OTS key may be used twice —\nIf a one-time signature key is reused (signing two different messages with the same leaf), an attacker can compute enough of the OTS private key to forge arbitrary signatures. This is not a theoretical weakness — it is a\nof the scheme. There is no recovery; the entire key must be revoked.\n, not competing. Stateful schemes win on size and speed in controlled environments; SLH-DSA wins wherever state management is impractical.\nDetailed specs for all PQC algorithms including LMS and XMSS\nPQC-ready libraries and tools with stateful signature support\nPractical guidance on state, backup, and recovery for LMS/XMSS deployments\nExplore LMS and XMSS key generation, compare parameter sets, and simulate state management.\nWhy Stateful Signatures & Merkle Trees",
       "category": "learning",
       "metadata": {
         "module": "StatefulSignatures",
@@ -19642,7 +19642,7 @@
       "id": "mc-data-vpnsshmodule-protocolsizecomparisons",
       "source": "module-content",
       "title": "VPN & SSH PQC — protocolSizeComparisons (data)",
-      "content": "Module: VPN & SSH PQC\nData: protocolSizeComparisons\n\ndraft-ietf-ipsecme-ikev2-mlkem with IKE_INTERMEDIATE\nRosenpass project: external PQC key negotiation\nHypothetical; Noise requires static KEM operations for auth, not digital signatures\nRFC 9798; hybrid KEX in Chrome 124 (Kyber draft), final ML-KEM in Chrome 131\nPure PQC TLS; certificates grow ~3x with ML-DSA\nRosenpass uses Classic McEliece for auth",
+      "content": "Module: VPN & SSH PQC\nData: protocolSizeComparisons\n\ndraft-ietf-ipsecme-ikev2-mlkem with IKE_INTERMEDIATE\nRosenpass project: external PQC key negotiation\nHypothetical; Noise requires static KEM operations for auth, not digital signatures\ndraft-ietf-tls-ecdhe-mlkem; hybrid KEX in Chrome 124 (Kyber draft), final ML-KEM in Chrome 131\nPure PQC TLS; certificates grow ~3x with ML-DSA\ndraft-ietf-tls-ecdhe-mlkem (X25519MLKEM768)\nRosenpass uses Classic McEliece for auth",
       "category": "learning",
       "metadata": {
         "module": "VPNSSHModule",
@@ -20729,210 +20729,6 @@
       "metadata": {
         "fileName": "PQC_Software_Category_Strategic_Analysis",
         "filePath": "src/data/PQC_Software_Category_Strategic_Analysis.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-1",
-      "source": "documentation",
-      "title": "Enterprise Guide to Post-Quantum Cryptography Implementation",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Enterprise Guide to Post-Quantum Cryptography Implementation\n\n**Date Generated:** December 17, 2025  \n**Total Quantum-Safe Entries:** 31 software products  \n**NIST PQC Standards:** FIPS 203 (ML-KEM), FIPS 204 (ML-DSA), FIPS 205 (SLH-DSA)\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-2",
-      "source": "documentation",
-      "title": "Executive Summary",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Executive Summary\n\nThis reference document identifies and describes 31 cryptographic software products that have implemented quantum-safe cryptography. As quantum computing advances threaten traditional public-key cryptography (RSA, ECC), these solutions provide protection against future quantum attacks through NIST-standardized post-quantum algorithms.\n\n**Key Findings:**\n\n- 31 out of 92 reviewed products (34%) have quantum-safe capabilities\n- 13 distinct software categories represented\n- Mix of 17 open source and 14 commercial/mixed solutions\n- Maturity ranges from production-ready (OpenSSH default) to experimental\n- Strong coverage in TLS/SSL, PKI, and cryptographic libraries\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-3",
-      "source": "documentation",
-      "title": "Understanding Post-Quantum Cryptography (PQC)",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Understanding Post-Quantum Cryptography (PQC)\n\n### The Quantum Threat\n\nQuantum computers using Shor's algorithm can break:\n\n- **RSA encryption** - Used for key exchange, digital signatures\n- **ECC (Elliptic Curve Cryptography)** - Used for TLS, SSH, VPN, digital signatures\n- **DH/ECDH** - Used for key agreement protocols\n\n**Timeline Considerations:**\n\n- \"Harvest now, decrypt later\" attacks are occurring today\n- NIST estimates quantum computers capable of breaking RSA-2048 within 10-30 years\n- Data with 10+ year confidentiality requirements needs protection now\n- Migration to PQC takes 5-10 years for large enterprises\n\n### NIST-Standardized Algorithms\n\n**FIPS 203 - ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism)**\n\n- Formerly known as CRYSTALS-Kyber\n- Purpose: Key exchange and encryption\n- Security levels: ML-KEM-512, ML-KEM-768, ML-KEM-1024\n- Most widely implemented PQC algorithm\n- Excellent performance characteristics\n\n**FIPS 204 - ML-DSA (Module-Lattice-Based Digital Signature Algorithm)**\n\n- Formerly known as CRYSTALS-Dilithium\n- Purpose: Digital signatures\n- Security levels: ML-DSA-44, ML-DSA-65, ML-DSA-87\n- Balanced performance and signature size\n\n**FIPS 205 - SLH-DSA (Stateless Hash-Based Digital Signature Algorithm)**\n\n- Formerly known as SPHINCS+\n- Purpose: Digital signatures (stateless)\n- More conservative security assumptions than lattice-based\n- Larger signatures, slower performance, but hash-based security\n\n### Additional Candidate Algorithms\n\nSeveral software products support additional PQC candidates:\n\n- **BIKE** - Bit Flipping Key Encapsulation\n- **HQC** - Hamming Quasi-Cyclic\n- **FrodoKEM** - Conservative lattice-based KEM\n- **Classic McEliece** - Code-based cryptography\n- **PQXDH** - Signal's post-quantum extended Diffie-Hellman\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-4",
-      "source": "documentation",
-      "title": "Software Categories with Quantum-Safe Capabilities",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Software Categories with Quantum-Safe Capabilities\n\n### Critical Priority Categories\n\n#### 1. Cryptographic Libraries (4 products)\n\n**Why Critical:** Foundation for all cryptographic operations across applications\n\n**OpenSSL 3.5+**\n\n- Full ML-KEM, ML-DSA, SLH-DSA support\n- Industry standard library, used by majority of HTTPS websites\n- Hybrid mode: combines X25519 with ML-KEM for gradual migration\n- Open source (Apache-2.0)\n\n**Bouncy Castle (Java, C#)**\n\n- Comprehensive PQC suite: ML-KEM, ML-DSA, SLH-DSA, HQC\n- Composite signatures enable dual classical/PQC modes\n- JCE/JCA provider for Java, .NET integration\n- Open source with commercial LTS available\n\n**Impact:** These libraries enable quantum-safe cryptography across millions of applications.\n\n---\n\n#### 2. TLS/SSL Implementation Software (6 products)\n\n**Why Critical:** Protects internet communications, APIs, and web services\n\n**OpenSSH 10.2**\n\n- **Production deployment**: Default key exchange is now mlkem768x25519-sha256\n- First major implementation to enable PQC by default\n- Protects remote administration and file transfers\n- Open source (BSD)\n\n**GnuTLS 3.8.11**\n\n- ML-KEM with X25519 hybrid (X25519MLKEM768)\n- ML-DSA signature support via liboqs\n- Used extensively in GNU/Linux applications\n- Open source (LGPL)\n\n**wolfSSL 5.8.2**\n\n- Embedded/IoT focus with ML-DSA, ML-KEM, Kyber\n- Small footprint for resource-constrained devices\n- FIPS 140-3 validated\n- Commercial with open source option\n\n**BoringSSL (Google)**\n\n- ML-KEM deployed in Chrome browser\n- Internet-scale quantum-safe deployment\n- Influences industry standards\n- Open source (used by Google)\n\n**AWS s2n-tls**\n\n- Kyber hybrid in AWS infrastructure\n- High-performance cloud TLS\n- Open source (Apache-2.0)\n\n**rustls**\n\n- Memory-safe Rust implementation\n- PQC via aws-lc-rs\n- Zero unsafe code\n- Open source\n\n**Impact:** Securing the internet's transport layer against quantum threats.\n\n---\n\n#### 3. Post-Quantum Cryptography Libraries (2 products)\n\n**Why Critical:** Reference implementations and integration enablers\n\n**",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-5",
-      "source": "documentation",
-      "title": "Implementation Maturity Levels",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Implementation Maturity Levels\n\n### Production Ready (Default Enabled)\n\n- **OpenSSH 10.2** - mlkem768x25519 is default key exchange\n- **BoringSSL** - ML-KEM deployed in Chrome\n\n### Production Ready (Manual Configuration)\n\n- **OpenSSL 3.5+** - Full NIST PQC support, requires configuration\n- **Bouncy Castle** - Comprehensive PQC library, application integration needed\n- **GnuTLS** - ML-KEM/ML-DSA support, configure cipher suites\n- **wolfSSL** - Embedded PQC, configure at build/runtime\n\n### Early Production / Stable\n\n- **liboqs/oqs-provider** - Stable API, production deployments emerging\n- **EJBCA** - PKI with PQC certificates\n- **Thales Luna HSM** - PQC-ready hardware\n\n### Experimental / Development\n\n- **HashiCorp Vault** - SLH-DSA in Transit (experimental)\n- **strongSwan** - ML-KEM for IPsec (experimental)\n- **Signal** - PQXDH (experimental)\n- **LibreSSL** - ML-KEM imported, not public API yet\n\n### Limited / Hybrid Support\n\n- **AWS KMS** - Gradual rollout\n- **Azure Dedicated HSM** - Via Thales capabilities\n- **Entrust nShield** - Hybrid mode support\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-6",
-      "source": "documentation",
-      "title": "Deployment Strategies",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Deployment Strategies\n\n### Hybrid Mode (Recommended)\n\nCombines classical and PQC algorithms for defense-in-depth:\n\n- **Key Exchange:** X25519 + ML-KEM-768 (e.g., X25519MLKEM768)\n- **Signatures:** RSA/ECDSA + ML-DSA (composite signatures)\n\n**Benefits:**\n\n- Protection if either algorithm is broken\n- Gradual migration path\n- Interoperability with legacy systems\n\n**Examples:**\n\n- OpenSSH: mlkem768x25519-sha256\n- GnuTLS: X25519MLKEM768\n- Bouncy Castle: Composite signatures\n\n### Pure PQC Mode\n\nUses only post-quantum algorithms:\n\n- **Key Exchange:** ML-KEM-768 or ML-KEM-1024\n- **Signatures:** ML-DSA-65 or ML-DSA-87\n\n**Use Cases:**\n\n- Systems requiring maximum quantum protection\n- Closed environments with full PQC support\n- Long-term confidentiality requirements (25+ years)\n\n### Algorithm Agility\n\nDesign systems to switch algorithms without redesign:\n\n- Use abstraction layers (e.g., oqs-provider for OpenSSL)\n- Negotiate algorithms at runtime\n- Support multiple signature/KEM algorithms\n\n**Tools:**\n\n- ISARA Radiate\n- Venafi crypto agility\n- Cryptosense Analyzer\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-7",
-      "source": "documentation",
-      "title": "Security Levels and Algorithm Selection",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Security Levels and Algorithm Selection\n\n### NIST Security Levels\n\n**Level 1:** Equivalent to AES-128 (128-bit security)\n\n- ML-KEM-512\n- Suitable for standard applications\n\n**Level 3:** Equivalent to AES-192 (192-bit security)\n\n- ML-KEM-768 (most commonly deployed)\n- ML-DSA-65\n- Recommended for most enterprises\n\n**Level 5:** Equivalent to AES-256 (256-bit security)\n\n- ML-KEM-1024\n- ML-DSA-87\n- Required for top secret / critical infrastructure\n\n### Recommended Configurations\n\n**TLS 1.3:**\n\n- Key Exchange: X25519+ML-KEM-768 hybrid\n- Authentication: ECDSA P-256 + ML-DSA-65 composite\n\n**SSH:**\n\n- Key Exchange: mlkem768x25519-sha256\n- Host Keys: Ed25519 + ML-DSA-65 composite\n\n**VPN/IPsec:**\n\n- IKEv2 with ML-KEM-768\n- Authentication: RSA-3072 or ML-DSA-65\n\n**PKI Certificates:**\n\n- Root CA: ML-DSA-87 (pure PQC for long-term trust)\n- Intermediate CA: RSA-4096 + ML-DSA-65 composite\n- End-entity: ECDSA P-256 + ML-DSA-65 composite\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-8",
-      "source": "documentation",
-      "title": "Performance Considerations",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Performance Considerations\n\n### Key Sizes\n\nPost-quantum keys are significantly larger than classical:\n\n| Algorithm        | Public Key      | Private Key     | Signature/Ciphertext |\n| ---------------- | --------------- | --------------- | -------------------- |\n| RSA-2048         | 256 bytes       | 1,193 bytes     | 256 bytes            |\n| ECDSA P-256      | 64 bytes        | 32 bytes        | 64 bytes             |\n| **ML-KEM-768**   | **1,184 bytes** | **2,400 bytes** | **1,088 bytes**      |\n| **ML-DSA-65**    | **1,952 bytes** | **4,000 bytes** | **3,309 bytes**      |\n| **SLH-DSA-128f** | **32 bytes**    | **64 bytes**    | **17,088 bytes**     |\n\n**Impact:**\n\n- Increased bandwidth for TLS handshakes (3-5 KB additional)\n- Larger certificate files\n- More storage for key material\n- Potential MTU fragmentation issues\n\n### Computational Performance\n\n- **ML-KEM:** Faster than RSA, comparable to ECDH\n- **ML-DSA:** Faster signing than RSA, slower verification\n- **SLH-DSA:** Significantly slower, but hash-based security\n\n**Hardware Acceleration:**\n\n- Intel AVX2/AVX-512 optimizations available\n- ARM NEON support in some implementations\n- HSMs provide hardware acceleration\n\n### Network Impact\n\n- TLS handshake size increases ~3-5 KB\n- SSH connection setup adds ~2-3 KB\n- IPsec IKE messages grow by ~2 KB\n- May require MTU adjustments for some networks\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-9",
-      "source": "documentation",
-      "title": "Migration Planning",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Migration Planning\n\n### Phase 1: Discovery and Assessment (3-6 months)\n\n1. **Inventory cryptographic systems**\n   - Use Cryptosense Analyzer or similar tools\n   - Identify all uses of RSA, ECC, DH\n\n2. **Assess PQC readiness**\n   - Check software versions and update paths\n   - Test PQC in lab environments\n   - Measure performance impact\n\n3. **Prioritize by risk**\n   - Focus on long-lived data first\n   - Critical infrastructure and high-value assets\n   - Systems with 10+ year deployment lifecycle\n\n**Tools:** Cryptosense Analyzer, SSLyze, testssl.sh\n\n---\n\n### Phase 2: Pilot Deployment (6-12 months)\n\n1. **Internal systems first**\n   - Enable hybrid mode in test environments\n   - Monitor performance and compatibility\n   - Train operations teams\n\n2. **Infrastructure hardening**\n   - Deploy OpenSSH with PQC\n   - Enable hybrid TLS in internal APIs\n   - Test VPN with strongSwan PQC\n\n3. **Certificate infrastructure**\n   - Stand up test PKI with PQC certificates\n   - Issue composite certificates\n   - Test certificate validation\n\n**Tools:** OpenSSL 3.5+, liboqs, EJBCA\n\n---\n\n### Phase 3: Production Rollout (12-24 months)\n\n1. **External-facing services**\n   - Enable hybrid TLS on public websites\n   - Deploy PQC in client applications\n   - Update mobile apps with PQC libraries\n\n2. **Certificate migration**\n   - Issue new certificate chains with PQC\n   - Maintain dual certificates during transition\n   - Update trust stores\n\n3. **Partner integration**\n   - Coordinate with vendors and partners\n   - Ensure interoperability\n   - Document configuration requirements\n\n**Tools:** Venafi, Keyfactor, ISARA Radiate\n\n---\n\n### Phase 4: Full Transition (24-60 months)\n\n1. **Deprecate classical-only systems**\n   - Phase out RSA-2048 and below\n   - Require hybrid or pure PQC\n   - Update security policies\n\n2. **Algorithm lifecycle management**\n   - Monitor NIST for algorithm updates\n   - Implement crypto agility frameworks\n   - Plan for algorithm rotation\n\n3. **Continuous monitoring**\n   - Scan for non-compliant system",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-10",
-      "source": "documentation",
-      "title": "Industry-Specific Considerations",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Industry-Specific Considerations\n\n### Financial Services\n\n- **Regulatory drivers:** PCI DSS, PSD2, SEC cybersecurity rules\n- **Priority:** Payment systems, trading platforms, customer data\n- **Recommendations:**\n  - Thales payShield with PQC roadmap\n  - OpenSSL 3.5+ for TLS\n  - HSM-backed key storage\n\n### Government and Defense\n\n- **Regulatory drivers:** NSA CNSA 2.0, NIST guidelines\n- **Priority:** Classified communications, critical infrastructure\n- **Recommendations:**\n  - FIPS 140-3 validated solutions\n  - Pure PQC mode for classified\n  - ML-KEM-1024 and ML-DSA-87 (Level 5)\n\n### Healthcare\n\n- **Regulatory drivers:** HIPAA, HITECH, state privacy laws\n- **Priority:** Patient records (25+ year retention), medical devices\n- **Recommendations:**\n  - Hybrid mode for interoperability\n  - Focus on data-at-rest encryption\n  - Long-term archive encryption\n\n### Telecommunications\n\n- **Regulatory drivers:** ETSI standards, national security requirements\n- **Priority:** 5G infrastructure, subscriber data, roaming\n- **Recommendations:**\n  - wolfSSL for embedded 5G components\n  - strongSwan for IPsec tunnels\n  - Signal Protocol for messaging\n\n### Critical Infrastructure\n\n- **Regulatory drivers:** ICS-CERT, sector-specific regulations\n- **Priority:** SCADA systems, industrial IoT, long-lived devices\n- **Recommendations:**\n  - wolfBoot for secure firmware updates\n  - wolfSSL for embedded systems\n  - 20+ year device lifecycle planning\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-11",
-      "source": "documentation",
-      "title": "Open Source vs. Commercial Solutions",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Open Source vs. Commercial Solutions\n\n### Open Source Advantages\n\n- **Transparency:** Full source code review\n- **Community:** Broad adoption and testing\n- **Cost:** No licensing fees\n- **Flexibility:** Customize as needed\n\n**Recommended Open Source:**\n\n- OpenSSL 3.5+ (Cryptographic library)\n- liboqs + oqs-provider (PQC enabler)\n- OpenSSH 10.2 (SSH with PQC default)\n- GnuTLS (TLS implementation)\n- EJBCA (PKI software)\n\n### Commercial Advantages\n\n- **Support:** Vendor support and SLAs\n- **Integration:** Enterprise tooling and automation\n- **Compliance:** Pre-certified for FIPS, Common Criteria\n- **Roadmap:** Clear PQC migration path\n\n**Recommended Commercial:**\n\n- Thales Luna HSM (Hardware key storage)\n- ISARA Radiate (Migration toolkit)\n- Keyfactor/Venafi (Enterprise PKI)\n- HashiCorp Vault (Secrets management)\n- CyberArk (Privileged access)\n\n### Hybrid Approach (Recommended)\n\n- Use open source for libraries and protocols\n- Commercial for HSMs, enterprise management\n- Open source for testing and development\n- Commercial for production high-security systems\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-12",
-      "source": "documentation",
-      "title": "Testing and Validation",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Testing and Validation\n\n### Functional Testing\n\n1. **Algorithm Verification**\n   - Test all supported PQC algorithms\n   - Verify correct parameter sets\n   - Validate key sizes and formats\n\n2. **Interoperability**\n   - Test client-server with different implementations\n   - Verify hybrid mode fallback\n   - Check cross-platform compatibility\n\n3. **Error Handling**\n   - Unsupported algorithm negotiation\n   - Certificate validation failures\n   - Key size limits\n\n### Performance Testing\n\n1. **Baseline Metrics**\n   - TLS handshake time (classical)\n   - Throughput (classical)\n   - CPU and memory usage\n\n2. **PQC Metrics**\n   - TLS handshake time (hybrid and pure PQC)\n   - Throughput with PQC\n   - Resource utilization increase\n\n3. **Load Testing**\n   - Concurrent connections with PQC\n   - Peak load scenarios\n   - Sustained high-volume traffic\n\n### Security Testing\n\n1. **Configuration Validation**\n   - SSLyze or testssl.sh scans\n   - Cipher suite ordering\n   - Certificate chain validation\n\n2. **Penetration Testing**\n   - Downgrade attacks\n   - Algorithm negotiation manipulation\n   - Certificate spoofing attempts\n\n3. **Compliance Validation**\n   - FIPS 140-3 mode verification\n   - NIST compliance checks\n   - Industry-specific requirements\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-13",
-      "source": "documentation",
-      "title": "Common Challenges and Solutions",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Common Challenges and Solutions\n\n### Challenge 1: Certificate Size and Validation\n\n**Problem:** PQC certificates are 3-5x larger, causing issues with:\n\n- Legacy systems with hard-coded size limits\n- Network appliances with certificate size restrictions\n- TLS handshake fragmentation\n\n**Solutions:**\n\n- Use hybrid certificates initially\n- Update size limits in configurations\n- Enable TLS 1.3 with compression\n- Consider certificate caching strategies\n\n---\n\n### Challenge 2: Performance Impact\n\n**Problem:** Increased CPU usage and latency\n\n**Solutions:**\n\n- Use hybrid mode (better performance than pure PQC)\n- Enable hardware acceleration (AVX2, AVX-512)\n- Deploy HSMs for high-volume operations\n- Optimize TLS session resumption\n\n---\n\n### Challenge 3: Lack of Universal Support\n\n**Problem:** Not all clients/servers support PQC\n\n**Solutions:**\n\n- Deploy hybrid mode for compatibility\n- Maintain dual certificate chains\n- Use algorithm negotiation\n- Plan for 5-10 year transition period\n\n---\n\n### Challenge 4: Key and Certificate Management\n\n**Problem:** Managing larger keys and certificates at scale\n\n**Solutions:**\n\n- Automate certificate lifecycle with Keyfactor/Venafi\n- Implement crypto agility frameworks\n- Use centralized key management (Vault, KMS)\n- Regular auditing with Cryptosense Analyzer\n\n---\n\n### Challenge 5: Vendor Readiness\n\n**Problem:** Third-party software and hardware not PQC-ready\n\n**Solutions:**\n\n- Survey vendors on PQC roadmaps\n- Require PQC support in procurement\n- Plan for equipment replacement cycles\n- Use PQC-capable intermediary devices\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-14",
-      "source": "documentation",
-      "title": "Compliance and Standards",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Compliance and Standards\n\n### NIST Guidance\n\n- **NIST IR 8413:** Migration to Post-Quantum Cryptography\n- **NIST FIPS 203/204/205:** Standardized PQC algorithms\n- **NIST SP 800-208:** Recommendation for Stateful Hash-Based Signatures\n\n### NSA Requirements\n\n- **CNSA 2.0:** Commercial National Security Algorithm Suite\n  - All NSS must use quantum-resistant algorithms by 2035\n  - Firmware and software signing: SLH-DSA by 2025\n  - TLS: Hybrid key exchange by 2025, pure PQC by 2030\n\n### Industry Standards\n\n- **ETSI TS 103 744:** Quantum-Safe Hybrid Key Exchanges in IKEv2\n- **IETF Drafts:** Multiple PQC TLS and SSH specifications\n- **PCI DSS v4.0:** Crypto agility requirements (prepares for PQC)\n\n### Regulatory Landscape\n\n- **EU Cybersecurity Act:** Preparing for quantum threats\n- **US QUANTUM Act:** Federal quantum readiness requirements\n- **Financial sector:** Growing awareness and planning\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-15",
-      "source": "documentation",
-      "title": "Resources and Training",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Resources and Training\n\n### Technical Resources\n\n- **Open Quantum Safe Project:** https://openquantumsafe.org/\n- **NIST PQC:** https://csrc.nist.gov/projects/post-quantum-cryptography\n- **PQ Code Package:** https://github.com/pq-code-package\n- **wolfSSL PQC Documentation:** https://www.wolfssl.com/pqc/\n\n### Training and Certification\n\n- SANS courses on quantum-safe cryptography\n- ISC2 quantum computing security training\n- Vendor-specific training (Thales, Keyfactor, ISARA)\n\n### Community and Forums\n\n- Linux Foundation Post-Quantum Cryptography Alliance (PQCA)\n- IETF PQC working groups\n- Cloud Security Alliance quantum-safe working group\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-16",
-      "source": "documentation",
-      "title": "Vendor Contact Information",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Vendor Contact Information\n\n### Open Source Projects\n\n- **OpenSSL:** https://www.openssl.org/\n- **Open Quantum Safe:** https://openquantumsafe.org/\n- **Bouncy Castle:** https://www.bouncycastle.org/\n\n### Commercial Vendors\n\n- **Thales:** https://cpl.thalesgroup.com/\n- **Entrust:** https://www.entrust.com/\n- **ISARA:** https://www.isara.com/\n- **Keyfactor:** https://www.keyfactor.com/\n- **Venafi:** https://venafi.com/\n- **HashiCorp:** https://www.hashicorp.com/\n- **wolfSSL:** https://www.wolfssl.com/\n\n---",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
-      },
-      "deepLink": "/migrate"
-    },
-    {
-      "id": "doc-quantum-safe-software-comprehensive-guide-17",
-      "source": "documentation",
-      "title": "Conclusion",
-      "content": "Document: quantum_safe_software_comprehensive_guide\nSection: Conclusion\n\nThe transition to quantum-safe cryptography is no longer optional—it's an essential component of long-term security strategy. With 31 production-ready and emerging solutions available across 13 critical categories, organizations can begin their PQC migration today.\n\n**Key Takeaways:**\n\n1. **Start Now:** \"Harvest now, decrypt later\" attacks make current data vulnerable\n2. **Hybrid First:** Combine classical and PQC for smooth transition\n3. **Focus on Maturity:** OpenSSH, OpenSSL, and Bouncy Castle are production-ready\n4. **Plan for 5-10 Years:** Full organizational migration takes time\n5. **Test Thoroughly:** Performance, interoperability, and security validation essential\n6. **Vendor Engagement:** Ensure third-party readiness\n7. **Algorithm Agility:** Build systems that can adapt to future changes\n\n**Immediate Actions:**\n\n1. **Assess:** Use Cryptosense Analyzer or testssl.sh to inventory current crypto\n2. **Test:** Deploy OpenSSL 3.5+ or liboqs in development environment\n3. **Plan:** Create 5-year PQC migration roadmap\n4. **Enable:** Turn on hybrid mode in OpenSSH (already default in 10.2+)\n5. **Monitor:** Track NIST and NSA guidance updates\n\nThe quantum-safe software ecosystem is maturing rapidly. Organizations that begin their transition now will be well-positioned to protect their data and infrastructure against the quantum threat.\n\n---\n\n**Document Classification:** Public  \n**Distribution:** Unlimited  \n**Last Updated:** December 17, 2025  \n**Next Review:** March 2026 (Quarterly Updates Recommended)",
-      "category": "documentation",
-      "metadata": {
-        "fileName": "quantum_safe_software_comprehensive_guide",
-        "filePath": "src/data/quantum_safe_software_comprehensive_guide.md"
       },
       "deepLink": "/migrate"
     },
@@ -26652,7 +26448,7 @@
       "id": "doc-enrichment-Singapore:Quantinuum/NQO — Helios Quantum Computer Singapore Deployment",
       "source": "document-enrichment",
       "title": "Helios Quantum Computer Singapore Deployment — Document Analysis",
-      "content": "Title: Helios Quantum Computer Singapore Deployment\nAuthors: Quantinuum and Singapore National Quantum Office\nPublication Date: 2026-01-01\nDocument Status: New\nMain Topic: Quantinuum partners with Singapore's National Quantum Office to deploy the Helios quantum computer, a high-performance quantum system.\nApplicable Regions / Bodies: Regions: Singapore; Bodies: National Quantum Office (NQO), Agency for Science, Technology and Research (A*STAR), National Quantum Computing Hub (NQCH)\nLeaders Contributions Mentioned: Mr. Ling Keok Tong (Executive Director of NQO), Dr. Rajeeb Hazra (President & CEO of Quantinuum), Mrs. Josephine Teo (Minister for Digital Development and Information)",
+      "content": "Title: Helios Quantum Computer Singapore Deployment\nAuthors: Quantinuum and Singapore National Quantum Office\nPublication Date: 2026-01-01\nDocument Status: New\nMain Topic: Quantinuum partners with Singapore's National Quantum Office to deploy the Helios quantum computer, a high-performance quantum system.\nApplicable Regions / Bodies: Regions: Singapore; Bodies: National Quantum Office (NQO), Agency for Science, Technology and Research (A\\*STAR), National Quantum Computing Hub (NQCH)\nLeaders Contributions Mentioned: Mr. Ling Keok Tong (Executive Director of NQO), Dr. Rajeeb Hazra (President & CEO of Quantinuum), Mrs. Josephine Teo (Minister for Digital Development and Information)",
       "category": "document-enrichment",
       "metadata": {
         "refId": "Singapore:Quantinuum/NQO — Helios Quantum Computer Singapore Deployment",
@@ -27475,6 +27271,15 @@
       "category": "page-guide",
       "metadata": { "page": "about" },
       "deepLink": "/about"
+    },
+    {
+      "id": "changelog-2.13.0",
+      "source": "changelog",
+      "title": "PQC Today v2.13.0 — Release Notes (2026-03-03)",
+      "content": "Version 2.13.0 released 2026-03-03.\n\n### Added\n\n- **Deep link E2E test suite**: 28 Playwright tests across 10 route\n  groups validating all major query-parameter deep links — `/timeline?country=`, `/library?ref=`,\n  `/threats?id=`, `/learn/<id>?tab=&step=`, `/leaders?leader=`, `/algorithms?highlight=`,\n  `/migrate?q=`, `/compliance?cert=`, `/openssl?cmd=`, `/learn/quiz?category=`. Tests cover valid\n  params, invalid/fallback behaviour, URL-encoded spaces, and cross-page isolation. All 28 pass on\n  Chromium; no regressions in full shard (146 passing).\n\n- **RAG test harness**: 4-phase automated accuracy script — (1)\n  corpus-wide deep link validator, (2) MiniSearch retrieval accuracy against 35 representative\n  Q&A pairs spanning all 18 QandA sections, (3) pass-rate summary, (4) source coverage analysis.\n  Achieves 35/35 (100%) retrieval accuracy after corpus fixes. Exits with code 1 on any failure.\n\n- **5G Security — Exercise 6: SIM Key Provisioning Supply Chain**: Hands-on walkthrough of the full Ki factory-to-operator lifecycle,\n  demonstrating how subscriber identity keys are generated inside an HSM, encrypted under a\n  customer KEK, and distributed without ever exposing Ki in plaintext. Joins 5 existing 5G\n  exercises (Profile A/B/C, 5G-AKA, SIM Provisioning).\n\n- **5G hybrid mode formula callout**: Highlighted formula box in the\n  SUCI Profile C section showing `Z = SHA-256(Z_ecdh ‖ Z_kem)` — the explicit combination of\n  X25519 and ML-KEM-768 shared secrets — with byte-length annotations.\n\n### Fixed\n\n- **Library referenceIds now searchable in RAG corpus**:\n  244 of 254 library chunks had their `referenceId` stored only in `metadata`, making them\n  invisible to MiniSearch. Added `Reference: <refId>` as the first line of every library chunk's\n  `content` field. Queries like \"What is NIST CSWP 39?\" or \"show me RFC 9629\" now correctly\n  surface the relevant document. Cross-reference count increased from 497 → 511.\n\n- **Stale documentation corpus counts corrected**: Multiple\n  internal guidance chunks c…",
+      "category": "changelog",
+      "metadata": { "version": "2.13.0", "date": "2026-03-03" },
+      "deepLink": "/changelog"
     },
     {
       "id": "changelog-2.12.1",

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-04T06:16:13.404Z",
-  "chunkCount": 2405,
+  "generatedAt": "2026-03-04T14:29:38.324Z",
+  "chunkCount": 2436,
   "chunks": [
     {
       "id": "glossary-0",
@@ -24641,220 +24641,490 @@
       "deepLink": "/compliance?cert=A7401"
     },
     {
-      "id": "doc-enrichment-RFC-9763",
+      "id": "doc-enrichment-PKCS11-V31-OASIS",
       "source": "document-enrichment",
-      "title": "Related Certificates for Use in Multiple Authentications within a Protocol — Document Analysis",
-      "content": "Title: Related Certificates for Use in Multiple Authentications within a Protocol\nAuthors: IETF LAMPS; Alison Becker (NSA); Rebecca Guthrie (NSA); Michael Jenkins (NSA)\nPublication Date: 2022-03-21\nLast Updated: 2025-06-13\nDocument Status: Proposed Standard\nMain Topic: Enabling non-composite hybrid authentication using separate traditional and post-quantum cryptography (PQC) certificates\nProtocols Covered: X.509\nInfrastructure Layers: PKI\nStandardization Bodies: IETF",
+      "title": "PKCS #11 Specification Version 3.1 (OASIS Standard) — Document Analysis",
+      "content": "Title: PKCS #11 Specification Version 3.1 (OASIS Standard)\nAuthors: OASIS PKCS11 Technical Committee\nPublication Date: 2023-07-23\nLast Updated: 2023-07-23\nDocument Status: OASIS Standard\nMain Topic: A technical document detailing cryptographic algorithms, protocols, and key management mechanisms including RSA, DSA, ECC, Diffie-Hellman, and related standards.\nCompliance Frameworks Referenced: FIPS 186-4",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC-9763", "collection": "library" },
-      "deepLink": "/library?ref=RFC-9763"
+      "metadata": { "refId": "PKCS11-V31-OASIS", "collection": "library" },
+      "deepLink": "/library?ref=PKCS11-V31-OASIS"
     },
     {
-      "id": "doc-enrichment-draft-bonnell-lamps-chameleon-certs-07",
+      "id": "doc-enrichment-PKCS11-V32-OASIS",
       "source": "document-enrichment",
-      "title": "A Mechanism for Encoding Differences in Paired Certificates (Chameleon Certs) — Document Analysis",
-      "content": "Title: A Mechanism for Encoding Differences in Paired Certificates (Chameleon Certs)\nAuthors: IETF LAMPS; Corey Bonnell (DigiCert); John Gray (Entrust); D. Hook (KeyFactor); Tomofumi Okubo (DigiCert); Mike Ounsworth (Entrust)\nPublication Date: 2023-05-31\nLast Updated: 2025-10-18\nDocument Status: Active Internet-Draft\nMain Topic: An X.509 v3 certificate extension that allows a relying party to construct both paired certificates with a single certificate.\nPQC Algorithms Covered: ML-DSA-65\nProtocols Covered: X.509, PKCS #10\nInfrastructure Layers: PKI\nStandardization Bodies: IETF",
+      "title": "PKCS #11 Specification Version 3.2 (Committee Specification Draft) — Document Analysis",
+      "content": "Title: PKCS #11 Specification Version 3.2 (Committee Specification Draft)\nAuthors: OASIS PKCS11 Technical Committee\nPublication Date: 2025-04-16\nLast Updated: 2025-04-16\nDocument Status: Committee Specification Draft\nMain Topic: PKCS #11 Specification Version 3.2 — defines a platform-independent API for cryptographic token operations, extending v3.1 with new mechanisms and PQC-ready interfaces.\nStandardization Bodies: OASIS",
       "category": "document-enrichment",
-      "metadata": { "refId": "draft-bonnell-lamps-chameleon-certs-07", "collection": "library" },
-      "deepLink": "/library?ref=draft-bonnell-lamps-chameleon-certs-07"
+      "metadata": { "refId": "PKCS11-V32-OASIS", "collection": "library" },
+      "deepLink": "/library?ref=PKCS11-V32-OASIS"
     },
     {
-      "id": "doc-enrichment-RFC-9909",
+      "id": "doc-enrichment-WH-PQC-Report-2024",
       "source": "document-enrichment",
-      "title": "Profile for Use of SLH-DSA in the Internet X.509 PKI — Document Analysis",
-      "content": "Title: Profile for Use of SLH-DSA in the Internet X.509 PKI\nAuthors: IETF LAMPS; Jake Massimo (AWS); Scott Fluhrer (Cisco)\nPublication Date: 2025-10-01\nLast Updated: 2025-10-01\nDocument Status: Proposed Standard\nMain Topic: Specification of SLH-DSA digital signatures and public key fields in X.509 certificates\nPQC Algorithms Covered: SLH-DSA\nApplicable Regions / Bodies: United States; NIST\nProtocols Covered: X.509\nInfrastructure Layers: PKI; Key Management\nStandardization Bodies: NIST; IETF",
+      "title": "White House Report on Post-Quantum Cryptography (July 2024) — Document Analysis",
+      "content": "Title: White House Report on Post-Quantum Cryptography (July 2024)\nAuthors: White House; ONCD\nPublication Date: 2024-07-01\nLast Updated: 2024-07-01\nDocument Status: Final\nMain Topic: A White House report on the migration to post-quantum cryptography (PQC), estimating a $7.1B cost and outlining strategies for federal agencies.\nQuantum Threats Addressed: CRQC, Harvest Now Decrypt Later (record-now-decrypt-later attacks)\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, CISA, OMB, Department of Homeland Security (DHS)\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: OMB Memorandum M-23-02, Executive Order 14028, OMB Memorandum M-22-09",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC-9909", "collection": "library" },
-      "deepLink": "/library?ref=RFC-9909"
+      "metadata": { "refId": "WH-PQC-Report-2024", "collection": "library" },
+      "deepLink": "/library?ref=WH-PQC-Report-2024"
     },
     {
-      "id": "doc-enrichment-KpqC-Competition-Results",
+      "id": "doc-enrichment-EO-14144",
       "source": "document-enrichment",
-      "title": "Korean Post-Quantum Cryptography Competition Final Results — Document Analysis",
-      "content": "Title: Korean Post-Quantum Cryptography Competition Final Results\nAuthors: KISA; Ministry of Science and ICT; NIS Korea\nPublication Date: 2025-01-31\nLast Updated: 2025-01-31\nDocument Status: Final Results\nMain Topic: Korea selects HAETAE and AIMer (signatures) plus SMAUG-T and NTRU+ (KEMs) as national PQC standards with a target standardization by 2029 and migration by 2035.\nPQC Algorithms Covered: HAETAE, AIMer, SMAUG-T, NTRU+\nMigration Timeline Info: Target standardization by 2029; migration by 2035\nApplicable Regions / Bodies: Regions: South Korea; Bodies: None detected",
+      "title": "Executive Order 14144 — Strengthening and Promoting Innovation in the Nation's Cybersecurity — Document Analysis",
+      "content": "Title: Executive Order 14144 — Strengthening and Promoting Innovation in the Nation's Cybersecurity\nAuthors: White House\nPublication Date: 2025-01-16\nLast Updated: 2025-01-16\nDocument Status: Final\nMain Topic: Biden administration executive order on cybersecurity including PQC provisions. Mandates PQC-ready systems for federal agencies and sets security standards for critical infrastructure\nApplicable Regions / Bodies: Regions: United States; Bodies: federal agencies",
       "category": "document-enrichment",
-      "metadata": { "refId": "KpqC-Competition-Results", "collection": "library" },
-      "deepLink": "/library?ref=KpqC-Competition-Results"
+      "metadata": { "refId": "EO-14144", "collection": "library" },
+      "deepLink": "/library?ref=EO-14144"
     },
     {
-      "id": "doc-enrichment-NIST-FIPS140-3-IG-PQC",
+      "id": "doc-enrichment-India-TEC-910018-2025",
       "source": "document-enrichment",
-      "title": "FIPS 140-3 Implementation Guidance for Post-Quantum Cryptography — Document Analysis",
-      "content": "Title: FIPS 140-3 Implementation Guidance for Post-Quantum Cryptography\nAuthors: NIST CMVP\nPublication Date: 2025-09-02\nLast Updated: 2025-09-02\nDocument Status: Published Update\nMain Topic: This document provides guidance for the Cryptographic Module Validation Program (CMVP), clarifying test requirements for cryptographic modules under FIPS 140-3.\nApplicable Regions / Bodies: Regions: United States, Canada; Bodies: NIST, Canadian Centre for Cyber Security (CCCS)\nProtocols Covered: TLS 1.2\nInfrastructure Layers: Key Management\nStandardization Bodies: NIST, ISO\nCompliance Frameworks Referenced: FIPS 140-3",
+      "title": "India TEC Technical Report TEC 910018:2025 — Migration to Post-Quantum Cryptography — Document Analysis",
+      "content": "Title: India TEC Technical Report TEC 910018:2025 — Migration to Post-Quantum Cryptography\nAuthors: TEC India; Department of Telecommunications\nPublication Date: 2025-01-01\nLast Updated: 2025-01-01\nDocument Status: Published\nMain Topic: This technical report addresses the need for government organizations, industry, and enterprises to prepare for the quantum threat by transitioning to quantum-safe cryptography to protect critical digital infrastructures.\nQuantum Threats Addressed: Shor's Algorithm, Grover's Algorithm",
       "category": "document-enrichment",
-      "metadata": { "refId": "NIST-FIPS140-3-IG-PQC", "collection": "library" },
-      "deepLink": "/library?ref=NIST-FIPS140-3-IG-PQC"
+      "metadata": { "refId": "India-TEC-910018-2025", "collection": "library" },
+      "deepLink": "/library?ref=India-TEC-910018-2025"
     },
     {
-      "id": "doc-enrichment-3GPP-PQC-Study-2025",
+      "id": "doc-enrichment-PQCC-Migration-Roadmap-2025",
       "source": "document-enrichment",
-      "title": "Study on Preparing for Transition to Post Quantum Cryptography in 3GPP — Document Analysis",
-      "content": "Title: Study on Preparing for Transition to Post Quantum Cryptography in 3GPP\nAuthors: 3GPP SA3\nPublication Date: 2025-05-01\nLast Updated: 2025-05-01\nDocument Status: Study Item Approved\nMain Topic: Study on integrating standalone or hybrid PQC algorithms into existing 5G security protocols\nApplicable Regions / Bodies: Bodies: 3GPP\nProtocols Covered: TLS, IPSec, IKEv2\nStandardization Bodies: 3GPP",
+      "title": "Post-Quantum Cryptography Coalition (PQCC) PQC Migration Roadmap — Document Analysis",
+      "content": "Title: Post-Quantum Cryptography Coalition (PQCC) PQC Migration Roadmap\nAuthors: PQCC; Post-Quantum Cryptography Coalition\nPublication Date: 2025-05-01\nLast Updated: 2025-05-01\nDocument Status: Published\nMain Topic: The PQCC publishes a comprehensive and tailorable PQC Migration Roadmap to assist organizations in navigating PQC migration.",
       "category": "document-enrichment",
-      "metadata": { "refId": "3GPP-PQC-Study-2025", "collection": "library" },
-      "deepLink": "/library?ref=3GPP-PQC-Study-2025"
+      "metadata": { "refId": "PQCC-Migration-Roadmap-2025", "collection": "library" },
+      "deepLink": "/library?ref=PQCC-Migration-Roadmap-2025"
     },
     {
-      "id": "doc-enrichment-liboqs-v0.15.0",
+      "id": "doc-enrichment-PQCC-Inventory-Workbook-2025",
       "source": "document-enrichment",
-      "title": "Open Quantum Safe liboqs Library v0.15.0 — Document Analysis",
-      "content": "Title: Open Quantum Safe liboqs Library v0.15.0\nAuthors: Open Quantum Safe; Linux Foundation PQCA\nPublication Date: 2025-11-14\nLast Updated: 2025-11-14\nDocument Status: Released\nMain Topic: liboqs is an open source C library for quantum-safe cryptographic algorithms.\nPQC Algorithms Covered: ML-KEM, ML-DSA, SLH-DSA\nPQC Products Mentioned: liboqs\nProtocols Covered: TLS, SSH, X.509, CMS, S/MIME\nStandardization Bodies: NIST",
+      "title": "Post-Quantum Cryptography Coalition (PQCC) PQC Inventory Workbook — Document Analysis",
+      "content": "Title: Post-Quantum Cryptography Coalition (PQCC) PQC Inventory Workbook\nAuthors: PQCC; Post-Quantum Cryptography Coalition\nPublication Date: 2025-06-01\nLast Updated: 2025-06-01\nDocument Status: Published\nMain Topic: PQCC publishes structured workbook to assist organizations in creating centralized cryptographic inventories for PQC migration planning.",
       "category": "document-enrichment",
-      "metadata": { "refId": "liboqs-v0.15.0", "collection": "library" },
-      "deepLink": "/library?ref=liboqs-v0.15.0"
+      "metadata": { "refId": "PQCC-Inventory-Workbook-2025", "collection": "library" },
+      "deepLink": "/library?ref=PQCC-Inventory-Workbook-2025"
     },
     {
-      "id": "doc-enrichment-FIPS 203",
+      "id": "doc-enrichment-ANSSI-PQC-Position-2022",
       "source": "document-enrichment",
-      "title": "Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM) — Document Analysis",
-      "content": "Title: Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM)\nAuthors: NIST\nPublication Date: 2023-08-24\nLast Updated: 2024-08-13\nDocument Status: Final Standard\nMain Topic: Specification of the ML-KEM key-encapsulation mechanism as a post-quantum cryptographic standard\nPQC Algorithms Covered: ML-KEM\nApplicable Regions / Bodies: United States; NIST, Department of Commerce\nStandardization Bodies: NIST",
+      "title": "ANSSI Views on Post-Quantum Cryptography Transition — Document Analysis",
+      "content": "Title: ANSSI Views on Post-Quantum Cryptography Transition\nAuthors: ANSSI; French National Cybersecurity Agency\nPublication Date: 2022-01-04\nLast Updated: 2022-01-04\nDocument Status: Published\nMain Topic: ANSSI publishes France's position on PQC transition, advocating hybrid post-quantum/classical schemes as the primary migration path.\nApplicable Regions / Bodies: Regions: France; Bodies: French government, regulated entities",
       "category": "document-enrichment",
-      "metadata": { "refId": "FIPS 203", "collection": "library" },
-      "deepLink": "/library?ref=FIPS%20203"
+      "metadata": { "refId": "ANSSI-PQC-Position-2022", "collection": "library" },
+      "deepLink": "/library?ref=ANSSI-PQC-Position-2022"
     },
     {
-      "id": "doc-enrichment-FIPS 204",
+      "id": "doc-enrichment-ANSSI-PQC-FAQ-2025",
       "source": "document-enrichment",
-      "title": "Module-Lattice-Based Digital Signature Standard (ML-DSA) — Document Analysis",
-      "content": "Title: Module-Lattice-Based Digital Signature Standard (ML-DSA)\nAuthors: NIST\nPublication Date: 2023-08-24\nLast Updated: 2024-08-13\nDocument Status: Final Standard\nMain Topic: A post-quantum cryptographic digital signature scheme based on module lattices, named ML-DSA\nPQC Algorithms Covered: ML-DSA\nQuantum Threats Addressed: Shor's Algorithm\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST\nStandardization Bodies: NIST",
+      "title": "ANSSI Post-Quantum Cryptography FAQ — Document Analysis",
+      "content": "Title: ANSSI Post-Quantum Cryptography FAQ\nAuthors: ANSSI\nPublication Date: 2025-10-01\nLast Updated: 2025-10-01\nDocument Status: Published\nMain Topic: Post-quantum cryptography migration, regulations, and implementation guidelines\nPQC Algorithms Covered: SLH-DSA, XMSS, LMS\nQuantum Threats Addressed: Shor's Algorithm, Harvest Now Decrypt Later\nMigration Timeline Info: 2027: PQC required for product qualification; 2030: Products without PQC not recommended for purchase\nApplicable Regions / Bodies: ANSSI (France), NIST (United States)\nInfrastructure Layers: PKI, Key Management, HSM\nStandardization Bodies: NIST, ANSSI",
       "category": "document-enrichment",
-      "metadata": { "refId": "FIPS 204", "collection": "library" },
-      "deepLink": "/library?ref=FIPS%20204"
+      "metadata": { "refId": "ANSSI-PQC-FAQ-2025", "collection": "library" },
+      "deepLink": "/library?ref=ANSSI-PQC-FAQ-2025"
     },
     {
-      "id": "doc-enrichment-FIPS 205",
+      "id": "doc-enrichment-EC-Recommendation-2024-1101",
       "source": "document-enrichment",
-      "title": "Stateless Hash-Based Digital Signature Standard (SLH-DSA) — Document Analysis",
-      "content": "Title: Stateless Hash-Based Digital Signature Standard (SLH-DSA)\nAuthors: NIST\nPublication Date: 2023-08-24\nLast Updated: 2024-08-13\nDocument Status: Final Standard\nMain Topic: Specification of the Stateless Hash-Based Digital Signature Algorithm (SLH-DSA) for post-quantum cryptography.\nPQC Algorithms Covered: SLH-DSA\nApplicable Regions / Bodies: United States; NIST\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: FIPS 140-3",
+      "title": "European Commission Recommendation on Post-Quantum Cryptography (2024/1101) — Document Analysis",
+      "content": "Title: European Commission Recommendation on Post-Quantum Cryptography (2024/1101)\nAuthors: European Commission\nPublication Date: 2024-11-26\nLast Updated: 2024-11-26\nDocument Status: Published",
       "category": "document-enrichment",
-      "metadata": { "refId": "FIPS 205", "collection": "library" },
-      "deepLink": "/library?ref=FIPS%20205"
+      "metadata": { "refId": "EC-Recommendation-2024-1101", "collection": "library" },
+      "deepLink": "/library?ref=EC-Recommendation-2024-1101"
     },
     {
-      "id": "doc-enrichment-FIPS 206",
+      "id": "doc-enrichment-G7-Financial-PQC-Roadmap-2026",
       "source": "document-enrichment",
-      "title": "FFT over NTRU-Lattice-Based Digital Signature Algorithm (FN-DSA) — Document Analysis",
-      "content": "Title: FFT over NTRU-Lattice-Based Digital Signature Algorithm (FN-DSA)\nAuthors: NIST\nPublication Date: 2025-01-01\nLast Updated: 2025-12-09\nDocument Status: Draft Standard (IPD pending)\nMain Topic: NIST's Post-Quantum Cryptography (PQC) project, standards, and migration to quantum-resistant cryptography\nPQC Algorithms Covered: ML-KEM, ML-DSA, SLH-DSA, Falcon, HQC\nMigration Timeline Info: NIST will deprecate and ultimately remove quantum-vulnerable algorithms from its standards by 2035, with high-risk systems transitioning much earlier\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, NSA\nLeaders Contributions Mentioned: Dr. Dustin Moody (PQC Crypto Technical Inquiries)\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: FIPS",
+      "title": "G7 Cyber Expert Group Financial Sector PQC Roadmap — Document Analysis",
+      "content": "Title: G7 Cyber Expert Group Financial Sector PQC Roadmap\nAuthors: G7 Cyber Expert Group; US Treasury; G7 Finance Ministers\nPublication Date: 2026-01-17\nLast Updated: 2026-01-17\nDocument Status: Published\nMain Topic: The G7 Cyber Expert Group released a roadmap for coordinating the transition to post-quantum cryptography in the financial sector.\nPQC Algorithms Covered: ML-KEM, ML-DSA\nApplicable Regions / Bodies: Regions: G7 countries; Bodies: European Union, G7 Cyber Expert Group\nLeaders Contributions Mentioned: Cory Wilson (U.S. Treasury’s Deputy Assistant Secretary for Cybersecurity and Critical Infrastructure Protection), Duncan Mackinnon (Bank of England’s Executive Director for Supervisory Risk)",
       "category": "document-enrichment",
-      "metadata": { "refId": "FIPS 206", "collection": "library" },
-      "deepLink": "/library?ref=FIPS%20206"
+      "metadata": { "refId": "G7-Financial-PQC-Roadmap-2026", "collection": "library" },
+      "deepLink": "/library?ref=G7-Financial-PQC-Roadmap-2026"
     },
     {
-      "id": "doc-enrichment-FIPS 186-5",
+      "id": "doc-enrichment-CA-CFDIR-Quantum-Readiness-2023",
       "source": "document-enrichment",
-      "title": "Digital Signature Standard (DSS) — Document Analysis",
-      "content": "Title: Digital Signature Standard (DSS)\nAuthors: NIST\nPublication Date: 2023-02-03\nLast Updated: 2025-05-12\nDocument Status: Final Standard\nMain Topic: The document outlines the Federal Information Processing Standard (FIPS) 186-5 Digital Signature Standard (DSS), specifying algorithms for generating and verifying digital signatures.\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, U.S. Department of Commerce, Bureau of Industry and Security (BIS)\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: FIPS 140-3",
+      "title": "Canada CFDIR Quantum-Readiness Best Practices and Guidelines — Document Analysis",
+      "content": "Title: Canada CFDIR Quantum-Readiness Best Practices and Guidelines\nAuthors: CFDIR; Innovation Science and Economic Development Canada\nPublication Date: 2023-06-01\nLast Updated: 2023-06-01\nDocument Status: Published\nMain Topic: Provides recommended practices and guidelines for Canadian Critical Infrastructure stakeholders to transition to quantum-safe Post-Quantum Cryptography (PQC).\nQuantum Threats Addressed: Shor's Algorithm\nMigration Timeline Info: NIST is on-track to publish a first set of PQC standards in 2024; migration should occur sooner for systems requiring long-term confidentiality.\nApplicable Regions / Bodies: Regions: Canada; Bodies: U.S. National Institute of Standards and Technology (NIST), German Federal Office for Information Security (BSI), Financial Services Information Sharing and Analysis Center (FS-ISAC), U.S. National Cybersecurity Center of Excellence (NCCoE).\nProtocols Covered: Secure Socket Layer (SSL), Transport Layer Security (TLS)\nInfrastructure Layers: Public-Key Infrastructure (PKI), Key Management\nStandardization Bodies: U.S. National Institute of Standards and Technology (NIST)",
       "category": "document-enrichment",
-      "metadata": { "refId": "FIPS 186-5", "collection": "library" },
-      "deepLink": "/library?ref=FIPS%20186-5"
+      "metadata": { "refId": "CA-CFDIR-Quantum-Readiness-2023", "collection": "library" },
+      "deepLink": "/library?ref=CA-CFDIR-Quantum-Readiness-2023"
     },
     {
-      "id": "doc-enrichment-NIST SP 800-208",
+      "id": "doc-enrichment-SG-Quantum-Safe-Handbook-2025",
       "source": "document-enrichment",
-      "title": "Recommendation for Stateful Hash-Based Signature Schemes — Document Analysis",
-      "content": "Title: Recommendation for Stateful Hash-Based Signature Schemes\nAuthors: NIST\nPublication Date: 2020-10-29\nLast Updated: 2020-10-29\nDocument Status: Final\nMain Topic: Recommendation for stateful hash-based signature schemes (LMS and XMSS) for digital signatures\nPQC Algorithms Covered: Leighton-Micali Signatures (LMS), eXtended Merkle Signature Scheme (XMSS), Hierarchical Signature Scheme (HSS), XMSS Multi-Tree (XMSSMT)\nApplicable Regions / Bodies: United States; Bodies: NIST\nLeaders Contributions Mentioned: David A. Cooper, Daniel C. Apon, and others (authors of the document)\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: FIPS 140-3, CNSA 2.0, Common Criteria",
+      "title": "Singapore Quantum-Safe Handbook (Draft for Public Consultation) — Document Analysis",
+      "content": "Title: Singapore Quantum-Safe Handbook (Draft for Public Consultation)\nAuthors: CSA Singapore; GovTech Singapore; IMDA Singapore\nPublication Date: 2025-10-23\nLast Updated: 2025-10-23\nDocument Status: Draft/Consultation\nMain Topic: A four-pillar framework for quantum-safe migration to protect digital systems from cryptanalytically relevant quantum computers (CRQCs)\nPQC Algorithms Covered: SLH-DSA, XMSS, LMS\nQuantum Threats Addressed: CRQC, Shor's Algorithm, Grover's Algorithm",
       "category": "document-enrichment",
-      "metadata": { "refId": "NIST SP 800-208", "collection": "library" },
-      "deepLink": "/library?ref=NIST%20SP%20800-208"
+      "metadata": { "refId": "SG-Quantum-Safe-Handbook-2025", "collection": "library" },
+      "deepLink": "/library?ref=SG-Quantum-Safe-Handbook-2025"
     },
     {
-      "id": "doc-enrichment-NIST SP 800-227",
+      "id": "doc-enrichment-CZ-NUKIB-Crypto-Requirements-2023",
       "source": "document-enrichment",
-      "title": "Recommendations for Key-Encapsulation Mechanisms — Document Analysis",
-      "content": "Title: Recommendations for Key-Encapsulation Mechanisms\nAuthors: NIST\nPublication Date: 2025-09-18\nLast Updated: 2025-09-18\nDocument Status: Final\nMain Topic: Guidelines on key-encapsulation mechanisms (KEMs), their definitions, properties, applications, and secure implementation.\nPQC Algorithms Covered: ML-KEM\nQuantum Threats Addressed: Large-scale, cryptanalytically relevant quantum computers; Shor's Algorithm\nApplicable Regions / Bodies: United States; NIST\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: FIPS 140-validated cryptographic modules",
+      "title": "NUKIB Minimum Requirements for Cryptographic Algorithms — Document Analysis",
+      "content": "Title: NUKIB Minimum Requirements for Cryptographic Algorithms\nAuthors: NUKIB; Czech National Cyber and Information Security Agency\nPublication Date: 2023-06-01\nLast Updated: 2024-06-01\nDocument Status: Published\nMain Topic: Recommendations for cryptographic algorithms, including post-quantum cryptography, to address quantum threats.\nPQC Algorithms Covered: ML-KEM-1024, ML-DSA-87, SLH-DSA, LMS, XMSS, FrodoKEM-1344, FrodoKEM-976, mceliece8192128, mceliece6688128, mceliece460896, mceliece8192128f, mceliece6688128f, mceliece460896f, Falcon.\nQuantum Threats Addressed: None detected.\nMigration Timeline Info: None detected.\nApplicable Regions / Bodies: None detected.\nLeaders Contributions Mentioned: None detected.\nPQC Products Mentioned: None detected.\nProtocols Covered: None detected.\nInfrastructure Layers: None detected.\nStandardization Bodies: NIST.\nCompliance Frameworks Referenced: FIPS 203, FIPS 204, FIPS 205.",
       "category": "document-enrichment",
-      "metadata": { "refId": "NIST SP 800-227", "collection": "library" },
-      "deepLink": "/library?ref=NIST%20SP%20800-227"
+      "metadata": { "refId": "CZ-NUKIB-Crypto-Requirements-2023", "collection": "library" },
+      "deepLink": "/library?ref=CZ-NUKIB-Crypto-Requirements-2023"
     },
     {
-      "id": "doc-enrichment-NIST IR 8547",
+      "id": "doc-enrichment-EU-BSI-PQC-Joint-Statement-2024",
       "source": "document-enrichment",
-      "title": "Transition to Post-Quantum Cryptography Standards — Document Analysis",
-      "content": "Title: Transition to Post-Quantum Cryptography Standards\nAuthors: NIST\nPublication Date: 2024-11-12\nLast Updated: 2024-11-12\nDocument Status: Initial Public Draft\nMain Topic: A roadmap for transitioning from quantum-vulnerable cryptographic algorithms to post-quantum cryptography (PQC) standards.\nPQC Algorithms Covered: Module-Lattice-Based Key-Encapsulation Mechanism, Module-Lattice-Based Digital Signature Algorithm, Stateless Hash-Based Signature Algorithm\nQuantum Threats Addressed: Harvest Now Decrypt Later, Shor's Algorithm\nMigration Timeline Info: 2030: PQC required for federal systems; 2035: quantum-vulnerable algorithms disallowed in federal systems\nApplicable Regions / Bodies: United States; NIST\nInfrastructure Layers: PKI, Key Management, HSM, Cloud KMS\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: FIPS 203, FIPS 204, FIPS 205",
+      "title": "Joint Statement on PQC Migration by 21 EU Member State Cybersecurity Agencies — Document Analysis",
+      "content": "Title: Joint Statement on PQC Migration by 21 EU Member State Cybersecurity Agencies\nAuthors: BSI; ANSSI; NCSC Netherlands; 21 EU cybersecurity agencies\nPublication Date: 2024-11-01\nLast Updated: 2024-11-01\nDocument Status: Published\nMain Topic: Joint statement by 21 EU member state cybersecurity agencies urging coordinated PQC migration and endorsing NIST-standardized algorithms\nApplicable Regions / Bodies: Regions: European Union; Bodies: BSI, ANSSI, NCSC-NL\nStandardization Bodies: NIST",
       "category": "document-enrichment",
-      "metadata": { "refId": "NIST IR 8547", "collection": "library" },
-      "deepLink": "/library?ref=NIST%20IR%208547"
+      "metadata": { "refId": "EU-BSI-PQC-Joint-Statement-2024", "collection": "library" },
+      "deepLink": "/library?ref=EU-BSI-PQC-Joint-Statement-2024"
     },
     {
-      "id": "doc-enrichment-NIST IR 8545",
+      "id": "doc-enrichment-BSI-ANSSI-QKD-Position-2024",
       "source": "document-enrichment",
-      "title": "Status Report on the Fourth Round of the NIST PQC Standardization Process — Document Analysis",
-      "content": "Title: Status Report on the Fourth Round of the NIST PQC Standardization Process\nAuthors: NIST\nPublication Date: 2025-03-11\nLast Updated: 2025-03-11\nDocument Status: Final\nMain Topic: Summary of the NIST Post-Quantum Cryptography Standardization Process, including the selection of HQC for standardization in the fourth round.\nPQC Algorithms Covered: ML-KEM, ML-DSA, SLH-DSA, BIKE, Classic McEliece, HQC, SIKE.\nQuantum Threats Addressed: Shor's Algorithm.\nMigration Timeline Info: None detected.\nApplicable Regions / Bodies: United States; NIST.\nLeaders Contributions Mentioned: Zuzana Bajcsy, Lily Chen, Morris Dworkin, Sara Kerman, Andrew Regenscheid (reviewed algorithms, provided technical/administrative support, participated in meetings).\nPQC Products Mentioned: None detected.\nProtocols Covered: None detected.\nInfrastructure Layers: None detected.\nStandardization Bodies: NIST.\nCompliance Frameworks Referenced: None detected.",
+      "title": "BSI/ANSSI/NLNCSA/SNCSA Joint Position Paper on QKD and Quantum Cryptography — Document Analysis",
+      "content": "Title: BSI/ANSSI/NLNCSA/SNCSA Joint Position Paper on QKD and Quantum Cryptography\nAuthors: BSI; ANSSI; NLNCSA Netherlands; SNCSA Sweden\nPublication Date: 2024-04-01\nLast Updated: 2024-04-01\nDocument Status: Published\nMain Topic: A joint position paper discussing the limitations of Quantum Key Distribution (QKD) and recommending Post-Quantum Cryptography (PQC) as the primary solution for quantum-safe cryptography.\nQuantum Threats Addressed: Shor's Algorithm, Harvest Now Decrypt Later (Store Now Decrypt Later)\nMigration Timeline Info: Milestones: 2024: First selection of NIST post-quantum cryptography standards available\nApplicable Regions / Bodies: Regions: None detected; Bodies: BSI, ANSSI, NLNCSA, SNCSA\nStandardization Bodies: NIST",
       "category": "document-enrichment",
-      "metadata": { "refId": "NIST IR 8545", "collection": "library" },
-      "deepLink": "/library?ref=NIST%20IR%208545"
+      "metadata": { "refId": "BSI-ANSSI-QKD-Position-2024", "collection": "library" },
+      "deepLink": "/library?ref=BSI-ANSSI-QKD-Position-2024"
     },
     {
-      "id": "doc-enrichment-HQC Specification",
+      "id": "doc-enrichment-CA-TBS-SPIN-PQC-2025",
       "source": "document-enrichment",
-      "title": "Hamming Quasi-Cyclic (HQC) Algorithm Specification — Document Analysis",
-      "content": "Title: Hamming Quasi-Cyclic (HQC) Algorithm Specification\nAuthors: NIST/HQC Team\nPublication Date: 2024-02-23\nLast Updated: 2025-08-22\nDocument Status: NIST Round 4 Selection\nMain Topic: Description of the HQC post-quantum cryptographic algorithm based on quasi-cyclic codes and related coding theory concepts.\nPQC Algorithms Covered: HQC",
+      "title": "Canada TBS SPIN 2025-01 — Migrating Government of Canada Systems to Post-Quantum Cryptography — Document Analysis",
+      "content": "Title: Canada TBS SPIN 2025-01 — Migrating Government of Canada Systems to Post-Quantum Cryptography\nAuthors: Treasury Board of Canada Secretariat; Government of Canada\nPublication Date: 2025-01-01\nLast Updated: 2025-01-01\nDocument Status: Published\nMain Topic: The document outlines the Government of Canada's plan to migrate federal systems to post-quantum cryptography (PQC) to address quantum threats.\nQuantum Threats Addressed: CRQC, Harvest Now Decrypt Later (HNDL)\nMigration Timeline Info: Milestones: April 1, 2026: Phase 1 actions (contract clauses, APM tool updates); April 1, 2027: Phase 2 actions (update migration plans); April 1, 2028: Phase 3 actions (transition systems); End of 2031: Complete high-priority systems; End of 2035: Complete remaining systems.\nApplicable Regions / Bodies: Regions: Canada; Bodies: Treasury Board of Canada Secretariat (TBS), Shared Services Canada (SSC), Cyber Centre\nCompliance Frameworks Referenced: Framework for the Management of Compliance",
       "category": "document-enrichment",
-      "metadata": { "refId": "HQC Specification", "collection": "library" },
-      "deepLink": "/library?ref=HQC%20Specification"
+      "metadata": { "refId": "CA-TBS-SPIN-PQC-2025", "collection": "library" },
+      "deepLink": "/library?ref=CA-TBS-SPIN-PQC-2025"
     },
     {
-      "id": "doc-enrichment-RFC 9629",
+      "id": "doc-enrichment-IN-CERTIN-QBOM-Guidelines-2025",
       "source": "document-enrichment",
-      "title": "Using Key Encapsulation Mechanism (KEM) Algorithms in CMS — Document Analysis",
-      "content": "Title: Using Key Encapsulation Mechanism (KEM) Algorithms in CMS\nAuthors: IETF LAMPS\nPublication Date: 2024-08-01\nLast Updated: 2024-08-01\nDocument Status: Proposed Standard\nMain Topic: Defining KEMRecipientInfo for use with KEM algorithms in CMS, including quantum-secure algorithms like ML-KEM\nPQC Algorithms Covered: ML-KEM\nProtocols Covered: CMS\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: IETF",
+      "title": "India CERT-In Technical Guidelines on SBOM, QBOM, CBOM, AIBOM, and HBOM v2.0 — Document Analysis",
+      "content": "Title: India CERT-In Technical Guidelines on SBOM, QBOM, CBOM, AIBOM, and HBOM v2.0\nAuthors: CERT-In; Indian Computer Emergency Response Team\nPublication Date: 2025-01-01\nLast Updated: 2025-01-01\nDocument Status: Published\nMain Topic: India CERT-In Technical Guidelines on SBOM, QBOM, CBOM, AIBOM, and HBOM v2.0\nApplicable Regions / Bodies: Regions: India; Bodies: Indian Computer Emergency Response Team (CERT-In)",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC 9629", "collection": "library" },
-      "deepLink": "/library?ref=RFC%209629"
+      "metadata": { "refId": "IN-CERTIN-QBOM-Guidelines-2025", "collection": "library" },
+      "deepLink": "/library?ref=IN-CERTIN-QBOM-Guidelines-2025"
     },
     {
-      "id": "doc-enrichment-RFC 9708",
+      "id": "doc-enrichment-US-CISA-ACDI-Strategy-2024",
       "source": "document-enrichment",
-      "title": "Use of the HSS/LMS Hash-Based Signature Algorithm in CMS — Document Analysis",
-      "content": "Title: Use of the HSS/LMS Hash-Based Signature Algorithm in CMS\nAuthors: IETF LAMPS\nPublication Date: 2025-01-01\nLast Updated: 2025-01-01\nDocument Status: Standards Track\nMain Topic: Specification of the HSS/LMS hash-based signature algorithm for use in cryptographic message syntax (CMS)\nPQC Algorithms Covered: HSS/LMS\nQuantum Threats Addressed: CRQC\nProtocols Covered: CMS, X.509\nInfrastructure Layers: PKI\nStandardization Bodies: IETF",
+      "title": "CISA Strategy for Migrating to Automated PQC Discovery and Inventory Tools — Document Analysis",
+      "content": "Title: CISA Strategy for Migrating to Automated PQC Discovery and Inventory Tools\nAuthors: CISA; Cybersecurity and Infrastructure Security Agency\nPublication Date: 2024-09-01\nLast Updated: 2024-09-01\nDocument Status: Published\nMain Topic: CISA's strategy for US organizations to adopt automated tools for PQC cryptographic discovery and inventory\nQuantum Threats Addressed: CRQC\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, NSA, CISA\nStandardization Bodies: NIST, FIPS\nCompliance Frameworks Referenced: FISMA, FIPS 199",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC 9708", "collection": "library" },
-      "deepLink": "/library?ref=RFC%209708"
+      "metadata": { "refId": "US-CISA-ACDI-Strategy-2024", "collection": "library" },
+      "deepLink": "/library?ref=US-CISA-ACDI-Strategy-2024"
     },
     {
-      "id": "doc-enrichment-RFC 9794",
+      "id": "doc-enrichment-US-CISA-PQC-OT-2024",
       "source": "document-enrichment",
-      "title": "Terminology for Post-Quantum Traditional Hybrid Schemes — Document Analysis",
-      "content": "Title: Terminology for Post-Quantum Traditional Hybrid Schemes\nAuthors: IETF PQUIP\nPublication Date: 2025-06-01\nLast Updated: 2025-06-01\nDocument Status: Informational\nMain Topic: This document defines terminology for cryptographic schemes that combine post-quantum and traditional algorithms, focusing on hybrid constructions like PQ/T hybrid KEMs and PKEs.\nPQC Algorithms Covered: ML-KEM (formerly Kyber), ML-DSA (formerly Dilithium)\nQuantum Threats Addressed: Shor's Algorithm, Cryptographically Relevant Quantum Computers (CRQC)\nApplicable Regions / Bodies: Regions: United Kingdom; Bodies: IETF, NIST, ETSI\nProtocols Covered: TLS\nStandardization Bodies: IETF, NIST, ETSI",
+      "title": "CISA Post-Quantum Considerations for Operational Technology — Document Analysis",
+      "content": "Title: CISA Post-Quantum Considerations for Operational Technology\nAuthors: CISA; Cybersecurity and Infrastructure Security Agency\nPublication Date: 2024-10-01\nLast Updated: 2024-10-01\nDocument Status: Published\nMain Topic: Guidance on post-quantum cryptography (PQC) for operational technology (OT) environments, addressing migration challenges in industrial control systems (ICS) and SCADA systems.\nQuantum Threats Addressed: CRQC (cryptanalytically relevant quantum computer)\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, DHS (Department of Homeland Security)\nProtocols Covered: Open Platform Communications United Architecture (OPC UA), Modbus Transmission Control Protocol (TCP)\nInfrastructure Layers: PKI (Public Key Infrastructure), Key Management, Secure Boot\nStandardization Bodies: NIST",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC 9794", "collection": "library" },
-      "deepLink": "/library?ref=RFC%209794"
+      "metadata": { "refId": "US-CISA-PQC-OT-2024", "collection": "library" },
+      "deepLink": "/library?ref=US-CISA-PQC-OT-2024"
     },
     {
-      "id": "doc-enrichment-RFC 9802",
+      "id": "doc-enrichment-UK-CMORG-PQC-Guidance-2025",
       "source": "document-enrichment",
-      "title": "Use of HSS and XMSS Hash-Based Signature Algorithms in X.509 PKI — Document Analysis",
-      "content": "Title: Use of HSS and XMSS Hash-Based Signature Algorithms in X.509 PKI\nAuthors: IETF LAMPS\nPublication Date: 2025-06-01\nLast Updated: 2025-06-01\nDocument Status: Proposed Standard\nMain Topic: Definition of algorithm identifiers and public key encodings for HSS, XMSS, and XMSS MT in X.509 certificates\nPQC Algorithms Covered: HSS, XMSS, XMSS MT\nProtocols Covered: X.509\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: IETF, NIST\nCompliance Frameworks Referenced: CNSA 2.0",
+      "title": "CMORG Guidance for Post-Quantum Cryptography (UK Financial Sector) — Document Analysis",
+      "content": "Title: CMORG Guidance for Post-Quantum Cryptography (UK Financial Sector)\nAuthors: CMORG; Bank of England; UK Financial Authorities\nPublication Date: 2025-04-01\nLast Updated: 2025-04-01\nDocument Status: Published\nMain Topic: UK Cross Market Operational Resilience Group (CMORG) publishes PQC guidance for UK financial sector, covering threat landscape, algorithm selection, migration planning, and prioritization\nPQC Algorithms Covered: ML-KEM, ML-DSA, SLH-DSA\nQuantum Threats Addressed: CRQC, Shor's Algorithm\nApplicable Regions / Bodies: Regions: United Kingdom, France, Germany, EU member states; Bodies: NCSC, ANSSI, BSI, NIST\nStandardization Bodies: NIST, NCSC, ANSSI, BSI, ETSI",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC 9802", "collection": "library" },
-      "deepLink": "/library?ref=RFC%209802"
+      "metadata": { "refId": "UK-CMORG-PQC-Guidance-2025", "collection": "library" },
+      "deepLink": "/library?ref=UK-CMORG-PQC-Guidance-2025"
     },
     {
-      "id": "doc-enrichment-RFC 9810",
+      "id": "doc-enrichment-ENISA-PQC-Integration-Study-2022",
       "source": "document-enrichment",
-      "title": "Certificate Management Protocol (CMP) Updates for KEM — Document Analysis",
-      "content": "Title: Certificate Management Protocol (CMP) Updates for KEM\nAuthors: IETF LAMPS\nPublication Date: 2025-07-01\nLast Updated: 2025-07-01\nDocument Status: Standards Track\nMain Topic: The document describes the Internet X.509 PKI Certificate Management Protocol (CMP) for certificate creation and management.\nProtocols Covered: CMP, CMS\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: IETF",
+      "title": "ENISA Post-Quantum Cryptography Integration Study — Document Analysis",
+      "content": "Title: ENISA Post-Quantum Cryptography Integration Study\nAuthors: ENISA; European Union Agency for Cybersecurity\nPublication Date: 2022-07-01\nLast Updated: 2022-07-01\nDocument Status: Published\nMain Topic: ENISA study on integrating post-quantum cryptography into existing security protocols and systems, analyzing challenges for TLS, PKI, and code signing.\nApplicable Regions / Bodies: Regions: Europe; Bodies: ENISA\nProtocols Covered: TLS, PKI, code signing\nInfrastructure Layers: PKI, Key Management",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC 9810", "collection": "library" },
-      "deepLink": "/library?ref=RFC%209810"
+      "metadata": { "refId": "ENISA-PQC-Integration-Study-2022", "collection": "library" },
+      "deepLink": "/library?ref=ENISA-PQC-Integration-Study-2022"
     },
     {
-      "id": "doc-enrichment-RFC 9814",
+      "id": "doc-enrichment-Europol-QSFF-Call-to-Action-2025",
       "source": "document-enrichment",
-      "title": "Use of SLH-DSA in CMS — Document Analysis",
-      "content": "Title: Use of SLH-DSA in CMS\nAuthors: IETF LAMPS\nPublication Date: 2025-07-19\nLast Updated: 2025-07-19\nDocument Status: Proposed Standard\nMain Topic: Integration of SLH-DSA into CMS and X.509 certificate standards for digital signatures\nPQC Algorithms Covered: SLH-DSA\nQuantum Threats Addressed: CRQC\nApplicable Regions / Bodies: NIST, IETF\nProtocols Covered: CMS, X.509, Asymmetric Key Package\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: IETF, NIST\nCompliance Frameworks Referenced: FIPS 205",
+      "title": "Europol Quantum Safe Financial Forum — Call to Action — Document Analysis",
+      "content": "Title: Europol Quantum Safe Financial Forum — Call to Action\nAuthors: Europol; Quantum Safe Financial Forum\nPublication Date: 2025-01-01\nLast Updated: 2025-01-01\nDocument Status: Published\nMain Topic: Europol Quantum Safe Financial Forum call to action for European financial institutions to begin immediate PQC migration planning\nQuantum Threats Addressed: Harvest Now Decrypt Later\nApplicable Regions / Bodies: Regions: Europe; Bodies: Europol",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC 9814", "collection": "library" },
-      "deepLink": "/library?ref=RFC%209814"
+      "metadata": { "refId": "Europol-QSFF-Call-to-Action-2025", "collection": "library" },
+      "deepLink": "/library?ref=Europol-QSFF-Call-to-Action-2025"
     },
     {
-      "id": "doc-enrichment-RFC 9858",
+      "id": "doc-enrichment-IL-INCD-Cybersecurity-Strategy-2025",
       "source": "document-enrichment",
-      "title": "Additional Parameter Sets for HSS/LMS Hash-Based Signatures — Document Analysis",
-      "content": "Title: Additional Parameter Sets for HSS/LMS Hash-Based Signatures\nAuthors: IETF CFRG\nPublication Date: 2025-04-01\nLast Updated: 2025-04-01\nDocument Status: Standards Track\nMain Topic: The document discusses the use of additional hash functions (SHA-256/192, SHAKE256/256, SHAKE256/192) within the HSS/LMS cryptographic framework, focusing on their impact on signature size, computation time, and security.\nPQC Algorithms Covered: HSS/LMS\nApplicable Regions / Bodies: Bodies: NIST\nStandardization Bodies: NIST, IETF\nCompliance Frameworks Referenced: FIPS 140-3",
+      "title": "Israel National Cybersecurity Strategy 2025-2028 — Document Analysis",
+      "content": "Title: Israel National Cybersecurity Strategy 2025-2028\nAuthors: INCD; Israel National Cyber Directorate\nPublication Date: 2025-02-01\nLast Updated: 2025-02-01\nDocument Status: Published\nMain Topic: Israel's national cybersecurity strategy to enhance security across the economy and security agencies, addressing evolving threats and promoting collaboration.\nApplicable Regions / Bodies: Regions: Israel; Bodies: National Cyber Directorate",
       "category": "document-enrichment",
-      "metadata": { "refId": "RFC 9858", "collection": "library" },
-      "deepLink": "/library?ref=RFC%209858"
+      "metadata": { "refId": "IL-INCD-Cybersecurity-Strategy-2025", "collection": "library" },
+      "deepLink": "/library?ref=IL-INCD-Cybersecurity-Strategy-2025"
+    },
+    {
+      "id": "doc-enrichment-UK-DSIT-CNI-PQC-Perspectives-2025",
+      "source": "document-enrichment",
+      "title": "UK DSIT — Perspectives on the Plan for PQC Transition from CNI Sectors — Document Analysis",
+      "content": "Title: UK DSIT — Perspectives on the Plan for PQC Transition from CNI Sectors\nAuthors: DSIT; UK Department for Science Innovation and Technology\nPublication Date: 2025-07-01\nLast Updated: 2025-07-01\nDocument Status: Published\nMain Topic: UK DSIT publishes perspectives report from critical national infrastructure (CNI) sector leads on PQC transition planning, identifying sector-specific challenges across energy, transport, finance, and telecoms.\nApplicable Regions / Bodies: Regions: United Kingdom; Bodies: Department for Science, Innovation and Technology (DSIT), National Cyber Security Centre (NCSC)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "UK-DSIT-CNI-PQC-Perspectives-2025", "collection": "library" },
+      "deepLink": "/library?ref=UK-DSIT-CNI-PQC-Perspectives-2025"
+    },
+    {
+      "id": "doc-enrichment-US-QCCPA-2022",
+      "source": "document-enrichment",
+      "title": "Quantum Computing Cybersecurity Preparedness Act (Public Law 117-260) — Document Analysis",
+      "content": "Title: Quantum Computing Cybersecurity Preparedness Act (Public Law 117-260)\nAuthors: US Congress; Office of Management and Budget\nPublication Date: 2022-12-21\nLast Updated: 2022-12-21\nDocument Status: Enacted\nMain Topic: A US federal law requiring agencies to inventory and migrate to quantum-resistant cryptographic standards.\nQuantum Threats Addressed: Harvest Now Decrypt Later, integer factorization (e.g., Shor's Algorithm implications)\nMigration Timeline Info: Milestones: 180 days for OMB to issue guidance; 1 year for agencies to report inventories; 1 year after NIST standards for migration plans; OMB reports due 15 months after enactment; annual reports until 5 years after standards are issued.\nApplicable Regions / Bodies: Regions: United States; Bodies: OMB, CISA, NIST, National Cyber Director, Senate Committee on Homeland Security and Governmental Affairs, House Committee on Oversight and Reform.\nStandardization Bodies: NIST, International Organization for Standardization (ISO)\nCompliance Frameworks Referenced: Federal Information Processing Standards (FIPS)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "US-QCCPA-2022", "collection": "library" },
+      "deepLink": "/library?ref=US-QCCPA-2022"
+    },
+    {
+      "id": "doc-enrichment-GSMA-PQ03-v2-2024",
+      "source": "document-enrichment",
+      "title": "GSMA PQ.03 Post-Quantum Cryptography Guidelines for Telecom Use Cases v2.0 — Document Analysis",
+      "content": "Title: GSMA PQ.03 Post-Quantum Cryptography Guidelines for Telecom Use Cases v2.0\nAuthors: GSMA\nPublication Date: 2024-11-01\nLast Updated: 2024-11-01\nDocument Status: Published\nMain Topic: Post-quantum cryptography guidelines for telecom use cases including 5G, SIM/eSIM, roaming, and IMS.\nApplicable Regions / Bodies: Bodies: NCSC\nInfrastructure Layers: PKI\nStandardization Bodies: IETF",
+      "category": "document-enrichment",
+      "metadata": { "refId": "GSMA-PQ03-v2-2024", "collection": "library" },
+      "deepLink": "/library?ref=GSMA-PQ03-v2-2024"
+    },
+    {
+      "id": "doc-enrichment-GSMA-PQC-Country-Survey-2025",
+      "source": "document-enrichment",
+      "title": "GSMA Post-Quantum Government Initiatives by Country and Region (March 2025) — Document Analysis",
+      "content": "Title: GSMA Post-Quantum Government Initiatives by Country and Region (March 2025)\nAuthors: GSMA\nPublication Date: 2025-03-02\nLast Updated: 2025-03-02\nDocument Status: Published\nMain Topic: Global initiatives and timelines for adopting post-quantum cryptography (PQC) by governments and organizations.\nMigration Timeline Info: Milestones: 2022: NSM-10 (US); 2023: CISA-2023 (US); 2024: CNSA 2.0 (US), CISA-2024 (US), NZISM-2024 (New Zealand); 2025: EO-14144 (US), MSIT-2025 (South Korea).\nApplicable Regions / Bodies: Regions: United States, Australia, Netherlands, New Zealand, Singapore, South Korea, Spain, Italy, Japan, Israel; Bodies: NIST, NSA, CISA, ANSSI, NCSC, AIVD, ACN, ACSC, ASD, MSIT.\nProtocols Covered: TLS (mentioned in Netherlands' guidelines for quantum-safe transport layer encryption).\nInfrastructure Layers: PKI (implied in CNSA 2.0 and migration strategies), Key Management (referenced in timelines).\nStandardization Bodies: NIST, ANSSI, NCSC, ACN, ACSC, AIVD.\nCompliance Frameworks Referenced: CNSA 2.0 (US).",
+      "category": "document-enrichment",
+      "metadata": { "refId": "GSMA-PQC-Country-Survey-2025", "collection": "library" },
+      "deepLink": "/library?ref=GSMA-PQC-Country-Survey-2025"
+    },
+    {
+      "id": "doc-enrichment-SG-MAS-Quantum-Advisory-2024",
+      "source": "document-enrichment",
+      "title": "MAS Advisory on Addressing Cybersecurity Risks Associated with Quantum Computing — Document Analysis",
+      "content": "Title: MAS Advisory on Addressing Cybersecurity Risks Associated with Quantum Computing\nAuthors: MAS; Monetary Authority of Singapore\nPublication Date: 2024-02-20\nLast Updated: 2024-02-20\nDocument Status: Published",
+      "category": "document-enrichment",
+      "metadata": { "refId": "SG-MAS-Quantum-Advisory-2024", "collection": "library" },
+      "deepLink": "/library?ref=SG-MAS-Quantum-Advisory-2024"
+    },
+    {
+      "id": "doc-enrichment-SG-MAS-QKD-Sandbox-Report-2025",
+      "source": "document-enrichment",
+      "title": "MAS QKD Proof-of-Concept Sandbox Technical Report — Document Analysis",
+      "content": "Title: MAS QKD Proof-of-Concept Sandbox Technical Report\nAuthors: MAS; DBS; HSBC; OCBC; UOB; Singtel; SPTel\nPublication Date: 2025-09-29\nLast Updated: 2025-09-29\nDocument Status: Published\nMain Topic: Technical report on QKD proof-of-concept sandbox (Sept 2024-March 2025) demonstrating 6.75M AES-256 keys/day per bank for quantum-safe financial settlement systems\nApplicable Regions / Bodies: Regions: Singapore; Bodies: Monetary Authority of Singapore (MAS)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "SG-MAS-QKD-Sandbox-Report-2025", "collection": "library" },
+      "deepLink": "/library?ref=SG-MAS-QKD-Sandbox-Report-2025"
+    },
+    {
+      "id": "doc-enrichment-NATO-Quantum-Strategy-2024",
+      "source": "document-enrichment",
+      "title": "NATO Quantum Technologies Strategy — Document Analysis",
+      "content": "Title: NATO Quantum Technologies Strategy\nAuthors: NATO; North Atlantic Treaty Organization\nPublication Date: 2024-06-01\nLast Updated: 2024-06-01\nDocument Status: Published\nMain Topic: NATO's first-ever quantum strategy aims to make the Alliance \"quantum-ready\" by applying quantum technologies to defense and security, including quantum-resistant cryptography.\nApplicable Regions / Bodies: Regions: NATO member countries; Bodies: NATO",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NATO-Quantum-Strategy-2024", "collection": "library" },
+      "deepLink": "/library?ref=NATO-Quantum-Strategy-2024"
+    },
+    {
+      "id": "doc-enrichment-UK-NCSC-PQC-Whitepaper-2024",
+      "source": "document-enrichment",
+      "title": "NCSC White Paper — Next Steps in Preparing for Post-Quantum Cryptography — Document Analysis",
+      "content": "Title: NCSC White Paper — Next Steps in Preparing for Post-Quantum Cryptography\nAuthors: NCSC UK; UK National Cyber Security Centre\nPublication Date: 2024-11-01\nLast Updated: 2024-11-01\nDocument Status: Published",
+      "category": "document-enrichment",
+      "metadata": { "refId": "UK-NCSC-PQC-Whitepaper-2024", "collection": "library" },
+      "deepLink": "/library?ref=UK-NCSC-PQC-Whitepaper-2024"
+    },
+    {
+      "id": "doc-enrichment-UK-NCSC-Migration-Timelines-2025",
+      "source": "document-enrichment",
+      "title": "NCSC PQC Migration Timelines Guidance — Document Analysis",
+      "content": "Title: NCSC PQC Migration Timelines Guidance\nAuthors: NCSC UK; UK National Cyber Security Centre\nPublication Date: 2025-05-01\nLast Updated: 2025-05-01\nDocument Status: Published",
+      "category": "document-enrichment",
+      "metadata": { "refId": "UK-NCSC-Migration-Timelines-2025", "collection": "library" },
+      "deepLink": "/library?ref=UK-NCSC-Migration-Timelines-2025"
+    },
+    {
+      "id": "doc-enrichment-US-NSA-CNSA-2.0-2022",
+      "source": "document-enrichment",
+      "title": "NSA Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) — Document Analysis",
+      "content": "Title: NSA Commercial National Security Algorithm Suite 2.0 (CNSA 2.0)\nAuthors: NSA; National Security Agency\nPublication Date: 2022-09-07\nLast Updated: 2022-09-07\nDocument Status: Published\nMain Topic: NSA releases CNSA 2.0 specifying quantum-resistant algorithm requirements for national security systems\nPQC Algorithms Covered: ML-KEM-1024, ML-DSA-87, LMS/XMSS, SLH-DSA\nQuantum Threats Addressed: cryptanalytically-relevant quantum computer (CRQC)\nMigration Timeline Info: 2030-2033 transition deadlines for US national security systems\nApplicable Regions / Bodies: Regions: United States; Bodies: NSA\nCompliance Frameworks Referenced: CNSA 2.0",
+      "category": "document-enrichment",
+      "metadata": { "refId": "US-NSA-CNSA-2.0-2022", "collection": "library" },
+      "deepLink": "/library?ref=US-NSA-CNSA-2.0-2022"
+    },
+    {
+      "id": "doc-enrichment-IN-TEC-PQC-Migration-Report-2025",
+      "source": "document-enrichment",
+      "title": "India TEC Technical Report on Migration to Post-Quantum Cryptography — Document Analysis",
+      "content": "Title: India TEC Technical Report on Migration to Post-Quantum Cryptography\nAuthors: TEC India; Telecommunications Engineering Centre; Department of Telecommunications\nPublication Date: 2025-03-28\nLast Updated: 2025-03-28\nDocument Status: Published\nMain Topic: A technical report for government organizations, industry, and enterprises to prepare for quantum threats by transitioning to quantum-safe cryptography.\nPQC Algorithms Covered: ML-KEM, ML-DSA, SLH-DSA\nQuantum Threats Addressed: Shor's Algorithm, Grover's Algorithm\nApplicable Regions / Bodies: Regions: India; Bodies: Telecommunication Engineering Centre (TEC)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "IN-TEC-PQC-Migration-Report-2025", "collection": "library" },
+      "deepLink": "/library?ref=IN-TEC-PQC-Migration-Report-2025"
+    },
+    {
+      "id": "doc-enrichment-RFC 4251",
+      "source": "document-enrichment",
+      "title": "The Secure Shell (SSH) Protocol Architecture — Document Analysis",
+      "content": "Title: The Secure Shell (SSH) Protocol Architecture\nAuthors: Tatu Ylonen; Chris M. Lonvick (Ed.)\nPublication Date: 2006-01-01\nLast Updated: 2006-01-01\nDocument Status: Proposed Standard\nMain Topic: The document outlines the architecture of the Secure Shell (SSH) protocol, focusing on secure remote login and network services.\nLeaders Contributions Mentioned: Tatu Ylonen, Tero Kivinen, Darren Moffat (original editor)\nProtocols Covered: SSH\nStandardization Bodies: IETF, NIST (via FIPS-180-2 and FIPS-186-2 references)\nCompliance Frameworks Referenced: FIPS-180-2, FIPS-186-2",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 4251", "collection": "library" },
+      "deepLink": "/library?ref=RFC%204251"
+    },
+    {
+      "id": "doc-enrichment-RFC 4253",
+      "source": "document-enrichment",
+      "title": "The Secure Shell (SSH) Transport Layer Protocol — Document Analysis",
+      "content": "Title: The Secure Shell (SSH) Transport Layer Protocol\nAuthors: Tatu Ylonen; Chris M. Lonvick (Ed.)\nPublication Date: 2006-01-01\nLast Updated: 2006-01-01\nDocument Status: Proposed Standard\nMain Topic: The document outlines the Secure Shell (SSH) Transport Layer Protocol, focusing on secure remote login and network services.\nProtocols Covered: SSH",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 4253", "collection": "library" },
+      "deepLink": "/library?ref=RFC%204253"
+    },
+    {
+      "id": "doc-enrichment-RFC 4301",
+      "source": "document-enrichment",
+      "title": "Security Architecture for the Internet Protocol — Document Analysis",
+      "content": "Title: Security Architecture for the Internet Protocol\nAuthors: Stephen Kent; Karen Seo (BBN Technologies)\nPublication Date: 2005-12-01\nLast Updated: 2005-12-01\nDocument Status: Proposed Standard\nMain Topic: The document outlines the Security Architecture for the Internet Protocol (IPsec), focusing on cryptographic and protocol mechanisms for IP layer security.\nLeaders Contributions Mentioned: Charlie Lynn, a colleague at BBN, contributed to IPsec documents.\nProtocols Covered: Authentication Header (AH), Encapsulating Security Payload (ESP), Internet Key Exchange (IKE).\nStandardization Bodies: IETF",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 4301", "collection": "library" },
+      "deepLink": "/library?ref=RFC%204301"
+    },
+    {
+      "id": "doc-enrichment-RFC 4303",
+      "source": "document-enrichment",
+      "title": "IP Encapsulating Security Payload (ESP) — Document Analysis",
+      "content": "Title: IP Encapsulating Security Payload (ESP)\nAuthors: Stephen Kent (BBN Technologies)\nPublication Date: 2005-12-01\nLast Updated: 2005-12-01\nDocument Status: Proposed Standard\nMain Topic: The document describes the IP Encapsulating Security Payload (ESP) protocol for providing confidentiality, data origin authentication, integrity, and anti-replay services in IPv4/IPv6 networks.\nLeaders Contributions Mentioned: S. Kent (author of the document)\nProtocols Covered: ESP, IPv4, IPv6\nStandardization Bodies: IETF",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 4303", "collection": "library" },
+      "deepLink": "/library?ref=RFC%204303"
+    },
+    {
+      "id": "doc-enrichment-RFC 5280",
+      "source": "document-enrichment",
+      "title": "Internet X.509 Public Key Infrastructure Certificate and CRL Profile — Document Analysis",
+      "content": "Title: Internet X.509 Public Key Infrastructure Certificate and CRL Profile\nAuthors: D. Cooper; S. Santesson; S. Farrell; S. Boeyen; R. Housley; W. Polk\nPublication Date: 2008-05-01\nLast Updated: 2008-05-01\nDocument Status: Proposed Standard\nMain Topic: This document profiles the format and semantics of certificates and certificate revocation lists (CRLs) for the Internet Public Key Infrastructure (PKI).\nApplicable Regions / Bodies: IETF\nProtocols Covered: X.509\nInfrastructure Layers: PKI\nStandardization Bodies: IETF, ISO/IEC/ITU-T",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 5280", "collection": "library" },
+      "deepLink": "/library?ref=RFC%205280"
+    },
+    {
+      "id": "doc-enrichment-RFC 6962",
+      "source": "document-enrichment",
+      "title": "Certificate Transparency — Document Analysis",
+      "content": "Title: Certificate Transparency\nAuthors: Ben Laurie; Adam Langley; Emilia Kasper (Google)\nPublication Date: 2013-06-01\nLast Updated: 2013-06-01\nDocument Status: Experimental\nMain Topic: Merkle Hash Trees and their use in cryptographic auditing and consistency proofs",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 6962", "collection": "library" },
+      "deepLink": "/library?ref=RFC%206962"
+    },
+    {
+      "id": "doc-enrichment-RFC 8017",
+      "source": "document-enrichment",
+      "title": "PKCS #1: RSA Cryptography Specifications Version 2.2 — Document Analysis",
+      "content": "Title: PKCS #1: RSA Cryptography Specifications Version 2.2\nAuthors: K. Moriarty; B. Kaliski; J. Jonsson; A. Rusch\nPublication Date: 2016-11-01\nLast Updated: 2016-11-01\nDocument Status: Informational\nMain Topic: RSA cryptographic standards, including encryption and signature schemes based on Optimal Asymmetric Encryption Padding (OAEP) and Probabilistic Signature Scheme (PSS).",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 8017", "collection": "library" },
+      "deepLink": "/library?ref=RFC%208017"
+    },
+    {
+      "id": "doc-enrichment-RFC 8446",
+      "source": "document-enrichment",
+      "title": "The Transport Layer Security (TLS) Protocol Version 1.3 — Document Analysis",
+      "content": "Title: The Transport Layer Security (TLS) Protocol Version 1.3\nAuthors: Eric Rescorla (Mozilla)\nPublication Date: 2018-08-01\nLast Updated: 2018-08-01\nDocument Status: Proposed Standard\nMain Topic: Defines TLS 1.3 with simplified handshake and modern cryptographic requirements\nProtocols Covered: TLS 1.3, X.509\nInfrastructure Layers: PKI, Key Management\nStandardization Bodies: IETF",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 8446", "collection": "library" },
+      "deepLink": "/library?ref=RFC%208446"
+    },
+    {
+      "id": "doc-enrichment-RFC 9052",
+      "source": "document-enrichment",
+      "title": "CBOR Object Signing and Encryption (COSE): Structures and Process — Document Analysis",
+      "content": "Title: CBOR Object Signing and Encryption (COSE): Structures and Process\nAuthors: Jim Schaad (August Cellars)\nPublication Date: 2022-08-01\nLast Updated: 2022-08-01\nDocument Status: Internet Standard\nMain Topic: The document defines the CBOR Object Signing and Encryption (COSE) protocol, detailing its structures and processes for signatures, MACs, and encryption using CBOR.\nProtocols Covered: COSE\nStandardization Bodies: IETF",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9052", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209052"
+    },
+    {
+      "id": "doc-enrichment-RFC 9580",
+      "source": "document-enrichment",
+      "title": "OpenPGP — Document Analysis",
+      "content": "Title: OpenPGP\nAuthors: Paul Wouters; Daniel Huigens; Justus Winter; Niibe Yutaka\nPublication Date: 2024-07-01\nLast Updated: 2024-07-01\nDocument Status: Proposed Standard\nMain Topic: This document provides information on the message-exchange packet formats used by OpenPGP to provide encryption, decryption, signing, and key management functions.\nStandardization Bodies: IETF",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9580", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209580"
+    },
+    {
+      "id": "doc-enrichment-RFC 9593",
+      "source": "document-enrichment",
+      "title": "Announcing Supported Authentication Methods in IKEv2 — Document Analysis",
+      "content": "Title: Announcing Supported Authentication Methods in IKEv2\nAuthors: Valery Smyslov\nPublication Date: 2024-07-01\nLast Updated: 2024-07-01\nDocument Status: Proposed Standard\nMain Topic: Enabling IKEv2 peers to announce supported authentication methods, including post-quantum cryptographic algorithms\nApplicable Regions / Bodies: Bodies: IETF\nProtocols Covered: IKEv2, IPsec\nStandardization Bodies: IETF",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9593", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209593"
+    },
+    {
+      "id": "doc-enrichment-RFC 9847",
+      "source": "document-enrichment",
+      "title": "IANA Registry Updates for TLS and DTLS — Document Analysis",
+      "content": "Title: IANA Registry Updates for TLS and DTLS\nAuthors: Joseph A. Salowey; Sean Turner\nPublication Date: 2025-12-01\nLast Updated: 2025-12-01\nDocument Status: Proposed Standard\nMain Topic: Updating TLS registries with a \"Recommended\" column and revised registration procedures\nProtocols Covered: TLS\nStandardization Bodies: IETF, NIST",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9847", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209847"
+    },
+    {
+      "id": "doc-enrichment-NIST IR 8105",
+      "source": "document-enrichment",
+      "title": "Report on Post-Quantum Cryptography — Document Analysis",
+      "content": "Title: Report on Post-Quantum Cryptography\nAuthors: NIST\nPublication Date: 2016-04-28\nLast Updated: 2016-04-28\nDocument Status: Final\nMain Topic: NIST's report on the status of quantum computing and post-quantum cryptography, outlining the need for standardization to address threats to current cryptographic algorithms.\nQuantum Threats Addressed: Shor's Algorithm, Grover's algorithm\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST\nStandardization Bodies: NIST, ETSI",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST IR 8105", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20IR%208105"
+    },
+    {
+      "id": "doc-enrichment-NIST IR 8309",
+      "source": "document-enrichment",
+      "title": "Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process — Document Analysis",
+      "content": "Title: Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process\nAuthors: NIST\nPublication Date: 2020-07-22\nLast Updated: 2020-07-22\nDocument Status: Final\nMain Topic: NIST's process to select public-key cryptographic algorithms through a competition to address threats from large-scale quantum computers.\nPQC Algorithms Covered: Classic McEliece, CRYSTALS-KYBER, NTRU, SABER, BIKE, FrodoKEM, HQC, NTRU Prime, SIKE, LAC, LEDAcrypt, NewHope, NTS-KEM, ROLLO, Round5, RQC, Three Bears, CRYSTALS-DILITHIUM, FALCON, Rainbow, GeMSS, Picnic, SPHINCS+, LUOV, MQDSS, qTESLA.\nQuantum Threats Addressed: Large-scale quantum computers threatening key-establishment schemes and digital signatures based on factoring, discrete logarithms, and elliptic curve cryptography.\nMigration Timeline Info: None detected.\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST.\nLeaders Contributions Mentioned: Larry Bassham, Lily Chen, Thinh Dang, Morris Dworkin, Sara Kerman, and Andrew Regenscheid (reviewed algorithms, performed testing, provided technical/administrative support).\nPQC Products Mentioned: None detected.\nProtocols Covered: None detected.\nInfrastructure Layers: None detected.\nStandardization Bodies: NIST.\nCompliance Frameworks Referenced: Federal Information Processing Standard (FIPS) 186-4, Special Publication (SP) 800-56A Revision 3, SP 800-56B Revision 2.",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST IR 8309", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20IR%208309"
+    },
+    {
+      "id": "doc-enrichment-NIST IR 8413",
+      "source": "document-enrichment",
+      "title": "Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process — Document Analysis",
+      "content": "Title: Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process\nAuthors: NIST\nPublication Date: 2022-07-05\nLast Updated: 2022-09-29\nDocument Status: Final\nMain Topic: NIST's selection of post-quantum cryptographic algorithms for standardization following a multi-year evaluation process.\nPQC Algorithms Covered: CRYSTALS–KYBER, CRYSTALS–Dilithium, FALCON, SPHINCS+\nQuantum Threats Addressed: Shor's Algorithm\nApplicable Regions / Bodies: United States; NIST\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: FIPS 186-4",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST IR 8413", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20IR%208413"
+    },
+    {
+      "id": "doc-enrichment-NIST CSWP 39",
+      "source": "document-enrichment",
+      "title": "Considerations for Achieving Cryptographic Agility — Document Analysis",
+      "content": "Title: Considerations for Achieving Cryptographic Agility\nAuthors: NIST\nPublication Date: 2025-12-19\nLast Updated: 2025-12-19\nDocument Status: Final\nMain Topic: Cryptographic agility is the capability to replace and adapt cryptographic algorithms in protocols, applications, and infrastructures while maintaining security and operations.\nQuantum Threats Addressed: CRQC (cryptographically relevant quantum computers)\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: FIPS 140-3",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST CSWP 39", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20CSWP%2039"
+    },
+    {
+      "id": "doc-enrichment-NIST NCCoE SP 1800-38A",
+      "source": "document-enrichment",
+      "title": "Migration to Post-Quantum Cryptography: Preparation for Considering the Implementation and Adoption of Quantum Safe Cryptography — Document Analysis",
+      "content": "Title: Migration to Post-Quantum Cryptography: Preparation for Considering the Implementation and Adoption of Quantum Safe Cryptography\nAuthors: NIST NCCoE\nPublication Date: 2023-03-01\nLast Updated: 2023-04-01\nDocument Status: Preliminary Draft Practice Guide\nMain Topic: Preparation for the implementation and adoption of quantum-safe cryptography in enterprises, focusing on challenges and the NIST National Cybersecurity Center of Excellence (NCCoE) project.\nMigration Timeline Info: 2024: NIST standardizes quantum-resistant algorithms\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, NSA, NCCoE\nStandardization Bodies: NIST",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST NCCoE SP 1800-38A", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20NCCoE%20SP%201800-38A"
+    },
+    {
+      "id": "doc-enrichment-NIST NCCoE SP 1800-38B",
+      "source": "document-enrichment",
+      "title": "Migration to Post-Quantum Cryptography: Quantum Readiness — Cryptographic Discovery — Document Analysis",
+      "content": "Title: Migration to Post-Quantum Cryptography: Quantum Readiness — Cryptographic Discovery\nAuthors: NIST NCCoE\nPublication Date: 2023-12-01\nLast Updated: 2023-12-19\nDocument Status: Preliminary Draft Practice Guide\nMain Topic: Guides organizations in identifying quantum-vulnerable cryptography across their environments as the first step in PQC migration\nApplicable Regions / Bodies: Regions: United States; Bodies: NIST, NCCoE\nLeaders Contributions Mentioned: William Newhouse, Murugiah Souppaya, William Barker, Chris Brown, Panos Kampanakis, David McGrew, David Hook, Anne Dames, Raul Garcia, Vladimir Soukharev, Evgeny Gervis, Philip Lafrance, Eunkyung Kim, Changhoon Lee, Anthony Hu, Marc Manzano\nStandardization Bodies: NIST\nCompliance Frameworks Referenced: NIST Cybersecurity Framework",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST NCCoE SP 1800-38B", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20NCCoE%20SP%201800-38B"
+    },
+    {
+      "id": "doc-enrichment-NIST CSWP 48",
+      "source": "document-enrichment",
+      "title": "Mappings of Migration to PQC Project Capabilities to Risk Framework Documents — Document Analysis",
+      "content": "Title: Mappings of Migration to PQC Project Capabilities to Risk Framework Documents\nAuthors: NIST NCCoE\nPublication Date: 2025-09-18\nLast Updated: 2025-09-18\nDocument Status: Initial Public Draft\nMain Topic: Mapping PQC migration project capabilities to NIST Cybersecurity Framework 2.0 and SP 800-53\nApplicable Regions / Bodies: United States; NIST, U.S. Federal Government\nProtocols Covered: TLS, SSH, QUIC\nInfrastructure Layers: HSM, PKI, Key Management\nStandardization Bodies: NIST, IETF\nCompliance Frameworks Referenced: NIST Cybersecurity Framework 2.0, Security and Privacy Controls for Information Systems and Organizations (SP 800-53)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST CSWP 48", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20CSWP%2048"
     },
     {
       "id": "doc-enrichment-Global:IBM — Quantum Safe Explorer Launched",
@@ -26541,6 +26811,15 @@
       "category": "app-guide",
       "metadata": { "fileName": "15-community.md", "slug": "community" },
       "deepLink": "/about"
+    },
+    {
+      "id": "changelog-2.17.0",
+      "source": "changelog",
+      "title": "PQC Today v2.17.0 — Release Notes (2026-03-04)",
+      "content": "Version 2.17.0 released 2026-03-04.\n\n### Added\n\n- **PQC-101 Step 5 — Persona profile card**: The \"Next Steps\" step now displays the user's saved persona profile (Role, Level, Region, Industry) sourced from `usePersonaStore`, with an \"Update profile\" / \"Set profile\" CTA that deep-links to `/?scroll=persona`. If no profile is set, a prompt to set one is shown.\n\n- **Landing page `?scroll=persona` deep-link**: Visiting `/?scroll=persona` automatically expands the personalization section and smooth-scrolls to the persona heading. The query param is stripped from the URL after navigation.\n\n- **Library — NIST CSWP 48**: _Mappings of Migration to Post-Quantum Cryptography Project Capabilities to Risk Framework Documents_ (Initial Public Draft, Sep 2025). Maps PQC migration activities to NIST CSF, SP 800-53, and NIST RMF.\n\n- **Compliance — NCSC-CH & NCSC-NL**: Swiss and Dutch national cybersecurity centre PQC migration guidance now listed as compliance frameworks.\n\n### Fixed\n\n- **KMS module — KMIP `CreateKeyPair` correction**: ML-KEM and ML-DSA are asymmetric — KMIP 2.1 requires `CreateKeyPair` with separate `PrivateKeyTemplateAttribute` / `PublicKeyTemplateAttribute`, not `Create` with `SymmetricKey`. XML examples, response payload, and sync scenario snippet all updated.\n\n- **KMS module — data accuracy**:\n  - Root KEK hybrid algorithm: `X25519 + ML-KEM-1024` → `RSA-4096 + ML-KEM-1024` (X25519 is ECDH, not a root-of-trust KEK mechanism)\n  - GCP Cloud KMS PQC status: `GA` → `preview` (ML-KEM/X-Wing not yet GA as of March 2026)\n  - Thales CipherTrust FIPS level: `FIPS 140-2 Level 2` → `FIPS 140-3 Level 3` (via Luna Network HSM 7)\n  - Key size footnote: `4–8× larger` → `4–10× vs RSA baselines, up to 40× vs ECDSA P-256`\n  - AWS-LC description: removed inaccurate \"first open-source\" superlative; now \"FIPS 140-3 validated open-source library with ML-KEM and ML-DSA support\"\n\n- **HSM module — PKCS#11 v3.2 C_EncapsulateKey / C_DecapsulateKey**: Replace `C_WrapKey` / `C_UnwrapKey` with the correct PKCS#11 v3.2 KEM-specif…",
+      "category": "changelog",
+      "metadata": { "version": "2.17.0", "date": "2026-03-04" },
+      "deepLink": "/changelog"
     },
     {
       "id": "changelog-2.16.0",

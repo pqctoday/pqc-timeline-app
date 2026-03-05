@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-05T04:40:36.681Z",
-  "chunkCount": 2753,
+  "generatedAt": "2026-03-05T05:23:32.607Z",
+  "chunkCount": 2772,
   "chunks": [
     {
       "id": "glossary-0",
@@ -9427,7 +9427,7 @@
       "id": "library-RFC 4301",
       "source": "library",
       "title": "Security Architecture for the Internet Protocol",
-      "content": "Reference: RFC 4301\nTitle: Security Architecture for the Internet Protocol\nDescription: Provides the IPsec architectural framework for security services at the IP layer; foundation for all IKEv2 and ESP PQC migration work.\nType: Protocol | Status: Proposed Standard\nAuthors: Stephen Kent; Karen Seo (BBN Technologies)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT;Government;Critical Infrastructure;Finance\nRegion: International\nPublished: 2005-12-01 | Updated: 2005-12-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 4301\nTitle: Security Architecture for the Internet Protocol\nDescription: Provides the IPsec architectural framework for security services at the IP layer; foundation for all IKEv2 and ESP PQC migration work.\nType: Protocol | Status: Proposed Standard\nAuthors: Stephen Kent; Karen Seo (BBN Technologies)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT;Government;Critical Infrastructure;Finance\nRegion: International\nPublished: 2005-12-01 | Updated: 2005-12-01\n\nMain Topic: This document specifies the base architecture and security services for IPsec at the IP layer for both IPv4 and IPv6 environments.\nProtocols: IPsec, Authentication Header (AH), Encapsulating Security Payload (ESP), Internet Key Exchange (IKE), IKEv2, IPv4, IPv6, ICMP\nInfrastructure Layers: Key Management; Security Associations; Security Policy Database (SPD); Security Association Database (SAD); Peer Authorization Database (PAD)\nStandardization Bodies: IETF (Internet Engineering Task Force implied by RFC context and Network Working Group); Internet Society\nLeaders: S. Kent; K. Seo; Charlie Lynn (dedicated for significant contributions to IPsec documents)\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Protocol",
       "metadata": {
         "referenceId": "RFC 4301",
@@ -9440,7 +9440,7 @@
       "id": "library-RFC 4303",
       "source": "library",
       "title": "IP Encapsulating Security Payload (ESP)",
-      "content": "Reference: RFC 4303\nTitle: IP Encapsulating Security Payload (ESP)\nDescription: Defines the ESP protocol for confidentiality, data origin authentication, integrity, and anti-replay in IPv4/IPv6; requires PQC-aware encryption updates.\nType: Protocol | Status: Proposed Standard\nAuthors: Stephen Kent (BBN Technologies)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT;Government;Critical Infrastructure\nRegion: International\nPublished: 2005-12-01 | Updated: 2005-12-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 4303\nTitle: IP Encapsulating Security Payload (ESP)\nDescription: Defines the ESP protocol for confidentiality, data origin authentication, integrity, and anti-replay in IPv4/IPv6; requires PQC-aware encryption updates.\nType: Protocol | Status: Proposed Standard\nAuthors: Stephen Kent (BBN Technologies)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT;Government;Critical Infrastructure\nRegion: International\nPublished: 2005-12-01 | Updated: 2005-12-01\n\nMain Topic: This document specifies the Encapsulating Security Payload (ESP) protocol for providing confidentiality, data origin authentication, integrity, and anti-replay services in IPv4 and IPv6.\nProtocols: IP Encapsulating Security Payload (ESP), IPv4, IPv6, IP Authentication Header (AH)\nInfrastructure Layers: Key Management, Security Associations\nStandardization Bodies: Internet Society, Network Working Group\nLeaders: S. Kent\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Protocol",
       "metadata": {
         "referenceId": "RFC 4303",
@@ -9453,7 +9453,7 @@
       "id": "library-RFC 5280",
       "source": "library",
       "title": "Internet X.509 Public Key Infrastructure Certificate and CRL Profile",
-      "content": "Reference: RFC 5280\nTitle: Internet X.509 Public Key Infrastructure Certificate and CRL Profile\nDescription: Establishes X.509 v3 certificate format, extensions, revocation lists, and PKI path validation; foundational reference for hybrid and pure PQC certificate formats.\nType: Protocol | Status: Proposed Standard\nAuthors: D. Cooper; S. Santesson; S. Farrell; S. Boeyen; R. Housley; W. Polk\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT;Government;Finance;Healthcare;Critical Infrastructure\nRegion: International\nPublished: 2008-05-01 | Updated: 2008-05-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 5280\nTitle: Internet X.509 Public Key Infrastructure Certificate and CRL Profile\nDescription: Establishes X.509 v3 certificate format, extensions, revocation lists, and PKI path validation; foundational reference for hybrid and pure PQC certificate formats.\nType: Protocol | Status: Proposed Standard\nAuthors: D. Cooper; S. Santesson; S. Farrell; S. Boeyen; R. Housley; W. Polk\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT;Government;Finance;Healthcare;Critical Infrastructure\nRegion: International\nPublished: 2008-05-01 | Updated: 2008-05-01\n\nMain Topic: This document profiles the X.509 v3 certificate and X.509 v2 certificate revocation list formats, extensions, and path validation procedures for the Internet PKI.\nProtocols: X.509; PEM\nInfrastructure Layers: PKI\nStandardization Bodies: IETF; ISO/IEC/ITU-T; ANSI\nLeaders: D. Cooper; S. Santesson; S. Farrell; S. Boeyen; R. Housley; W. Polk\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Protocol",
       "metadata": {
         "referenceId": "RFC 5280",
@@ -9466,7 +9466,7 @@
       "id": "library-RFC 6962",
       "source": "library",
       "title": "Certificate Transparency",
-      "content": "Reference: RFC 6962\nTitle: Certificate Transparency\nDescription: Enables public logging of TLS certificates via append-only logs to detect misissued certificates; superseded by RFC 9162 but retained for historical context.\nType: Guidance | Status: Experimental\nAuthors: Ben Laurie; Adam Langley; Emilia Kasper (Google)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Low\nIndustries: IT;Web PKI;Finance\nRegion: International\nPublished: 2013-06-01 | Updated: 2013-06-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 6962\nTitle: Certificate Transparency\nDescription: Enables public logging of TLS certificates via append-only logs to detect misissued certificates; superseded by RFC 9162 but retained for historical context.\nType: Guidance | Status: Experimental\nAuthors: Ben Laurie; Adam Langley; Emilia Kasper (Google)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Low\nIndustries: IT;Web PKI;Finance\nRegion: International\nPublished: 2013-06-01 | Updated: 2013-06-01\n\nMain Topic: An experimental protocol for publicly logging TLS certificates in append-only Merkle trees to enable auditing of certificate authority activity and detection of misissued certificates.\nProtocols: TLS\nInfrastructure Layers: PKI\nStandardization Bodies: Internet Engineering Task Force (IETF); Internet Engineering Steering Group (IESG)\nCompliance Frameworks: BCP 78; Simplified BSD License\nLeaders: B. Laurie; A. Langley; E. Kasper\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Guidance",
       "metadata": {
         "referenceId": "RFC 6962",
@@ -9479,7 +9479,7 @@
       "id": "library-RFC 8017",
       "source": "library",
       "title": "PKCS #1: RSA Cryptography Specifications Version 2.2",
-      "content": "Reference: RFC 8017\nTitle: PKCS #1: RSA Cryptography Specifications Version 2.2\nDescription: Documents RSA cryptographic primitives, encryption and signature schemes, and ASN.1 representations; the primary reference for RSA being phased out in the PQC transition.\nType: Standard | Status: Informational\nAuthors: K. Moriarty; B. Kaliski; J. Jonsson; A. Rusch\nAlgorithm Family: RSA\nSecurity Levels: L1,L2,L3\nMigration Urgency: High\nIndustries: IT;Finance;Government;Healthcare\nRegion: International\nPublished: 2016-11-01 | Updated: 2016-11-01",
+      "content": "Reference: RFC 8017\nTitle: PKCS #1: RSA Cryptography Specifications Version 2.2\nDescription: Documents RSA cryptographic primitives, encryption and signature schemes, and ASN.1 representations; the primary reference for RSA being phased out in the PQC transition.\nType: Standard | Status: Informational\nAuthors: K. Moriarty; B. Kaliski; J. Jonsson; A. Rusch\nAlgorithm Family: RSA\nSecurity Levels: L1,L2,L3\nMigration Urgency: High\nIndustries: IT;Finance;Government;Healthcare\nRegion: International\nPublished: 2016-11-01 | Updated: 2016-11-01\n\nMain Topic: This document provides recommendations for implementing public-key cryptography based on the RSA algorithm, including primitives, encryption schemes, signature schemes, and ASN.1 syntax.\nStandardization Bodies: Internet Engineering Task Force (IETF); RSA Laboratories\nLeaders: K. Moriarty (Editor); B. Kaliski; J. Jonsson; A. Rusch",
       "category": "Standard",
       "metadata": {
         "referenceId": "RFC 8017",
@@ -9492,7 +9492,7 @@
       "id": "library-RFC 8446",
       "source": "library",
       "title": "The Transport Layer Security (TLS) Protocol Version 1.3",
-      "content": "Reference: RFC 8446\nTitle: The Transport Layer Security (TLS) Protocol Version 1.3\nDescription: Defines TLS 1.3 with simplified handshake and modern cryptographic requirements; the primary deployment vector for PQC algorithms via ML-KEM hybrid key exchange.\nType: Protocol | Status: Proposed Standard\nAuthors: Eric Rescorla (Mozilla)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT;Finance;Government;Healthcare;E-Commerce\nRegion: International\nPublished: 2018-08-01 | Updated: 2018-08-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 8446\nTitle: The Transport Layer Security (TLS) Protocol Version 1.3\nDescription: Defines TLS 1.3 with simplified handshake and modern cryptographic requirements; the primary deployment vector for PQC algorithms via ML-KEM hybrid key exchange.\nType: Protocol | Status: Proposed Standard\nAuthors: Eric Rescorla (Mozilla)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT;Finance;Government;Healthcare;E-Commerce\nRegion: International\nPublished: 2018-08-01 | Updated: 2018-08-01\n\nMain Topic: This document specifies version 1.3 of the Transport Layer Security (TLS) protocol to provide secure communication channels with simplified handshakes and modern cryptographic requirements.\nProtocols: TLS 1.3, TLS 1.2\nInfrastructure Layers: PKI; Key Management\nStandardization Bodies: Internet Engineering Task Force (IETF); Internet Engineering Steering Group (IESG)\nCompliance Frameworks: BCP 78; Simplified BSD License\nLeaders: E. Rescorla\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Protocol",
       "metadata": {
         "referenceId": "RFC 8446",
@@ -9505,7 +9505,7 @@
       "id": "library-RFC 9052",
       "source": "library",
       "title": "CBOR Object Signing and Encryption (COSE): Structures and Process",
-      "content": "Reference: RFC 9052\nTitle: CBOR Object Signing and Encryption (COSE): Structures and Process\nDescription: Defines COSE protocol for signatures, MACs, and encryption using CBOR serialization; critical path for PQC adoption in IoT and constrained device environments.\nType: Protocol | Status: Internet Standard\nAuthors: Jim Schaad (August Cellars)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IoT;Critical Infrastructure;Government\nRegion: International\nPublished: 2022-08-01 | Updated: 2022-08-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 9052\nTitle: CBOR Object Signing and Encryption (COSE): Structures and Process\nDescription: Defines COSE protocol for signatures, MACs, and encryption using CBOR serialization; critical path for PQC adoption in IoT and constrained device environments.\nType: Protocol | Status: Internet Standard\nAuthors: Jim Schaad (August Cellars)\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IoT;Critical Infrastructure;Government\nRegion: International\nPublished: 2022-08-01 | Updated: 2022-08-01\n\nMain Topic: Defines the CBOR Object Signing and Encryption (COSE) protocol structures and processes for signatures, MACs, and encryption using CBOR serialization.\nProtocols: CBOR, JOSE, CoRE, CoAP, CMS\nInfrastructure Layers: Key Management\nStandardization Bodies: IETF, IESG\nCompliance Frameworks: BCP 78, Revised BSD License\nLeaders: J. Schaad\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Protocol",
       "metadata": {
         "referenceId": "RFC 9052",
@@ -9518,7 +9518,7 @@
       "id": "library-RFC 9580",
       "source": "library",
       "title": "OpenPGP",
-      "content": "Reference: RFC 9580\nTitle: OpenPGP\nDescription: Specifies OpenPGP message formats for encryption, digital signatures, compression, and key management with modern cryptographic practices; prepares ecosystem for PQC signature integration.\nType: Protocol | Status: Proposed Standard\nAuthors: Paul Wouters; Daniel Huigens; Justus Winter; Niibe Yutaka\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT;Government;Secure Messaging\nRegion: International\nPublished: 2024-07-01 | Updated: 2024-07-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 9580\nTitle: OpenPGP\nDescription: Specifies OpenPGP message formats for encryption, digital signatures, compression, and key management with modern cryptographic practices; prepares ecosystem for PQC signature integration.\nType: Protocol | Status: Proposed Standard\nAuthors: Paul Wouters; Daniel Huigens; Justus Winter; Niibe Yutaka\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT;Government;Secure Messaging\nRegion: International\nPublished: 2024-07-01 | Updated: 2024-07-01\n\nMain Topic: This document specifies OpenPGP message formats for encryption, digital signatures, compression, and key management while preparing the ecosystem for PQC signature integration.\nProtocols: OpenPGP\nInfrastructure Layers: Key Management\nStandardization Bodies: Internet Engineering Task Force (IETF); Internet Engineering Steering Group (IESG)\nCompliance Frameworks: BCP 78; Revised BSD License\nLeaders: P. Wouters, Ed.; D. Huigens; J. Winter; Y. Niibe\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Protocol",
       "metadata": {
         "referenceId": "RFC 9580",
@@ -9531,7 +9531,7 @@
       "id": "library-RFC 9593",
       "source": "library",
       "title": "Announcing Supported Authentication Methods in IKEv2",
-      "content": "Reference: RFC 9593\nTitle: Announcing Supported Authentication Methods in IKEv2\nDescription: Introduces a mechanism for IKEv2 peers to announce supported authentication methods, enabling negotiation of PQC signature algorithms for hybrid key exchange.\nType: Protocol | Status: Proposed Standard\nAuthors: Valery Smyslov\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT;Government;Critical Infrastructure\nRegion: International\nPublished: 2024-07-01 | Updated: 2024-07-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 9593\nTitle: Announcing Supported Authentication Methods in IKEv2\nDescription: Introduces a mechanism for IKEv2 peers to announce supported authentication methods, enabling negotiation of PQC signature algorithms for hybrid key exchange.\nType: Protocol | Status: Proposed Standard\nAuthors: Valery Smyslov\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT;Government;Critical Infrastructure\nRegion: International\nPublished: 2024-07-01 | Updated: 2024-07-01\n\nMain Topic: RFC 9593 defines a mechanism for IKEv2 peers to announce supported authentication methods to enable negotiation of PQC signature algorithms and improve interoperability.\nProtocols: IKEv2, IPsec, IKE_INTERMEDIATE\nInfrastructure Layers: Key Management\nStandardization Bodies: Internet Engineering Task Force (IETF), Internet Engineering Steering Group (IESG)\nCompliance Frameworks: BCP 78, Revised BSD License\nLeaders: V. Smyslov\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Protocol",
       "metadata": {
         "referenceId": "RFC 9593",
@@ -9544,7 +9544,7 @@
       "id": "library-RFC 9847",
       "source": "library",
       "title": "IANA Registry Updates for TLS and DTLS",
-      "content": "Reference: RFC 9847\nTitle: IANA Registry Updates for TLS and DTLS\nDescription: Adds a Discouraged designation to TLS/DTLS IANA registries to flag weak or deprecated cryptographic mechanisms while maintaining backward compatibility.\nType: Guidance | Status: Proposed Standard\nAuthors: Joseph A. Salowey; Sean Turner\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT;Government;Standards Bodies\nRegion: International\nPublished: 2025-12-01 | Updated: 2025-12-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 9847\nTitle: IANA Registry Updates for TLS and DTLS\nDescription: Adds a Discouraged designation to TLS/DTLS IANA registries to flag weak or deprecated cryptographic mechanisms while maintaining backward compatibility.\nType: Guidance | Status: Proposed Standard\nAuthors: Joseph A. Salowey; Sean Turner\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT;Government;Standards Bodies\nRegion: International\nPublished: 2025-12-01 | Updated: 2025-12-01\n\nMain Topic: Updates TLS and DTLS IANA registries by adding a \"Discouraged\" designation to flag weak or deprecated cryptographic mechanisms while maintaining backward compatibility.\nProtocols: TLS; DTLS\nStandardization Bodies: Internet Engineering Task Force (IETF); IANA; Internet Engineering Steering Group (IESG)\nLeaders: J. Salowey; S. Turner\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Guidance",
       "metadata": {
         "referenceId": "RFC 9847",
@@ -9557,7 +9557,7 @@
       "id": "library-NIST IR 8105",
       "source": "library",
       "title": "Report on Post-Quantum Cryptography",
-      "content": "Reference: NIST IR 8105\nTitle: Report on Post-Quantum Cryptography\nDescription: Foundational NIST report examining quantum computing threats to current cryptographic standards. Outlines the need for and announces the PQC standardization initiative that produced FIPS 203/204/205.\nType: Research/Report | Status: Final\nAuthors: NIST\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT; Government; Cryptography Research\nRegion: USA; Global\nPublished: 2016-04-28 | Updated: 2016-04-28\nRelated Algorithms: [ML-KEM-512](/algorithms?highlight=ml-kem-512), [ML-KEM-768](/algorithms?highlight=ml-kem-768), [ML-KEM-1024](/algorithms?highlight=ml-kem-1024)",
+      "content": "Reference: NIST IR 8105\nTitle: Report on Post-Quantum Cryptography\nDescription: Foundational NIST report examining quantum computing threats to current cryptographic standards. Outlines the need for and announces the PQC standardization initiative that produced FIPS 203/204/205.\nType: Research/Report | Status: Final\nAuthors: NIST\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: IT; Government; Cryptography Research\nRegion: USA; Global\nPublished: 2016-04-28 | Updated: 2016-04-28\n\nMain Topic: Foundational NIST report examining quantum computing threats to current cryptographic standards and outlining the need for post-quantum cryptography standardization.\nQuantum Threats: Shor's algorithm; Grover's search algorithm; large-scale quantum computers breaking public key cryptosystems\nInfrastructure Layers: Public key infrastructure; federal information systems\nStandardization Bodies: National Institute of Standards and Technology (NIST); European Telecommunications Standards Institute (ETSI)\nCompliance Frameworks: FIPS 186-4; SP800-56A; SP800-56B\nMigration Timeline: Experts predict sufficiently large quantum computers may be built within the next 20 years; migration requires significant effort similar to the 20-year deployment of modern public key cryptography\nRegions / Bodies: United States; National Institute of Standards and Technology (NIST); U.S. Department of Commerce; European Union; Japan\nLeaders: Peter Shor showed quantum computers can efficiently solve integer factorization and discrete log problems; Lily Chen, Stephen Jordan, Yi-Kai Liu, Dustin Moody, Rene Peralta, Ray Perlner, Daniel Smith-Tone are authors of the report\nRelated Algorithms: [ML-KEM-512](/algorithms?highlight=ml-kem-512), [ML-KEM-768](/algorithms?highlight=ml-kem-768), [ML-KEM-1024](/algorithms?highlight=ml-kem-1024)",
       "category": "Research/Report",
       "metadata": {
         "referenceId": "NIST IR 8105",
@@ -9570,7 +9570,7 @@
       "id": "library-NIST IR 8309",
       "source": "library",
       "title": "Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process",
-      "content": "Reference: NIST IR 8309\nTitle: Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process\nDescription: Evaluates 26 second-round candidate algorithms and selects 7 finalists (CRYSTALS-Kyber/Dilithium, FALCON, NTRU, SABER, Classic McEliece, SPHINCS+) plus 8 alternates for Round 3.\nType: Research/Report | Status: Final\nAuthors: NIST\nAlgorithm Family: Lattice; Code-based; Hash-based; Multivariate; Isogeny\nSecurity Levels: Various\nMigration Urgency: Low\nIndustries: IT; Cryptography Research\nRegion: USA; Global\nPublished: 2020-07-22 | Updated: 2020-07-22",
+      "content": "Reference: NIST IR 8309\nTitle: Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process\nDescription: Evaluates 26 second-round candidate algorithms and selects 7 finalists (CRYSTALS-Kyber/Dilithium, FALCON, NTRU, SABER, Classic McEliece, SPHINCS+) plus 8 alternates for Round 3.\nType: Research/Report | Status: Final\nAuthors: NIST\nAlgorithm Family: Lattice; Code-based; Hash-based; Multivariate; Isogeny\nSecurity Levels: Various\nMigration Urgency: Low\nIndustries: IT; Cryptography Research\nRegion: USA; Global\nPublished: 2020-07-22 | Updated: 2020-07-22\n\nMain Topic: Status report evaluating 26 second-round candidates and selecting finalists and alternates for the NIST Post-Quantum Cryptography Standardization Process.\nPQC Algorithms: Classic McEliece, CRYSTALS-KYBER, NTRU, SABER, BIKE, FrodoKEM, HQC, NTRU Prime, SIKE, LAC, LEDAcrypt, NewHope, NTS-KEM, ROLLO, Round5, RQC, Three Bears, CRYSTALS-DILITHIUM, FALCON, Rainbow, GeMSS, Picnic, SPHINCS+, LUOV, MQDSS, qTESLA\nQuantum Threats: Quantum computers threatening public-key cryptosystems based on factoring, discrete logarithms, and elliptic curve cryptography\nStandardization Bodies: National Institute of Standards and Technology (NIST)\nCompliance Frameworks: Federal Information Processing Standard (FIPS) 186-4; NIST Special Publication (SP) 800-56A Revision 3; SP 800-56B Revision 2\nRegions / Bodies: United States; National Institute of Standards and Technology (NIST); U.S. Department of Commerce; federal agencies\nLeaders: Gorjan Alagic; Jacob Alperin-Sheriff; Daniel Apon; David Cooper; Quynh Dang; John Kelsey; Yi-Kai Liu; Carl Miller; Dustin Moody; Rene Peralta; Ray Perlner; Angela Robinson; Daniel Smith-Tone; Larry Bassham; Lily Chen; Thinh Dang; Morris Dworkin; Sara Kerman; Andrew Regenscheid\nRelated Algorithms: [RSA-2048](/algorithms?highlight=rsa-2048), [RSA-3072](/algorithms?highlight=rsa-3072), [RSA-4096](/algorithms?highlight=rsa-4096)",
       "category": "Research/Report",
       "metadata": {
         "referenceId": "NIST IR 8309",
@@ -9583,7 +9583,7 @@
       "id": "library-NIST IR 8413",
       "source": "library",
       "title": "Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process",
-      "content": "Reference: NIST IR 8413\nTitle: Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process\nDescription: Documents selection of CRYSTALS-Kyber (ML-KEM), CRYSTALS-Dilithium (ML-DSA), FALCON (FN-DSA), and SPHINCS+ (SLH-DSA) for standardization. Advances HQC, BIKE, Classic McEliece, and SIKE to Round 4.\nType: Research/Report | Status: Final\nAuthors: NIST\nAlgorithm Family: Lattice; Code-based; Hash-based; Isogeny\nSecurity Levels: Various\nMigration Urgency: Medium\nIndustries: IT; Cryptography Research\nRegion: USA; Global\nPublished: 2022-07-05 | Updated: 2022-09-29",
+      "content": "Reference: NIST IR 8413\nTitle: Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process\nDescription: Documents selection of CRYSTALS-Kyber (ML-KEM), CRYSTALS-Dilithium (ML-DSA), FALCON (FN-DSA), and SPHINCS+ (SLH-DSA) for standardization. Advances HQC, BIKE, Classic McEliece, and SIKE to Round 4.\nType: Research/Report | Status: Final\nAuthors: NIST\nAlgorithm Family: Lattice; Code-based; Hash-based; Isogeny\nSecurity Levels: Various\nMigration Urgency: Medium\nIndustries: IT; Cryptography Research\nRegion: USA; Global\nPublished: 2022-07-05 | Updated: 2022-09-29\n\nMain Topic: NIST status report on the third round of the Post-Quantum Cryptography Standardization Process detailing algorithm selections and evaluations.\nPQC Algorithms: CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON, SPHINCS+, BIKE, Classic McEliece, HQC, SIKE, FrodoKEM, NTRU, NTRU Prime, Saber, GeMSS, Picnic, Rainbow\nQuantum Threats: Risk to public-key cryptosystems based on factoring, discrete logarithms, and elliptic curve cryptography from large-scale quantum computers\nStandardization Bodies: National Institute of Standards and Technology (NIST)\nCompliance Frameworks: Federal Information Processing Standard (FIPS) 186-4; NIST Special Publication (SP) 800-56A Revision 3; SP 800-56B Revision 2\nRegions / Bodies: United States; National Institute of Standards and Technology (NIST); U.S. Department of Commerce; federal agencies\nLeaders: Gorjan Alagic, Daniel Apon, David Cooper, Quynh Dang, Thinh Dang, John Kelsey, Jacob Lichtinger, Yi-Kai Liu, Carl Miller, Dustin Moody, Rene Peralta, Ray Perlner, Angela Robinson, Daniel Smith-Tone, Zuzana Bajcsy, Larry Bassham, Lily Chen, Morris Dworkin, Sara Kerman, Andrew Regenscheid\nRelated Algorithms: [RSA-2048](/algorithms?highlight=rsa-2048), [RSA-3072](/algorithms?highlight=rsa-3072), [RSA-4096](/algorithms?highlight=rsa-4096)",
       "category": "Research/Report",
       "metadata": {
         "referenceId": "NIST IR 8413",
@@ -9596,7 +9596,7 @@
       "id": "library-NIST CSWP 39",
       "source": "library",
       "title": "Considerations for Achieving Cryptographic Agility",
-      "content": "Reference: NIST CSWP 39\nTitle: Considerations for Achieving Cryptographic Agility\nDescription: Strategies and practices for cryptographic agility — the ability to replace and adapt cryptographic algorithms in protocols, applications, and infrastructure without disruption. Essential companion to the PQC transition.\nType: Compliance/Guidance | Status: Final\nAuthors: NIST\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT; Government; Finance; Critical Infrastructure\nRegion: USA; Global\nPublished: 2025-12-19 | Updated: 2025-12-19\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: NIST CSWP 39\nTitle: Considerations for Achieving Cryptographic Agility\nDescription: Strategies and practices for cryptographic agility — the ability to replace and adapt cryptographic algorithms in protocols, applications, and infrastructure without disruption. Essential companion to the PQC transition.\nType: Compliance/Guidance | Status: Final\nAuthors: NIST\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT; Government; Finance; Critical Infrastructure\nRegion: USA; Global\nPublished: 2025-12-19 | Updated: 2025-12-19\n\nMain Topic: Strategies and practices for achieving cryptographic agility to replace and adapt algorithms in protocols, applications, and infrastructure while preserving security during transitions like PQC migration.\nQuantum Threats: cryptographically relevant quantum computers (CRQCs)\nInfrastructure Layers: software; hardware; firmware; infrastructures; application programming interfaces (APIs); software libraries; hardware accelerators\nStandardization Bodies: National Institute of Standards and Technology (NIST)\nRegions / Bodies: United States; National Institute of Standards and Technology (NIST); National Cybersecurity Center of Excellence (NCCoE)\nLeaders: Elaine Barker, Lily Chen, David Cooper, Dustin Moody, Andrew Regenscheid, Murugiah Souppaya, Russ Housley, Sean Turner, William Barker, Bill Newhouse, Karen Kent, Jim Foti, Isabel Van Wyk\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Compliance/Guidance",
       "metadata": {
         "referenceId": "NIST CSWP 39",
@@ -9609,7 +9609,7 @@
       "id": "library-NIST NCCoE SP 1800-38A",
       "source": "library",
       "title": "Migration to Post-Quantum Cryptography: Preparation for Considering the Implementation and Adoption of Quantum Safe Cryptography",
-      "content": "Reference: NIST NCCoE SP 1800-38A\nTitle: Migration to Post-Quantum Cryptography: Preparation for Considering the Implementation and Adoption of Quantum Safe Cryptography\nDescription: Volume A — Executive summary and business case for enterprise PQC migration. Frames the challenge of transitioning to quantum-resistant cryptography and outlines the NCCoE migration project scope.\nType: Guidance | Status: Preliminary Draft Practice Guide\nAuthors: NIST NCCoE\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Enterprise IT; Government; Finance\nRegion: USA\nPublished: 2023-03-01 | Updated: 2023-04-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: NIST NCCoE SP 1800-38A\nTitle: Migration to Post-Quantum Cryptography: Preparation for Considering the Implementation and Adoption of Quantum Safe Cryptography\nDescription: Volume A — Executive summary and business case for enterprise PQC migration. Frames the challenge of transitioning to quantum-resistant cryptography and outlines the NCCoE migration project scope.\nType: Guidance | Status: Preliminary Draft Practice Guide\nAuthors: NIST NCCoE\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Enterprise IT; Government; Finance\nRegion: USA\nPublished: 2023-03-01 | Updated: 2023-04-01\n\nMain Topic: Executive summary outlining the NCCoE project scope to prepare organizations for migrating from quantum-vulnerable public-key algorithms to quantum-resistant cryptography through discovery tools and interoperability testing.\nQuantum Threats: Quantum computer-based attacks; future quantum computer-based attacks\nProtocols: QUIC; Transport Layer Security (TLS); Secure Shell (SSH)\nInfrastructure Layers: Hardware Security Modules (HSMs); Software as a Service; continuous integration/continuous delivery development pipeline; end user systems and servers\nStandardization Bodies: National Institute of Standards and Technology (NIST)\nMigration Timeline: NIST will standardize the first quantum-resistant algorithms in 2024\nRegions / Bodies: United States; National Institute of Standards and Technology (NIST); U.S. Federal Government\nLeaders: William Newhouse; Murugiah Souppaya; William Barker; Chris Brown\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Guidance",
       "metadata": {
         "referenceId": "NIST NCCoE SP 1800-38A",
@@ -9622,7 +9622,7 @@
       "id": "library-NIST NCCoE SP 1800-38B",
       "source": "library",
       "title": "Migration to Post-Quantum Cryptography: Quantum Readiness — Cryptographic Discovery",
-      "content": "Reference: NIST NCCoE SP 1800-38B\nTitle: Migration to Post-Quantum Cryptography: Quantum Readiness — Cryptographic Discovery\nDescription: Volume B — Tools and techniques for cryptographic discovery. Guides organizations in identifying quantum-vulnerable cryptography across their environments as the first step in PQC migration.\nType: Guidance | Status: Preliminary Draft Practice Guide\nAuthors: NIST NCCoE\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Enterprise IT; Government; Finance\nRegion: USA\nPublished: 2023-12-01 | Updated: 2023-12-19\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: NIST NCCoE SP 1800-38B\nTitle: Migration to Post-Quantum Cryptography: Quantum Readiness — Cryptographic Discovery\nDescription: Volume B — Tools and techniques for cryptographic discovery. Guides organizations in identifying quantum-vulnerable cryptography across their environments as the first step in PQC migration.\nType: Guidance | Status: Preliminary Draft Practice Guide\nAuthors: NIST NCCoE\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: Enterprise IT; Government; Finance\nRegion: USA\nPublished: 2023-12-01 | Updated: 2023-12-19\n\nMain Topic: This document provides tools and techniques for cryptographic discovery to identify quantum-vulnerable cryptography as the first step in PQC migration.\nStandardization Bodies: National Institute of Standards and Technology\nCompliance Frameworks: NIST Cybersecurity Framework\nRegions / Bodies: United States; National Institute of Standards and Technology; National Cybersecurity Center of Excellence; State of Maryland; Montgomery County, Maryland\nLeaders: William Newhouse; Murugiah Souppaya; William Barker; Chris Brown; Panos Kampanakis; David McGrew; David Hook; Anne Dames; Raul Garcia; Vladimir Soukharev; Evgeny Gervis; Philip Lafrance; Eunkyung Kim; Changhoon Lee; Anthony Hu; Marc Manzano\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Guidance",
       "metadata": {
         "referenceId": "NIST NCCoE SP 1800-38B",
@@ -9635,7 +9635,7 @@
       "id": "library-NIST CSWP 48",
       "source": "library",
       "title": "Mappings of Migration to PQC Project Capabilities to Risk Framework Documents",
-      "content": "Reference: NIST CSWP 48\nTitle: Mappings of Migration to PQC Project Capabilities to Risk Framework Documents\nDescription: Maps NCCoE PQC Migration project capabilities to NIST Cybersecurity Framework 2.0 (CSF 2.0) and SP 800-53 security controls, helping organizations align PQC migration efforts with established risk management frameworks and identify controls needed for successful PQC migration.\nType: Compliance/Guidance | Status: Initial Public Draft\nAuthors: NIST NCCoE\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT; Government; Finance; Critical Infrastructure\nRegion: USA; Global\nPublished: 2025-09-18 | Updated: 2025-09-18\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: NIST CSWP 48\nTitle: Mappings of Migration to PQC Project Capabilities to Risk Framework Documents\nDescription: Maps NCCoE PQC Migration project capabilities to NIST Cybersecurity Framework 2.0 (CSF 2.0) and SP 800-53 security controls, helping organizations align PQC migration efforts with established risk management frameworks and identify controls needed for successful PQC migration.\nType: Compliance/Guidance | Status: Initial Public Draft\nAuthors: NIST NCCoE\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: High\nIndustries: IT; Government; Finance; Critical Infrastructure\nRegion: USA; Global\nPublished: 2025-09-18 | Updated: 2025-09-18\n\nMain Topic: This document maps NCCoE Migration to PQC project capabilities to NIST Cybersecurity Framework 2.0 and SP 800-53 security controls to support risk management during migration.\nQuantum Threats: attacks from a cryptanalytically-relevant quantum computer; quantum computer-based attacks\nProtocols: Transport Layer Security (TLS); Secure Shell (SSH); QUIC\nInfrastructure Layers: hardware security modules (HSMs); Certificate Authority Implementations; cryptographic discovery and inventory tools\nStandardization Bodies: National Institute of Standards and Technology; Internet Engineering Task Force (IETF)\nCompliance Frameworks: NIST Cybersecurity Framework 2.0; Security and Privacy Controls for Information Systems and Organizations (SP 800-53); Special Publication 800-53 Revision 5\nMigration Timeline: NIST PQC standards published in August 2024\nRegions / Bodies: United States; National Institute of Standards and Technology; U.S. Federal Government\nLeaders: William Newhouse; Murugiah Souppaya; William Barker; Karen Scarfone\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Compliance/Guidance",
       "metadata": {
         "referenceId": "NIST CSWP 48",
@@ -9648,7 +9648,7 @@
       "id": "library-RFC 9420",
       "source": "library",
       "title": "The Messaging Layer Security (MLS) Protocol",
-      "content": "Reference: RFC 9420\nTitle: The Messaging Layer Security (MLS) Protocol\nDescription: Key establishment protocol for efficient asynchronous group key establishment with forward secrecy and post-compromise security for groups of two to thousands. Uses HPKE tree-based key encapsulation (TreeKEM). Foundation for PQC group messaging via draft-ietf-mls-pq-ciphersuites (ML-KEM + hybrid KEMs).\nType: Protocol | Status: Proposed Standard\nAuthors: IETF MLS\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Messaging; Enterprise Collaboration; Social Media\nRegion: International\nPublished: 2023-07-01 | Updated: 2023-07-01\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
+      "content": "Reference: RFC 9420\nTitle: The Messaging Layer Security (MLS) Protocol\nDescription: Key establishment protocol for efficient asynchronous group key establishment with forward secrecy and post-compromise security for groups of two to thousands. Uses HPKE tree-based key encapsulation (TreeKEM). Foundation for PQC group messaging via draft-ietf-mls-pq-ciphersuites (ML-KEM + hybrid KEMs).\nType: Protocol | Status: Proposed Standard\nAuthors: IETF MLS\nAlgorithm Family: N/A\nSecurity Levels: N/A\nMigration Urgency: Medium\nIndustries: Messaging; Enterprise Collaboration; Social Media\nRegion: International\nPublished: 2023-07-01 | Updated: 2023-07-01\n\nMain Topic: Specification of the Messaging Layer Security (MLS) protocol for efficient asynchronous group key establishment with forward secrecy and post-compromise security.\nProtocols: MLS; HPKE; TLS; Double Ratchet; Signal\nInfrastructure Layers: Authentication Service; Delivery Service; Key Management\nStandardization Bodies: Internet Engineering Task Force (IETF); IESG\nCompliance Frameworks: BCP 78; BCP 14; RFC2119; RFC8174; Revised BSD License\nLeaders: R. Barnes; B. Beurdouche; R. Robert; J. Millican; E. Omara; K. Cohn-Gordon\nRelated Algorithms: [FrodoKEM-640](/algorithms?highlight=frodokem-640), [FrodoKEM-976](/algorithms?highlight=frodokem-976), [FrodoKEM-1344](/algorithms?highlight=frodokem-1344)",
       "category": "Protocol",
       "metadata": {
         "referenceId": "RFC 9420",
@@ -27878,6 +27878,168 @@
       "deepLink": "/library?ref=RFC%204253"
     },
     {
+      "id": "doc-enrichment-RFC 4301",
+      "source": "document-enrichment",
+      "title": "Security Architecture for the Internet Protocol — Document Analysis",
+      "content": "Title: Security Architecture for the Internet Protocol\nAuthors: Stephen Kent; Karen Seo (BBN Technologies)\nPublication Date: 2005-12-01\nLast Updated: 2005-12-01\nDocument Status: Proposed Standard\nMain Topic: This document specifies the base architecture and security services for IPsec at the IP layer for both IPv4 and IPv6 environments.\nLeaders Contributions Mentioned: S. Kent; K. Seo; Charlie Lynn (dedicated for significant contributions to IPsec documents)\nProtocols Covered: IPsec, Authentication Header (AH), Encapsulating Security Payload (ESP), Internet Key Exchange (IKE), IKEv2, IPv4, IPv6, ICMP\nInfrastructure Layers: Key Management; Security Associations; Security Policy Database (SPD); Security Association Database (SAD); Peer Authorization Database (PAD)\nStandardization Bodies: IETF (Internet Engineering Task Force implied by RFC context and Network Working Group); Internet Society",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 4301", "collection": "library" },
+      "deepLink": "/library?ref=RFC%204301"
+    },
+    {
+      "id": "doc-enrichment-RFC 4303",
+      "source": "document-enrichment",
+      "title": "IP Encapsulating Security Payload (ESP) — Document Analysis",
+      "content": "Title: IP Encapsulating Security Payload (ESP)\nAuthors: Stephen Kent (BBN Technologies)\nPublication Date: 2005-12-01\nLast Updated: 2005-12-01\nDocument Status: Proposed Standard\nMain Topic: This document specifies the Encapsulating Security Payload (ESP) protocol for providing confidentiality, data origin authentication, integrity, and anti-replay services in IPv4 and IPv6.\nLeaders Contributions Mentioned: S. Kent\nProtocols Covered: IP Encapsulating Security Payload (ESP), IPv4, IPv6, IP Authentication Header (AH)\nInfrastructure Layers: Key Management, Security Associations\nStandardization Bodies: Internet Society, Network Working Group",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 4303", "collection": "library" },
+      "deepLink": "/library?ref=RFC%204303"
+    },
+    {
+      "id": "doc-enrichment-RFC 5280",
+      "source": "document-enrichment",
+      "title": "Internet X.509 Public Key Infrastructure Certificate and CRL Profile — Document Analysis",
+      "content": "Title: Internet X.509 Public Key Infrastructure Certificate and CRL Profile\nAuthors: D. Cooper; S. Santesson; S. Farrell; S. Boeyen; R. Housley; W. Polk\nPublication Date: 2008-05-01\nLast Updated: 2008-05-01\nDocument Status: Proposed Standard\nMain Topic: This document profiles the X.509 v3 certificate and X.509 v2 certificate revocation list formats, extensions, and path validation procedures for the Internet PKI.\nLeaders Contributions Mentioned: D. Cooper; S. Santesson; S. Farrell; S. Boeyen; R. Housley; W. Polk\nProtocols Covered: X.509; PEM\nInfrastructure Layers: PKI\nStandardization Bodies: IETF; ISO/IEC/ITU-T; ANSI",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 5280", "collection": "library" },
+      "deepLink": "/library?ref=RFC%205280"
+    },
+    {
+      "id": "doc-enrichment-RFC 6962",
+      "source": "document-enrichment",
+      "title": "Certificate Transparency — Document Analysis",
+      "content": "Title: Certificate Transparency\nAuthors: Ben Laurie; Adam Langley; Emilia Kasper (Google)\nPublication Date: 2013-06-01\nLast Updated: 2013-06-01\nDocument Status: Experimental\nMain Topic: An experimental protocol for publicly logging TLS certificates in append-only Merkle trees to enable auditing of certificate authority activity and detection of misissued certificates.\nLeaders Contributions Mentioned: B. Laurie; A. Langley; E. Kasper\nProtocols Covered: TLS\nInfrastructure Layers: PKI\nStandardization Bodies: Internet Engineering Task Force (IETF); Internet Engineering Steering Group (IESG)\nCompliance Frameworks Referenced: BCP 78; Simplified BSD License",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 6962", "collection": "library" },
+      "deepLink": "/library?ref=RFC%206962"
+    },
+    {
+      "id": "doc-enrichment-RFC 8017",
+      "source": "document-enrichment",
+      "title": "PKCS #1: RSA Cryptography Specifications Version 2.2 — Document Analysis",
+      "content": "Title: PKCS #1: RSA Cryptography Specifications Version 2.2\nAuthors: K. Moriarty; B. Kaliski; J. Jonsson; A. Rusch\nPublication Date: 2016-11-01\nLast Updated: 2016-11-01\nDocument Status: Informational\nMain Topic: This document provides recommendations for implementing public-key cryptography based on the RSA algorithm, including primitives, encryption schemes, signature schemes, and ASN.1 syntax.\nLeaders Contributions Mentioned: K. Moriarty (Editor); B. Kaliski; J. Jonsson; A. Rusch\nStandardization Bodies: Internet Engineering Task Force (IETF); RSA Laboratories",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 8017", "collection": "library" },
+      "deepLink": "/library?ref=RFC%208017"
+    },
+    {
+      "id": "doc-enrichment-RFC 8446",
+      "source": "document-enrichment",
+      "title": "The Transport Layer Security (TLS) Protocol Version 1.3 — Document Analysis",
+      "content": "Title: The Transport Layer Security (TLS) Protocol Version 1.3\nAuthors: Eric Rescorla (Mozilla)\nPublication Date: 2018-08-01\nLast Updated: 2018-08-01\nDocument Status: Proposed Standard\nMain Topic: This document specifies version 1.3 of the Transport Layer Security (TLS) protocol to provide secure communication channels with simplified handshakes and modern cryptographic requirements.\nLeaders Contributions Mentioned: E. Rescorla\nProtocols Covered: TLS 1.3, TLS 1.2\nInfrastructure Layers: PKI; Key Management\nStandardization Bodies: Internet Engineering Task Force (IETF); Internet Engineering Steering Group (IESG)\nCompliance Frameworks Referenced: BCP 78; Simplified BSD License",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 8446", "collection": "library" },
+      "deepLink": "/library?ref=RFC%208446"
+    },
+    {
+      "id": "doc-enrichment-RFC 9052",
+      "source": "document-enrichment",
+      "title": "CBOR Object Signing and Encryption (COSE): Structures and Process — Document Analysis",
+      "content": "Title: CBOR Object Signing and Encryption (COSE): Structures and Process\nAuthors: Jim Schaad (August Cellars)\nPublication Date: 2022-08-01\nLast Updated: 2022-08-01\nDocument Status: Internet Standard\nMain Topic: Defines the CBOR Object Signing and Encryption (COSE) protocol structures and processes for signatures, MACs, and encryption using CBOR serialization.\nLeaders Contributions Mentioned: J. Schaad\nProtocols Covered: CBOR, JOSE, CoRE, CoAP, CMS\nInfrastructure Layers: Key Management\nStandardization Bodies: IETF, IESG\nCompliance Frameworks Referenced: BCP 78, Revised BSD License",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9052", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209052"
+    },
+    {
+      "id": "doc-enrichment-RFC 9580",
+      "source": "document-enrichment",
+      "title": "OpenPGP — Document Analysis",
+      "content": "Title: OpenPGP\nAuthors: Paul Wouters; Daniel Huigens; Justus Winter; Niibe Yutaka\nPublication Date: 2024-07-01\nLast Updated: 2024-07-01\nDocument Status: Proposed Standard\nMain Topic: This document specifies OpenPGP message formats for encryption, digital signatures, compression, and key management while preparing the ecosystem for PQC signature integration.\nLeaders Contributions Mentioned: P. Wouters, Ed.; D. Huigens; J. Winter; Y. Niibe\nProtocols Covered: OpenPGP\nInfrastructure Layers: Key Management\nStandardization Bodies: Internet Engineering Task Force (IETF); Internet Engineering Steering Group (IESG)\nCompliance Frameworks Referenced: BCP 78; Revised BSD License",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9580", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209580"
+    },
+    {
+      "id": "doc-enrichment-RFC 9593",
+      "source": "document-enrichment",
+      "title": "Announcing Supported Authentication Methods in IKEv2 — Document Analysis",
+      "content": "Title: Announcing Supported Authentication Methods in IKEv2\nAuthors: Valery Smyslov\nPublication Date: 2024-07-01\nLast Updated: 2024-07-01\nDocument Status: Proposed Standard\nMain Topic: RFC 9593 defines a mechanism for IKEv2 peers to announce supported authentication methods to enable negotiation of PQC signature algorithms and improve interoperability.\nLeaders Contributions Mentioned: V. Smyslov\nProtocols Covered: IKEv2, IPsec, IKE_INTERMEDIATE\nInfrastructure Layers: Key Management\nStandardization Bodies: Internet Engineering Task Force (IETF), Internet Engineering Steering Group (IESG)\nCompliance Frameworks Referenced: BCP 78, Revised BSD License",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9593", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209593"
+    },
+    {
+      "id": "doc-enrichment-RFC 9847",
+      "source": "document-enrichment",
+      "title": "IANA Registry Updates for TLS and DTLS — Document Analysis",
+      "content": "Title: IANA Registry Updates for TLS and DTLS\nAuthors: Joseph A. Salowey; Sean Turner\nPublication Date: 2025-12-01\nLast Updated: 2025-12-01\nDocument Status: Proposed Standard\nMain Topic: Updates TLS and DTLS IANA registries by adding a \"Discouraged\" designation to flag weak or deprecated cryptographic mechanisms while maintaining backward compatibility.\nLeaders Contributions Mentioned: J. Salowey; S. Turner\nProtocols Covered: TLS; DTLS\nStandardization Bodies: Internet Engineering Task Force (IETF); IANA; Internet Engineering Steering Group (IESG)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9847", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209847"
+    },
+    {
+      "id": "doc-enrichment-NIST IR 8105",
+      "source": "document-enrichment",
+      "title": "Report on Post-Quantum Cryptography — Document Analysis",
+      "content": "Title: Report on Post-Quantum Cryptography\nAuthors: NIST\nPublication Date: 2016-04-28\nLast Updated: 2016-04-28\nDocument Status: Final\nMain Topic: Foundational NIST report examining quantum computing threats to current cryptographic standards and outlining the need for post-quantum cryptography standardization.\nQuantum Threats Addressed: Shor's algorithm; Grover's search algorithm; large-scale quantum computers breaking public key cryptosystems\nMigration Timeline Info: Experts predict sufficiently large quantum computers may be built within the next 20 years; migration requires significant effort similar to the 20-year deployment of modern public key cryptography\nApplicable Regions / Bodies: United States; National Institute of Standards and Technology (NIST); U.S. Department of Commerce; European Union; Japan\nLeaders Contributions Mentioned: Peter Shor showed quantum computers can efficiently solve integer factorization and discrete log problems; Lily Chen, Stephen Jordan, Yi-Kai Liu, Dustin Moody, Rene Peralta, Ray Perlner, Daniel Smith-Tone are authors of the report\nInfrastructure Layers: Public key infrastructure; federal information systems\nStandardization Bodies: National Institute of Standards and Technology (NIST); European Telecommunications Standards Institute (ETSI)\nCompliance Frameworks Referenced: FIPS 186-4; SP800-56A; SP800-56B",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST IR 8105", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20IR%208105"
+    },
+    {
+      "id": "doc-enrichment-NIST IR 8309",
+      "source": "document-enrichment",
+      "title": "Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process — Document Analysis",
+      "content": "Title: Status Report on the Second Round of the NIST Post-Quantum Cryptography Standardization Process\nAuthors: NIST\nPublication Date: 2020-07-22\nLast Updated: 2020-07-22\nDocument Status: Final\nMain Topic: Status report evaluating 26 second-round candidates and selecting finalists and alternates for the NIST Post-Quantum Cryptography Standardization Process.\nPQC Algorithms Covered: Classic McEliece, CRYSTALS-KYBER, NTRU, SABER, BIKE, FrodoKEM, HQC, NTRU Prime, SIKE, LAC, LEDAcrypt, NewHope, NTS-KEM, ROLLO, Round5, RQC, Three Bears, CRYSTALS-DILITHIUM, FALCON, Rainbow, GeMSS, Picnic, SPHINCS+, LUOV, MQDSS, qTESLA\nQuantum Threats Addressed: Quantum computers threatening public-key cryptosystems based on factoring, discrete logarithms, and elliptic curve cryptography\nApplicable Regions / Bodies: United States; National Institute of Standards and Technology (NIST); U.S. Department of Commerce; federal agencies\nLeaders Contributions Mentioned: Gorjan Alagic; Jacob Alperin-Sheriff; Daniel Apon; David Cooper; Quynh Dang; John Kelsey; Yi-Kai Liu; Carl Miller; Dustin Moody; Rene Peralta; Ray Perlner; Angela Robinson; Daniel Smith-Tone; Larry Bassham; Lily Chen; Thinh Dang; Morris Dworkin; Sara Kerman; Andrew Regenscheid\nStandardization Bodies: National Institute of Standards and Technology (NIST)\nCompliance Frameworks Referenced: Federal Information Processing Standard (FIPS) 186-4; NIST Special Publication (SP) 800-56A Revision 3; SP 800-56B Revision 2",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST IR 8309", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20IR%208309"
+    },
+    {
+      "id": "doc-enrichment-NIST IR 8413",
+      "source": "document-enrichment",
+      "title": "Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process — Document Analysis",
+      "content": "Title: Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process\nAuthors: NIST\nPublication Date: 2022-07-05\nLast Updated: 2022-09-29\nDocument Status: Final\nMain Topic: NIST status report on the third round of the Post-Quantum Cryptography Standardization Process detailing algorithm selections and evaluations.\nPQC Algorithms Covered: CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON, SPHINCS+, BIKE, Classic McEliece, HQC, SIKE, FrodoKEM, NTRU, NTRU Prime, Saber, GeMSS, Picnic, Rainbow\nQuantum Threats Addressed: Risk to public-key cryptosystems based on factoring, discrete logarithms, and elliptic curve cryptography from large-scale quantum computers\nApplicable Regions / Bodies: United States; National Institute of Standards and Technology (NIST); U.S. Department of Commerce; federal agencies\nLeaders Contributions Mentioned: Gorjan Alagic, Daniel Apon, David Cooper, Quynh Dang, Thinh Dang, John Kelsey, Jacob Lichtinger, Yi-Kai Liu, Carl Miller, Dustin Moody, Rene Peralta, Ray Perlner, Angela Robinson, Daniel Smith-Tone, Zuzana Bajcsy, Larry Bassham, Lily Chen, Morris Dworkin, Sara Kerman, Andrew Regenscheid\nStandardization Bodies: National Institute of Standards and Technology (NIST)\nCompliance Frameworks Referenced: Federal Information Processing Standard (FIPS) 186-4; NIST Special Publication (SP) 800-56A Revision 3; SP 800-56B Revision 2",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST IR 8413", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20IR%208413"
+    },
+    {
+      "id": "doc-enrichment-NIST CSWP 39",
+      "source": "document-enrichment",
+      "title": "Considerations for Achieving Cryptographic Agility — Document Analysis",
+      "content": "Title: Considerations for Achieving Cryptographic Agility\nAuthors: NIST\nPublication Date: 2025-12-19\nLast Updated: 2025-12-19\nDocument Status: Final\nMain Topic: Strategies and practices for achieving cryptographic agility to replace and adapt algorithms in protocols, applications, and infrastructure while preserving security during transitions like PQC migration.\nQuantum Threats Addressed: cryptographically relevant quantum computers (CRQCs)\nApplicable Regions / Bodies: United States; National Institute of Standards and Technology (NIST); National Cybersecurity Center of Excellence (NCCoE)\nLeaders Contributions Mentioned: Elaine Barker, Lily Chen, David Cooper, Dustin Moody, Andrew Regenscheid, Murugiah Souppaya, Russ Housley, Sean Turner, William Barker, Bill Newhouse, Karen Kent, Jim Foti, Isabel Van Wyk\nInfrastructure Layers: software; hardware; firmware; infrastructures; application programming interfaces (APIs); software libraries; hardware accelerators\nStandardization Bodies: National Institute of Standards and Technology (NIST)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST CSWP 39", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20CSWP%2039"
+    },
+    {
+      "id": "doc-enrichment-NIST NCCoE SP 1800-38A",
+      "source": "document-enrichment",
+      "title": "Migration to Post-Quantum Cryptography: Preparation for Considering the Implementation and Adoption of Quantum Safe Cryptography — Document Analysis",
+      "content": "Title: Migration to Post-Quantum Cryptography: Preparation for Considering the Implementation and Adoption of Quantum Safe Cryptography\nAuthors: NIST NCCoE\nPublication Date: 2023-03-01\nLast Updated: 2023-04-01\nDocument Status: Preliminary Draft Practice Guide\nMain Topic: Executive summary outlining the NCCoE project scope to prepare organizations for migrating from quantum-vulnerable public-key algorithms to quantum-resistant cryptography through discovery tools and interoperability testing.\nQuantum Threats Addressed: Quantum computer-based attacks; future quantum computer-based attacks\nMigration Timeline Info: NIST will standardize the first quantum-resistant algorithms in 2024\nApplicable Regions / Bodies: United States; National Institute of Standards and Technology (NIST); U.S. Federal Government\nLeaders Contributions Mentioned: William Newhouse; Murugiah Souppaya; William Barker; Chris Brown\nProtocols Covered: QUIC; Transport Layer Security (TLS); Secure Shell (SSH)\nInfrastructure Layers: Hardware Security Modules (HSMs); Software as a Service; continuous integration/continuous delivery development pipeline; end user systems and servers\nStandardization Bodies: National Institute of Standards and Technology (NIST)",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST NCCoE SP 1800-38A", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20NCCoE%20SP%201800-38A"
+    },
+    {
+      "id": "doc-enrichment-NIST NCCoE SP 1800-38B",
+      "source": "document-enrichment",
+      "title": "Migration to Post-Quantum Cryptography: Quantum Readiness — Cryptographic Discovery — Document Analysis",
+      "content": "Title: Migration to Post-Quantum Cryptography: Quantum Readiness — Cryptographic Discovery\nAuthors: NIST NCCoE\nPublication Date: 2023-12-01\nLast Updated: 2023-12-19\nDocument Status: Preliminary Draft Practice Guide\nMain Topic: This document provides tools and techniques for cryptographic discovery to identify quantum-vulnerable cryptography as the first step in PQC migration.\nApplicable Regions / Bodies: United States; National Institute of Standards and Technology; National Cybersecurity Center of Excellence; State of Maryland; Montgomery County, Maryland\nLeaders Contributions Mentioned: William Newhouse; Murugiah Souppaya; William Barker; Chris Brown; Panos Kampanakis; David McGrew; David Hook; Anne Dames; Raul Garcia; Vladimir Soukharev; Evgeny Gervis; Philip Lafrance; Eunkyung Kim; Changhoon Lee; Anthony Hu; Marc Manzano\nStandardization Bodies: National Institute of Standards and Technology\nCompliance Frameworks Referenced: NIST Cybersecurity Framework",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST NCCoE SP 1800-38B", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20NCCoE%20SP%201800-38B"
+    },
+    {
+      "id": "doc-enrichment-NIST CSWP 48",
+      "source": "document-enrichment",
+      "title": "Mappings of Migration to PQC Project Capabilities to Risk Framework Documents — Document Analysis",
+      "content": "Title: Mappings of Migration to PQC Project Capabilities to Risk Framework Documents\nAuthors: NIST NCCoE\nPublication Date: 2025-09-18\nLast Updated: 2025-09-18\nDocument Status: Initial Public Draft\nMain Topic: This document maps NCCoE Migration to PQC project capabilities to NIST Cybersecurity Framework 2.0 and SP 800-53 security controls to support risk management during migration.\nQuantum Threats Addressed: attacks from a cryptanalytically-relevant quantum computer; quantum computer-based attacks\nMigration Timeline Info: NIST PQC standards published in August 2024\nApplicable Regions / Bodies: United States; National Institute of Standards and Technology; U.S. Federal Government\nLeaders Contributions Mentioned: William Newhouse; Murugiah Souppaya; William Barker; Karen Scarfone\nProtocols Covered: Transport Layer Security (TLS); Secure Shell (SSH); QUIC\nInfrastructure Layers: hardware security modules (HSMs); Certificate Authority Implementations; cryptographic discovery and inventory tools\nStandardization Bodies: National Institute of Standards and Technology; Internet Engineering Task Force (IETF)\nCompliance Frameworks Referenced: NIST Cybersecurity Framework 2.0; Security and Privacy Controls for Information Systems and Organizations (SP 800-53); Special Publication 800-53 Revision 5",
+      "category": "document-enrichment",
+      "metadata": { "refId": "NIST CSWP 48", "collection": "library" },
+      "deepLink": "/library?ref=NIST%20CSWP%2048"
+    },
+    {
+      "id": "doc-enrichment-RFC 9420",
+      "source": "document-enrichment",
+      "title": "The Messaging Layer Security (MLS) Protocol — Document Analysis",
+      "content": "Title: The Messaging Layer Security (MLS) Protocol\nAuthors: IETF MLS\nPublication Date: 2023-07-01\nLast Updated: 2023-07-01\nDocument Status: Proposed Standard\nMain Topic: Specification of the Messaging Layer Security (MLS) protocol for efficient asynchronous group key establishment with forward secrecy and post-compromise security.\nLeaders Contributions Mentioned: R. Barnes; B. Beurdouche; R. Robert; J. Millican; E. Omara; K. Cohn-Gordon\nProtocols Covered: MLS; HPKE; TLS; Double Ratchet; Signal\nInfrastructure Layers: Authentication Service; Delivery Service; Key Management\nStandardization Bodies: Internet Engineering Task Force (IETF); IESG\nCompliance Frameworks Referenced: BCP 78; BCP 14; RFC2119; RFC8174; Revised BSD License",
+      "category": "document-enrichment",
+      "metadata": { "refId": "RFC 9420", "collection": "library" },
+      "deepLink": "/library?ref=RFC%209420"
+    },
+    {
       "id": "doc-enrichment-European Union:EU Horizon — QARC Project Execution",
       "source": "document-enrichment",
       "title": "QARC Project Execution — Document Analysis",
@@ -30150,6 +30312,15 @@
       "category": "app-guide",
       "metadata": { "fileName": "15-community.md", "slug": "community" },
       "deepLink": "/about"
+    },
+    {
+      "id": "changelog-2.22.0",
+      "source": "changelog",
+      "title": "PQC Today v2.22.0 — Release Notes (2026-03-04)",
+      "content": "Version 2.22.0 released 2026-03-04.\n\n### Added\n\n- **Digital Assets — Architecture Overview**: New reference component detailing blockchain cryptographic requirements (Bitcoin secp256k1/ECDSA/SHA256+RIPEMD160, Ethereum Keccak-256/EIP-55, Solana Ed25519/Base58) and an OpenSSL 3.6.0 support matrix covering key generation, signing, address derivation, and HD wallet operations per chain.\n\n### Fixed\n\n- **PKCS#11 v3.2 CKK\\_\\* constant alignment**: Added missing `CKK_XMSS` (0x47) and `CKK_XMSSMT` (0x48) for stateful hash-based signature key types per PKCS#11 v3.2 §4.37–4.38; corrected `CKK_ML_KEM` → 0x49, `CKK_ML_DSA` → 0x4a, `CKK_SLH_DSA` → 0x4b to match the authoritative `pkcs11t.h` header. Previous values caused wrong key-type tags on PQC keys.\n\n- **KBKDF Feedback — IV \"Random\" button size**: IV is now sized to `PRF_SEED_BYTES[prf]` (matching the PRF's hash output length) instead of a hardcoded 16 bytes. Prevents PKCS#11 errors when the selected PRF uses a wider digest (e.g. SHA-256 → 32 bytes, SHA-512 → 64 bytes).\n\n- **LearnTrackStack keyboard accessibility**: Replaced non-interactive `<button>` wrappers with `<div role=\"button\" tabIndex={0}>` plus `onKeyDown` handlers (Enter/Space) and `focus-visible:ring` styling. Track cards are now fully keyboard-navigable.\n\n### Data\n\n- **Library**: +1 new record — KpqC Competition Final Results (HAETAE, AIMer, SMAUG-T, NTRU+ national standards) and FIPS 140-3 Implementation Guidance for PQC; 256 records total.\n\n- **Migrate catalog**: 331-entry catalog now committed to repository (file was tracked in changelog but untracked in git since v2.20.0).\n\n- **Library doc enrichments**: Additional AI-extracted dimension entries appended.\n\n- **SoftHSMv3 WASM binary**: Rebuilt to include XMSS/XMSSMT key type registration and corrected PQC constant values.\n\n- **RAG corpus**: Rebuilt to include updated library and enrichment data.\n\n### Tests\n\n- **E2E — chatbot & chatbot-persona**: Version seed bumped from `2.9.0` → `2.99.0` to reliably suppress the WhatsNew toast across all future …",
+      "category": "changelog",
+      "metadata": { "version": "2.22.0", "date": "2026-03-04" },
+      "deepLink": "/changelog"
     },
     {
       "id": "changelog-2.21.0",

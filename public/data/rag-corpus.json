@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-05T05:23:32.607Z",
-  "chunkCount": 2772,
+  "generatedAt": "2026-03-05T06:30:03.360Z",
+  "chunkCount": 2777,
   "chunks": [
     {
       "id": "glossary-0",
@@ -4002,7 +4002,7 @@
       "metadata": {
         "country": "United States",
         "org": "SandboxAQ",
-        "sourceUrl": "https://www.sandboxaq.com/press/sandboxaq-and-dow-cio-partner-to-strengthen-us-defenses-against-quantum-and-ai-driven-cyber-threats"
+        "sourceUrl": "https://www.sandboxaq.com/press/sandboxaq-and-dod-cio-partner-to-strengthen-us-defenses-against-quantum-and-ai-driven-cyber-threats"
       },
       "deepLink": "/timeline?country=United%20States"
     },
@@ -4153,11 +4153,11 @@
       "id": "timeline-29",
       "source": "timeline",
       "title": "Canada — PQC Best Practices Published",
-      "content": "Country: Canada\nOrganization: Canadian Centre for Cyber Security\nType: Milestone | Phase: Guidance\nPeriod: 2023–2023\nTitle: PQC Best Practices Published\nDescription: CFDIR publishes Canadian National Quantum-Readiness Best Practices and Guidelines.",
+      "content": "Country: Canada\nOrganization: Innovation, Science and Economic Development Canada\nType: Milestone | Phase: Guidance\nPeriod: 2023–2023\nTitle: PQC Best Practices Published\nDescription: Innovation, Science and Economic Development Canada (ISED) publishes the Canadian National Quantum-Readiness: Best Practices and Guidelines. Provides a framework for Canadian organizations to assess quantum risks and prioritize PQC migration across federal departments and industry.",
       "category": "Guidance",
       "metadata": {
         "country": "Canada",
-        "org": "CCCS",
+        "org": "ISED",
         "sourceUrl": "https://ised-isde.canada.ca/site/spectrum-management-telecommunications/sites/default/files/attachments/2023/cfdir-quantum-readiness-best-practices-v03.pdf"
       },
       "deepLink": "/timeline?country=Canada"
@@ -6326,6 +6326,32 @@
         "country": "United States",
         "org": "NIST",
         "sourceUrl": "https://csrc.nist.gov/pubs/ir/8547/ipd"
+      },
+      "deepLink": "/timeline?country=United%20States"
+    },
+    {
+      "id": "timeline-197",
+      "source": "timeline",
+      "title": "United Kingdom — PQC Whitepaper Published",
+      "content": "Country: United Kingdom\nOrganization: National Cyber Security Centre\nType: Milestone | Phase: Guidance\nPeriod: 2023–2023\nTitle: PQC Whitepaper Published\nDescription: NCSC publishes \"Next Steps in Preparing for Post-Quantum Cryptography\" — first major UK guidance on PQC transition. Assesses the PQC landscape, endorses a hybrid approach, and outlines actions for organisations to begin preparing. Updated August 2024 to reflect NIST final standards.",
+      "category": "Guidance",
+      "metadata": {
+        "country": "United Kingdom",
+        "org": "NCSC",
+        "sourceUrl": "https://www.ncsc.gov.uk/whitepaper/next-steps-preparing-for-post-quantum-cryptography"
+      },
+      "deepLink": "/timeline?country=United%20Kingdom"
+    },
+    {
+      "id": "timeline-198",
+      "source": "timeline",
+      "title": "United States — NIST SP 800-208 Published (LMS/XMSS)",
+      "content": "Country: United States\nOrganization: National Institute of Standards and Technology\nType: Milestone | Phase: Standardization\nPeriod: 2020–2020\nTitle: NIST SP 800-208 Published (LMS/XMSS)\nDescription: NIST publishes SP 800-208 Recommendation for Stateful Hash-Based Signature Schemes, standardising LMS (Leighton-Micali Signatures) and XMSS (eXtended Merkle Signature Scheme). First NIST PQC-adjacent standard and earliest entry in the timeline. Both algorithms are mandated by NSA CNSA 2.0.",
+      "category": "Standardization",
+      "metadata": {
+        "country": "United States",
+        "org": "NIST",
+        "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/208/final"
       },
       "deepLink": "/timeline?country=United%20States"
     },
@@ -10745,12 +10771,12 @@
       "id": "threat-CROSS-005",
       "source": "threats",
       "title": "Cross-Industry — FIPS 206 FN-DSA (Falcon) standardization: NIST submitted draft FIPS 206 for appr",
-      "content": "Industry: Cross-Industry\nThreat: FIPS 206 FN-DSA (Falcon) standardization: NIST submitted draft FIPS 206 for approval August 2025. FN-DSA is the 4th PQC algorithm to be standardized, selected for use cases where compact signature size is critical (root and intermediate certificates, constrained environments). Based on NTRU lattices using FFT. Expected IPD release for public comment followed by finalization in late 2026 or 2027.\nCriticality: High\nCryptography at Risk: RSA/ECDSA certificates requiring compact signatures, root CA keys, constrained device authentication\nPQC Replacement: FN-DSA (FIPS 206) for compact signatures, ML-DSA for general-purpose signing\nSource: NIST FIPS 206 FN-DSA Status",
+      "content": "Industry: Cross-Industry\nThreat: FIPS 206 FN-DSA (Falcon) standardization: NIST submitted draft FIPS 206 for approval August 2025. FN-DSA is the 4th PQC algorithm to be standardized, selected for use cases where compact signature size is critical (root and intermediate certificates, constrained environments). Based on NTRU lattices using FFT. The Initial Public Draft (IPD) was published November 2024; draft submitted for final NIST approval August 2025; finalization expected late 2026 or early 2027.\nCriticality: High\nCryptography at Risk: RSA/ECDSA certificates requiring compact signatures, root CA keys, constrained device authentication\nPQC Replacement: FN-DSA (FIPS 206) for compact signatures, ML-DSA for general-purpose signing\nSource: NIST FIPS 206 FN-DSA Status",
       "category": "High",
       "metadata": {
         "industry": "Cross-Industry",
         "threatId": "CROSS-005",
-        "sourceUrl": "https://csrc.nist.gov/presentations/2025/fips-206-fn-dsa-falcon"
+        "sourceUrl": "https://csrc.nist.gov/pubs/fips/206/ipd"
       },
       "deepLink": "/threats?id=CROSS-005&industry=Cross-Industry"
     },
@@ -10797,7 +10823,7 @@
       "id": "threat-CRYPTO-001",
       "source": "threats",
       "title": "Cryptocurrency / Blockchain — Bitcoin ECDSA transaction hijacking: Approximately $718B in quantum-vulnerable P",
-      "content": "Industry: Cryptocurrency / Blockchain\nThreat: Bitcoin ECDSA transaction hijacking: Approximately $718B in quantum-vulnerable P2PK addresses with exposed public keys (price-dependent estimate). Early P2PK addresses including Satoshi's estimated 1.1M BTC are permanently vulnerable as public keys are exposed on-chain. P2PKH addresses are protected until first spend.\nCriticality: Critical\nCryptography at Risk: secp256k1 ECDSA\nPQC Replacement: P2QRH BIP proposal, Lamport signatures, hash-based migration\nSource: Federal Reserve HNDL Paper",
+      "content": "Industry: Cryptocurrency / Blockchain\nThreat: Bitcoin ECDSA transaction hijacking: Approximately $718B in quantum-vulnerable P2PK addresses with exposed public keys (price-dependent estimate). Early P2PK addresses including Satoshi's estimated 1.1M BTC are permanently vulnerable as public keys are exposed on-chain. P2PKH addresses are protected until first spend.\nCriticality: Critical\nCryptography at Risk: secp256k1 ECDSA\nPQC Replacement: P2QRH (BIP-360) proposal, Lamport signatures, hash-based migration\nSource: Federal Reserve HNDL Paper",
       "category": "Critical",
       "metadata": {
         "industry": "Cryptocurrency / Blockchain",
@@ -11368,8 +11394,8 @@
     {
       "id": "threat-PCI-003",
       "source": "threats",
-      "title": "Payment Card Industry — PIN block encryption quantum vulnerability: Triple-DES DUKPT base derivation key",
-      "content": "Industry: Payment Card Industry\nThreat: PIN block encryption quantum vulnerability: Triple-DES DUKPT base derivation keys protecting PIN blocks at millions of payment terminals face quantum compromise. AES-256 DUKPT provides quantum-resistant symmetric alternative but terminal hardware replacement required at massive scale.\nCriticality: High\nCryptography at Risk: 3DES DUKPT base derivation keys, RSA key injection, PIN encryption\nPQC Replacement: AES-256 DUKPT, ML-KEM key injection, quantum-safe PIN encryption\nSource: PCI PIN Security Requirements\nRelated Compliance: [PCI DSS](/compliance?q=PCI%20DSS)",
+      "title": "Payment Card Industry — PIN block encryption quantum vulnerability: PIN encryption at scale relies on 3D",
+      "content": "Industry: Payment Card Industry\nThreat: PIN block encryption quantum vulnerability: PIN encryption at scale relies on 3DES DUKPT; the quantum attack surface is the RSA-based key injection ceremony at Key Injection Facilities (KIFs) used to load base derivation keys into terminals — quantum forgery of RSA key transport enables malicious key injection at scale. AES-256 DUKPT provides quantum-resistant symmetric alternative but terminal hardware replacement required at massive scale.\nCriticality: High\nCryptography at Risk: 3DES DUKPT base derivation keys, RSA key injection, PIN encryption\nPQC Replacement: AES-256 DUKPT, ML-KEM key injection, quantum-safe PIN encryption\nSource: PCI PIN Security Requirements\nRelated Compliance: [PCI DSS](/compliance?q=PCI%20DSS)",
       "category": "High",
       "metadata": {
         "industry": "Payment Card Industry",
@@ -11447,7 +11473,7 @@
       "id": "threat-SUPPLY-001",
       "source": "threats",
       "title": "Supply Chain / Logistics — Maritime cybersecurity quantum exposure: IMO MSC-FAL.1/Circ.3 guidelines address",
-      "content": "Industry: Supply Chain / Logistics\nThreat: Maritime cybersecurity quantum exposure: IMO MSC-FAL.1/Circ.3 guidelines address maritime cybersecurity. Maritime sector carries approximately 80% of world trade by volume. Port management systems, AIS (Automatic Identification System), and electronic navigation use RSA/ECDSA for authentication.\nCriticality: High\nCryptography at Risk: AIS encryption, port management system PKI, electronic navigation authentication\nPQC Replacement: ML-DSA for maritime authentication, PQC-enabled AIS, quantum-safe port systems\nSource: IMO Maritime Cyber Risk Management Guidelines",
+      "content": "Industry: Supply Chain / Logistics\nThreat: Maritime cybersecurity quantum exposure: IMO MSC-FAL.1/Circ.3 guidelines address maritime cybersecurity. Maritime sector carries approximately 80% of world trade by volume. Port management systems, vessel identity PKI (used in ECDIS and GMDSS), and maritime VPN infrastructure use RSA/ECDSA — AIS itself is an unauthenticated broadcast protocol and is not quantum-affected until authenticated replacements are deployed.\nCriticality: High\nCryptography at Risk: Port management system PKI, vessel identity certificate PKI, maritime VPN/TLS, electronic chart ECDIS authentication\nPQC Replacement: ML-DSA for maritime authentication, PQC-enabled AIS, quantum-safe port systems\nSource: IMO Maritime Cyber Risk Management Guidelines",
       "category": "High",
       "metadata": {
         "industry": "Supply Chain / Logistics",
@@ -11486,7 +11512,7 @@
       "id": "threat-TELCO-001",
       "source": "threats",
       "title": "Telecommunications — HNDL on subscriber data: Mobile network operators retain call detail records, lo",
-      "content": "Industry: Telecommunications\nThreat: HNDL on subscriber data: Mobile network operators retain call detail records, location data, and encrypted communications for 2-10 years. 5G user data encrypted with vulnerable algorithms.\nCriticality: Critical\nCryptography at Risk: RSA, ECDSA, AES-128 (some legacy)\nPQC Replacement: ML-KEM-1024, ML-DSA, AES-256\nSource: GSMA Security Guidelines\nRelated Compliance: [GSMA NG.116 / FS.40](/compliance?q=GSMA%20NG.116%20%2F%20FS.40), [ETSI TS 103 744](/compliance?q=ETSI%20TS%20103%20744), [ISO 27001](/compliance?q=ISO%2027001)",
+      "content": "Industry: Telecommunications\nThreat: HNDL on subscriber data: Mobile network operators retain call detail records, location data, and encrypted communications for 2-10 years. 5G user data encrypted with vulnerable algorithms.\nCriticality: Critical\nCryptography at Risk: RSA, ECDSA, ECDH (subscriber authentication and key exchange); AES-128 legacy bearers weakened by Grover's algorithm but not broken\nPQC Replacement: ML-KEM-1024, ML-DSA, AES-256\nSource: GSMA Security Guidelines\nRelated Compliance: [GSMA NG.116 / FS.40](/compliance?q=GSMA%20NG.116%20%2F%20FS.40), [ETSI TS 103 744](/compliance?q=ETSI%20TS%20103%20744), [ISO 27001](/compliance?q=ISO%2027001)",
       "category": "Critical",
       "metadata": {
         "industry": "Telecommunications",
@@ -16381,7 +16407,7 @@
       "id": "leader-2",
       "source": "leaders",
       "title": "Dr. Ludovic Perret",
-      "content": "Name: Dr. Ludovic Perret\nCountry: France\nRole: CEO and Co-Founder\nOrganizations: CryptoNext Security\nType: Private | Category: Industry Vendor\nContribution: Co-founded and leads CryptoNext Security; leading quantum-safe cryptography vendor; RESQUE consortium member; provides C-QSC quantum-safe cryptographic library compliant with ANSSI and BSI guidelines.",
+      "content": "Name: Dr. Ludovic Perret\nCountry: France\nRole: CEO and Co-Founder; Senior Researcher\nOrganizations: CryptoNext Security;Sorbonne Université (LIP6/CNRS);Inria\nType: Private | Category: Industry Vendor\nContribution: Co-founded and leads CryptoNext Security; leading quantum-safe cryptography vendor; RESQUE consortium member; provides C-QSC quantum-safe cryptographic library compliant with ANSSI and BSI guidelines. Also Senior Researcher at Sorbonne Université/CNRS (LIP6) and Inria; expert in algebraic cryptanalysis; contributed to breaking several NIST PQC candidates; research on multivariate and code-based systems.",
       "category": "Industry Vendor",
       "metadata": { "country": "France", "type": "Private" },
       "deepLink": "/leaders?leader=Dr.%20Ludovic%20Perret"
@@ -16435,7 +16461,7 @@
       "id": "leader-8",
       "source": "leaders",
       "title": "Dr. Martin Albrecht",
-      "content": "Name: Dr. Martin Albrecht\nCountry: UK\nRole: Professor\nOrganizations: King's College London / ResQuant\nType: Academic | Category: Industry Vendor\nContribution: PQC cryptanalysis expert; co-founder of ResQuant providing quantum risk assessment and PQC migration planning; broke several NIST candidates.",
+      "content": "Name: Dr. Martin Albrecht\nCountry: UK\nRole: Professor\nOrganizations: King's College London;SandboxAQ\nType: Academic | Category: Industry Vendor\nContribution: Professor of Cybersecurity and Chair of Cryptography at King's College London; Research Scientist at SandboxAQ; leading PQC cryptanalysis expert who broke several NIST PQC candidates during the standardization process.",
       "category": "Industry Vendor",
       "metadata": { "country": "UK", "type": "Academic" },
       "deepLink": "/leaders?leader=Dr.%20Martin%20Albrecht"
@@ -16516,7 +16542,7 @@
       "id": "leader-17",
       "source": "leaders",
       "title": "Claudia Plattner",
-      "content": "Name: Claudia Plattner\nCountry: Germany\nRole: President\nOrganizations: BSI (Germany)\nType: Public | Category: Government\nContribution: Since July 2023 led BSI's quantum-safe initiatives; initiated joint PQC statement with 17 EU member states (Nov 2024); oversaw world-first quantum-secure ID card with Bundesdruckerei, G+D, and Infineon (Nov 2025).",
+      "content": "Name: Claudia Plattner\nCountry: Germany\nRole: President\nOrganizations: BSI (Germany)\nType: Public | Category: Government\nContribution: Since July 2023 led BSI's quantum-safe initiatives; initiated joint PQC statement with 18 EU member states (Nov 2024); oversaw world-first quantum-secure ID card with Bundesdruckerei, G+D, and Infineon (Nov 2025).",
       "category": "Government",
       "metadata": { "country": "Germany", "type": "Public" },
       "deepLink": "/leaders?leader=Claudia%20Plattner"
@@ -17010,15 +17036,6 @@
     {
       "id": "leader-72",
       "source": "leaders",
-      "title": "Dr. Ludovic Perret",
-      "content": "Name: Dr. Ludovic Perret\nCountry: France\nRole: Senior Researcher\nOrganizations: Sorbonne Université; Inria\nType: Academic | Category: Algorithm Inventor\nContribution: Expert in algebraic cryptanalysis; contributed to breaking several NIST PQC candidates; research on multivariate and code-based systems.",
-      "category": "Algorithm Inventor",
-      "metadata": { "country": "France", "type": "Academic" },
-      "deepLink": "/leaders?leader=Dr.%20Ludovic%20Perret"
-    },
-    {
-      "id": "leader-73",
-      "source": "leaders",
       "title": "Dr. Johannes Buchmann",
       "content": "Name: Dr. Johannes Buchmann\nCountry: Germany\nRole: Professor Emeritus\nOrganizations: TU Darmstadt\nType: Academic | Category: Standards\nContribution: Founder of European PQC research; established TU Darmstadt's cryptography group; extensive contributions to code-based and lattice cryptography education.",
       "category": "Standards",
@@ -17026,7 +17043,7 @@
       "deepLink": "/leaders?leader=Dr.%20Johannes%20Buchmann"
     },
     {
-      "id": "leader-74",
+      "id": "leader-73",
       "source": "leaders",
       "title": "Prof. Dr. Thomas Pöppelmann",
       "content": "Name: Prof. Dr. Thomas Pöppelmann\nCountry: Germany\nRole: Senior Principal Engineer; Security Architect\nOrganizations: Infineon Technologies\nType: Private | Category: Industry Adopter\nContribution: Implemented first PQC on smart cards; co-designer of NewHope; Infineon achieved world-first CC EAL6 PQC certification (Jan 2025); partnered with BSI on quantum-secure ID card.",
@@ -17035,7 +17052,7 @@
       "deepLink": "/leaders?leader=Prof.%20Dr.%20Thomas%20P%C3%B6ppelmann"
     },
     {
-      "id": "leader-75",
+      "id": "leader-74",
       "source": "leaders",
       "title": "David Adrian",
       "content": "Name: David Adrian\nCountry: USA\nRole: Product Manager; Security Researcher\nOrganizations: Google (Chrome Security)\nType: Private | Category: Industry Adopter\nContribution: Product Manager on Chrome Security at Google; co-discovered LogJam and DROWN attacks on legacy TLS; co-founded Censys internet scanning platform; extensive work on cryptographic migration strategies including PQC readiness.",
@@ -17044,7 +17061,7 @@
       "deepLink": "/leaders?leader=David%20Adrian"
     },
     {
-      "id": "leader-76",
+      "id": "leader-75",
       "source": "leaders",
       "title": "Tim Callan",
       "content": "Name: Tim Callan\nCountry: USA\nRole: Chief Experience Officer\nOrganizations: Sectigo\nType: Private | Category: Industry Adopter\nContribution: PKI industry veteran; advocate for PQC adoption in TLS certificates; active in CA/Browser Forum discussions on quantum-safe PKI.",
@@ -17053,16 +17070,16 @@
       "deepLink": "/leaders?leader=Tim%20Callan"
     },
     {
-      "id": "leader-77",
+      "id": "leader-76",
       "source": "leaders",
       "title": "Dr. Scott Totzke",
-      "content": "Name: Dr. Scott Totzke\nCountry: Canada\nRole: CEO\nOrganizations: ISARA Corporation\nType: Private | Category: Industry Adopter\nContribution: Founded ISARA in 2016 to commercialize PQC; led enterprise crypto-agility solutions; pioneered hybrid certificate deployments.",
+      "content": "Name: Dr. Scott Totzke\nCountry: Canada\nRole: Co-Founder\nOrganizations: ISARA Corporation\nType: Private | Category: Industry Adopter\nContribution: Co-founded ISARA in 2015 to commercialize post-quantum cryptography; pioneered enterprise crypto-agility solutions and hybrid certificate deployments; led early enterprise PQC adoption strategies and quantum-safe PKI commercialization.",
       "category": "Industry Adopter",
       "metadata": { "country": "Canada", "type": "Private" },
       "deepLink": "/leaders?leader=Dr.%20Scott%20Totzke"
     },
     {
-      "id": "leader-78",
+      "id": "leader-77",
       "source": "leaders",
       "title": "Kevin Bocek",
       "content": "Name: Kevin Bocek\nCountry: USA\nRole: Chief Innovation Officer\nOrganizations: Venafi\nType: Private | Category: Industry Adopter\nContribution: Leads machine identity security research; advocates for crypto-agility and inventory management for PQC migration; extensive PKI transformation expertise.",
@@ -17071,7 +17088,7 @@
       "deepLink": "/leaders?leader=Kevin%20Bocek"
     },
     {
-      "id": "leader-79",
+      "id": "leader-78",
       "source": "leaders",
       "title": "Dr. Rainer Steinwandt",
       "content": "Name: Dr. Rainer Steinwandt\nCountry: USA\nRole: Professor\nOrganizations: Florida Atlantic University\nType: Academic | Category: Standards\nContribution: Focuses on quantum-safe protocols and implementations; research on PQC in constrained environments; contributor to IoT security standards.",
@@ -17080,7 +17097,7 @@
       "deepLink": "/leaders?leader=Dr.%20Rainer%20Steinwandt"
     },
     {
-      "id": "leader-80",
+      "id": "leader-79",
       "source": "leaders",
       "title": "Dr. Nikita Borisov",
       "content": "Name: Dr. Nikita Borisov\nCountry: USA\nRole: Professor\nOrganizations: University of Illinois\nType: Academic | Category: Standards\nContribution: Research on PQC in real-world protocols; contributor to secure messaging systems; extensive work on hybrid encryption schemes.",
@@ -17089,16 +17106,16 @@
       "deepLink": "/leaders?leader=Dr.%20Nikita%20Borisov"
     },
     {
-      "id": "leader-81",
+      "id": "leader-80",
       "source": "leaders",
       "title": "Thomas Coratger",
-      "content": "Name: Thomas Coratger\nCountry: France\nRole: Cryptographic Engineer; PQC Team Lead\nOrganizations: Ethereum Foundation\nType: Private | Category: Industry Adopter\nContribution: Leads Ethereum Foundation's post-quantum security team (Jan 2026); driving PQ-safe Ethereum with biweekly dev sessions and multi-client test networks; $2M research prizes for hash-based cryptography.",
+      "content": "Name: Thomas Coratger\nCountry: France\nRole: Cryptographic Engineer; PQC Team Lead\nOrganizations: Ethereum Foundation\nType: Private | Category: Industry Adopter\nContribution: Leads Ethereum Foundation's post-quantum security team (Jan 2026); driving PQ-safe Ethereum with biweekly dev sessions and multi-client test networks; $2M in research prizes ($1M Poseidon Prize for hash-based cryptography + $1M Proximity Prize).",
       "category": "Industry Adopter",
       "metadata": { "country": "France", "type": "Private" },
       "deepLink": "/leaders?leader=Thomas%20Coratger"
     },
     {
-      "id": "leader-82",
+      "id": "leader-81",
       "source": "leaders",
       "title": "Jaime Gomez Garcia",
       "content": "Name: Jaime Gomez Garcia\nCountry: Spain\nRole: Head of Quantum Technologies\nOrganizations: Banco Santander\nType: Private | Category: Industry Adopter\nContribution: Pioneer in financial-sector PQC adoption; leads Santander's quantum-safe cryptography strategy; active in ETSI QSC working group and IBM Quantum Network; promotes quantum risk awareness across global banking.",
@@ -17107,7 +17124,7 @@
       "deepLink": "/leaders?leader=Jaime%20Gomez%20Garcia"
     },
     {
-      "id": "leader-83",
+      "id": "leader-82",
       "source": "leaders",
       "title": "Mike Osborne",
       "content": "Name: Mike Osborne\nCountry: Switzerland\nRole: Distinguished Engineer & CTO Cryptography\nOrganizations: IBM Research\nType: Private | Category: Industry Vendor\nContribution: Co-architect of IBM Quantum Safe framework; led IBM's contributions to NIST PQC standardization; co-developed the Cryptography Bill of Materials (CBOM) concept for cryptographic inventory and agility management.",
@@ -17116,7 +17133,7 @@
       "deepLink": "/leaders?leader=Mike%20Osborne"
     },
     {
-      "id": "leader-84",
+      "id": "leader-83",
       "source": "leaders",
       "title": "Bill Newhouse",
       "content": "Name: Bill Newhouse\nCountry: USA\nRole: Cybersecurity Engineer\nOrganizations: NIST NCCoE\nType: Public | Category: Government\nContribution: Project lead for NIST NCCoE PQC migration practice guides (SP 1800-38 series); co-authored NIST IR 8547 on interoperability and FIPS 203/204/205 adoption; drives federal agency quantum-safe readiness.",
@@ -17125,7 +17142,7 @@
       "deepLink": "/leaders?leader=Bill%20Newhouse"
     },
     {
-      "id": "leader-85",
+      "id": "leader-84",
       "source": "leaders",
       "title": "Blair Canavan",
       "content": "Name: Blair Canavan\nCountry: Canada\nRole: Director of Alliances – PKI and PQC Portfolio\nOrganizations: Thales\nType: Private | Category: Industry Vendor\nContribution: Leads Thales PQC Partner Ecosystem and Quantum-Safe 360 Alliance (with IBM Consulting, Keyfactor, Quantinuum) to accelerate enterprise quantum-safe migrations; 30+ years of cybersecurity expertise driving crypto-agility readiness.",
@@ -17134,7 +17151,7 @@
       "deepLink": "/leaders?leader=Blair%20Canavan"
     },
     {
-      "id": "leader-86",
+      "id": "leader-85",
       "source": "leaders",
       "title": "Fabiana Da Pieve",
       "content": "Name: Fabiana Da Pieve\nCountry: Italy\nRole: Programme and Policy Officer\nOrganizations: European Commission (DG CNECT)\nType: Public | Category: Government\nContribution: Designs EU-wide PQC deployment policy at DG CNECT; co-leads the NIS cooperation group PQC workstream coordinating member-state quantum-safe transitions; bridges quantum physics research with cryptographic security policy including EuroQCI.",
@@ -17143,7 +17160,7 @@
       "deepLink": "/leaders?leader=Fabiana%20Da%20Pieve"
     },
     {
-      "id": "leader-87",
+      "id": "leader-86",
       "source": "leaders",
       "title": "Prof Bill Buchanan OBE",
       "content": "Name: Prof Bill Buchanan OBE\nCountry: UK\nRole: Professor of Applied Cryptography\nOrganizations: Edinburgh Napier University\nType: Academic | Category: Standards\nContribution: Creator of asecuritysite.com with 30+ books and 400+ research papers on PQC; OBE for services to cybersecurity (2017); FRSE; Top 2% of scientists globally (Stanford 2025); Times Higher Education 'Most Innovative Teacher' 2023; vocal advocate for FIPS 203/204/205 adoption.",
@@ -17152,7 +17169,7 @@
       "deepLink": "/leaders?leader=Prof%20Bill%20Buchanan%20OBE"
     },
     {
-      "id": "leader-88",
+      "id": "leader-87",
       "source": "leaders",
       "title": "Dr. Bob Sutor",
       "content": "Name: Dr. Bob Sutor\nCountry: USA\nRole: CEO and Founder\nOrganizations: Sutor Group Intelligence and Advisory\nType: Private | Category: Industry Vendor\nContribution: Former VP IBM Quantum with 40+ years at IBM; author of 'Dancing with Qubits'; board member Nu Quantum; Adjunct Professor University at Buffalo; daily quantum and PQC industry analyst; enterprise quantum readiness advocate.",
@@ -17161,7 +17178,7 @@
       "deepLink": "/leaders?leader=Dr.%20Bob%20Sutor"
     },
     {
-      "id": "leader-89",
+      "id": "leader-88",
       "source": "leaders",
       "title": "Bruno Couillard",
       "content": "Name: Bruno Couillard\nCountry: Canada\nRole: CEO and Co-Founder\nOrganizations: Crypto4A Technologies\nType: Private | Category: Industry Vendor\nContribution: 30+ years in security including Canadian Forces and CSE; co-founder of Crypto4A; pioneer of crypto-agile HSMs (QxHSM and QxEDGE) rebuilt from ground up for PQC; PKI Consortium member; inaugural Quantum Security 25 honoree.",
@@ -17170,7 +17187,7 @@
       "deepLink": "/leaders?leader=Bruno%20Couillard"
     },
     {
-      "id": "leader-90",
+      "id": "leader-89",
       "source": "leaders",
       "title": "Dr. Colin Soutar",
       "content": "Name: Dr. Colin Soutar\nCountry: USA\nRole: Managing Director; Global Quantum Cyber Readiness Lead\nOrganizations: Deloitte\nType: Private | Category: Industry Vendor\nContribution: Global lead for quantum cyber readiness at Deloitte; World Economic Forum agenda contributor on quantum cybersecurity; U.S. Government and Public Services Cyber Ecosystems & Alliances leader; champions crypto-agility and PQC migration for enterprise and government.",
@@ -17179,7 +17196,7 @@
       "deepLink": "/leaders?leader=Dr.%20Colin%20Soutar"
     },
     {
-      "id": "leader-91",
+      "id": "leader-90",
       "source": "leaders",
       "title": "Denis Mandich",
       "content": "Name: Denis Mandich\nCountry: USA\nRole: CTO and Co-Founder\nOrganizations: Qrypt\nType: Private | Category: Industry Vendor\nContribution: 20 years in U.S. Intelligence Community on national security and cyber infrastructure; co-founded Qrypt for quantum-secure encryption using quantum entropy; active in NIST PQC standards bodies; advocate for end-to-end quantum-safe encryption.",
@@ -17188,7 +17205,7 @@
       "deepLink": "/leaders?leader=Denis%20Mandich"
     },
     {
-      "id": "leader-92",
+      "id": "leader-91",
       "source": "leaders",
       "title": "Éric Brier",
       "content": "Name: Éric Brier\nCountry: France\nRole: CTO Cyber Defence Solutions\nOrganizations: Thales Group\nType: Private | Category: Algorithm Inventor\nContribution: CTO at Thales leading the team that co-designed FALCON (FIPS 206); Thales lab co-author of FALCON signature algorithm selected by NIST as PQC standard after six-year competition; research background in fault attacks and cryptographic implementations.",
@@ -17197,7 +17214,7 @@
       "deepLink": "/leaders?leader=%C3%89ric%20Brier"
     },
     {
-      "id": "leader-93",
+      "id": "leader-92",
       "source": "leaders",
       "title": "Konstantinos Karagiannis",
       "content": "Name: Konstantinos Karagiannis\nCountry: USA\nRole: Director Quantum Computing Services\nOrganizations: Protiviti\nType: Private | Category: Industry Vendor\nContribution: In quantum computing and InfoSec since the 1990s; hosts Protiviti's 'The Post-Quantum World' podcast; led PQC agility assessment with DTCC; frequent speaker at RSA, Black Hat, and DEF CON; advocates for enterprise PQC migration and quantum readiness.",
@@ -17206,7 +17223,7 @@
       "deepLink": "/leaders?leader=Konstantinos%20Karagiannis"
     },
     {
-      "id": "leader-94",
+      "id": "leader-93",
       "source": "leaders",
       "title": "Dr. Krysta Svore",
       "content": "Name: Dr. Krysta Svore\nCountry: USA\nRole: VP Applied Research – Quantum Computing\nOrganizations: NVIDIA\nType: Private | Category: Industry Vendor\nContribution: Former Technical Fellow and VP at Microsoft Azure Quantum (departed Nov 2025); co-creator of Q# quantum programming language; led QuArC research group on fault-tolerant quantum algorithms; now VP Applied Research – Quantum Computing at NVIDIA.",
@@ -17215,7 +17232,7 @@
       "deepLink": "/leaders?leader=Dr.%20Krysta%20Svore"
     },
     {
-      "id": "leader-95",
+      "id": "leader-94",
       "source": "leaders",
       "title": "Niccolò De Masi",
       "content": "Name: Niccolò De Masi\nCountry: USA\nRole: Chairman and CEO\nOrganizations: IonQ\nType: Private | Category: Industry Vendor\nContribution: Chairman and CEO of IonQ (NYSE: IONQ); leads quantum networking strategy via acquisitions of ID Quantique, Capella Space, Lightsynq, and Skyloom; building distributed quantum entanglement and QKD infrastructure; testified to U.S. Senate on quantum security; advocates for PQC and QKD adoption to protect critical infrastructure.",
@@ -17224,7 +17241,7 @@
       "deepLink": "/leaders?leader=Niccol%C3%B2%20De%20Masi"
     },
     {
-      "id": "leader-96",
+      "id": "leader-95",
       "source": "leaders",
       "title": "Philip Intallura",
       "content": "Name: Philip Intallura\nCountry: UK\nRole: Group Head of Quantum Technologies\nOrganizations: HSBC\nType: Private | Category: Industry Adopter\nContribution: Group Head of Quantum Technologies at HSBC; inaugural Quantum Security 25 award winner; leads HSBC's quantum-safe cryptography strategy across PQC and QKD; advocates for crypto-agility and multi-year PQC migration planning in financial services.",
@@ -17233,7 +17250,7 @@
       "deepLink": "/leaders?leader=Philip%20Intallura"
     },
     {
-      "id": "leader-97",
+      "id": "leader-96",
       "source": "leaders",
       "title": "Sheetal Mehta",
       "content": "Name: Sheetal Mehta\nCountry: India\nRole: SVP and Global Head of Cybersecurity\nOrganizations: NTT DATA\nType: Private | Category: Industry Vendor\nContribution: SVP and Global Head of Cybersecurity at NTT DATA with 30+ years of experience; led NTT DATA–Fortanix Cryptography-as-a-Service partnership for AI and post-quantum era; advocates for cryptographic discovery and PQC migration roadmaps; warns of harvest-now-decrypt-later threats.",
@@ -17242,7 +17259,7 @@
       "deepLink": "/leaders?leader=Sheetal%20Mehta"
     },
     {
-      "id": "leader-98",
+      "id": "leader-97",
       "source": "leaders",
       "title": "Tom Patterson",
       "content": "Name: Tom Patterson\nCountry: USA\nRole: Managing Director Emerging Technology Security\nOrganizations: Accenture\nType: Private | Category: Industry Vendor\nContribution: Managing Director for Emerging Technology Security at Accenture; developed quantum security maturity index; co-led first successful multi-orbit PQC communications link with QuSecure; WEF contributor on quantum security; PKI Consortium PQC conference speaker.",
@@ -17251,7 +17268,7 @@
       "deepLink": "/leaders?leader=Tom%20Patterson"
     },
     {
-      "id": "leader-99",
+      "id": "leader-98",
       "source": "leaders",
       "title": "Damien Stehlé",
       "content": "Name: Damien Stehlé\nCountry: France\nRole: Professor; CryptoLab Research Director\nOrganizations: ENS de Lyon; CryptoLab\nType: Academic | Category: Algorithm Inventor\nContribution: Co-designed ML-KEM (CRYSTALS-Kyber) and ML-DSA (CRYSTALS-Dilithium), two of three NIST PQC standards published in 2024. Founded CryptoLab's Lyon research center. ERC grant recipient for lattice-based cryptography research (LattAC project).",
@@ -17260,7 +17277,7 @@
       "deepLink": "/leaders?leader=Damien%20Stehl%C3%A9"
     },
     {
-      "id": "leader-100",
+      "id": "leader-99",
       "source": "leaders",
       "title": "Pierre-Alain Fouque",
       "content": "Name: Pierre-Alain Fouque\nCountry: France\nRole: Professor\nOrganizations: Université de Rennes; IRISA/Inria\nType: Academic | Category: Algorithm Inventor\nContribution: Co-designer of FALCON (FN-DSA), NIST's lattice-based signature standard. Leads the CAPSULE team at IRISA/Inria focused on embedded security and cryptography. Coordinates the PQ-TLS project developing post-quantum HTTPS protocols.",
@@ -17269,13 +17286,40 @@
       "deepLink": "/leaders?leader=Pierre-Alain%20Fouque"
     },
     {
-      "id": "leader-101",
+      "id": "leader-100",
       "source": "leaders",
       "title": "Adeline Roux-Langlois",
       "content": "Name: Adeline Roux-Langlois\nCountry: France\nRole: CNRS Directrice de recherche\nOrganizations: GREYC; Université de Caen Normandie\nType: Academic | Category: Standards\nContribution: Specialist in lattice-based cryptography security proofs. Key contributions to post-quantum anonymous credentials (CRYPTO 2023) and practical post-quantum privacy signatures (ACM CCS 2024). PhD from ENS de Lyon under Damien Stehlé.",
       "category": "Standards",
       "metadata": { "country": "France", "type": "Academic" },
       "deepLink": "/leaders?leader=Adeline%20Roux-Langlois"
+    },
+    {
+      "id": "leader-101",
+      "source": "leaders",
+      "title": "Daniel J. Bernstein",
+      "content": "Name: Daniel J. Bernstein\nCountry: USA/Netherlands\nRole: Research Professor; Personal Professor\nOrganizations: University of Illinois Chicago;TU Eindhoven\nType: Academic | Category: Algorithm Inventor\nContribution: Coined the term \"post-quantum cryptography\" (2003); co-designed SPHINCS+ (now FIPS 205 / SLH-DSA, NIST standard) with Andreas Hülsing and team; co-designed Classic McEliece (NIST on-ramp finalist, oldest studied code-based KEM); co-designed NTRU Prime; creator of Curve25519, ChaCha20/Poly1305, and NaCl/libsodium cryptographic library.",
+      "category": "Algorithm Inventor",
+      "metadata": { "country": "USA/Netherlands", "type": "Academic" },
+      "deepLink": "/leaders?leader=Daniel%20J.%20Bernstein"
+    },
+    {
+      "id": "leader-102",
+      "source": "leaders",
+      "title": "Prof. Oded Regev",
+      "content": "Name: Prof. Oded Regev\nCountry: USA/Israel\nRole: Silver Professor of Computer Science\nOrganizations: NYU Courant Institute of Mathematical Sciences\nType: Academic | Category: Algorithm Inventor\nContribution: Inventor of Learning With Errors (LWE, 2005) — the foundational hard problem underlying ML-KEM (Kyber) and ML-DSA (Dilithium); proved quantum reduction establishing LWE hardness; 2018 Gödel Prize for LWE work; ACM Fellow 2025; foundational figure in lattice-based cryptography theory.",
+      "category": "Algorithm Inventor",
+      "metadata": { "country": "USA/Israel", "type": "Academic" },
+      "deepLink": "/leaders?leader=Prof.%20Oded%20Regev"
+    },
+    {
+      "id": "leader-103",
+      "source": "leaders",
+      "title": "Prof. Tanja Lange",
+      "content": "Name: Prof. Tanja Lange\nCountry: Germany/Netherlands\nRole: Full Professor of Cryptology; Chair PQCrypto Steering Committee\nOrganizations: TU Eindhoven\nType: Academic | Category: Algorithm Inventor\nContribution: Full Professor of Cryptology at TU Eindhoven; co-designed NTRU Prime (NIST on-ramp finalist) with Daniel Bernstein; co-authored Classic McEliece papers; co-organized the inaugural PQCrypto workshop (2006) and chairs its steering committee; Scientific Director of Ei/PSI (Eindhoven Institute for Protection of Systems and Information); ERC grant recipient for post-quantum research.",
+      "category": "Algorithm Inventor",
+      "metadata": { "country": "Germany/Netherlands", "type": "Academic" },
+      "deepLink": "/leaders?leader=Prof.%20Tanja%20Lange"
     },
     {
       "id": "module-pqc-101",
@@ -30312,6 +30356,15 @@
       "category": "app-guide",
       "metadata": { "fileName": "15-community.md", "slug": "community" },
       "deepLink": "/about"
+    },
+    {
+      "id": "changelog-2.23.0",
+      "source": "changelog",
+      "title": "PQC Today v2.23.0 — Release Notes (2026-03-05)",
+      "content": "Version 2.23.0 released 2026-03-05.\n\n### Data\n\n- **Leaders**: Comprehensive accuracy and completeness audit of `leaders_02282026.csv` (101 entries → 103). Fixed 8 issues: merged duplicate Dr. Ludovic Perret entry; corrected Scott Totzke role from CEO to Co-Founder (ISARA); fixed Nadia Heninger website URL; cleared Brian LaMacchia duplicate WebsiteUrl; removed unverifiable ResQuant claim for Martin Albrecht (org: King's College London + SandboxAQ); reverted Thomas Coratger prize total to correct $2M ($1M Poseidon Prize + $1M Proximity Prize); normalized 2 government leader avatar colors to `22d3ee`. Added 3 missing Algorithm Inventors: Daniel J. Bernstein (coined \"post-quantum cryptography\" 2003, co-designed SPHINCS+ FIPS 205, Classic McEliece, NTRU Prime), Prof. Oded Regev (invented LWE 2005, Gödel Prize 2018), Prof. Tanja Lange (NTRU Prime, Classic McEliece, PQCrypto steering chair). Also fixed Claudia Plattner BSI signatory count 17 → 18 EU member states.\n\n- **Timeline**: Accuracy and completeness audit of `timeline_02282026.csv` (196 entries → 198). Fixed 3 issues: corrected Canada row 30 org from CCCS → ISED (Innovation, Science and Economic Development Canada) to match SourceUrl provenance; fixed SandboxAQ SourceUrl slug `dow-cio` → `dod-cio`; updated OMB M-23-02 Status `New` → `Validated` (2022 document). Added 2 missing milestone entries: NCSC UK \"Next Steps in Preparing for Post-Quantum Cryptography\" whitepaper (November 2023, predating row 107 by 9 months); NIST SP 800-208 LMS/XMSS standardization (October 29, 2020 — now the earliest entry in the dataset, establishes the standardization baseline for CNSA 2.0 mandated algorithms).\n\n- **RAG corpus**: Rebuilt — 2,776 chunks (+2 from 2 new timeline rows, +3 new leader entries vs prior build).",
+      "category": "changelog",
+      "metadata": { "version": "2.23.0", "date": "2026-03-05" },
+      "deepLink": "/changelog"
     },
     {
       "id": "changelog-2.22.0",

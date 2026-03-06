@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-06T15:21:30.566Z",
-  "chunkCount": 2839,
+  "generatedAt": "2026-03-06T15:42:36.809Z",
+  "chunkCount": 2840,
   "chunks": [
     {
       "id": "glossary-0",
@@ -33677,6 +33677,16 @@
       "metadata": { "fileName": "15-community.md", "slug": "community" },
       "deepLink": "/about",
       "priority": 1
+    },
+    {
+      "id": "changelog-2.26.0",
+      "source": "changelog",
+      "title": "PQC Today v2.26.0 — Release Notes (2026-03-06)",
+      "content": "Version 2.26.0 released 2026-03-06.\n\n### Added\n\n- **Shareable workshop deep links**: Workshop tab and step state now syncs to the URL via `useSyncDeepLink` hook using `window.history.replaceState`. Navigating to `/learn/pki-workshop` → Workshop → Step 3 updates the URL to `?tab=workshop&step=3`. Sharing or bookmarking the URL restores the exact tab and step. All 19 modules with `getModuleDeepLink` are wired up.\n\n- **Persona-aware RAG ranking**: Added `PERSONA_BOOSTS` multiplier table for 5 personas (developer, executive, architect, researcher, ops). Developer persona boosts workshop content 1.5×; executive boosts assessment/threats 1.4–1.5×; researcher boosts library/enrichment 1.4–1.5×. Persona is now passed from `usePageContext` through `useChatSend` to `RetrievalService.search()`.\n\n- **Static chunk priority**: Added `priority` field to `RAGChunk`. Corpus generator assigns source-type priorities (module-content: 1.15, modules: 1.1, algorithms: 1.05, library: 0.95, quiz: 0.8, changelog: 0.6). Workshop chunks with step-level deep links (`?step=N`) get +0.1 bump. 1,418 chunks have non-default priority.\n\n- **Step-level RAG deep links**: Workshop component chunks now include step-specific deep links (e.g., `/learn/pki-workshop?tab=workshop&step=2`) by parsing each module's `index.tsx` for `currentPart === N && <Component>` patterns. 71 of 89 workshop chunks now have step-specific URLs.\n\n### Fixed\n\n- **Quiz deep links suppressed for non-quiz queries**: Quiz chunks are now blocked from RAG results unless the user explicitly mentions quiz, test, practice questions, or flashcards. Previously, quiz chunks could appear as source references for general topic queries, linking users to quizzes when they wanted explanations.\n\n- **Library deep link guarantee**: When a query matches library documents but library chunks are crowded out by source diversity caps, the system now injects the highest-scoring library chunk by replacing the lowest-priority result. Ensures `/library?ref=` deep links always appear when a libra…",
+      "category": "changelog",
+      "metadata": { "version": "2.26.0", "date": "2026-03-06" },
+      "deepLink": "/changelog",
+      "priority": 0.6
     },
     {
       "id": "changelog-2.25.3",

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-06T15:49:41.717Z",
-  "chunkCount": 2869,
+  "generatedAt": "2026-03-07T01:08:49.927Z",
+  "chunkCount": 2946,
   "chunks": [
     {
       "id": "glossary-0",
@@ -585,8 +585,12 @@
       "title": "IKEv2",
       "content": "Term: IKEv2 (IKEv2)\nDefinition: Internet Key Exchange version 2, the protocol used to establish security associations in IPsec VPNs. PQC migration adds ML-KEM key exchange.\nCategory: protocol | Complexity: intermediate",
       "category": "protocol",
-      "metadata": { "acronym": "IKEv2", "complexity": "intermediate", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "IKEv2",
+        "complexity": "intermediate",
+        "relatedModule": "/library?ref=IETF RFC 9370"
+      },
+      "deepLink": "/library?ref=IETF RFC 9370",
       "priority": 1
     },
     {
@@ -608,9 +612,9 @@
       "metadata": {
         "acronym": "S/MIME",
         "complexity": "intermediate",
-        "relatedModule": "/library"
+        "relatedModule": "/library?ref=RFC 9882"
       },
-      "deepLink": "/library",
+      "deepLink": "/library?ref=RFC 9882",
       "priority": 1
     },
     {
@@ -619,8 +623,12 @@
       "title": "CMS",
       "content": "Term: CMS (CMS)\nDefinition: Cryptographic Message Syntax, a standard for digitally signed, encrypted, or authenticated data. Foundation for S/MIME and code signing.\nTechnical Note: Multiple IETF RFCs define PQC integration: RFC 9629 (KEM in CMS), RFC 9882 (ML-DSA in CMS), RFC 9814 (SLH-DSA in CMS).\nCategory: protocol | Complexity: advanced",
       "category": "protocol",
-      "metadata": { "acronym": "CMS", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "CMS",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=RFC 9629"
+      },
+      "deepLink": "/library?ref=RFC 9629",
       "priority": 1
     },
     {
@@ -629,8 +637,12 @@
       "title": "OpenPGP",
       "content": "Term: OpenPGP\nDefinition: An open standard for email encryption and signing based on PGP. PQC integration adds composite ML-KEM+ECC encryption and ML-DSA+ECC signatures.\nCategory: protocol | Complexity: intermediate",
       "category": "protocol",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/library?ref=RFC 9580"
+      },
+      "deepLink": "/library?ref=RFC 9580",
       "priority": 1
     },
     {
@@ -683,8 +695,12 @@
       "title": "FIPS 203",
       "content": "Term: FIPS 203\nDefinition: The NIST standard defining ML-KEM (Module-Lattice-Based Key Encapsulation Mechanism), published August 2024.\nCategory: standard | Complexity: intermediate",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/library?ref=FIPS 203"
+      },
+      "deepLink": "/library?ref=FIPS 203",
       "priority": 1
     },
     {
@@ -693,8 +709,12 @@
       "title": "FIPS 204",
       "content": "Term: FIPS 204\nDefinition: The NIST standard defining ML-DSA (Module-Lattice-Based Digital Signature Algorithm), published August 2024.\nCategory: standard | Complexity: intermediate",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/library?ref=FIPS 204"
+      },
+      "deepLink": "/library?ref=FIPS 204",
       "priority": 1
     },
     {
@@ -703,8 +723,12 @@
       "title": "FIPS 205",
       "content": "Term: FIPS 205\nDefinition: The NIST standard defining SLH-DSA (Stateless Hash-Based Digital Signature Algorithm), published August 2024.\nCategory: standard | Complexity: intermediate",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/library?ref=FIPS 205"
+      },
+      "deepLink": "/library?ref=FIPS 205",
       "priority": 1
     },
     {
@@ -819,8 +843,12 @@
       "title": "FIPS 206",
       "content": "Term: FIPS 206\nDefinition: The NIST standard defining FN-DSA (FFT over NTRU-Lattice-Based Digital Signature Algorithm, formerly Falcon), published October 2024.\nCategory: standard | Complexity: intermediate",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/library?ref=FIPS 206"
+      },
+      "deepLink": "/library?ref=FIPS 206",
       "priority": 1
     },
     {
@@ -829,8 +857,12 @@
       "title": "FIPS 186-5",
       "content": "Term: FIPS 186-5\nDefinition: The NIST Digital Signature Standard defining RSA, ECDSA, and EdDSA. Being deprecated in favor of PQC signature algorithms per NIST IR 8547.\nCategory: standard | Complexity: intermediate",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/library?ref=FIPS 186-5"
+      },
+      "deepLink": "/library?ref=FIPS 186-5",
       "priority": 1
     },
     {
@@ -842,9 +874,9 @@
       "metadata": {
         "acronym": "",
         "complexity": "intermediate",
-        "relatedModule": "/learn/compliance-strategy"
+        "relatedModule": "/library?ref=NIST IR 8547"
       },
-      "deepLink": "/learn/compliance-strategy",
+      "deepLink": "/library?ref=NIST IR 8547",
       "priority": 1
     },
     {
@@ -856,9 +888,9 @@
       "metadata": {
         "acronym": "",
         "complexity": "intermediate",
-        "relatedModule": "/learn/compliance-strategy"
+        "relatedModule": "/library?ref=NIST-SP-800-131A-Rev3"
       },
-      "deepLink": "/learn/compliance-strategy",
+      "deepLink": "/library?ref=NIST-SP-800-131A-Rev3",
       "priority": 1
     },
     {
@@ -867,8 +899,12 @@
       "title": "NIST SP 800-208",
       "content": "Term: NIST SP 800-208\nDefinition: NIST recommendation for stateful hash-based signature schemes LMS and XMSS, used for firmware signing and secure boot.\nCategory: standard | Complexity: advanced",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=NIST SP 800-208"
+      },
+      "deepLink": "/library?ref=NIST SP 800-208",
       "priority": 1
     },
     {
@@ -877,8 +913,12 @@
       "title": "RFC 9629",
       "content": "Term: RFC 9629\nDefinition: IETF standard defining how to use Key Encapsulation Mechanisms (KEMs) in the Cryptographic Message Syntax (CMS) for encrypted messaging.\nCategory: standard | Complexity: advanced",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=RFC 9629"
+      },
+      "deepLink": "/library?ref=RFC 9629",
       "priority": 1
     },
     {
@@ -1625,8 +1665,12 @@
       "title": "TEE",
       "content": "Term: TEE (TEE)\nDefinition: Trusted Execution Environment, an isolated processing environment on a processor that protects code and data. Must be updated for PQC algorithm support.\nCategory: concept | Complexity: advanced",
       "category": "concept",
-      "metadata": { "acronym": "TEE", "complexity": "advanced", "relatedModule": "/migrate" },
-      "deepLink": "/migrate",
+      "metadata": {
+        "acronym": "TEE",
+        "complexity": "advanced",
+        "relatedModule": "/learn/confidential-computing"
+      },
+      "deepLink": "/learn/confidential-computing",
       "priority": 1
     },
     {
@@ -1825,8 +1869,12 @@
       "title": "SM2",
       "content": "Term: SM2\nDefinition: China's national standard elliptic curve public-key algorithm for digital signatures and key exchange, managed by OSCCA. Quantum-vulnerable.\nTechnical Note: Combined with ML-KEM-768 in the curveSM2MLKEM768 hybrid key exchange for Chinese PQC migration.\nCategory: algorithm | Complexity: advanced",
       "category": "algorithm",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=China OSCCA GM/T 0108-2021"
+      },
+      "deepLink": "/library?ref=China OSCCA GM/T 0108-2021",
       "priority": 1
     },
     {
@@ -1965,8 +2013,12 @@
       "title": "CMP",
       "content": "Term: CMP (CMP)\nDefinition: Certificate Management Protocol (RFC 4210), used for managing X.509 certificates including enrollment, updates, and revocation. PQC support via RFC 9810.\nCategory: protocol | Complexity: advanced",
       "category": "protocol",
-      "metadata": { "acronym": "CMP", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "CMP",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=RFC 9810"
+      },
+      "deepLink": "/library?ref=RFC 9810",
       "priority": 1
     },
     {
@@ -2227,8 +2279,12 @@
       "title": "NIST SP 800-227",
       "content": "Term: NIST SP 800-227\nDefinition: NIST Special Publication providing recommendations for Key Encapsulation Mechanism (KEM) implementation, including guidance on parameter selection and secure use of ML-KEM.\nCategory: standard | Complexity: advanced",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=NIST SP 800-227"
+      },
+      "deepLink": "/library?ref=NIST SP 800-227",
       "priority": 1
     },
     {
@@ -2237,8 +2293,12 @@
       "title": "NIST IR 8545",
       "content": "Term: NIST IR 8545\nDefinition: NIST Internal Report documenting the selection of HQC as an additional KEM standard, providing a code-based alternative to lattice-based ML-KEM.\nCategory: standard | Complexity: advanced",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=NIST IR 8545"
+      },
+      "deepLink": "/library?ref=NIST IR 8545",
       "priority": 1
     },
     {
@@ -2247,8 +2307,12 @@
       "title": "RFC 9370",
       "content": "Term: RFC 9370\nDefinition: IETF standard defining multiple key exchanges in IKEv2, enabling hybrid classical + PQC key exchange for IPsec VPNs.\nTechnical Note: Allows adding ML-KEM alongside classical Diffie-Hellman in a single IKEv2 handshake without breaking backward compatibility.\nCategory: standard | Complexity: advanced",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=IETF RFC 9370"
+      },
+      "deepLink": "/library?ref=IETF RFC 9370",
       "priority": 1
     },
     {
@@ -2257,8 +2321,12 @@
       "title": "RFC 9881",
       "content": "Term: RFC 9881\nDefinition: IETF standard defining how to use ML-DSA digital signatures in X.509 certificates and Certificate Revocation Lists (CRLs).\nCategory: standard | Complexity: advanced",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=RFC 9881"
+      },
+      "deepLink": "/library?ref=RFC 9881",
       "priority": 1
     },
     {
@@ -2267,8 +2335,12 @@
       "title": "RFC 9882",
       "content": "Term: RFC 9882\nDefinition: IETF standard defining the use of ML-DSA signatures in the Cryptographic Message Syntax (CMS), enabling PQC-signed messages and documents.\nCategory: standard | Complexity: advanced",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "advanced", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/library?ref=RFC 9882"
+      },
+      "deepLink": "/library?ref=RFC 9882",
       "priority": 1
     },
     {
@@ -2287,8 +2359,12 @@
       "title": "BSI TR-02102",
       "content": "Term: BSI TR-02102\nDefinition: German Federal Office for Information Security (BSI) Technical Guideline series on cryptographic recommendations, covering TLS, IPsec, SSH, and general algorithms.\nTechnical Note: TR-02102-1 covers general recommendations; TR-02102-2 through TR-02102-4 provide protocol-specific PQC migration guidance.\nCategory: standard | Complexity: intermediate",
       "category": "standard",
-      "metadata": { "acronym": "", "complexity": "intermediate", "relatedModule": "/library" },
-      "deepLink": "/library",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/library?ref=BSI TR-02102-1"
+      },
+      "deepLink": "/library?ref=BSI TR-02102-1",
       "priority": 1
     },
     {
@@ -4154,6 +4230,202 @@
       "priority": 1
     },
     {
+      "id": "glossary-338",
+      "source": "glossary",
+      "title": "SGX",
+      "content": "Term: SGX (SGX)\nDefinition: Intel Software Guard Extensions, a set of CPU instructions for creating hardware-isolated enclaves within user-space processes. Provides process-level TEE with encrypted memory (EPC).\nTechnical Note: SGX uses DCAP attestation with ECDSA P-256, which is quantum-vulnerable. PQC attestation key migration is planned for 2027.\nCategory: concept | Complexity: advanced",
+      "category": "concept",
+      "metadata": {
+        "acronym": "SGX",
+        "complexity": "advanced",
+        "relatedModule": "/learn/confidential-computing"
+      },
+      "deepLink": "/learn/confidential-computing",
+      "priority": 1
+    },
+    {
+      "id": "glossary-339",
+      "source": "glossary",
+      "title": "SEV-SNP",
+      "content": "Term: SEV-SNP (SEV-SNP)\nDefinition: AMD Secure Encrypted Virtualization with Secure Nested Paging, providing VM-level memory encryption and integrity protection with a Reverse Map Table to prevent hypervisor-based attacks.\nTechnical Note: Uses ECDSA P-384 VCEK certificates for attestation (quantum-vulnerable). AES-XTS-128 memory encryption is subject to Grover halving.\nCategory: concept | Complexity: advanced",
+      "category": "concept",
+      "metadata": {
+        "acronym": "SEV-SNP",
+        "complexity": "advanced",
+        "relatedModule": "/learn/confidential-computing"
+      },
+      "deepLink": "/learn/confidential-computing",
+      "priority": 1
+    },
+    {
+      "id": "glossary-340",
+      "source": "glossary",
+      "title": "ARM CCA",
+      "content": "Term: ARM CCA (CCA)\nDefinition: ARM Confidential Compute Architecture, introducing Realms as isolated VM-like execution environments. Reduces TCB by separating the hypervisor from trusted firmware via a Realm Management Monitor.\nCategory: concept | Complexity: advanced",
+      "category": "concept",
+      "metadata": {
+        "acronym": "CCA",
+        "complexity": "advanced",
+        "relatedModule": "/learn/confidential-computing"
+      },
+      "deepLink": "/learn/confidential-computing",
+      "priority": 1
+    },
+    {
+      "id": "glossary-341",
+      "source": "glossary",
+      "title": "Enclave",
+      "content": "Term: Enclave\nDefinition: An isolated execution environment within a TEE where code and data are protected from the operating system, hypervisor, and other processes. Memory is encrypted and inaccessible to external entities.\nCategory: concept | Complexity: intermediate",
+      "category": "concept",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/confidential-computing"
+      },
+      "deepLink": "/learn/confidential-computing",
+      "priority": 1
+    },
+    {
+      "id": "glossary-342",
+      "source": "glossary",
+      "title": "Remote Attestation",
+      "content": "Term: Remote Attestation\nDefinition: A cryptographic protocol that proves to a remote verifier that software is running inside a genuine TEE with specific measurements (code identity, configuration). All current implementations use ECDSA, which is quantum-vulnerable.\nCategory: concept | Complexity: advanced",
+      "category": "concept",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/learn/confidential-computing"
+      },
+      "deepLink": "/learn/confidential-computing",
+      "priority": 1
+    },
+    {
+      "id": "glossary-343",
+      "source": "glossary",
+      "title": "Sealing Key",
+      "content": "Term: Sealing Key\nDefinition: A TEE-derived encryption key used to persist data outside the enclave boundary. Derived from platform root keys and enclave identity measurements, ensuring only the same enclave on the same platform can unseal the data.\nCategory: concept | Complexity: advanced",
+      "category": "concept",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/learn/confidential-computing"
+      },
+      "deepLink": "/learn/confidential-computing",
+      "priority": 1
+    },
+    {
+      "id": "glossary-344",
+      "source": "glossary",
+      "title": "TLS Termination",
+      "content": "Term: TLS Termination\nDefinition: The process of decrypting TLS-encrypted traffic at a gateway device (load balancer, reverse proxy, WAF, or CDN edge) rather than at the origin server. The gateway handles certificate management, handshake processing, and re-encryption for backend connections.\nTechnical Note: PQC migration at the TLS termination point is the highest-impact upgrade path because it protects the most exposed network segment (client-to-edge) without requiring changes to backend infrastructure.\nCategory: concept | Complexity: intermediate",
+      "category": "concept",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/web-gateway-pqc"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1
+    },
+    {
+      "id": "glossary-345",
+      "source": "glossary",
+      "title": "Reverse Proxy",
+      "content": "Term: Reverse Proxy\nDefinition: A server that sits between clients and origin servers, forwarding client requests and returning responses on behalf of the origin. It provides TLS termination, load balancing, caching, and security filtering.\nTechnical Note: Common reverse proxies include NGINX, HAProxy, Envoy, and Traefik. PQC readiness varies by product — NGINX Plus R32+ and HAProxy 3.1+ support ML-KEM hybrid TLS via OpenSSL 3.5.\nCategory: concept | Complexity: beginner",
+      "category": "concept",
+      "metadata": {
+        "acronym": "",
+        "complexity": "beginner",
+        "relatedModule": "/learn/web-gateway-pqc"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1
+    },
+    {
+      "id": "glossary-346",
+      "source": "glossary",
+      "title": "Edge PoP",
+      "content": "Term: Edge PoP (PoP)\nDefinition: A Point of Presence — a physical data center location at the network edge where CDN or cloud providers deploy servers to cache content and terminate TLS connections close to end users.\nTechnical Note: Major CDNs operate 200-300+ PoPs globally. PQC deployment at edge PoPs requires coordinated key material distribution and certificate rotation across all locations simultaneously.\nCategory: concept | Complexity: intermediate",
+      "category": "concept",
+      "metadata": {
+        "acronym": "PoP",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/web-gateway-pqc"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1
+    },
+    {
+      "id": "glossary-347",
+      "source": "glossary",
+      "title": "Origin Shielding",
+      "content": "Term: Origin Shielding\nDefinition: A CDN architecture pattern where a designated intermediate cache layer sits between edge PoPs and the origin server, reducing direct origin requests and providing a single point for TLS termination upgrades.\nTechnical Note: Origin shielding simplifies PQC migration by limiting the number of connections to the origin that need PQC upgrade — only the shield-to-origin link requires immediate attention.\nCategory: concept | Complexity: intermediate",
+      "category": "concept",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/web-gateway-pqc"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1
+    },
+    {
+      "id": "glossary-348",
+      "source": "glossary",
+      "title": "Cipher Proxy",
+      "content": "Term: Cipher Proxy\nDefinition: A network device that transparently translates between different cipher suites on each side of a connection, enabling PQC on the external-facing side while maintaining classical TLS on internal connections.\nTechnical Note: Palo Alto PAN-OS 12.1+ implements cipher proxy for PQC, automatically translating ML-KEM hybrid handshakes to classical TLS for backend servers without requiring application changes.\nCategory: concept | Complexity: advanced",
+      "category": "concept",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/learn/web-gateway-pqc"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1
+    },
+    {
+      "id": "glossary-349",
+      "source": "glossary",
+      "title": "Connection Coalescing",
+      "content": "Term: Connection Coalescing\nDefinition: An HTTP/2 and HTTP/3 optimization where a single TLS connection is reused for requests to multiple hostnames sharing the same IP address and TLS certificate, amortizing PQC handshake overhead across domains.\nTechnical Note: With PQC hybrid handshakes adding 10-20KB overhead, connection coalescing becomes a critical mitigation — reducing the number of handshakes proportionally reduces total bandwidth impact.\nCategory: protocol | Complexity: advanced",
+      "category": "protocol",
+      "metadata": {
+        "acronym": "",
+        "complexity": "advanced",
+        "relatedModule": "/learn/web-gateway-pqc"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1
+    },
+    {
+      "id": "glossary-350",
+      "source": "glossary",
+      "title": "TLS Interception",
+      "content": "Term: TLS Interception\nDefinition: A security technique where a middlebox (WAF, DLP, IDS) terminates, inspects, and re-establishes TLS connections to examine encrypted traffic for threats. Also called TLS inspection or SSL inspection.\nTechnical Note: TLS interception devices must support the same cipher suites as both client and server. PQC hybrid handshakes require all inspection boxes in the path to be upgraded simultaneously.\nCategory: concept | Complexity: intermediate",
+      "category": "concept",
+      "metadata": {
+        "acronym": "",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/web-gateway-pqc"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1
+    },
+    {
+      "id": "glossary-351",
+      "source": "glossary",
+      "title": "SASE",
+      "content": "Term: SASE (SASE)\nDefinition: Secure Access Service Edge — a cloud-delivered architecture combining network security functions (SWG, CASB, ZTNA, FWaaS) with WAN capabilities, delivered as a unified service at the network edge.\nTechnical Note: SASE platforms like Zscaler and Palo Alto Prisma Access terminate and inspect TLS at cloud PoPs. PQC migration requires the SASE provider to upgrade their inspection infrastructure to support hybrid handshakes.\nCategory: concept | Complexity: intermediate",
+      "category": "concept",
+      "metadata": {
+        "acronym": "SASE",
+        "complexity": "intermediate",
+        "relatedModule": "/learn/web-gateway-pqc"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1
+    },
+    {
       "id": "timeline-1",
       "source": "timeline",
       "title": "European Union — QARC Project Execution",
@@ -4794,7 +5066,7 @@
         "org": "EC",
         "sourceUrl": "https://digital-strategy.ec.europa.eu/en/library/recommendation-coordinated-implementation-roadmap-transition-post-quantum-cryptography"
       },
-      "deepLink": "/timeline?country=European%20Union",
+      "deepLink": "/library?ref=EU%20PQC%20Recommendation",
       "priority": 1
     },
     {
@@ -5742,7 +6014,7 @@
         "org": "White House",
         "sourceUrl": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2022/05/04/national-security-memorandum-on-promoting-united-states-leadership-in-quantum-computing-while-mitigating-risks-to-vulnerable-cryptographic-systems/"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=NSM-10",
       "priority": 1
     },
     {
@@ -5826,7 +6098,7 @@
         "org": "NIST",
         "sourceUrl": "https://csrc.nist.gov/pubs/fips/203/final"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=FIPS%20203",
       "priority": 1
     },
     {
@@ -5840,7 +6112,7 @@
         "org": "NIST",
         "sourceUrl": "https://csrc.nist.gov/pubs/ir/8547/ipd"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=NIST%20IR%208547",
       "priority": 1
     },
     {
@@ -5994,7 +6266,7 @@
         "org": "NIST",
         "sourceUrl": "https://www.digicert.com/blog/quantum-ready-fndsa-nears-draft-approval-from-nist"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=FIPS%20206",
       "priority": 1
     },
     {
@@ -6274,7 +6546,7 @@
         "org": "IETF",
         "sourceUrl": "https://www.rfc-editor.org/rfc/rfc9794.html"
       },
-      "deepLink": "/timeline?country=International",
+      "deepLink": "/library?ref=RFC%209794",
       "priority": 1
     },
     {
@@ -6918,7 +7190,63 @@
         "org": "NIST",
         "sourceUrl": "https://csrc.nist.gov/pubs/sp/800/208/final"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=NIST%20SP%20800-208",
+      "priority": 1
+    },
+    {
+      "id": "timeline-199",
+      "source": "timeline",
+      "title": "Global — PKCS#11 v3.2 Committee Specification Draft Published",
+      "content": "Country: Global\nOrganization: Organization for the Advancement of Structured Information Standards\nType: Milestone | Phase: Standardization\nPeriod: 2025–2025\nTitle: PKCS#11 v3.2 Committee Specification Draft Published\nDescription: OASIS PKCS#11 Technical Committee publishes Committee Specification Draft of PKCS#11 v3.2 adding post-quantum mechanisms: ML-KEM (CKM_ML_KEM) ML-DSA (CKM_ML_DSA CKM_HASH_ML_DSA) SLH-DSA (CKM_SLH_DSA) and new KEM functions C_EncapsulateKey/C_DecapsulateKey. First major HSM interface standard to support NIST PQC algorithms.",
+      "category": "Standardization",
+      "metadata": {
+        "country": "Global",
+        "org": "OASIS",
+        "sourceUrl": "https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.2/csd01/pkcs11-spec-v3.2-csd01.html"
+      },
+      "deepLink": "/timeline?country=Global",
+      "priority": 1
+    },
+    {
+      "id": "timeline-200",
+      "source": "timeline",
+      "title": "Global — Ballot SMC013 ML-DSA for S/MIME Adopted",
+      "content": "Country: Global\nOrganization: CA/Browser Forum S/MIME Certificate Working Group\nType: Milestone | Phase: Standardization\nPeriod: 2025–2025\nTitle: Ballot SMC013 ML-DSA for S/MIME Adopted\nDescription: CA/Browser Forum adopts Ballot SMC013 enabling ML-DSA post-quantum digital signatures in S/MIME certificates. IPR exclusion period completed with no notices filed. First Web PKI governance body to formally adopt PQC algorithms for certificate issuance.",
+      "category": "Standardization",
+      "metadata": {
+        "country": "Global",
+        "org": "CA/Browser Forum",
+        "sourceUrl": "https://cabforum.org/2025/07/02/ballot-smc-013/"
+      },
+      "deepLink": "/timeline?country=Global",
+      "priority": 1
+    },
+    {
+      "id": "timeline-201",
+      "source": "timeline",
+      "title": "Global — TR 33.841 PQC Study Item Approved",
+      "content": "Country: Global\nOrganization: 3GPP Security Working Group SA3\nType: Milestone | Phase: Research\nPeriod: 2025–2025\nTitle: TR 33.841 PQC Study Item Approved\nDescription: 3GPP SA3 approves study item TR 33.841 on preparing 5G security protocols for post-quantum cryptography transition. Covers hybrid PQC integration for TLS IPSec and IKEv2 in 5G network infrastructure. First 3GPP standardization activity addressing quantum-resistant mobile network security.",
+      "category": "Research",
+      "metadata": {
+        "country": "Global",
+        "org": "3GPP SA3",
+        "sourceUrl": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.841/"
+      },
+      "deepLink": "/timeline?country=Global",
+      "priority": 1
+    },
+    {
+      "id": "timeline-202",
+      "source": "timeline",
+      "title": "Global — TPM 2.0 PQC Library Specification Draft",
+      "content": "Country: Global\nOrganization: Trusted Computing Group\nType: Milestone | Phase: Standardization\nPeriod: 2025–2025\nTitle: TPM 2.0 PQC Library Specification Draft\nDescription: Trusted Computing Group publishes draft update to TPM 2.0 Library Specification (V1.85) incorporating post-quantum cryptography algorithms with hybrid classical+PQ support. Affects hardware root of trust in billions of computing devices worldwide.",
+      "category": "Standardization",
+      "metadata": {
+        "country": "Global",
+        "org": "TCG",
+        "sourceUrl": "https://trustedcomputinggroup.org/resource/tpm-library-specification/"
+      },
+      "deepLink": "/timeline?country=Global",
       "priority": 1
     },
     {
@@ -6933,7 +7261,7 @@
         "algorithmFamily": "Lattice-based; MPC-based"
       },
       "deepLink": "/library?ref=KpqC-Competition-Results",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-FIPS140-3-IG-PQC",
@@ -6947,7 +7275,7 @@
         "algorithmFamily": "Lattice; Hash-based"
       },
       "deepLink": "/library?ref=NIST-FIPS140-3-IG-PQC",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-3GPP-PQC-Study-2025",
@@ -6961,7 +7289,7 @@
         "algorithmFamily": "Hybrid PQC approaches"
       },
       "deepLink": "/library?ref=3GPP-PQC-Study-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-liboqs-v0.15.0",
@@ -6975,7 +7303,7 @@
         "algorithmFamily": "Lattice; Hash-based; Code-based"
       },
       "deepLink": "/library?ref=liboqs-v0.15.0",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-TCG-TPM-PQC-Spec-2025",
@@ -6989,7 +7317,7 @@
         "algorithmFamily": "Lattice; Hash-based"
       },
       "deepLink": "/library?ref=TCG-TPM-PQC-Spec-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-FIPS 203",
@@ -7003,7 +7331,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=FIPS%20203",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-FIPS 204",
@@ -7017,7 +7345,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=FIPS%20204",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-FIPS 205",
@@ -7031,7 +7359,7 @@
         "algorithmFamily": "Hash-based (stateless)"
       },
       "deepLink": "/library?ref=FIPS%20205",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-FIPS 206",
@@ -7045,7 +7373,7 @@
         "algorithmFamily": "Lattice-based (NTRU)"
       },
       "deepLink": "/library?ref=FIPS%20206",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-FIPS 186-5",
@@ -7059,7 +7387,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=FIPS%20186-5",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST SP 800-208",
@@ -7073,7 +7401,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=NIST%20SP%20800-208",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST SP 800-227",
@@ -7087,7 +7415,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=NIST%20SP%20800-227",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST IR 8547",
@@ -7101,7 +7429,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST%20IR%208547",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST IR 8545",
@@ -7115,7 +7443,7 @@
         "algorithmFamily": "Code-based"
       },
       "deepLink": "/library?ref=NIST%20IR%208545",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-HQC Specification",
@@ -7129,7 +7457,7 @@
         "algorithmFamily": "Code-based"
       },
       "deepLink": "/library?ref=HQC%20Specification",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9629",
@@ -7143,7 +7471,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=RFC%209629",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9708",
@@ -7157,7 +7485,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=RFC%209708",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9794",
@@ -7171,7 +7499,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%209794",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9802",
@@ -7185,7 +7513,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=RFC%209802",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9810",
@@ -7199,7 +7527,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=RFC%209810",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9814",
@@ -7213,7 +7541,7 @@
         "algorithmFamily": "Hash-based (stateless)"
       },
       "deepLink": "/library?ref=RFC%209814",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9858",
@@ -7227,7 +7555,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=RFC%209858",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9882",
@@ -7241,7 +7569,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=RFC%209882",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-tls-hybrid-design-16",
@@ -7255,7 +7583,7 @@
         "algorithmFamily": "PQ/T Hybrid"
       },
       "deepLink": "/library?ref=draft-ietf-tls-hybrid-design-16",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-tls-ecdhe-mlkem-04",
@@ -7269,7 +7597,7 @@
         "algorithmFamily": "Lattice + ECDH"
       },
       "deepLink": "/library?ref=draft-ietf-tls-ecdhe-mlkem-04",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-tls-mlkem-07",
@@ -7283,7 +7611,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=draft-ietf-tls-mlkem-07",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-ipsecme-ikev2-mlkem",
@@ -7297,7 +7625,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=draft-ietf-ipsecme-ikev2-mlkem",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-yang-tls-hybrid-sm2-mlkem-03",
@@ -7311,7 +7639,7 @@
         "algorithmFamily": "SM2 + Lattice"
       },
       "deepLink": "/library?ref=draft-yang-tls-hybrid-sm2-mlkem-03",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-lamps-kyber-certificates-11",
@@ -7325,7 +7653,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=draft-ietf-lamps-kyber-certificates-11",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9881",
@@ -7339,7 +7667,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=RFC%209881",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-lamps-pq-composite-kem-12",
@@ -7353,7 +7681,7 @@
         "algorithmFamily": "RSA/ECDH + ML-KEM"
       },
       "deepLink": "/library?ref=draft-ietf-lamps-pq-composite-kem-12",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-lamps-pq-composite-sigs-15",
@@ -7367,7 +7695,7 @@
         "algorithmFamily": "RSA/ECDSA + ML-DSA"
       },
       "deepLink": "/library?ref=draft-ietf-lamps-pq-composite-sigs-15",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-lamps-cms-kyber-13",
@@ -7381,7 +7709,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=draft-ietf-lamps-cms-kyber-13",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-openpgp-pqc-17",
@@ -7395,7 +7723,7 @@
         "algorithmFamily": "Lattice+ECDH/EdDSA; Hash-based"
       },
       "deepLink": "/library?ref=draft-ietf-openpgp-pqc-17",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-pquip-pqc-engineers-14",
@@ -7409,7 +7737,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=draft-ietf-pquip-pqc-engineers-14",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-pquip-hybrid-signature-spectrums-06",
@@ -7423,7 +7751,7 @@
         "algorithmFamily": "PQ/T Hybrid Signatures"
       },
       "deepLink": "/library?ref=draft-ietf-pquip-hybrid-signature-spectrums-06",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-uta-pqc-app-00",
@@ -7437,7 +7765,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=draft-ietf-uta-pqc-app-00",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-kwiatkowski-pquip-pqc-migration-00",
@@ -7451,7 +7779,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=draft-kwiatkowski-pquip-pqc-migration-00",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-wang-ipsecme-kem-auth-ikev2-01",
@@ -7465,7 +7793,7 @@
         "algorithmFamily": "Lattice-based KEM"
       },
       "deepLink": "/library?ref=draft-wang-ipsecme-kem-auth-ikev2-01",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI TS 103 744",
@@ -7479,7 +7807,7 @@
         "algorithmFamily": "Lattice+ECDH"
       },
       "deepLink": "/library?ref=ETSI%20TS%20103%20744",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI TR 103 619",
@@ -7493,7 +7821,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=ETSI%20TR%20103%20619",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NSA CNSA 2.0",
@@ -7507,7 +7835,7 @@
         "algorithmFamily": "Various"
       },
       "deepLink": "/library?ref=NSA%20CNSA%202.0",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NSA CNSA 2.0 FAQ",
@@ -7521,7 +7849,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NSA%20CNSA%202.0%20FAQ",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NSA CSfC PQC Guidance Addendum",
@@ -7535,7 +7863,7 @@
         "algorithmFamily": "ML-KEM, ML-DSA"
       },
       "deepLink": "/library?ref=NSA%20CSfC%20PQC%20Guidance%20Addendum",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BSI TR-02102-1",
@@ -7549,7 +7877,7 @@
         "algorithmFamily": "Lattice; Hash-based; Code-based"
       },
       "deepLink": "/library?ref=BSI%20TR-02102-1",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BSI TR-02102-2",
@@ -7563,7 +7891,7 @@
         "algorithmFamily": "Lattice+ECDH"
       },
       "deepLink": "/library?ref=BSI%20TR-02102-2",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BSI TR-02102-3",
@@ -7577,7 +7905,7 @@
         "algorithmFamily": "Lattice+ECDH"
       },
       "deepLink": "/library?ref=BSI%20TR-02102-3",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BSI TR-02102-4",
@@ -7591,7 +7919,7 @@
         "algorithmFamily": "Lattice+ECDH"
       },
       "deepLink": "/library?ref=BSI%20TR-02102-4",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ANSSI PQC Position Paper",
@@ -7605,7 +7933,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=ANSSI%20PQC%20Position%20Paper",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ANSSI PQC Follow-up Paper",
@@ -7619,7 +7947,7 @@
         "algorithmFamily": "Lattice; Hash-based"
       },
       "deepLink": "/library?ref=ANSSI%20PQC%20Follow-up%20Paper",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EU PQC Recommendation",
@@ -7633,7 +7961,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=EU%20PQC%20Recommendation",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ENISA PQC Guidelines",
@@ -7647,7 +7975,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=ENISA%20PQC%20Guidelines",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EUCC v2.0 ACM",
@@ -7661,7 +7989,7 @@
         "algorithmFamily": "Lattice; Hash-based"
       },
       "deepLink": "/library?ref=EUCC%20v2.0%20ACM",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-UK NCSC PQC Guidance",
@@ -7675,7 +8003,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=UK%20NCSC%20PQC%20Guidance",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST NCCoE SP 1800-38C",
@@ -7689,7 +8017,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST%20NCCoE%20SP%201800-38C",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ISO/IEC 14888-4:2024",
@@ -7703,7 +8031,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=ISO%2FIEC%2014888-4%3A2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ISO/IEC 18033-2:2006/AMD1:2017",
@@ -7717,7 +8045,7 @@
         "algorithmFamily": "Classical + planned PQC"
       },
       "deepLink": "/library?ref=ISO%2FIEC%2018033-2%3A2006%2FAMD1%3A2017",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ISO/IEC NP 29192-8",
@@ -7731,7 +8059,7 @@
         "algorithmFamily": "Lattice; Hash-based"
       },
       "deepLink": "/library?ref=ISO%2FIEC%20NP%2029192-8",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-China OSCCA GM/T 0108-2021",
@@ -7745,7 +8073,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=China%20OSCCA%20GM%2FT%200108-2021",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-China GB/T 42829-2023",
@@ -7759,7 +8087,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=China%20GB%2FT%2042829-2023",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-China GB/T 43692-2024",
@@ -7773,7 +8101,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=China%20GB%2FT%2043692-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-China YD/T 3834.1-2021",
@@ -7787,7 +8115,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=China%20YD%2FT%203834.1-2021",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-China CACR PQC Competition Results",
@@ -7801,7 +8129,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=China%20CACR%20PQC%20Competition%20Results",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-China ICCS PQC Call for Proposals",
@@ -7815,7 +8143,7 @@
         "algorithmFamily": "Various PQC families"
       },
       "deepLink": "/library?ref=China%20ICCS%20PQC%20Call%20for%20Proposals",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Japan CRYPTREC Report 2024",
@@ -7829,7 +8157,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=Japan%20CRYPTREC%20Report%202024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Singapore-CSA-Quantum-Safe-Handbook",
@@ -7843,7 +8171,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=Singapore-CSA-Quantum-Safe-Handbook",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Australia ASD PQC Guidance",
@@ -7857,7 +8185,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=Australia%20ASD%20PQC%20Guidance",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Canada CSE PQC Guidance",
@@ -7871,7 +8199,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=Canada%20CSE%20PQC%20Guidance",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-GSMA PQ.03 PQC Guidelines",
@@ -7885,7 +8213,7 @@
         "algorithmFamily": "Hybrid approaches"
       },
       "deepLink": "/library?ref=GSMA%20PQ.03%20PQC%20Guidelines",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IEEE 1609.2 Amendment",
@@ -7899,7 +8227,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=IEEE%201609.2%20Amendment",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-3GPP TS 33.501",
@@ -7913,7 +8241,7 @@
         "algorithmFamily": "Hybrid approaches"
       },
       "deepLink": "/library?ref=3GPP%20TS%2033.501",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF RFC 8391",
@@ -7927,7 +8255,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=IETF%20RFC%208391",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF RFC 8554",
@@ -7941,7 +8269,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=IETF%20RFC%208554",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF RFC 9370",
@@ -7955,7 +8283,7 @@
         "algorithmFamily": "Hybrid KEMs"
       },
       "deepLink": "/library?ref=IETF%20RFC%209370",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF RFC 8784",
@@ -7969,7 +8297,7 @@
         "algorithmFamily": "Symmetric PSKs"
       },
       "deepLink": "/library?ref=IETF%20RFC%208784",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-CISA-PQC-CATEGORY-LIST-2026",
@@ -7983,7 +8311,7 @@
         "algorithmFamily": "All PQC Families"
       },
       "deepLink": "/library?ref=CISA-PQC-CATEGORY-LIST-2026",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Samsung-Thales-ML-KEM-eSE-2026",
@@ -7997,7 +8325,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=Samsung-Thales-ML-KEM-eSE-2026",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-TS-104-015",
@@ -8011,7 +8339,7 @@
         "algorithmFamily": "PQ/T Hybrid"
       },
       "deepLink": "/library?ref=ETSI-TS-104-015",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-wang-ipsecme-hybrid-kem-ikev2-frodo-03",
@@ -8025,7 +8353,7 @@
         "algorithmFamily": "Unstructured Lattice (FrodoKEM)"
       },
       "deepLink": "/library?ref=draft-wang-ipsecme-hybrid-kem-ikev2-frodo-03",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-turner-lamps-cms-fn-dsa-00",
@@ -8039,7 +8367,7 @@
         "algorithmFamily": "Lattice-based (NTRU)"
       },
       "deepLink": "/library?ref=draft-turner-lamps-cms-fn-dsa-00",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-cose-falcon-03",
@@ -8053,7 +8381,7 @@
         "algorithmFamily": "Lattice-based (NTRU)"
       },
       "deepLink": "/library?ref=draft-ietf-cose-falcon-03",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EO-14306",
@@ -8067,7 +8395,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=EO-14306",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-CA-B-Forum-Ballot-SMC013",
@@ -8081,7 +8409,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=CA-B-Forum-Ballot-SMC013",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-kampanakis-curdle-ssh-pq-ke",
@@ -8095,7 +8423,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=draft-kampanakis-curdle-ssh-pq-ke",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-josefsson-ntruprime-ssh",
@@ -8109,7 +8437,7 @@
         "algorithmFamily": "Lattice-based (NTRU)"
       },
       "deepLink": "/library?ref=draft-josefsson-ntruprime-ssh",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-pquip-hbs-state",
@@ -8123,7 +8451,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=draft-ietf-pquip-hbs-state",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-sfluhrer-ipsecme-ikev2-mldsa-00",
@@ -8137,7 +8465,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=draft-sfluhrer-ipsecme-ikev2-mldsa-00",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-tls-mldsa-01",
@@ -8151,7 +8479,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=draft-ietf-tls-mldsa-01",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9690",
@@ -8165,7 +8493,7 @@
         "algorithmFamily": "Classical KEM (RSA)"
       },
       "deepLink": "/library?ref=RFC%209690",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 8551",
@@ -8179,7 +8507,7 @@
         "algorithmFamily": "Classical (RSA/ECDSA)"
       },
       "deepLink": "/library?ref=RFC%208551",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-90A-R1",
@@ -8193,7 +8521,7 @@
         "algorithmFamily": "Symmetric (AES; SHA)"
       },
       "deepLink": "/library?ref=NIST-SP-800-90A-R1",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-90B",
@@ -8207,7 +8535,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST-SP-800-90B",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-90C",
@@ -8221,7 +8549,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST-SP-800-90C",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-002",
@@ -8235,7 +8563,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-002",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-003",
@@ -8249,7 +8577,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-003",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-004",
@@ -8263,7 +8591,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-004",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-005",
@@ -8277,7 +8605,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-005",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-008",
@@ -8291,7 +8619,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-008",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-011",
@@ -8305,7 +8633,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-011",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-012",
@@ -8319,7 +8647,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-012",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-014",
@@ -8333,7 +8661,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-014",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-015",
@@ -8347,7 +8675,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-015",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-016",
@@ -8361,7 +8689,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-016",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-GS-QKD-018",
@@ -8375,7 +8703,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ETSI-GS-QKD-018",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ISO-IEC-23837-1",
@@ -8389,7 +8717,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ISO-IEC-23837-1",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ISO-IEC-23837-2",
@@ -8403,7 +8731,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=ISO-IEC-23837-2",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC-9258",
@@ -8417,7 +8745,7 @@
         "algorithmFamily": "QKD; Hybrid PQC"
       },
       "deepLink": "/library?ref=RFC-9258",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-108-R1",
@@ -8431,7 +8759,7 @@
         "algorithmFamily": "QKD; Symmetric"
       },
       "deepLink": "/library?ref=NIST-SP-800-108-R1",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-56C-R2",
@@ -8445,7 +8773,7 @@
         "algorithmFamily": "QKD; Hybrid PQC"
       },
       "deepLink": "/library?ref=NIST-SP-800-56C-R2",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-PKCS11-V3-OASIS",
@@ -8459,7 +8787,7 @@
         "algorithmFamily": "Symmetric; QKD"
       },
       "deepLink": "/library?ref=PKCS11-V3-OASIS",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-PKCS11-V31-OASIS",
@@ -8473,7 +8801,7 @@
         "algorithmFamily": "Hash-based"
       },
       "deepLink": "/library?ref=PKCS11-V31-OASIS",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-PKCS11-V32-OASIS",
@@ -8487,7 +8815,7 @@
         "algorithmFamily": "Lattice; Hash-based"
       },
       "deepLink": "/library?ref=PKCS11-V32-OASIS",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BIP-32",
@@ -8501,7 +8829,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=BIP-32",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BIP-39",
@@ -8515,7 +8843,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=BIP-39",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BIP-44",
@@ -8529,7 +8857,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=BIP-44",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-SLIP-0010",
@@ -8543,7 +8871,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=SLIP-0010",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EIP-55",
@@ -8557,7 +8885,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=EIP-55",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EIP-155",
@@ -8571,7 +8899,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=EIP-155",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-SEC2-v2",
@@ -8585,7 +8913,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=SEC2-v2",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC-8032",
@@ -8599,7 +8927,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=RFC-8032",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Bitcoin-Whitepaper",
@@ -8613,7 +8941,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=Bitcoin-Whitepaper",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Ethereum-Yellow-Paper",
@@ -8627,7 +8955,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=Ethereum-Yellow-Paper",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-OpenSSL-3x-Docs",
@@ -8641,7 +8969,7 @@
         "algorithmFamily": "Classical; Lattice-based"
       },
       "deepLink": "/library?ref=OpenSSL-3x-Docs",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BIP-141",
@@ -8655,7 +8983,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=BIP-141",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BIP-340",
@@ -8669,7 +8997,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=BIP-340",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BIP-341",
@@ -8683,7 +9011,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=BIP-341",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Bitcoin-BIP360-P2QRH",
@@ -8697,7 +9025,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=Bitcoin-BIP360-P2QRH",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Ethereum-EIP4337-AA",
@@ -8711,7 +9039,7 @@
         "algorithmFamily": "Classical (PQC-extensible)"
       },
       "deepLink": "/library?ref=Ethereum-EIP4337-AA",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Ethereum-EIP7702",
@@ -8725,7 +9053,7 @@
         "algorithmFamily": "Classical (PQC-extensible)"
       },
       "deepLink": "/library?ref=Ethereum-EIP7702",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-FRB-FEDS-2025093-Blockchain-PQC",
@@ -8739,7 +9067,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=FRB-FEDS-2025093-Blockchain-PQC",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Ethereum-PQC-Tasklist-Ethresearch",
@@ -8753,7 +9081,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=Ethereum-PQC-Tasklist-Ethresearch",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF-MTC-Draft-09",
@@ -8767,7 +9095,7 @@
         "algorithmFamily": "Hash-based (SHA-256)"
       },
       "deepLink": "/library?ref=IETF-MTC-Draft-09",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC-9162",
@@ -8781,7 +9109,7 @@
         "algorithmFamily": "Hash-based"
       },
       "deepLink": "/library?ref=RFC-9162",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Cloudflare-MTC-Blog",
@@ -8795,7 +9123,7 @@
         "algorithmFamily": "Hash-based"
       },
       "deepLink": "/library?ref=Cloudflare-MTC-Blog",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Radboud-MTC-Thesis-2025",
@@ -8809,7 +9137,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=Radboud-MTC-Thesis-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Cloudflare-PQ-Internet-2025",
@@ -8823,7 +9151,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=Cloudflare-PQ-Internet-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-eIDAS-2-Regulation",
@@ -8837,7 +9165,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=eIDAS-2-Regulation",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EUDI-Wallet-ARF",
@@ -8851,7 +9179,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=EUDI-Wallet-ARF",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ISO-18013-5-mDL",
@@ -8865,7 +9193,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=ISO-18013-5-mDL",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC-9901-SD-JWT-VC",
@@ -8879,7 +9207,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC-9901-SD-JWT-VC",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF-SD-JWT-Draft",
@@ -8893,7 +9221,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=IETF-SD-JWT-Draft",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-OpenID4VCI-Spec",
@@ -8907,7 +9235,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=OpenID4VCI-Spec",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-OpenID4VP-Spec",
@@ -8921,7 +9249,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=OpenID4VP-Spec",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF-Token-Status-List",
@@ -8935,7 +9263,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=IETF-Token-Status-List",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ENISA-EUDI-Wallet-Security",
@@ -8949,7 +9277,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=ENISA-EUDI-Wallet-Security",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-CSC-API-v2-Spec",
@@ -8963,7 +9291,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=CSC-API-v2-Spec",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ETSI-EN-319-411",
@@ -8977,7 +9305,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=ETSI-EN-319-411",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-63-3",
@@ -8991,7 +9319,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST-SP-800-63-3",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-131A-Rev3",
@@ -9005,7 +9333,7 @@
         "algorithmFamily": "RSA; ECC; SHA; AES"
       },
       "deepLink": "/library?ref=NIST-SP-800-131A-Rev3",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-India-DST-Quantum-Safe-Roadmap-2026",
@@ -9019,7 +9347,7 @@
         "algorithmFamily": "ML-KEM; ML-DSA; QKD"
       },
       "deepLink": "/library?ref=India-DST-Quantum-Safe-Roadmap-2026",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-WEF-2026-Quantum-Security-Leaders",
@@ -9033,7 +9361,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=WEF-2026-Quantum-Security-Leaders",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-22-R1A",
@@ -9047,7 +9375,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST-SP-800-22-R1A",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BSI-AIS-20-31",
@@ -9061,7 +9389,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=BSI-AIS-20-31",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-GRI-Quantum-Threat-Timeline-2024",
@@ -9075,7 +9403,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=GRI-Quantum-Threat-Timeline-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 5652",
@@ -9089,7 +9417,7 @@
         "algorithmFamily": "Classical"
       },
       "deepLink": "/library?ref=RFC%205652",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 5083",
@@ -9103,7 +9431,7 @@
         "algorithmFamily": "Classical / Symmetric"
       },
       "deepLink": "/library?ref=RFC%205083",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF RFC 7296",
@@ -9117,7 +9445,7 @@
         "algorithmFamily": "Diffie-Hellman; RSA; ECDH"
       },
       "deepLink": "/library?ref=IETF%20RFC%207296",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF RFC 8731",
@@ -9131,7 +9459,7 @@
         "algorithmFamily": "Elliptic Curve (X25519)"
       },
       "deepLink": "/library?ref=IETF%20RFC%208731",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Rosenpass-Protocol",
@@ -9145,7 +9473,7 @@
         "algorithmFamily": "Lattice-based (ML-KEM); Code-based (Classic McEliece)"
       },
       "deepLink": "/library?ref=Rosenpass-Protocol",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NSA-QKD-Advisory-2023",
@@ -9159,7 +9487,7 @@
         "algorithmFamily": "QKD"
       },
       "deepLink": "/library?ref=NSA-QKD-Advisory-2023",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IETF RFC 4253",
@@ -9173,7 +9501,7 @@
         "algorithmFamily": "SSH"
       },
       "deepLink": "/library?ref=IETF%20RFC%204253",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IEEE-802-1AE-2018",
@@ -9187,7 +9515,7 @@
         "algorithmFamily": "AES-GCM; QKD integration"
       },
       "deepLink": "/library?ref=IEEE-802-1AE-2018",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-jose-pqc-kem",
@@ -9201,7 +9529,7 @@
         "algorithmFamily": "ML-KEM"
       },
       "deepLink": "/library?ref=draft-ietf-jose-pqc-kem",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-ietf-jose-pqc-algorithms",
@@ -9215,7 +9543,7 @@
         "algorithmFamily": "ML-DSA;SLH-DSA"
       },
       "deepLink": "/library?ref=draft-ietf-jose-pqc-algorithms",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 8725",
@@ -9229,7 +9557,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%208725",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 7519",
@@ -9243,7 +9571,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%207519",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 7515",
@@ -9257,7 +9585,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%207515",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 7516",
@@ -9271,7 +9599,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%207516",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 7517",
@@ -9285,7 +9613,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%207517",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 7518",
@@ -9299,7 +9627,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%207518",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 6749",
@@ -9313,7 +9641,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%206749",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9449",
@@ -9327,7 +9655,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%209449",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST-SP-800-57-Pt1-R5",
@@ -9341,7 +9669,7 @@
         "algorithmFamily": "All"
       },
       "deepLink": "/library?ref=NIST-SP-800-57-Pt1-R5",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-KMIP-V2-1-OASIS",
@@ -9355,7 +9683,7 @@
         "algorithmFamily": "Symmetric; Asymmetric; PQC (forthcoming)"
       },
       "deepLink": "/library?ref=KMIP-V2-1-OASIS",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 7228",
@@ -9369,7 +9697,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%207228",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9019",
@@ -9383,7 +9711,7 @@
         "algorithmFamily": "Hash-based (stateful)"
       },
       "deepLink": "/library?ref=RFC%209019",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9147",
@@ -9397,7 +9725,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=RFC%209147",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 8879",
@@ -9411,7 +9739,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=RFC%208879",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 7250",
@@ -9425,7 +9753,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=RFC%207250",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IEC 62443",
@@ -9439,7 +9767,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=IEC%2062443",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST SP 800-82 Rev. 3",
@@ -9453,7 +9781,7 @@
         "algorithmFamily": ""
       },
       "deepLink": "/library?ref=NIST%20SP%20800-82%20Rev.%203",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NSM-10",
@@ -9467,7 +9795,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NSM-10",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-OMB-M-23-02",
@@ -9481,7 +9809,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=OMB-M-23-02",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-QCCPA-2022",
@@ -9495,7 +9823,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=QCCPA-2022",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-WH-PQC-Report-2024",
@@ -9509,7 +9837,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=WH-PQC-Report-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EO-14144",
@@ -9523,7 +9851,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=EO-14144",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BIS-Paper-158",
@@ -9537,7 +9865,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=BIS-Paper-158",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EU-NIS-CG-Roadmap-v1.1",
@@ -9551,7 +9879,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=EU-NIS-CG-Roadmap-v1.1",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-G7-CEG-Financial-PQC-2026",
@@ -9565,7 +9893,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=G7-CEG-Financial-PQC-2026",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-PKI-Consortium-PQC-2025",
@@ -9579,7 +9907,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=PKI-Consortium-PQC-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-India-DST-NQM-Roadmap",
@@ -9593,7 +9921,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=India-DST-NQM-Roadmap",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-India-TEC-910018-2025",
@@ -9607,7 +9935,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=India-TEC-910018-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-HKMA-Fintech-Blueprint-2026",
@@ -9621,7 +9949,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=HKMA-Fintech-Blueprint-2026",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Malaysia-NACSA-PQC-2025",
@@ -9635,7 +9963,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=Malaysia-NACSA-PQC-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-HK-CI-Ordinance-2025",
@@ -9649,7 +9977,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=HK-CI-Ordinance-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Czech-NUKIB-Crypto-Rec-2023",
@@ -9663,7 +9991,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=Czech-NUKIB-Crypto-Rec-2023",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-UAE-DESC-PQC-Guideline",
@@ -9677,7 +10005,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=UAE-DESC-PQC-Guideline",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-UAE-CSC-Encryption-Policy",
@@ -9691,7 +10019,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=UAE-CSC-Encryption-Policy",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Saudi-NCA-ECC2-2024",
@@ -9705,7 +10033,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=Saudi-NCA-ECC2-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Microsoft-QSP-Roadmap-2025",
@@ -9719,7 +10047,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=Microsoft-QSP-Roadmap-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-PQCC-Migration-Roadmap-2025",
@@ -9733,7 +10061,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=PQCC-Migration-Roadmap-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-PQCC-Inventory-Workbook-2025",
@@ -9747,7 +10075,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=PQCC-Inventory-Workbook-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Singapore-NQSN-Plus",
@@ -9761,7 +10089,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=Singapore-NQSN-Plus",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ANSSI-PQC-Position-2022",
@@ -9775,7 +10103,7 @@
         "algorithmFamily": "Hybrid PQC; Lattice-based"
       },
       "deepLink": "/library?ref=ANSSI-PQC-Position-2022",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ANSSI-PQC-FAQ-2025",
@@ -9789,7 +10117,7 @@
         "algorithmFamily": "Hybrid PQC; Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=ANSSI-PQC-FAQ-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EC-Recommendation-2024-1101",
@@ -9803,7 +10131,7 @@
         "algorithmFamily": "Hybrid PQC"
       },
       "deepLink": "/library?ref=EC-Recommendation-2024-1101",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-G7-Financial-PQC-Roadmap-2026",
@@ -9817,7 +10145,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=G7-Financial-PQC-Roadmap-2026",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-CA-CFDIR-Quantum-Readiness-2023",
@@ -9831,7 +10159,7 @@
         "algorithmFamily": "Hybrid PQC; Lattice-based"
       },
       "deepLink": "/library?ref=CA-CFDIR-Quantum-Readiness-2023",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-SG-Quantum-Safe-Handbook-2025",
@@ -9845,7 +10173,7 @@
         "algorithmFamily": "Hybrid PQC; Lattice-based"
       },
       "deepLink": "/library?ref=SG-Quantum-Safe-Handbook-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-CZ-NUKIB-Crypto-Requirements-2023",
@@ -9859,7 +10187,7 @@
         "algorithmFamily": "Hybrid PQC; Lattice-based"
       },
       "deepLink": "/library?ref=CZ-NUKIB-Crypto-Requirements-2023",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-EU-BSI-PQC-Joint-Statement-2024",
@@ -9873,7 +10201,7 @@
         "algorithmFamily": "Hybrid PQC; Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=EU-BSI-PQC-Joint-Statement-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BSI-ANSSI-QKD-Position-2024",
@@ -9887,7 +10215,7 @@
         "algorithmFamily": "QKD; Hybrid PQC; Lattice-based"
       },
       "deepLink": "/library?ref=BSI-ANSSI-QKD-Position-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-CA-TBS-SPIN-PQC-2025",
@@ -9901,7 +10229,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=CA-TBS-SPIN-PQC-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IN-CERTIN-QBOM-Guidelines-2025",
@@ -9915,7 +10243,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=IN-CERTIN-QBOM-Guidelines-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-US-CISA-ACDI-Strategy-2024",
@@ -9929,7 +10257,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=US-CISA-ACDI-Strategy-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-US-CISA-PQC-OT-2024",
@@ -9943,7 +10271,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=US-CISA-PQC-OT-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-UK-CMORG-PQC-Guidance-2025",
@@ -9957,7 +10285,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=UK-CMORG-PQC-Guidance-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-AU-ASD-ISM-Crypto-2024",
@@ -9971,7 +10299,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=AU-ASD-ISM-Crypto-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-ENISA-PQC-Integration-Study-2022",
@@ -9985,7 +10313,7 @@
         "algorithmFamily": "Lattice-based; Hash-based; Code-based"
       },
       "deepLink": "/library?ref=ENISA-PQC-Integration-Study-2022",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Europol-QSFF-Call-to-Action-2025",
@@ -9999,7 +10327,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=Europol-QSFF-Call-to-Action-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IL-INCD-Cybersecurity-Strategy-2025",
@@ -10013,7 +10341,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=IL-INCD-Cybersecurity-Strategy-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-UK-DSIT-CNI-PQC-Perspectives-2025",
@@ -10027,7 +10355,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=UK-DSIT-CNI-PQC-Perspectives-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-US-QCCPA-2022",
@@ -10041,7 +10369,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=US-QCCPA-2022",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-GSMA-PQ03-v2-2024",
@@ -10055,7 +10383,7 @@
         "algorithmFamily": "Lattice-based; Hash-based; Hybrid PQC"
       },
       "deepLink": "/library?ref=GSMA-PQ03-v2-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-GSMA-PQC-Country-Survey-2025",
@@ -10069,7 +10397,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=GSMA-PQC-Country-Survey-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-SG-MAS-Quantum-Advisory-2024",
@@ -10083,7 +10411,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=SG-MAS-Quantum-Advisory-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-SG-MAS-QKD-Sandbox-Report-2025",
@@ -10097,7 +10425,7 @@
         "algorithmFamily": "QKD; AES-256"
       },
       "deepLink": "/library?ref=SG-MAS-QKD-Sandbox-Report-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NATO-Quantum-Strategy-2024",
@@ -10111,7 +10439,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=NATO-Quantum-Strategy-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-UK-NCSC-PQC-Whitepaper-2024",
@@ -10125,7 +10453,7 @@
         "algorithmFamily": "Lattice-based; Hash-based; Hybrid PQC"
       },
       "deepLink": "/library?ref=UK-NCSC-PQC-Whitepaper-2024",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-UK-NCSC-Migration-Timelines-2025",
@@ -10139,7 +10467,7 @@
         "algorithmFamily": "Lattice-based; Hash-based; Hybrid PQC"
       },
       "deepLink": "/library?ref=UK-NCSC-Migration-Timelines-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-US-NSA-CNSA-2.0-2022",
@@ -10153,7 +10481,7 @@
         "algorithmFamily": "Lattice-based; Hash-based; Stateful signatures"
       },
       "deepLink": "/library?ref=US-NSA-CNSA-2.0-2022",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-IN-TEC-PQC-Migration-Report-2025",
@@ -10167,7 +10495,7 @@
         "algorithmFamily": "Lattice-based; Hash-based; Hybrid PQC"
       },
       "deepLink": "/library?ref=IN-TEC-PQC-Migration-Report-2025",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-BIS-OTHP107",
@@ -10181,7 +10509,7 @@
         "algorithmFamily": "Lattice-based"
       },
       "deepLink": "/library?ref=BIS-OTHP107",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC-9763",
@@ -10195,7 +10523,7 @@
         "algorithmFamily": "N/A (certificate framework)"
       },
       "deepLink": "/library?ref=RFC-9763",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-draft-bonnell-lamps-chameleon-certs-07",
@@ -10209,7 +10537,7 @@
         "algorithmFamily": "N/A (certificate framework)"
       },
       "deepLink": "/library?ref=draft-bonnell-lamps-chameleon-certs-07",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC-9909",
@@ -10223,7 +10551,7 @@
         "algorithmFamily": "Hash-based (SLH-DSA)"
       },
       "deepLink": "/library?ref=RFC-9909",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 4251",
@@ -10237,7 +10565,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%204251",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 4253",
@@ -10251,7 +10579,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%204253",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 4301",
@@ -10265,7 +10593,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%204301",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 4303",
@@ -10279,7 +10607,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%204303",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 5280",
@@ -10293,7 +10621,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%205280",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 6962",
@@ -10307,7 +10635,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%206962",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 8017",
@@ -10321,7 +10649,7 @@
         "algorithmFamily": "RSA"
       },
       "deepLink": "/library?ref=RFC%208017",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 8446",
@@ -10335,7 +10663,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%208446",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9052",
@@ -10349,7 +10677,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%209052",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9580",
@@ -10363,7 +10691,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%209580",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9593",
@@ -10377,7 +10705,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%209593",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9847",
@@ -10391,7 +10719,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%209847",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST IR 8105",
@@ -10405,7 +10733,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST%20IR%208105",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST IR 8309",
@@ -10419,7 +10747,7 @@
         "algorithmFamily": "Lattice; Code-based; Hash-based; Multivariate; Isogeny"
       },
       "deepLink": "/library?ref=NIST%20IR%208309",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST IR 8413",
@@ -10433,7 +10761,7 @@
         "algorithmFamily": "Lattice; Code-based; Hash-based; Isogeny"
       },
       "deepLink": "/library?ref=NIST%20IR%208413",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST CSWP 39",
@@ -10447,7 +10775,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST%20CSWP%2039",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST NCCoE SP 1800-38A",
@@ -10461,7 +10789,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST%20NCCoE%20SP%201800-38A",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST NCCoE SP 1800-38B",
@@ -10475,7 +10803,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST%20NCCoE%20SP%201800-38B",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-NIST CSWP 48",
@@ -10489,7 +10817,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=NIST%20CSWP%2048",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-RFC 9420",
@@ -10503,7 +10831,7 @@
         "algorithmFamily": "N/A"
       },
       "deepLink": "/library?ref=RFC%209420",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "library-Europol-FS-ISAC-PQC-Financial-2026",
@@ -10517,7 +10845,7 @@
         "algorithmFamily": "Lattice-based; Hash-based"
       },
       "deepLink": "/library?ref=Europol-FS-ISAC-PQC-Financial-2026",
-      "priority": 0.95
+      "priority": 1
     },
     {
       "id": "algo-ml-kem-512",
@@ -12711,7 +13039,7 @@
       "id": "compliance-IETF",
       "source": "compliance",
       "title": "IETF",
-      "content": "Framework: IETF\nDescription: Internet Engineering Task Force — open standards body integrating PQC algorithms into internet protocols (TLS, SSH, CMS, S/MIME)\nIndustries: Technology;Telecommunications;Finance & Banking\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing\nEnforcement Body: IETF\nNotes: IETF's PQUIP (Post-Quantum Use In Protocols) working group coordinates PQC integration across the internet protocol stack. Active drafts include: ML-KEM in TLS 1.3 hybrid key exchange, ML-DSA in CMS (RFC 9629), SLH-DSA in S/MIME. IETF standardization is critical for organizations relying on TLS, SSH, OpenPGP, and other internet protocols — the vast majority of encrypted communications on the internet.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "content": "Framework: IETF\nDescription: Internet Engineering Task Force — open standards body integrating PQC algorithms into internet protocols (TLS, SSH, CMS, S/MIME)\nIndustries: Technology;Telecommunications;Finance & Banking\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing\nEnforcement Body: IETF\nNotes: IETF's PQUIP (Post-Quantum Use In Protocols) working group coordinates PQC integration across the internet protocol stack. 30+ active RFCs and drafts for PQC in 2025-2026 including: RFC 9881/9882 (ML-DSA in X.509/CMS), RFC 9794 (hybrid terminology), RFC 9814 (SLH-DSA in CMS), draft-ietf-tls-ecdhe-mlkem (TLS 1.3 hybrid), draft-ietf-lamps-pq-composite-kem (composite KEM). 6+ drafts in RFC Editor Queue as of early 2026.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
       "category": "framework",
       "metadata": { "id": "IETF", "deadline": "Ongoing", "requiresPQC": "yes" },
       "deepLink": "/compliance?q=IETF",
@@ -12749,9 +13077,13 @@
       "id": "compliance-ANSSI",
       "source": "compliance",
       "title": "ANSSI",
-      "content": "Framework: ANSSI\nDescription: French national cybersecurity agency regulation\nIndustries: Government & Defense;Finance & Banking\nCountries: France\nRequires PQC: yes\nDeadline: 2025-2030 (phased)\nEnforcement Body: ANSSI\nNotes: French regulation requires hybrid PQC for new systems. Full migration by 2030.\nRelated Timeline: [France Timeline](/timeline?country=France)",
+      "content": "Framework: ANSSI\nDescription: French national cybersecurity agency regulation\nIndustries: Government & Defense;Finance & Banking\nCountries: France\nRequires PQC: yes\nDeadline: 2025-2030 (phased; mandatory PQC qualification by 2027)\nEnforcement Body: ANSSI\nNotes: French regulation requires hybrid PQC for new systems. Full migration by 2030. ANSSI issued first PQC security certifications Sept-Oct 2025 (Thales Smartcard MultiApp 5.2 Premium PQC, Samsung S3SSE2A). Updated PQC FAQ published Oct 2025 with comprehensive algorithm guidance. Mandatory PQC qualification requirement effective 2027.\nRelated Timeline: [France Timeline](/timeline?country=France)",
       "category": "framework",
-      "metadata": { "id": "ANSSI", "deadline": "2025-2030 (phased)", "requiresPQC": "yes" },
+      "metadata": {
+        "id": "ANSSI",
+        "deadline": "2025-2030 (phased; mandatory PQC qualification by 2027)",
+        "requiresPQC": "yes"
+      },
       "deepLink": "/compliance?q=ANSSI",
       "priority": 1
     },
@@ -12759,7 +13091,7 @@
       "id": "compliance-CNSA-2",
       "source": "compliance",
       "title": "CNSA 2.0",
-      "content": "Framework: CNSA 2.0\nDescription: NSA mandate for national security systems\nIndustries: Government & Defense\nCountries: United States\nRequires PQC: yes\nDeadline: 2025 (software), 2030 (infrastructure)\nEnforcement Body: NSA\nNotes: NSA mandate for U.S. national security systems. Aggressive timeline.\nRelated Timeline: [United States Timeline](/timeline?country=United%20States)",
+      "content": "Framework: CNSA 2.0\nDescription: NSA mandate for national security systems\nIndustries: Government & Defense\nCountries: United States\nRequires PQC: yes\nDeadline: 2025 (software), 2030 (infrastructure)\nEnforcement Body: NSA\nNotes: NSA mandate for U.S. national security systems. Revised May 2025 algorithm document specifies ML-KEM-1024, ML-DSA-87, AES-256, SHA-384/512, LMS/XMSS. Executive Order 14306 (June 2025) ties CNSA 2.0 to federal procurement mandates via CISA product category list.\nRelated Timeline: [United States Timeline](/timeline?country=United%20States)",
       "category": "framework",
       "metadata": {
         "id": "CNSA-2",
@@ -12773,9 +13105,13 @@
       "id": "compliance-EIDAS",
       "source": "compliance",
       "title": "eIDAS 2.0",
-      "content": "Framework: eIDAS 2.0\nDescription: EU Digital Identity and Trust Services regulation\nIndustries: Technology;Finance & Banking\nCountries: European Union\nRequires PQC: yes\nDeadline: 2026 (wallet deployments)\nEnforcement Body: European Commission\nNotes: EU Digital Identity framework (Regulation 2024/1183, effective May 2024). Member states have 24 months from entry into force to deploy at least one national wallet — targeting May 2026. PQC readiness expected for wallet implementations.\nRelated Timeline: [European Union Timeline](/timeline?country=European%20Union)",
+      "content": "Framework: eIDAS 2.0\nDescription: EU Digital Identity and Trust Services regulation\nIndustries: Technology;Finance & Banking\nCountries: European Union\nRequires PQC: yes\nDeadline: 2026 (wallet deployments); 2030 (PQC high-risk); 2035 (PQC full)\nEnforcement Body: European Commission\nNotes: EU Digital Identity framework (Regulation 2024/1183, effective May 2024). Member states have 24 months to deploy at least one national wallet — targeting May 2026. EUDI Wallet ARF specifies PQC migration roadmap: Dec 2026 national PQC roadmaps, Dec 2030 high-risk migration, Dec 2035 full PQC transition. ENISA wallet security analysis identifies wallet providers as high-impact targets for early PQC adoption.\nRelated Timeline: [European Union Timeline](/timeline?country=European%20Union)",
       "category": "framework",
-      "metadata": { "id": "EIDAS", "deadline": "2026 (wallet deployments)", "requiresPQC": "yes" },
+      "metadata": {
+        "id": "EIDAS",
+        "deadline": "2026 (wallet deployments); 2030 (PQC high-risk); 2035 (PQC full)",
+        "requiresPQC": "yes"
+      },
       "deepLink": "/compliance?q=eIDAS%202.0",
       "priority": 1
     },
@@ -13105,7 +13441,7 @@
       "id": "compliance-EU-REC-2024-1101",
       "source": "compliance",
       "title": "EU Recommendation 2024/1101",
-      "content": "Framework: EU Recommendation 2024/1101\nDescription: European Commission coordinated PQC implementation roadmap\nIndustries: Government & Defense;Technology;Finance & Banking\nCountries: European Union\nRequires PQC: yes\nDeadline: 2030 (critical systems)\nEnforcement Body: European Commission\nNotes: Coordinated implementation roadmap for PQC transition across EU member states.\nRelated Timeline: [European Union Timeline](/timeline?country=European%20Union)",
+      "content": "Framework: EU Recommendation 2024/1101\nDescription: European Commission coordinated PQC implementation roadmap\nIndustries: Government & Defense;Technology;Finance & Banking\nCountries: European Union\nRequires PQC: yes\nDeadline: 2030 (critical systems)\nEnforcement Body: European Commission\nNotes: Coordinated implementation roadmap for PQC transition across EU member states. NIS Cooperation Group Roadmap v1.1 (June 2025) provides harmonized timelines and cross-border coordination.\nRelated Timeline: [European Union Timeline](/timeline?country=European%20Union)",
       "category": "framework",
       "metadata": {
         "id": "EU-REC-2024-1101",
@@ -13371,6 +13707,378 @@
       "category": "framework",
       "metadata": { "id": "EU-CRA", "deadline": "2027 (enforcement begins)", "requiresPQC": "yes" },
       "deepLink": "/compliance?q=EU%20Cyber%20Resilience%20Act",
+      "priority": 1
+    },
+    {
+      "id": "compliance-INDIA-DST-PQC",
+      "source": "compliance",
+      "title": "India DST/NQM PQC Roadmap",
+      "content": "Framework: India DST/NQM PQC Roadmap\nDescription: India National Quantum Mission post-quantum cryptography migration roadmap for all sectors\nIndustries: Government & Defense;Finance & Banking;Telecommunications;Energy & Utilities;Technology\nCountries: India\nRequires PQC: yes\nDeadline: 2027 (CII foundations); 2033 (full nationwide)\nEnforcement Body: DST/NQM\nNotes: India DST/NQM published comprehensive national PQC roadmap (Feb 2026) with mandatory CBOM submissions starting FY 2027-28. Critical Information Infrastructure migration by 2029. Full nationwide PQC adoption by 2033. Hybrid PQC plus QKD recommended for high-assurance applications.\nRelated Timeline: [India Timeline](/timeline?country=India)",
+      "category": "framework",
+      "metadata": {
+        "id": "INDIA-DST-PQC",
+        "deadline": "2027 (CII foundations); 2033 (full nationwide)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=India%20DST%2FNQM%20PQC%20Roadmap",
+      "priority": 1
+    },
+    {
+      "id": "compliance-HKMA-PQC",
+      "source": "compliance",
+      "title": "HKMA Fintech 2030 Quantum Preparedness",
+      "content": "Framework: HKMA Fintech 2030 Quantum Preparedness\nDescription: Hong Kong Monetary Authority quantum preparedness framework for financial institutions\nIndustries: Finance & Banking\nCountries: Hong Kong\nRequires PQC: yes\nDeadline: 2027 (readiness assessment); 2030 (full migration)\nEnforcement Body: HKMA\nNotes: HKMA Fintech 2030 Quantum Preparedness Index requires all regulated banks to complete formal quantum preparedness assessment by 2027 covering cryptographic inventory, CBOM, and migration roadmap. Full PQC migration target by 2030 aligned with BIS and MAS timelines. Critical Infrastructure Cybersecurity Ordinance effective Jan 2026 covers 8 sectors.\nRelated Timeline: [Hong Kong Timeline](/timeline?country=Hong%20Kong)",
+      "category": "framework",
+      "metadata": {
+        "id": "HKMA-PQC",
+        "deadline": "2027 (readiness assessment); 2030 (full migration)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=HKMA%20Fintech%202030%20Quantum%20Preparedness",
+      "priority": 1
+    },
+    {
+      "id": "compliance-UAE-CSC-PQC",
+      "source": "compliance",
+      "title": "UAE National Encryption Policy",
+      "content": "Framework: UAE National Encryption Policy\nDescription: UAE Cybersecurity Council national encryption policy mandating PQC transition\nIndustries: Government & Defense;Finance & Banking;Technology\nCountries: United Arab Emirates\nRequires PQC: yes\nDeadline: 2026 (migration roadmaps); 2030 (full migration)\nEnforcement Body: UAE CSC/DESC\nNotes: UAE Cybersecurity Council approved National Encryption Policy (Nov 2025) mandating all government entities develop PQC transition plans. Migration roadmaps due 2026. QuantumGate program drives large-scale PQC implementation 2026-2030. DESC launched PQC Guideline at GISEC Global 2025.\nRelated Timeline: [Global Timeline](/timeline?country=Global), [United Arab Emirates Timeline](/timeline?country=United%20Arab%20Emirates)",
+      "category": "framework",
+      "metadata": {
+        "id": "UAE-CSC-PQC",
+        "deadline": "2026 (migration roadmaps); 2030 (full migration)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=UAE%20National%20Encryption%20Policy",
+      "priority": 1
+    },
+    {
+      "id": "compliance-CISA-PQC-PROCUREMENT",
+      "source": "compliance",
+      "title": "CISA PQC Federal Buying Guidance",
+      "content": "Framework: CISA PQC Federal Buying Guidance\nDescription: CISA product category list and federal procurement guidance for PQC per EO 14306\nIndustries: Government & Defense;Technology\nCountries: United States\nRequires PQC: yes\nDeadline: 2026 (effective Jan 2026)\nEnforcement Body: CISA/NSA\nNotes: CISA published PQC product category list per Executive Order 14306 identifying cloud services, web software, networking hardware, and endpoint security as PQC-ready categories. Federal agencies directed to acquire only PQC-capable products. Developed with NSA and ATARC.\nRelated Timeline: [United States Timeline](/timeline?country=United%20States)",
+      "category": "framework",
+      "metadata": {
+        "id": "CISA-PQC-PROCUREMENT",
+        "deadline": "2026 (effective Jan 2026)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=CISA%20PQC%20Federal%20Buying%20Guidance",
+      "priority": 1
+    },
+    {
+      "id": "compliance-G7-CEG-PQC",
+      "source": "compliance",
+      "title": "G7 Financial Sector PQC Roadmap",
+      "content": "Framework: G7 Financial Sector PQC Roadmap\nDescription: G7 Cyber Expert Group coordinated PQC transition roadmap for the financial sector\nIndustries: Finance & Banking;Government & Defense\nCountries: Global\nRequires PQC: yes\nDeadline: 2030-2032 (critical systems); 2035 (non-critical)\nEnforcement Body: G7 CEG/US Treasury\nNotes: G7 Cyber Expert Group (chaired by US Treasury and Bank of England) published coordinated PQC transition framework for global financial sector (Jan 2026). Covers inventory, risk prioritization, algorithm selection, testing, and interoperability for G7 financial institutions.\nRelated Timeline: [Global Timeline](/timeline?country=Global), [G7 Timeline](/timeline?country=G7)",
+      "category": "framework",
+      "metadata": {
+        "id": "G7-CEG-PQC",
+        "deadline": "2030-2032 (critical systems); 2035 (non-critical)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=G7%20Financial%20Sector%20PQC%20Roadmap",
+      "priority": 1
+    },
+    {
+      "id": "compliance-PKCS11-V32",
+      "source": "compliance",
+      "title": "PKCS#11 v3.2 (PQC HSM Interface)",
+      "content": "Framework: PKCS#11 v3.2 (PQC HSM Interface)\nDescription: OASIS PKCS#11 v3.2 standard adding ML-KEM, ML-DSA, and SLH-DSA mechanisms for hardware security modules\nIndustries: Government & Defense;Finance & Banking;Technology\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing (Committee Specification Draft April 2025)\nEnforcement Body: OASIS PKCS11 TC\nNotes: PKCS#11 v3.2 adds PQC mechanisms: ML-KEM (CKM_ML_KEM), ML-DSA (CKM_ML_DSA), SLH-DSA (CKM_SLH_DSA). Introduces C_EncapsulateKey()/C_DecapsulateKey() for KEM operations. New key types and parameter set attributes. Critical for all HSM vendors implementing PQC.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": {
+        "id": "PKCS11-V32",
+        "deadline": "Ongoing (Committee Specification Draft April 2025)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=PKCS%2311%20v3.2%20(PQC%20HSM%20Interface)",
+      "priority": 1
+    },
+    {
+      "id": "compliance-CAB-FORUM-SMC013",
+      "source": "compliance",
+      "title": "CA/Browser Forum Ballot SMC013",
+      "content": "Framework: CA/Browser Forum Ballot SMC013\nDescription: CA/Browser Forum ballot enabling ML-DSA PQC signatures in S/MIME certificates\nIndustries: Technology;Finance & Banking\nCountries: Global\nRequires PQC: yes\nDeadline: Adopted (August 2025)\nEnforcement Body: CA/Browser Forum\nNotes: Enables ML-DSA post-quantum digital signatures in S/MIME certificates. IPR exclusion period completed with no notices. First Web PKI governance body PQC adoption, signaling CAs can issue PQC S/MIME certificates.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": {
+        "id": "CAB-FORUM-SMC013",
+        "deadline": "Adopted (August 2025)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=CA%2FBrowser%20Forum%20Ballot%20SMC013",
+      "priority": 1
+    },
+    {
+      "id": "compliance-ACVP",
+      "source": "compliance",
+      "title": "NIST ACVP (Algorithm Validation)",
+      "content": "Framework: NIST ACVP (Algorithm Validation)\nDescription: NIST Automated Cryptographic Validation Protocol for PQC algorithm testing\nIndustries: Technology;Government & Defense\nCountries: United States;Global\nRequires PQC: yes\nDeadline: Ongoing (ML-KEM/ML-DSA validation active)\nEnforcement Body: NIST\nNotes: NIST CAVP/ACVP validates individual cryptographic algorithm implementations. Already validating ML-KEM and ML-DSA implementations. Distinct from CMVP/FIPS 140-3 which validates complete modules. Provides algorithm-level compliance evidence.\nRelated Timeline: [Global Timeline](/timeline?country=Global), [United States Timeline](/timeline?country=United%20States)",
+      "category": "framework",
+      "metadata": {
+        "id": "ACVP",
+        "deadline": "Ongoing (ML-KEM/ML-DSA validation active)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=NIST%20ACVP%20(Algorithm%20Validation)",
+      "priority": 1
+    },
+    {
+      "id": "compliance-TAIWAN-MODA-PQC",
+      "source": "compliance",
+      "title": "Taiwan Five-Year PQC Plan",
+      "content": "Framework: Taiwan Five-Year PQC Plan\nDescription: Taiwan Ministry of Digital Affairs five-year PQC implementation plan\nIndustries: Government & Defense;Technology\nCountries: Taiwan\nRequires PQC: yes\nDeadline: 2027 (interim milestone); 2029 (completion)\nEnforcement Body: MODA\nNotes: Taiwan MODA launched five-year PQC implementation plan (2024-2029) targeting quantum-safe government digital infrastructure. Interim quantum-safe milestone at 2027.\nRelated Timeline: [Taiwan Timeline](/timeline?country=Taiwan)",
+      "category": "framework",
+      "metadata": {
+        "id": "TAIWAN-MODA-PQC",
+        "deadline": "2027 (interim milestone); 2029 (completion)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=Taiwan%20Five-Year%20PQC%20Plan",
+      "priority": 1
+    },
+    {
+      "id": "compliance-MALAYSIA-NACSA-PQC",
+      "source": "compliance",
+      "title": "Malaysia National PQC Migration",
+      "content": "Framework: Malaysia National PQC Migration\nDescription: Malaysia NACSA national PQC migration roadmap — first ASEAN nation with comprehensive plan\nIndustries: Government & Defense;Technology\nCountries: Malaysia\nRequires PQC: yes\nDeadline: 2025-2030 (phased)\nEnforcement Body: NACSA\nNotes: First ASEAN nation to publish comprehensive national PQC migration roadmap (Oct 2025). Includes PQC Sandbox program for proof-of-concept testing. Phased approach aligned with NIST standards.\nRelated Timeline: [Malaysia Timeline](/timeline?country=Malaysia)",
+      "category": "framework",
+      "metadata": {
+        "id": "MALAYSIA-NACSA-PQC",
+        "deadline": "2025-2030 (phased)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=Malaysia%20National%20PQC%20Migration",
+      "priority": 1
+    },
+    {
+      "id": "compliance-SAUDI-NCA-PQC",
+      "source": "compliance",
+      "title": "Saudi NCA Cybersecurity Controls",
+      "content": "Framework: Saudi NCA Cybersecurity Controls\nDescription: Saudi Arabia National Cybersecurity Authority essential cybersecurity controls with expanded cryptography domain\nIndustries: Government & Defense;Finance & Banking;Energy & Utilities\nCountries: Saudi Arabia\nRequires PQC: no\nDeadline: Ongoing (ECC-2:2024)\nEnforcement Body: NCA\nNotes: NCA released Essential Cybersecurity Controls 2024 (ECC-2:2024) with expanded cryptography domain covering encryption strength, key management, secure protocols, and lifecycle governance. National quantum strategy with M budget aligned with Vision 2030.\nRelated Timeline: [Saudi Arabia Timeline](/timeline?country=Saudi%20Arabia)",
+      "category": "framework",
+      "metadata": {
+        "id": "SAUDI-NCA-PQC",
+        "deadline": "Ongoing (ECC-2:2024)",
+        "requiresPQC": "no"
+      },
+      "deepLink": "/compliance?q=Saudi%20NCA%20Cybersecurity%20Controls",
+      "priority": 1
+    },
+    {
+      "id": "compliance-BIS-158-PQC",
+      "source": "compliance",
+      "title": "BIS Paper 158 Quantum Roadmap",
+      "content": "Framework: BIS Paper 158 Quantum Roadmap\nDescription: Bank for International Settlements quantum-readiness roadmap for global financial systems\nIndustries: Finance & Banking\nCountries: Global\nRequires PQC: yes\nDeadline: Early 2030s (critical systems quantum-safe)\nEnforcement Body: BIS\nNotes: BIS Paper 158 outlines quantum-readiness roadmap for global financial systems covering cryptographic inventory, migration timelines, and cross-border interoperability for central banks. Referenced by MAS, HKMA, and G7 CEG.\nRelated Timeline: [Global Timeline](/timeline?country=Global), [International Timeline](/timeline?country=International), [G7 Timeline](/timeline?country=G7)",
+      "category": "framework",
+      "metadata": {
+        "id": "BIS-158-PQC",
+        "deadline": "Early 2030s (critical systems quantum-safe)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=BIS%20Paper%20158%20Quantum%20Roadmap",
+      "priority": 1
+    },
+    {
+      "id": "compliance-3GPP-PQC",
+      "source": "compliance",
+      "title": "3GPP PQC for 5G/6G",
+      "content": "Framework: 3GPP PQC for 5G/6G\nDescription: 3GPP SA3 study on integrating PQC into 5G security protocols\nIndustries: Telecommunications\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing (study item approved May 2025)\nEnforcement Body: 3GPP SA3\nNotes: 3GPP SA3 study (TR 33.841) on integrating standalone or hybrid PQC algorithms into existing 5G security protocols including TLS, IPSec, and IKEv2. Complements GSMA NG.116 and ETSI QSC work.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": {
+        "id": "3GPP-PQC",
+        "deadline": "Ongoing (study item approved May 2025)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=3GPP%20PQC%20for%205G%2F6G",
+      "priority": 1
+    },
+    {
+      "id": "compliance-TCG-TPM-PQC",
+      "source": "compliance",
+      "title": "TCG TPM 2.0 PQC Spec",
+      "content": "Framework: TCG TPM 2.0 PQC Spec\nDescription: Trusted Computing Group TPM 2.0 library specification update incorporating PQC algorithms\nIndustries: Technology;Government & Defense\nCountries: Global\nRequires PQC: yes\nDeadline: Draft (July 2025)\nEnforcement Body: TCG\nNotes: TPM 2.0 Library specification updates incorporating FIPS 203/204 PQC algorithms with hybrid classical+PQ support. Aligns with TPM 2.0 v1.85 standard. Affects every PC, server, and embedded device using hardware root of trust.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": { "id": "TCG-TPM-PQC", "deadline": "Draft (July 2025)", "requiresPQC": "yes" },
+      "deepLink": "/compliance?q=TCG%20TPM%202.0%20PQC%20Spec",
+      "priority": 1
+    },
+    {
+      "id": "compliance-NIST-NCCOE-PQC",
+      "source": "compliance",
+      "title": "NIST NCCoE SP 1800-38 Migration Guide",
+      "content": "Framework: NIST NCCoE SP 1800-38 Migration Guide\nDescription: NIST NCCoE practical enterprise PQC migration guide with reference architectures\nIndustries: Government & Defense;Technology;Finance & Banking\nCountries: United States\nRequires PQC: yes\nDeadline: Ongoing (Preliminary Draft)\nEnforcement Body: NIST NCCoE\nNotes: NIST NCCoE SP 1800-38 series (Volumes A/B/C) provides practical enterprise PQC migration guidance with use cases and reference architectures. CSWP 48 maps migration capabilities to CSF 2.0 and SP 800-53 controls.\nRelated Timeline: [United States Timeline](/timeline?country=United%20States)",
+      "category": "framework",
+      "metadata": {
+        "id": "NIST-NCCOE-PQC",
+        "deadline": "Ongoing (Preliminary Draft)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=NIST%20NCCoE%20SP%201800-38%20Migration%20Guide",
+      "priority": 1
+    },
+    {
+      "id": "compliance-NIST-SP800-131A",
+      "source": "compliance",
+      "title": "NIST SP 800-131A Rev 3",
+      "content": "Framework: NIST SP 800-131A Rev 3\nDescription: NIST algorithm deprecation roadmap — SHA-1 and weak RSA/ECC disallowed after 2030\nIndustries: Government & Defense;Technology;Finance & Banking\nCountries: United States;Global\nRequires PQC: yes\nDeadline: 2030 (SHA-1/weak RSA/ECC disallowed)\nEnforcement Body: NIST\nNotes: Federal algorithm retirement calendar. SHA-1 and RSA/ECC below 128-bit security disallowed after 2030. Establishes FIPS 203/204/205 as post-2030 replacements. Distinct from IR 8547 in covering all algorithm deprecation not just PQC transition.\nRelated Timeline: [Global Timeline](/timeline?country=Global), [United States Timeline](/timeline?country=United%20States)",
+      "category": "framework",
+      "metadata": {
+        "id": "NIST-SP800-131A",
+        "deadline": "2030 (SHA-1/weak RSA/ECC disallowed)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=NIST%20SP%20800-131A%20Rev%203",
+      "priority": 1
+    },
+    {
+      "id": "compliance-INDIA-CERTIN-CBOM",
+      "source": "compliance",
+      "title": "India CERT-In CBOM/QBOM Guidelines",
+      "content": "Framework: India CERT-In CBOM/QBOM Guidelines\nDescription: India CERT-In expanded Bill of Materials requirements including Cryptographic BOM and Quantum Readiness BOM\nIndustries: Government & Defense;Technology\nCountries: India\nRequires PQC: yes\nDeadline: 2025 (effective)\nEnforcement Body: CERT-In\nNotes: CERT-In expands Bill of Materials requirements to include Cryptographic BOM (CBOM) and Quantum Readiness BOM (QBOM). First national CBOM mandate from any country. Part of India broader PQC migration framework under National Quantum Mission.\nRelated Timeline: [India Timeline](/timeline?country=India)",
+      "category": "framework",
+      "metadata": {
+        "id": "INDIA-CERTIN-CBOM",
+        "deadline": "2025 (effective)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=India%20CERT-In%20CBOM%2FQBOM%20Guidelines",
+      "priority": 1
+    },
+    {
+      "id": "compliance-ITALY-ACN-PQC",
+      "source": "compliance",
+      "title": "Italy ACN PQC Guidance",
+      "content": "Framework: Italy ACN PQC Guidance\nDescription: Italy Agenzia per la Cybersicurezza Nazionale post-quantum cryptography guidance\nIndustries: Government & Defense;Technology\nCountries: Italy\nRequires PQC: yes\nDeadline: Ongoing (2024 guidance)\nEnforcement Body: ACN\nNotes: ACN published PQC guidance (July 2024) covering quantum threat landscape and migration recommendations. Italy also participates in BIS Project Leap Phase 2 testing hybrid PQC on TARGET2 payment system.\nRelated Timeline: [Italy Timeline](/timeline?country=Italy)",
+      "category": "framework",
+      "metadata": {
+        "id": "ITALY-ACN-PQC",
+        "deadline": "Ongoing (2024 guidance)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=Italy%20ACN%20PQC%20Guidance",
+      "priority": 1
+    },
+    {
+      "id": "compliance-SPAIN-CCN-PQC",
+      "source": "compliance",
+      "title": "Spain CCN Four-Phase PQC",
+      "content": "Framework: Spain CCN Four-Phase PQC\nDescription: Spain Centro Criptologico Nacional four-phase PQC transition approach\nIndustries: Government & Defense\nCountries: Spain\nRequires PQC: yes\nDeadline: 2030 (four-phase approach through post-2030)\nEnforcement Body: CCN\nNotes: CCN defines four-phase PQC approach from current state through post-2030 full transition. Recommends NIST algorithms and FrodoKEM. Active since 2022.\nRelated Timeline: [Spain Timeline](/timeline?country=Spain)",
+      "category": "framework",
+      "metadata": {
+        "id": "SPAIN-CCN-PQC",
+        "deadline": "2030 (four-phase approach through post-2030)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=Spain%20CCN%20Four-Phase%20PQC",
+      "priority": 1
+    },
+    {
+      "id": "compliance-BAHRAIN-NCSC-PQC",
+      "source": "compliance",
+      "title": "Bahrain Quantum-Safe Deployment",
+      "content": "Framework: Bahrain Quantum-Safe Deployment\nDescription: Bahrain National Cyber Security Centre quantum-safe cybersecurity deployment across government\nIndustries: Government & Defense\nCountries: Bahrain\nRequires PQC: yes\nDeadline: 2025 (deployment underway)\nEnforcement Body: Bahrain NCSC\nNotes: One of the world first large-scale national quantum-safe commitments. Deployed AQtive Guard across 60+ government ministries for automated cryptographic discovery and PQC transition readiness.\nRelated Timeline: [Bahrain Timeline](/timeline?country=Bahrain)",
+      "category": "framework",
+      "metadata": {
+        "id": "BAHRAIN-NCSC-PQC",
+        "deadline": "2025 (deployment underway)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=Bahrain%20Quantum-Safe%20Deployment",
+      "priority": 1
+    },
+    {
+      "id": "compliance-JORDAN-CBJ-PQC",
+      "source": "compliance",
+      "title": "Jordan Financial Sector PQC Roadmap",
+      "content": "Framework: Jordan Financial Sector PQC Roadmap\nDescription: Central Bank of Jordan sector-wide roadmap for transitioning banks to quantum-resistant encryption\nIndustries: Finance & Banking\nCountries: Jordan\nRequires PQC: yes\nDeadline: 2026 (roadmap published)\nEnforcement Body: CBJ\nNotes: Central Bank of Jordan published sector-wide PQC roadmap (Jan 2026) with phased approach: cryptographic asset cataloging, risk-based prioritization, governance integration, sandbox testing, and full transition.\nRelated Timeline: [Jordan Timeline](/timeline?country=Jordan)",
+      "category": "framework",
+      "metadata": {
+        "id": "JORDAN-CBJ-PQC",
+        "deadline": "2026 (roadmap published)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=Jordan%20Financial%20Sector%20PQC%20Roadmap",
+      "priority": 1
+    },
+    {
+      "id": "compliance-UK-CMORG-PQC",
+      "source": "compliance",
+      "title": "UK CMORG Financial PQC Guidance",
+      "content": "Framework: UK CMORG Financial PQC Guidance\nDescription: UK Cross Market Operational Resilience Group PQC guidance for financial sector\nIndustries: Finance & Banking;Government & Defense\nCountries: United Kingdom\nRequires PQC: yes\nDeadline: Ongoing (v1.0 April 2025)\nEnforcement Body: CMORG/Bank of England\nNotes: CMORG (convened by Bank of England) published PQC guidance specifically for UK financial sector covering threat landscape, algorithm selection, migration planning, and prioritization. Complements UK NCSC guidance with financial sector focus.\nRelated Timeline: [United Kingdom Timeline](/timeline?country=United%20Kingdom)",
+      "category": "framework",
+      "metadata": {
+        "id": "UK-CMORG-PQC",
+        "deadline": "Ongoing (v1.0 April 2025)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=UK%20CMORG%20Financial%20PQC%20Guidance",
+      "priority": 1
+    },
+    {
+      "id": "compliance-EUROPOL-QSFF",
+      "source": "compliance",
+      "title": "Europol Quantum Safe Financial Forum",
+      "content": "Framework: Europol Quantum Safe Financial Forum\nDescription: Europol QSFF call to action for financial sector PQC migration\nIndustries: Finance & Banking\nCountries: European Union\nRequires PQC: yes\nDeadline: Ongoing (Feb 2025 call to action)\nEnforcement Body: Europol/FS-ISAC\nNotes: Europol Quantum Safe Financial Forum found 86% of financial executives unprepared for PQC. Published joint guidance with FS-ISAC (Jan 2026) introducing Quantum Risk Score framework for migration prioritization.\nRelated Timeline: [European Union Timeline](/timeline?country=European%20Union)",
+      "category": "framework",
+      "metadata": {
+        "id": "EUROPOL-QSFF",
+        "deadline": "Ongoing (Feb 2025 call to action)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=Europol%20Quantum%20Safe%20Financial%20Forum",
+      "priority": 1
+    },
+    {
+      "id": "compliance-PQCC-ROADMAP",
+      "source": "compliance",
+      "title": "PQCC Migration Roadmap",
+      "content": "Framework: PQCC Migration Roadmap\nDescription: Post-Quantum Cryptography Coalition cross-sector PQC migration framework\nIndustries: Technology;Finance & Banking;Government & Defense\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing\nEnforcement Body: PQCC\nNotes: PQCC (founded by IBM, Microsoft, MITRE, PQShield, SandboxAQ) published PQC Migration Roadmap (May 2025) with four-category framework and PQC Inventory Workbook (June 2025). Becoming a de facto industry reference for enterprise PQC migration.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": { "id": "PQCC-ROADMAP", "deadline": "Ongoing", "requiresPQC": "yes" },
+      "deepLink": "/compliance?q=PQCC%20Migration%20Roadmap",
+      "priority": 1
+    },
+    {
+      "id": "compliance-IEEE-1609-PQC",
+      "source": "compliance",
+      "title": "IEEE 1609.2 PQC Amendment (V2X)",
+      "content": "Framework: IEEE 1609.2 PQC Amendment (V2X)\nDescription: IEEE vehicular communications security standard update for PQC\nIndustries: Automotive;Telecommunications\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing (2025 amendment)\nEnforcement Body: IEEE\nNotes: IEEE 1609.2 amendment adds ML-KEM and ML-DSA PQC support for vehicle-to-everything (V2X) communications security. Directly affects automotive OEMs and connected vehicle infrastructure.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": {
+        "id": "IEEE-1609-PQC",
+        "deadline": "Ongoing (2025 amendment)",
+        "requiresPQC": "yes"
+      },
+      "deepLink": "/compliance?q=IEEE%201609.2%20PQC%20Amendment%20(V2X)",
+      "priority": 1
+    },
+    {
+      "id": "compliance-OASIS-PKCS11",
+      "source": "compliance",
+      "title": "OASIS PKCS#11 Technical Committee",
+      "content": "Framework: OASIS PKCS#11 Technical Committee\nDescription: OASIS technical committee defining the PKCS#11 HSM programming interface standard\nIndustries: Technology;Government & Defense;Finance & Banking\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing\nEnforcement Body: OASIS\nNotes: OASIS defines the PKCS#11 standard — the programming interface that every hardware security module implements. PQC mechanisms in v3.2 (ML-KEM, ML-DSA, SLH-DSA) will drive the entire HSM industry PQC adoption.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": { "id": "OASIS-PKCS11", "deadline": "Ongoing", "requiresPQC": "yes" },
+      "deepLink": "/compliance?q=OASIS%20PKCS%2311%20Technical%20Committee",
+      "priority": 1
+    },
+    {
+      "id": "compliance-3GPP-SA3",
+      "source": "compliance",
+      "title": "3GPP Security Working Group",
+      "content": "Framework: 3GPP Security Working Group\nDescription: 3GPP SA3 — global mobile network security standards working group studying PQC integration\nIndustries: Telecommunications\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing\nEnforcement Body: 3GPP\nNotes: 3GPP SA3 defines global mobile network security standards for 5G and 6G. Actively studying PQC integration into core network protocols. Distinct from ETSI and GSMA. TR 33.841 (PQC Study) approved May 2025.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": { "id": "3GPP-SA3", "deadline": "Ongoing", "requiresPQC": "yes" },
+      "deepLink": "/compliance?q=3GPP%20Security%20Working%20Group",
+      "priority": 1
+    },
+    {
+      "id": "compliance-FSISAC-PQC",
+      "source": "compliance",
+      "title": "FS-ISAC PQC Migration Guidance",
+      "content": "Framework: FS-ISAC PQC Migration Guidance\nDescription: Financial Services Information Sharing and Analysis Center PQC migration advisory\nIndustries: Finance & Banking\nCountries: Global\nRequires PQC: yes\nDeadline: Ongoing (Sept 2025)\nEnforcement Body: FS-ISAC\nNotes: FS-ISAC (Sept 2025) warns financial sector has not defined resources for PQC migration. Joint Europol-FS-ISAC report (Jan 2026) provides Quantum Risk Score framework and migration complexity assessment for financial institutions.\nRelated Timeline: [Global Timeline](/timeline?country=Global)",
+      "category": "framework",
+      "metadata": { "id": "FSISAC-PQC", "deadline": "Ongoing (Sept 2025)", "requiresPQC": "yes" },
+      "deepLink": "/compliance?q=FS-ISAC%20PQC%20Migration%20Guidance",
       "priority": 1
     },
     {
@@ -19511,9 +20219,9 @@
       "id": "module-digital-assets",
       "source": "modules",
       "title": "Digital Assets",
-      "content": "Learning Module: Digital Assets\nDescription: Learn cryptographic foundations of Bitcoin, Ethereum, and Solana using OpenSSL.\nDuration: 60 min\nURL: /learn/digital-assets",
+      "content": "Learning Module: Digital Assets\nDescription: Learn cryptographic foundations of Bitcoin, Ethereum, and Solana. Explore institutional custody architecture with PQC threat analysis.\nDuration: 75 min\nURL: /learn/digital-assets",
       "category": "learning",
-      "metadata": { "moduleId": "digital-assets", "duration": "60 min" },
+      "metadata": { "moduleId": "digital-assets", "duration": "75 min" },
       "deepLink": "/learn/digital-assets",
       "priority": 1.1
     },
@@ -19585,6 +20293,16 @@
       "category": "learning",
       "metadata": { "moduleId": "api-security-jwt", "duration": "90 min" },
       "deepLink": "/learn/api-security-jwt",
+      "priority": 1.1
+    },
+    {
+      "id": "module-web-gateway-pqc",
+      "source": "modules",
+      "title": "Web Gateway PQC",
+      "content": "Learning Module: Web Gateway PQC\nDescription: PQC deployment at the infrastructure edge: TLS termination patterns, certificate lifecycle at scale, CDN/WAF/load balancer vendor migration paths.\nDuration: 90 min\nURL: /learn/web-gateway-pqc",
+      "category": "learning",
+      "metadata": { "moduleId": "web-gateway-pqc", "duration": "90 min" },
+      "deepLink": "/learn/web-gateway-pqc",
       "priority": 1.1
     },
     {
@@ -19678,6 +20396,16 @@
       "priority": 1.1
     },
     {
+      "id": "module-confidential-computing",
+      "source": "modules",
+      "title": "Confidential Computing & TEEs",
+      "content": "Learning Module: Confidential Computing & TEEs\nDescription: Explore TEE architectures (SGX, TDX, CCA, SEV-SNP, Nitro), remote attestation, memory encryption, TEE-HSM integration, and quantum threat analysis.\nDuration: 90 min\nURL: /learn/confidential-computing",
+      "category": "learning",
+      "metadata": { "moduleId": "confidential-computing", "duration": "90 min" },
+      "deepLink": "/learn/confidential-computing",
+      "priority": 1.1
+    },
+    {
       "id": "module-summary-api-security-jwt",
       "source": "module-summaries",
       "title": "API Security & JWT with PQC Module",
@@ -19708,6 +20436,15 @@
         "moduleName": "Compliance & Regulatory Strategy"
       },
       "deepLink": "/learn/compliance-strategy",
+      "priority": 1.1
+    },
+    {
+      "id": "module-summary-confidentialcomputing",
+      "source": "module-summaries",
+      "title": "Confidential Computing & TEEs",
+      "content": "---\nmodule_id: confidential-computing\ntitle: Confidential Computing & TEEs\ntrack: Infrastructure\ndifficulty: advanced\nduration: 90 min\nworkshop_steps: 5\n---\n\n# Confidential Computing & TEEs\n\n## Topics Covered\n\n- TEE fundamentals and threat model (hardware isolation, TCB, data-in-use protection)\n- Vendor architectures (Intel SGX/TDX, ARM TrustZone/CCA, AMD SEV/SEV-SNP, RISC-V Keystone, AWS Nitro Enclaves)\n- Remote attestation flows (DCAP, CCA Realm, SEV-SNP VCEK, Nitro PCR)\n- Memory encryption engines (TME-MK, SME/SEV, TrustZone crypto) and sealing key derivation\n- TEE-HSM trusted channel design (mutual attestation, TLS channel binding, PKCS#11 over attested channel)\n- Quantum threat analysis (ECDSA attestation chain vulnerability, Grover impact on AES, migration priorities)\n\n## Workshop\n\n1. TEE Architecture Explorer — Compare 7 TEE platforms by isolation, encryption, attestation, and PQC readiness\n2. Attestation Workshop — Interactive remote attestation flow simulator with quantum vulnerability highlighting\n3. Encryption Mechanisms — Memory encryption engine comparison, sealing key derivation, Grover impact calculator\n4. TEE-HSM Trusted Channel — Design mutual attestation and PQC key provisioning between TEE and HSM\n5. Quantum Threat Migration — Threat severity matrix, vendor PQC timeline, migration priority planner\n\n## Key Standards\n\n- FIPS 203/204 (ML-KEM, ML-DSA for attestation key migration)\n- Intel SGX/TDX SDK, DCAP attestation\n- ARM CCA (Confidential Compute Architecture)\n- AMD SEV-SNP (Secure Encrypted Virtualization - Secure Nested Paging)\n- AWS Nitro Enclaves attestation framework\n- PKCS#11 v3.2 (TEE-HSM integration)",
+      "category": "learning-module",
+      "metadata": { "moduleId": "", "moduleName": "ConfidentialComputing" },
       "priority": 1.1
     },
     {
@@ -19960,6 +20697,16 @@
       "category": "learning-module",
       "metadata": { "moduleId": "vendor-risk", "moduleName": "Vendor & Supply Chain Risk" },
       "deepLink": "/learn/vendor-risk",
+      "priority": 1.1
+    },
+    {
+      "id": "module-summary-web-gateway-pqc",
+      "source": "module-summaries",
+      "title": "Web Gateway PQC Module",
+      "content": "# Web Gateway PQC Module\n\n## Overview\nLearn how to deploy post-quantum cryptography at the web infrastructure edge: reverse proxies, load balancers, WAFs, and CDNs. This module covers TLS termination patterns, certificate lifecycle at scale, performance optimization for larger PQC handshakes, and vendor-specific migration paths.\n\n## Key Topics\n- Web gateway architecture: reverse proxies, load balancers, WAFs, CDN positioning as TLS termination points\n- Four TLS termination patterns: terminate-and-inspect, passthrough, re-encrypt-backend, split TLS\n- Certificate lifecycle at edge scale: ACME automation, CT log impact, rotation across hundreds of PoPs\n- PQC handshake performance: classical ~5KB vs hybrid ~15KB vs pure PQC ~25KB\n- Mitigations: session resumption (PSK), certificate compression (RFC 8879), Merkle Tree Certificates, HTTP/3 QUIC, connection coalescing\n- WAF/IDS inspection challenges when gateways cannot terminate PQC TLS\n- CDN edge deployment: origin shielding, key distribution across 300+ PoPs\n- Vendor readiness: F5 BIG-IP, NGINX, HAProxy, Envoy, Kong, Traefik, Cloudflare, AWS ALB, Imperva, Palo Alto, Broadcom Avi\n\n## Workshop Steps\n- Step 1: Topology Builder — construct a web gateway architecture and identify PQC upgrade points with 4 preset topologies\n- Step 2: TLS Termination Patterns — compare 4 patterns (terminate-inspect, passthrough, re-encrypt, split TLS) under classical vs PQC\n- Step 3: Handshake Budget Calculator — calculate PQC handshake sizes, bandwidth costs, and apply mitigations\n- Step 4: Certificate Rotation Planner — plan certificate migration across edge nodes with phased rollout timeline\n- Step 5: Vendor Readiness Matrix — assess gateway products against PQC readiness criteria with gap analysis\n\n## Referenced Standards\n- RFC 8446 (TLS 1.3)\n- FIPS 203 (ML-KEM)\n- FIPS 204 (ML-DSA)\n- RFC 8879 (Certificate Compression)\n- IETF MTC Draft (Merkle Tree Certificates)\n- NIST SP 800-227 (PQC Migration Guidelines)",
+      "category": "learning-module",
+      "metadata": { "moduleId": "web-gateway-pqc", "moduleName": "WebGatewayPQC" },
+      "deepLink": "/learn/web-gateway-pqc",
       "priority": 1.1
     },
     {
@@ -20481,6 +21228,214 @@
       "priority": 1.15
     },
     {
+      "id": "mc-confidentialcomputing-confidentialcomputingexercises-0",
+      "source": "module-content",
+      "title": "ConfidentialComputing — ConfidentialComputingExercises",
+      "content": "Module: ConfidentialComputing\nComponent: ConfidentialComputingExercises\n\nWork through these scenarios to explore TEE architectures, attestation flows, memory encryption, TEE-HSM integration, and quantum threat migration. Each exercise pre-configures the Workshop — click &quot;Load & Run&quot; to begin.\nTake the PQC quiz to test what you've learned about confidential computing and TEE security.\n1. TEE Architecture Selection — Choose the right TEE for ML model inference at a bank\nIn the TEE Architecture Explorer, compare Intel SGX (process-level isolation, 256 MB EPC) against AMD SEV-SNP (full VM encryption) for protecting ML model inference with customer data. Consider TCB size, memory limits, cloud availability, and PQC readiness.\nSGX has a smaller TCB (CPU + enclave only) but is limited to 256 MB EPC — too small for large ML models. SEV-SNP supports full VM memory with transparent encryption, but has a larger TCB (includes guest OS). For ML inference on large models, SEV-SNP is preferred. Both are available on Azure.\n2. Attestation Flow Analysis — Identify quantum-vulnerable steps in Intel DCAP\nOpen the Attestation Workshop and select the Intel DCAP flow. Step through all 5 stages. Identify which steps use ECDSA P-256 and are therefore quantum-vulnerable. Count the total number of vulnerable steps.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "ConfidentialComputingExercises",
+        "filePath": "ConfidentialComputing/components/ConfidentialComputingExercises.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-confidentialcomputingexercises-1",
+      "source": "module-content",
+      "title": "ConfidentialComputing — ConfidentialComputingExercises",
+      "content": "Module: ConfidentialComputing\nComponent: ConfidentialComputingExercises\n\nThree of five DCAP steps are quantum-vulnerable: Quote signing (step 2, ECDSA P-256), Quote verification (step 4, ECDSA P-256), and TCB Info verification (step 5, ECDSA P-256). A CRQC could forge attestation quotes, allowing enclave impersonation and bypassing all trust decisions.\n3. Memory Encryption Grover Impact — Calculate post-quantum security of AES-128\nIn the Encryption Mechanisms workshop, examine the Intel TME-MK and AMD SME/SEV engines. Both use AES-XTS-128. Use the Grover impact calculator to determine the effective post-quantum security level.\nAES-128 effective security drops to 64-bit under Grover — below the NIST Level 1 threshold (128-bit post-quantum). ARM TrustZone and AWS Nitro use AES-256, which remains at 128-bit post-quantum security. Upgrade path: AES-XTS-256 in next-gen Intel/AMD CPUs.\n4. TEE-HSM Integration Design — Build a PQC channel between SGX and Luna HSM\nIn the TEE-HSM Trusted Channel workshop, select Intel SGX as the TEE and Thales Luna 7 as the HSM. Toggle between classical and PQC modes to compare key exchange sizes. Walk through the 4-step key provisioning simulation.\nThe PQC channel replaces ECDSA P-256 with ML-DSA-65 for attestation and ECDH P-256 with ML-KEM-768 for key exchange. ML-KEM-768 ciphertext (1,088 bytes) is ~33x larger than ECDH P-256 (33 bytes). Migration requires both Intel DCAP PQC update and Luna firmware v7.9.2+.\n5. Quantum Migration Prioritization — Rank 5 threat vectors by severity and effort",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "ConfidentialComputingExercises",
+        "filePath": "ConfidentialComputing/components/ConfidentialComputingExercises.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-confidentialcomputingexercises-2",
+      "source": "module-content",
+      "title": "ConfidentialComputing — ConfidentialComputingExercises",
+      "content": "Module: ConfidentialComputing\nComponent: ConfidentialComputingExercises\n\nIn the Quantum Threat Migration workshop, examine the threat vector table and priority matrix. Identify which threats have HNDL exposure (recorded data at risk). Determine the correct migration order based on severity and effort.\nTwo vectors are critical with HNDL exposure: ECDSA attestation chain forgery and TLS channel key exchange compromise. These must be migrated first. Memory encryption (medium severity) is lower priority because Grover only halves key strength and real-time quantum attack on AES-128 is unlikely. Sealing key and firmware vectors require silicon refresh (highest effort).\n6. End-to-End PQC Readiness — Assess Nitro + CloudHSM for healthcare\nFor a healthcare organization using AWS Nitro Enclaves with CloudHSM to process patient records, assess PQC readiness across all 5 layers: TEE architecture, attestation, memory encryption, HSM integration, and quantum threats. Use the Quantum Threat Migration workshop to build the complete picture.\nNitro attestation uses ECDSA P-384 (quantum-vulnerable). CloudHSM has ML-DSA preview via SDK only — no native PKCS#11 PQC support. AES-256 memory encryption is Grover-resilient. Patient records have long retention (HIPAA: 6+ years) making HNDL exposure critical. Overall: 3 of 5 layers need PQC migration, with attestation and TLS channel as highest priority.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "ConfidentialComputingExercises",
+        "filePath": "ConfidentialComputing/components/ConfidentialComputingExercises.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-introduction-0",
+      "source": "module-content",
+      "title": "ConfidentialComputing — Introduction",
+      "content": "Module: ConfidentialComputing\nComponent: Introduction\n\nis a hardware-isolated region of a processor that guarantees confidentiality and integrity of code and data loaded inside it. Unlike traditional OS-level isolation, TEEs protect workloads even when the operating system, hypervisor, or firmware has been fully compromised.\n— a protected memory region where the processor enforces access control in hardware. Data inside the enclave is encrypted in DRAM, decrypted only within the CPU cache, and inaccessible to any software outside the enclave boundary.\nis the set of all hardware, firmware, and software components that must function correctly for the security guarantees to hold. A smaller TCB means fewer components can undermine security. Process-level TEEs (SGX) have the smallest TCB — just the CPU and enclave code. VM-level TEEs (TDX, SEV-SNP) include the guest OS, resulting in a larger but more practical TCB.\nEncrypted on disk via AES-XTS or similar. Protected by volume encryption (LUKS, BitLocker) or database-level TDE.\nEncrypted over the network via TLS 1.3, IPsec, or WireGuard. Protects against eavesdropping and tampering during transmission.\nEncrypted in memory while being processed. TEEs provide hardware-enforced isolation so data remains protected during computation.\nSeven major TEE architectures span the ecosystem, each with distinct isolation scopes, deployment models, and PQC readiness levels.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "Introduction",
+        "filePath": "ConfidentialComputing/components/Introduction.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-introduction-1",
+      "source": "module-content",
+      "title": "ConfidentialComputing — Introduction",
+      "content": "Module: ConfidentialComputing\nComponent: Introduction\n\nis the process by which a TEE proves its identity and integrity to a remote verifier. The enclave generates a cryptographically signed report of its code measurement, platform state, and configuration — enabling a relying party to verify that it is communicating with genuine, untampered hardware before releasing sensitive data.\n, a TEE is just an opaque box — the relying party has no assurance that the enclave is running the expected code on legitimate hardware. Attestation is the foundation of trust in confidential computing.\nEvery current attestation implementation — Intel DCAP, ARM CCA, AMD SEV-SNP, and AWS Nitro — uses\nfor signing attestation reports. Shor's algorithm can break these signatures in polynomial time on a cryptographically relevant quantum computer (CRQC). An attacker who can forge attestation quotes can impersonate a legitimate enclave, completely undermining the trust model of confidential computing.\nTEEs protect data in use through hardware memory encryption engines that encrypt DRAM contents transparently. Each vendor implements this differently, with varying key widths, granularities, and integrity protection mechanisms.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "Introduction",
+        "filePath": "ConfidentialComputing/components/Introduction.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-introduction-2",
+      "source": "module-content",
+      "title": "ConfidentialComputing — Introduction",
+      "content": "Module: ConfidentialComputing\nComponent: Introduction\n\nis a symmetric key derived from the platform's hardware root of trust, bound to the enclave's identity (code measurement and/or signer identity). Enclaves use sealing keys to encrypt data that persists across restarts — only an enclave with the same identity on the same physical platform can unseal the data. The key derivation chain typically flows:\nCPU Root Key &rarr; CPU SVN &rarr; Enclave Identity &rarr; Sealing Key\n. If any component in the chain changes (firmware update, different enclave version), the derived sealing key changes and previously sealed data becomes inaccessible without a migration protocol.\nfor memory encryption. Grover's algorithm reduces the effective key strength from 128-bit to\n— well below the NIST Level 1 threshold of 128-bit post-quantum security. While real-time brute-forcing of memory encryption keys remains impractical even with a CRQC, this weakened margin erodes the security guarantee. Next-generation CPUs are expected to upgrade to AES-XTS-256 (128-bit post-quantum security).\nIn production deployments, TEEs rarely operate in isolation — they need access to long-lived cryptographic keys stored in Hardware Security Modules (HSMs). The communication channel between a TEE and an HSM must itself be trustworthy, creating a\nrequirement: the TEE must verify it is talking to a genuine HSM, and the HSM must verify the TEE is running expected code on legitimate hardware.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "Introduction",
+        "filePath": "ConfidentialComputing/components/Introduction.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-introduction-3",
+      "source": "module-content",
+      "title": "ConfidentialComputing — Introduction",
+      "content": "Module: ConfidentialComputing\nComponent: Introduction\n\nThe TEE presents its attestation report (e.g., SGX Quote, SEV-SNP Report) to the HSM. The HSM verifies the report against the vendor's root CA, checks the code measurement, and validates the TCB level before releasing any key material.\nIn reverse, the TEE verifies the HSM's PKCS#11 or KMIP endpoint certificate against a pinned CA to prevent man-in-the-middle attacks.\nThe HSM & PQC module includes an interactive PKCS#11 simulator where you can step through ML-KEM encapsulation, ML-DSA signing, and key provisioning operations — the same operations used in TEE-HSM key provisioning flows.\nQuantum computers threaten multiple layers of the confidential computing stack — from attestation signatures to memory encryption to TEE-HSM communication channels. The severity and migration urgency varies by component.\nCompare vendor security properties, simulate attestation flows, and assess PQC migration readiness in the interactive workshop.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "Introduction",
+        "filePath": "ConfidentialComputing/components/Introduction.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-index-0",
+      "source": "module-content",
+      "title": "ConfidentialComputing — index",
+      "content": "Module: ConfidentialComputing\nComponent: index\n\nTEE architectures, remote attestation, memory encryption, TEE-HSM integration, and quantum threat analysis for confidential computing.\nStep 1: TEE Architecture Explorer\nCompare 7 TEE architectures by isolation scope, encryption, attestation, and PQC readiness.\nStep through remote attestation flows for Intel DCAP, ARM CCA, AMD SEV-SNP, and AWS Nitro.\nExplore memory encryption engines, sealing key derivation, and Grover impact on AES key sizes.\nStep 4: TEE-HSM Trusted Channel\nDesign mutual attestation and PQC key provisioning between TEE enclaves and HSMs.\nStep 5: Quantum Threat Migration\nAssess quantum risks per TEE component and build a prioritized PQC migration plan.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "index",
+        "filePath": "ConfidentialComputing/index.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-attestationworkshop-0",
+      "source": "module-content",
+      "title": "ConfidentialComputing — AttestationWorkshop",
+      "content": "Module: ConfidentialComputing\nComponent: AttestationWorkshop\n\nStep through real attestation protocols to understand how TEEs prove their identity to relying parties. Quantum-vulnerable steps are highlighted with PQC replacement recommendations.\nAttestation flows using ECDSA signatures are vulnerable to Harvest Now, Decrypt Later attacks. An adversary recording attestation quotes today can forge attestation evidence once a cryptographically relevant quantum computer is available, potentially impersonating legitimate enclaves retroactively.\nAttestation flows are simplified for educational purposes. Real implementations include additional error handling, retry logic, certificate caching, and collateral management. PQC replacements are based on vendor roadmaps and NIST FIPS 203/204 standards.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "AttestationWorkshop",
+        "filePath": "ConfidentialComputing/workshop/AttestationWorkshop.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-encryptionmechanisms-0",
+      "source": "module-content",
+      "title": "ConfidentialComputing — EncryptionMechanisms",
+      "content": "Module: ConfidentialComputing\nComponent: EncryptionMechanisms\n\nCompare hardware memory encryption engines across TEE vendors. Understand how Grover's algorithm impacts AES key strength and explore sealing key derivation chains.\nGrover's algorithm provides a quadratic speedup for brute-force key search, effectively halving the security level of symmetric ciphers. Adjust the AES key width to see the post-quantum impact.\nWhat each memory encryption engine protects at the hardware level.\nEach engine derives sealing keys through a chain from the platform root of trust to the final workload-specific key. Understanding this chain is critical for PQC migration planning.\nMemory encryption implementations vary by CPU generation and firmware version. Grover's algorithm impact assumes a fault-tolerant quantum computer with sufficient logical qubits. Real-world quantum attacks on AES would require sustained quantum computation over extended periods. This calculator is for educational assessment only.\nExceeds all NIST post-quantum security levels.\nExceeds NIST Level 3 (192-bit) post-quantum threshold.\nMeets NIST Level 1 (128-bit) post-quantum security. Considered adequate.\nBelow NIST Level 1 but may provide short-term security. Key expansion recommended.\nPost-quantum security is insufficient. Immediate upgrade to AES-256 or larger keys required.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "EncryptionMechanisms",
+        "filePath": "ConfidentialComputing/workshop/EncryptionMechanisms.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-quantumthreatmigration-0",
+      "source": "module-content",
+      "title": "ConfidentialComputing — QuantumThreatMigration",
+      "content": "Module: ConfidentialComputing\nComponent: QuantumThreatMigration\n\nAssess quantum threat vectors targeting confidential computing components and plan a prioritized migration to post-quantum cryptography.\nSEVERITY_RANK[v.severity] >= 3 && v.migrationEffort > 3 ).map((v) => (\nThese components generate data that can be recorded now and decrypted later when a CRQC is available. Prioritize PQC migration for these vectors to close the harvest-now-decrypt-later window.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "QuantumThreatMigration",
+        "filePath": "ConfidentialComputing/workshop/QuantumThreatMigration.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-teearchitectureexplorer-0",
+      "source": "module-content",
+      "title": "ConfidentialComputing — TEEArchitectureExplorer",
+      "content": "Module: ConfidentialComputing\nComponent: TEEArchitectureExplorer\n\nCompare 7 trusted execution environment architectures by isolation scope, deployment model, and post-quantum readiness. Click a card to expand details, or enable compare mode to view platforms side by side.\nNo TEE architectures match the current filters. Try adjusting the scope, deployment, or PQC readiness filters.\nTEE capabilities and PQC readiness are based on publicly available vendor documentation and specifications as of early 2026. Always verify vendor roadmaps directly for deployment decisions. PQC migration timelines are estimates.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "TEEArchitectureExplorer",
+        "filePath": "ConfidentialComputing/workshop/TEEArchitectureExplorer.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-confidentialcomputing-teehsmtrustedchannel-0",
+      "source": "module-content",
+      "title": "ConfidentialComputing — TEEHSMTrustedChannel",
+      "content": "Module: ConfidentialComputing\nComponent: TEEHSMTrustedChannel\n\nDesign and explore TEE-HSM integration architectures with mutual attestation and PQC key provisioning. Select a TEE vendor and HSM vendor to visualize the trusted channel.\nsetCurrentStep((s) => Math.min(provisioningSteps.length - 1, s + 1))} > Next\nHSM PQC firmware details and vendor comparison are covered in the\nThe HSM generates an asymmetric keypair using the configured algorithm and prepares it for export.\nA TLS 1.3 channel is established between the HSM and the TEE using key exchange and mutual authentication.\nThe wrapped private key material is transmitted over the established channel. The wrapping key is derived from the TLS session.\nEnclave unseals with sealing key\nThe enclave uses its hardware-derived sealing key to decrypt the wrapping layer and load the private key into protected memory.",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "TEEHSMTrustedChannel",
+        "filePath": "ConfidentialComputing/workshop/TEEHSMTrustedChannel.tsx"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-data-confidentialcomputing-attestationdata",
+      "source": "module-content",
+      "title": "ConfidentialComputing — attestationData (data)",
+      "content": "Module: ConfidentialComputing\nData: attestationData\n\nIntel has committed to PQC attestation key migration for DCAP. Estimated timeline: 2027. Will require PCK certificate chain re-issuance with ML-DSA keys.\nEnclave generates a REPORT structure containing MRENCLAVE (code measurement), MRSIGNER (developer identity), and user-supplied REPORTDATA (e.g., a nonce or public key hash).\nThe Quoting Enclave (QE) verifies the REPORT locally using the REPORT key, then signs it with the platform Attestation Key (AK) to produce a Quote.\nThe signed Quote is sent to the Relying Party along with the PCK certificate chain for offline verification (no Intel online service needed in DCAP model).\nRelying Party verifies the ECDSA signature on the Quote using the PCK certificate, then validates the cert chain up to the Intel Root CA.\nRelying Party checks the TCB level from the Quote against the latest TCB Info from the Intel Provisioning Certification Service (PCS) to ensure the platform is up-to-date.\nARM has indicated PQC support for CCA attestation tokens on the roadmap. Initial implementations use ECDSA P-256 per PSA Attestation Token specification. Estimated PQC timeline: 2028.\nThe Realm generates a Realm Token containing the Realm Initial Measurement (RIM), Realm Extensible Measurement (REM), and challenge nonce. Signed by the Realm Attestation Key (RAK).\nThe Realm Management Monitor (RMM) generates a Platform Token containing the platform identity, lifecycle state, and implementation ID. Binds to the Realm Token via hash reference.\nCCA Platform Token (COSE_Sign1, ~1-2 KB)\nRealm Token and Platform Token are combined into a CCA Attestation Bundle and sent to the Relying Party via a secure transport channel.\nRelying Party verifies both token signatures independently, checks measurement values against reference values, and validates the platform lifecycle state.\nVerification result + appraisal policy decision\nAMD VCEK uses ECDSA P-384 — quantum-vulnerable. AMD has acknowledged PQC migration needs but has not published a specific timeline. VCEK is fused per-chip, requiring hardware refresh for PQC attestation keys.\nGuest VM issues SNP_GUEST_REQUEST to the AMD Secure Processor (ASP) via the hypervisor. The ASP generates an Attestation Report containing the launch measurement, guest policy, and platform info.\nSNP Attestation Report request (64 bytes)\nThe AMD Secure Processor signs the Attestation Report using the Versioned Chip Endorsement Key (VCEK), a per-chip ECDSA P-384 key derived from fused secrets and TCB version.\nRelying Party fetches the VCEK certificate from the AMD Key Distribution Service (KDS), along with the intermediate AMD SEV CA and AMD Root Key certificates.\nRelying Party verifies the VCEK signature on the report, validates the certificate chain to AMD Root Key, checks TCB version against minimum requirements, and evaluates the guest policy.\nAWS Nitro Root CA Certificate (ECDSA P-384)\nAWS KMS supports ML-KEM for key agreement (preview). Nitro attestation documents still use ECDSA P-384. AWS has committe\n...(truncated)",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "attestationData",
+        "filePath": "ConfidentialComputing/data/attestationData.ts"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-data-confidentialcomputing-ccconstants",
+      "source": "module-content",
+      "title": "ConfidentialComputing — ccConstants (data)",
+      "content": "Module: ConfidentialComputing\nData: ccConstants\n\nbg-status-error/20 text-status-error border-status-error/50\nbg-status-warning/20 text-status-warning border-status-warning/50\nbg-primary/20 text-primary border-primary/50\nbg-muted text-muted-foreground border-border\nbg-status-success/20 text-status-success border-status-success/50\nbg-secondary/20 text-secondary border-secondary/50",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "ccConstants",
+        "filePath": "ConfidentialComputing/data/ccConstants.ts"
+      },
+      "priority": 1.15
+    },
+    {
+      "id": "mc-data-confidentialcomputing-teearchitecturedata",
+      "source": "module-content",
+      "title": "ConfidentialComputing — teeArchitectureData (data)",
+      "content": "Module: ConfidentialComputing\nData: teeArchitectureData\n\nSoftware Guard Extensions create hardware-isolated enclaves within user-space processes. Code and data inside an enclave are encrypted in memory and inaccessible to the OS, hypervisor, or other processes.\nEnclave Page Cache (EPC) with hardware-enforced access control\nMemory Encryption Engine (MEE), AES-128-CTR with integrity tree\nIntel DCAP PCK Certificate (ECDSA P-256)\n256 MB (EPC, expandable via oversubscription)\nSealing key derived from MRSIGNER + MRENCLAVE + CPU SVN via EGETKEY instruction\nIntel has announced PQC attestation key migration for DCAP targeting 2027. Current ECDSA P-256 attestation chains are quantum-vulnerable. SGX sealing uses AES-128 (Grover-halved to 64-bit effective).\nTrust Domain Extensions provide VM-level isolation through a Secure Arbitration Mode (SEAM) module. Each Trust Domain (TD) runs as a fully isolated VM with encrypted memory, invisible to the hypervisor.\nSEAM module mediates all hypervisor-TD interactions; SEPT for address translation\nTotal Memory Encryption Multi-Key (TME-MK), AES-XTS-128 per TD\nIntel TDX Module Quote (ECDSA P-256 via DCAP infrastructure)\nPer-TD encryption key managed by TME-MK hardware; sealing via TD Report binding\nShares DCAP attestation infrastructure with SGX — PQC migration timeline aligned at 2027. TME-MK uses AES-128 (Grover concern). Future CPUs expected to support AES-256.\nTrustZone partitions the processor into Secure World and Normal World at the hardware level. The Secure World runs a trusted OS with exclusive access to secure peripherals, memory regions, and cryptographic accelerators.\nHardware partition via NS-bit on AXI bus; Secure Monitor Call (SMC) interface\nTrustZone Address Space Controller (TZASC) enforces access; vendor-specific inline encryption\nPlatform-specific (OP-TEE + Secure Boot chain, vendor root key)\nConfigurable secure memory region (typically 16–256 MB)\nHardware Unique Key (HUK) fused per-chip; derived keys via Secure World key derivation service\nNo vendor-supplied PQC attestation. OP-TEE community has experimental ML-DSA patches. TrustZone crypto accelerators are AES/SHA-only — PQC must run in software within Secure World.\nConfidential Compute Architecture introduces Realms — isolated VM-like execution environments managed by a Realm Management Monitor (RMM). CCA separates the hypervisor from the trusted firmware, reducing TCB.\nRealm Management Extension (RME); Granule Protection Table (GPT) enforces memory isolation\nMemory Encryption Engine (MEE) with per-Realm keys; AES-XTS-128\nCCA Attestation Token (ECDSA P-256, signed by Platform token + Realm token)\nPer-Realm memory encryption key generated by RMM; platform attestation key in root of trust\nARM has indicated PQC support in CCA attestation tokens on the roadmap. Initial CCA implementations use ECDSA P-256. Timeline for PQC attestation: estimated 2028.\nSecure Encrypted Virtualization with Secure Nested Paging provides VM-level memory encryption and integrity protection. SNP adds a Reverse Map Table (RMP) to p\n...(truncated)",
+      "category": "learning",
+      "metadata": {
+        "module": "ConfidentialComputing",
+        "component": "teeArchitectureData",
+        "filePath": "ConfidentialComputing/data/teeArchitectureData.ts"
+      },
+      "priority": 1.15
+    },
+    {
       "id": "mc-cryptoagility-cryptoagilityexercises-0",
       "source": "module-content",
       "title": "Crypto Agility — CryptoAgilityExercises",
@@ -20915,6 +21870,20 @@
       "priority": 1.15
     },
     {
+      "id": "mc-digitalassets-custodyarchitectureflow-0",
+      "source": "module-content",
+      "title": "Digital Assets — CustodyArchitectureFlow",
+      "content": "Module: Digital Assets\nComponent: CustodyArchitectureFlow\n\nExplore the five layers of an institutional digital asset custody platform. Click each layer to reveal its cryptographic primitives and quantum threat assessment. Then walk through a complete transaction flow to see how a withdrawal moves through the entire stack.\nFollow a withdrawal transaction through every layer of the custody platform. Each step highlights the active architecture layer above.",
+      "category": "learning",
+      "metadata": {
+        "module": "DigitalAssets",
+        "component": "CustodyArchitectureFlow",
+        "filePath": "DigitalAssets/flows/CustodyArchitectureFlow.tsx"
+      },
+      "deepLink": "/learn/digital-assets?tab=workshop",
+      "priority": 1.15
+    },
+    {
       "id": "mc-digitalassets-hdwalletflow-0",
       "source": "module-content",
       "title": "Digital Assets — HDWalletFlow",
@@ -21100,12 +22069,26 @@
       "id": "mc-digitalassets-index-0",
       "source": "module-content",
       "title": "Digital Assets — index",
-      "content": "Module: Digital Assets\nComponent: index\n\nMaster the cryptographic primitives of major blockchains and understand quantum threats.\nSelect a blockchain to explore its cryptographic primitives hands-on. Each flow walks you through key generation, address derivation, transaction formatting, and digital signing using real cryptographic operations.\nsecp256k1 / ECDSA / Keccak-256\nMigration proposals & initiatives",
+      "content": "Module: Digital Assets\nComponent: index\n\nMaster the cryptographic primitives of major blockchains and understand quantum threats.\nSelect a blockchain to explore its cryptographic primitives hands-on. Each flow walks you through key generation, address derivation, transaction formatting, and digital signing using real cryptographic operations.\nsecp256k1 / ECDSA / Keccak-256\nMigration proposals & initiatives\nWallet tiers / HSM / MPC / PQC threats",
       "category": "learning",
       "metadata": {
         "module": "DigitalAssets",
         "component": "index",
         "filePath": "DigitalAssets/index.tsx"
+      },
+      "deepLink": "/learn/digital-assets",
+      "priority": 1.15
+    },
+    {
+      "id": "mc-data-digitalassets-custodyconstants",
+      "source": "module-content",
+      "title": "Digital Assets — custodyConstants (data)",
+      "content": "Module: Digital Assets\nData: custodyConstants\n\nUser-facing entry points: web dashboards, mobile apps, API integrations, and admin consoles. Every client session requires authenticated, encrypted channels.\nBrowser-based dashboard for balance monitoring, withdrawal requests, and reporting. Authenticated via SSO or mutual TLS client certificates.\nShor's algorithm breaks ECDHE key exchange and ECDSA certificate authentication. Harvest-now-decrypt-later (HNDL) risk for recorded TLS sessions.\nMajor browsers support ML-KEM hybrid TLS. Server-side cert migration depends on CA ecosystem adoption.\nNative iOS/Android application with biometric authentication, certificate pinning, and secure enclave key storage for session tokens.\nShor's algorithm can forge pinned certificates and derive session keys if the underlying EC keys are compromised.\nDepends on Apple/Google adding PQC support to Secure Enclave and StrongBox hardware.\nREST/gRPC endpoints for programmatic access by trading desks, treasury systems, and third-party integrations. Authenticated via OAuth2 tokens or API key HMAC.\nShor's algorithm can forge JWT signatures, allowing unauthorized API access. HMAC-SHA256 remains quantum-resistant at 256-bit security.\nJOSE PQC drafts exist but are not yet finalized. HMAC-based auth is already quantum-safe.\nPrivileged management interface for configuring policies, managing signers, and auditing operations. Requires multi-factor authentication and role-based access.\nWebAuthn attestation keys use ECDSA — vulnerable to forgery. TOTP (HMAC-based) is inherently quantum-resistant.\nFIDO Alliance has not yet standardized PQC attestation. TOTP provides a quantum-safe MFA fallback.\nCore business logic: transaction processing, policy enforcement, multi-approver workflows, and immutable audit trails. The brain of the custody platform.\nValidates withdrawal requests, manages nonce sequencing, estimates network fees, and constructs unsigned transaction payloads for signing.\nTransaction hashing uses SHA-256/Keccak-256 which provide quantum resistance at 128-bit security via Grover (reduced from 256-bit).\nHash-based operations are already quantum-resistant. No urgent migration needed.\nEnforces spending limits, velocity checks, whitelist validation, and M-of-N approval thresholds. Evaluates rules before any signing operation is authorized.\nShor's algorithm can forge any individual signer's ECDSA signature, bypassing M-of-N thresholds entirely.\nPQC threshold signature schemes are in active academic research. No production-ready standard exists.\nRoutes transactions through human approver chains with time-delayed execution, geographic distribution requirements, and callback verification.\nApproval tokens signed with ECDSA can be forged. Time-locks and HMAC callbacks are hash-based and quantum-resistant.\nInternal token signing can be migrated independently of blockchain protocols. Straightforward substitution.\nAppend-only tamper-evident log of all operations. Each entry is HMAC-chained to its predecessor, creating a verifiable aud\n...(truncated)",
+      "category": "learning",
+      "metadata": {
+        "module": "DigitalAssets",
+        "component": "custodyConstants",
+        "filePath": "DigitalAssets/data/custodyConstants.ts"
       },
       "deepLink": "/learn/digital-assets",
       "priority": 1.15
@@ -24173,6 +25156,104 @@
         "filePath": "VendorRisk/index.tsx"
       },
       "deepLink": "/learn/vendor-risk",
+      "priority": 1.15
+    },
+    {
+      "id": "mc-webgatewaypqc-webgatewayexercises-0",
+      "source": "module-content",
+      "title": "WebGatewayPQC — WebGatewayExercises",
+      "content": "Module: WebGatewayPQC\nComponent: WebGatewayExercises\n\nApply what you've learned to real-world scenarios. Each exercise uses the workshop tools to solve a concrete PQC gateway deployment challenge.\nEnterprise Gateway Stack Audit\nYour organization uses F5 BIG-IP for external TLS termination, HAProxy for internal load balancing, and Imperva WAF for application protection. The CISO has mandated PQC readiness by Q4 2027.\nYou operate a SaaS platform serving 50M monthly users behind Cloudflare CDN. Cloudflare already terminates PQC hybrid TLS to clients, but your 12 origin servers still use classical RSA-2048 certificates with 1-year validity.\nHigh-Traffic Gateway Capacity Planning\nYour e-commerce platform handles 100,000 TLS handshakes per second during peak sales events on a 16-core HAProxy cluster. Moving to PQC hybrid will increase handshake sizes by ~3\\u00d7.",
+      "category": "learning",
+      "metadata": {
+        "module": "WebGatewayPQC",
+        "component": "WebGatewayExercises",
+        "filePath": "WebGatewayPQC/components/WebGatewayExercises.tsx"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1.15
+    },
+    {
+      "id": "mc-webgatewaypqc-webgatewayintroduction-0",
+      "source": "module-content",
+      "title": "WebGatewayPQC — WebGatewayIntroduction",
+      "content": "Module: WebGatewayPQC\nComponent: WebGatewayIntroduction\n\nv.pqcStatus === 'production') const plannedVendors = GATEWAY_VENDORS.filter((v) => v.pqcStatus === 'planned') return (\npoints in modern web infrastructure. They handle millions of TLS handshakes per day, making them the most impactful place to deploy\nCDN and load balancer operators manage certificates at enormous scale. Cloudflare manages over 50 million certificates across 300+ edge PoPs. AWS ALB handles per-listener certificate binding. Migrating these certificates from classical algorithms (RSA-2048, ECDSA P-256) to\nPQC algorithms produce larger keys and signatures, directly increasing TLS handshake size. At gateway scale (thousands of handshakes per second), this bandwidth cost is the primary operational concern — not CPU, which remains manageable with modern hardware.\nWeb Application Firewalls (WAFs) and Intrusion Detection Systems (IDS) rely on\nto inspect traffic for threats, data loss, and compliance violations. PQC migration creates a critical decision point: if the gateway cannot terminate PQC TLS, it loses all visibility into traffic content.\ndistributed globally. Cloudflare reports that over 20% of TLS connections to their network already use\nhybrid key exchange (X25519MLKEM768), making CDN edges the largest real-world PQC deployment.",
+      "category": "learning",
+      "metadata": {
+        "module": "WebGatewayPQC",
+        "component": "WebGatewayIntroduction",
+        "filePath": "WebGatewayPQC/components/WebGatewayIntroduction.tsx"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1.15
+    },
+    {
+      "id": "mc-webgatewaypqc-webgatewayintroduction-1",
+      "source": "module-content",
+      "title": "WebGatewayPQC — WebGatewayIntroduction",
+      "content": "Module: WebGatewayPQC\nComponent: WebGatewayIntroduction\n\nGateway vendor PQC readiness varies significantly. Some products (Cloudflare Edge, F5 BIG-IP 17.5+, Envoy) already support hybrid PQC TLS in production, while others (Imperva WAF, Broadcom Avi, Zscaler) are still on the roadmap. Understanding each vendor's status and upgrade path is critical for planning.\nto assess your specific gateway infrastructure against PQC readiness.\nThe workshop has 5 interactive steps: Topology Builder, TLS Termination Patterns, Handshake Budget Calculator, Certificate Rotation Planner, and Vendor Readiness Matrix.\nHybrid (X25519MLKEM768 + ECDSA)\nPure PQC (ML-KEM-768 + ML-DSA-65)",
+      "category": "learning",
+      "metadata": {
+        "module": "WebGatewayPQC",
+        "component": "WebGatewayIntroduction",
+        "filePath": "WebGatewayPQC/components/WebGatewayIntroduction.tsx"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1.15
+    },
+    {
+      "id": "mc-webgatewaypqc-index-0",
+      "source": "module-content",
+      "title": "WebGatewayPQC — index",
+      "content": "Module: WebGatewayPQC\nComponent: index\n\nPQC deployment at the infrastructure edge — TLS termination patterns, certificate lifecycle at scale, and vendor migration paths.\nBuild a web gateway architecture and identify PQC upgrade points.\nCompare terminate, passthrough, re-encrypt, and split TLS under PQC.\nCalculate PQC handshake sizes and gateway bandwidth requirements.\nPlan certificate migration across edge nodes with phased rollout.\nAssess your gateway products against PQC readiness criteria.",
+      "category": "learning",
+      "metadata": {
+        "module": "WebGatewayPQC",
+        "component": "index",
+        "filePath": "WebGatewayPQC/index.tsx"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
+      "priority": 1.15
+    },
+    {
+      "id": "mc-webgatewaypqc-certrotationplanner-0",
+      "source": "module-content",
+      "title": "WebGatewayPQC — CertRotationPlanner",
+      "content": "Module: WebGatewayPQC\nComponent: CertRotationPlanner\n\nVerify CA PQC support, test in staging\nMigrate ${Math.max(1, Math.ceil(nodes * 0.05))} nodes, monitor errors\nMigrate ${Math.ceil(nodes * 0.5)} nodes at ${nodesPerDay} nodes/day\nComplete remaining ${Math.ceil(nodes * 0.45)} nodes",
+      "category": "learning",
+      "metadata": {
+        "module": "WebGatewayPQC",
+        "component": "CertRotationPlanner",
+        "filePath": "WebGatewayPQC/workshop/CertRotationPlanner.tsx"
+      },
+      "deepLink": "/learn/web-gateway-pqc?tab=workshop&step=3",
+      "priority": 1.25
+    },
+    {
+      "id": "mc-webgatewaypqc-topologybuilder-0",
+      "source": "module-content",
+      "title": "WebGatewayPQC — TopologyBuilder",
+      "content": "Module: WebGatewayPQC\nComponent: TopologyBuilder\n\nc.id === conn.from) const toComp = GATEWAY_COMPONENTS.find((c) => c.id === conn.to) const modeInfo = TLS_MODES.find((m) => m.id === conn.mode) return (\nhandleConnectionModeChange(idx, id as TLSMode)} noContainer />",
+      "category": "learning",
+      "metadata": {
+        "module": "WebGatewayPQC",
+        "component": "TopologyBuilder",
+        "filePath": "WebGatewayPQC/workshop/TopologyBuilder.tsx"
+      },
+      "deepLink": "/learn/web-gateway-pqc?tab=workshop&step=0",
+      "priority": 1.25
+    },
+    {
+      "id": "mc-data-webgatewaypqc-gatewaydata",
+      "source": "module-content",
+      "title": "WebGatewayPQC — gatewayData (data)",
+      "content": "Module: WebGatewayPQC\nData: gatewayData\n\nEnd-user browser or API client initiating TLS connections\nContent delivery edge node (Cloudflare, Akamai, AWS CloudFront)\nWeb Application Firewall or Intrusion Detection System\nL4/L7 load balancer (F5 BIG-IP, HAProxy, NGINX, AWS ALB)\nAPI gateway or reverse proxy (Kong, Envoy, Traefik)\nBackend application (Node.js, Java, .NET, Go)\nOrigin backend behind CDN or reverse proxy\nX25519MLKEM768 key exchange + ML-DSA/ECDSA certificates\nX25519/P-256 key exchange + ECDSA/RSA certificates\nClient certificate authentication + classical algorithms\nClient certificate authentication + hybrid PQC algorithms\nGateway forwards encrypted traffic without termination\nUnencrypted connection (internal network only)\nClient \\u2192 NGINX/HAProxy \\u2192 Application Server\nClient \\u2192 CDN \\u2192 WAF \\u2192 LB \\u2192 Origin\nClient \\u2192 CDN \\u2192 WAF \\u2192 LB \\u2192 API GW \\u2192 App \\u2192 Origin\nmTLS everywhere: Client \\u2192 CDN \\u2192 LB \\u2192 App (all mTLS PQC)\nGateway terminates TLS, inspects plaintext, forwards to backend (usually plaintext or separate TLS).\nGateway forwards encrypted traffic to backend without decryption. No inspection possible.\nGateway terminates client TLS, then establishes a new TLS session to backend.\nDifferent CAs/algorithms for client-facing (public CA) and backend-facing (internal CA) TLS.\nReuse prior session keys; eliminates certificate exchange on reconnect.\nReturning clients only (60\\u201380% of traffic at typical gateways)\nZlib/Brotli compress certificate chain during handshake.\nAll TLS 1.3 connections; requires both sides to support\nReplace per-cert signatures with compact Merkle inclusion proofs.\nExperimental (Cloudflare/Chrome); IETF PLANTS WG draft\nReduce round trips via 0-RTT and integrated transport+TLS.\nReuse a single TLS connection for multiple domains (HTTP/2+).\nWildcard/SAN certificates; same IP address\nEnterprise ADC. Hybrid PQC TLS for client and server connections.\nCommercial NGINX with ML-KEM hybrid via OpenSSL 3.x + liboqs-provider.\nPQC when compiled against OpenSSL 3.2+. No vendor support.\nOpen source LB. PQC via OpenSSL 3.5+ or liboqs.\nCloud-native proxy. Out-of-the-box PQC via BoringSSL. Underpins Istio service mesh.\nAPI gateway built on NGINX. PQC mTLS via underlying crypto library updates.\nKubernetes ingress. PQC via Go stdlib ML-KEM when enabled by default.\nML-KEM enabled by default. 20%+ of TLS connections use hybrid PQC.\nManaged cloud LB with instant PQC TLS. No application code changes needed.\nEnterprise WAF under Thales portfolio. PQC roadmap pending ML-KEM hybrid adoption.\nSASE with ML-KEM hybrid TLS active on global network. WARP client PQC tunnels.\nCloud SASE. TLS interception requires ML-KEM upgrade. No GA date published.\nCipher proxy for automated PQC translation. Quantum readiness dashboard.\nPQC via mod_ssl + OpenSSL 3.2+. Widely deployed web server.\nVMware NSX Advanced Load Balancer (formerly Avi Networks). PQC roadmap pending Broadcom integration.\nAuto-scaling; no customer-visible capacity limit",
+      "category": "learning",
+      "metadata": {
+        "module": "WebGatewayPQC",
+        "component": "gatewayData",
+        "filePath": "WebGatewayPQC/data/gatewayData.ts"
+      },
+      "deepLink": "/learn/web-gateway-pqc",
       "priority": 1.15
     },
     {
@@ -31770,7 +32851,7 @@
         "refId": "European Union:EC — EU PQC Recommendation Published",
         "collection": "timeline"
       },
-      "deepLink": "/timeline?country=European%20Union",
+      "deepLink": "/library?ref=EU%20PQC%20Recommendation",
       "priority": 0.9
     },
     {
@@ -32207,7 +33288,7 @@
         "refId": "United States:White House — NSM-10 Published",
         "collection": "timeline"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=NSM-10",
       "priority": 0.9
     },
     {
@@ -32256,7 +33337,7 @@
         "refId": "United States:NIST — FIPS 203, 204, 205 Published",
         "collection": "timeline"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=FIPS%20203",
       "priority": 0.9
     },
     {
@@ -32269,7 +33350,7 @@
         "refId": "United States:NIST — NIST IR 8547 Transition Guidance (Draft)",
         "collection": "timeline"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=NIST%20IR%208547",
       "priority": 0.9
     },
     {
@@ -32386,7 +33467,7 @@
         "refId": "United States:NIST — FIPS 206 (FN-DSA) Draft Submitted",
         "collection": "timeline"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=FIPS%20206",
       "priority": 0.9
     },
     {
@@ -32503,7 +33584,7 @@
         "refId": "International:IETF — RFC 9794 PQC Hybrid Terminology",
         "collection": "timeline"
       },
-      "deepLink": "/timeline?country=International",
+      "deepLink": "/library?ref=RFC%209794",
       "priority": 0.9
     },
     {
@@ -32962,7 +34043,7 @@
         "refId": "United States:NIST — NIST SP 800-208 Published (LMS/XMSS)",
         "collection": "timeline"
       },
-      "deepLink": "/timeline?country=United%20States",
+      "deepLink": "/library?ref=NIST%20SP%20800-208",
       "priority": 0.9
     },
     {
@@ -34084,6 +35165,26 @@
       "metadata": { "fileName": "15-community.md", "slug": "community" },
       "deepLink": "/about",
       "priority": 1
+    },
+    {
+      "id": "changelog-2.27.0",
+      "source": "changelog",
+      "title": "PQC Today v2.27.0 — Release Notes (2026-03-06)",
+      "content": "Version 2.27.0 released 2026-03-06.\n\n### Added\n\n- **Custody Architecture Explorer**: New interactive workshop flow in the Digital Assets module. Five-layer architecture explorer covering Client Interfaces, Orchestration, Wallet Tiers (hot/warm/cold), Cryptographic Infrastructure (HSMs, MPC, confidential computing, key ceremonies), and Network & Broadcast. Each layer expands to reveal sub-components with crypto primitives and integrated PQC threat analysis — threat level badges, vulnerable algorithms, countermeasures, and migration readiness indicators. Includes a 7-step Transaction Flow Walkthrough tracing a withdrawal from client request through signing to broadcast, highlighting the active architecture layer at each step.\n\n- **Custody data constants**: Vendor-neutral reference architecture data — 5 layers, 18 sub-components, 7 transaction flow steps, threat level and migration readiness configs. TypeScript interfaces: `ArchitectureLayer`, `ArchitectureSubComponent`, `TransactionFlowStep`, `PQCThreatOverlay`.\n\n- **Custody glossary terms**: Added 5 tooltip entries — MPC, HSM, Shamir's Secret Sharing, Cold Storage, Key Ceremony.\n\n### Changed\n\n- **Digital Assets module metadata**: Updated description to include custody architecture; duration bumped from 60 to 75 min. Added custody entries to `LEARN_SECTIONS` and `WORKSHOP_STEPS`. Chain selector grid changed from `lg:grid-cols-5` to `lg:grid-cols-3` (2×3 layout for 6 flows).",
+      "category": "changelog",
+      "metadata": { "version": "2.27.0", "date": "2026-03-06" },
+      "deepLink": "/changelog",
+      "priority": 0.6
+    },
+    {
+      "id": "changelog-2.26.1",
+      "source": "changelog",
+      "title": "PQC Today v2.26.1 — Release Notes (2026-03-06)",
+      "content": "Version 2.26.1 released 2026-03-06.\n\n### Data\n\n- **Migrate catalog expansion**: Added 28 new products — 15 blockchain/DLT protocols (Bitcoin Core, Ethereum/Geth, Solana, Cardano, Polkadot/Substrate, Cosmos/Tendermint, IOTA, Hyperledger Fabric, Hyperledger Besu, R3 Corda, Aptos, Avalanche, QRL, Sui, BTQ Bitcoin Quantum) and 13 digital asset custody platforms. Total catalog now 354 products.\n\n- **Priority matrix refactor**: Split CSC-035 (Blockchain and Cryptocurrency Software, Medium priority) into two specialized categories — CSC-057 (Digital Asset Custody, High, 13 products) and CSC-058 (Blockchain & DLT Protocols, Critical, 17 products) — reflecting distinct infrastructure layers with different PQC migration pressures.\n\n- **RAG corpus**: Rebuilt — 2,869 chunks (+29 from new migrate products and priority matrix split).\n\n- **SoftHSMv3 WASM**: Minified build artifact (no functional changes; -50% file size).",
+      "category": "changelog",
+      "metadata": { "version": "2.26.1", "date": "2026-03-06" },
+      "deepLink": "/changelog",
+      "priority": 0.6
     },
     {
       "id": "changelog-2.26.0",

@@ -39,7 +39,7 @@ var createOpenSSLModule = (() => {
     return;
   }
 
-  var currentSafariVersion = userAgent.includes("Safari/") && userAgent.match(/Version\/(\d+\.?\d*\.?\d*)/) ? humanReadableVersionToPacked(userAgent.match(/Version\/(\d+\.?\d*\.?\d*)/)[1]) : TARGET_NOT_SUPPORTED;
+  var currentSafariVersion = userAgent.includes("Safari/") && !userAgent.includes("Chrome/") && userAgent.match(/Version\/(\d+\.?\d*\.?\d*)/) ? humanReadableVersionToPacked(userAgent.match(/Version\/(\d+\.?\d*\.?\d*)/)[1]) : TARGET_NOT_SUPPORTED;
   if (currentSafariVersion < 150000) {
     throw new Error(`This emscripten-generated code requires Safari v${ packedVersionToHumanReadable(150000) } (detected v${currentSafariVersion})`);
   }
@@ -117,7 +117,7 @@ if (ENVIRONMENT_IS_NODE) {
 
   // These modules will usually be used on Node.js. Load them eagerly to avoid
   // the complexity of lazy-loading.
-  var fs = require('fs');
+  var fs = require('node:fs');
 
   scriptDirectory = __dirname + '/';
 
@@ -261,7 +261,7 @@ if (!globalThis.WebAssembly) {
 var ABORT = false;
 
 // set by exit() and abort().  Passed to 'onExit' handler.
-// NOTE: This is also used as the process return code code in shell environments
+// NOTE: This is also used as the process return code in shell environments
 // but only when noExitRuntime is false.
 var EXITSTATUS;
 
@@ -480,9 +480,9 @@ function initRuntime() {
   checkStackCookie();
 
   // Begin ATINITS hooks
-  if (!Module['noFSInit'] && !FS.initialized) FS.init();
+  SOCKFS.root = FS.mount(SOCKFS, {}, null);
+if (!Module['noFSInit'] && !FS.initialized) FS.init();
 TTY.init();
-SOCKFS.root = FS.mount(SOCKFS, {}, null);
 PIPEFS.root = FS.mount(PIPEFS, {}, null);
   // End ATINITS hooks
 
@@ -586,7 +586,7 @@ function getBinarySync(file) {
   if (readBinary) {
     return readBinary(file);
   }
-  // Throwing a plain string here, even though it not normally adviables since
+  // Throwing a plain string here, even though it not normally advisable since
   // this gets turning into an `abort` in instantiateArrayBuffer.
   throw 'both async and sync fetching of the wasm failed';
 }
@@ -746,9 +746,9 @@ async function createWasm() {
 
   
     /**
-     * @param {number} ptr
-     * @param {string} type
-     */
+   * @param {number} ptr
+   * @param {string} type
+   */
   function getValue(ptr, type = 'i8') {
     if (type.endsWith('*')) type = '*';
     switch (type) {
@@ -775,10 +775,10 @@ async function createWasm() {
 
   
     /**
-     * @param {number} ptr
-     * @param {number} value
-     * @param {string} type
-     */
+   * @param {number} ptr
+   * @param {number} value
+   * @param {string} type
+   */
   function setValue(ptr, value, type = 'i8') {
     if (type.endsWith('*')) type = '*';
     switch (type) {
@@ -824,6 +824,20 @@ async function createWasm() {
     };
   var ___call_sighandler = (fp, sig) => getWasmTableEntry(fp)(sig);
 
+  var initRandomFill = () => {
+      // This block is not needed on v19+ since crypto.getRandomValues is builtin
+      if (ENVIRONMENT_IS_NODE) {
+        var nodeCrypto = require('node:crypto');
+        return (view) => nodeCrypto.randomFillSync(view);
+      }
+  
+      return (view) => crypto.getRandomValues(view);
+    };
+  var randomFill = (view) => {
+      // Lazily init on the first invocation.
+      (randomFill = initRandomFill())(view);
+    };
+  
   var PATH = {
   isAbs:(path) => path.charAt(0) === '/',
   splitPath:(filename) => {
@@ -881,105 +895,90 @@ async function createWasm() {
         return root + dir;
       },
   basename:(path) => path && path.match(/([^\/]+|\/)\/*$/)[1],
-  join:(...paths) => PATH.normalize(paths.join('/')),
-  join2:(l, r) => PATH.normalize(l + '/' + r),
-  };
-  
-  var initRandomFill = () => {
-      // This block is not needed on v19+ since crypto.getRandomValues is builtin
-      if (ENVIRONMENT_IS_NODE) {
-        var nodeCrypto = require('crypto');
-        return (view) => nodeCrypto.randomFillSync(view);
+join:(...paths) => PATH.normalize(paths.join('/')),
+join2:(l, r) => PATH.normalize(l + '/' + r),
+};
+
+
+var PATH_FS = {
+resolve:(...args) => {
+      var resolvedPath = '',
+        resolvedAbsolute = false;
+      for (var i = args.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+        var path = (i >= 0) ? args[i] : FS.cwd();
+        // Skip empty and invalid entries
+        if (typeof path != 'string') {
+          throw new TypeError('Arguments to path.resolve must be strings');
+        } else if (!path) {
+          return ''; // an invalid portion invalidates the whole thing
+        }
+        resolvedPath = path + '/' + resolvedPath;
+        resolvedAbsolute = PATH.isAbs(path);
       }
-  
-      return (view) => crypto.getRandomValues(view);
-    };
-  var randomFill = (view) => {
-      // Lazily init on the first invocation.
-      (randomFill = initRandomFill())(view);
-    };
-  
-  
-  
-  var PATH_FS = {
-  resolve:(...args) => {
-        var resolvedPath = '',
-          resolvedAbsolute = false;
-        for (var i = args.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-          var path = (i >= 0) ? args[i] : FS.cwd();
-          // Skip empty and invalid entries
-          if (typeof path != 'string') {
-            throw new TypeError('Arguments to path.resolve must be strings');
-          } else if (!path) {
-            return ''; // an invalid portion invalidates the whole thing
-          }
-          resolvedPath = path + '/' + resolvedPath;
-          resolvedAbsolute = PATH.isAbs(path);
+      // At this point the path should be resolved to a full absolute path, but
+      // handle relative paths to be safe (might happen when process.cwd() fails)
+      resolvedPath = PATH.normalizeArray(resolvedPath.split('/').filter((p) => !!p), !resolvedAbsolute).join('/');
+      return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+    },
+relative:(from, to) => {
+      from = PATH_FS.resolve(from).slice(1);
+      to = PATH_FS.resolve(to).slice(1);
+      function trim(arr) {
+        var start = 0;
+        for (; start < arr.length; start++) {
+          if (arr[start] !== '') break;
         }
-        // At this point the path should be resolved to a full absolute path, but
-        // handle relative paths to be safe (might happen when process.cwd() fails)
-        resolvedPath = PATH.normalizeArray(resolvedPath.split('/').filter((p) => !!p), !resolvedAbsolute).join('/');
-        return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-      },
-  relative:(from, to) => {
-        from = PATH_FS.resolve(from).slice(1);
-        to = PATH_FS.resolve(to).slice(1);
-        function trim(arr) {
-          var start = 0;
-          for (; start < arr.length; start++) {
-            if (arr[start] !== '') break;
-          }
-          var end = arr.length - 1;
-          for (; end >= 0; end--) {
-            if (arr[end] !== '') break;
-          }
-          if (start > end) return [];
-          return arr.slice(start, end - start + 1);
+        var end = arr.length - 1;
+        for (; end >= 0; end--) {
+          if (arr[end] !== '') break;
         }
-        var fromParts = trim(from.split('/'));
-        var toParts = trim(to.split('/'));
-        var length = Math.min(fromParts.length, toParts.length);
-        var samePartsLength = length;
-        for (var i = 0; i < length; i++) {
-          if (fromParts[i] !== toParts[i]) {
-            samePartsLength = i;
-            break;
-          }
+        if (start > end) return [];
+        return arr.slice(start, end - start + 1);
+      }
+      var fromParts = trim(from.split('/'));
+      var toParts = trim(to.split('/'));
+      var length = Math.min(fromParts.length, toParts.length);
+      var samePartsLength = length;
+      for (var i = 0; i < length; i++) {
+        if (fromParts[i] !== toParts[i]) {
+          samePartsLength = i;
+          break;
         }
-        var outputParts = [];
-        for (var i = samePartsLength; i < fromParts.length; i++) {
-          outputParts.push('..');
-        }
-        outputParts = outputParts.concat(toParts.slice(samePartsLength));
-        return outputParts.join('/');
-      },
+      }
+      var outputParts = [];
+      for (var i = samePartsLength; i < fromParts.length; i++) {
+        outputParts.push('..');
+      }
+      outputParts = outputParts.concat(toParts.slice(samePartsLength));
+      return outputParts.join('/');
+    },
+};
+
+
+var UTF8Decoder = globalThis.TextDecoder && new TextDecoder();
+
+var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
+    var maxIdx = idx + maxBytesToRead;
+    if (ignoreNul) return maxIdx;
+    // TextDecoder needs to know the byte length in advance, it doesn't stop on
+    // null terminator by itself.
+    // As a tiny code save trick, compare idx against maxIdx using a negation,
+    // so that maxBytesToRead=undefined/NaN means Infinity.
+    while (heapOrArray[idx] && !(idx >= maxIdx)) ++idx;
+    return idx;
   };
-  
-  
-  var UTF8Decoder = globalThis.TextDecoder && new TextDecoder();
-  
-  var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
-      var maxIdx = idx + maxBytesToRead;
-      if (ignoreNul) return maxIdx;
-      // TextDecoder needs to know the byte length in advance, it doesn't stop on
-      // null terminator by itself.
-      // As a tiny code save trick, compare idx against maxIdx using a negation,
-      // so that maxBytesToRead=undefined/NaN means Infinity.
-      while (heapOrArray[idx] && !(idx >= maxIdx)) ++idx;
-      return idx;
-    };
-  
-  
-    /**
-     * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
-     * array that contains uint8 values, returns a copy of that string as a
-     * Javascript String object.
-     * heapOrArray is either a regular array, or a JavaScript typed array view.
-     * @param {number=} idx
-     * @param {number=} maxBytesToRead
-     * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
-     * @return {string}
-     */
+
+
+  /**
+   * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
+   * array that contains uint8 values, returns a copy of that string as a
+   * Javascript String object.
+   * heapOrArray is either a regular array, or a JavaScript typed array view.
+   * @param {number=} idx
+   * @param {number=} maxBytesToRead
+   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
+   * @return {string}
+   */
   var UTF8ArrayToString = (heapOrArray, idx = 0, maxBytesToRead, ignoreNul) => {
   
       var endPtr = findStringEnd(heapOrArray, idx, maxBytesToRead, ignoreNul);
@@ -1289,7 +1288,7 @@ async function createWasm() {
       },
   createNode(parent, name, mode, dev) {
         if (FS.isBlkdev(mode) || FS.isFIFO(mode)) {
-          // no supported
+          // not supported
           throw new FS.ErrnoError(63);
         }
         MEMFS.ops_table ||= {
@@ -1509,7 +1508,7 @@ async function createWasm() {
           // If the buffer is located in main memory (HEAP), and if
           // memory can grow, we can't hold on to references of the
           // memory buffer, as they may get invalidated. That means we
-          // need to do copy its contents.
+          // need to copy its contents.
           if (buffer.buffer === HEAP8.buffer) {
             canOwn = false;
           }
@@ -1629,18 +1628,18 @@ async function createWasm() {
   
   
     /**
-     * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
-     * emscripten HEAP, returns a copy of that string as a Javascript String object.
-     *
-     * @param {number} ptr
-     * @param {number=} maxBytesToRead - An optional length that specifies the
-     *   maximum number of bytes to read. You can omit this parameter to scan the
-     *   string until the first 0 byte. If maxBytesToRead is passed, and the string
-     *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
-     *   string will cut short at that byte index.
-     * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
-     * @return {string}
-     */
+   * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
+   * emscripten HEAP, returns a copy of that string as a Javascript String object.
+   *
+   * @param {number} ptr
+   * @param {number=} maxBytesToRead - An optional length that specifies the
+   *   maximum number of bytes to read. You can omit this parameter to scan the
+   *   string until the first 0 byte. If maxBytesToRead is passed, and the string
+   *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
+   *   string will cut short at that byte index.
+   * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
+   * @return {string}
+   */
   var UTF8ToString = (ptr, maxBytesToRead, ignoreNul) => {
       assert(typeof ptr == 'number', `UTF8ToString expects a number (got ${typeof ptr})`);
       return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead, ignoreNul) : '';
@@ -1866,7 +1865,7 @@ async function createWasm() {
           return plugin['handle'](byteArray, fullname);
         }
       }
-      // In no plugin handled this file then return the original/unmodified
+      // If no plugin handled this file then return the original/unmodified
       // byteArray.
       return byteArray;
     };
@@ -1908,8 +1907,6 @@ async function createWasm() {
   ignorePermissions:true,
   filesystems:null,
   syncFSRequests:0,
-  readFiles:{
-  },
   ErrnoError:class extends Error {
         name = 'ErrnoError';
         // We set the `name` property to be able to identify `FS.ErrnoError`
@@ -2183,9 +2180,11 @@ async function createWasm() {
         // return 0 if any user, group or owner bits are set.
         if (perms.includes('r') && !(node.mode & 292)) {
           return 2;
-        } else if (perms.includes('w') && !(node.mode & 146)) {
+        }
+        if (perms.includes('w') && !(node.mode & 146)) {
           return 2;
-        } else if (perms.includes('x') && !(node.mode & 73)) {
+        }
+        if (perms.includes('x') && !(node.mode & 73)) {
           return 2;
         }
         return 0;
@@ -2226,10 +2225,8 @@ async function createWasm() {
           if (FS.isRoot(node) || FS.getPath(node) === FS.cwd()) {
             return 10;
           }
-        } else {
-          if (FS.isDir(node.mode)) {
-            return 31;
-          }
+        } else if (FS.isDir(node.mode)) {
+          return 31;
         }
         return 0;
       },
@@ -2239,13 +2236,16 @@ async function createWasm() {
         }
         if (FS.isLink(node.mode)) {
           return 32;
-        } else if (FS.isDir(node.mode)) {
-          if (FS.flagsToPermissionString(flags) !== 'r' // opening for write
-              || (flags & (512 | 64))) { // TODO: check for O_SEARCH? (== search for dir only)
+        }
+        var mode = FS.flagsToPermissionString(flags);
+        if (FS.isDir(node.mode)) {
+          // opening for write
+          // TODO: check for O_SEARCH? (== search for dir only)
+          if (mode !== 'r' || (flags & (512 | 64))) {
             return 31;
           }
         }
-        return FS.nodePermissions(node, FS.flagsToPermissionString(flags));
+        return FS.nodePermissions(node, mode);
       },
   checkOpExists(op, err) {
         if (!op) {
@@ -2856,7 +2856,7 @@ async function createWasm() {
           } else {
             // node doesn't exist, try to create it
             // Ignore the permission bits here to ensure we can `open` this new
-            // file below. We use chmod below the apply the permissions once the
+            // file below. We use chmod below to apply the permissions once the
             // file is open.
             node = FS.mknod(path, mode | 0o777, 0);
             created = true;
@@ -2907,11 +2907,6 @@ async function createWasm() {
         }
         if (created) {
           FS.chmod(node, mode & 0o777);
-        }
-        if (Module['logReadFiles'] && !(flags & 1)) {
-          if (!(path in FS.readFiles)) {
-            FS.readFiles[path] = 1;
-          }
         }
         return stream;
       },
@@ -3552,178 +3547,6 @@ async function createWasm() {
         abort('FS.standardizePath has been removed; use PATH.normalize instead');
       },
   };
-  
-  var SYSCALLS = {
-  DEFAULT_POLLMASK:5,
-  calculateAt(dirfd, path, allowEmpty) {
-        if (PATH.isAbs(path)) {
-          return path;
-        }
-        // relative path
-        var dir;
-        if (dirfd === -100) {
-          dir = FS.cwd();
-        } else {
-          var dirstream = SYSCALLS.getStreamFromFD(dirfd);
-          dir = dirstream.path;
-        }
-        if (path.length == 0) {
-          if (!allowEmpty) {
-            throw new FS.ErrnoError(44);;
-          }
-          return dir;
-        }
-        return dir + '/' + path;
-      },
-  writeStat(buf, stat) {
-        HEAPU32[((buf)>>2)] = stat.dev;
-        HEAPU32[(((buf)+(4))>>2)] = stat.mode;
-        HEAPU32[(((buf)+(8))>>2)] = stat.nlink;
-        HEAPU32[(((buf)+(12))>>2)] = stat.uid;
-        HEAPU32[(((buf)+(16))>>2)] = stat.gid;
-        HEAPU32[(((buf)+(20))>>2)] = stat.rdev;
-        HEAP64[(((buf)+(24))>>3)] = BigInt(stat.size);
-        HEAP32[(((buf)+(32))>>2)] = 4096;
-        HEAP32[(((buf)+(36))>>2)] = stat.blocks;
-        var atime = stat.atime.getTime();
-        var mtime = stat.mtime.getTime();
-        var ctime = stat.ctime.getTime();
-        HEAP64[(((buf)+(40))>>3)] = BigInt(Math.floor(atime / 1000));
-        HEAPU32[(((buf)+(48))>>2)] = (atime % 1000) * 1000 * 1000;
-        HEAP64[(((buf)+(56))>>3)] = BigInt(Math.floor(mtime / 1000));
-        HEAPU32[(((buf)+(64))>>2)] = (mtime % 1000) * 1000 * 1000;
-        HEAP64[(((buf)+(72))>>3)] = BigInt(Math.floor(ctime / 1000));
-        HEAPU32[(((buf)+(80))>>2)] = (ctime % 1000) * 1000 * 1000;
-        HEAP64[(((buf)+(88))>>3)] = BigInt(stat.ino);
-        return 0;
-      },
-  writeStatFs(buf, stats) {
-        HEAPU32[(((buf)+(4))>>2)] = stats.bsize;
-        HEAPU32[(((buf)+(60))>>2)] = stats.bsize;
-        HEAP64[(((buf)+(8))>>3)] = BigInt(stats.blocks);
-        HEAP64[(((buf)+(16))>>3)] = BigInt(stats.bfree);
-        HEAP64[(((buf)+(24))>>3)] = BigInt(stats.bavail);
-        HEAP64[(((buf)+(32))>>3)] = BigInt(stats.files);
-        HEAP64[(((buf)+(40))>>3)] = BigInt(stats.ffree);
-        HEAPU32[(((buf)+(48))>>2)] = stats.fsid;
-        HEAPU32[(((buf)+(64))>>2)] = stats.flags;  // ST_NOSUID
-        HEAPU32[(((buf)+(56))>>2)] = stats.namelen;
-      },
-  doMsync(addr, stream, len, flags, offset) {
-        if (!FS.isFile(stream.node.mode)) {
-          throw new FS.ErrnoError(43);
-        }
-        if (flags & 2) {
-          // MAP_PRIVATE calls need not to be synced back to underlying fs
-          return 0;
-        }
-        var buffer = HEAPU8.slice(addr, addr + len);
-        FS.msync(stream, buffer, offset, len, flags);
-      },
-  getStreamFromFD(fd) {
-        var stream = FS.getStreamChecked(fd);
-        return stream;
-      },
-  varargs:undefined,
-  getStr(ptr) {
-        var ret = UTF8ToString(ptr);
-        return ret;
-      },
-  };
-  var ___syscall__newselect = function (nfds, readfds, writefds, exceptfds, timeout) {
-  try {
-  
-      // readfds are supported,
-      // writefds checks socket open status
-      // exceptfds are supported, although on web, such exceptional conditions never arise in web sockets
-      //                          and so the exceptfds list will always return empty.
-      // timeout is supported, although on SOCKFS and PIPEFS these are ignored and always treated as 0 - fully async
-      assert(nfds <= 64, 'nfds must be less than or equal to 64');  // fd sets have 64 bits // TODO: this could be 1024 based on current musl headers
-  
-      var total = 0;
-  
-      var srcReadLow = (readfds ? HEAP32[((readfds)>>2)] : 0),
-          srcReadHigh = (readfds ? HEAP32[(((readfds)+(4))>>2)] : 0);
-      var srcWriteLow = (writefds ? HEAP32[((writefds)>>2)] : 0),
-          srcWriteHigh = (writefds ? HEAP32[(((writefds)+(4))>>2)] : 0);
-      var srcExceptLow = (exceptfds ? HEAP32[((exceptfds)>>2)] : 0),
-          srcExceptHigh = (exceptfds ? HEAP32[(((exceptfds)+(4))>>2)] : 0);
-  
-      var dstReadLow = 0,
-          dstReadHigh = 0;
-      var dstWriteLow = 0,
-          dstWriteHigh = 0;
-      var dstExceptLow = 0,
-          dstExceptHigh = 0;
-  
-      var allLow = (readfds ? HEAP32[((readfds)>>2)] : 0) |
-                   (writefds ? HEAP32[((writefds)>>2)] : 0) |
-                   (exceptfds ? HEAP32[((exceptfds)>>2)] : 0);
-      var allHigh = (readfds ? HEAP32[(((readfds)+(4))>>2)] : 0) |
-                    (writefds ? HEAP32[(((writefds)+(4))>>2)] : 0) |
-                    (exceptfds ? HEAP32[(((exceptfds)+(4))>>2)] : 0);
-  
-      var check = (fd, low, high, val) => fd < 32 ? (low & val) : (high & val);
-  
-      for (var fd = 0; fd < nfds; fd++) {
-        var mask = 1 << (fd % 32);
-        if (!(check(fd, allLow, allHigh, mask))) {
-          continue;  // index isn't in the set
-        }
-  
-        var stream = SYSCALLS.getStreamFromFD(fd);
-  
-        var flags = SYSCALLS.DEFAULT_POLLMASK;
-  
-        if (stream.stream_ops.poll) {
-          var timeoutInMillis = -1;
-          if (timeout) {
-            // select(2) is declared to accept "struct timeval { time_t tv_sec; suseconds_t tv_usec; }".
-            // However, musl passes the two values to the syscall as an array of long values.
-            // Note that sizeof(time_t) != sizeof(long) in wasm32. The former is 8, while the latter is 4.
-            // This means using "C_STRUCTS.timeval.tv_usec" leads to a wrong offset.
-            // So, instead, we use POINTER_SIZE.
-            var tv_sec = (readfds ? HEAP32[((timeout)>>2)] : 0),
-                tv_usec = (readfds ? HEAP32[(((timeout)+(4))>>2)] : 0);
-            timeoutInMillis = (tv_sec + tv_usec / 1000000) * 1000;
-          }
-          flags = stream.stream_ops.poll(stream, timeoutInMillis);
-        }
-  
-        if ((flags & 1) && check(fd, srcReadLow, srcReadHigh, mask)) {
-          fd < 32 ? (dstReadLow = dstReadLow | mask) : (dstReadHigh = dstReadHigh | mask);
-          total++;
-        }
-        if ((flags & 4) && check(fd, srcWriteLow, srcWriteHigh, mask)) {
-          fd < 32 ? (dstWriteLow = dstWriteLow | mask) : (dstWriteHigh = dstWriteHigh | mask);
-          total++;
-        }
-        if ((flags & 2) && check(fd, srcExceptLow, srcExceptHigh, mask)) {
-          fd < 32 ? (dstExceptLow = dstExceptLow | mask) : (dstExceptHigh = dstExceptHigh | mask);
-          total++;
-        }
-      }
-  
-      if (readfds) {
-        HEAP32[((readfds)>>2)] = dstReadLow;
-        HEAP32[(((readfds)+(4))>>2)] = dstReadHigh;
-      }
-      if (writefds) {
-        HEAP32[((writefds)>>2)] = dstWriteLow;
-        HEAP32[(((writefds)+(4))>>2)] = dstWriteHigh;
-      }
-      if (exceptfds) {
-        HEAP32[((exceptfds)>>2)] = dstExceptLow;
-        HEAP32[(((exceptfds)+(4))>>2)] = dstExceptHigh;
-      }
-  
-      return total;
-    } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e;
-    return -e.errno;
-  }
-  };
-
   var SOCKFS = {
   websocketArgs:{
   },
@@ -3736,8 +3559,8 @@ async function createWasm() {
         SOCKFS.callbacks[event]?.(param);
       },
   mount(mount) {
-        // The incomming Module['websocket'] can be used for configuring 
-        // configuring subprotocol/url, etc
+        // The incoming Module['websocket'] can be used for configuring 
+        // subprotocol/url, etc
         SOCKFS.websocketArgs = Module['websocket'] || {};
         // Add the Event registration mechanism to the exported websocket configuration
         // object so we can register network callbacks from native JavaScript too.
@@ -3891,7 +3714,7 @@ async function createWasm() {
               }
   
               if (subProtocols !== 'null') {
-                // The regex trims the string (removes spaces at the beginning and end, then splits the string by
+                // The regex trims the string (removes spaces at the beginning and end), then splits the string by
                 // <any space>,<any space> into an Array. Whitespace removal is important for Websockify and ws.
                 subProtocols = subProtocols.replace(/^ +| +$/g,"").split(/ *, */);
   
@@ -3988,7 +3811,7 @@ async function createWasm() {
                 data.length === 10 &&
                 data[0] === 255 && data[1] === 255 && data[2] === 255 && data[3] === 255 &&
                 data[4] === 'p'.charCodeAt(0) && data[5] === 'o'.charCodeAt(0) && data[6] === 'r'.charCodeAt(0) && data[7] === 't'.charCodeAt(0)) {
-              // update the peer's port and it's key in the peer map
+              // update the peer's port and its key in the peer map
               var newport = ((data[8] << 8) | data[9]);
               SOCKFS.websocket_sock_ops.removePeer(sock, peer);
               peer.port = newport;
@@ -4394,7 +4217,7 @@ async function createWasm() {
       }
   
       if (str.indexOf(".") > 0) {
-        // parse IPv4 embedded stress
+        // parse IPv4 embedded address
         str = str.replace(new RegExp('[.]', 'g'), ":");
         words = str.split(":");
         words[words.length-4] = Number(words[words.length-4]) + Number(words[words.length-3])*256;
@@ -4414,7 +4237,7 @@ async function createWasm() {
             }
             offset = z-1;
           } else {
-            // parse hex to field to 16-bit value and write it in network byte-order
+            // parse hex field to 16-bit value and write it in network byte-order
             parts[w+offset] = _htons(parseInt(words[w],16));
           }
         } else {
@@ -4584,7 +4407,7 @@ async function createWasm() {
         // IPv4-compatible IPv6 address if 16-bit value (bytes 11 and 12) == 0x0000 (6th word)
         if (parts[5] === 0) {
           str = "::";
-          //special case IPv6 addresses
+          // special case IPv6 addresses
           if (v4part === "0.0.0.0") v4part = ""; // any/unspecified address
           if (v4part === "0.0.0.1") v4part = "1";// loopback address
           str += v4part;
@@ -4680,6 +4503,84 @@ async function createWasm() {
   }
   }
 
+  
+  
+  var SYSCALLS = {
+  calculateAt(dirfd, path, allowEmpty) {
+        if (PATH.isAbs(path)) {
+          return path;
+        }
+        // relative path
+        var dir;
+        if (dirfd === -100) {
+          dir = FS.cwd();
+        } else {
+          var dirstream = SYSCALLS.getStreamFromFD(dirfd);
+          dir = dirstream.path;
+        }
+        if (path.length == 0) {
+          if (!allowEmpty) {
+            throw new FS.ErrnoError(44);;
+          }
+          return dir;
+        }
+        return dir + '/' + path;
+      },
+  writeStat(buf, stat) {
+        HEAPU32[((buf)>>2)] = stat.dev;
+        HEAPU32[(((buf)+(4))>>2)] = stat.mode;
+        HEAPU32[(((buf)+(8))>>2)] = stat.nlink;
+        HEAPU32[(((buf)+(12))>>2)] = stat.uid;
+        HEAPU32[(((buf)+(16))>>2)] = stat.gid;
+        HEAPU32[(((buf)+(20))>>2)] = stat.rdev;
+        HEAP64[(((buf)+(24))>>3)] = BigInt(stat.size);
+        HEAP32[(((buf)+(32))>>2)] = 4096;
+        HEAP32[(((buf)+(36))>>2)] = stat.blocks;
+        var atime = stat.atime.getTime();
+        var mtime = stat.mtime.getTime();
+        var ctime = stat.ctime.getTime();
+        HEAP64[(((buf)+(40))>>3)] = BigInt(Math.floor(atime / 1000));
+        HEAPU32[(((buf)+(48))>>2)] = (atime % 1000) * 1000 * 1000;
+        HEAP64[(((buf)+(56))>>3)] = BigInt(Math.floor(mtime / 1000));
+        HEAPU32[(((buf)+(64))>>2)] = (mtime % 1000) * 1000 * 1000;
+        HEAP64[(((buf)+(72))>>3)] = BigInt(Math.floor(ctime / 1000));
+        HEAPU32[(((buf)+(80))>>2)] = (ctime % 1000) * 1000 * 1000;
+        HEAP64[(((buf)+(88))>>3)] = BigInt(stat.ino);
+        return 0;
+      },
+  writeStatFs(buf, stats) {
+        HEAPU32[(((buf)+(4))>>2)] = stats.bsize;
+        HEAPU32[(((buf)+(60))>>2)] = stats.bsize;
+        HEAP64[(((buf)+(8))>>3)] = BigInt(stats.blocks);
+        HEAP64[(((buf)+(16))>>3)] = BigInt(stats.bfree);
+        HEAP64[(((buf)+(24))>>3)] = BigInt(stats.bavail);
+        HEAP64[(((buf)+(32))>>3)] = BigInt(stats.files);
+        HEAP64[(((buf)+(40))>>3)] = BigInt(stats.ffree);
+        HEAPU32[(((buf)+(48))>>2)] = stats.fsid;
+        HEAPU32[(((buf)+(64))>>2)] = stats.flags;  // ST_NOSUID
+        HEAPU32[(((buf)+(56))>>2)] = stats.namelen;
+      },
+  doMsync(addr, stream, len, flags, offset) {
+        if (!FS.isFile(stream.node.mode)) {
+          throw new FS.ErrnoError(43);
+        }
+        if (flags & 2) {
+          // MAP_PRIVATE calls need not to be synced back to underlying fs
+          return 0;
+        }
+        var buffer = HEAPU8.slice(addr, addr + len);
+        FS.msync(stream, buffer, offset, len, flags);
+      },
+  getStreamFromFD(fd) {
+        var stream = FS.getStreamChecked(fd);
+        return stream;
+      },
+  varargs:undefined,
+  getStr(ptr) {
+        var ret = UTF8ToString(ptr);
+        return ret;
+      },
+  };
   function ___syscall_chmod(path, mode) {
   try {
   
@@ -4839,12 +4740,12 @@ async function createWasm() {
         var name = stream.getdents[idx];
         if (name === '.') {
           id = stream.node.id;
-          type = 4; // DT_DIR
+          type = 4;
         }
         else if (name === '..') {
           var lookup = FS.lookupPath(stream.path, { parent: true });
           id = lookup.node.id;
-          type = 4; // DT_DIR
+          type = 4;
         }
         else {
           var child;
@@ -4859,10 +4760,10 @@ async function createWasm() {
             throw e;
           }
           id = child.id;
-          type = FS.isChrdev(child.mode) ? 2 :  // DT_CHR, character device.
-                 FS.isDir(child.mode) ? 4 :     // DT_DIR, directory.
-                 FS.isLink(child.mode) ? 10 :   // DT_LNK, symbolic link.
-                 8;                             // DT_REG, regular file.
+          type = FS.isChrdev(child.mode) ? 2 : // character device.
+                 FS.isDir(child.mode) ? 4 :    // directory
+                 FS.isLink(child.mode) ? 10 :   // symbolic link.
+                 8;                            // regular file.
         }
         assert(id);
         HEAP64[((dirp + pos)>>3)] = BigInt(id);
@@ -5159,7 +5060,7 @@ async function createWasm() {
             blocks: 0,
           };
         },
-  poll(stream) {
+  poll(stream, timeout, notifyCallback) {
           var pipe = stream.node.pipe;
   
           if ((stream.flags & 2097155) === 1) {
@@ -5339,24 +5240,28 @@ async function createWasm() {
   function ___syscall_poll(fds, nfds, timeout) {
   try {
   
-      var nonzero = 0;
+  
+      var count = 0;
       for (var i = 0; i < nfds; i++) {
         var pollfd = fds + 8 * i;
         var fd = HEAP32[((pollfd)>>2)];
         var events = HEAP16[(((pollfd)+(4))>>1)];
-        var mask = 32;
+        var flags = 32;
         var stream = FS.getStream(fd);
         if (stream) {
-          mask = SYSCALLS.DEFAULT_POLLMASK;
           if (stream.stream_ops.poll) {
-            mask = stream.stream_ops.poll(stream, -1);
+            flags = stream.stream_ops.poll(stream, -1);
+          } else {
+            flags = 5;
           }
         }
-        mask &= events | 8 | 16;
-        if (mask) nonzero++;
-        HEAP16[(((pollfd)+(6))>>1)] = mask;
+        flags &= events | 8 | 16;
+        if (flags) count++;
+        HEAP16[(((pollfd)+(6))>>1)] = flags;
       }
-      return nonzero;
+  
+      if (!count && timeout != 0) warnOnce('non-zero poll() timeout not supported: ' + timeout)
+      return count;
     } catch (e) {
     if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e;
     return -e.errno;
@@ -5597,10 +5502,11 @@ async function createWasm() {
         return;
       }
       try {
-        func();
-        maybeExit();
+        return func();
       } catch (e) {
         handleException(e);
+      } finally {
+        maybeExit();
       }
     };
   
@@ -6231,11 +6137,11 @@ async function createWasm() {
   
   
     /**
-     * @param {string|null=} returnType
-     * @param {Array=} argTypes
-     * @param {Array=} args
-     * @param {Object=} opts
-     */
+   * @param {string|null=} returnType
+   * @param {Array=} argTypes
+   * @param {Array=} args
+   * @param {Object=} opts
+   */
   var ccall = (ident, returnType, argTypes, args, opts) => {
       // For fast lookup of conversion functions
       var toC = {
@@ -6287,10 +6193,10 @@ async function createWasm() {
     };
   
     /**
-     * @param {string=} returnType
-     * @param {Array=} argTypes
-     * @param {Object=} opts
-     */
+   * @param {string=} returnType
+   * @param {Array=} argTypes
+   * @param {Object=} opts
+   */
   var cwrap = (ident, returnType, argTypes, opts) => {
       return (...args) => ccall(ident, returnType, argTypes, args, opts);
     };
@@ -6631,7 +6537,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'FS_ignorePermissions',
   'FS_filesystems',
   'FS_syncFSRequests',
-  'FS_readFiles',
   'FS_lookupPath',
   'FS_getPath',
   'FS_hashName',
@@ -6761,6 +6666,8 @@ unexportedSymbols.forEach(unexportedRuntimeSymbol);
 
 function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
+  ignoredModuleProp('logReadFiles');
+  ignoredModuleProp('loadSplitModule');
 }
 
 // Imports from the Wasm binary.
@@ -6771,9 +6678,6 @@ var _fflush = makeInvalidEarlyAccess('_fflush');
 var _free = Module['_free'] = makeInvalidEarlyAccess('_free');
 var _malloc = Module['_malloc'] = makeInvalidEarlyAccess('_malloc');
 var _execute_tls_simulation = Module['_execute_tls_simulation'] = makeInvalidEarlyAccess('_execute_tls_simulation');
-var _create_skey_from_bytes = Module['_create_skey_from_bytes'] = makeInvalidEarlyAccess('_create_skey_from_bytes');
-var _derive_skey_from_handle = Module['_derive_skey_from_handle'] = makeInvalidEarlyAccess('_derive_skey_from_handle');
-var _derive_skey = Module['_derive_skey'] = makeInvalidEarlyAccess('_derive_skey');
 var ___funcs_on_exit = makeInvalidEarlyAccess('___funcs_on_exit');
 var _emscripten_stack_get_end = makeInvalidEarlyAccess('_emscripten_stack_get_end');
 var _emscripten_stack_get_base = makeInvalidEarlyAccess('_emscripten_stack_get_base');
@@ -6798,9 +6702,6 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['free'] != 'undefined', 'missing Wasm export: free');
   assert(typeof wasmExports['malloc'] != 'undefined', 'missing Wasm export: malloc');
   assert(typeof wasmExports['execute_tls_simulation'] != 'undefined', 'missing Wasm export: execute_tls_simulation');
-  assert(typeof wasmExports['create_skey_from_bytes'] != 'undefined', 'missing Wasm export: create_skey_from_bytes');
-  assert(typeof wasmExports['derive_skey_from_handle'] != 'undefined', 'missing Wasm export: derive_skey_from_handle');
-  assert(typeof wasmExports['derive_skey'] != 'undefined', 'missing Wasm export: derive_skey');
   assert(typeof wasmExports['__funcs_on_exit'] != 'undefined', 'missing Wasm export: __funcs_on_exit');
   assert(typeof wasmExports['emscripten_stack_get_end'] != 'undefined', 'missing Wasm export: emscripten_stack_get_end');
   assert(typeof wasmExports['emscripten_stack_get_base'] != 'undefined', 'missing Wasm export: emscripten_stack_get_base');
@@ -6821,9 +6722,6 @@ function assignWasmExports(wasmExports) {
   _free = Module['_free'] = createExportWrapper('free', 1);
   _malloc = Module['_malloc'] = createExportWrapper('malloc', 1);
   _execute_tls_simulation = Module['_execute_tls_simulation'] = createExportWrapper('execute_tls_simulation', 3);
-  _create_skey_from_bytes = Module['_create_skey_from_bytes'] = createExportWrapper('create_skey_from_bytes', 3);
-  _derive_skey_from_handle = Module['_derive_skey_from_handle'] = createExportWrapper('derive_skey_from_handle', 3);
-  _derive_skey = Module['_derive_skey'] = createExportWrapper('derive_skey', 4);
   ___funcs_on_exit = createExportWrapper('__funcs_on_exit', 0);
   _emscripten_stack_get_end = wasmExports['emscripten_stack_get_end'];
   _emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'];
@@ -6842,8 +6740,6 @@ function assignWasmExports(wasmExports) {
 var wasmImports = {
   /** @export */
   __call_sighandler: ___call_sighandler,
-  /** @export */
-  __syscall__newselect: ___syscall__newselect,
   /** @export */
   __syscall_accept4: ___syscall_accept4,
   /** @export */
@@ -7056,7 +6952,7 @@ run();
 // and return either the Module itself, or a promise of the module.
 //
 // We assign to the `moduleRtn` global here and configure closure to see
-// this as and extern so it won't get minified.
+// this as an extern so it won't get minified.
 
 if (runtimeInitialized)  {
   moduleRtn = Module;

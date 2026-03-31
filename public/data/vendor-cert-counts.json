@@ -28,17 +28,17 @@
     "total": 39
   },
   {
-    "vendor": "atsec corp.",
-    "fips": 0,
-    "acvp": 37,
-    "cc": 0,
-    "total": 37
-  },
-  {
     "vendor": "Infineon Technologies AG (Scheme: DE)",
     "fips": 0,
     "acvp": 0,
     "cc": 37,
+    "total": 37
+  },
+  {
+    "vendor": "atsec corp.",
+    "fips": 0,
+    "acvp": 37,
+    "cc": 0,
     "total": 37
   },
   {
@@ -539,13 +539,6 @@
     "total": 6
   },
   {
-    "vendor": "Securosys SA",
-    "fips": 0,
-    "acvp": 6,
-    "cc": 0,
-    "total": 6
-  },
-  {
     "vendor": "Apple Inc. (Scheme: US)",
     "fips": 0,
     "acvp": 0,
@@ -578,6 +571,13 @@
     "fips": 0,
     "acvp": 0,
     "cc": 6,
+    "total": 6
+  },
+  {
+    "vendor": "Securosys SA",
+    "fips": 0,
+    "acvp": 6,
+    "cc": 0,
     "total": 6
   },
   {
@@ -1253,41 +1253,6 @@
     "total": 3
   },
   {
-    "vendor": "Beijing JN TASS Technology Co., Ltd.",
-    "fips": 0,
-    "acvp": 3,
-    "cc": 0,
-    "total": 3
-  },
-  {
-    "vendor": "Chelpis Quantum Corp., Ltd.",
-    "fips": 0,
-    "acvp": 3,
-    "cc": 0,
-    "total": 3
-  },
-  {
-    "vendor": "CryptoNext Security",
-    "fips": 0,
-    "acvp": 3,
-    "cc": 0,
-    "total": 3
-  },
-  {
-    "vendor": "Industrial Technology Research Institute (ITRI)",
-    "fips": 0,
-    "acvp": 3,
-    "cc": 0,
-    "total": 3
-  },
-  {
-    "vendor": "PQSecure Technologies, LLC",
-    "fips": 0,
-    "acvp": 3,
-    "cc": 0,
-    "total": 3
-  },
-  {
     "vendor": "Oracle Corporation (Scheme: CA)",
     "fips": 0,
     "acvp": 0,
@@ -1467,6 +1432,41 @@
     "fips": 0,
     "acvp": 0,
     "cc": 3,
+    "total": 3
+  },
+  {
+    "vendor": "Beijing JN TASS Technology Co., Ltd.",
+    "fips": 0,
+    "acvp": 3,
+    "cc": 0,
+    "total": 3
+  },
+  {
+    "vendor": "Chelpis Quantum Corp., Ltd.",
+    "fips": 0,
+    "acvp": 3,
+    "cc": 0,
+    "total": 3
+  },
+  {
+    "vendor": "CryptoNext Security",
+    "fips": 0,
+    "acvp": 3,
+    "cc": 0,
+    "total": 3
+  },
+  {
+    "vendor": "Industrial Technology Research Institute (ITRI)",
+    "fips": 0,
+    "acvp": 3,
+    "cc": 0,
+    "total": 3
+  },
+  {
+    "vendor": "PQSecure Technologies, LLC",
+    "fips": 0,
+    "acvp": 3,
+    "cc": 0,
     "total": 3
   },
   {
@@ -1981,41 +1981,6 @@
     "total": 2
   },
   {
-    "vendor": "Blackberry Limited",
-    "fips": 0,
-    "acvp": 2,
-    "cc": 0,
-    "total": 2
-  },
-  {
-    "vendor": "Entrust Corporation",
-    "fips": 0,
-    "acvp": 2,
-    "cc": 0,
-    "total": 2
-  },
-  {
-    "vendor": "Geomys LLC",
-    "fips": 0,
-    "acvp": 2,
-    "cc": 0,
-    "total": 2
-  },
-  {
-    "vendor": "Google, Inc.",
-    "fips": 0,
-    "acvp": 2,
-    "cc": 0,
-    "total": 2
-  },
-  {
-    "vendor": "Xiphera Ltd.",
-    "fips": 0,
-    "acvp": 2,
-    "cc": 0,
-    "total": 2
-  },
-  {
     "vendor": "KSign Co., LTD. (Scheme: KR)",
     "fips": 0,
     "acvp": 0,
@@ -2426,6 +2391,48 @@
     "fips": 0,
     "acvp": 0,
     "cc": 2,
+    "total": 2
+  },
+  {
+    "vendor": "Blackberry Limited",
+    "fips": 0,
+    "acvp": 2,
+    "cc": 0,
+    "total": 2
+  },
+  {
+    "vendor": "Entrust Corporation",
+    "fips": 0,
+    "acvp": 2,
+    "cc": 0,
+    "total": 2
+  },
+  {
+    "vendor": "Geomys LLC",
+    "fips": 0,
+    "acvp": 2,
+    "cc": 0,
+    "total": 2
+  },
+  {
+    "vendor": "Google, Inc.",
+    "fips": 0,
+    "acvp": 2,
+    "cc": 0,
+    "total": 2
+  },
+  {
+    "vendor": "Shanghai Uni-Sentry Intelligent Technology Co., LTD",
+    "fips": 0,
+    "acvp": 2,
+    "cc": 0,
+    "total": 2
+  },
+  {
+    "vendor": "Xiphera Ltd.",
+    "fips": 0,
+    "acvp": 2,
+    "cc": 0,
     "total": 2
   },
   {
@@ -4256,244 +4263,6 @@
     "total": 1
   },
   {
-    "vendor": "AhP-Tech Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Alibaba Cloud Computing Ltd.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "ANGELATEK LTD.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Best PQC Intelligent Cybersecurity Ltd.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Center for Development of Telematics",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Chunghwa Telecom Co., Ltd. Telecommunication Laboratories",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "CIPHERPLUS PTE. LTD.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Code Siren, LLC",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Crypto4A Technologies, Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "EigenQ Inc",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "FortifyIQ, Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Futurex LP",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Hangzhou Hikvision Digital Technology Co., Ltd.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "HOYE Technology CO., LTD.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "IDEMIA Secure Transactions",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Jmem Technology",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Kryptus Seguranca da Informacao S.A.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Novachips Co., Ltd.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "PUFsecurity Corporation",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Qinvicta",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Quantum Bridge Technologies Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "QuantumXchange, Inc",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Realtek Semiconductor Corp.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "SafeLogic, Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Secure-IC",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Silvus Technologies",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Synopsys, Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Terra Quantum Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "The OpenSSL Corporation",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "WiSECURE Technologies Corporation",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "ASUSTeK Computer Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "ASUSTOR Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "AWS",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
-    "vendor": "Shinewave International Inc.",
-    "fips": 0,
-    "acvp": 1,
-    "cc": 0,
-    "total": 1
-  },
-  {
     "vendor": "AirCUVE (Scheme: KR)",
     "fips": 0,
     "acvp": 0,
@@ -5674,6 +5443,244 @@
     "fips": 0,
     "acvp": 0,
     "cc": 1,
+    "total": 1
+  },
+  {
+    "vendor": "AhP-Tech Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Alibaba Cloud Computing Ltd.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "ANGELATEK LTD.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Best PQC Intelligent Cybersecurity Ltd.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Center for Development of Telematics",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Chunghwa Telecom Co., Ltd. Telecommunication Laboratories",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "CIPHERPLUS PTE. LTD.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Code Siren, LLC",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Crypto4A Technologies, Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "EigenQ Inc",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "FortifyIQ, Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Futurex LP",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Hangzhou Hikvision Digital Technology Co., Ltd.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "HOYE Technology CO., LTD.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "IDEMIA Secure Transactions",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Jmem Technology",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Kryptus Seguranca da Informacao S.A.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Novachips Co., Ltd.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "PUFsecurity Corporation",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Qinvicta",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Quantum Bridge Technologies Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "QuantumXchange, Inc",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Realtek Semiconductor Corp.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "SafeLogic, Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Secure-IC",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Silvus Technologies",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Synopsys, Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Terra Quantum Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "The OpenSSL Corporation",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "WiSECURE Technologies Corporation",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "ASUSTeK Computer Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "ASUSTOR Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "AWS",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
+    "total": 1
+  },
+  {
+    "vendor": "Shinewave International Inc.",
+    "fips": 0,
+    "acvp": 1,
+    "cc": 0,
     "total": 1
   }
 ]

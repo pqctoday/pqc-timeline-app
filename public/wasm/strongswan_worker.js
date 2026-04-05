@@ -163,7 +163,7 @@ self.onmessage = (e) => {
               if (filename.includes('strongswan.conf')) {
                 content = content.replace(
                   /load_modular\s*=\s*yes/g,
-                  'load_modular = no\n  load = openssl random nonce aes sha1 sha2 hmac pkcs11'
+                  'load_modular = no\n  load = pkcs11 nonce aes sha1 sha2 hmac openssl'
                 )
               }
               wasmFS.writeFile(path, content)
@@ -196,7 +196,7 @@ self.onmessage = (e) => {
             if (confData.includes('load_modular = yes')) {
               confData = confData.replace(
                 /load_modular\s*=\s*yes/g,
-                'load_modular = no\n  load = openssl random nonce aes sha1 sha2 hmac pkcs11'
+                'load_modular = no\n  load = pkcs11 nonce aes sha1 sha2 hmac openssl'
               )
             }
             // Try multiple ways to access Emscripten's ENV object

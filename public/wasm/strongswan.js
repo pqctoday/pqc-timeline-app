@@ -1011,22 +1011,7 @@ var warnOnce = (text) => {
   }
 }
 
-var wasmTableMirror = []
-
-var getWasmTableEntry = (funcPtr) => {
-  var func = wasmTableMirror[funcPtr]
-  if (!func) {
-    /** @suppress {checkTypes} */
-    wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr)
-  }
-  /** @suppress {checkTypes} */
-  assert(
-    wasmTable.get(funcPtr) == func,
-    'JavaScript-side Wasm function table mirror is out of date!'
-  )
-  return func
-}
-var ___call_sighandler = (fp, sig) => getWasmTableEntry(fp)(sig)
+var ___call_sighandler = (fp, sig) => ((a1) => dynCall_vi(fp, a1))(sig)
 
 class ExceptionInfo {
   // excPtr - Thrown object pointer to wrap. Metadata pointer is calculated from it.
@@ -5891,11 +5876,6 @@ function _clock_time_get(clk_id, ignored_precision, ptime) {
   return 0
 }
 
-function _counters_plugin_create(...args) {
-  abort('missing function: counters_plugin_create')
-}
-_counters_plugin_create.stub = true
-
 var _emscripten_err = (str) => err(UTF8ToString(str))
 
 var getHeapMax = () =>
@@ -6454,11 +6434,6 @@ function _pthread_kill(...args) {
 }
 _pthread_kill.stub = true
 
-function _stroke_plugin_create(...args) {
-  abort('missing function: stroke_plugin_create')
-}
-_stroke_plugin_create.stub = true
-
 var handleException = (e) => {
   // Certain exception types we do not treat as errors since they are used for
   // internal control flow.
@@ -6565,6 +6540,22 @@ var ccall = (ident, returnType, argTypes, args, opts) => {
  */
 var cwrap = (ident, returnType, argTypes, opts) => {
   return (...args) => ccall(ident, returnType, argTypes, args, opts)
+}
+
+var wasmTableMirror = []
+
+var getWasmTableEntry = (funcPtr) => {
+  var func = wasmTableMirror[funcPtr]
+  if (!func) {
+    /** @suppress {checkTypes} */
+    wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr)
+  }
+  /** @suppress {checkTypes} */
+  assert(
+    wasmTable.get(funcPtr) == func,
+    'JavaScript-side Wasm function table mirror is out of date!'
+  )
+  return func
 }
 
 var updateTableMap = (offset, count) => {
@@ -6848,6 +6839,7 @@ var missingLibrarySymbols = [
   'readEmAsmArgs',
   'jstoi_q',
   'autoResumeAudioContext',
+  'dynCallLegacy',
   'getDynCaller',
   'dynCall',
   'runtimeKeepalivePush',
@@ -7243,27 +7235,35 @@ function checkIncomingModuleAPI() {
 function wasm_net_receive(buf, maxlen, srcIp, srcPort, destIp, destPort) {
   var sab = Module._wasm_net_sab
   if (!sab) return -1
-  var i32 = new Int32Array(sab, 0, 4)
+  var i32 = new Int32Array(sab, 0, 6)
   var bytes = new Uint8Array(sab)
   Atomics.wait(i32, 0, 0)
   var pktLen = i32[1]
   var pktSrcIp = i32[2] >>> 0
   var pktSrcPort = i32[3] >>> 0
+  var pktDestIp = i32[4] >>> 0
+  var pktDestPort = i32[5] >>> 0
   var copyLen = Math.min(pktLen, maxlen)
-  HEAPU8.set(bytes.subarray(16, 16 + copyLen), buf)
+  HEAPU8.set(bytes.subarray(24, 24 + copyLen), buf)
   HEAPU32[srcIp >> 2] = pktSrcIp
   HEAPU32[srcPort >> 2] = pktSrcPort
-  HEAPU32[destIp >> 2] = 0
-  HEAPU32[destPort >> 2] = 500
+  HEAPU32[destIp >> 2] = pktDestIp
+  HEAPU32[destPort >> 2] = pktDestPort || 500
   Atomics.store(i32, 0, 0)
   return copyLen
 }
-function wasm_net_send(buf, len, destIp, destPort) {
+function wasm_net_send(buf, len, srcIp, srcPort, destIp, destPort) {
   var data = HEAPU8.slice(buf, buf + len)
   postMessage(
     {
       type: 'PACKET_OUT',
-      payload: { srcIp: 0, srcPort: 500, destIp: destIp, destPort: destPort, data: data.buffer },
+      payload: {
+        srcIp: srcIp,
+        srcPort: srcPort,
+        destIp: destIp,
+        destPort: destPort,
+        data: data.buffer,
+      },
     },
     [data.buffer]
   )
@@ -7272,6 +7272,8 @@ function wasm_net_send(buf, len, destIp, destPort) {
 
 // Imports from the Wasm binary.
 var _main = (Module['_main'] = makeInvalidEarlyAccess('_main'))
+var _openssl_plugin_create = (Module['_openssl_plugin_create'] =
+  makeInvalidEarlyAccess('_openssl_plugin_create'))
 var _fflush = makeInvalidEarlyAccess('_fflush')
 var _malloc = makeInvalidEarlyAccess('_malloc')
 var _wasm_net_set_sab = (Module['_wasm_net_set_sab'] = makeInvalidEarlyAccess('_wasm_net_set_sab'))
@@ -7292,6 +7294,45 @@ var __emscripten_stack_alloc = makeInvalidEarlyAccess('__emscripten_stack_alloc'
 var _emscripten_stack_get_current = makeInvalidEarlyAccess('_emscripten_stack_get_current')
 var ___set_stack_limits = (Module['___set_stack_limits'] =
   makeInvalidEarlyAccess('___set_stack_limits'))
+var dynCall_viiii = makeInvalidEarlyAccess('dynCall_viiii')
+var dynCall_i = makeInvalidEarlyAccess('dynCall_i')
+var dynCall_vi = makeInvalidEarlyAccess('dynCall_vi')
+var dynCall_iii = makeInvalidEarlyAccess('dynCall_iii')
+var dynCall_iiii = makeInvalidEarlyAccess('dynCall_iiii')
+var dynCall_ii = makeInvalidEarlyAccess('dynCall_ii')
+var dynCall_vii = makeInvalidEarlyAccess('dynCall_vii')
+var dynCall_vij = makeInvalidEarlyAccess('dynCall_vij')
+var dynCall_ji = makeInvalidEarlyAccess('dynCall_ji')
+var dynCall_iiiii = makeInvalidEarlyAccess('dynCall_iiiii')
+var dynCall_viii = makeInvalidEarlyAccess('dynCall_viii')
+var dynCall_viiiii = makeInvalidEarlyAccess('dynCall_viiiii')
+var dynCall_iiiiii = makeInvalidEarlyAccess('dynCall_iiiiii')
+var dynCall_iiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiii')
+var dynCall_iiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiii')
+var dynCall_viiiiii = makeInvalidEarlyAccess('dynCall_viiiiii')
+var dynCall_v = makeInvalidEarlyAccess('dynCall_v')
+var dynCall_viiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiii')
+var dynCall_viidi = makeInvalidEarlyAccess('dynCall_viidi')
+var dynCall_diidi = makeInvalidEarlyAccess('dynCall_diidi')
+var dynCall_iijii = makeInvalidEarlyAccess('dynCall_iijii')
+var dynCall_viiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiii')
+var dynCall_viiiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiiii')
+var dynCall_iiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiii')
+var dynCall_iiiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiiii')
+var dynCall_jii = makeInvalidEarlyAccess('dynCall_jii')
+var dynCall_vijj = makeInvalidEarlyAccess('dynCall_vijj')
+var dynCall_iiji = makeInvalidEarlyAccess('dynCall_iiji')
+var dynCall_iiiiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiiiii')
+var dynCall_vjii = makeInvalidEarlyAccess('dynCall_vjii')
+var dynCall_vji = makeInvalidEarlyAccess('dynCall_vji')
+var dynCall_iiid = makeInvalidEarlyAccess('dynCall_iiid')
+var dynCall_jiji = makeInvalidEarlyAccess('dynCall_jiji')
+var dynCall_iidiiii = makeInvalidEarlyAccess('dynCall_iidiiii')
+var dynCall_viijii = makeInvalidEarlyAccess('dynCall_viijii')
+var dynCall_iiiiij = makeInvalidEarlyAccess('dynCall_iiiiij')
+var dynCall_iiiiid = makeInvalidEarlyAccess('dynCall_iiiiid')
+var dynCall_iiiiijj = makeInvalidEarlyAccess('dynCall_iiiiijj')
+var dynCall_iiiiiijj = makeInvalidEarlyAccess('dynCall_iiiiiijj')
 var memory = makeInvalidEarlyAccess('memory')
 var __indirect_function_table = makeInvalidEarlyAccess('__indirect_function_table')
 var wasmMemory = makeInvalidEarlyAccess('wasmMemory')
@@ -7301,6 +7342,10 @@ function assignWasmExports(wasmExports) {
   assert(
     typeof wasmExports['__main_argc_argv'] != 'undefined',
     'missing Wasm export: __main_argc_argv'
+  )
+  assert(
+    typeof wasmExports['openssl_plugin_create'] != 'undefined',
+    'missing Wasm export: openssl_plugin_create'
   )
   assert(typeof wasmExports['fflush'] != 'undefined', 'missing Wasm export: fflush')
   assert(typeof wasmExports['malloc'] != 'undefined', 'missing Wasm export: malloc')
@@ -7353,12 +7398,91 @@ function assignWasmExports(wasmExports) {
     typeof wasmExports['__set_stack_limits'] != 'undefined',
     'missing Wasm export: __set_stack_limits'
   )
+  assert(typeof wasmExports['dynCall_viiii'] != 'undefined', 'missing Wasm export: dynCall_viiii')
+  assert(typeof wasmExports['dynCall_i'] != 'undefined', 'missing Wasm export: dynCall_i')
+  assert(typeof wasmExports['dynCall_vi'] != 'undefined', 'missing Wasm export: dynCall_vi')
+  assert(typeof wasmExports['dynCall_iii'] != 'undefined', 'missing Wasm export: dynCall_iii')
+  assert(typeof wasmExports['dynCall_iiii'] != 'undefined', 'missing Wasm export: dynCall_iiii')
+  assert(typeof wasmExports['dynCall_ii'] != 'undefined', 'missing Wasm export: dynCall_ii')
+  assert(typeof wasmExports['dynCall_vii'] != 'undefined', 'missing Wasm export: dynCall_vii')
+  assert(typeof wasmExports['dynCall_vij'] != 'undefined', 'missing Wasm export: dynCall_vij')
+  assert(typeof wasmExports['dynCall_ji'] != 'undefined', 'missing Wasm export: dynCall_ji')
+  assert(typeof wasmExports['dynCall_iiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiii')
+  assert(typeof wasmExports['dynCall_viii'] != 'undefined', 'missing Wasm export: dynCall_viii')
+  assert(typeof wasmExports['dynCall_viiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiii')
+  assert(typeof wasmExports['dynCall_iiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiii')
+  assert(
+    typeof wasmExports['dynCall_iiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiii'
+  )
+  assert(
+    typeof wasmExports['dynCall_iiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiiii'
+  )
+  assert(
+    typeof wasmExports['dynCall_viiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_viiiiii'
+  )
+  assert(typeof wasmExports['dynCall_v'] != 'undefined', 'missing Wasm export: dynCall_v')
+  assert(
+    typeof wasmExports['dynCall_viiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_viiiiiii'
+  )
+  assert(typeof wasmExports['dynCall_viidi'] != 'undefined', 'missing Wasm export: dynCall_viidi')
+  assert(typeof wasmExports['dynCall_diidi'] != 'undefined', 'missing Wasm export: dynCall_diidi')
+  assert(typeof wasmExports['dynCall_iijii'] != 'undefined', 'missing Wasm export: dynCall_iijii')
+  assert(
+    typeof wasmExports['dynCall_viiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_viiiiiiii'
+  )
+  assert(
+    typeof wasmExports['dynCall_viiiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_viiiiiiiii'
+  )
+  assert(
+    typeof wasmExports['dynCall_iiiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiiiii'
+  )
+  assert(
+    typeof wasmExports['dynCall_iiiiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiiiiii'
+  )
+  assert(typeof wasmExports['dynCall_jii'] != 'undefined', 'missing Wasm export: dynCall_jii')
+  assert(typeof wasmExports['dynCall_vijj'] != 'undefined', 'missing Wasm export: dynCall_vijj')
+  assert(typeof wasmExports['dynCall_iiji'] != 'undefined', 'missing Wasm export: dynCall_iiji')
+  assert(
+    typeof wasmExports['dynCall_iiiiiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiiiiiii'
+  )
+  assert(typeof wasmExports['dynCall_vjii'] != 'undefined', 'missing Wasm export: dynCall_vjii')
+  assert(typeof wasmExports['dynCall_vji'] != 'undefined', 'missing Wasm export: dynCall_vji')
+  assert(typeof wasmExports['dynCall_iiid'] != 'undefined', 'missing Wasm export: dynCall_iiid')
+  assert(typeof wasmExports['dynCall_jiji'] != 'undefined', 'missing Wasm export: dynCall_jiji')
+  assert(
+    typeof wasmExports['dynCall_iidiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iidiiii'
+  )
+  assert(typeof wasmExports['dynCall_viijii'] != 'undefined', 'missing Wasm export: dynCall_viijii')
+  assert(typeof wasmExports['dynCall_iiiiij'] != 'undefined', 'missing Wasm export: dynCall_iiiiij')
+  assert(typeof wasmExports['dynCall_iiiiid'] != 'undefined', 'missing Wasm export: dynCall_iiiiid')
+  assert(
+    typeof wasmExports['dynCall_iiiiijj'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiijj'
+  )
+  assert(
+    typeof wasmExports['dynCall_iiiiiijj'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiijj'
+  )
   assert(typeof wasmExports['memory'] != 'undefined', 'missing Wasm export: memory')
   assert(
     typeof wasmExports['__indirect_function_table'] != 'undefined',
     'missing Wasm export: __indirect_function_table'
   )
   _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2)
+  _openssl_plugin_create = Module['_openssl_plugin_create'] = createExportWrapper(
+    'openssl_plugin_create',
+    0
+  )
   _fflush = createExportWrapper('fflush', 1)
   _malloc = createExportWrapper('malloc', 1)
   _wasm_net_set_sab = Module['_wasm_net_set_sab'] = createExportWrapper('wasm_net_set_sab', 1)
@@ -7377,6 +7501,45 @@ function assignWasmExports(wasmExports) {
   __emscripten_stack_alloc = wasmExports['_emscripten_stack_alloc']
   _emscripten_stack_get_current = wasmExports['emscripten_stack_get_current']
   ___set_stack_limits = Module['___set_stack_limits'] = createExportWrapper('__set_stack_limits', 2)
+  dynCall_viiii = createExportWrapper('dynCall_viiii', 5)
+  dynCall_i = createExportWrapper('dynCall_i', 1)
+  dynCall_vi = createExportWrapper('dynCall_vi', 2)
+  dynCall_iii = createExportWrapper('dynCall_iii', 3)
+  dynCall_iiii = createExportWrapper('dynCall_iiii', 4)
+  dynCall_ii = createExportWrapper('dynCall_ii', 2)
+  dynCall_vii = createExportWrapper('dynCall_vii', 3)
+  dynCall_vij = createExportWrapper('dynCall_vij', 3)
+  dynCall_ji = createExportWrapper('dynCall_ji', 2)
+  dynCall_iiiii = createExportWrapper('dynCall_iiiii', 5)
+  dynCall_viii = createExportWrapper('dynCall_viii', 4)
+  dynCall_viiiii = createExportWrapper('dynCall_viiiii', 6)
+  dynCall_iiiiii = createExportWrapper('dynCall_iiiiii', 6)
+  dynCall_iiiiiii = createExportWrapper('dynCall_iiiiiii', 7)
+  dynCall_iiiiiiii = createExportWrapper('dynCall_iiiiiiii', 8)
+  dynCall_viiiiii = createExportWrapper('dynCall_viiiiii', 7)
+  dynCall_v = createExportWrapper('dynCall_v', 1)
+  dynCall_viiiiiii = createExportWrapper('dynCall_viiiiiii', 8)
+  dynCall_viidi = createExportWrapper('dynCall_viidi', 5)
+  dynCall_diidi = createExportWrapper('dynCall_diidi', 5)
+  dynCall_iijii = createExportWrapper('dynCall_iijii', 5)
+  dynCall_viiiiiiii = createExportWrapper('dynCall_viiiiiiii', 9)
+  dynCall_viiiiiiiii = createExportWrapper('dynCall_viiiiiiiii', 10)
+  dynCall_iiiiiiiii = createExportWrapper('dynCall_iiiiiiiii', 9)
+  dynCall_iiiiiiiiii = createExportWrapper('dynCall_iiiiiiiiii', 10)
+  dynCall_jii = createExportWrapper('dynCall_jii', 3)
+  dynCall_vijj = createExportWrapper('dynCall_vijj', 4)
+  dynCall_iiji = createExportWrapper('dynCall_iiji', 4)
+  dynCall_iiiiiiiiiii = createExportWrapper('dynCall_iiiiiiiiiii', 11)
+  dynCall_vjii = createExportWrapper('dynCall_vjii', 4)
+  dynCall_vji = createExportWrapper('dynCall_vji', 3)
+  dynCall_iiid = createExportWrapper('dynCall_iiid', 4)
+  dynCall_jiji = createExportWrapper('dynCall_jiji', 4)
+  dynCall_iidiiii = createExportWrapper('dynCall_iidiiii', 7)
+  dynCall_viijii = createExportWrapper('dynCall_viijii', 6)
+  dynCall_iiiiij = createExportWrapper('dynCall_iiiiij', 6)
+  dynCall_iiiiid = createExportWrapper('dynCall_iiiiid', 6)
+  dynCall_iiiiijj = createExportWrapper('dynCall_iiiiijj', 7)
+  dynCall_iiiiiijj = createExportWrapper('dynCall_iiiiiijj', 8)
   memory = wasmMemory = wasmExports['memory']
   __indirect_function_table = wasmTable = wasmExports['__indirect_function_table']
 }
@@ -7451,8 +7614,6 @@ var wasmImports = {
   /** @export */
   clock_time_get: _clock_time_get,
   /** @export */
-  counters_plugin_create: _counters_plugin_create,
-  /** @export */
   emscripten_date_now: _emscripten_date_now,
   /** @export */
   emscripten_err: _emscripten_err,
@@ -7488,8 +7649,6 @@ var wasmImports = {
   proc_exit: _proc_exit,
   /** @export */
   pthread_kill: _pthread_kill,
-  /** @export */
-  stroke_plugin_create: _stroke_plugin_create,
   /** @export */
   wasm_net_receive,
   /** @export */

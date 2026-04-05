@@ -163,7 +163,7 @@ self.onmessage = (e) => {
               if (filename.includes('strongswan.conf')) {
                 content = content.replace(
                   /load_modular\s*=\s*yes/g,
-                  'load_modular = no\n  load = random nonce aes sha1 sha2 hmac pkcs11 socket-wasm'
+                  'load_modular = no\n  load = openssl random nonce aes sha1 sha2 hmac pkcs11'
                 )
               }
               wasmFS.writeFile(path, content)

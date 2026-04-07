@@ -71,6 +71,41 @@ export class SoftHsmRust {
 if (Symbol.dispose) SoftHsmRust.prototype[Symbol.dispose] = SoftHsmRust.prototype.free
 
 /**
+ * @param {number} _h_session
+ * @param {number} _p_function_name
+ * @param {number} _p_result
+ * @returns {number}
+ */
+export function _C_AsyncComplete(_h_session, _p_function_name, _p_result) {
+  const ret = wasm._C_AsyncComplete(_h_session, _p_function_name, _p_result)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} _h_session
+ * @param {number} _p_function_name
+ * @param {number} _pul_id
+ * @returns {number}
+ */
+export function _C_AsyncGetID(_h_session, _p_function_name, _pul_id) {
+  const ret = wasm._C_AsyncGetID(_h_session, _p_function_name, _pul_id)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} _h_session
+ * @param {number} _p_function_name
+ * @param {number} _ul_id
+ * @param {number} _p_data
+ * @param {number} _ul_data_len
+ * @returns {number}
+ */
+export function _C_AsyncJoin(_h_session, _p_function_name, _ul_id, _p_data, _ul_data_len) {
+  const ret = wasm._C_AsyncJoin(_h_session, _p_function_name, _ul_id, _p_data, _ul_data_len)
+  return ret >>> 0
+}
+
+/**
  * @param {number} h_session
  * @returns {number}
  */
@@ -182,6 +217,102 @@ export function _C_DecryptFinal(_h_session, _p_last_part, _pul_last_part_len) {
  */
 export function _C_DecryptInit(h_session, p_mechanism, h_key) {
   const ret = wasm._C_DecryptInit(h_session, p_mechanism, h_key)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_parameter
+ * @param {number} _ul_parameter_len
+ * @param {number} p_associated_data
+ * @param {number} ul_associated_data_len
+ * @param {number} p_ciphertext
+ * @param {number} ul_ciphertext_len
+ * @param {number} p_plaintext
+ * @param {number} pul_plaintext_len
+ * @returns {number}
+ */
+export function _C_DecryptMessage(
+  h_session,
+  p_parameter,
+  _ul_parameter_len,
+  p_associated_data,
+  ul_associated_data_len,
+  p_ciphertext,
+  ul_ciphertext_len,
+  p_plaintext,
+  pul_plaintext_len
+) {
+  const ret = wasm._C_DecryptMessage(
+    h_session,
+    p_parameter,
+    _ul_parameter_len,
+    p_associated_data,
+    ul_associated_data_len,
+    p_ciphertext,
+    ul_ciphertext_len,
+    p_plaintext,
+    pul_plaintext_len
+  )
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_parameter
+ * @param {number} _ul_parameter_len
+ * @param {number} p_associated_data
+ * @param {number} ul_associated_data_len
+ * @returns {number}
+ */
+export function _C_DecryptMessageBegin(
+  h_session,
+  p_parameter,
+  _ul_parameter_len,
+  p_associated_data,
+  ul_associated_data_len
+) {
+  const ret = wasm._C_DecryptMessageBegin(
+    h_session,
+    p_parameter,
+    _ul_parameter_len,
+    p_associated_data,
+    ul_associated_data_len
+  )
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_parameter
+ * @param {number} _ul_parameter_len
+ * @param {number} p_ciphertext_part
+ * @param {number} ul_ciphertext_part_len
+ * @param {number} p_plaintext_part
+ * @param {number} pul_plaintext_part_len
+ * @param {number} flags
+ * @returns {number}
+ */
+export function _C_DecryptMessageNext(
+  h_session,
+  p_parameter,
+  _ul_parameter_len,
+  p_ciphertext_part,
+  ul_ciphertext_part_len,
+  p_plaintext_part,
+  pul_plaintext_part_len,
+  flags
+) {
+  const ret = wasm._C_DecryptMessageNext(
+    h_session,
+    p_parameter,
+    _ul_parameter_len,
+    p_ciphertext_part,
+    ul_ciphertext_part_len,
+    p_plaintext_part,
+    pul_plaintext_part_len,
+    flags
+  )
   return ret >>> 0
 }
 
@@ -381,6 +512,102 @@ export function _C_EncryptFinal(_h_session, _p_last_encrypted_part, _pul_last_en
  */
 export function _C_EncryptInit(h_session, p_mechanism, h_key) {
   const ret = wasm._C_EncryptInit(h_session, p_mechanism, h_key)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_parameter
+ * @param {number} _ul_parameter_len
+ * @param {number} p_associated_data
+ * @param {number} ul_associated_data_len
+ * @param {number} p_plaintext
+ * @param {number} ul_plaintext_len
+ * @param {number} p_ciphertext
+ * @param {number} pul_ciphertext_len
+ * @returns {number}
+ */
+export function _C_EncryptMessage(
+  h_session,
+  p_parameter,
+  _ul_parameter_len,
+  p_associated_data,
+  ul_associated_data_len,
+  p_plaintext,
+  ul_plaintext_len,
+  p_ciphertext,
+  pul_ciphertext_len
+) {
+  const ret = wasm._C_EncryptMessage(
+    h_session,
+    p_parameter,
+    _ul_parameter_len,
+    p_associated_data,
+    ul_associated_data_len,
+    p_plaintext,
+    ul_plaintext_len,
+    p_ciphertext,
+    pul_ciphertext_len
+  )
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_parameter
+ * @param {number} _ul_parameter_len
+ * @param {number} p_associated_data
+ * @param {number} ul_associated_data_len
+ * @returns {number}
+ */
+export function _C_EncryptMessageBegin(
+  h_session,
+  p_parameter,
+  _ul_parameter_len,
+  p_associated_data,
+  ul_associated_data_len
+) {
+  const ret = wasm._C_EncryptMessageBegin(
+    h_session,
+    p_parameter,
+    _ul_parameter_len,
+    p_associated_data,
+    ul_associated_data_len
+  )
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_parameter
+ * @param {number} _ul_parameter_len
+ * @param {number} p_plaintext_part
+ * @param {number} ul_plaintext_part_len
+ * @param {number} p_ciphertext_part
+ * @param {number} pul_ciphertext_part_len
+ * @param {number} flags
+ * @returns {number}
+ */
+export function _C_EncryptMessageNext(
+  h_session,
+  p_parameter,
+  _ul_parameter_len,
+  p_plaintext_part,
+  ul_plaintext_part_len,
+  p_ciphertext_part,
+  pul_ciphertext_part_len,
+  flags
+) {
+  const ret = wasm._C_EncryptMessageNext(
+    h_session,
+    p_parameter,
+    _ul_parameter_len,
+    p_plaintext_part,
+    ul_plaintext_part_len,
+    p_ciphertext_part,
+    pul_ciphertext_part_len,
+    flags
+  )
   return ret >>> 0
 }
 
@@ -585,6 +812,17 @@ export function _C_GetSessionInfo(h_session, p_info) {
 }
 
 /**
+ * @param {number} _h_session
+ * @param {number} _type
+ * @param {number} _p_flags
+ * @returns {number}
+ */
+export function _C_GetSessionValidationFlags(_h_session, _type, _p_flags) {
+  const ret = wasm._C_GetSessionValidationFlags(_h_session, _type, _p_flags)
+  return ret >>> 0
+}
+
+/**
  * C_GetSlotInfo: returns basic slot info for slot 0.
  * CK_SLOT_INFO: slotDescription(64) + manufacturerID(32) + flags(4) + hardwareVersion(2) + firmwareVersion(2) = 104 bytes
  * @param {number} _slot_id
@@ -667,6 +905,46 @@ export function _C_Login(h_session, user_type, p_pin, ul_pin_len) {
  */
 export function _C_Logout(h_session) {
   const ret = wasm._C_Logout(h_session)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @returns {number}
+ */
+export function _C_MessageDecryptFinal(h_session) {
+  const ret = wasm._C_MessageDecryptFinal(h_session)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_mechanism
+ * @param {number} h_key
+ * @returns {number}
+ */
+export function _C_MessageDecryptInit(h_session, p_mechanism, h_key) {
+  const ret = wasm._C_MessageDecryptInit(h_session, p_mechanism, h_key)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @returns {number}
+ */
+export function _C_MessageEncryptFinal(h_session) {
+  const ret = wasm._C_MessageEncryptFinal(h_session)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_mechanism
+ * @param {number} h_key
+ * @returns {number}
+ */
+export function _C_MessageEncryptInit(h_session, p_mechanism, h_key) {
+  const ret = wasm._C_MessageEncryptInit(h_session, p_mechanism, h_key)
   return ret >>> 0
 }
 
@@ -1014,6 +1292,62 @@ export function _C_VerifyMessage(
     p_signature,
     ul_signature_len
   )
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_data
+ * @param {number} ul_data_len
+ * @returns {number}
+ */
+export function _C_VerifySignature(h_session, p_data, ul_data_len) {
+  const ret = wasm._C_VerifySignature(h_session, p_data, ul_data_len)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @returns {number}
+ */
+export function _C_VerifySignatureFinal(h_session) {
+  const ret = wasm._C_VerifySignatureFinal(h_session)
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_mechanism
+ * @param {number} h_key
+ * @param {number} p_signature
+ * @param {number} ul_signature_len
+ * @returns {number}
+ */
+export function _C_VerifySignatureInit(
+  h_session,
+  p_mechanism,
+  h_key,
+  p_signature,
+  ul_signature_len
+) {
+  const ret = wasm._C_VerifySignatureInit(
+    h_session,
+    p_mechanism,
+    h_key,
+    p_signature,
+    ul_signature_len
+  )
+  return ret >>> 0
+}
+
+/**
+ * @param {number} h_session
+ * @param {number} p_part
+ * @param {number} ul_part_len
+ * @returns {number}
+ */
+export function _C_VerifySignatureUpdate(h_session, p_part, ul_part_len) {
+  const ret = wasm._C_VerifySignatureUpdate(h_session, p_part, ul_part_len)
   return ret >>> 0
 }
 

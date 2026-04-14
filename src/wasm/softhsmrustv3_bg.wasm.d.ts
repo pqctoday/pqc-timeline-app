@@ -209,7 +209,6 @@ export const _C_WrapKeyAuthenticated: (
   g: number,
   h: number
 ) => number
-export const __wbg_get_memory: () => any
 export const __wbg_softhsmrust_free: (a: number, b: number) => void
 export const _set_kat_seed: (a: number, b: number) => void
 export const softhsmrust_aes_ctr_decrypt: (

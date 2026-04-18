@@ -1,14 +1,15 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import React, { useCallback } from 'react'
-import { Download, Copy, Printer, Check } from 'lucide-react'
+import { Download, Copy, Printer, Check, Presentation } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { markdownToPptx } from '@/services/export/pptxExport'
 
 interface ExportableArtifactProps {
   title: string
   children: React.ReactNode
   exportData: string
   filename?: string
-  formats?: ('markdown' | 'json' | 'csv')[]
+  formats?: ('markdown' | 'json' | 'csv' | 'pptx')[]
   onExport?: () => void
 }
 
@@ -47,13 +48,19 @@ export const ExportableArtifact: React.FC<ExportableArtifactProps> = ({
   }, [exportData, triggerSave])
 
   const handleDownload = useCallback(
-    (format: string) => {
+    async (format: string) => {
+      if (format === 'pptx') {
+        await markdownToPptx(exportData, filename)
+        triggerSave()
+        return
+      }
       const ext = format === 'markdown' ? 'md' : format
       const mimeMap: Record<string, string> = {
         markdown: 'text/markdown',
         json: 'application/json',
         csv: 'text/csv',
       }
+      // eslint-disable-next-line security/detect-object-injection
       const blob = new Blob([exportData], { type: mimeMap[format] || 'text/plain' })
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
@@ -82,7 +89,7 @@ export const ExportableArtifact: React.FC<ExportableArtifactProps> = ({
           </Button>
           {formats.map((format) => (
             <Button key={format} variant="outline" size="sm" onClick={() => handleDownload(format)}>
-              <Download size={14} />
+              {format === 'pptx' ? <Presentation size={14} /> : <Download size={14} />}
               <span className="ml-1.5">.{format === 'markdown' ? 'md' : format}</span>
             </Button>
           ))}

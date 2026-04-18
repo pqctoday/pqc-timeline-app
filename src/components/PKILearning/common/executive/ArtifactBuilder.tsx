@@ -30,6 +30,10 @@ interface ArtifactBuilderProps {
   onExport?: (data: Record<string, Record<string, string | string[]>>) => void
   exportFilename?: string
   renderPreview?: (data: Record<string, Record<string, string | string[]>>) => string
+  /** Export formats offered on the preview action bar. Defaults to `['markdown']`.
+   *  Artifacts with rich narrative structure (e.g., Board Pitch) can opt-in to
+   *  `'pptx'` for a slide deck, or `'json'` for raw structured data. */
+  exportFormats?: ('markdown' | 'json' | 'csv' | 'pptx')[]
 }
 
 export const ArtifactBuilder: React.FC<ArtifactBuilderProps> = ({
@@ -39,6 +43,7 @@ export const ArtifactBuilder: React.FC<ArtifactBuilderProps> = ({
   onExport,
   exportFilename = 'artifact',
   renderPreview,
+  exportFormats = ['markdown'],
 }) => {
   const [mode, setMode] = useState<'edit' | 'preview'>('edit')
   const [formData, setFormData] = useState<Record<string, Record<string, string | string[]>>>(
@@ -223,7 +228,7 @@ export const ArtifactBuilder: React.FC<ArtifactBuilderProps> = ({
           title={title}
           exportData={exportMarkdown}
           filename={exportFilename}
-          formats={['markdown']}
+          formats={exportFormats}
           onExport={handleExport}
         >
           <div className="prose prose-sm dark:prose-invert max-w-none whitespace-pre-wrap font-mono text-sm text-foreground bg-muted/50 rounded-lg p-4 max-h-[600px] overflow-y-auto">

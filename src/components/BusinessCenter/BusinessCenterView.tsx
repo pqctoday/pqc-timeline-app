@@ -11,9 +11,13 @@ import {
 import { useNavigate } from 'react-router-dom'
 import JSZip from 'jszip'
 import { PageHeader } from '@/components/common/PageHeader'
+import { WorkflowBreadcrumb } from '@/components/shared/WorkflowBreadcrumb'
 import { Button } from '@/components/ui/button'
 import { FilterDropdown } from '@/components/common/FilterDropdown'
 import { useModuleStore } from '@/store/useModuleStore'
+import { usePersonaStore } from '@/store/usePersonaStore'
+import { getBusinessCenterPillarOrder, type BCPillarId } from '@/data/personaConfig'
+import { useSeedFrameworksFromCountry } from '@/hooks/assessment/useSeedFrameworksFromCountry'
 import { useBusinessMetrics } from './hooks/useBusinessMetrics'
 import { TYPE_LABELS } from './ArtifactCard'
 import { RiskManagementSection } from './sections/RiskManagementSection'
@@ -31,7 +35,7 @@ function WelcomeState() {
     <div className="glass-panel p-8 text-center">
       <LayoutDashboard size={48} className="mx-auto mb-4 text-muted-foreground" />
       <h2 className="text-xl font-semibold text-foreground mb-2">
-        Welcome to your PQC Business Center
+        Welcome to your PQC Command Center
       </h2>
       <p className="text-sm text-muted-foreground mb-6 max-w-lg mx-auto">
         This is your command center for PQC readiness. Get started by running a risk assessment,
@@ -93,9 +97,15 @@ const TYPE_FILTER_ITEMS = [
 ]
 
 export function BusinessCenterView() {
+  useSeedFrameworksFromCountry()
   const metrics = useBusinessMetrics()
   const deleteExecutiveDocument = useModuleStore((s) => s.deleteExecutiveDocument)
   const updateExecutiveDocument = useModuleStore((s) => s.updateExecutiveDocument)
+  const selectedPersona = usePersonaStore((s) => s.selectedPersona)
+  const pillarOrder: readonly BCPillarId[] = useMemo(
+    () => getBusinessCenterPillarOrder(selectedPersona),
+    [selectedPersona]
+  )
 
   // Filter state
   const [typeFilter, setTypeFilter] = useState('all')
@@ -167,13 +177,14 @@ export function BusinessCenterView() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6" data-testid="bc-dashboard-ready">
+      <WorkflowBreadcrumb current="business" />
       <PageHeader
         icon={LayoutDashboard}
         pageId="business-center"
-        title="Business Center"
+        title="Command Center"
         description="Your PQC readiness command center — risk, compliance, governance, and next steps."
-        shareTitle="PQC Business Center — Quantum Readiness Command Center"
+        shareTitle="PQC Command Center — Quantum Readiness Workspace"
         shareText="Your PQC readiness command center — risk, compliance, governance, and actionable next steps."
       />
 
@@ -215,23 +226,38 @@ export function BusinessCenterView() {
         <WelcomeState />
       ) : (
         <div className="space-y-6">
-          {/* Pillar 1: Risk Management — full width */}
-          <RiskManagementSection metrics={metrics} {...artifactCallbacks} />
-
-          {/* Pillars 2-3: Compliance & Governance — 2 col */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <ComplianceRegulatorySection metrics={metrics} {...artifactCallbacks} />
-            <GovernancePolicySection metrics={metrics} {...artifactCallbacks} />
-          </div>
-
-          {/* Pillar 4: Vendor & Migration — full width */}
-          <VendorSupplyChainSection metrics={metrics} {...artifactCallbacks} />
-
-          {/* Compact Executive Learning — full width */}
-          <CompactLearningBar modules={metrics.execModuleProgress} />
-
-          {/* Action Items — full width */}
-          <ActionItemsSection metrics={metrics} />
+          {pillarOrder.map((pillar) => {
+            switch (pillar) {
+              case 'risk':
+                return <RiskManagementSection key="risk" metrics={metrics} {...artifactCallbacks} />
+              case 'compliance':
+                return (
+                  <ComplianceRegulatorySection
+                    key="compliance"
+                    metrics={metrics}
+                    {...artifactCallbacks}
+                  />
+                )
+              case 'governance':
+                return (
+                  <GovernancePolicySection
+                    key="governance"
+                    metrics={metrics}
+                    {...artifactCallbacks}
+                  />
+                )
+              case 'vendor':
+                return (
+                  <VendorSupplyChainSection key="vendor" metrics={metrics} {...artifactCallbacks} />
+                )
+              case 'learning':
+                return <CompactLearningBar key="learning" modules={metrics.execModuleProgress} />
+              case 'actions':
+                return <ActionItemsSection key="actions" metrics={metrics} />
+              default:
+                return null
+            }
+          })}
         </div>
       )}
 

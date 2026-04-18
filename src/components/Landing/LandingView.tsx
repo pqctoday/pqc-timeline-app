@@ -57,7 +57,7 @@ const PERSONA_HERO_CTA: Record<
 > = {
   executive: {
     primary: { label: 'Start the Journey', path: '/learn' },
-    secondary: { label: 'Open Business Center', path: '/business' },
+    secondary: { label: 'Open Command Center', path: '/business' },
   },
   developer: {
     primary: { label: 'Start the Journey', path: '/learn' },
@@ -234,7 +234,7 @@ function buildJourneySteps(
     {
       id: 'business',
       step: 8,
-      label: 'Business Center',
+      label: 'Command Center',
       icon: LayoutDashboard,
       color: 'text-primary',
       section: 'assess' as const,

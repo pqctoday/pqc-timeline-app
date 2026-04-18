@@ -8,6 +8,7 @@ import { EmptyState } from '@/components/ui/empty-state'
 import { HNDLHNFLSection } from '@/components/shared/HNDLHNFLSection'
 import { ROICalculatorSection } from '@/components/shared/ROICalculatorSection'
 import type { ROISummary } from '@/components/shared/ROICalculatorSection'
+import { RiskGauge } from '@/components/shared/widgets/RiskGauge'
 import { ArtifactCard, ArtifactPlaceholder } from '../ArtifactCard'
 import {
   PILLAR_ARTIFACT_TYPES,
@@ -16,41 +17,11 @@ import {
 } from '../hooks/useBusinessMetrics'
 import type { ExecutiveDocument } from '@/services/storage/types'
 
-const RISK_COLORS: Record<string, string> = {
-  low: 'text-status-success',
-  medium: 'text-status-warning',
-  high: 'text-status-error',
-  critical: 'text-status-error',
-}
-
-const RISK_BG: Record<string, string> = {
-  low: 'bg-status-success/15',
-  medium: 'bg-status-warning/15',
-  high: 'bg-status-error/15',
-  critical: 'bg-status-error/15',
-}
-
 const CATEGORY_LABELS: Record<string, string> = {
   quantumExposure: 'Quantum Exposure',
   migrationComplexity: 'Migration Complexity',
   regulatoryPressure: 'Regulatory Pressure',
   organizationalReadiness: 'Org Readiness',
-}
-
-function RiskGauge({ score, level }: { score: number; level: string }) {
-  const colorClass = RISK_COLORS[level] ?? 'text-muted-foreground' // eslint-disable-line security/detect-object-injection
-  const bgClass = RISK_BG[level] ?? 'bg-muted' // eslint-disable-line security/detect-object-injection
-
-  return (
-    <div className="flex flex-col items-center gap-2">
-      <div
-        className={`w-24 h-24 rounded-full flex items-center justify-center border-4 ${bgClass} border-current ${colorClass}`}
-      >
-        <span className={`text-3xl font-bold ${colorClass}`}>{score}</span>
-      </div>
-      <span className={`text-xs font-medium uppercase tracking-wide ${colorClass}`}>{level}</span>
-    </div>
-  )
 }
 
 function DeltaIndicator({ current, previous }: { current: number; previous: number | null }) {
@@ -59,13 +30,13 @@ function DeltaIndicator({ current, previous }: { current: number; previous: numb
   if (delta === 0) return <Minus size={14} className="text-muted-foreground" />
   if (delta < 0)
     return (
-      <span className="flex items-center gap-1 text-xs text-status-success">
+      <span className="flex items-center gap-1 text-xs text-success">
         <TrendingDown size={14} />
         {Math.abs(delta)} pts
       </span>
     )
   return (
-    <span className="flex items-center gap-1 text-xs text-status-error">
+    <span className="flex items-center gap-1 text-xs text-destructive">
       <TrendingUp size={14} />+{delta} pts
     </span>
   )
@@ -148,7 +119,7 @@ export function RiskManagementSection({
       <div className="glass-panel p-6">
         <h2 className="flex items-center gap-2 text-lg font-semibold text-foreground mb-4">
           <ShieldAlert size={20} className="text-primary" />
-          Risk Management
+          Risk Overview
         </h2>
         <EmptyState
           icon={<ShieldAlert size={32} />}
@@ -176,7 +147,7 @@ export function RiskManagementSection({
         <div className="flex items-center justify-between mb-4">
           <h2 className="flex items-center gap-2 text-lg font-semibold text-foreground">
             <ShieldAlert size={20} className="text-primary" />
-            Risk Management
+            Risk Overview
           </h2>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" onClick={() => navigate('/assess')}>

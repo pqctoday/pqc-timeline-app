@@ -89,7 +89,7 @@ export const MainLayout = () => {
     },
     {
       path: '/business',
-      label: 'Business Center',
+      label: 'Command Center',
       icon: LayoutDashboard,
       section: 'assess',
       // Visible on mobile for executive/architect; hidden for others
@@ -119,7 +119,7 @@ export const MainLayout = () => {
   ]
 
   // Abbreviated labels for mobile bottom nav (only override labels that are too long)
-  const SHORT_LABELS: Record<string, string> = { Timeline: 'Time', 'Business Center': 'Biz' }
+  const SHORT_LABELS: Record<string, string> = { Timeline: 'Time', 'Command Center': 'Biz' }
 
   const [moreMenuOpen, setMoreMenuOpen] = React.useState(false)
 

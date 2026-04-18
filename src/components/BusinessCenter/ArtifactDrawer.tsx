@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import React, { useState, useCallback, lazy, Suspense } from 'react'
-import { X, Download, Pencil, Eye } from 'lucide-react'
+import { X, Download, Pencil, Eye, Printer } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useModuleStore } from '@/store/useModuleStore'
@@ -39,6 +39,10 @@ const BUILDER_MAP: Partial<
   'board-deck': lazyNamed(
     () => import('@/components/PKILearning/modules/PQCBusinessCase/components/BoardPitchBuilder'),
     'BoardPitchBuilder'
+  ),
+  'roi-model': lazyNamed(
+    () => import('@/components/PKILearning/modules/PQCBusinessCase/components/ROICalculator'),
+    'ROICalculator'
   ),
   'vendor-scorecard': lazyNamed(
     () => import('@/components/PKILearning/modules/VendorRisk/components/VendorScorecardBuilder'),
@@ -160,6 +164,51 @@ export function ArtifactDrawer({ document, mode, onClose, onModeChange }: Artifa
     URL.revokeObjectURL(url)
   }, [document])
 
+  const handlePrintToPdf = useCallback(() => {
+    if (!document) return
+    // Open a minimal print window with just the artifact content so the user's
+    // browser print-to-PDF captures the artifact cleanly, without the drawer
+    // chrome or the rest of the page.
+    const win = globalThis.window.open('', '_blank', 'width=900,height=1200')
+    if (!win) return
+    const safeTitle = document.title.replace(/[<>&"']/g, '')
+    const safeBody = document.data
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+    win.document.write(`<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>${safeTitle}</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 2rem; color: #111; line-height: 1.5; }
+    h1 { font-size: 1.4rem; margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
+    pre { white-space: pre-wrap; word-wrap: break-word; font-family: inherit; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <h1>${safeTitle}</h1>
+  <pre>${safeBody}</pre>
+</body>
+</html>`)
+    win.document.close()
+    // Give the window a tick to render before opening the print dialog.
+    win.addEventListener('load', () => {
+      win.focus()
+      win.print()
+    })
+    // Fallback: browsers that don't fire load for document.write close.
+    setTimeout(() => {
+      try {
+        win.focus()
+        win.print()
+      } catch {
+        /* ignore */
+      }
+    }, 300)
+  }, [document])
+
   const handleDelete = useCallback(() => {
     if (!document) return
     deleteExecutiveDocument(document.id)
@@ -216,7 +265,11 @@ export function ArtifactDrawer({ document, mode, onClose, onModeChange }: Artifa
             )}
             <Button variant="ghost" size="sm" onClick={handleExportMarkdown}>
               <Download size={14} />
-              <span className="hidden sm:inline ml-1">Export</span>
+              <span className="hidden sm:inline ml-1">Markdown</span>
+            </Button>
+            <Button variant="ghost" size="sm" onClick={handlePrintToPdf}>
+              <Printer size={14} />
+              <span className="hidden sm:inline ml-1">PDF</span>
             </Button>
             <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={onClose}>
               <X size={16} />

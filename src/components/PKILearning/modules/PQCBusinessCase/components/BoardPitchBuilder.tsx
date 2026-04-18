@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import React, { useMemo, useCallback } from 'react'
-import { FileText } from 'lucide-react'
+import { FileText, ExternalLink } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { ArtifactBuilder } from '@/components/PKILearning/common/executive'
 import type { ArtifactSection } from '@/components/PKILearning/common/executive'
 import { useExecutiveModuleData } from '@/hooks/useExecutiveModuleData'
@@ -246,10 +247,24 @@ export const BoardPitchBuilder: React.FC = () => {
             with data from your assessment and the workshop steps above. Switch to Preview mode to
             see the formatted document, then export as Markdown or JSON.
           </p>
+          {data.isAssessmentComplete && (
+            <p className="text-xs text-muted-foreground mt-2">
+              Looking for a one-page summary? Open the{' '}
+              <Link
+                to="/report"
+                className="inline-flex items-center gap-1 text-primary hover:underline font-medium"
+              >
+                Report Board Brief
+                <ExternalLink size={10} />
+              </Link>{' '}
+              — it uses the same assessment data as the canonical single-source view.
+            </p>
+          )}
         </div>
       </div>
 
-      {/* Artifact Builder */}
+      {/* Artifact Builder — offers PPTX alongside markdown so executives can
+          share the pitch in the format boards expect. */}
       <ArtifactBuilder
         title="PQC Migration Investment Proposal"
         description="A board-ready executive brief for PQC investment approval."
@@ -257,6 +272,7 @@ export const BoardPitchBuilder: React.FC = () => {
         onExport={handleExport}
         exportFilename="pqc-board-pitch"
         renderPreview={renderPreview}
+        exportFormats={['markdown', 'pptx']}
       />
     </div>
   )

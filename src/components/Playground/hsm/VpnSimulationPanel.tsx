@@ -378,6 +378,16 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
   const [serverPsk, setServerPsk] = useState('pqc-wasm-demo-key-2026')
   const pskMismatch = clientPsk !== serverPsk
 
+  // Key Gen State for Client
+  const [clientAlg, setClientAlg] = useState('RSA')
+  const [clientSize, setClientSize] = useState('65')
+  const [clientClassAlg, setClientClassAlg] = useState('RSA-3072')
+
+  // Key Gen State for Server
+  const [serverAlg, setServerAlg] = useState('ML-DSA')
+  const [serverSize, setServerSize] = useState('65')
+  const [serverClassAlg, setServerClassAlg] = useState('RSA-3072')
+
   // Cert pre-provisioning state (C8): certs must be generated before starting the daemon
   const [certData, setCertData] = useState<{
     initCert: string
@@ -2342,11 +2352,12 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                   }
 
                   try {
-                    // RSA-3072 is the only auth key type supported by strongSwan charon
-                    // in this WASM build. ML-DSA auth requires an IANA IKEv2 AUTH method
-                    // that does not exist yet — wired when upstream support lands.
-                    // The handshake always completes via PSK (WASM_PSK env var).
-                    strongSwanEngine.setKeySpec(1, 3072, 3072)
+                    // Pass user's key algorithm selection to the worker
+                    // algType: 1=RSA, 2=ML-DSA. size: RSA bits or ML-DSA level.
+                    const algType = clientAlg === 'ML-DSA' ? 2 : 1
+                    const slot0Size = algType === 2 ? parseInt(clientSize) || 65 : parseInt(clientClassAlg.split('-')[1] || '3072') || 3072
+                    const slot1Size = algType === 2 ? parseInt(serverSize) || 65 : parseInt(serverClassAlg.split('-')[1] || '3072') || 3072
+                    strongSwanEngine.setKeySpec(algType, slot0Size, slot1Size)
 
                     // In RPC mode, ensure the main-thread softhsmv3 is initialized and
                     // both VPN tokens (initiator + responder) are ready in their own slots.
@@ -2909,16 +2920,39 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                     <div>
                       <div className="text-xs font-semibold mb-2">Authentication Key Type</div>
                       <div className="flex gap-2 items-center flex-wrap">
-                        <span className="text-xs px-2 py-1 rounded border border-primary/40 bg-primary/10 text-primary font-medium">
-                          RSA-3072 (active)
-                        </span>
-                        <span
-                          className="text-xs px-2 py-1 rounded border border-border bg-muted/50 text-muted-foreground opacity-60 cursor-not-allowed"
-                          title="ML-DSA IKEv2 authentication requires an IANA AUTH method not yet assigned"
+                        <select
+                          value={clientAlg}
+                          onChange={(e) => setClientAlg(e.target.value)}
+                          className="text-xs px-2 py-1 rounded border border-border bg-background"
                         >
-                          ML-DSA — coming soon
-                        </span>
+                          <option value="ML-DSA">ML-DSA (PQC)</option>
+                          <option value="RSA">RSA (Classical)</option>
+                        </select>
+                        {clientAlg === 'ML-DSA' ? (
+                          <select value={clientSize} onChange={(e) => setClientSize(e.target.value)}
+                            className="text-xs px-2 py-1 rounded border border-border bg-background">
+                            <option value="44">ML-DSA-44</option>
+                            <option value="65">ML-DSA-65</option>
+                            <option value="87">ML-DSA-87</option>
+                          </select>
+                        ) : (
+                          <select value={clientClassAlg} onChange={(e) => setClientClassAlg(e.target.value)}
+                            className="text-xs px-2 py-1 rounded border border-border bg-background">
+                            <option value="RSA-2048">RSA-2048</option>
+                            <option value="RSA-3072">RSA-3072</option>
+                            <option value="RSA-4096">RSA-4096</option>
+                          </select>
+                        )}
+                        <span className="text-[10px] text-muted-foreground mr-4">Keys generated in worker HSM</span>
                       </div>
+                      {clientAlg === 'ML-DSA' && (
+                        <div className="mt-2 p-2 bg-warning/10 border border-warning/30 rounded flex items-start gap-2 max-w-[500px]">
+                          <ShieldAlert className="text-warning shrink-0 mt-0.5" size={14} />
+                          <div className="text-[10px] text-warning font-medium leading-tight">
+                            ML-DSA requires an IANA AUTH assignment not yet standardized. This simulation relies on preliminary draft constructs matching <em>draft-ietf-ipsecme-ikev2-auth-pqc</em>.
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
@@ -2980,16 +3014,39 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                     <div>
                       <div className="text-xs font-semibold mb-2">Authentication Key Type</div>
                       <div className="flex gap-2 items-center flex-wrap">
-                        <span className="text-xs px-2 py-1 rounded border border-secondary/40 bg-secondary/10 text-secondary font-medium">
-                          RSA-3072 (active)
-                        </span>
-                        <span
-                          className="text-xs px-2 py-1 rounded border border-border bg-muted/50 text-muted-foreground opacity-60 cursor-not-allowed"
-                          title="ML-DSA IKEv2 authentication requires an IANA AUTH method not yet assigned"
+                        <select
+                          value={serverAlg}
+                          onChange={(e) => setServerAlg(e.target.value)}
+                          className="text-xs px-2 py-1 rounded border border-border bg-background"
                         >
-                          ML-DSA — coming soon
-                        </span>
+                          <option value="ML-DSA">ML-DSA (PQC)</option>
+                          <option value="RSA">RSA (Classical)</option>
+                        </select>
+                        {serverAlg === 'ML-DSA' ? (
+                          <select value={serverSize} onChange={(e) => setServerSize(e.target.value)}
+                            className="text-xs px-2 py-1 rounded border border-border bg-background">
+                            <option value="44">ML-DSA-44</option>
+                            <option value="65">ML-DSA-65</option>
+                            <option value="87">ML-DSA-87</option>
+                          </select>
+                        ) : (
+                          <select value={serverClassAlg} onChange={(e) => setServerClassAlg(e.target.value)}
+                            className="text-xs px-2 py-1 rounded border border-border bg-background">
+                            <option value="RSA-2048">RSA-2048</option>
+                            <option value="RSA-3072">RSA-3072</option>
+                            <option value="RSA-4096">RSA-4096</option>
+                          </select>
+                        )}
+                        <span className="text-[10px] text-muted-foreground mr-4">Keys generated in worker HSM</span>
                       </div>
+                      {serverAlg === 'ML-DSA' && (
+                        <div className="mt-2 p-2 bg-warning/10 border border-warning/30 rounded flex items-start gap-2 max-w-[500px]">
+                          <ShieldAlert className="text-warning shrink-0 mt-0.5" size={14} />
+                          <div className="text-[10px] text-warning font-medium leading-tight">
+                            ML-DSA requires an IANA AUTH assignment not yet standardized. This simulation relies on preliminary draft constructs matching <em>draft-ietf-ipsecme-ikev2-auth-pqc</em>.
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}

@@ -10,6 +10,7 @@ import {
   CheckCircle,
   KeyRound,
   BookOpen,
+  FlaskConical,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
@@ -2947,7 +2948,7 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                       </div>
                       {clientAlg === 'ML-DSA' && (
                         <div className="mt-2 p-2 bg-warning/10 border border-warning/30 rounded flex items-start gap-2 max-w-[500px]">
-                          <ShieldAlert className="text-warning shrink-0 mt-0.5" size={14} />
+                          <FlaskConical className="text-warning shrink-0 mt-0.5" size={14} />
                           <div className="text-[10px] text-warning font-medium leading-tight">
                             ML-DSA requires an IANA AUTH assignment not yet standardized. This simulation relies on preliminary draft constructs matching <em>draft-ietf-ipsecme-ikev2-auth-pqc</em>.
                           </div>
@@ -3041,7 +3042,7 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                       </div>
                       {serverAlg === 'ML-DSA' && (
                         <div className="mt-2 p-2 bg-warning/10 border border-warning/30 rounded flex items-start gap-2 max-w-[500px]">
-                          <ShieldAlert className="text-warning shrink-0 mt-0.5" size={14} />
+                          <FlaskConical className="text-warning shrink-0 mt-0.5" size={14} />
                           <div className="text-[10px] text-warning font-medium leading-tight">
                             ML-DSA requires an IANA AUTH assignment not yet standardized. This simulation relies on preliminary draft constructs matching <em>draft-ietf-ipsecme-ikev2-auth-pqc</em>.
                           </div>

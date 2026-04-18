@@ -577,13 +577,15 @@ class RetrievalService {
   }
 
   private buildIndex(): void {
-    // Build fast lookup by ID
+    // Build fast lookup by ID (deduplicates — last entry wins)
     this.corpusById.clear()
     this.entityIndex.clear()
 
     for (const chunk of this.corpus) {
       this.corpusById.set(chunk.id, chunk)
     }
+    // Deduplicate corpus against the map so MiniSearch never sees duplicate IDs
+    this.corpus = Array.from(this.corpusById.values())
 
     // Build entity index for direct title matching
     for (const chunk of this.corpus) {

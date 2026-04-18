@@ -409,6 +409,7 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
         ? 'pkcs11 nonce aes sha1 sha2 hmac kdf openssl'
         : 'pkcs11 nonce aes sha1 sha2 hmac kdf'
     return `charon {
+  threads = 4
   fragment_size = ${fragMtu}
   integrity_test = no
   load_modular = no
@@ -1416,10 +1417,10 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                 M.setValue(valLenPtr92 + 0, CKA_VALUE, 'i32')
                 M.setValue(valLenPtr92 + 4, 0, 'i32')
                 M.setValue(valLenPtr92 + 8, 0, 'i32')
-                M._C_GetAttributeValue(hSess92, p[1], valLenPtr92, 1)
-                const secretLen92 = M.getValue(valLenPtr92 + 8, 'i32') >>> 0
+                const getAttrRv92 = M._C_GetAttributeValue(hSess92, p[1], valLenPtr92, 1)
+                const secretLen92 = M.getValue(valLenPtr92 + 8, 'i32')
                 let secretHex92 = ''
-                if (secretLen92 > 0) {
+                if (getAttrRv92 === 0 && secretLen92 > 0 && secretLen92 < 10000) {
                   const valBuf92 = M._malloc(secretLen92)
                   M.setValue(valLenPtr92 + 4, valBuf92, 'i32')
                   M._C_GetAttributeValue(hSess92, p[1], valLenPtr92, 1)
@@ -1502,10 +1503,10 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
               M.setValue(valLenPtr93 + 0, CKA_VALUE, 'i32')
               M.setValue(valLenPtr93 + 4, 0, 'i32')
               M.setValue(valLenPtr93 + 8, 0, 'i32')
-              M._C_GetAttributeValue(hSess93, p[0], valLenPtr93, 1)
-              const secretLen93 = M.getValue(valLenPtr93 + 8, 'i32') >>> 0
+              const getAttrRv93 = M._C_GetAttributeValue(hSess93, p[0], valLenPtr93, 1)
+              const secretLen93 = M.getValue(valLenPtr93 + 8, 'i32')
               let secretHex93 = ''
-              if (secretLen93 > 0) {
+              if (getAttrRv93 === 0 && secretLen93 > 0 && secretLen93 < 10000) {
                 const valBuf93 = M._malloc(secretLen93)
                 M.setValue(valLenPtr93 + 4, valBuf93, 'i32')
                 M._C_GetAttributeValue(hSess93, p[0], valLenPtr93, 1)

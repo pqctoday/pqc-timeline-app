@@ -2099,15 +2099,33 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                           )}
                       </div>
                       <div className="space-y-1.5 relative">
-                        {step.message.payloads.map((payload, pIdx) => (
-                          <PayloadCard
-                            key={`${step.label}-${pIdx}`}
-                            payload={payload}
-                            index={pIdx}
-                            highlighted={idx === currentStep}
-                            isFragmented={hasCrashed && idx === currentStep}
-                          />
-                        ))}
+                        {(() => {
+                          const totalSize = step.message.payloads.reduce((a, p) => a + p.sizeBytes, 0);
+                          if (totalSize > mtu && allowFragmentation) {
+                            const numFragments = Math.ceil(totalSize / mtu);
+                            return Array.from({ length: numFragments }).map((_, fIdx) => (
+                              <PayloadCard
+                                key={`${step.label}-frag-${fIdx}`}
+                                payload={{
+                                  abbreviation: `SKF (${fIdx + 1}/${numFragments})`,
+                                  sizeBytes: fIdx === numFragments - 1 ? totalSize % mtu || mtu : mtu,
+                                  description: `Encrypted Fragment Payload (RFC 7383) portion.`
+                                }}
+                                index={fIdx}
+                                highlighted={idx === currentStep}
+                              />
+                            ));
+                          }
+                          return step.message.payloads.map((payload, pIdx) => (
+                            <PayloadCard
+                              key={`${step.label}-${pIdx}`}
+                              payload={payload}
+                              index={pIdx}
+                              highlighted={idx === currentStep}
+                              isFragmented={hasCrashed && idx === currentStep}
+                            />
+                          ));
+                        })()}
                       </div>
                     </div>
                   ) : (
@@ -2171,15 +2189,33 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                           )}
                       </div>
                       <div className="space-y-1.5">
-                        {step.message.payloads.map((payload, pIdx) => (
-                          <PayloadCard
-                            key={`${step.label}-${pIdx}`}
-                            payload={payload}
-                            index={pIdx}
-                            highlighted={idx === currentStep}
-                            isFragmented={hasCrashed && idx === currentStep}
-                          />
-                        ))}
+                        {(() => {
+                          const totalSize = step.message.payloads.reduce((a, p) => a + p.sizeBytes, 0);
+                          if (totalSize > mtu && allowFragmentation) {
+                            const numFragments = Math.ceil(totalSize / mtu);
+                            return Array.from({ length: numFragments }).map((_, fIdx) => (
+                              <PayloadCard
+                                key={`${step.label}-frag-${fIdx}`}
+                                payload={{
+                                  abbreviation: `SKF (${fIdx + 1}/${numFragments})`,
+                                  sizeBytes: fIdx === numFragments - 1 ? totalSize % mtu || mtu : mtu,
+                                  description: `Encrypted Fragment Payload (RFC 7383) portion.`
+                                }}
+                                index={fIdx}
+                                highlighted={idx === currentStep}
+                              />
+                            ));
+                          }
+                          return step.message.payloads.map((payload, pIdx) => (
+                            <PayloadCard
+                              key={`${step.label}-${pIdx}`}
+                              payload={payload}
+                              index={pIdx}
+                              highlighted={idx === currentStep}
+                              isFragmented={hasCrashed && idx === currentStep}
+                            />
+                          ));
+                        })()}
                       </div>
                     </div>
                   ) : (

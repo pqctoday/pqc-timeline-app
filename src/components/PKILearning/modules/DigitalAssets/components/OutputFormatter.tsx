@@ -9,10 +9,45 @@ import {
   isSolanaAddress,
   isHexValue,
 } from '../utils/outputFormatters'
+import { PKCS11_GLOSSARY } from '@/data/glossary/pkcs11Terms'
 
 interface OutputFormatterProps {
   output: string
   className?: string
+}
+
+// Build a single regex that matches any glossary term (escaped, word-bounded).
+// Terms sorted longest-first so "HMAC-SHA3-256" wins over "SHA3-256".
+const GLOSSARY_LOOKUP: Record<string, string> = PKCS11_GLOSSARY.reduce(
+  (acc, t) => ({ ...acc, [t.term]: t.definition }),
+  {} as Record<string, string>
+)
+const GLOSSARY_REGEX = new RegExp(
+  '(' +
+    [...PKCS11_GLOSSARY]
+      .sort((a, b) => b.term.length - a.term.length)
+      .map((t) => t.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+      .join('|') +
+    ')',
+  'g'
+)
+
+/** Wrap known glossary tokens in hover chips. Whitespace is preserved exactly. */
+const renderWithGlossary = (text: string): React.ReactNode => {
+  if (!text) return text
+  const parts = text.split(GLOSSARY_REGEX)
+  if (parts.length === 1) return text
+  return parts.map((part, i) => {
+    const def = Object.prototype.hasOwnProperty.call(GLOSSARY_LOOKUP, part)
+      ? GLOSSARY_LOOKUP[part]
+      : undefined
+    if (!def) return <React.Fragment key={i}>{part}</React.Fragment>
+    return (
+      <span key={i} title={def} className="border-b border-dotted border-primary/50 cursor-help">
+        {part}
+      </span>
+    )
+  })
 }
 
 export const OutputFormatter: React.FC<OutputFormatterProps> = ({ output, className = '' }) => {
@@ -79,7 +114,7 @@ export const OutputFormatter: React.FC<OutputFormatterProps> = ({ output, classN
       return (
         <div key={index} className="mb-1">
           <span className="text-muted-foreground">{label}:</span>{' '}
-          <span className="text-foreground">{trimmedValue}</span>
+          <span className="text-foreground">{renderWithGlossary(trimmedValue)}</span>
         </div>
       )
     }
@@ -128,7 +163,7 @@ export const OutputFormatter: React.FC<OutputFormatterProps> = ({ output, classN
     // Regular text line
     return (
       <div key={index} className="text-foreground mb-1">
-        {line}
+        {renderWithGlossary(line)}
       </div>
     )
   }

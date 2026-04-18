@@ -1165,6 +1165,70 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'concept',
   },
   {
+    term: 'Endorsement Key',
+    acronym: 'EK',
+    definition:
+      'A TPM 2.0 primary key in the Endorsement Hierarchy (TPM_RH_ENDORSEMENT = 0x4000000B), provisioned by the manufacturer and used to establish trust in the TPM. Per TCG V1.85, EK migrates from RSA-2048/ECC-P256 to ML-KEM-768 (TPM_ALG_MLKEM = 0x00A0) and is used for KEM-based Credential Activation.',
+    technicalNote:
+      'Non-migratable, non-duplicable, factory-provisioned. ML-KEM-768 public key = 1184 B; ciphertext = 1088 B (FIPS 203).',
+    relatedModule: '/learn/secure-boot-pqc',
+    complexity: 'advanced',
+    category: 'concept',
+  },
+  {
+    term: 'Attestation Identity Key',
+    acronym: 'AIK',
+    definition:
+      'A restricted TPM 2.0 signing key used for TPM2_Quote — signing PCR values to prove system state to a remote verifier. Per TCG V1.85, AIK migrates from RSA-2048/ECC-P256 to ML-DSA-65 (TPM_ALG_MLDSA = 0x00A1, FIPS 204 Cat III).',
+    technicalNote:
+      'ML-DSA-65 public key = 1952 B; signature = 3309 B. AIK certificates are issued by a Privacy CA or by TPM vendor direct attestation.',
+    relatedModule: '/learn/secure-boot-pqc',
+    complexity: 'advanced',
+    category: 'concept',
+  },
+  {
+    term: 'Storage Root Key',
+    acronym: 'SRK',
+    definition:
+      'The primary key of the TPM 2.0 Storage Hierarchy (TPM_RH_OWNER = 0x40000001). All user-created keys are wrapped under the SRK. Per TCG V1.85, the SRK migrates to ML-KEM-768 for child-key wrapping, which drove the TPM_BUFFER_MAX increase from 4096 B to 8192 B.',
+    technicalNote: 'Not exportable. ML-KEM wraps child TPM2B_PRIVATE blobs via KEM-derive.',
+    relatedModule: '/learn/secure-boot-pqc',
+    complexity: 'advanced',
+    category: 'concept',
+  },
+  {
+    term: 'Device Identity Key',
+    acronym: 'IDevID',
+    definition:
+      'IEEE 802.1AR Initial Device Identity — a long-lived, factory-provisioned key used to prove device identity in network onboarding. PQC migration is tracked in an IEEE 802.1AR PQC amendment and requires hardware refresh (ML-DSA-65 per TCG V1.85 Part 2 Table 206).',
+    technicalNote:
+      'Used in 802.1X network access, FIDO Device Onboard, and supply-chain provenance attestation.',
+    relatedModule: '/learn/secure-boot-pqc',
+    complexity: 'advanced',
+    category: 'concept',
+  },
+  {
+    term: 'Platform Configuration Register',
+    acronym: 'PCR',
+    definition:
+      'A TPM register that accumulates integrity measurements (hash chains) of platform state: firmware, boot loader, kernel, and optionally application code. TPM2_Quote signs PCR values with the AIK to produce a verifiable attestation report.',
+    technicalNote:
+      'Extend-only: PCR_new = hash(PCR_old || measurement). 24 PCRs on TPM 2.0; SHA-256 is the standard bank.',
+    relatedModule: '/learn/secure-boot-pqc',
+    complexity: 'advanced',
+    category: 'concept',
+  },
+  {
+    term: 'Credential Activation',
+    definition:
+      'A TPM 2.0 protocol (TPM2_MakeCredential / TPM2_ActivateCredential) for securely delivering a credential to a specific TPM, proven by the TPM demonstrating possession of the corresponding EK private key. PQC migration uses ML-KEM-768 encapsulation against the EK per TCG V1.85.',
+    technicalNote:
+      'The Privacy CA encapsulates a secret against the EK public key; only a TPM holding the matching EK private key can decapsulate and release the credential.',
+    relatedModule: '/learn/secure-boot-pqc',
+    complexity: 'advanced',
+    category: 'protocol',
+  },
+  {
     term: 'Code Signing',
     definition:
       'Digitally signing software executables and scripts to verify their authenticity and integrity. PQC migration replaces RSA/ECDSA signatures with ML-DSA or SLH-DSA.',

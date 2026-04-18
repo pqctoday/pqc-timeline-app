@@ -8,6 +8,51 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **5G SUCI Playground — UX overhaul**: three new sub-components — `ConfigureCard` (collapsible
+  first-visit vs returning-user settings panel), `ScenarioIntroStrip` (operator ↔ IMSI-catcher
+  perspective toggle), and `AttackerSidecar` (per-step "what the eavesdropper captures" sidebar).
+  New `suciUxMeta.ts` provides per-step phase labels, plain-English step explanations, and
+  attacker-observation copy. Plain-English mode toggle is on by default and persisted to
+  `localStorage`; scenario view (operator/attacker) is session-scoped via `sessionStorage`.
+- **StepWizard — phase progress + plain-English rail**: `PhaseProgress` component renders a
+  phase-grouped progress bar (labelled segments with per-step tick marks) that activates when
+  `Step.phase` fields are present. `PlainEnglishRail` component renders plain-English
+  explanations beside the terminal when `plainEnglishEnabled` is true. New optional `Step`
+  fields: `phase`, `plainEnglish`, `attackerSidecar`, `isClimax`, `climaxBanner`. New
+  `StepWizardProps`: `plainEnglishEnabled`, `phaseLabels`, `canonicalTabNames`, `tabExplainer`.
+- **PKCS#11 Log Panel — Beginner Mode**: `pkcs11PlainEnglish.ts` maps every PKCS#11 C\_ call to
+  a 4–8-word plain-English description (algorithm-aware: distinguishes ML-KEM, ML-DSA, X25519,
+  RSA, etc.). A new `beginnerMode` prop on `Pkcs11LogPanel` adds a `BookOpenText` toggle that
+  renders an extra grid column with the translation alongside the raw function name and args.
+- **SecureBootPQC — TPM 2.0 sandbox deep-link**: banner CTA in the TPM Key Hierarchy Explorer
+  tab links to `/playground/sbx-tpm-pqc-migration`, pointing users at the live pqctoday-tpm
+  (Stefan Berger's libtpms + swtpm) + pqctoday-hsm softhsmv3 scenario for real TPM2_CreatePrimary
+  outputs covering EK / SRK / AIK / IDevID in ML-KEM-768 and ML-DSA-65.
+- **Docker Playground — pqctoday-sandbox iframe embed**: `DockerPlaygroundView` completely
+  rewritten from scenario-tile/modal UI to an `<iframe>` embedding the pqctoday-sandbox app.
+  postMessage handshake: sandbox sends `pqc:ready` → hub responds `pqc:challenge` +
+  `pqc:config` (vendorId, theme, allowedRoutes). Dynamic `pqc:resize` events drive
+  auto-height (600–1600 px). Reads `VITE_SANDBOX_BASE_URL` (default `http://localhost:4000`);
+  shows `EmptyState` when unset.
+- **Glossary — TPM 2.0 / TCG V1.85 terms**: five new entries — EK (Endorsement Key, ML-KEM-768
+  in TCG V1.85), AIK (Attestation Identity Key, ML-DSA-65, used in TPM2_Quote), SRK (Storage
+  Root Key, ML-KEM-768 wrapping, drove TPM_BUFFER_MAX 4096→8192), IDevID (IEEE 802.1AR, factory
+  ML-DSA-65), and PCR (Platform Configuration Register, extend-only hash chain). All linked to
+  `/learn/secure-boot-pqc`.
+- **PKCS#11 glossary** (`src/data/glossary/pkcs11Terms.ts`): PKCS#11 token hover-chip
+  definitions used by `OutputFormatter` for inline tooltips.
+- **Library CSV v04172026** — new entries: KpqC Competition Results (HAETAE/AIMer/SMAUG-T/NTRU+
+  final selections), FIPS 140-3 IG PQC (NIST CMVP self-test requirements for FIPS 203/204/205),
+  3GPP TR 33.841 PQC Study 2025 (hybrid PQC for TLS/IPSec/IKEv2 in 5G), liboqs v0.15.0 (PQCA).
+- **Library enrichments v04172026** (`src/data/doc-enrichments/library_doc_enrichments_04172026.md`):
+  full enrichment run for the new library entries.
+
+### Changed
+
+- **Dev server network-accessible** (`vite.config.ts`): `host: true` added so the dev server
+  binds to all interfaces, enabling the pqctoday-sandbox iframe embed to reach the hub from
+  localhost on port 4000.
+
 - **NIST CMVP scraper — all security levels** (`scripts/scrapers/nist.ts`): now fetches all
   active FIPS 140-3 certificates (previously filtered to L3 only). Actual security level
   (L1/L2/L3) is extracted from each cert's detail page via `extractSecurityLevel()` parsing

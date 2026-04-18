@@ -38,10 +38,6 @@ export function useHostCheck(): boolean | null {
       return
     }
 
-    // targetOrigin restricts delivery: only a parent at an allowed origin
-    // will receive pqc:ready, and therefore be able to send pqc:challenge.
-    const targetOrigin = allowedOrigins[0] ?? '*'
-
     const handleMessage = (event: MessageEvent) => {
       if (event.data?.type !== 'pqc:challenge') return
       if (allowedOrigins.includes(event.origin)) {
@@ -51,7 +47,14 @@ export function useHostCheck(): boolean | null {
     }
 
     window.addEventListener('message', handleMessage)
-    window.parent.postMessage({ type: 'pqc:ready' }, targetOrigin)
+
+    // Broadcast pqc:ready to every allowed origin so certs with multiple
+    // origins (e.g. localhost:3098 AND localhost:3099) all work. pqc:ready
+    // carries no sensitive data; security is enforced by the strict
+    // allowedOrigins.includes(event.origin) check on pqc:challenge above.
+    for (const origin of allowedOrigins) {
+      window.parent.postMessage({ type: 'pqc:ready' }, origin)
+    }
 
     const timer = setTimeout(() => {
       // Only flip to false if still waiting (not already authorized)

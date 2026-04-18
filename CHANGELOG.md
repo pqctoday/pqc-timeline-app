@@ -73,6 +73,11 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+- **What's New modal — View Changelog deep link** (`src/components/ui/WhatsNewModal.tsx`): the
+  "View Changelog" action used the first unseen changelog section's version, which resolved to
+  `Unreleased` and produced an invalid `/changelog#vUnreleased` anchor. Now uses
+  `getCurrentVersion()` so the link always targets the released version section (e.g.
+  `/changelog#v3.3.8`).
 - **Bouncy Castle cert #4943 security level** (`migrate_certification_xref_04012026_r1.csv`):
   corrected FIPS 140-3 L3 → L1 across 4 rows (bouncy-castle-c-net, bouncy-castle-c-java,
   bouncy-castle-java, bouncy-castle-java-lts) — level was incorrectly inherited from the

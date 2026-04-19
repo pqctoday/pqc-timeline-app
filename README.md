@@ -203,6 +203,12 @@ Test your PQC readiness with this interactive web application visualizing the gl
   - **Key Management & HSM**:
     - Explores the 7 stages of the key lifecycle and PQC impact
     - Simulates PKCS#11 HSM operations and key rotation planning for enterprises
+    - **HSM Capacity Calculator** (HSM-PQC module Step 5; also `/playground` workshop tool
+      `PT-026`): fleet-sizing tool covering the top 10 enterprise HSM workflows (TLS, code
+      signing, payment HSM, TDE/database, KMS root keys, VPN/IPsec, SSH host, DNSSEC, etc.)
+      with side-by-side classical (RSA-3072 / ECDSA P-256) vs PQC (ML-DSA-44/65/87) sizing —
+      outputs storage MB, TLS cert bandwidth, aggregate network MB/s, and CPU-core
+      utilisation per workflow plus a totals row
   - **Entropy & Randomness** (SP 800-90 A/B/C):
     - DRBG mechanism comparison: CTR_DRBG, Hash_DRBG, HMAC_DRBG, and XOF_DRBG (SHAKE-based, SP 800-90A Rev 2)
     - **HMAC_DRBG Architecture Demo**: interactive SP 800-90A HMAC_DRBG lifecycle visualization —

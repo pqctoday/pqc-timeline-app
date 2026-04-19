@@ -6,7 +6,7 @@
 //   INIT  { c2sSab, s2cSab, mode }  → loads WASM JS (async), sends READY synchronously
 //   START { mode }                   → emits structured PKCS#11 events + synthetic done result
 //
-// The pqctoday-openssh sshd WASM is built with SHARED_MEMORY+PTHREAD+ASYNCIFY
+// The openssh-pkcs11 sshd WASM is built with SHARED_MEMORY+PTHREAD+ASYNCIFY
 // which requires a full MODULARIZE=1 rebuild to wire the onHandshakeEvent callback.
 // Until that rebuild ships, the worker emits representative synthetic data matching
 // real FIPS 204 (ML-DSA-65) and RFC 8709 (Ed25519) wire byte sizes.

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 //
-// openssh.ts — Engine wrapper for the pqctoday-openssh WASM build.
+// openssh.ts — Engine wrapper for the openssh-pkcs11 WASM build (pqctoday-hsm/openssh-pkcs11).
 //
 // Architecture mirrors strongswan/bridge.ts:
 //   - Two Web Workers (client + server), each loading their own .wasm
@@ -13,6 +13,7 @@ export interface SshHandshakeEvent {
   type:
     | 'start'
     | 'pkcs11_ready'
+    | 'pkcs11_structured'
     | 'kexinit'
     | 'kex_ecdh_init'
     | 'kex_ecdh_reply'

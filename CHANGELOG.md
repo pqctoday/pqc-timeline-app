@@ -8,6 +8,186 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **HSM Capacity Calculator** (`src/components/Playground/hsm/HsmCapacityCalculator.tsx`,
+  `HsmCapacityCalculator.test.ts`, `src/data/hsmCapacityDefaults.ts`,
+  `Playground/workshopRegistry.tsx`, `PKILearning/modules/HsmPqc/index.tsx`,
+  `PKILearning/moduleData.ts`): new fleet-sizing tool covering the top 10 enterprise HSM
+  workflows (TLS, code signing, payment HSM, TDE/database, KMS root keys, VPN/IPsec,
+  SSH host, DNSSEC, etc.) with side-by-side classical (RSA-3072 / ECDSA P-256) vs PQC
+  (ML-DSA-44/65/87) sizing. Outputs storage MB, TLS cert bandwidth, aggregate network
+  MB/s, and CPU-core utilisation per workflow, plus a totals row. Registered as
+  `PT-026` in the workshop registry and surfaced as Step 5 of the HSM-PQC learning
+  module (Gauge icon) — module step count bumped from 4 to 5. Defaults table
+  (`hsmCapacityDefaults.ts`) is the single source of truth for ops/sec, signature
+  sizes, and certificate bandwidth assumptions; covered by colocated unit tests.
+- **PKI Workshop — Certificate Capacity Calculator overhaul**
+  (`PKIWorkshop/CertCapacityCalculator.tsx`): bandwidth column converted from
+  per-cert KB to aggregate MB/s, CPU column converted from "max sign ops/sec" to
+  "% of single core consumed" so numbers map cleanly to capacity-planning
+  conversations. Legend removed in favour of clarified table headers; CSV export
+  now includes the new bandwidth and CPU columns.
+- **Command Center — in-drawer artifact creation + builder adapters**
+  (`BusinessCenter/ArtifactCard.tsx`, `ArtifactDrawer.tsx`, `ArtifactCard.test.tsx`,
+  `businessToolsRegistry.tsx`, `BusinessCenter/adapters/RiskRegisterBuilderStandalone.tsx`,
+  `RiskHeatmapGeneratorStandalone.tsx`, `ComplianceTimelineBuilderStandalone.tsx`,
+  `BusinessCenterView.tsx`, `useBusinessMetrics.ts`, sections under
+  `BusinessCenter/sections/*`): refactored the artifact pipeline so empty
+  placeholders launch the matching builder directly inside the drawer (no
+  navigation away from the Command Center). New standalone adapter wrappers around
+  the full-page learning-module builders (`RiskRegisterBuilder`,
+  `RiskHeatmapGenerator`, `ComplianceTimelineBuilder`) handle form-state
+  persistence and artifact save. Single source of truth registry
+  (`ARTIFACT_TYPE_TO_TOOL_ID`, `TOOL_LABELS_BY_ARTIFACT_TYPE`) now shared with the
+  `/business/tools/:id` route, eliminating the duplicated mapping previously kept in
+  two places. Drawer auto-flips from create → view mode when a save callback fires.
+- **Risk Register store** (`src/store/useRiskRegisterStore.ts`): dedicated Zustand
+  store for risk-register builder state, isolated from `useModuleStore` so
+  in-flight form data doesn't pollute persisted module artifacts. Follows the
+  project persistence conventions (explicit `version`, `migrate`,
+  `onRehydrateStorage` crash guard).
+- **Deployment Playbook → Command Center save**
+  (`PKILearning/modules/MigrationProgram/components/DeploymentPlaybook.tsx`,
+  `PKILearning/common/OpsChecklist.tsx`): `OpsChecklist` gained an optional
+  `onSave` prop that renders a "Save to Command Center" button alongside the
+  existing "Copy Markdown" action with toggling saved-state feedback. Deployment
+  Playbook wires this up to persist completed checklists as
+  `deployment-playbook` artifacts (with checked items captured in `inputs` for
+  later edit-mode restoration).
+- **Compliance Table — mandate deadline labels**
+  (`Compliance/ComplianceTable.tsx`): framework tabs (FIPS 140-3, ACVP, Common
+  Criteria) now display a resolved "Deadline: YYYY" sub-label pulled from the
+  loaded compliance data, plus a tooltip on tab hover for screen-reader / pointer
+  accessibility. Ongoing mandates suppress the year label.
+- **FilterDropdown — keyboard navigation** (`src/components/common/FilterDropdown.tsx`):
+  ARIA-listbox keyboard support added to the shared dropdown — ArrowUp/Down to
+  cycle options, Home/End to jump, Escape to close. Focus management targets
+  `[role="option"]` buttons in the portal menu so the control is now WCAG 2.1 AA
+  keyboard-operable.
+- **Manufacturing industry support in assessment** (`src/hooks/assessmentData.ts`):
+  added Manufacturing entries to `INDUSTRY_THREAT` (level 18, reflecting IEC 62443
+  OT/ICS exposure, ISO/SAE 21434, TISAX, long-lived embedded controllers) and
+  `INDUSTRY_COMPOSITE_WEIGHTS` (risk profile aligned to Aerospace/Defense). Closes
+  a gap where manufacturing respondents were forced into "Other".
+- **ComplianceStrategy module — extracted jurisdictions data**
+  (`PKILearning/modules/ComplianceStrategy/data/jurisdictions.ts`,
+  `components/JurisdictionMapper.tsx`): hardcoded `JURISDICTIONS` array lifted
+  out of `JurisdictionMapper.tsx` into a typed data module
+  (`JurisdictionConfig`) for reuse across the codebase and easier maintenance.
+- **Curious persona — single-click experience shortcut**
+  (`Landing/PersonalizationSection.tsx`): selecting the Curious persona now
+  completes the personalization wizard immediately (sets curious persona, Global
+  region, all industries, marks completed) so first-touch visitors aren't forced
+  through the multi-step wizard before exploring.
+
+### Changed
+
+- **RightPanel — bottom drawer → right sidebar layout**
+  (`RightPanel/RightPanel.tsx`, `Layout/EmbedLayout.tsx`, `Layout/MainLayout.tsx`):
+  migrated the contextual side panel from a 50%-height bottom drawer (slide-up
+  animation) to a fixed right sidebar (40vw width, slide-in from right). Both
+  layouts add `sm:pr-[40vw]` transition padding when the panel is open so the
+  main content reflows smoothly without the previous absolute-positioning
+  overlap.
+- **Module store — version 12 migration (roadmap cleanup + form-state inputs)**
+  (`src/store/useModuleStore.ts`, `useModuleStore.test.ts`,
+  `src/services/storage/types.ts`): bumped persisted version to 12; migration
+  now filters out any stray `roadmap` document type (replaced by
+  `migration-roadmap`) and preserves the new optional `inputs` field on
+  `ExecutiveDocument` so builders can round-trip form state for Edit mode.
+  `ExecutiveDocumentType` adds `deployment-playbook` and removes the retired
+  `roadmap`. Migration tested against synthetic v11 stores.
+- **OpenSSH WASM — connector path & event types** (`src/wasm/openssh.ts`,
+  `openssh.test.ts`, `Playground/hsm/SshSimulationPanel.tsx`): comments and the
+  build-in-progress banner now point at `pqctoday-hsm/openssh-pkcs11/` (the
+  folded-in connector, per the 2026-04-18 repo consolidation) instead of the
+  retired standalone `pqctoday-openssh` repo. New
+  `pkcs11_structured` event added to the `SshHandshakeEvent` union for richer
+  PKCS#11 logging from the worker.
+- **strongSwan WASM — 44% size reduction + build-script cleanup**
+  (`public/wasm/strongswan.wasm` 11.9MB → 6.7MB, `public/wasm/strongswan.js`
+  regenerated, `public/wasm/openssh_server_worker.js` rebuilt, removed
+  `scripts/build_strongswan_wasm.sh` and `strongswan-pqc-pkcs11.patch`):
+  strongSwan WASM module now built and patched out of the `pqctoday-hsm`
+  companion repo; the local build script and standalone patch are no longer
+  needed in this repo and were deleted to remove a stale maintenance surface.
+- **SearchIndex — limit slicing refactor** (`src/services/search/SearchIndex.ts`):
+  removed `as const` narrowing on `MINISEARCH_OPTS` and switched the result-limit
+  enforcement to a post-search `slice` so the configured `MAX_RESULTS` is honoured
+  consistently regardless of MiniSearch's internal scoring shortcuts.
+- **Embed manifest + RAG corpus regeneration** (`public/embed/manifest.json`,
+  `public/data/embed-docs.json`, `public/data/rag-corpus.json`): regenerated
+  artifacts to pick up the compliance/timeline data refresh and the deletion of
+  retired CSVs (`compliance_03282026_r2.csv`,
+  `pqc_authoritative_sources_reference_02282026.csv`,
+  `timeline_03312026.csv`/`04012026.csv`/`04062026.csv`). RAG corpus shrinks
+  significantly after dedup against the new authoritative files.
+
+- **Compliance ↔ Timeline consistency pipeline** (`timeline_04182026.csv`,
+  `src/utils/timelineResolver.ts`, `scripts/validate-csv-refs.ts`,
+  `ComplianceLandscape.tsx`, `KnowledgeGraph/data/graphBuilder.ts`): established a closed
+  loop between the `/compliance` and `/timeline` views. **Validator**: extended
+  `validate-csv-refs.ts` with two semantic checks — (5) every compliance row with a
+  parseable `deadline` year must have at least one timeline event spanning that year in
+  one of its referenced orgs; (6) orphan timeline orgs surfaced as informational.
+  Exposed via new `npm run validate:compliance-timeline` alias. **Timeline data**: added
+  10 timeline rows to cover previously-dangling compliance refs — `African Union:AUC`
+  (Malabo Convention 2023), `International:GSMA` (2026-2028 MNO transition phase),
+  `China:ICCS` (2027-2030 NGCC migration), `G7:G7 CEG` (2030-2032 critical financial
+  systems), `Global:3GPP SA3` (TR 33.841 study), `Global:TCG` (TPM 2.0 v1.85 PQC draft),
+  `South Africa:IR` (POPIA enforcement), `Nigeria:NDPC` (NDPA 2023), `Kenya:ODPC`
+  (2022 Guidance Note), `Egypt:MCIT` (Law 151/2020 regs). Validator now reports 0
+  broken refs / 0 coverage gaps across 112 compliance rows × 219 timeline events.
+  **Resolver** (`timelineResolver.ts`): new pure `resolveTimelineRef()` utility that
+  parses `Country:OrgName` refs and returns the matching `TimelineEvent[]` + earliest
+  / latest year; indexed once on module load. **UI** (`ComplianceLandscape.tsx`): card
+  - table timeline chips now deep-link to `/timeline?country=<country>` (landing on
+    the correct Gantt lane instead of the unfiltered timeline root) and show a dated
+    summary in the hover tooltip. Expanded framework-details list resolves each ref to
+    show the top 3 events with year ranges; frameworks with no matching timeline events
+    surface a visible "no events in timeline" warning so drift is obvious at a glance.
+    **Knowledge graph** (`graphBuilder.ts`): replaced the broken fuzzy-match on event
+    _titles_ (which always missed because refs are org labels) with a proper
+    `country:org` → eventIds index; the `compliance-timeline` graph edge is no longer
+    dead code. **Deadline-urgency parser** (`deadlineUrgency.ts`,
+    `complianceData.ts`): strings starting with `ongoing` / `annual` are now treated as
+    year-less regardless of parenthetical provenance like `"Ongoing (GL-2004-2022)"`
+    that previously mis-parsed as year 2004 and pushed dots ~167% off the timeline bar;
+    for ranged deadlines, the earliest future year is preferred. **Deadline-timeline
+    viz bug fix** (`ComplianceLandscape.tsx`): year labels migrated from `flex
+justify-between` to absolute `yearLeftPercent()` positioning so labels and dot
+    columns share a centerline; dense-year stacks (2025 = 21 deadlines) now render in
+    a 3-column grid with a dynamically-sized container (no more vertical clipping);
+    added `px-4` padding on the overflow wrapper so edge dots at 2024 / 2036 are fully
+    visible.
+- **Compliance data & UI — accuracy + completeness overhaul** (`compliance_04182026.csv`,
+  `pqc_authoritative_sources_reference_04182026.csv`, `complianceData.ts`,
+  `ComplianceLandscape.tsx`, `ComplianceView.tsx`): audit-driven refresh of the compliance
+  data source and the `/compliance` UI. **Data**: added 5 African frameworks (South Africa
+  POPIA, Nigeria NDPR/NDPA, Kenya DPA, Egypt PDPL, African Union Malabo Convention) closing
+  the Africa regional gap; populated `library_refs` on all 48 frameworks that previously had
+  empty cross-references (PCI-DSS, HIPAA, SWIFT-CSP, GDPR, ISO-27001, SOC-2, HITECH, FDA
+  21 CFR 11, NATO STANAG 4774, UN ECE WP.29, NERC-CIP, IEC-62443, DO-326A, RTCA DO-355A,
+  FERPA, COPPA, TISAX, MICA, TSA Pipeline, KpqC/KCMVP, NZISM, INCD, BOI, OSCCA NGCC,
+  Swiss/Dutch NCSC, KISA, INDIA-DST, UAE, ACVP, Taiwan MODA, Malaysia NACSA, Saudi NCA,
+  India CERT-In CBOM, Italy ACN, Spain CCN, Bahrain NCSC, Jordan CBJ, CSA, ITU-T SG17,
+  ISO 19790, Brazil ANPD, Denmark CFCS, NY DFS 23 NYCRR 500, ETSI EN 303 645,
+  PQC Coalition, QED-C); every new reference validated against `library_04172026.csv`.
+  Flagged 33 authoritative sources as `Compliance_CSV=Yes` (NIST, ENISA, ANSSI, BSI,
+  NCSC UK, NSA/CISA, ACSC, CSE, IETF, ISO/IEC, ETSI, IEEE, PQCA, TCG, FS-ISAC, CMVP, etc.)
+  — previously zero, breaking the "what feeds this view?" contract. **Loader**
+  (`complianceData.ts`): added missing `industry_alliance` body type to `validBodyTypes[]`
+  (PQC Coalition, PQCA, QED-C no longer silently misclassified); mapped previously-orphaned
+  `trusted_source_id` column; added derived `deadlineYear` + `deadlinePhase` fields and a
+  9-bloc `regionForCountry()` taxonomy (NORAM, LATAM, EU, Europe non-EU, UK, APAC, MENA,
+  Africa, Global). **UI** (`ComplianceLandscape.tsx`, `ComplianceView.tsx`): added global
+  Region filter (with per-bloc framework counts) and Deadline filter (Active / Imminent /
+  Near-term / Mid-term / Long-term / Ongoing) wired to URL params (`region=`, `phase=`) so
+  filter state deep-links and survives back/forward nav across all 4 Landscape tabs;
+  added inline Glossary button on the Certification Schemes `SectionHeader` explaining
+  FIPS 140-3, ACVP, Common Criteria, EUCC, CNSA 2.0, and CSPN/ANSSI Qualification; wrapped
+  CSV export in `try/catch` with a dismissible inline error banner (was previously
+  uncaught). Archived `compliance_03282026_r2.csv` and
+  `pqc_authoritative_sources_reference_02282026.csv`.
 - **Command Center — ROI Calculator overhaul** (`src/utils/roiMath.ts`,
   `ROICalculatorSection`, `ROICalculator`): new shared pure-math module (43 unit tests) with
   NPV + WACC discount rate (new KPI card), capex/opex split (benefit net-of-opex for

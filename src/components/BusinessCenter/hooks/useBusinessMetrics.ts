@@ -45,7 +45,9 @@ const EXECUTIVE_MODULES = [
 
 export const PILLAR_ARTIFACT_TYPES: Record<string, ExecutiveDocumentType[]> = {
   risk: ['risk-register', 'risk-treatment-plan', 'roi-model', 'board-deck', 'crqc-scenario'],
-  compliance: ['audit-checklist', 'compliance-timeline', 'compliance-checklist'],
+  // `compliance-checklist` is aliased to `audit-checklist` (semantically duplicated,
+  // no dedicated builder) and intentionally omitted from the placeholder list.
+  compliance: ['audit-checklist', 'compliance-timeline'],
   governance: ['raci-matrix', 'policy-draft', 'kpi-dashboard', 'stakeholder-comms'],
   vendor: [
     'vendor-scorecard',
@@ -53,6 +55,7 @@ export const PILLAR_ARTIFACT_TYPES: Record<string, ExecutiveDocumentType[]> = {
     'migration-roadmap',
     'kpi-tracker',
     'supply-chain-matrix',
+    'deployment-playbook',
   ],
 }
 
@@ -63,11 +66,11 @@ export const PILLAR_SOURCE_MODULES: Record<string, Record<ExecutiveDocumentType,
     'risk-treatment-plan': 'pqc-risk-management',
     'roi-model': 'pqc-business-case',
     'board-deck': 'pqc-business-case',
+    'crqc-scenario': 'pqc-risk-management',
   } as Record<ExecutiveDocumentType, string>,
   compliance: {
     'audit-checklist': 'compliance-strategy',
     'compliance-timeline': 'compliance-strategy',
-    'compliance-checklist': 'compliance-strategy',
   } as Record<ExecutiveDocumentType, string>,
   governance: {
     'raci-matrix': 'pqc-governance',
@@ -80,6 +83,8 @@ export const PILLAR_SOURCE_MODULES: Record<string, Record<ExecutiveDocumentType,
     'contract-clause': 'vendor-risk',
     'migration-roadmap': 'migration-program',
     'kpi-tracker': 'migration-program',
+    'supply-chain-matrix': 'vendor-risk',
+    'deployment-playbook': 'migration-program',
   } as Record<ExecutiveDocumentType, string>,
 }
 

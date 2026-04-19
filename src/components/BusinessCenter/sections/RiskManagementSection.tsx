@@ -10,12 +10,8 @@ import { ROICalculatorSection } from '@/components/shared/ROICalculatorSection'
 import type { ROISummary } from '@/components/shared/ROICalculatorSection'
 import { RiskGauge } from '@/components/shared/widgets/RiskGauge'
 import { ArtifactCard, ArtifactPlaceholder } from '../ArtifactCard'
-import {
-  PILLAR_ARTIFACT_TYPES,
-  PILLAR_SOURCE_MODULES,
-  type BusinessMetrics,
-} from '../hooks/useBusinessMetrics'
-import type { ExecutiveDocument } from '@/services/storage/types'
+import { PILLAR_ARTIFACT_TYPES, type BusinessMetrics } from '../hooks/useBusinessMetrics'
+import type { ExecutiveDocument, ExecutiveDocumentType } from '@/services/storage/types'
 
 const CATEGORY_LABELS: Record<string, string> = {
   quantumExposure: 'Quantum Exposure',
@@ -100,6 +96,7 @@ export interface SectionArtifactCallbacks {
   onEditArtifact: (doc: ExecutiveDocument) => void
   onDeleteArtifact: (doc: ExecutiveDocument) => void
   onRenameArtifact?: (id: string, newTitle: string) => void
+  onCreateArtifact: (type: ExecutiveDocumentType) => void
   typeFilter?: string
 }
 
@@ -109,6 +106,7 @@ export function RiskManagementSection({
   onEditArtifact,
   onDeleteArtifact,
   onRenameArtifact,
+  onCreateArtifact,
   typeFilter,
 }: { metrics: BusinessMetrics } & SectionArtifactCallbacks) {
   const navigate = useNavigate()
@@ -137,7 +135,6 @@ export function RiskManagementSection({
       ? allArtifacts.filter((d) => d.type === typeFilter)
       : allArtifacts
   const pillarTypes = PILLAR_ARTIFACT_TYPES.risk
-  const sourceModules = PILLAR_SOURCE_MODULES.risk
   const existingTypes = new Set(artifacts.map((a) => a.type))
 
   return (
@@ -239,9 +236,8 @@ export function RiskManagementSection({
                 <ArtifactPlaceholder
                   key={type}
                   type={type}
-                  moduleId={sourceModules[type] ?? 'pqc-risk-management'} // eslint-disable-line security/detect-object-injection
                   pillar="risk"
-                  onNavigate={navigate}
+                  onCreate={onCreateArtifact}
                 />
               ))}
           </div>

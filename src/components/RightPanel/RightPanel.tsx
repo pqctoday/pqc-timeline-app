@@ -26,12 +26,12 @@ export const RightPanel: React.FC = () => {
     if (isOpen) window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
   }, [isOpen, close])
-  
+
   // E2E UI Bypass
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // @ts-expect-error
-      window.__e2e_toggle_panel = toggle;
+      // @ts-expect-error E2E test bypass — global injected for Playwright
+      window.__e2e_toggle_panel = toggle
     }
   }, [toggle])
 
@@ -48,15 +48,14 @@ export const RightPanel: React.FC = () => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Bottom drawer — slides up, no backdrop, all modes */}
+          {/* Right-side panel — slides in from right, no backdrop, 40% width */}
           <FocusLock returnFocus>
             <motion.div
-              initial={{ opacity: 0, y: '100%' }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: '100%' }}
+              initial={{ opacity: 0, x: '100%' }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="z-panel bg-background shadow-2xl flex flex-col overflow-hidden print:hidden border-t border-border rounded-t-xl"
-              style={{ height: '50%', minHeight: '300px' }}
+              className="fixed top-0 right-0 bottom-0 z-panel bg-background shadow-2xl flex flex-col overflow-hidden print:hidden border-l border-border rounded-l-xl w-full sm:w-[40vw] sm:min-w-[360px]"
               role="dialog"
               aria-label={panelLabel}
               onClick={(e) => e.stopPropagation()}

@@ -170,7 +170,11 @@ export const MainLayout = () => {
   )
 
   return (
-    <div className="h-dvh flex flex-col bg-background text-foreground print:min-h-0 print:h-auto overflow-hidden">
+    <div
+      className={`h-dvh flex flex-col bg-background text-foreground print:min-h-0 print:h-auto overflow-hidden transition-[padding] duration-300 ${
+        isPanelOpen ? 'sm:pr-[40vw]' : ''
+      }`}
+    >
       {/* Skip-to-main link — visible only on keyboard focus */}
       <a
         href="#main-content"
@@ -235,7 +239,9 @@ export const MainLayout = () => {
           >
             <Search size={14} aria-hidden="true" />
             <span className="flex-1 text-left">Search…</span>
-            <kbd className="hidden lg:inline text-[10px] font-mono px-1.5 py-0.5 rounded border border-border bg-muted/50">⌘K</kbd>
+            <kbd className="hidden lg:inline text-[10px] font-mono px-1.5 py-0.5 rounded border border-border bg-muted/50">
+              ⌘K
+            </kbd>
           </Button>
 
           {/* Universal Navigation: Row of Icons on Mobile, Full Nav on Desktop */}

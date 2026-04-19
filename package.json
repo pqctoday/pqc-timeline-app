@@ -46,6 +46,7 @@
     "summarize:library": "python3 scripts/summarize-library.py",
     "validate:references": "tsx scripts/validate-references.ts",
     "validate:csv-refs": "tsx scripts/validate-csv-refs.ts",
+    "validate:compliance-timeline": "tsx scripts/validate-csv-refs.ts",
     "download:timeline": "node scripts/download-timeline.js",
     "download:timeline:dry": "node scripts/download-timeline.js --dry-run",
     "download:threats": "node scripts/download-threats.js",

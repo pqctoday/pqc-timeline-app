@@ -19,6 +19,7 @@ import {
   Network,
   Globe,
   BarChart2,
+  Gauge,
 } from 'lucide-react'
 import { lazyWithRetry } from '@/utils/lazyWithRetry'
 import type { PersonaId } from '@/data/learningPersonas'
@@ -412,8 +413,55 @@ export const WORKSHOP_TOOLS: WorkshopTool[] = [
     algorithms: ['RSA-2048', 'ECDSA P-256', 'ML-DSA-44', 'ML-DSA-65', 'ML-DSA-87'],
     icon: BarChart2,
     moduleLink: '/learn/pki-workshop',
-    keywords: ['certificate', 'capacity', 'storage', 'bandwidth', 'cpu', 'ml-dsa', 'pki', 'migration', 'sizing'],
+    keywords: [
+      'certificate',
+      'capacity',
+      'storage',
+      'bandwidth',
+      'cpu',
+      'ml-dsa',
+      'pki',
+      'migration',
+      'sizing',
+    ],
     difficulty: 'beginner',
+    recommendedPersonas: ['architect', 'ops', 'executive'],
+  },
+  {
+    id: 'hsm-capacity',
+    pt_id: 'PT-026',
+    version: '1.0.0',
+    name: 'HSM Capacity Calculator',
+    description:
+      'Size your HSM fleet for the top 10 enterprise use cases. Compare classical vs next-gen PQC HSM, tune per-algorithm TPS, and see whether your fleet is sufficient.',
+    category: 'HSM / PKCS#11',
+    algorithms: ['RSA-2048', 'ECDSA P-256', 'ECDH P-256', 'ML-DSA-65', 'AES-128', 'AES-256'],
+    icon: Gauge,
+    moduleLink: '/learn/pki-workshop',
+    keywords: [
+      'hsm',
+      'capacity',
+      'sizing',
+      'tps',
+      'throughput',
+      'fleet',
+      'pqc',
+      'ml-dsa',
+      'rsa',
+      'ecdsa',
+      'ecdh',
+      'aes',
+      'use case',
+      'tls',
+      'code signing',
+      'payment',
+      'tde',
+      'kms',
+      'vpn',
+      'ssh',
+      'dnssec',
+    ],
+    difficulty: 'intermediate',
     recommendedPersonas: ['architect', 'ops', 'executive'],
   },
 
@@ -734,6 +782,11 @@ export const TOOL_COMPONENTS: Record<string, LazyComp> = {
   'cert-capacity': lazyWithRetry(() =>
     import('@/components/PKILearning/modules/PKIWorkshop/CertCapacityCalculator').then((m) => ({
       default: m.CertCapacityCalculator,
+    }))
+  ),
+  'hsm-capacity': lazyWithRetry(() =>
+    import('@/components/Playground/hsm/HsmCapacityCalculator').then((m) => ({
+      default: m.HsmCapacityCalculator,
     }))
   ),
   'pki-workshop': lazyWithRetry(() =>

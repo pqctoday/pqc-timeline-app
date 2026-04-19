@@ -22,6 +22,9 @@ import { CKF_RW_SESSION, CKF_SERIAL_SESSION, CKU_USER } from '@/wasm/softhsm/con
 import {
   getSoftHSMRustModule,
   hsm_generateRSAKeyPair,
+  hsm_generateMLDSAKeyPair,
+  hsm_extractKeyValue,
+  hsm_signBytesMLDSA,
   hsm_initToken,
   hsm_openUserSession,
 } from '@/wasm/softhsm'
@@ -96,6 +99,26 @@ function derBitStr(bytes: Uint8Array): Uint8Array {
 const SHA256_RSA_ALG_DER = new Uint8Array([
   0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x0b, 0x05, 0x00,
 ])
+
+// ── ML-DSA AlgorithmIdentifier DER (NIST OIDs 2.16.840.1.101.3.4.3.{17,18,19})
+// draft-ietf-lamps-dilithium-certificates: NO parameters (absent, not NULL).
+// Shape: SEQUENCE { OID (9-byte content ending in the variant tag byte) }
+const ML_DSA_ALG_DER_FOR_VARIANT: Record<44 | 65 | 87, Uint8Array> = {
+  44: new Uint8Array([
+    0x30, 0x0b, 0x06, 0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x03, 0x11,
+  ]),
+  65: new Uint8Array([
+    0x30, 0x0b, 0x06, 0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x03, 0x12,
+  ]),
+  87: new Uint8Array([
+    0x30, 0x0b, 0x06, 0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x03, 0x13,
+  ]),
+}
+const ML_DSA_OID_FOR_VARIANT: Record<44 | 65 | 87, string> = {
+  44: '2.16.840.1.101.3.4.3.17',
+  65: '2.16.840.1.101.3.4.3.18',
+  87: '2.16.840.1.101.3.4.3.19',
+}
 
 // ── softhsmv3 RSA public key extraction via C_GetAttributeValue ───────────────
 function hsmExtractRsaPublicKey(
@@ -274,6 +297,85 @@ function buildHsmSelfSignedCert(
   return `-----BEGIN CERTIFICATE-----\n${lines.join('\n')}\n-----END CERTIFICATE-----\n`
 }
 
+// ── Build a self-signed X.509 certificate with ML-DSA signature ───────────────
+// Mirrors buildHsmSelfSignedCert but uses ML-DSA (FIPS 204 pure, no pre-hash).
+// Public key is raw ML-DSA bytes (1312 / 1952 / 2592 B for 44/65/87) wrapped as
+// the SPKI subjectPublicKey BIT STRING directly — unlike RSA there's no inner
+// RSAPublicKey SEQUENCE.
+// AlgorithmIdentifier for ML-DSA has NO parameters per draft-ietf-lamps-
+// dilithium-certificates. @peculiar/asn1-x509's X509AlgId omits the parameters
+// field when undefined, so passing only { algorithm } produces the correct DER.
+function buildHsmMlDsaSelfSignedCert(
+  M: SoftHSMWasmModule,
+  hSession: number,
+  hPubKey: number,
+  hPrivKey: number,
+  variant: 44 | 65 | 87,
+  cn: string,
+  org: string
+): string {
+  // 1. Extract raw ML-DSA public key bytes from softhsmv3
+  const pubKeyBytes = hsm_extractKeyValue(M, hSession, hPubKey)
+  // Copy to a plain ArrayBuffer (hsm_extractKeyValue may return a slice backed
+  // by SharedArrayBuffer; peculiar's BIT STRING field wants ArrayBuffer)
+  const pubKeyCopy = new Uint8Array(pubKeyBytes.length)
+  pubKeyCopy.set(pubKeyBytes)
+
+  // 2. AlgorithmIdentifier for ML-DSA (no parameters — peculiar omits when undefined)
+  const sigAlgId = new X509AlgId({ algorithm: ML_DSA_OID_FOR_VARIANT[variant] })
+
+  // 3. SubjectPublicKeyInfo
+  const spki = new X509SPKI({
+    algorithm: sigAlgId,
+    subjectPublicKey: pubKeyCopy.buffer,
+  })
+
+  // 4. Name builder
+  const buildName = (commonName: string, organization: string) =>
+    new X509Name([
+      new X509RDN([
+        new X509ATV({ type: '2.5.4.3', value: new X509AttrValue({ utf8String: commonName }) }),
+      ]),
+      new X509RDN([
+        new X509ATV({
+          type: '2.5.4.10',
+          value: new X509AttrValue({ utf8String: organization }),
+        }),
+      ]),
+    ])
+
+  // 5. Random serial (8 bytes, high bit clear → positive integer)
+  const serial = crypto.getRandomValues(new Uint8Array(8))
+  serial[0] &= 0x7f
+
+  const now = new Date()
+  const expiry = new Date(now.getTime() + 10 * 365.25 * 24 * 3600 * 1000)
+
+  // 6. TBSCertificate
+  const tbs = new X509TBS({
+    version: 2, // v3
+    serialNumber: serial.buffer,
+    signature: sigAlgId,
+    issuer: buildName(cn, org),
+    validity: new X509Validity({ notBefore: now, notAfter: expiry }),
+    subject: buildName(cn, org),
+    subjectPublicKeyInfo: spki,
+  })
+  const tbsDer = new Uint8Array(AsnSerializer.serialize(tbs))
+
+  // 7. Sign TBSCertificate bytes with ML-DSA via softhsmv3 (PKCS#11 v3.2 pure ML-DSA)
+  const signature = hsm_signBytesMLDSA(M, hSession, hPrivKey, tbsDer)
+
+  // 8. Assemble Certificate DER manually: SEQUENCE { tbsCertificate, signatureAlgorithm, signatureValue }
+  const algDer = ML_DSA_ALG_DER_FOR_VARIANT[variant]
+  const certDer = derTLV(0x30, derCat(tbsDer, algDer, derBitStr(signature)))
+
+  // 9. PEM encode
+  const b64 = btoa(String.fromCharCode(...certDer))
+  const lines = b64.match(/.{1,64}/g) ?? []
+  return `-----BEGIN CERTIFICATE-----\n${lines.join('\n')}\n-----END CERTIFICATE-----\n`
+}
+
 const PayloadCard: React.FC<{
   payload: IKEv2Payload
   index: number
@@ -395,7 +497,7 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
   const pskMismatch = clientPsk !== serverPsk
 
   // Key Gen State for Client
-  const [clientAlg, setClientAlg] = useState('RSA')
+  const [clientAlg, setClientAlg] = useState('ML-DSA')
   const [clientSize, setClientSize] = useState('65')
   const [clientClassAlg, setClientClassAlg] = useState('RSA-3072')
 
@@ -1842,68 +1944,64 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
         if (!moduleRef.current) moduleRef.current = rawM
       }
 
-      // ── 2. Generate RSA-3072 key pairs on softhsmv3 ───────────────────────────────
+      // ── 2. Generate key pairs on softhsmv3 (RSA or ML-DSA per UI selection) ─────
       const M = moduleRef.current!
       const hSessInit = hSessionRef.current
       const hSessResp = serverSessionRef.current
       const { init: realInitSlot, resp: realRespSlot } = vpnSlotsRef.current
       const ts = new Date().toISOString()
-      const initKeys =
-        clientAlg === 'ML-DSA'
-          ? null
-          : hsm_generateRSAKeyPair(M, hSessInit, 3072, false, 'vpn-initiator', true)
-      const respKeys =
-        serverAlg === 'ML-DSA'
-          ? null
-          : hsm_generateRSAKeyPair(M, hSessResp, 3072, false, 'vpn-responder', true)
 
-      // Tag with logical slot IDs (0 = initiator, 1 = responder) — the Key Inspector
-      // filters by these values. Physical slot IDs (realInitSlot, realRespSlot) may be
-      // higher when the module is shared with other HSM panels that already claimed 0/1.
-      if (initKeys) {
-        addHsmKey({
-          handle: initKeys.pubHandle,
+      const provisionKeys = (
+        alg: string,
+        size: string,
+        hSess: number,
+        label: string
+      ): {
+        pubHandle: number
+        privHandle: number
+        family: 'rsa' | 'ml-dsa'
+        variant: 'RSA-3072' | 'ML-DSA-44' | 'ML-DSA-65' | 'ML-DSA-87'
+        mldsaVariant?: 44 | 65 | 87
+      } => {
+        if (alg === 'ML-DSA') {
+          const v = (parseInt(size, 10) as 44 | 65 | 87) || 65
+          const keys = hsm_generateMLDSAKeyPair(M, hSess, v, true)
+          return {
+            pubHandle: keys.pubHandle,
+            privHandle: keys.privHandle,
+            family: 'ml-dsa',
+            variant: `ML-DSA-${v}` as 'ML-DSA-44' | 'ML-DSA-65' | 'ML-DSA-87',
+            mldsaVariant: v,
+          }
+        }
+        const keys = hsm_generateRSAKeyPair(M, hSess, 3072, false, label, true)
+        return {
+          pubHandle: keys.pubHandle,
+          privHandle: keys.privHandle,
           family: 'rsa',
-          role: 'public',
-          label: 'RSA-3072 Public Key',
           variant: 'RSA-3072',
+        }
+      }
+
+      const initKeys = provisionKeys(clientAlg, clientSize, hSessInit, 'vpn-initiator')
+      const respKeys = provisionKeys(serverAlg, serverSize, hSessResp, 'vpn-responder')
+
+      const registerKey = (keys: typeof initKeys, slotId: 0 | 1, role: 'public' | 'private') => {
+        addHsmKey({
+          handle: role === 'public' ? keys.pubHandle : keys.privHandle,
+          family: keys.family,
+          role,
+          label: `${keys.variant} ${role === 'public' ? 'Public' : 'Private'} Key`,
+          variant: keys.variant,
           engine: 'rust',
           generatedAt: ts,
-          slotId: 0,
-        })
-        addHsmKey({
-          handle: initKeys.privHandle,
-          family: 'rsa',
-          role: 'private',
-          label: 'RSA-3072 Private Key',
-          variant: 'RSA-3072',
-          engine: 'rust',
-          generatedAt: ts,
-          slotId: 0,
+          slotId,
         })
       }
-      if (respKeys) {
-        addHsmKey({
-          handle: respKeys.pubHandle,
-          family: 'rsa',
-          role: 'public',
-          label: 'RSA-3072 Public Key',
-          variant: 'RSA-3072',
-          engine: 'rust',
-          generatedAt: ts,
-          slotId: 1,
-        })
-        addHsmKey({
-          handle: respKeys.privHandle,
-          family: 'rsa',
-          role: 'private',
-          label: 'RSA-3072 Private Key',
-          variant: 'RSA-3072',
-          engine: 'rust',
-          generatedAt: ts,
-          slotId: 1,
-        })
-      }
+      registerKey(initKeys, 0, 'public')
+      registerKey(initKeys, 0, 'private')
+      registerKey(respKeys, 1, 'public')
+      registerKey(respKeys, 1, 'private')
 
       strongSwanEngine.dispatchLog({
         level: 'info',
@@ -1911,38 +2009,45 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
       })
 
       // ── 3. Build self-signed X.509 certs — private keys never leave softhsmv3 ─────
-      const initCert = initKeys
-        ? buildHsmSelfSignedCert(
-            M,
-            hSessInit,
-            initKeys.pubHandle,
-            initKeys.privHandle,
-            'vpn-initiator',
-            'PQC-Simulation'
-          )
-        : ''
-      const respCert = respKeys
-        ? buildHsmSelfSignedCert(
-            M,
-            hSessResp,
-            respKeys.pubHandle,
-            respKeys.privHandle,
-            'vpn-responder',
-            'PQC-Simulation'
-          )
-        : ''
+      const buildCert = (keys: typeof initKeys, hSess: number, cn: string): string =>
+        keys.family === 'ml-dsa'
+          ? buildHsmMlDsaSelfSignedCert(
+              M,
+              hSess,
+              keys.pubHandle,
+              keys.privHandle,
+              keys.mldsaVariant!,
+              cn,
+              'PQC-Simulation'
+            )
+          : buildHsmSelfSignedCert(M, hSess, keys.pubHandle, keys.privHandle, cn, 'PQC-Simulation')
+
+      const initCert = buildCert(initKeys, hSessInit, 'vpn-initiator')
+      const respCert = buildCert(respKeys, hSessResp, 'vpn-responder')
 
       setCertData({ initCert, respCert })
+      const algLabel = (keys: typeof initKeys) => keys.variant
       strongSwanEngine.dispatchLog({
         level: 'info',
-        text: '[CERT] RSA-3072 certs signed by softhsmv3 — CN=vpn-initiator, CN=vpn-responder. Private keys remain in HSM. Click Start Daemon to begin.',
+        text: `[CERT] Certs signed by softhsmv3 — initiator=${algLabel(initKeys)} responder=${algLabel(respKeys)}. Private keys remain in HSM. Click Start Daemon to begin.`,
       })
     } catch (err: unknown) {
       setSabError(err instanceof Error ? err.message : String(err))
     } finally {
       setCertGenLoading(false)
     }
-  }, [moduleRef, hSessionRef, serverSessionRef, vpnRpcInitRef, vpnSlotsRef, addHsmKey])
+  }, [
+    moduleRef,
+    hSessionRef,
+    serverSessionRef,
+    vpnRpcInitRef,
+    vpnSlotsRef,
+    addHsmKey,
+    clientAlg,
+    clientSize,
+    serverAlg,
+    serverSize,
+  ])
 
   const inspectCert = useCallback(
     async (role: 'initiator' | 'responder') => {
@@ -2205,6 +2310,7 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                               <PayloadCard
                                 key={`${step.label}-frag-${fIdx}`}
                                 payload={{
+                                  name: 'Encrypted Fragment',
                                   abbreviation: `SKF (${fIdx + 1}/${numFragments})`,
                                   sizeBytes:
                                     fIdx === numFragments - 1 ? totalSize % mtu || mtu : mtu,
@@ -2299,6 +2405,7 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                               <PayloadCard
                                 key={`${step.label}-frag-${fIdx}`}
                                 payload={{
+                                  name: 'Encrypted Fragment',
                                   abbreviation: `SKF (${fIdx + 1}/${numFragments})`,
                                   sizeBytes:
                                     fIdx === numFragments - 1 ? totalSize % mtu || mtu : mtu,
@@ -2619,6 +2726,7 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
               disabled={true}
               className="px-4 py-2 bg-primary/50 text-primary-foreground font-bold rounded shadow-sm opacity-50 cursor-not-allowed text-sm transition-colors"
               title="UI automatically advances based on daemon log output"
+              data-testid="vpn-status-button"
             >
               {hasCrashed
                 ? 'Tunnel Failed'

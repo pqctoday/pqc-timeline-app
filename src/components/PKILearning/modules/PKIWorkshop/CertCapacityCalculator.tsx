@@ -1,15 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 import { useState, useMemo, useCallback } from 'react'
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { HardDrive, Zap, Network, Download, Info } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { CERT_CAPACITY_DEFAULTS, BASELINE_ALGO } from '@/data/certCapacityDefaults'
@@ -28,7 +19,9 @@ interface CalcOutputRow {
   storageMB: number
   renewalsPerYear: number
   tlsBandwidthKBPerHandshake: number
+  tlsAggregateMBPerSec: number
   signaturesPerSecCapacity: number
+  cpuCorePercent: number
   sizeSource: string
   perfSource: string
 }
@@ -44,19 +37,28 @@ function computeOutputs(inputs: CalcInputs): CalcOutputRow[] {
 
     // Bandwidth = TLS cert message size per handshake (KB)
     const tlsBandwidthKBPerHandshake =
-      (BASELINE_ALGO.publicKeyBytes + BASELINE_ALGO.signatureBytes + algo.tlsCertOverheadBytes + 512) / 1024
+      (BASELINE_ALGO.publicKeyBytes +
+        BASELINE_ALGO.signatureBytes +
+        algo.tlsCertOverheadBytes +
+        512) /
+      1024
+    // Aggregate network bandwidth at the requested handshake rate (MB/s)
+    const tlsAggregateMBPerSec = (tlsBandwidthKBPerHandshake * handshakesPerSec) / 1024
 
-    // CPU capacity: how many sign ops per second at given throughput
+    // Max sign ops/sec per single CPU core (reference benchmark)
     const maxSignOpsPerSec = 1e6 / algo.signCpuMicros
-    // At the requested handshake rate, what fraction of one CPU core is consumed?
     const signaturesPerSecCapacity = Math.round(maxSignOpsPerSec)
+    // % of one CPU core needed to sustain the requested handshake rate
+    const cpuCorePercent = (handshakesPerSec / maxSignOpsPerSec) * 100
 
     return {
       algo: algo.name,
       storageMB: Math.round(storageMB * 10) / 10,
       renewalsPerYear,
       tlsBandwidthKBPerHandshake: Math.round(tlsBandwidthKBPerHandshake * 10) / 10,
+      tlsAggregateMBPerSec: Math.round(tlsAggregateMBPerSec * 100) / 100,
       signaturesPerSecCapacity,
+      cpuCorePercent: Math.round(cpuCorePercent * 10) / 10,
       sizeSource: algo.sizeSource,
       perfSource: algo.perfSource,
     }
@@ -87,11 +89,7 @@ function SliderRow({
       <div className="flex items-center justify-between">
         <label className="text-xs font-medium text-foreground flex items-center gap-1">
           {label}
-          <span
-            title={tooltip}
-            className="text-muted-foreground cursor-help"
-            aria-label={tooltip}
-          >
+          <span title={tooltip} className="text-muted-foreground cursor-help" aria-label={tooltip}>
             <Info size={11} />
           </span>
         </label>
@@ -120,16 +118,19 @@ export function CertCapacityCalculator() {
 
   const results = useMemo(() => computeOutputs(inputs), [inputs])
 
-  const set = useCallback((key: keyof CalcInputs) => (v: number) => {
-    setInputs((prev) => ({ ...prev, [key]: v }))
-  }, [])
+  const set = useCallback(
+    (key: keyof CalcInputs) => (v: number) => {
+      setInputs((prev) => ({ ...prev, [key]: v }))
+    },
+    []
+  )
 
   const storageData = results.map((r) => ({ name: r.algo, 'Storage (MB)': r.storageMB }))
   const bandwidthData = results.map((r) => ({
     name: r.algo,
-    'TLS Cert (KB)': r.tlsBandwidthKBPerHandshake,
+    'Bandwidth (MB/s)': r.tlsAggregateMBPerSec,
   }))
-  const cpuData = results.map((r) => ({ name: r.algo, 'Sign ops/sec': r.signaturesPerSecCapacity }))
+  const cpuData = results.map((r) => ({ name: r.algo, 'CPU (% core)': r.cpuCorePercent }))
 
   const handleExport = useCallback(() => {
     const rows = results.map((r) => ({
@@ -137,7 +138,9 @@ export function CertCapacityCalculator() {
       'Storage MB (annual)': r.storageMB,
       'Renewals per year': r.renewalsPerYear,
       'TLS Cert KB per handshake': r.tlsBandwidthKBPerHandshake,
+      'Aggregate bandwidth MB/s': r.tlsAggregateMBPerSec,
       'Max sign ops/sec': r.signaturesPerSecCapacity,
+      'CPU % of 1 core': r.cpuCorePercent,
       'Size source': r.sizeSource,
       'Perf source': r.perfSource,
     }))
@@ -149,13 +152,16 @@ export function CertCapacityCalculator() {
       {/* Educational disclaimer */}
       <div className="rounded-lg border border-status-warning/40 bg-status-warning/5 px-4 py-3">
         <p className="text-xs text-status-warning leading-relaxed">
-          Educational model — values are based on reference benchmarks and may differ from your production environment. Always benchmark with your actual hardware and workload.
+          Educational model — values are based on reference benchmarks and may differ from your
+          production environment. Always benchmark with your actual hardware and workload.
         </p>
       </div>
 
       {/* Inputs */}
       <div className="glass-panel p-4 space-y-4">
-        <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Parameters</p>
+        <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+          Parameters
+        </p>
         <SliderRow
           label="Certificate count"
           value={inputs.certCount}
@@ -200,10 +206,19 @@ export function CertCapacityCalculator() {
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={storageData} margin={{ top: 5, right: 5, bottom: 30, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-              <XAxis dataKey="name" tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }} angle={-35} textAnchor="end" />
+              <XAxis
+                dataKey="name"
+                tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }}
+                angle={-35}
+                textAnchor="end"
+              />
               <YAxis tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }} />
               <Tooltip
-                contentStyle={{ background: 'var(--color-card)', border: '1px solid var(--color-border)', fontSize: 11 }}
+                contentStyle={{
+                  background: 'var(--color-card)',
+                  border: '1px solid var(--color-border)',
+                  fontSize: 11,
+                }}
               />
               <Bar dataKey="Storage (MB)" fill="var(--color-primary)" radius={[3, 3, 0, 0]} />
             </BarChart>
@@ -214,18 +229,27 @@ export function CertCapacityCalculator() {
           <div className="flex items-center gap-2 mb-3">
             <Network size={14} className="text-secondary" aria-hidden="true" />
             <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              TLS Cert KB / handshake
+              Bandwidth (MB/s)
             </p>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={bandwidthData} margin={{ top: 5, right: 5, bottom: 30, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-              <XAxis dataKey="name" tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }} angle={-35} textAnchor="end" />
+              <XAxis
+                dataKey="name"
+                tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }}
+                angle={-35}
+                textAnchor="end"
+              />
               <YAxis tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }} />
               <Tooltip
-                contentStyle={{ background: 'var(--color-card)', border: '1px solid var(--color-border)', fontSize: 11 }}
+                contentStyle={{
+                  background: 'var(--color-card)',
+                  border: '1px solid var(--color-border)',
+                  fontSize: 11,
+                }}
               />
-              <Bar dataKey="TLS Cert (KB)" fill="var(--color-secondary)" radius={[3, 3, 0, 0]} />
+              <Bar dataKey="Bandwidth (MB/s)" fill="var(--color-secondary)" radius={[3, 3, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -234,18 +258,27 @@ export function CertCapacityCalculator() {
           <div className="flex items-center gap-2 mb-3">
             <Zap size={14} className="text-accent" aria-hidden="true" />
             <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              Max sign ops/sec
+              CPU (% of 1 core)
             </p>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={cpuData} margin={{ top: 5, right: 5, bottom: 30, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-              <XAxis dataKey="name" tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }} angle={-35} textAnchor="end" />
+              <XAxis
+                dataKey="name"
+                tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }}
+                angle={-35}
+                textAnchor="end"
+              />
               <YAxis tick={{ fontSize: 9, fill: 'var(--color-muted-foreground)' }} />
               <Tooltip
-                contentStyle={{ background: 'var(--color-card)', border: '1px solid var(--color-border)', fontSize: 11 }}
+                contentStyle={{
+                  background: 'var(--color-card)',
+                  border: '1px solid var(--color-border)',
+                  fontSize: 11,
+                }}
               />
-              <Bar dataKey="Sign ops/sec" fill="var(--color-accent)" radius={[3, 3, 0, 0]} />
+              <Bar dataKey="CPU (% core)" fill="var(--color-accent)" radius={[3, 3, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -257,10 +290,24 @@ export function CertCapacityCalculator() {
           <thead>
             <tr className="border-b border-border">
               <th className="text-left px-3 py-2 text-muted-foreground font-medium">Algorithm</th>
-              <th className="text-right px-3 py-2 text-muted-foreground font-medium">Storage MB/yr</th>
-              <th className="text-right px-3 py-2 text-muted-foreground font-medium">TLS cert KB</th>
-              <th className="text-right px-3 py-2 text-muted-foreground font-medium">Sign ops/sec</th>
-              <th className="text-left px-3 py-2 text-muted-foreground font-medium hidden md:table-cell">Sources</th>
+              <th className="text-right px-3 py-2 text-muted-foreground font-medium">
+                Storage MB/yr
+              </th>
+              <th className="text-right px-3 py-2 text-muted-foreground font-medium">
+                TLS cert KB
+              </th>
+              <th className="text-right px-3 py-2 text-muted-foreground font-medium">
+                Bandwidth MB/s
+              </th>
+              <th className="text-right px-3 py-2 text-muted-foreground font-medium">
+                Sign ops/sec
+              </th>
+              <th className="text-right px-3 py-2 text-muted-foreground font-medium">
+                CPU % / core
+              </th>
+              <th className="text-left px-3 py-2 text-muted-foreground font-medium hidden md:table-cell">
+                Sources
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -269,7 +316,15 @@ export function CertCapacityCalculator() {
                 <td className="px-3 py-2 font-mono text-foreground">{r.algo}</td>
                 <td className="px-3 py-2 text-right font-mono">{r.storageMB.toLocaleString()}</td>
                 <td className="px-3 py-2 text-right font-mono">{r.tlsBandwidthKBPerHandshake}</td>
-                <td className="px-3 py-2 text-right font-mono">{r.signaturesPerSecCapacity.toLocaleString()}</td>
+                <td className="px-3 py-2 text-right font-mono">
+                  {r.tlsAggregateMBPerSec.toLocaleString()}
+                </td>
+                <td className="px-3 py-2 text-right font-mono">
+                  {r.signaturesPerSecCapacity.toLocaleString()}
+                </td>
+                <td className="px-3 py-2 text-right font-mono">
+                  {r.cpuCorePercent.toLocaleString()}
+                </td>
                 <td className="px-3 py-2 text-muted-foreground hidden md:table-cell">
                   {r.sizeSource}
                 </td>

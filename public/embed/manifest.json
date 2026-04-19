@@ -1,6 +1,6 @@
 {
   "version": "3.3.8",
-  "generatedAt": "2026-04-18T22:39:37.689Z",
+  "generatedAt": "2026-04-19T01:01:57.601Z",
   "resources": {
     "routePresets": [
       {
@@ -480,6 +480,12 @@
         "difficulty": "intermediate"
       },
       {
+        "id": "hsm-capacity",
+        "name": "HSM Capacity Calculator",
+        "category": "",
+        "difficulty": "intermediate"
+      },
+      {
         "id": "suci-flow",
         "name": "5G SUCI Construction",
         "category": "Protocol Simulations",
@@ -539,8 +545,23 @@
         "category": "Risk & Strategy"
       },
       {
+        "id": "risk-register",
+        "name": "Risk Register Builder",
+        "category": "Risk & Strategy"
+      },
+      {
+        "id": "risk-treatment-plan",
+        "name": "Risk Heatmap & Treatment Plan",
+        "category": "Risk & Strategy"
+      },
+      {
         "id": "audit-checklist",
         "name": "Audit Readiness Checklist",
+        "category": "Compliance & Audit"
+      },
+      {
+        "id": "compliance-timeline",
+        "name": "Compliance Timeline Builder",
         "category": "Compliance & Audit"
       },
       {

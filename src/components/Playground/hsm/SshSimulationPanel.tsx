@@ -159,12 +159,12 @@ export function SshSimulationPanel() {
       <div className="flex items-start gap-2 px-3 py-2 rounded-lg bg-status-warning/10 border border-status-warning/30 text-status-warning text-xs">
         <Info className="w-4 h-4 shrink-0 mt-0.5" />
         <span>
-          <strong>Build in progress:</strong> The pqctoday-openssh WASM artifacts (
+          <strong>Build in progress:</strong> The openssh-pkcs11 WASM artifacts (
           <code className="font-mono">openssh-server.wasm</code>,{' '}
           <code className="font-mono">openssh-client.wasm</code>) must be built from the{' '}
-          <code className="font-mono">pqctoday-openssh</code> repo before this tool can run live
-          handshakes. Until then the UI scaffold is shown with the PKCS#11 log and comparison panel
-          wired up.
+          <code className="font-mono">pqctoday-hsm/openssh-pkcs11</code> connector before this tool
+          can run live handshakes. Until then the UI scaffold is shown with the PKCS#11 log and
+          comparison panel wired up.
         </span>
       </div>
 

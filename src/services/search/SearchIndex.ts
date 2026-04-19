@@ -29,7 +29,7 @@ const MINISEARCH_OPTS = {
     fuzzy: 0.2,
     prefix: true,
   },
-} as const
+}
 
 interface CachedIndex {
   version: string
@@ -129,8 +129,8 @@ export async function search(
   opts?: { limit?: number; sources?: string[] }
 ): Promise<SearchResult[]> {
   const ms = await getSearchIndex()
-  const raw = ms.search(query, { limit: opts?.limit ?? 50 })
-  const results = raw as unknown as SearchResult[]
+  const raw = ms.search(query)
+  const results = raw.slice(0, opts?.limit ?? 50) as unknown as SearchResult[]
   if (opts?.sources && opts.sources.length > 0) {
     return results.filter((r) => opts.sources!.includes(r.source))
   }

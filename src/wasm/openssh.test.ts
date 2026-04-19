@@ -17,7 +17,10 @@ global.Worker = class extends MockWorker {
 } as unknown as typeof Worker
 
 global.SharedArrayBuffer = class FakeSAB {
-  constructor(public byteLength: number) {}
+  byteLength: number
+  constructor(byteLength: number) {
+    this.byteLength = byteLength
+  }
 } as unknown as typeof SharedArrayBuffer
 
 import { SshEngine } from './openssh'

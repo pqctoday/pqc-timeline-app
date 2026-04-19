@@ -111,8 +111,11 @@ export function BusinessCenterView() {
   // Filter state
   const [typeFilter, setTypeFilter] = useState('all')
 
-  // Drawer state
+  // Drawer state. Create mode uses `drawerCreateType` with a null document; view/edit
+  // use `drawerDoc` with createType cleared. The drawer itself handles the transition
+  // from create → view once a new document of the given type is persisted.
   const [drawerDoc, setDrawerDoc] = useState<ExecutiveDocument | null>(null)
+  const [drawerCreateType, setDrawerCreateType] = useState<ExecutiveDocumentType | null>(null)
   const [drawerMode, setDrawerMode] = useState<DrawerMode>('view')
 
   // All artifacts flat list (for ZIP export + filter count)
@@ -127,12 +130,20 @@ export function BusinessCenterView() {
 
   const handleViewArtifact = useCallback((doc: ExecutiveDocument) => {
     setDrawerDoc(doc)
+    setDrawerCreateType(null)
     setDrawerMode('view')
   }, [])
 
   const handleEditArtifact = useCallback((doc: ExecutiveDocument) => {
     setDrawerDoc(doc)
+    setDrawerCreateType(null)
     setDrawerMode('edit')
+  }, [])
+
+  const handleCreateArtifact = useCallback((type: ExecutiveDocumentType) => {
+    setDrawerDoc(null)
+    setDrawerCreateType(type)
+    setDrawerMode('create')
   }, [])
 
   const handleDeleteArtifact = useCallback(
@@ -144,6 +155,15 @@ export function BusinessCenterView() {
 
   const handleCloseDrawer = useCallback(() => {
     setDrawerDoc(null)
+    setDrawerCreateType(null)
+  }, [])
+
+  // Drawer signals that a new artifact was persisted while in create mode —
+  // transition to view the freshly-saved document.
+  const handleArtifactCreated = useCallback((doc: ExecutiveDocument) => {
+    setDrawerDoc(doc)
+    setDrawerCreateType(null)
+    setDrawerMode('view')
   }, [])
 
   const handleRenameArtifact = useCallback(
@@ -174,6 +194,7 @@ export function BusinessCenterView() {
     onEditArtifact: handleEditArtifact,
     onDeleteArtifact: handleDeleteArtifact,
     onRenameArtifact: handleRenameArtifact,
+    onCreateArtifact: handleCreateArtifact,
     typeFilter: typeFilter as ExecutiveDocumentType | 'all',
   }
 
@@ -264,13 +285,19 @@ export function BusinessCenterView() {
         </div>
       )}
 
-      {/* Artifact Drawer */}
-      <ArtifactDrawer
-        document={drawerDoc}
-        mode={drawerMode}
-        onClose={handleCloseDrawer}
-        onModeChange={setDrawerMode}
-      />
+      {/* Artifact Drawer — handles view, edit, and create modes for every artifact
+          type. Builder components are sourced from the shared businessToolsRegistry
+          so the /business/tools/:id route and this drawer stay in lockstep. */}
+      {(drawerDoc || drawerCreateType) && (
+        <ArtifactDrawer
+          document={drawerDoc}
+          createType={drawerCreateType}
+          mode={drawerMode}
+          onClose={handleCloseDrawer}
+          onModeChange={setDrawerMode}
+          onCreated={handleArtifactCreated}
+        />
+      )}
     </div>
   )
 }

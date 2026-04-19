@@ -11,7 +11,7 @@ import {
 } from '../utils/analytics'
 import { LEARN_SECTIONS } from '../components/PKILearning/moduleData'
 
-const MODULE_STORE_VERSION = 11
+const MODULE_STORE_VERSION = 12
 const KPI_HISTORY_CAP = 30
 
 // Ephemeral session tracker — NOT in Zustand state, intentionally non-persisted.
@@ -580,6 +580,25 @@ export const useModuleStore = create<ModuleState>()(
             state.kpiHistory = { riskScore: [] }
           }
           state.version = '11.0.0'
+          state.timestamp = Date.now()
+        }
+
+        // Version 11 → Version 12:
+        // - Add optional `inputs` field to executiveDocuments (Edit restores prior form state)
+        // - Drop any records with the retired `roadmap` type (replaced by `migration-roadmap`
+        //   in the Vendor & Migration section; no builder ever produced `roadmap` records,
+        //   but filter defensively so a stray import can't reach the UI as an orphan)
+        if (version <= 11) {
+          if (Array.isArray(state.artifacts?.executiveDocuments)) {
+            state.artifacts.executiveDocuments = state.artifacts.executiveDocuments
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              .filter((d: any) => d && d.type !== 'roadmap')
+              .map(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                (d: any) => (Object.prototype.hasOwnProperty.call(d, 'inputs') ? d : { ...d })
+              )
+          }
+          state.version = '12.0.0'
           state.timestamp = Date.now()
         }
 

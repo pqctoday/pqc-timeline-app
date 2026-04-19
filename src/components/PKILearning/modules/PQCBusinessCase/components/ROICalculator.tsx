@@ -25,6 +25,7 @@ import {
 } from 'recharts'
 import { useExecutiveModuleData } from '@/hooks/useExecutiveModuleData'
 import { ExportableArtifact } from '@/components/PKILearning/common/executive/ExportableArtifact'
+import { useModuleStore } from '@/store/useModuleStore'
 import {
   DEFAULT_COMPLIANCE_INCIDENT_RATE,
   composeQuantumMultiplier,
@@ -70,6 +71,7 @@ interface TornadoRow {
 
 export const ROICalculator: React.FC = () => {
   const data = useExecutiveModuleData()
+  const addExecutiveDocument = useModuleStore((s) => s.addExecutiveDocument)
   const industryBreachBaseline = resolveIndustryBreachBaseline(data.industry)
 
   // F13: default applicable frameworks to the mandated subset the user actually
@@ -841,11 +843,20 @@ export const ROICalculator: React.FC = () => {
         filename="pqc-roi-analysis"
         formats={['markdown', 'pdf', 'docx']}
         onExport={() => {
-          // Intentionally empty — ROI is export-only, no module store persistence needed
+          addExecutiveDocument({
+            id: `roi-model-${Date.now()}`,
+            moduleId: 'pqc-business-case',
+            type: 'roi-model',
+            title: `PQC ROI Analysis — ${new Date().toLocaleDateString()}`,
+            data: exportMarkdown,
+            inputs: assumptions,
+            createdAt: Date.now(),
+          })
         }}
       >
         <p className="text-sm text-muted-foreground">
-          Export the ROI analysis above as markdown, PDF, or DOCX for board distribution.
+          Export the ROI analysis above as markdown, PDF, or DOCX for board distribution. The
+          artifact is also saved to your Command Center Risk Artifacts list.
         </p>
       </ExportableArtifact>
     </div>

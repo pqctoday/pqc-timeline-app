@@ -28,12 +28,7 @@ interface Props {
   onSwitchTab: (tab: LandscapeTab) => void
 }
 
-export function CrossTabSearchHint({
-  searchText,
-  currentTab,
-  tabFrameworks,
-  onSwitchTab,
-}: Props) {
+export function CrossTabSearchHint({ searchText, currentTab, tabFrameworks, onSwitchTab }: Props) {
   const entries = useMemo<Array<[LandscapeTab, number]> | null>(() => {
     const q = searchText.trim().toLowerCase()
     if (!q) return null
@@ -72,8 +67,7 @@ export function CrossTabSearchHint({
               onClick={() => onSwitchTab(tab)}
               className="text-xs h-auto py-1 px-2.5"
             >
-              {count} in{' '}
-              {/* eslint-disable-next-line security/detect-object-injection */}
+              {count} in {/* eslint-disable-next-line security/detect-object-injection */}
               {TAB_LABELS[tab]}
               <ArrowRight size={12} className="ml-1.5" aria-hidden="true" />
             </Button>

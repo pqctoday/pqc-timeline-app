@@ -230,7 +230,13 @@ export const useAssessmentFormStore = create<AssessmentFormState>()(
           lastWizardUpdate: new Date().toISOString(),
         }
         if (hasAnyUnknown(state)) {
-          const defaults = computeSmartDefaults(industry, state.country, persona, experienceLevel, true)
+          const defaults = computeSmartDefaults(
+            industry,
+            state.country,
+            persona,
+            experienceLevel,
+            true
+          )
           applyDefaultsToUnknownSteps(state, defaults, updates)
         }
         set(updates)
@@ -246,7 +252,13 @@ export const useAssessmentFormStore = create<AssessmentFormState>()(
           lastWizardUpdate: new Date().toISOString(),
         }
         if (hasAnyUnknown(state)) {
-          const defaults = computeSmartDefaults(state.industry, country, persona, experienceLevel, true)
+          const defaults = computeSmartDefaults(
+            state.industry,
+            country,
+            persona,
+            experienceLevel,
+            true
+          )
           applyDefaultsToUnknownSteps(state, defaults, updates)
         }
         set(updates)

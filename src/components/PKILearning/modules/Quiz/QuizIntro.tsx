@@ -249,7 +249,11 @@ export const QuizIntro: React.FC<QuizIntroProps> = ({
             <span className="text-sm text-muted-foreground">
               {selectedCategories.length} topic{selectedCategories.length > 1 ? 's' : ''} selected
             </span>
-            <Button variant="gradient" onClick={handleStartCategory} data-action="start-quiz-category">
+            <Button
+              variant="gradient"
+              onClick={handleStartCategory}
+              data-action="start-quiz-category"
+            >
               <Brain size={16} className="mr-2" />
               Start Quiz
             </Button>

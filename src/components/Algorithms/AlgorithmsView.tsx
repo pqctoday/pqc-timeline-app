@@ -82,7 +82,6 @@ export function AlgorithmsView() {
   useEffect(() => {
     const tab = searchParams.get('tab')
     if (tab === 'transition' || tab === 'detailed') {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveTab((prev) => (prev !== tab ? tab : prev))
     }
   }, [searchParams])
@@ -440,7 +439,9 @@ export function AlgorithmsView() {
       {/* Desktop recommended notice — shown on small screens only */}
       <div className="lg:hidden glass-panel p-3 mb-4 flex items-center gap-2 text-sm text-muted-foreground">
         <Monitor size={16} className="shrink-0 text-primary" aria-hidden="true" />
-        <span>Best experienced on desktop — the Detailed Comparison tab works best on larger screens.</span>
+        <span>
+          Best experienced on desktop — the Detailed Comparison tab works best on larger screens.
+        </span>
       </div>
 
       {/* Loading skeleton */}

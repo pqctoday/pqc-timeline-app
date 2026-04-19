@@ -426,13 +426,14 @@ const IKE_PHASE_CLASS: Record<IkePhase, string> = {
   IKE_AUTH: 'bg-accent/20 text-accent-foreground',
 }
 
-/** Compact "v2 selftest" card. Renders only when VITE_WASM_VPN_V2=1 is in
- * the env. Drives strongswan-v2.wasm through the stepwise API
- * (wasm_vpn_ml_dsa_selftest + wasm_vpn_ml_kem_selftest) and displays the
+/** Compact "v2 selftest" card. Drives strongswan-v2.wasm through the stepwise
+ * API (wasm_vpn_ml_dsa_selftest + wasm_vpn_ml_kem_selftest) and displays the
  * real HSM-produced byte counts. Lives alongside the legacy StrongSwanEngine
- * flow and takes no action unless the button is clicked. */
+ * flow and takes no action unless the button is clicked. The "experimental"
+ * label on the card manages user expectations; the gate is intentionally
+ * always-on so the deployed pqctoday.com matches the local dev experience. */
 const V2SelftestCard: React.FC = () => {
-  const enabled = import.meta.env.VITE_WASM_VPN_V2 === '1'
+  const enabled = true
   const [running, setRunning] = useState(false)
   const [result, setResult] = useState<{
     mlDsaSigLen: number

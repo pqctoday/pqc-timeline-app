@@ -37,10 +37,35 @@
   ],
   "industries": ["financial", "healthcare", "technology", "government", "energy"],
   "matrix": {
-    "financial":    { "hndl": "ambiguous",  "key-forgery": "excluded",  "auth-bypass": "ambiguous", "supply-chain": "excluded"  },
-    "healthcare":   { "hndl": "ambiguous",  "key-forgery": "excluded",  "auth-bypass": "ambiguous", "supply-chain": "excluded"  },
-    "technology":   { "hndl": "ambiguous",  "key-forgery": "ambiguous", "auth-bypass": "covered",   "supply-chain": "ambiguous" },
-    "government":   { "hndl": "excluded",   "key-forgery": "excluded",  "auth-bypass": "excluded",  "supply-chain": "excluded"  },
-    "energy":       { "hndl": "ambiguous",  "key-forgery": "excluded",  "auth-bypass": "ambiguous", "supply-chain": "excluded"  }
+    "financial": {
+      "hndl": "ambiguous",
+      "key-forgery": "excluded",
+      "auth-bypass": "ambiguous",
+      "supply-chain": "excluded"
+    },
+    "healthcare": {
+      "hndl": "ambiguous",
+      "key-forgery": "excluded",
+      "auth-bypass": "ambiguous",
+      "supply-chain": "excluded"
+    },
+    "technology": {
+      "hndl": "ambiguous",
+      "key-forgery": "ambiguous",
+      "auth-bypass": "covered",
+      "supply-chain": "ambiguous"
+    },
+    "government": {
+      "hndl": "excluded",
+      "key-forgery": "excluded",
+      "auth-bypass": "excluded",
+      "supply-chain": "excluded"
+    },
+    "energy": {
+      "hndl": "ambiguous",
+      "key-forgery": "excluded",
+      "auth-bypass": "ambiguous",
+      "supply-chain": "excluded"
+    }
   }
 }

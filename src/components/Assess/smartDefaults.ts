@@ -242,7 +242,9 @@ export function computeSmartDefaults(
     timelinePressure: getTimelineDefaults(country),
   }
   const withPersona = applyPersonaOverrides(base, persona, industry)
-  return skipExpertTrim ? withPersona : applyExperienceLevelAdjustments(withPersona, experienceLevel)
+  return skipExpertTrim
+    ? withPersona
+    : applyExperienceLevelAdjustments(withPersona, experienceLevel)
 }
 
 // Experts don't want conservative pre-selection — they know what they use.

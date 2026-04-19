@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-only
-import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
+import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import FocusLock from 'react-focus-lock'
@@ -16,7 +16,13 @@ interface CommandPaletteProps {
   onClose: () => void
 }
 
-const EXAMPLE_QUERIES = ['ML-DSA', 'NIST SP 800-208', 'ANSSI', 'certificate lifetime', 'quantum threat']
+const EXAMPLE_QUERIES = [
+  'ML-DSA',
+  'NIST SP 800-208',
+  'ANSSI',
+  'certificate lifetime',
+  'quantum threat',
+]
 
 type GroupedResults = { source: string; label: string; items: SearchResult[] }[]
 
@@ -34,10 +40,21 @@ function groupResults(results: SearchResult[]): GroupedResults {
   }))
 }
 
-function highlight(text: string, query: string): string {
-  if (!query.trim()) return text
-  const word = query.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  return text.replace(new RegExp(`(${word})`, 'gi'), '<mark>$1</mark>')
+/** React-safe highlighter: splits text around case-insensitive query matches
+ * and returns a JSX fragment with <mark> nodes, so React's own escaping
+ * handles the text (no dangerouslySetInnerHTML, no HTML-string concat). */
+function renderHighlighted(text: string, query: string): React.ReactNode {
+  const q = query.trim()
+  if (!q) return text
+  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'))
+  return parts.map((part, i) =>
+    part.toLowerCase() === q.toLowerCase() ? (
+      <mark key={i}>{part}</mark>
+    ) : (
+      <React.Fragment key={i}>{part}</React.Fragment>
+    )
+  )
 }
 
 export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
@@ -89,9 +106,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       .then((raw) => {
         if (cancelled) return
         const filtered =
-          curiousLocked && !showAdvanced
-            ? raw.filter((r) => !ADVANCED_SOURCES.has(r.source))
-            : raw
+          curiousLocked && !showAdvanced ? raw.filter((r) => !ADVANCED_SOURCES.has(r.source)) : raw
         setResults(filtered)
         setActiveIdx(0)
         setLoading(false)
@@ -126,12 +141,9 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
     [query, navigate, onClose, pushQuery]
   )
 
-  const runRecentQuery = useCallback(
-    (q: string) => {
-      setQuery(q)
-    },
-    []
-  )
+  const runRecentQuery = useCallback((q: string) => {
+    setQuery(q)
+  }, [])
 
   // Keyboard navigation
   const handleKeyDown = useCallback(
@@ -200,6 +212,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                     type="text"
                     role="combobox"
                     aria-expanded={results.length > 0}
+                    aria-controls="command-palette-listbox"
                     aria-autocomplete="list"
                     aria-label="Search"
                     placeholder="Search algorithms, standards, timelines…"
@@ -208,7 +221,10 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                     className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground text-sm focus:outline-none"
                   />
                   {loading && (
-                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent shrink-0" aria-hidden="true" />
+                    <div
+                      className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent shrink-0"
+                      aria-hidden="true"
+                    />
                   )}
                   {query && (
                     <Button
@@ -224,7 +240,12 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                 </div>
 
                 {/* Results / Recent / Empty */}
-                <div className="flex-1 overflow-y-auto min-h-0" role="listbox" aria-label="Search results">
+                <div
+                  id="command-palette-listbox"
+                  className="flex-1 overflow-y-auto min-h-0"
+                  role="listbox"
+                  aria-label="Search results"
+                >
                   {!query.trim() ? (
                     /* Recent queries + example queries */
                     <div className="p-3 space-y-4">
@@ -271,8 +292,8 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                       <p className="text-sm text-status-error font-medium">Search unavailable</p>
                       <p className="text-xs text-muted-foreground max-w-sm">{error}</p>
                       <p className="text-xs text-muted-foreground/70 mt-2">
-                        Try reloading the page. If the problem persists the search index may need
-                        to be regenerated.
+                        Try reloading the page. If the problem persists the search index may need to
+                        be regenerated.
                       </p>
                     </div>
                   ) : results.length === 0 && !loading ? (
@@ -280,7 +301,8 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                     <div className="flex flex-col items-center gap-2 py-12 text-center">
                       <Search size={28} className="text-muted-foreground/30" aria-hidden="true" />
                       <p className="text-sm text-muted-foreground">
-                        No results for <span className="font-medium text-foreground">&ldquo;{query}&rdquo;</span>
+                        No results for{' '}
+                        <span className="font-medium text-foreground">&ldquo;{query}&rdquo;</span>
                       </p>
                     </div>
                   ) : (
@@ -299,7 +321,11 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                               <Button
                                 key={item.id}
                                 variant="ghost"
-                                ref={isActive ? (activeItemRef as React.RefObject<HTMLButtonElement>) : undefined}
+                                ref={
+                                  isActive
+                                    ? (activeItemRef as React.RefObject<HTMLButtonElement>)
+                                    : undefined
+                                }
                                 role="option"
                                 aria-selected={isActive}
                                 onClick={() => navigateTo(item)}
@@ -316,12 +342,9 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                                   aria-hidden="true"
                                 />
                                 <div className="min-w-0 flex-1">
-                                  <p
-                                    className="text-sm font-medium text-foreground truncate"
-                                    // Safe: highlight() only injects <mark> tags around the query match
-                                    // eslint-disable-next-line react/no-danger
-                                    dangerouslySetInnerHTML={{ __html: highlight(item.title, query) }}
-                                  />
+                                  <p className="text-sm font-medium text-foreground truncate">
+                                    {renderHighlighted(item.title, query)}
+                                  </p>
                                   <p className="text-xs text-muted-foreground line-clamp-1 mt-0.5">
                                     {snippet}
                                   </p>
@@ -360,7 +383,9 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                     </Button>
                   )}
                   {results.length > 0 && (
-                    <span className="ml-auto">{results.length} result{results.length !== 1 ? 's' : ''}</span>
+                    <span className="ml-auto">
+                      {results.length} result{results.length !== 1 ? 's' : ''}
+                    </span>
                   )}
                 </div>
               </motion.div>

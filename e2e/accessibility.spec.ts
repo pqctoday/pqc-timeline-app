@@ -30,9 +30,10 @@ const ROUTES = [
   { path: '/faq', name: 'FAQ' },
 ]
 
-// Navigation content is identical across all routes — skip the nav landmark for overlap checks
-// so the test focuses on page-level violations only.
-const SKIP_SELECTOR = 'main, [role="main"], #root'
+// Navigation content is identical across all routes — the test focuses on
+// page-level violations only; the nav landmark is handled by axe's default
+// global checks. (Prior `SKIP_SELECTOR` constant was declared but never
+// referenced; removed to satisfy @typescript-eslint/no-unused-vars.)
 
 for (const { path, name } of ROUTES) {
   test(`${name} (${path}) — no serious/critical a11y violations`, async ({ page }) => {
@@ -54,8 +55,15 @@ test('RightPanel chat drawer — focus is trapped inside when open', async ({ pa
 
   // Open the chat panel programmatically utilizing the ASR hook pattern we injected
   // This bypasses issues where the FAB button animation may block click listeners under high load
-  await page.waitForFunction(() => typeof (window as any).__e2e_toggle_panel === 'function');
-  await page.evaluate(() => { (window as any).__e2e_toggle_panel() });
+  await page.waitForFunction(
+    () =>
+      typeof (window as unknown as { __e2e_toggle_panel?: () => void }).__e2e_toggle_panel ===
+      'function'
+  )
+  await page.evaluate(() => {
+    const fn = (window as unknown as { __e2e_toggle_panel?: () => void }).__e2e_toggle_panel
+    fn?.()
+  })
 
   // Panel should be visible
   const panel = page.getByRole('dialog', { name: /pqc assistant/i })
@@ -83,8 +91,14 @@ test('Assess wizard inputs — all labelled', async ({ page }) => {
   await page.goto('/assess')
   await page.waitForSelector('[data-testid="assess-view"], [role="form"], main', { timeout: 10000 })
   await injectAxe(page)
-  await checkA11y(page, 'html', {
-    axeOptions: { runOnly: { type: 'tag' as const, values: ['wcag2a'] } },
-    includedImpacts: ['critical', 'serious'] as ('critical' | 'serious')[],
-  }, false, 'default')
+  await checkA11y(
+    page,
+    'html',
+    {
+      axeOptions: { runOnly: { type: 'tag' as const, values: ['wcag2a'] } },
+      includedImpacts: ['critical', 'serious'] as ('critical' | 'serious')[],
+    },
+    false,
+    'default'
+  )
 })

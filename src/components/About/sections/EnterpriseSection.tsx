@@ -40,12 +40,13 @@ export function EnterpriseSection() {
             className="overflow-hidden"
           >
             <div className="prose prose-invert max-w-none mt-4 space-y-8">
-
               {/* Sandbox section */}
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <Container size={18} className="text-primary flex-shrink-0" />
-                  <h3 className="text-base font-semibold text-foreground">Sandbox — Advanced Scenario Testing</h3>
+                  <h3 className="text-base font-semibold text-foreground">
+                    Sandbox — Advanced Scenario Testing
+                  </h3>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The <strong className="text-foreground">Sandbox</strong> section of the Crypto
@@ -71,7 +72,8 @@ export function EnterpriseSection() {
                   </li>
                 </ul>
                 <div className="mt-4 p-3 rounded-lg bg-primary/5 border border-primary/20 text-sm text-muted-foreground">
-                  Sandbox access is available upon request. Contact us to provision your environment:
+                  Sandbox access is available upon request. Contact us to provision your
+                  environment:
                   <div className="mt-3">
                     <a
                       href="mailto:pqctoday@gmail.com?subject=Sandbox%20Access%20Request"
@@ -98,7 +100,8 @@ export function EnterpriseSection() {
                   <strong className="text-foreground">Embedding Mode</strong> that allows
                   organizations and vendors to integrate tailored sections of the platform directly
                   into their own native workflows, dashboards, or documentation — with no coding
-                  required. Configuration is handled through a visual web designer during onboarding.
+                  required. Configuration is handled through a visual web designer during
+                  onboarding.
                 </p>
                 <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground list-disc list-inside">
                   <li>
@@ -132,7 +135,6 @@ export function EnterpriseSection() {
                   </div>
                 </div>
               </div>
-
             </div>
           </motion.div>
         )}

@@ -103,13 +103,14 @@ export const HsmKemPanel = () => {
     const handler = (e: Event) => {
       const ce = e as CustomEvent
       if (ce.detail?.alg) {
-        const v = ce.detail.alg === 'ML-KEM-1024' ? 1024 : ce.detail.alg === 'ML-KEM-512' ? 512 : 768
+        const v =
+          ce.detail.alg === 'ML-KEM-1024' ? 1024 : ce.detail.alg === 'ML-KEM-512' ? 512 : 768
         setVariant(v)
         setPubHandle(null)
         setPrivHandle(null)
         // We use setTimeout to ensure React flushes the state above before trying to run doGenKey,
         // otherwise doGenKey will use the stale `variant` closure if this effect fires eagerly.
-        // Wait, actually doGenKey relies on `variant` from state which is a closure! 
+        // Wait, actually doGenKey relies on `variant` from state which is a closure!
         // We probably need to re-implement doGenKey in the handler.
         withLoading('gen', () => {
           const M = moduleRef.current!
@@ -119,9 +120,11 @@ export const HsmKemPanel = () => {
           setCiphertext(null)
           setEncapSecret(null)
           setDecapSecret(null)
-          
+
           const pubKeyBytes = hsm_extractKeyValue(M, hSessionRef.current, pubHandle)
-          window.dispatchEvent(new CustomEvent('e2e:wasm_crypto_result', { detail: { pubKeyBytes } }))
+          window.dispatchEvent(
+            new CustomEvent('e2e:wasm_crypto_result', { detail: { pubKeyBytes } })
+          )
         })
       }
     }

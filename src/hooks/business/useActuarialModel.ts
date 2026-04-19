@@ -52,10 +52,7 @@ function getSensitivityMult(industryId: string): number {
   return 1.0
 }
 
-function getPremiumImpactMultiplier(
-  industryId: string,
-  avgMigrationFraction: number
-): number {
+function getPremiumImpactMultiplier(industryId: string, avgMigrationFraction: number): number {
   // Anchored to NetDiligence quantum-rider data: +15% (fully migrated) to +50% (not migrated)
   // Insurers also weight industry risk tier
   const industryRisk = getSensitivityMult(industryId)
@@ -66,8 +63,8 @@ function getPremiumImpactMultiplier(
 
 export function useActuarialModel(inputs: InsuranceLensInputs): ActuarialModelOutput {
   return useMemo(() => {
-    const industryRecord = breachData.industries.find((i) => i.id === inputs.industryId)
-      ?? breachData.industries[0]
+    const industryRecord =
+      breachData.industries.find((i) => i.id === inputs.industryId) ?? breachData.industries[0]
 
     const costPerRecord = industryRecord.meanCostPerRecord * inputs.breachCostMult
     const meanBreachRecords = industryRecord.meanBreachRecords
@@ -98,12 +95,13 @@ export function useActuarialModel(inputs: InsuranceLensInputs): ActuarialModelOu
     const matrixKey = coverageData.industries.includes(inputs.industryId)
       ? inputs.industryId
       : coverageData.industries[0]
-    // eslint-disable-next-line security/detect-object-injection
-    const industryMatrix = (coverageData.matrix as Record<string, Record<string, string>>)[matrixKey] ?? {}
+
+    const industryMatrix =
+      (coverageData.matrix as Record<string, Record<string, string>>)[matrixKey] ?? {}
     const coverageGaps: CoverageGapEntry[] = coverageData.scenarios.map((s) => ({
       scenario: s.id,
       scenarioLabel: s.label,
-      // eslint-disable-next-line security/detect-object-injection
+
       status: (industryMatrix[s.id] ?? 'ambiguous') as CoverageGapEntry['status'],
     }))
 

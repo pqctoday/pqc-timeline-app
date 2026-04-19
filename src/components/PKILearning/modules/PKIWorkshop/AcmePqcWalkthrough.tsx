@@ -1,6 +1,14 @@
 // SPDX-License-Identifier: GPL-3.0-only
-import { useState, useCallback, useRef } from 'react'
-import { ChevronRight, ChevronLeft, KeyRound, Download, BookOpen, CheckCircle2, Loader2 } from 'lucide-react'
+import { useState, useCallback } from 'react'
+import {
+  ChevronRight,
+  ChevronLeft,
+  KeyRound,
+  Download,
+  BookOpen,
+  CheckCircle2,
+  Loader2,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ACME_STEPS } from '@/data/acmeFixtures'
 
@@ -55,7 +63,10 @@ export function AcmePqcWalkthrough() {
     try {
       // Attempt real ML-DSA-65 key generation via softhsmv3 WASM
       const { generateMlDsaKeyPair, exportPublicKeyPem } = await import('@/wasm/softhsm')
-      const { pubHandle, privHandle: _privHandle } = await generateMlDsaKeyPair(65)
+      // Destructure only pubHandle; privHandle is intentionally left on-token
+      // (not exported) so the walkthrough visibly demonstrates the "private
+      // stays inside the HSM" property.
+      const { pubHandle } = await generateMlDsaKeyPair(65)
       const pubPem = await exportPublicKeyPem(pubHandle)
       // Build a simulated CSR (real CSR assembly requires ASN.1 encoding — shown as educational placeholder)
       const csrPem = `-----BEGIN CERTIFICATE REQUEST-----
@@ -79,7 +90,8 @@ ${Array.from({ length: 8 }, () =>
         publicKeyPem: pubPem,
         csrPem,
         cryptoLoading: false,
-        cryptoError: 'Crypto engine unavailable — showing educational simulation. For real keys, use the Playground.',
+        cryptoError:
+          'Crypto engine unavailable — showing educational simulation. For real keys, use the Playground.',
       }))
     }
   }, [])
@@ -121,7 +133,8 @@ ${Array.from({ length: 8 }, () =>
       {/* Disclaimer */}
       <div className="rounded-lg border border-status-warning/40 bg-status-warning/5 px-4 py-3">
         <p className="text-xs text-status-warning leading-relaxed">
-          Educational walkthrough — ACME transport is simulated. Cryptographic operations (ML-DSA-65 keypair) use softhsmv3 WASM running entirely in your browser.{' '}
+          Educational walkthrough — ACME transport is simulated. Cryptographic operations (ML-DSA-65
+          keypair) use softhsmv3 WASM running entirely in your browser.{' '}
           <span className="font-medium">Generated keys are for educational use only.</span>
         </p>
       </div>
@@ -176,7 +189,10 @@ ${Array.from({ length: 8 }, () =>
                   <span className="text-primary font-bold">{currentStep.mockRequest.method}</span>{' '}
                   {currentStep.mockRequest.url}
                   {currentStep.mockRequest.body && (
-                    <>{'\n\n'}{JSON.stringify(currentStep.mockRequest.body, null, 2)}</>
+                    <>
+                      {'\n\n'}
+                      {JSON.stringify(currentStep.mockRequest.body, null, 2)}
+                    </>
                   )}
                 </pre>
               </div>
@@ -189,7 +205,9 @@ ${Array.from({ length: 8 }, () =>
                   HTTP Response (simulated)
                 </p>
                 <pre className="text-xs bg-muted/30 border border-border rounded-lg p-3 overflow-x-auto text-muted-foreground leading-relaxed">
-                  <span className={`font-bold ${currentStep.mockResponse.status < 300 ? 'text-status-success' : 'text-status-error'}`}>
+                  <span
+                    className={`font-bold ${currentStep.mockResponse.status < 300 ? 'text-status-success' : 'text-status-error'}`}
+                  >
                     {currentStep.mockResponse.status}
                   </span>
                   {'\n'}
@@ -254,17 +272,34 @@ ${Array.from({ length: 8 }, () =>
 
           {/* Navigation */}
           <div className="flex items-center justify-between">
-            <Button variant="outline" size="sm" onClick={retreat} disabled={isFirst} className="gap-1.5">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={retreat}
+              disabled={isFirst}
+              className="gap-1.5"
+            >
               <ChevronLeft size={14} />
               Back
             </Button>
             {!isLast ? (
-              <Button variant="gradient" size="sm" onClick={advance} disabled={state.cryptoLoading} className="gap-1.5">
+              <Button
+                variant="gradient"
+                size="sm"
+                onClick={advance}
+                disabled={state.cryptoLoading}
+                className="gap-1.5"
+              >
                 Next step
                 <ChevronRight size={14} />
               </Button>
             ) : (
-              <Button variant="outline" size="sm" disabled className="gap-1.5 text-status-success border-status-success/30">
+              <Button
+                variant="outline"
+                size="sm"
+                disabled
+                className="gap-1.5 text-status-success border-status-success/30"
+              >
                 <CheckCircle2 size={14} />
                 Complete
               </Button>

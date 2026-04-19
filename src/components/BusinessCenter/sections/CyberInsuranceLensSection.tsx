@@ -19,12 +19,21 @@ import { usePersonaStore } from '@/store/usePersonaStore'
 
 const INDUSTRY_ITEMS = breachData.industries.map((i) => ({ id: i.id, label: i.label }))
 
-const DEFAULT_MIGRATION: number[] = [0.05, 0.12, 0.22, 0.35, 0.50, 0.63, 0.74, 0.83, 0.90, 0.95]
+const DEFAULT_MIGRATION: number[] = [0.05, 0.12, 0.22, 0.35, 0.5, 0.63, 0.74, 0.83, 0.9, 0.95]
 
 const COVERAGE_STATUS_CONFIG = {
-  covered: { label: 'Covered', className: 'bg-status-success/20 text-status-success border-status-success/30' },
-  excluded: { label: 'Excluded', className: 'bg-status-error/20 text-status-error border-status-error/30' },
-  ambiguous: { label: 'Ambiguous', className: 'bg-status-warning/20 text-status-warning border-status-warning/30' },
+  covered: {
+    label: 'Covered',
+    className: 'bg-status-success/20 text-status-success border-status-success/30',
+  },
+  excluded: {
+    label: 'Excluded',
+    className: 'bg-status-error/20 text-status-error border-status-error/30',
+  },
+  ambiguous: {
+    label: 'Ambiguous',
+    className: 'bg-status-warning/20 text-status-warning border-status-warning/30',
+  },
 }
 
 function formatUSD(n: number): string {
@@ -164,8 +173,8 @@ export function CyberInsuranceLensSection() {
           {/* Disclaimer */}
           <div className="rounded-lg border border-status-warning/40 bg-status-warning/5 px-4 py-3">
             <p className="text-xs text-status-warning leading-relaxed">
-              Educational model — values are derived from published industry averages (IBM CODB 2024,
-              Verizon DBIR 2024, NetDiligence 2024) and are{' '}
+              Educational model — values are derived from published industry averages (IBM CODB
+              2024, Verizon DBIR 2024, NetDiligence 2024) and are{' '}
               <span className="font-semibold">not a substitute for actuarial certification</span> or
               formal insurance advice.
             </p>
@@ -261,7 +270,10 @@ export function CyberInsuranceLensSection() {
               <div className="flex-1 flex flex-col items-center justify-center gap-2">
                 <p
                   className="text-5xl font-bold tabular-nums"
-                  style={{ color: premiumPct > 30 ? 'var(--color-status-error)' : 'var(--color-status-warning)' }}
+                  style={{
+                    color:
+                      premiumPct > 30 ? 'var(--color-status-error)' : 'var(--color-status-warning)',
+                  }}
                 >
                   +{premiumPct}%
                 </p>
@@ -362,9 +374,7 @@ export function CyberInsuranceLensSection() {
                   {' · '}
                   <span className="font-medium text-foreground">Breach exposure:</span>{' '}
                   <span className="font-mono">
-                    {formatUSD(
-                      (model.inputsUsed.costPerRecord * model.inputsUsed.meanBreachRecords)
-                    )}
+                    {formatUSD(model.inputsUsed.costPerRecord * model.inputsUsed.meanBreachRecords)}
                   </span>
                 </p>
               </div>

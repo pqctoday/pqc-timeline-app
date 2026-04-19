@@ -59,7 +59,11 @@ export const ACME_STEPS: AcmeStep[] = [
     mockRequest: {
       method: 'POST',
       url: 'https://acme.example.com/acme/new-account',
-      body: { protected: '<JWS header — alg: ML-DSA-65>', payload: { termsOfServiceAgreed: true }, signature: '<ML-DSA-65 signature>' },
+      body: {
+        protected: '<JWS header — alg: ML-DSA-65>',
+        payload: { termsOfServiceAgreed: true },
+        signature: '<ML-DSA-65 signature>',
+      },
     },
     mockResponse: {
       status: 201,
@@ -113,7 +117,12 @@ export const ACME_STEPS: AcmeStep[] = [
     },
     mockResponse: {
       status: 200,
-      body: { type: 'http-01', status: 'valid', token: 'pqcChallenge123', url: 'https://acme.example.com/acme/challenge/1' },
+      body: {
+        type: 'http-01',
+        status: 'valid',
+        token: 'pqcChallenge123',
+        url: 'https://acme.example.com/acme/challenge/1',
+      },
     },
   },
   {

@@ -159,8 +159,10 @@ export const HsmAcvpTesting = () => {
       .join('') + (bytes.length > maxBytes ? '…' : '')
 
   const runTestsRef = useRef({ runTests: () => Promise.resolve() })
-  runTestsRef.current = { runTests: () => (runTests as any)() }
-  
+  runTestsRef.current = {
+    runTests: () => (runTests as () => Promise<void>)(),
+  }
+
   // Attach e2e event securely
   useEffect(() => {
     if (typeof window !== 'undefined') {

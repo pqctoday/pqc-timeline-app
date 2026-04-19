@@ -26,42 +26,48 @@ const TILES: ExploreTile[] = [
   {
     icon: GraduationCap,
     title: 'Learn PQC Basics',
-    description: "Start with the essentials. Why quantum computers threaten today's encryption and what's being done about it.",
+    description:
+      "Start with the essentials. Why quantum computers threaten today's encryption and what's being done about it.",
     path: '/learn',
     accent: 'text-primary bg-primary/10',
   },
   {
     icon: Globe,
     title: 'Global Migration Timeline',
-    description: 'See which governments and organizations have already committed to post-quantum cryptography — and when.',
+    description:
+      'See which governments and organizations have already committed to post-quantum cryptography — and when.',
     path: '/timeline',
     accent: 'text-secondary bg-secondary/10',
   },
   {
     icon: AlertTriangle,
     title: 'Understand the Threat',
-    description: '"Harvest now, decrypt later" attacks are happening today. Learn what data is already at risk.',
+    description:
+      '"Harvest now, decrypt later" attacks are happening today. Learn what data is already at risk.',
     path: '/threats',
     accent: 'text-status-warning bg-status-warning/10',
   },
   {
     icon: ShieldCheck,
     title: 'Compliance Landscape',
-    description: 'NIST, FIPS, NSA CNSA — see which regulations apply to your industry and how to stay ahead.',
+    description:
+      'NIST, FIPS, NSA CNSA — see which regulations apply to your industry and how to stay ahead.',
     path: '/compliance',
     accent: 'text-accent bg-accent/10',
   },
   {
     icon: ClipboardCheck,
     title: 'Assess Your Risk',
-    description: "A 2-minute questionnaire that estimates your organization's exposure to the quantum threat.",
+    description:
+      "A 2-minute questionnaire that estimates your organization's exposure to the quantum threat.",
     path: '/assess',
     accent: 'text-primary bg-primary/10',
   },
   {
     icon: Shield,
     title: 'Compare PQC Algorithms',
-    description: 'ML-KEM, ML-DSA, SLH-DSA — compare the new NIST-standardized algorithms side by side.',
+    description:
+      'ML-KEM, ML-DSA, SLH-DSA — compare the new NIST-standardized algorithms side by side.',
     path: '/algorithms',
     accent: 'text-secondary bg-secondary/10',
   },

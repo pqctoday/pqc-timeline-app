@@ -130,8 +130,4 @@ export const SOURCE_LABELS: Record<string, string> = {
 }
 
 /** Sources hidden from curious persona when advancedViewsUnlocked is false */
-export const ADVANCED_SOURCES = new Set([
-  'openssl-guide',
-  'playground-guide',
-  'certifications',
-])
+export const ADVANCED_SOURCES = new Set(['openssl-guide', 'playground-guide', 'certifications'])

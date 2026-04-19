@@ -52,7 +52,7 @@ export const QuizWizard: React.FC<QuizWizardProps> = ({ questions, onComplete, o
         submitAnswer,
         nextQuestion,
         forceComplete: () => onComplete(buildCompletionData()),
-        injectComplete: (mockData: QuizCompletionData) => onComplete(mockData)
+        injectComplete: (mockData: QuizCompletionData) => onComplete(mockData),
       }
     }
   }, [state, selectAnswer, submitAnswer, nextQuestion, onComplete])

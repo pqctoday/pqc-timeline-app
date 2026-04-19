@@ -1,7 +1,17 @@
 // SPDX-License-Identifier: GPL-3.0-only
 /* eslint-disable security/detect-object-injection */
 import React, { useState, useEffect, useCallback, useRef } from 'react'
-import { Trash2, FilePlus, Shield, FileCheck, FileSearch, XCircle, GitBranch, Globe, BarChart2 } from 'lucide-react'
+import {
+  Trash2,
+  FilePlus,
+  Shield,
+  FileCheck,
+  FileSearch,
+  XCircle,
+  GitBranch,
+  Globe,
+  BarChart2,
+} from 'lucide-react'
 import { useModuleStore } from '@/store/useModuleStore'
 import { getModuleDeepLink, useSyncDeepLink } from '@/hooks/useModuleDeepLink'
 import { useOpenSSLStore } from '@/components/OpenSSLStudio/store'
@@ -65,7 +75,8 @@ const ALL_PARTS = [
   {
     id: 'acme',
     title: 'Step 7: ACME + PQC',
-    description: 'Walk through the RFC 8555 certificate issuance flow with a real ML-DSA-65 keypair.',
+    description:
+      'Walk through the RFC 8555 certificate issuance flow with a real ML-DSA-65 keypair.',
     icon: Globe,
   },
   {
@@ -236,12 +247,8 @@ export const PKIWorkshop: React.FC<PKIWorkshopProps> = ({ playgroundMode = false
         {currentStep === 5 && (
           <MTCComparison onComplete={() => markStepComplete(MODULE_ID, 'mtc', 5)} />
         )}
-        {currentStep === 6 && (
-          <AcmePqcWalkthrough />
-        )}
-        {currentStep === 7 && (
-          <CertCapacityCalculator />
-        )}
+        {currentStep === 6 && <AcmePqcWalkthrough />}
+        {currentStep === 7 && <CertCapacityCalculator />}
       </div>
 
       {/* Part Navigation */}

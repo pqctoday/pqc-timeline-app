@@ -296,8 +296,8 @@ export const PlaygroundWorkshop = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [showPersonaFilter, setShowPersonaFilter] = useState(true)
-  // In embed mode WIP tools are always hidden — vendors require accurate, stable content only
-  const [wipFilter, setWipFilter] = useState<'all' | 'only' | 'hide'>(isEmbedded ? 'hide' : 'all')
+  // WIP tools hidden by default; embed mode keeps them hidden (vendors require stable content)
+  const [wipFilter, setWipFilter] = useState<'all' | 'only' | 'hide'>('hide')
 
   const selectedPersona = usePersonaStore((s) => s.selectedPersona)
   const myPlaygroundTools = useBookmarkStore((s) => s.myPlaygroundTools)

@@ -300,6 +300,10 @@ function assert(condition, text) {
 
 // We used to include malloc/free by default in the past. Show a helpful error in
 // builds with assertions.
+function _free() {
+  // Show a helpful error since we used to include free by default in the past.
+  abort('free() called but not included in the build - add `_free` to EXPORTED_FUNCTIONS')
+}
 
 /**
  * Indicates whether filename is delivered via file protocol (as opposed to http/https)
@@ -323,9 +327,12 @@ function writeStackCookie() {
   // We write cookies to the final two words in the stack and detect if they are
   // ever overwritten.
   HEAPU32[max >> 2] = 0x02135467
+  checkInt32(0x02135467)
   HEAPU32[(max + 4) >> 2] = 0x89bacdfe
+  checkInt32(0x89bacdfe)
   // Also test the global address 0 for integrity.
   HEAPU32[0 >> 2] = 1668509029
+  checkInt32(1668509029)
 }
 
 function checkStackCookie() {
@@ -349,20 +356,6 @@ function checkStackCookie() {
 }
 // end include: runtime_stack_check.js
 // include: runtime_exceptions.js
-// Base Emscripten EH error class
-class EmscriptenEH extends Error {}
-
-class EmscriptenSjLj extends EmscriptenEH {}
-
-class CppException extends EmscriptenEH {
-  constructor(excPtr) {
-    super(excPtr)
-    this.excPtr = excPtr
-    const excInfo = getExceptionMessage(excPtr)
-    this.name = excInfo[0]
-    this.message = excInfo[1]
-  }
-}
 // end include: runtime_exceptions.js
 // include: runtime_debug.js
 var runtimeDebug = true // Switch to false at runtime to disable logging at the right times
@@ -496,6 +489,34 @@ function unexportedRuntimeSymbol(sym) {
   }
 }
 
+var MAX_UINT8 = 2 ** 8 - 1
+var MAX_UINT16 = 2 ** 16 - 1
+var MAX_UINT32 = 2 ** 32 - 1
+var MAX_UINT53 = 2 ** 53 - 1
+var MAX_UINT64 = 2 ** 64 - 1
+
+var MIN_INT8 = -(2 ** (8 - 1))
+var MIN_INT16 = -(2 ** (16 - 1))
+var MIN_INT32 = -(2 ** (32 - 1))
+var MIN_INT53 = -(2 ** (53 - 1))
+var MIN_INT64 = -(2 ** (64 - 1))
+
+function checkInt(value, bits, min, max) {
+  assert(
+    Number.isInteger(Number(value)),
+    `attempt to write non-integer (${value}) into integer heap`
+  )
+  assert(value <= max, `value (${value}) too large to write as ${bits}-bit value`)
+  assert(value >= min, `value (${value}) too small to write as ${bits}-bit value`)
+}
+
+var checkInt1 = (value) => checkInt(value, 1, 1)
+var checkInt8 = (value) => checkInt(value, 8, MIN_INT8, MAX_UINT8)
+var checkInt16 = (value) => checkInt(value, 16, MIN_INT16, MAX_UINT16)
+var checkInt32 = (value) => checkInt(value, 32, MIN_INT32, MAX_UINT32)
+var checkInt53 = (value) => checkInt(value, 53, MIN_INT53, MAX_UINT53)
+var checkInt64 = (value) => checkInt(value, 64, MIN_INT64, MAX_UINT64)
+
 // end include: runtime_debug.js
 // Memory management
 var /** @type {!Int8Array} */
@@ -565,6 +586,8 @@ function preRun() {
 function initRuntime() {
   assert(!runtimeInitialized)
   runtimeInitialized = true
+
+  setStackLimits()
 
   checkStackCookie()
 
@@ -927,6 +950,12 @@ var ptrToString = (ptr) => {
   return '0x' + ptr.toString(16).padStart(8, '0')
 }
 
+var setStackLimits = () => {
+  var stackLow = _emscripten_stack_get_base()
+  var stackHigh = _emscripten_stack_get_end()
+  ___set_stack_limits(stackLow, stackHigh)
+}
+
 /**
  * @param {number} ptr
  * @param {number} value
@@ -937,18 +966,23 @@ function setValue(ptr, value, type = 'i8') {
   switch (type) {
     case 'i1':
       HEAP8[ptr] = value
+      checkInt8(value)
       break
     case 'i8':
       HEAP8[ptr] = value
+      checkInt8(value)
       break
     case 'i16':
       HEAP16[ptr >> 1] = value
+      checkInt16(value)
       break
     case 'i32':
       HEAP32[ptr >> 2] = value
+      checkInt32(value)
       break
     case 'i64':
       HEAP64[ptr >> 3] = BigInt(value)
+      checkInt64(value)
       break
     case 'float':
       HEAPF32[ptr >> 2] = value
@@ -977,145 +1011,7 @@ var warnOnce = (text) => {
   }
 }
 
-var UTF8Decoder = globalThis.TextDecoder && new TextDecoder()
-
-var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
-  var maxIdx = idx + maxBytesToRead
-  if (ignoreNul) return maxIdx
-  // TextDecoder needs to know the byte length in advance, it doesn't stop on
-  // null terminator by itself.
-  // As a tiny code save trick, compare idx against maxIdx using a negation,
-  // so that maxBytesToRead=undefined/NaN means Infinity.
-  while (heapOrArray[idx] && !(idx >= maxIdx)) ++idx
-  return idx
-}
-
-/**
- * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
- * array that contains uint8 values, returns a copy of that string as a
- * Javascript String object.
- * heapOrArray is either a regular array, or a JavaScript typed array view.
- * @param {number=} idx
- * @param {number=} maxBytesToRead
- * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
- * @return {string}
- */
-var UTF8ArrayToString = (heapOrArray, idx = 0, maxBytesToRead, ignoreNul) => {
-  var endPtr = findStringEnd(heapOrArray, idx, maxBytesToRead, ignoreNul)
-
-  // When using conditional TextDecoder, skip it for short strings as the overhead of the native call is not worth it.
-  if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
-    return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr))
-  }
-  var str = ''
-  while (idx < endPtr) {
-    // For UTF8 byte structure, see:
-    // http://en.wikipedia.org/wiki/UTF-8#Description
-    // https://www.ietf.org/rfc/rfc2279.txt
-    // https://tools.ietf.org/html/rfc3629
-    var u0 = heapOrArray[idx++]
-    if (!(u0 & 0x80)) {
-      str += String.fromCharCode(u0)
-      continue
-    }
-    var u1 = heapOrArray[idx++] & 63
-    if ((u0 & 0xe0) == 0xc0) {
-      str += String.fromCharCode(((u0 & 31) << 6) | u1)
-      continue
-    }
-    var u2 = heapOrArray[idx++] & 63
-    if ((u0 & 0xf0) == 0xe0) {
-      u0 = ((u0 & 15) << 12) | (u1 << 6) | u2
-    } else {
-      if ((u0 & 0xf8) != 0xf0)
-        warnOnce(
-          'Invalid UTF-8 leading byte ' +
-            ptrToString(u0) +
-            ' encountered when deserializing a UTF-8 string in wasm memory to a JS string!'
-        )
-      u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63)
-    }
-
-    if (u0 < 0x10000) {
-      str += String.fromCharCode(u0)
-    } else {
-      var ch = u0 - 0x10000
-      str += String.fromCharCode(0xd800 | (ch >> 10), 0xdc00 | (ch & 0x3ff))
-    }
-  }
-  return str
-}
-
-/**
- * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
- * emscripten HEAP, returns a copy of that string as a Javascript String object.
- *
- * @param {number} ptr
- * @param {number=} maxBytesToRead - An optional length that specifies the
- *   maximum number of bytes to read. You can omit this parameter to scan the
- *   string until the first 0 byte. If maxBytesToRead is passed, and the string
- *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
- *   string will cut short at that byte index.
- * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
- * @return {string}
- */
-var UTF8ToString = (ptr, maxBytesToRead, ignoreNul) => {
-  assert(typeof ptr == 'number', `UTF8ToString expects a number (got ${typeof ptr})`)
-  return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead, ignoreNul) : ''
-}
-var ___assert_fail = (condition, filename, line, func) =>
-  abort(
-    `Assertion failed: ${UTF8ToString(condition)}, at: ` +
-      [
-        filename ? UTF8ToString(filename) : 'unknown filename',
-        line,
-        func ? UTF8ToString(func) : 'unknown function',
-      ]
-  )
-
-var wasmTableMirror = []
-
-var getWasmTableEntry = (funcPtr) => {
-  var func = wasmTableMirror[funcPtr]
-  if (!func) {
-    /** @suppress {checkTypes} */
-    wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr)
-  }
-  /** @suppress {checkTypes} */
-  assert(
-    wasmTable.get(funcPtr) == func,
-    'JavaScript-side Wasm function table mirror is out of date!'
-  )
-  return func
-}
-var ___call_sighandler = (fp, sig) => getWasmTableEntry(fp)(sig)
-
-var exceptionCaught = []
-
-var uncaughtExceptionCount = 0
-var ___cxa_begin_catch = (ptr) => {
-  var info = new ExceptionInfo(ptr)
-  if (!info.get_caught()) {
-    info.set_caught(true)
-    uncaughtExceptionCount--
-  }
-  info.set_rethrown(false)
-  exceptionCaught.push(info)
-  return ___cxa_get_exception_ptr(ptr)
-}
-
-var exceptionLast = 0
-
-var ___cxa_end_catch = () => {
-  // Clear state flag.
-  _setThrew(0, 0)
-  assert(exceptionCaught.length > 0)
-  // Call destructor if one is registered then clear it.
-  var info = exceptionCaught.pop()
-
-  ___cxa_decrement_exception_refcount(info.excPtr)
-  exceptionLast = 0 // XXX in decRef?
-}
+var ___call_sighandler = (fp, sig) => ((a1) => dynCall_vi(fp, a1))(sig)
 
 class ExceptionInfo {
   // excPtr - Thrown object pointer to wrap. Metadata pointer is calculated from it.
@@ -1143,6 +1039,7 @@ class ExceptionInfo {
   set_caught(caught) {
     caught = caught ? 1 : 0
     HEAP8[this.ptr + 12] = caught
+    checkInt8(caught)
   }
 
   get_caught() {
@@ -1152,6 +1049,7 @@ class ExceptionInfo {
   set_rethrown(rethrown) {
     rethrown = rethrown ? 1 : 0
     HEAP8[this.ptr + 13] = rethrown
+    checkInt8(rethrown)
   }
 
   get_rethrown() {
@@ -1174,81 +1072,29 @@ class ExceptionInfo {
   }
 }
 
-var setTempRet0 = (val) => __emscripten_tempret_set(val)
-var findMatchingCatch = (args) => {
-  var thrown = exceptionLast?.excPtr
-  if (!thrown) {
-    // just pass through the null ptr
-    setTempRet0(0)
-    return 0
-  }
-  var info = new ExceptionInfo(thrown)
-  info.set_adjusted_ptr(thrown)
-  var thrownType = info.get_type()
-  if (!thrownType) {
-    // just pass through the thrown ptr
-    setTempRet0(0)
-    return thrown
-  }
+var exceptionLast = 0
 
-  // can_catch receives a **, add indirection
-  // The different catch blocks are denoted by different types.
-  // Due to inheritance, those types may not precisely match the
-  // type of the thrown object. Find one which matches, and
-  // return the type of the catch block which should be called.
-  for (var caughtType of args) {
-    if (caughtType === 0 || caughtType === thrownType) {
-      // Catch all clause matched or exactly the same type is caught
-      break
-    }
-    var adjusted_ptr_addr = info.ptr + 16
-    if (___cxa_can_catch(caughtType, thrownType, adjusted_ptr_addr)) {
-      setTempRet0(caughtType)
-      return thrown
-    }
-  }
-  setTempRet0(thrownType)
-  return thrown
-}
-var ___cxa_find_matching_catch_2 = () => findMatchingCatch([])
-
-var ___cxa_find_matching_catch_3 = (arg0) => findMatchingCatch([arg0])
-
-var ___cxa_rethrow = () => {
-  var info = exceptionCaught.pop()
-  if (!info) {
-    abort('no exception to throw')
-  }
-  var ptr = info.excPtr
-  if (!info.get_rethrown()) {
-    // Only pop if the corresponding push was through rethrow_primary_exception
-    exceptionCaught.push(info)
-    info.set_rethrown(true)
-    info.set_caught(false)
-    uncaughtExceptionCount++
-  }
-  ___cxa_increment_exception_refcount(ptr)
-  exceptionLast = new CppException(ptr)
-  throw exceptionLast
-}
-
+var uncaughtExceptionCount = 0
 var ___cxa_throw = (ptr, type, destructor) => {
   var info = new ExceptionInfo(ptr)
   // Initialize ExceptionInfo content after it was allocated in __cxa_allocate_exception.
   info.init(type, destructor)
-  ___cxa_increment_exception_refcount(ptr)
-  exceptionLast = new CppException(ptr)
+  exceptionLast = ptr
   uncaughtExceptionCount++
-  throw exceptionLast
+  assert(
+    false,
+    'Exception thrown, but exception catching is not enabled. Compile with -sNO_DISABLE_EXCEPTION_CATCHING or -sEXCEPTION_CATCHING_ALLOWED=[..] to catch.'
+  )
 }
 
-var ___cxa_uncaught_exceptions = () => uncaughtExceptionCount
-
-var ___resumeException = (ptr) => {
-  if (!exceptionLast) {
-    exceptionLast = new CppException(ptr)
-  }
-  throw exceptionLast
+var ___handle_stack_overflow = (requested) => {
+  var base = _emscripten_stack_get_base()
+  var end = _emscripten_stack_get_end()
+  abort(
+    `stack overflow (Attempt to set SP to ${ptrToString(requested)}` +
+      `, with stack limits [${ptrToString(end)} - ${ptrToString(base)}` +
+      ']). If you require more stack space build with -sSTACK_SIZE=<bytes>'
+  )
 }
 
 var initRandomFill = () => {
@@ -1384,6 +1230,75 @@ var PATH_FS = {
     outputParts = outputParts.concat(toParts.slice(samePartsLength))
     return outputParts.join('/')
   },
+}
+
+var UTF8Decoder = globalThis.TextDecoder && new TextDecoder()
+
+var findStringEnd = (heapOrArray, idx, maxBytesToRead, ignoreNul) => {
+  var maxIdx = idx + maxBytesToRead
+  if (ignoreNul) return maxIdx
+  // TextDecoder needs to know the byte length in advance, it doesn't stop on
+  // null terminator by itself.
+  // As a tiny code save trick, compare idx against maxIdx using a negation,
+  // so that maxBytesToRead=undefined/NaN means Infinity.
+  while (heapOrArray[idx] && !(idx >= maxIdx)) ++idx
+  return idx
+}
+
+/**
+ * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
+ * array that contains uint8 values, returns a copy of that string as a
+ * Javascript String object.
+ * heapOrArray is either a regular array, or a JavaScript typed array view.
+ * @param {number=} idx
+ * @param {number=} maxBytesToRead
+ * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
+ * @return {string}
+ */
+var UTF8ArrayToString = (heapOrArray, idx = 0, maxBytesToRead, ignoreNul) => {
+  var endPtr = findStringEnd(heapOrArray, idx, maxBytesToRead, ignoreNul)
+
+  // When using conditional TextDecoder, skip it for short strings as the overhead of the native call is not worth it.
+  if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
+    return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr))
+  }
+  var str = ''
+  while (idx < endPtr) {
+    // For UTF8 byte structure, see:
+    // http://en.wikipedia.org/wiki/UTF-8#Description
+    // https://www.ietf.org/rfc/rfc2279.txt
+    // https://tools.ietf.org/html/rfc3629
+    var u0 = heapOrArray[idx++]
+    if (!(u0 & 0x80)) {
+      str += String.fromCharCode(u0)
+      continue
+    }
+    var u1 = heapOrArray[idx++] & 63
+    if ((u0 & 0xe0) == 0xc0) {
+      str += String.fromCharCode(((u0 & 31) << 6) | u1)
+      continue
+    }
+    var u2 = heapOrArray[idx++] & 63
+    if ((u0 & 0xf0) == 0xe0) {
+      u0 = ((u0 & 15) << 12) | (u1 << 6) | u2
+    } else {
+      if ((u0 & 0xf8) != 0xf0)
+        warnOnce(
+          'Invalid UTF-8 leading byte ' +
+            ptrToString(u0) +
+            ' encountered when deserializing a UTF-8 string in wasm memory to a JS string!'
+        )
+      u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63)
+    }
+
+    if (u0 < 0x10000) {
+      str += String.fromCharCode(u0)
+    } else {
+      var ch = u0 - 0x10000
+      str += String.fromCharCode(0xd800 | (ch >> 10), 0xdc00 | (ch & 0x3ff))
+    }
+  }
+  return str
 }
 
 var FS_stdin_getChar_buffer = []
@@ -2012,6 +1927,24 @@ var FS_getMode = (canRead, canWrite) => {
   if (canRead) mode |= 292 | 73
   if (canWrite) mode |= 146
   return mode
+}
+
+/**
+ * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
+ * emscripten HEAP, returns a copy of that string as a Javascript String object.
+ *
+ * @param {number} ptr
+ * @param {number=} maxBytesToRead - An optional length that specifies the
+ *   maximum number of bytes to read. You can omit this parameter to scan the
+ *   string until the first 0 byte. If maxBytesToRead is passed, and the string
+ *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
+ *   string will cut short at that byte index.
+ * @param {boolean=} ignoreNul - If true, the function will not stop on a NUL character.
+ * @return {string}
+ */
+var UTF8ToString = (ptr, maxBytesToRead, ignoreNul) => {
+  assert(typeof ptr == 'number', `UTF8ToString expects a number (got ${typeof ptr})`)
+  return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead, ignoreNul) : ''
 }
 
 var strError = (errno) => UTF8ToString(_strerror(errno))
@@ -4277,6 +4210,7 @@ var SOCKFS = {
             bytes = sock.recv_queue[0].data.length
           }
           HEAP32[arg >> 2] = bytes
+          checkInt32(bytes)
           return 0
         case 21537:
           var on = HEAP32[arg >> 2]
@@ -4645,23 +4579,34 @@ var writeSockaddr = (sa, family, addr, port, addrlen) => {
       zeroMemory(sa, 16)
       if (addrlen) {
         HEAP32[addrlen >> 2] = 16
+        checkInt32(16)
       }
       HEAP16[sa >> 1] = family
+      checkInt16(family)
       HEAP32[(sa + 4) >> 2] = addr
+      checkInt32(addr)
       HEAP16[(sa + 2) >> 1] = _htons(port)
+      checkInt16(_htons(port))
       break
     case 10:
       addr = inetPton6(addr)
       zeroMemory(sa, 28)
       if (addrlen) {
         HEAP32[addrlen >> 2] = 28
+        checkInt32(28)
       }
       HEAP32[sa >> 2] = family
+      checkInt32(family)
       HEAP32[(sa + 8) >> 2] = addr[0]
+      checkInt32(addr[0])
       HEAP32[(sa + 12) >> 2] = addr[1]
+      checkInt32(addr[1])
       HEAP32[(sa + 16) >> 2] = addr[2]
+      checkInt32(addr[2])
       HEAP32[(sa + 20) >> 2] = addr[3]
+      checkInt32(addr[3])
       HEAP16[(sa + 2) >> 1] = _htons(port)
+      checkInt16(_htons(port))
       break
     default:
       return 5
@@ -4927,37 +4872,63 @@ var SYSCALLS = {
   },
   writeStat(buf, stat) {
     HEAPU32[buf >> 2] = stat.dev
+    checkInt32(stat.dev)
     HEAPU32[(buf + 4) >> 2] = stat.mode
+    checkInt32(stat.mode)
     HEAPU32[(buf + 8) >> 2] = stat.nlink
+    checkInt32(stat.nlink)
     HEAPU32[(buf + 12) >> 2] = stat.uid
+    checkInt32(stat.uid)
     HEAPU32[(buf + 16) >> 2] = stat.gid
+    checkInt32(stat.gid)
     HEAPU32[(buf + 20) >> 2] = stat.rdev
+    checkInt32(stat.rdev)
     HEAP64[(buf + 24) >> 3] = BigInt(stat.size)
+    checkInt64(stat.size)
     HEAP32[(buf + 32) >> 2] = 4096
+    checkInt32(4096)
     HEAP32[(buf + 36) >> 2] = stat.blocks
+    checkInt32(stat.blocks)
     var atime = stat.atime.getTime()
     var mtime = stat.mtime.getTime()
     var ctime = stat.ctime.getTime()
     HEAP64[(buf + 40) >> 3] = BigInt(Math.floor(atime / 1000))
+    checkInt64(Math.floor(atime / 1000))
     HEAPU32[(buf + 48) >> 2] = (atime % 1000) * 1000 * 1000
+    checkInt32((atime % 1000) * 1000 * 1000)
     HEAP64[(buf + 56) >> 3] = BigInt(Math.floor(mtime / 1000))
+    checkInt64(Math.floor(mtime / 1000))
     HEAPU32[(buf + 64) >> 2] = (mtime % 1000) * 1000 * 1000
+    checkInt32((mtime % 1000) * 1000 * 1000)
     HEAP64[(buf + 72) >> 3] = BigInt(Math.floor(ctime / 1000))
+    checkInt64(Math.floor(ctime / 1000))
     HEAPU32[(buf + 80) >> 2] = (ctime % 1000) * 1000 * 1000
+    checkInt32((ctime % 1000) * 1000 * 1000)
     HEAP64[(buf + 88) >> 3] = BigInt(stat.ino)
+    checkInt64(stat.ino)
     return 0
   },
   writeStatFs(buf, stats) {
     HEAPU32[(buf + 4) >> 2] = stats.bsize
+    checkInt32(stats.bsize)
     HEAPU32[(buf + 60) >> 2] = stats.bsize
+    checkInt32(stats.bsize)
     HEAP64[(buf + 8) >> 3] = BigInt(stats.blocks)
+    checkInt64(stats.blocks)
     HEAP64[(buf + 16) >> 3] = BigInt(stats.bfree)
+    checkInt64(stats.bfree)
     HEAP64[(buf + 24) >> 3] = BigInt(stats.bavail)
+    checkInt64(stats.bavail)
     HEAP64[(buf + 32) >> 3] = BigInt(stats.files)
+    checkInt64(stats.files)
     HEAP64[(buf + 40) >> 3] = BigInt(stats.ffree)
+    checkInt64(stats.ffree)
     HEAPU32[(buf + 48) >> 2] = stats.fsid
-    HEAPU32[(buf + 64) >> 2] = stats.flags // ST_NOSUID
+    checkInt32(stats.fsid)
+    HEAPU32[(buf + 64) >> 2] = stats.flags
+    checkInt32(stats.flags) // ST_NOSUID
     HEAPU32[(buf + 56) >> 2] = stats.namelen
+    checkInt32(stats.namelen)
   },
   doMsync(addr, stream, len, flags, offset) {
     if (!FS.isFile(stream.node.mode)) {
@@ -5084,6 +5055,7 @@ function ___syscall_fcntl64(fd, cmd, varargs) {
         var offset = 0
         // We're always unlocked.
         HEAP16[(arg + offset) >> 1] = 2
+        checkInt16(2)
         return 0
       }
       case 13:
@@ -5180,9 +5152,13 @@ function ___syscall_getdents64(fd, dirp, count) {
       }
       assert(id)
       HEAP64[(dirp + pos) >> 3] = BigInt(id)
+      checkInt64(id)
       HEAP64[(dirp + pos + 8) >> 3] = BigInt((idx + 1) * struct_size)
+      checkInt64((idx + 1) * struct_size)
       HEAP16[(dirp + pos + 16) >> 1] = 280
+      checkInt16(280)
       HEAP8[dirp + pos + 18] = type
+      checkInt8(type)
       stringToUTF8(name, dirp + pos + 19, 256)
       pos += struct_size
     }
@@ -5209,11 +5185,16 @@ function ___syscall_ioctl(fd, op, varargs) {
           var termios = stream.tty.ops.ioctl_tcgets(stream)
           var argp = syscallGetVarargP()
           HEAP32[argp >> 2] = termios.c_iflag || 0
+          checkInt32(termios.c_iflag || 0)
           HEAP32[(argp + 4) >> 2] = termios.c_oflag || 0
+          checkInt32(termios.c_oflag || 0)
           HEAP32[(argp + 8) >> 2] = termios.c_cflag || 0
+          checkInt32(termios.c_cflag || 0)
           HEAP32[(argp + 12) >> 2] = termios.c_lflag || 0
+          checkInt32(termios.c_lflag || 0)
           for (var i = 0; i < 32; i++) {
             HEAP8[argp + i + 17] = termios.c_cc[i] || 0
+            checkInt8(termios.c_cc[i] || 0)
           }
           return 0
         }
@@ -5253,6 +5234,7 @@ function ___syscall_ioctl(fd, op, varargs) {
         if (!stream.tty) return -59
         var argp = syscallGetVarargP()
         HEAP32[argp >> 2] = 0
+        checkInt32(0)
         return 0
       }
       case 21520: {
@@ -5272,7 +5254,9 @@ function ___syscall_ioctl(fd, op, varargs) {
           var winsize = stream.tty.ops.ioctl_tiocgwinsz(stream.tty)
           var argp = syscallGetVarargP()
           HEAP16[argp >> 1] = winsize[0]
+          checkInt16(winsize[0])
           HEAP16[(argp + 2) >> 1] = winsize[1]
+          checkInt16(winsize[1])
         }
         return 0
       }
@@ -5597,7 +5581,9 @@ function ___syscall_pipe(fdPtr) {
     var res = PIPEFS.createPipe()
 
     HEAP32[fdPtr >> 2] = res.readable_fd
+    checkInt32(res.readable_fd)
     HEAP32[(fdPtr + 4) >> 2] = res.writable_fd
+    checkInt32(res.writable_fd)
 
     return 0
   } catch (e) {
@@ -5625,6 +5611,7 @@ function ___syscall_poll(fds, nfds, timeout) {
       flags &= events | 8 | 16
       if (flags) count++
       HEAP16[(pollfd + 6) >> 1] = flags
+      checkInt16(flags)
     }
 
     if (!count && timeout != 0) warnOnce('non-zero poll() timeout not supported: ' + timeout)
@@ -5731,15 +5718,23 @@ function __gmtime_js(time, tmPtr) {
 
   var date = new Date(time * 1000)
   HEAP32[tmPtr >> 2] = date.getUTCSeconds()
+  checkInt32(date.getUTCSeconds())
   HEAP32[(tmPtr + 4) >> 2] = date.getUTCMinutes()
+  checkInt32(date.getUTCMinutes())
   HEAP32[(tmPtr + 8) >> 2] = date.getUTCHours()
+  checkInt32(date.getUTCHours())
   HEAP32[(tmPtr + 12) >> 2] = date.getUTCDate()
+  checkInt32(date.getUTCDate())
   HEAP32[(tmPtr + 16) >> 2] = date.getUTCMonth()
+  checkInt32(date.getUTCMonth())
   HEAP32[(tmPtr + 20) >> 2] = date.getUTCFullYear() - 1900
+  checkInt32(date.getUTCFullYear() - 1900)
   HEAP32[(tmPtr + 24) >> 2] = date.getUTCDay()
+  checkInt32(date.getUTCDay())
   var start = Date.UTC(date.getUTCFullYear(), 0, 1, 0, 0, 0, 0)
   var yday = ((date.getTime() - start) / (1000 * 60 * 60 * 24)) | 0
   HEAP32[(tmPtr + 28) >> 2] = yday
+  checkInt32(yday)
 }
 
 var isLeapYear = (year) => year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)
@@ -5760,16 +5755,25 @@ function __localtime_js(time, tmPtr) {
 
   var date = new Date(time * 1000)
   HEAP32[tmPtr >> 2] = date.getSeconds()
+  checkInt32(date.getSeconds())
   HEAP32[(tmPtr + 4) >> 2] = date.getMinutes()
+  checkInt32(date.getMinutes())
   HEAP32[(tmPtr + 8) >> 2] = date.getHours()
+  checkInt32(date.getHours())
   HEAP32[(tmPtr + 12) >> 2] = date.getDate()
+  checkInt32(date.getDate())
   HEAP32[(tmPtr + 16) >> 2] = date.getMonth()
+  checkInt32(date.getMonth())
   HEAP32[(tmPtr + 20) >> 2] = date.getFullYear() - 1900
+  checkInt32(date.getFullYear() - 1900)
   HEAP32[(tmPtr + 24) >> 2] = date.getDay()
+  checkInt32(date.getDay())
 
   var yday = ydayFromDate(date) | 0
   HEAP32[(tmPtr + 28) >> 2] = yday
+  checkInt32(yday)
   HEAP32[(tmPtr + 36) >> 2] = -(date.getTimezoneOffset() * 60)
+  checkInt32(-(date.getTimezoneOffset() * 60))
 
   // Attention: DST is in December in South, and some regions don't have DST at all.
   var start = new Date(date.getFullYear(), 0, 1)
@@ -5779,39 +5783,7 @@ function __localtime_js(time, tmPtr) {
     (summerOffset != winterOffset &&
       date.getTimezoneOffset() == Math.min(winterOffset, summerOffset)) | 0
   HEAP32[(tmPtr + 32) >> 2] = dst
-}
-
-function __mmap_js(len, prot, flags, fd, offset, allocated, addr) {
-  offset = bigintToI53Checked(offset)
-
-  try {
-    // musl's mmap doesn't allow values over a certain limit
-    // see OFF_MASK in mmap.c.
-    assert(!isNaN(offset))
-    var stream = SYSCALLS.getStreamFromFD(fd)
-    var res = FS.mmap(stream, len, offset, prot, flags)
-    var ptr = res.ptr
-    HEAP32[allocated >> 2] = res.allocated
-    HEAPU32[addr >> 2] = ptr
-    return 0
-  } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
-    return -e.errno
-  }
-}
-
-function __munmap_js(addr, len, prot, flags, fd, offset) {
-  offset = bigintToI53Checked(offset)
-
-  try {
-    var stream = SYSCALLS.getStreamFromFD(fd)
-    if (prot & 2) {
-      SYSCALLS.doMsync(addr, stream, len, flags, offset)
-    }
-  } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
-    return -e.errno
-  }
+  checkInt32(dst)
 }
 
 var __tzset_js = (timezone, daylight, std_name, dst_name) => {
@@ -5838,6 +5810,7 @@ var __tzset_js = (timezone, daylight, std_name, dst_name) => {
   HEAPU32[timezone >> 2] = stdTimezoneOffset * 60
 
   HEAP32[daylight >> 2] = Number(winterOffset != summerOffset)
+  checkInt32(Number(winterOffset != summerOffset))
 
   var extractZone = (timezoneOffset) => {
     // Why inverse sign?
@@ -5899,7 +5872,58 @@ function _clock_time_get(clk_id, ignored_precision, ptime) {
   // "now" is in ms, and wasi times are in ns.
   var nsec = Math.round(now * 1000 * 1000)
   HEAP64[ptime >> 3] = BigInt(nsec)
+  checkInt64(nsec)
   return 0
+}
+
+var readEmAsmArgsArray = []
+var readEmAsmArgs = (sigPtr, buf) => {
+  // Nobody should have mutated _readEmAsmArgsArray underneath us to be something else than an array.
+  assert(Array.isArray(readEmAsmArgsArray))
+  // The input buffer is allocated on the stack, so it must be stack-aligned.
+  assert(buf % 16 == 0)
+  readEmAsmArgsArray.length = 0
+  var ch
+  // Most arguments are i32s, so shift the buffer pointer so it is a plain
+  // index into HEAP32.
+  while ((ch = HEAPU8[sigPtr++])) {
+    var chr = String.fromCharCode(ch)
+    var validChars = ['d', 'f', 'i', 'p']
+    // In WASM_BIGINT mode we support passing i64 values as bigint.
+    validChars.push('j')
+    assert(
+      validChars.includes(chr),
+      `Invalid character ${ch}("${chr}") in readEmAsmArgs! Use only [${validChars}], and do not specify "v" for void return argument.`
+    )
+    // Floats are always passed as doubles, so all types except for 'i'
+    // are 8 bytes and require alignment.
+    var wide = ch != 105
+    wide &= ch != 112
+    buf += wide && buf % 8 ? 4 : 0
+    readEmAsmArgsArray.push(
+      // Special case for pointers under wasm64 or CAN_ADDRESS_2GB mode.
+      ch == 112
+        ? HEAPU32[buf >> 2]
+        : ch == 106
+          ? HEAP64[buf >> 3]
+          : ch == 105
+            ? HEAP32[buf >> 2]
+            : HEAPF64[buf >> 3]
+    )
+    buf += wide ? 8 : 4
+  }
+  return readEmAsmArgsArray
+}
+var runEmAsmFunction = (code, sigPtr, argbuf) => {
+  var args = readEmAsmArgs(sigPtr, argbuf)
+  assert(
+    ASM_CONSTS.hasOwnProperty(code),
+    `No EM_ASM constant found at address ${code}.  The loaded WebAssembly file is likely out of sync with the generated JavaScript.`
+  )
+  return ASM_CONSTS[code](...args)
+}
+var _emscripten_asm_const_int = (code, sigPtr, argbuf) => {
+  return runEmAsmFunction(code, sigPtr, argbuf)
 }
 
 var _emscripten_err = (str) => err(UTF8ToString(str))
@@ -5976,7 +6000,12 @@ var _emscripten_resize_heap = (requestedSize) => {
       alignMemory(Math.max(requestedSize, overGrownHeapSize), 65536)
     )
 
+    var t0 = _emscripten_get_now()
     var replacement = growMemory(newSize)
+    var t1 = _emscripten_get_now()
+    dbg(
+      `Heap resize call from ${oldSize} to ${newSize} took ${t1 - t0} msecs. Success: ${!!replacement}`
+    )
     if (replacement) {
       return true
     }
@@ -6034,11 +6063,13 @@ var _environ_get = (__environ, environ_buf) => {
 var _environ_sizes_get = (penviron_count, penviron_buf_size) => {
   var strings = getEnvStrings()
   HEAPU32[penviron_count >> 2] = strings.length
+  checkInt32(strings.length)
   var bufSize = 0
   for (var string of strings) {
     bufSize += lengthBytesUTF8(string) + 1
   }
   HEAPU32[penviron_buf_size >> 2] = bufSize
+  checkInt32(bufSize)
   return 0
 }
 
@@ -6102,6 +6133,7 @@ function _fd_read(fd, iov, iovcnt, pnum) {
     var stream = SYSCALLS.getStreamFromFD(fd)
     var num = doReadv(stream, iov, iovcnt)
     HEAPU32[pnum >> 2] = num
+    checkInt32(num)
     return 0
   } catch (e) {
     if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
@@ -6117,6 +6149,7 @@ function _fd_seek(fd, offset, whence, newOffset) {
     var stream = SYSCALLS.getStreamFromFD(fd)
     FS.llseek(stream, offset, whence)
     HEAP64[newOffset >> 3] = BigInt(stream.position)
+    checkInt64(stream.position)
     if (stream.getdents && offset === 0 && whence === 0) stream.getdents = null // reset readdir state
     return 0
   } catch (e) {
@@ -6151,6 +6184,7 @@ function _fd_write(fd, iov, iovcnt, pnum) {
     var stream = SYSCALLS.getStreamFromFD(fd)
     var num = doWritev(stream, iov, iovcnt)
     HEAPU32[pnum >> 2] = num
+    checkInt32(num)
     return 0
   } catch (e) {
     if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
@@ -6184,16 +6218,22 @@ var _getaddrinfo = (node, service, hint, out) => {
 
     ai = _malloc(32)
     HEAP32[(ai + 4) >> 2] = family
+    checkInt32(family)
     HEAP32[(ai + 8) >> 2] = type
+    checkInt32(type)
     HEAP32[(ai + 12) >> 2] = proto
+    checkInt32(proto)
     HEAPU32[(ai + 24) >> 2] = canon
     HEAPU32[(ai + 20) >> 2] = sa
     if (family === 10) {
       HEAP32[(ai + 16) >> 2] = 28
+      checkInt32(28)
     } else {
       HEAP32[(ai + 16) >> 2] = 16
+      checkInt32(16)
     }
     HEAP32[(ai + 28) >> 2] = 0
+    checkInt32(0)
 
     return ai
   }
@@ -6373,9 +6413,11 @@ var stringToAscii = (str, buffer) => {
   for (var i = 0; i < str.length; ++i) {
     assert(str.charCodeAt(i) === (str.charCodeAt(i) & 0xff))
     HEAP8[buffer++] = str.charCodeAt(i)
+    checkInt8(str.charCodeAt(i))
   }
   // Null-terminate the string
   HEAP8[buffer] = 0
+  checkInt8(0)
 }
 
 var _setprotoent = (stayopen) => {
@@ -6405,6 +6447,7 @@ var _setprotoent = (stayopen) => {
     HEAPU32[pe >> 2] = nameBuf
     HEAPU32[(pe + 4) >> 2] = aliasListBuf
     HEAP32[(pe + 8) >> 2] = proto
+    checkInt32(proto)
     return pe
   }
 
@@ -6454,7 +6497,7 @@ var handleException = (e) => {
   if (e instanceof WebAssembly.RuntimeError) {
     if (_emscripten_stack_get_current() <= 0) {
       err(
-        'Stack overflow detected.  You can try increasing -sSTACK_SIZE (currently set to 5242880)'
+        'Stack overflow detected.  You can try increasing -sSTACK_SIZE (currently set to 10485760)'
       )
     }
   }
@@ -6467,6 +6510,102 @@ var stringToUTF8OnStack = (str) => {
   var ret = stackAlloc(size)
   stringToUTF8(str, ret, size)
   return ret
+}
+
+var getCFunc = (ident) => {
+  var func = Module['_' + ident] // closure exported function
+  assert(func, 'Cannot call unknown function ' + ident + ', make sure it is exported')
+  return func
+}
+
+var writeArrayToMemory = (array, buffer) => {
+  assert(
+    array.length >= 0,
+    'writeArrayToMemory array must have a length (should be an array or typed array)'
+  )
+  HEAP8.set(array, buffer)
+}
+
+/**
+ * @param {string|null=} returnType
+ * @param {Array=} argTypes
+ * @param {Array=} args
+ * @param {Object=} opts
+ */
+var ccall = (ident, returnType, argTypes, args, opts) => {
+  // For fast lookup of conversion functions
+  var toC = {
+    string: (str) => {
+      var ret = 0
+      if (str !== null && str !== undefined && str !== 0) {
+        // null string
+        ret = stringToUTF8OnStack(str)
+      }
+      return ret
+    },
+    array: (arr) => {
+      var ret = stackAlloc(arr.length)
+      writeArrayToMemory(arr, ret)
+      return ret
+    },
+  }
+
+  function convertReturnValue(ret) {
+    if (returnType === 'string') {
+      return UTF8ToString(ret)
+    }
+    if (returnType === 'boolean') return Boolean(ret)
+    return ret
+  }
+
+  var func = getCFunc(ident)
+  var cArgs = []
+  var stack = 0
+  assert(returnType !== 'array', 'Return type should not be "array".')
+  if (args) {
+    for (var i = 0; i < args.length; i++) {
+      var converter = toC[argTypes[i]]
+      if (converter) {
+        if (stack === 0) stack = stackSave()
+        cArgs[i] = converter(args[i])
+      } else {
+        cArgs[i] = args[i]
+      }
+    }
+  }
+  var ret = func(...cArgs)
+  function onDone(ret) {
+    if (stack !== 0) stackRestore(stack)
+    return convertReturnValue(ret)
+  }
+
+  ret = onDone(ret)
+  return ret
+}
+
+/**
+ * @param {string=} returnType
+ * @param {Array=} argTypes
+ * @param {Object=} opts
+ */
+var cwrap = (ident, returnType, argTypes, opts) => {
+  return (...args) => ccall(ident, returnType, argTypes, args, opts)
+}
+
+var wasmTableMirror = []
+
+var getWasmTableEntry = (funcPtr) => {
+  var func = wasmTableMirror[funcPtr]
+  if (!func) {
+    /** @suppress {checkTypes} */
+    wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr)
+  }
+  /** @suppress {checkTypes} */
+  assert(
+    wasmTable.get(funcPtr) == func,
+    'JavaScript-side Wasm function table mirror is out of date!'
+  )
+  return func
 }
 
 var updateTableMap = (offset, count) => {
@@ -6594,6 +6733,7 @@ var convertJsFunctionToWasm = (func, sig) => {
   var wrappedFunc = instance.exports['f']
   return wrappedFunc
 }
+
 /** @param {string=} sig */
 var addFunction = (func, sig) => {
   assert(typeof func != 'undefined')
@@ -6605,6 +6745,13 @@ var addFunction = (func, sig) => {
   }
 
   // It's not in the table, add it now.
+
+  // Make sure functionsInTableMap is actually up to date, that is, that this
+  // function is not actually in the wasm Table despite not being tracked in
+  // functionsInTableMap.
+  for (var i = 0; i < wasmTable.length; i++) {
+    assert(getWasmTableEntry(i) != func, 'function in Table but not functionsInTableMap')
+  }
 
   var ret = getEmptyTableSlot()
 
@@ -6631,36 +6778,6 @@ var removeFunction = (index) => {
   setWasmTableEntry(index, null)
   freeTableIndexes.push(index)
 }
-
-var exnToPtr = (exn) => {
-  if (exn instanceof CppException) {
-    return exn.excPtr
-  }
-  return exn
-}
-
-var incrementExceptionRefcount = (exn) => ___cxa_increment_exception_refcount(exnToPtr(exn))
-
-var decrementExceptionRefcount = (exn) => ___cxa_decrement_exception_refcount(exnToPtr(exn))
-
-var getExceptionMessageCommon = (ptr) => {
-  var sp = stackSave()
-  var type_addr_addr = stackAlloc(4)
-  var message_addr_addr = stackAlloc(4)
-  ___get_exception_message(ptr, type_addr_addr, message_addr_addr)
-  var type_addr = HEAPU32[type_addr_addr >> 2]
-  var message_addr = HEAPU32[message_addr_addr >> 2]
-  var type = UTF8ToString(type_addr)
-  _free(type_addr)
-  var message
-  if (message_addr) {
-    message = UTF8ToString(message_addr)
-    _free(message_addr)
-  }
-  stackRestore(sp)
-  return [type, message]
-}
-var getExceptionMessage = (exn) => getExceptionMessageCommon(exnToPtr(exn))
 
 FS.createPreloadedFile = FS_createPreloadedFile
 FS.preloadFile = FS_preloadFile
@@ -6750,13 +6867,10 @@ FS.staticInit()
 Module['stackSave'] = stackSave
 Module['stackRestore'] = stackRestore
 Module['stackAlloc'] = stackAlloc
-Module['ENV'] = ENV
+Module['ccall'] = ccall
+Module['cwrap'] = cwrap
 Module['addFunction'] = addFunction
 Module['removeFunction'] = removeFunction
-Module['UTF8ToString'] = UTF8ToString
-Module['stringToUTF8'] = stringToUTF8
-Module['lengthBytesUTF8'] = lengthBytesUTF8
-Module['FS'] = FS
 var missingLibrarySymbols = [
   'writeI53ToI64',
   'writeI53ToI64Clamped',
@@ -6769,11 +6883,13 @@ var missingLibrarySymbols = [
   'convertI32PairToI53Checked',
   'convertU32PairToI53',
   'getTempRet0',
+  'setTempRet0',
   'createNamedFunction',
   'withStackSave',
-  'readEmAsmArgs',
+  'runMainThreadEmAsm',
   'jstoi_q',
   'autoResumeAudioContext',
+  'dynCallLegacy',
   'getDynCaller',
   'dynCall',
   'runtimeKeepalivePush',
@@ -6790,8 +6906,6 @@ var missingLibrarySymbols = [
   'STACK_ALIGN',
   'POINTER_SIZE',
   'ASSERTIONS',
-  'ccall',
-  'cwrap',
   'intArrayToString',
   'AsciiToString',
   'UTF16ToString',
@@ -6801,7 +6915,6 @@ var missingLibrarySymbols = [
   'stringToUTF32',
   'lengthBytesUTF32',
   'stringToNewUTF8',
-  'writeArrayToMemory',
   'registerKeyEventCallback',
   'maybeCStringToJsString',
   'findEventTarget',
@@ -6857,6 +6970,7 @@ var missingLibrarySymbols = [
   'makePromise',
   'idsToPromises',
   'makePromiseCallback',
+  'findMatchingCatch',
   'Browser_asyncPrepareDataCounter',
   'arraySum',
   'addDays',
@@ -6919,12 +7033,13 @@ var unexportedSymbols = [
   'INT53_MAX',
   'INT53_MIN',
   'bigintToI53Checked',
-  'setTempRet0',
   'ptrToString',
   'zeroMemory',
   'exitJS',
   'getHeapMax',
   'growMemory',
+  'ENV',
+  'setStackLimits',
   'ERRNO_CODES',
   'strError',
   'inetPton4',
@@ -6939,6 +7054,8 @@ var unexportedSymbols = [
   'timers',
   'warnOnce',
   'readEmAsmArgsArray',
+  'readEmAsmArgs',
+  'runEmAsmFunction',
   'getExecutableName',
   'handleException',
   'keepRuntimeAlive',
@@ -6965,11 +7082,15 @@ var unexportedSymbols = [
   'PATH_FS',
   'UTF8Decoder',
   'UTF8ArrayToString',
+  'UTF8ToString',
   'stringToUTF8Array',
+  'stringToUTF8',
+  'lengthBytesUTF8',
   'intArrayFromString',
   'stringToAscii',
   'UTF16Decoder',
   'stringToUTF8OnStack',
+  'writeArrayToMemory',
   'JSEvents',
   'specialHTMLTargets',
   'findCanvasEventTarget',
@@ -6991,9 +7112,6 @@ var unexportedSymbols = [
   'exceptionLast',
   'exceptionCaught',
   'ExceptionInfo',
-  'findMatchingCatch',
-  'getExceptionMessageCommon',
-  'exnToPtr',
   'Browser',
   'requestFullscreen',
   'requestFullScreen',
@@ -7022,6 +7140,7 @@ var unexportedSymbols = [
   'FS_createPath',
   'FS_createDevice',
   'FS_readFile',
+  'FS',
   'FS_root',
   'FS_mounts',
   'FS_devices',
@@ -7156,9 +7275,6 @@ unexportedSymbols.forEach(unexportedRuntimeSymbol)
 
 // End runtime exports
 // Begin JS library exports
-Module['incrementExceptionRefcount'] = incrementExceptionRefcount
-Module['decrementExceptionRefcount'] = decrementExceptionRefcount
-Module['getExceptionMessage'] = getExceptionMessage
 // End JS library exports
 
 // end include: postlibrary.js
@@ -7168,129 +7284,149 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('logReadFiles')
   ignoredModuleProp('loadSplitModule')
 }
-function wasm_net_receive(buf, buflen, src_ip_out, src_port_out, dst_ip_out, dst_port_out) {
-  var sab = Module._wasm_net_sab
-  if (!sab) return 0
-  var hdr = new Int32Array(sab, 0, 4)
-  var body = new Uint8Array(sab, 16)
-  while (Atomics.load(hdr, 0) !== 1) {
-    Atomics.wait(hdr, 0, 0)
-  }
-  var len = Atomics.load(hdr, 1)
-  if (len > buflen) len = buflen
-  var srcIp = Atomics.load(hdr, 2)
-  var srcPort = Atomics.load(hdr, 3) & 0xffff
-  for (var i = 0; i < len; i++) HEAPU8[buf + i] = body[i]
-  HEAPU32[src_ip_out >> 2] = srcIp
-  HEAPU32[src_port_out >> 2] = srcPort
-  HEAPU32[dst_ip_out >> 2] = 0
-  HEAPU32[dst_port_out >> 2] = 500
-  Atomics.store(hdr, 0, 0)
-  Atomics.notify(hdr, 0, 1)
-  return len
+var ASM_CONSTS = {
+  11328391: ($0) => {
+    var msg = UTF8ToString($0)
+    postMessage({ type: 'LOG', payload: { level: 'info', text: msg } })
+  },
 }
-function wasm_net_send(buf, buflen, src_ip, src_port, dst_ip, dst_port) {
+function wasm_net_receive(buf, maxlen, srcIp, srcPort, destIp, destPort) {
   var sab = Module._wasm_net_sab
-  if (!sab) return 0
-  var hdr = new Int32Array(sab, 0, 4)
-  var body = new Uint8Array(sab, 16)
-  while (Atomics.load(hdr, 0) !== 0) {
-    Atomics.wait(hdr, 0, 1)
-  }
-  var len = buflen
-  if (len > body.byteLength) len = body.byteLength
-  for (var i = 0; i < len; i++) body[i] = HEAPU8[buf + i]
-  Atomics.store(hdr, 1, len)
-  Atomics.store(hdr, 2, src_ip)
-  Atomics.store(hdr, 3, dst_port & 0xffff)
-  Atomics.store(hdr, 0, 1)
-  Atomics.notify(hdr, 0, 1)
-  return len
-}
-function pkcs11_rpc_call(opcode, args_buf, args_len) {
-  var sab = Module._wasm_pkcs11_sab
   if (!sab) return -1
-  return 0
+  var i32 = new Int32Array(sab, 0, 6)
+  var bytes = new Uint8Array(sab)
+  Atomics.wait(i32, 0, 0)
+  var pktLen = i32[1]
+  var pktSrcIp = i32[2] >>> 0
+  var pktSrcPort = i32[3] >>> 0
+  var pktDestIp = i32[4] >>> 0
+  var pktDestPort = i32[5] >>> 0
+  var copyLen = Math.min(pktLen, maxlen)
+  HEAPU8.set(bytes.subarray(24, 24 + copyLen), buf)
+  HEAPU32[srcIp >> 2] = pktSrcIp
+  HEAPU32[srcPort >> 2] = pktSrcPort
+  HEAPU32[destIp >> 2] = pktDestIp
+  HEAPU32[destPort >> 2] = pktDestPort || 500
+  Atomics.store(i32, 0, 0)
+  return copyLen
 }
-function pkcs11_sab_wi32(offset, value) {
+function wasm_net_send(buf, len, srcIp, srcPort, destIp, destPort) {
+  var data = HEAPU8.slice(buf, buf + len)
+  postMessage(
+    {
+      type: 'PACKET_OUT',
+      payload: {
+        srcIp: srcIp,
+        srcPort: srcPort,
+        destIp: destIp,
+        destPort: destPort,
+        data: data.buffer,
+      },
+    },
+    [data.buffer]
+  )
+  return len
+}
+function pkcs11_rpc_call(cmdId) {
+  var sab = Module._wasm_pkcs11_sab
+  if (!sab) return 0x50
+  var flags = new Int32Array(sab, 0, 3)
+  Atomics.store(flags, 0, cmdId)
+  Atomics.store(flags, 1, 1)
+  postMessage({ type: 'PKCS11_RPC' })
+  Atomics.wait(flags, 1, 1)
+  var rv = Atomics.load(flags, 2)
+  Atomics.store(flags, 1, 0)
+  return rv
+}
+function pkcs11_sab_wi32(pos, val) {
   var sab = Module._wasm_pkcs11_sab
   if (!sab) return
-  var i32 = new Int32Array(sab)
-  Atomics.store(i32, offset >> 2, value)
+  Atomics.store(new Int32Array(sab, 48), pos, val)
 }
-function pkcs11_sab_ri32(offset) {
+function pkcs11_sab_ri32(pos) {
   var sab = Module._wasm_pkcs11_sab
   if (!sab) return 0
-  var i32 = new Int32Array(sab)
-  return Atomics.load(i32, offset >> 2)
+  return Atomics.load(new Int32Array(sab, 48), pos)
 }
-function pkcs11_sab_read(offset, dst, len) {
+function pkcs11_sab_write(src, byteOff, len) {
   var sab = Module._wasm_pkcs11_sab
-  if (!sab) return
-  var body = new Uint8Array(sab)
-  for (var i = 0; i < len; i++) HEAPU8[dst + i] = body[offset + i]
+  if (!sab || len <= 0) return
+  new Uint8Array(sab, 48 + byteOff, len).set(HEAPU8.subarray(src, src + len))
 }
-function pkcs11_sab_write(offset, src, len) {
+function pkcs11_sab_read(dst, byteOff, len) {
   var sab = Module._wasm_pkcs11_sab
-  if (!sab) return
-  var body = new Uint8Array(sab)
-  for (var i = 0; i < len; i++) body[offset + i] = HEAPU8[src + i]
+  if (!sab || len <= 0) return
+  HEAPU8.set(new Uint8Array(sab, 48 + byteOff, len), dst)
 }
 
 // Imports from the Wasm binary.
-var _main = (Module['_main'] = makeInvalidEarlyAccess('_main'))
-var _fflush = makeInvalidEarlyAccess('_fflush')
-var _wasm_setup_config = (Module['_wasm_setup_config'] =
-  makeInvalidEarlyAccess('_wasm_setup_config'))
-var _wasm_initiate = (Module['_wasm_initiate'] = makeInvalidEarlyAccess('_wasm_initiate'))
-var _wasm_net_set_sab = (Module['_wasm_net_set_sab'] = makeInvalidEarlyAccess('_wasm_net_set_sab'))
-var _wasm_socket_destroy = (Module['_wasm_socket_destroy'] =
-  makeInvalidEarlyAccess('_wasm_socket_destroy'))
-var _free = (Module['_free'] = makeInvalidEarlyAccess('_free'))
-var _socket_wasm_create = (Module['_socket_wasm_create'] =
-  makeInvalidEarlyAccess('_socket_wasm_create'))
-var _malloc = (Module['_malloc'] = makeInvalidEarlyAccess('_malloc'))
-var _htons = makeInvalidEarlyAccess('_htons')
-var _wasm_hsm_init = (Module['_wasm_hsm_init'] = makeInvalidEarlyAccess('_wasm_hsm_init'))
-var _C_GetFunctionList = (Module['_C_GetFunctionList'] =
-  makeInvalidEarlyAccess('_C_GetFunctionList'))
 var _wasm_set_proposal_mode = (Module['_wasm_set_proposal_mode'] =
   makeInvalidEarlyAccess('_wasm_set_proposal_mode'))
-var _wasm_get_peer_by_name = (Module['_wasm_get_peer_by_name'] =
-  makeInvalidEarlyAccess('_wasm_get_peer_by_name'))
-var _wasm_create_peer_enum = (Module['_wasm_create_peer_enum'] =
-  makeInvalidEarlyAccess('_wasm_create_peer_enum'))
-var _wasm_create_ike_enum = (Module['_wasm_create_ike_enum'] =
-  makeInvalidEarlyAccess('_wasm_create_ike_enum'))
+var _main = (Module['_main'] = makeInvalidEarlyAccess('_main'))
+var _openssl_plugin_create = (Module['_openssl_plugin_create'] =
+  makeInvalidEarlyAccess('_openssl_plugin_create'))
+var _fflush = makeInvalidEarlyAccess('_fflush')
+var _malloc = makeInvalidEarlyAccess('_malloc')
+var _wasm_net_set_sab = (Module['_wasm_net_set_sab'] = makeInvalidEarlyAccess('_wasm_net_set_sab'))
+var _htons = makeInvalidEarlyAccess('_htons')
+var _htonl = makeInvalidEarlyAccess('_htonl')
+var _ntohs = makeInvalidEarlyAccess('_ntohs')
+var _wasm_hsm_init = (Module['_wasm_hsm_init'] = makeInvalidEarlyAccess('_wasm_hsm_init'))
+var _strerror = makeInvalidEarlyAccess('_strerror')
+var _C_GetFunctionList = (Module['_C_GetFunctionList'] =
+  makeInvalidEarlyAccess('_C_GetFunctionList'))
 var _pkcs11_set_rpc_mode = (Module['_pkcs11_set_rpc_mode'] =
   makeInvalidEarlyAccess('_pkcs11_set_rpc_mode'))
-var _pkcs11_wasm_wrap_function_list = (Module['_pkcs11_wasm_wrap_function_list'] =
-  makeInvalidEarlyAccess('_pkcs11_wasm_wrap_function_list'))
-var _pkcs11_wasm_rpc_function_list = (Module['_pkcs11_wasm_rpc_function_list'] =
-  makeInvalidEarlyAccess('_pkcs11_wasm_rpc_function_list'))
-var _ntohs = makeInvalidEarlyAccess('_ntohs')
-var _htonl = makeInvalidEarlyAccess('_htonl')
-var _strerror = makeInvalidEarlyAccess('_strerror')
 var _emscripten_stack_get_end = makeInvalidEarlyAccess('_emscripten_stack_get_end')
 var _emscripten_stack_get_base = makeInvalidEarlyAccess('_emscripten_stack_get_base')
 var _emscripten_builtin_memalign = makeInvalidEarlyAccess('_emscripten_builtin_memalign')
-var _setThrew = makeInvalidEarlyAccess('_setThrew')
-var __emscripten_tempret_set = makeInvalidEarlyAccess('__emscripten_tempret_set')
 var _emscripten_stack_init = makeInvalidEarlyAccess('_emscripten_stack_init')
 var _emscripten_stack_get_free = makeInvalidEarlyAccess('_emscripten_stack_get_free')
 var __emscripten_stack_restore = makeInvalidEarlyAccess('__emscripten_stack_restore')
 var __emscripten_stack_alloc = makeInvalidEarlyAccess('__emscripten_stack_alloc')
 var _emscripten_stack_get_current = makeInvalidEarlyAccess('_emscripten_stack_get_current')
-var ___cxa_decrement_exception_refcount = makeInvalidEarlyAccess(
-  '___cxa_decrement_exception_refcount'
-)
-var ___cxa_increment_exception_refcount = makeInvalidEarlyAccess(
-  '___cxa_increment_exception_refcount'
-)
-var ___cxa_free_exception = makeInvalidEarlyAccess('___cxa_free_exception')
-var ___get_exception_message = makeInvalidEarlyAccess('___get_exception_message')
-var ___cxa_can_catch = makeInvalidEarlyAccess('___cxa_can_catch')
-var ___cxa_get_exception_ptr = makeInvalidEarlyAccess('___cxa_get_exception_ptr')
+var ___set_stack_limits = (Module['___set_stack_limits'] =
+  makeInvalidEarlyAccess('___set_stack_limits'))
+var dynCall_viiii = makeInvalidEarlyAccess('dynCall_viiii')
+var dynCall_i = makeInvalidEarlyAccess('dynCall_i')
+var dynCall_vi = makeInvalidEarlyAccess('dynCall_vi')
+var dynCall_iii = makeInvalidEarlyAccess('dynCall_iii')
+var dynCall_iiii = makeInvalidEarlyAccess('dynCall_iiii')
+var dynCall_ii = makeInvalidEarlyAccess('dynCall_ii')
+var dynCall_vii = makeInvalidEarlyAccess('dynCall_vii')
+var dynCall_vij = makeInvalidEarlyAccess('dynCall_vij')
+var dynCall_ji = makeInvalidEarlyAccess('dynCall_ji')
+var dynCall_iiiii = makeInvalidEarlyAccess('dynCall_iiiii')
+var dynCall_viii = makeInvalidEarlyAccess('dynCall_viii')
+var dynCall_viiiii = makeInvalidEarlyAccess('dynCall_viiiii')
+var dynCall_iiiiii = makeInvalidEarlyAccess('dynCall_iiiiii')
+var dynCall_iiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiii')
+var dynCall_iiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiii')
+var dynCall_viiiiii = makeInvalidEarlyAccess('dynCall_viiiiii')
+var dynCall_v = makeInvalidEarlyAccess('dynCall_v')
+var dynCall_viiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiii')
+var dynCall_viidi = makeInvalidEarlyAccess('dynCall_viidi')
+var dynCall_diidi = makeInvalidEarlyAccess('dynCall_diidi')
+var dynCall_iijii = makeInvalidEarlyAccess('dynCall_iijii')
+var dynCall_iiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiii')
+var dynCall_viiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiii')
+var dynCall_viiiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiiii')
+var dynCall_iiiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiiii')
+var dynCall_jii = makeInvalidEarlyAccess('dynCall_jii')
+var dynCall_vijj = makeInvalidEarlyAccess('dynCall_vijj')
+var dynCall_iiji = makeInvalidEarlyAccess('dynCall_iiji')
+var dynCall_iiiiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiiiii')
+var dynCall_vjii = makeInvalidEarlyAccess('dynCall_vjii')
+var dynCall_vji = makeInvalidEarlyAccess('dynCall_vji')
+var dynCall_iiid = makeInvalidEarlyAccess('dynCall_iiid')
+var dynCall_jiji = makeInvalidEarlyAccess('dynCall_jiji')
+var dynCall_iidiiii = makeInvalidEarlyAccess('dynCall_iidiiii')
+var dynCall_viijii = makeInvalidEarlyAccess('dynCall_viijii')
+var dynCall_iiiiij = makeInvalidEarlyAccess('dynCall_iiiiij')
+var dynCall_iiiiid = makeInvalidEarlyAccess('dynCall_iiiiid')
+var dynCall_iiiiijj = makeInvalidEarlyAccess('dynCall_iiiiijj')
+var dynCall_iiiiiijj = makeInvalidEarlyAccess('dynCall_iiiiiijj')
 var memory = makeInvalidEarlyAccess('memory')
 var __indirect_function_table = makeInvalidEarlyAccess('__indirect_function_table')
 var wasmMemory = makeInvalidEarlyAccess('wasmMemory')
@@ -7298,66 +7434,36 @@ var wasmTable = makeInvalidEarlyAccess('wasmTable')
 
 function assignWasmExports(wasmExports) {
   assert(
+    typeof wasmExports['wasm_set_proposal_mode'] != 'undefined',
+    'missing Wasm export: wasm_set_proposal_mode'
+  )
+  assert(
     typeof wasmExports['__main_argc_argv'] != 'undefined',
     'missing Wasm export: __main_argc_argv'
   )
-  assert(typeof wasmExports['fflush'] != 'undefined', 'missing Wasm export: fflush')
   assert(
-    typeof wasmExports['wasm_setup_config'] != 'undefined',
-    'missing Wasm export: wasm_setup_config'
+    typeof wasmExports['openssl_plugin_create'] != 'undefined',
+    'missing Wasm export: openssl_plugin_create'
   )
-  assert(typeof wasmExports['wasm_initiate'] != 'undefined', 'missing Wasm export: wasm_initiate')
+  assert(typeof wasmExports['fflush'] != 'undefined', 'missing Wasm export: fflush')
+  assert(typeof wasmExports['malloc'] != 'undefined', 'missing Wasm export: malloc')
   assert(
     typeof wasmExports['wasm_net_set_sab'] != 'undefined',
     'missing Wasm export: wasm_net_set_sab'
   )
-  assert(
-    typeof wasmExports['wasm_socket_destroy'] != 'undefined',
-    'missing Wasm export: wasm_socket_destroy'
-  )
-  assert(typeof wasmExports['free'] != 'undefined', 'missing Wasm export: free')
-  assert(
-    typeof wasmExports['socket_wasm_create'] != 'undefined',
-    'missing Wasm export: socket_wasm_create'
-  )
-  assert(typeof wasmExports['malloc'] != 'undefined', 'missing Wasm export: malloc')
   assert(typeof wasmExports['htons'] != 'undefined', 'missing Wasm export: htons')
+  assert(typeof wasmExports['htonl'] != 'undefined', 'missing Wasm export: htonl')
+  assert(typeof wasmExports['ntohs'] != 'undefined', 'missing Wasm export: ntohs')
   assert(typeof wasmExports['wasm_hsm_init'] != 'undefined', 'missing Wasm export: wasm_hsm_init')
+  assert(typeof wasmExports['strerror'] != 'undefined', 'missing Wasm export: strerror')
   assert(
     typeof wasmExports['C_GetFunctionList'] != 'undefined',
     'missing Wasm export: C_GetFunctionList'
   )
   assert(
-    typeof wasmExports['wasm_set_proposal_mode'] != 'undefined',
-    'missing Wasm export: wasm_set_proposal_mode'
-  )
-  assert(
-    typeof wasmExports['wasm_get_peer_by_name'] != 'undefined',
-    'missing Wasm export: wasm_get_peer_by_name'
-  )
-  assert(
-    typeof wasmExports['wasm_create_peer_enum'] != 'undefined',
-    'missing Wasm export: wasm_create_peer_enum'
-  )
-  assert(
-    typeof wasmExports['wasm_create_ike_enum'] != 'undefined',
-    'missing Wasm export: wasm_create_ike_enum'
-  )
-  assert(
     typeof wasmExports['pkcs11_set_rpc_mode'] != 'undefined',
     'missing Wasm export: pkcs11_set_rpc_mode'
   )
-  assert(
-    typeof wasmExports['pkcs11_wasm_wrap_function_list'] != 'undefined',
-    'missing Wasm export: pkcs11_wasm_wrap_function_list'
-  )
-  assert(
-    typeof wasmExports['pkcs11_wasm_rpc_function_list'] != 'undefined',
-    'missing Wasm export: pkcs11_wasm_rpc_function_list'
-  )
-  assert(typeof wasmExports['ntohs'] != 'undefined', 'missing Wasm export: ntohs')
-  assert(typeof wasmExports['htonl'] != 'undefined', 'missing Wasm export: htonl')
-  assert(typeof wasmExports['strerror'] != 'undefined', 'missing Wasm export: strerror')
   assert(
     typeof wasmExports['emscripten_stack_get_end'] != 'undefined',
     'missing Wasm export: emscripten_stack_get_end'
@@ -7369,11 +7475,6 @@ function assignWasmExports(wasmExports) {
   assert(
     typeof wasmExports['emscripten_builtin_memalign'] != 'undefined',
     'missing Wasm export: emscripten_builtin_memalign'
-  )
-  assert(typeof wasmExports['setThrew'] != 'undefined', 'missing Wasm export: setThrew')
-  assert(
-    typeof wasmExports['_emscripten_tempret_set'] != 'undefined',
-    'missing Wasm export: _emscripten_tempret_set'
   )
   assert(
     typeof wasmExports['emscripten_stack_init'] != 'undefined',
@@ -7396,121 +7497,170 @@ function assignWasmExports(wasmExports) {
     'missing Wasm export: emscripten_stack_get_current'
   )
   assert(
-    typeof wasmExports['__cxa_decrement_exception_refcount'] != 'undefined',
-    'missing Wasm export: __cxa_decrement_exception_refcount'
+    typeof wasmExports['__set_stack_limits'] != 'undefined',
+    'missing Wasm export: __set_stack_limits'
+  )
+  assert(typeof wasmExports['dynCall_viiii'] != 'undefined', 'missing Wasm export: dynCall_viiii')
+  assert(typeof wasmExports['dynCall_i'] != 'undefined', 'missing Wasm export: dynCall_i')
+  assert(typeof wasmExports['dynCall_vi'] != 'undefined', 'missing Wasm export: dynCall_vi')
+  assert(typeof wasmExports['dynCall_iii'] != 'undefined', 'missing Wasm export: dynCall_iii')
+  assert(typeof wasmExports['dynCall_iiii'] != 'undefined', 'missing Wasm export: dynCall_iiii')
+  assert(typeof wasmExports['dynCall_ii'] != 'undefined', 'missing Wasm export: dynCall_ii')
+  assert(typeof wasmExports['dynCall_vii'] != 'undefined', 'missing Wasm export: dynCall_vii')
+  assert(typeof wasmExports['dynCall_vij'] != 'undefined', 'missing Wasm export: dynCall_vij')
+  assert(typeof wasmExports['dynCall_ji'] != 'undefined', 'missing Wasm export: dynCall_ji')
+  assert(typeof wasmExports['dynCall_iiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiii')
+  assert(typeof wasmExports['dynCall_viii'] != 'undefined', 'missing Wasm export: dynCall_viii')
+  assert(typeof wasmExports['dynCall_viiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiii')
+  assert(typeof wasmExports['dynCall_iiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiii')
+  assert(
+    typeof wasmExports['dynCall_iiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiii'
   )
   assert(
-    typeof wasmExports['__cxa_increment_exception_refcount'] != 'undefined',
-    'missing Wasm export: __cxa_increment_exception_refcount'
+    typeof wasmExports['dynCall_iiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiiii'
   )
   assert(
-    typeof wasmExports['__cxa_free_exception'] != 'undefined',
-    'missing Wasm export: __cxa_free_exception'
+    typeof wasmExports['dynCall_viiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_viiiiii'
+  )
+  assert(typeof wasmExports['dynCall_v'] != 'undefined', 'missing Wasm export: dynCall_v')
+  assert(
+    typeof wasmExports['dynCall_viiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_viiiiiii'
+  )
+  assert(typeof wasmExports['dynCall_viidi'] != 'undefined', 'missing Wasm export: dynCall_viidi')
+  assert(typeof wasmExports['dynCall_diidi'] != 'undefined', 'missing Wasm export: dynCall_diidi')
+  assert(typeof wasmExports['dynCall_iijii'] != 'undefined', 'missing Wasm export: dynCall_iijii')
+  assert(
+    typeof wasmExports['dynCall_iiiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiiiii'
   )
   assert(
-    typeof wasmExports['__get_exception_message'] != 'undefined',
-    'missing Wasm export: __get_exception_message'
+    typeof wasmExports['dynCall_viiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_viiiiiiii'
   )
   assert(
-    typeof wasmExports['__cxa_can_catch'] != 'undefined',
-    'missing Wasm export: __cxa_can_catch'
+    typeof wasmExports['dynCall_viiiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_viiiiiiiii'
   )
   assert(
-    typeof wasmExports['__cxa_get_exception_ptr'] != 'undefined',
-    'missing Wasm export: __cxa_get_exception_ptr'
+    typeof wasmExports['dynCall_iiiiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiiiiii'
+  )
+  assert(typeof wasmExports['dynCall_jii'] != 'undefined', 'missing Wasm export: dynCall_jii')
+  assert(typeof wasmExports['dynCall_vijj'] != 'undefined', 'missing Wasm export: dynCall_vijj')
+  assert(typeof wasmExports['dynCall_iiji'] != 'undefined', 'missing Wasm export: dynCall_iiji')
+  assert(
+    typeof wasmExports['dynCall_iiiiiiiiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiiiiiii'
+  )
+  assert(typeof wasmExports['dynCall_vjii'] != 'undefined', 'missing Wasm export: dynCall_vjii')
+  assert(typeof wasmExports['dynCall_vji'] != 'undefined', 'missing Wasm export: dynCall_vji')
+  assert(typeof wasmExports['dynCall_iiid'] != 'undefined', 'missing Wasm export: dynCall_iiid')
+  assert(typeof wasmExports['dynCall_jiji'] != 'undefined', 'missing Wasm export: dynCall_jiji')
+  assert(
+    typeof wasmExports['dynCall_iidiiii'] != 'undefined',
+    'missing Wasm export: dynCall_iidiiii'
+  )
+  assert(typeof wasmExports['dynCall_viijii'] != 'undefined', 'missing Wasm export: dynCall_viijii')
+  assert(typeof wasmExports['dynCall_iiiiij'] != 'undefined', 'missing Wasm export: dynCall_iiiiij')
+  assert(typeof wasmExports['dynCall_iiiiid'] != 'undefined', 'missing Wasm export: dynCall_iiiiid')
+  assert(
+    typeof wasmExports['dynCall_iiiiijj'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiijj'
+  )
+  assert(
+    typeof wasmExports['dynCall_iiiiiijj'] != 'undefined',
+    'missing Wasm export: dynCall_iiiiiijj'
   )
   assert(typeof wasmExports['memory'] != 'undefined', 'missing Wasm export: memory')
   assert(
     typeof wasmExports['__indirect_function_table'] != 'undefined',
     'missing Wasm export: __indirect_function_table'
   )
-  _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2)
-  _fflush = createExportWrapper('fflush', 1)
-  _wasm_setup_config = Module['_wasm_setup_config'] = createExportWrapper('wasm_setup_config', 1)
-  _wasm_initiate = Module['_wasm_initiate'] = createExportWrapper('wasm_initiate', 1)
-  _wasm_net_set_sab = Module['_wasm_net_set_sab'] = createExportWrapper('wasm_net_set_sab', 1)
-  _wasm_socket_destroy = Module['_wasm_socket_destroy'] = createExportWrapper(
-    'wasm_socket_destroy',
-    1
-  )
-  _free = Module['_free'] = createExportWrapper('free', 1)
-  _socket_wasm_create = Module['_socket_wasm_create'] = createExportWrapper('socket_wasm_create', 0)
-  _malloc = Module['_malloc'] = createExportWrapper('malloc', 1)
-  _htons = createExportWrapper('htons', 1)
-  _wasm_hsm_init = Module['_wasm_hsm_init'] = createExportWrapper('wasm_hsm_init', 3)
-  _C_GetFunctionList = Module['_C_GetFunctionList'] = createExportWrapper('C_GetFunctionList', 1)
   _wasm_set_proposal_mode = Module['_wasm_set_proposal_mode'] = createExportWrapper(
     'wasm_set_proposal_mode',
     1
   )
-  _wasm_get_peer_by_name = Module['_wasm_get_peer_by_name'] = createExportWrapper(
-    'wasm_get_peer_by_name',
-    2
+  _main = Module['_main'] = createExportWrapper('__main_argc_argv', 2)
+  _openssl_plugin_create = Module['_openssl_plugin_create'] = createExportWrapper(
+    'openssl_plugin_create',
+    0
   )
-  _wasm_create_peer_enum = Module['_wasm_create_peer_enum'] = createExportWrapper(
-    'wasm_create_peer_enum',
-    3
-  )
-  _wasm_create_ike_enum = Module['_wasm_create_ike_enum'] = createExportWrapper(
-    'wasm_create_ike_enum',
-    3
-  )
+  _fflush = createExportWrapper('fflush', 1)
+  _malloc = createExportWrapper('malloc', 1)
+  _wasm_net_set_sab = Module['_wasm_net_set_sab'] = createExportWrapper('wasm_net_set_sab', 1)
+  _htons = createExportWrapper('htons', 1)
+  _htonl = createExportWrapper('htonl', 1)
+  _ntohs = createExportWrapper('ntohs', 1)
+  _wasm_hsm_init = Module['_wasm_hsm_init'] = createExportWrapper('wasm_hsm_init', 3)
+  _strerror = createExportWrapper('strerror', 1)
+  _C_GetFunctionList = Module['_C_GetFunctionList'] = createExportWrapper('C_GetFunctionList', 1)
   _pkcs11_set_rpc_mode = Module['_pkcs11_set_rpc_mode'] = createExportWrapper(
     'pkcs11_set_rpc_mode',
     1
   )
-  _pkcs11_wasm_wrap_function_list = Module['_pkcs11_wasm_wrap_function_list'] = createExportWrapper(
-    'pkcs11_wasm_wrap_function_list',
-    1
-  )
-  _pkcs11_wasm_rpc_function_list = Module['_pkcs11_wasm_rpc_function_list'] = createExportWrapper(
-    'pkcs11_wasm_rpc_function_list',
-    1
-  )
-  _ntohs = createExportWrapper('ntohs', 1)
-  _htonl = createExportWrapper('htonl', 1)
-  _strerror = createExportWrapper('strerror', 1)
   _emscripten_stack_get_end = wasmExports['emscripten_stack_get_end']
   _emscripten_stack_get_base = wasmExports['emscripten_stack_get_base']
   _emscripten_builtin_memalign = createExportWrapper('emscripten_builtin_memalign', 2)
-  _setThrew = createExportWrapper('setThrew', 2)
-  __emscripten_tempret_set = createExportWrapper('_emscripten_tempret_set', 1)
   _emscripten_stack_init = wasmExports['emscripten_stack_init']
   _emscripten_stack_get_free = wasmExports['emscripten_stack_get_free']
   __emscripten_stack_restore = wasmExports['_emscripten_stack_restore']
   __emscripten_stack_alloc = wasmExports['_emscripten_stack_alloc']
   _emscripten_stack_get_current = wasmExports['emscripten_stack_get_current']
-  ___cxa_decrement_exception_refcount = createExportWrapper('__cxa_decrement_exception_refcount', 1)
-  ___cxa_increment_exception_refcount = createExportWrapper('__cxa_increment_exception_refcount', 1)
-  ___cxa_free_exception = createExportWrapper('__cxa_free_exception', 1)
-  ___get_exception_message = createExportWrapper('__get_exception_message', 3)
-  ___cxa_can_catch = createExportWrapper('__cxa_can_catch', 3)
-  ___cxa_get_exception_ptr = createExportWrapper('__cxa_get_exception_ptr', 1)
+  ___set_stack_limits = Module['___set_stack_limits'] = createExportWrapper('__set_stack_limits', 2)
+  dynCall_viiii = createExportWrapper('dynCall_viiii', 5)
+  dynCall_i = createExportWrapper('dynCall_i', 1)
+  dynCall_vi = createExportWrapper('dynCall_vi', 2)
+  dynCall_iii = createExportWrapper('dynCall_iii', 3)
+  dynCall_iiii = createExportWrapper('dynCall_iiii', 4)
+  dynCall_ii = createExportWrapper('dynCall_ii', 2)
+  dynCall_vii = createExportWrapper('dynCall_vii', 3)
+  dynCall_vij = createExportWrapper('dynCall_vij', 3)
+  dynCall_ji = createExportWrapper('dynCall_ji', 2)
+  dynCall_iiiii = createExportWrapper('dynCall_iiiii', 5)
+  dynCall_viii = createExportWrapper('dynCall_viii', 4)
+  dynCall_viiiii = createExportWrapper('dynCall_viiiii', 6)
+  dynCall_iiiiii = createExportWrapper('dynCall_iiiiii', 6)
+  dynCall_iiiiiii = createExportWrapper('dynCall_iiiiiii', 7)
+  dynCall_iiiiiiii = createExportWrapper('dynCall_iiiiiiii', 8)
+  dynCall_viiiiii = createExportWrapper('dynCall_viiiiii', 7)
+  dynCall_v = createExportWrapper('dynCall_v', 1)
+  dynCall_viiiiiii = createExportWrapper('dynCall_viiiiiii', 8)
+  dynCall_viidi = createExportWrapper('dynCall_viidi', 5)
+  dynCall_diidi = createExportWrapper('dynCall_diidi', 5)
+  dynCall_iijii = createExportWrapper('dynCall_iijii', 5)
+  dynCall_iiiiiiiii = createExportWrapper('dynCall_iiiiiiiii', 9)
+  dynCall_viiiiiiii = createExportWrapper('dynCall_viiiiiiii', 9)
+  dynCall_viiiiiiiii = createExportWrapper('dynCall_viiiiiiiii', 10)
+  dynCall_iiiiiiiiii = createExportWrapper('dynCall_iiiiiiiiii', 10)
+  dynCall_jii = createExportWrapper('dynCall_jii', 3)
+  dynCall_vijj = createExportWrapper('dynCall_vijj', 4)
+  dynCall_iiji = createExportWrapper('dynCall_iiji', 4)
+  dynCall_iiiiiiiiiii = createExportWrapper('dynCall_iiiiiiiiiii', 11)
+  dynCall_vjii = createExportWrapper('dynCall_vjii', 4)
+  dynCall_vji = createExportWrapper('dynCall_vji', 3)
+  dynCall_iiid = createExportWrapper('dynCall_iiid', 4)
+  dynCall_jiji = createExportWrapper('dynCall_jiji', 4)
+  dynCall_iidiiii = createExportWrapper('dynCall_iidiiii', 7)
+  dynCall_viijii = createExportWrapper('dynCall_viijii', 6)
+  dynCall_iiiiij = createExportWrapper('dynCall_iiiiij', 6)
+  dynCall_iiiiid = createExportWrapper('dynCall_iiiiid', 6)
+  dynCall_iiiiijj = createExportWrapper('dynCall_iiiiijj', 7)
+  dynCall_iiiiiijj = createExportWrapper('dynCall_iiiiiijj', 8)
   memory = wasmMemory = wasmExports['memory']
   __indirect_function_table = wasmTable = wasmExports['__indirect_function_table']
 }
 
 var wasmImports = {
   /** @export */
-  __assert_fail: ___assert_fail,
-  /** @export */
   __call_sighandler: ___call_sighandler,
-  /** @export */
-  __cxa_begin_catch: ___cxa_begin_catch,
-  /** @export */
-  __cxa_end_catch: ___cxa_end_catch,
-  /** @export */
-  __cxa_find_matching_catch_2: ___cxa_find_matching_catch_2,
-  /** @export */
-  __cxa_find_matching_catch_3: ___cxa_find_matching_catch_3,
-  /** @export */
-  __cxa_rethrow: ___cxa_rethrow,
   /** @export */
   __cxa_throw: ___cxa_throw,
   /** @export */
-  __cxa_uncaught_exceptions: ___cxa_uncaught_exceptions,
-  /** @export */
-  __resumeException: ___resumeException,
+  __handle_stack_overflow: ___handle_stack_overflow,
   /** @export */
   __syscall_accept4: ___syscall_accept4,
   /** @export */
@@ -7570,13 +7720,11 @@ var wasmImports = {
   /** @export */
   _localtime_js: __localtime_js,
   /** @export */
-  _mmap_js: __mmap_js,
-  /** @export */
-  _munmap_js: __munmap_js,
-  /** @export */
   _tzset_js: __tzset_js,
   /** @export */
   clock_time_get: _clock_time_get,
+  /** @export */
+  emscripten_asm_const_int: _emscripten_asm_const_int,
   /** @export */
   emscripten_date_now: _emscripten_date_now,
   /** @export */
@@ -7610,49 +7758,15 @@ var wasmImports = {
   /** @export */
   initgroups: _initgroups,
   /** @export */
-  invoke_diii,
+  pkcs11_rpc_call,
   /** @export */
-  invoke_fiii,
+  pkcs11_sab_read,
   /** @export */
-  invoke_i,
+  pkcs11_sab_ri32,
   /** @export */
-  invoke_ii,
+  pkcs11_sab_wi32,
   /** @export */
-  invoke_iii,
-  /** @export */
-  invoke_iiii,
-  /** @export */
-  invoke_iiiii,
-  /** @export */
-  invoke_iiiiii,
-  /** @export */
-  invoke_iiiiiii,
-  /** @export */
-  invoke_iiiiiiii,
-  /** @export */
-  invoke_iiiiiiiiiii,
-  /** @export */
-  invoke_iiiiiiiiiiii,
-  /** @export */
-  invoke_iiiiiiiiiiiii,
-  /** @export */
-  invoke_jiiii,
-  /** @export */
-  invoke_v,
-  /** @export */
-  invoke_vi,
-  /** @export */
-  invoke_vii,
-  /** @export */
-  invoke_viii,
-  /** @export */
-  invoke_viiii,
-  /** @export */
-  invoke_viiiiiii,
-  /** @export */
-  invoke_viiiiiiiiii,
-  /** @export */
-  invoke_viiiiiiiiiiiiiii,
+  pkcs11_sab_write,
   /** @export */
   proc_exit: _proc_exit,
   /** @export */
@@ -7661,266 +7775,6 @@ var wasmImports = {
   wasm_net_receive,
   /** @export */
   wasm_net_send,
-}
-
-function invoke_ii(index, a1) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_iii(index, a1, a2) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_vii(index, a1, a2) {
-  var sp = stackSave()
-  try {
-    getWasmTableEntry(index)(a1, a2)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_vi(index, a1) {
-  var sp = stackSave()
-  try {
-    getWasmTableEntry(index)(a1)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_v(index) {
-  var sp = stackSave()
-  try {
-    getWasmTableEntry(index)()
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_iiiiiii(index, a1, a2, a3, a4, a5, a6) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_iiii(index, a1, a2, a3) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_viiii(index, a1, a2, a3, a4) {
-  var sp = stackSave()
-  try {
-    getWasmTableEntry(index)(a1, a2, a3, a4)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_iiiiii(index, a1, a2, a3, a4, a5) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4, a5)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_viii(index, a1, a2, a3) {
-  var sp = stackSave()
-  try {
-    getWasmTableEntry(index)(a1, a2, a3)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_iiiiiiii(index, a1, a2, a3, a4, a5, a6, a7) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_iiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_iiiii(index, a1, a2, a3, a4) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_jiiii(index, a1, a2, a3, a4) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-    return 0n
-  }
-}
-
-function invoke_iiiiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_fiii(index, a1, a2, a3) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_diii(index, a1, a2, a3) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_i(index) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)()
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_viiiiiii(index, a1, a2, a3, a4, a5, a6, a7) {
-  var sp = stackSave()
-  try {
-    getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_iiiiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11) {
-  var sp = stackSave()
-  try {
-    return getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_viiiiiiiiii(index, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) {
-  var sp = stackSave()
-  try {
-    getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
-}
-
-function invoke_viiiiiiiiiiiiiii(
-  index,
-  a1,
-  a2,
-  a3,
-  a4,
-  a5,
-  a6,
-  a7,
-  a8,
-  a9,
-  a10,
-  a11,
-  a12,
-  a13,
-  a14,
-  a15
-) {
-  var sp = stackSave()
-  try {
-    getWasmTableEntry(index)(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15)
-  } catch (e) {
-    stackRestore(sp)
-    if (!(e instanceof EmscriptenEH)) throw e
-    _setThrew(1, 0)
-  }
 }
 
 // include: postamble.js

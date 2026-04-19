@@ -496,8 +496,12 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
   const [serverPsk, setServerPsk] = useState('pqc-wasm-demo-key-2026')
   const pskMismatch = clientPsk !== serverPsk
 
-  // Key Gen State for Client
-  const [clientAlg, setClientAlg] = useState('ML-DSA')
+  // Key Gen State for Client — default to RSA so the daemon handshake works out
+  // of the box. Users can switch to ML-DSA to generate real PQC cert artifacts
+  // (visible via Inspect + HSM panels) but the daemon won't run on ML-DSA yet;
+  // see VpnSimulationPanel's Start Daemon tooltip and pqctoday-hsm's
+  // strongswan-wasm-shims/STATUS.md for context.
+  const [clientAlg, setClientAlg] = useState('RSA')
   const [clientSize, setClientSize] = useState('65')
   const [clientClassAlg, setClientClassAlg] = useState('RSA-3072')
 
@@ -2713,7 +2717,13 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                 }}
                 disabled={authMode === 'dual' && !certData}
                 className="px-4 py-2 font-bold rounded shadow-sm text-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                title={authMode === 'dual' && !certData ? 'Generate certificates first' : undefined}
+                title={
+                  authMode === 'dual' && !certData
+                    ? 'Generate certificates first'
+                    : authMode === 'dual' && (clientAlg === 'ML-DSA' || serverAlg === 'ML-DSA')
+                      ? 'ML-DSA cert will be loaded but strongSwan core does not yet know the ML-DSA OID — expect charon to warn and fall through to PSK-only primary auth. The cert artifacts themselves are real and inspectable.'
+                      : undefined
+                }
                 data-testid="vpn-start-daemon"
               >
                 Start Daemon
@@ -3031,13 +3041,28 @@ export const VpnSimulationPanel: React.FC<VpnSimulationPanelProps> = ({ initialM
                     <div className="flex items-start gap-2 p-2 rounded border border-status-warning/40 bg-status-warning/10 text-[10px] text-foreground">
                       <ShieldAlert size={12} className="text-status-warning mt-0.5 shrink-0" />
                       <span>
-                        <span className="font-semibold text-status-warning">
-                          Auth is NOT quantum-safe.
-                        </span>{' '}
-                        Certificate auth uses RSA-3072 — a classical algorithm. ML-DSA
-                        authentication for IKEv2 requires an IANA AUTH method not yet assigned
-                        (draft-ietf-ipsecme-ikev2-mldsa). Generate and inspect certs below before
-                        starting the daemon.
+                        {clientAlg === 'ML-DSA' || serverAlg === 'ML-DSA' ? (
+                          <>
+                            <span className="font-semibold text-status-warning">
+                              ML-DSA cert generation is real, daemon handshake is not.
+                            </span>{' '}
+                            Generate Certs will produce a real ML-DSA-{clientSize}–signed X.509 via
+                            softhsmv3 (visible in Inspect + HSM Key panels + PKCS#11 log). The IKE
+                            daemon itself will <strong>not</strong> run on ML-DSA certs — the
+                            strongSwan WASM build does not yet include ML-DSA core support
+                            (draft-ietf-ipsecme-ikev2-mldsa). Switch both selectors to RSA to start
+                            the daemon.
+                          </>
+                        ) : (
+                          <>
+                            <span className="font-semibold text-status-warning">
+                              Auth is NOT quantum-safe.
+                            </span>{' '}
+                            Certificate auth uses RSA-3072 — a classical algorithm. Select ML-DSA
+                            below to generate a real post-quantum cert artifact (daemon handshake
+                            remains classical for now).
+                          </>
+                        )}
                       </span>
                     </div>
                     <p className="text-[10px] text-muted-foreground">

@@ -6,6 +6,42 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+- **Compliance facets — Org / Industry / Region derived from full dataset**
+  (`Compliance/ComplianceLandscape.tsx`): the Organization, Industry, and Region
+  filter dropdowns previously rebuilt their option lists from `sourceFrameworks`
+  (the active body-type tab's slice), so populated facets were silently hidden
+  whenever the user switched tabs — e.g. the Africa region disappeared from
+  Standards while remaining present on All Frameworks. Switched all three
+  facets to derive their option set from the full `complianceFrameworks` dataset
+  so every populated facet stays selectable on every tab; also dropped the
+  hardcoded `AVAILABLE_INDUSTRIES` list in favour of a union over `fw.industries`
+  so new industries in the CSV appear automatically. Region count next to the
+  "All Regions" label still reflects the in-tab framework count.
+- **VPN Simulator — daemon-default cert algorithm switched to RSA**
+  (`Playground/hsm/VpnSimulationPanel.tsx`): default client signing algorithm
+  changed from `ML-DSA` → `RSA` so the strongSwan WASM daemon handshake works
+  out of the box on first visit. Users can still switch to ML-DSA to generate
+  real PQC cert artifacts (visible via Inspect + HSM Key panels + PKCS#11 log),
+  with a new mode-aware warning banner explaining that the daemon itself does
+  not yet run on ML-DSA certs (strongSwan core lacks the
+  `draft-ietf-ipsecme-ikev2-mldsa` AUTH method) and a Start-Daemon tooltip that
+  surfaces the same warning when ML-DSA is selected in dual-auth mode.
+
+### Changed
+
+- **Playground Workshop — WIP tools hidden by default**
+  (`Playground/PlaygroundWorkshop.tsx`): `wipFilter` initial state flipped from
+  `'all'` → `'hide'` for every visitor (embed mode already hid them). The
+  filter remains user-toggleable via the WIP control; this change just makes
+  the first-visit surface match the stable, vendor-presentable subset.
+- **strongSwan WASM rebuilt** (`public/wasm/strongswan.wasm` 9.7MB → 11.9MB,
+  `public/wasm/strongswan.js` 1488 → 671 lines): rebuilt from the
+  `pqctoday-hsm` companion repo with the latest charon + softhsmv3 plumbing.
+  Loader/JS shrank ~55% as the build moved more bootstrap into the wasm
+  module; the wasm itself grew because additional plugins are now linked in.
+
 ### Added
 
 - **HSM Capacity Calculator** (`src/components/Playground/hsm/HsmCapacityCalculator.tsx`,

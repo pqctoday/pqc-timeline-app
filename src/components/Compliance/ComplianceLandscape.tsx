@@ -18,7 +18,6 @@ import {
   BookmarkCheck,
   Bookmark,
 } from 'lucide-react'
-import { AVAILABLE_INDUSTRIES } from '@/hooks/assessmentData'
 import {
   complianceFrameworks,
   type ComplianceFramework,
@@ -756,28 +755,40 @@ export function ComplianceLandscape({
   const setSortBy = onSortByChange ?? setLocalSort
   const setViewMode = onViewModeChange ?? setLocalView
 
-  // Organization options — derived from enforcementBody field
+  // Organization options — derived from full dataset so non-empty facets are
+  // never hidden by the active body-type tab.
   const orgItems = useMemo(() => {
     const orgs = new Set<string>()
-    for (const fw of sourceFrameworks) {
+    for (const fw of complianceFrameworks) {
       if (fw.enforcementBody) orgs.add(fw.enforcementBody)
     }
     return [
       { id: 'All', label: 'All Organizations' },
       ...[...orgs].sort().map((o) => ({ id: o, label: o })),
     ]
-  }, [sourceFrameworks])
+  }, [])
 
-  // Industry options
-  const industryItems = [
-    { id: 'All', label: 'All Industries' },
-    ...AVAILABLE_INDUSTRIES.filter((i) => i !== 'Other').map((i) => ({ id: i, label: i })),
-  ]
+  // Industry options — derived from full dataset (union of fw.industries)
+  // rather than a hardcoded list, so new industries in the CSV appear
+  // automatically and are filterable on every tab.
+  const industryItems = useMemo(() => {
+    const inds = new Set<string>()
+    for (const fw of complianceFrameworks) {
+      for (const i of fw.industries) inds.add(i)
+    }
+    return [
+      { id: 'All', label: 'All Industries' },
+      ...[...inds].sort().map((i) => ({ id: i, label: i })),
+    ]
+  }, [])
 
-  // Region options — derived from countries present in the dataset with per-region counts
+  // Region options — derived from full dataset with per-region counts so the
+  // facet always lists every populated region (e.g. Africa) regardless of the
+  // active body-type tab. The "All" label still reflects the in-tab count for
+  // the user's current view.
   const regionItems = useMemo(() => {
     const counts = new Map<RegionBloc, number>()
-    for (const fw of sourceFrameworks) {
+    for (const fw of complianceFrameworks) {
       const seen = new Set<RegionBloc>()
       for (const c of fw.countries) {
         const r = regionForCountry(c)
@@ -792,7 +803,7 @@ export function ComplianceLandscape({
       { id: 'All', label: `All Regions (${sourceFrameworks.length})` },
       ...ordered.map((r) => ({ id: r, label: `${r} (${counts.get(r) ?? 0})` })),
     ]
-  }, [sourceFrameworks])
+  }, [sourceFrameworks.length])
 
   // Sort options as FilterDropdown items
   const sortItems = FRAMEWORK_SORT_OPTIONS.map((o) => ({ id: o.id, label: o.label }))

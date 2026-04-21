@@ -259,7 +259,14 @@ self.onmessage = (e) => {
         self.postMessage({ type: 'LOG', payload: { level: 'info', text } })
       },
       printErr: (text) => {
-        const isCharonLog = /^\d{2}:\d{2}:\d{2}/.test(text) || text.trim() === ''
+        // Route charon diagnostic output as info; only propagate genuine runtime errors as error.
+        // Charon writes all log output to stderr — lines are charon output if they start with a
+        // HH:MM:SS timestamp, a thread prefix like "00[IKE]", or any known subsystem tag.
+        const isCharonLog =
+          /^\d{2}:\d{2}:\d{2}/.test(text) ||
+          /^\d{2}\[(IKE|CFG|ENC|NET|KNL|LIB|MGR|JOB|TNC|ESP|TLS)\]/.test(text) ||
+          /\[(IKE|CFG|ENC|NET|KNL|LIB|MGR|JOB)\]/.test(text) ||
+          text.trim() === ''
         self.postMessage({ type: 'LOG', payload: { level: isCharonLog ? 'info' : 'error', text } })
       },
 

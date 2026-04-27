@@ -497,10 +497,10 @@ function updateMemoryViews() {
   var b = wasmMemory.buffer;
   HEAP8 = new Int8Array(b);
   HEAP16 = new Int16Array(b);
-  HEAPU8 = new Uint8Array(b);
+  Module['HEAPU8'] = HEAPU8 = new Uint8Array(b);
   HEAPU16 = new Uint16Array(b);
-  HEAP32 = new Int32Array(b);
-  HEAPU32 = new Uint32Array(b);
+  Module['HEAP32'] = HEAP32 = new Int32Array(b);
+  Module['HEAPU32'] = HEAPU32 = new Uint32Array(b);
   HEAPF32 = new Float32Array(b);
   HEAPF64 = new Float64Array(b);
   HEAP64 = new BigInt64Array(b);
@@ -6533,6 +6533,8 @@ var stringToUTF8Array = (str, heap, outIdx, maxBytesToWrite) => {
 
 
 
+
+
   var exnToPtr = (exn) => {
       if (exn instanceof CppException) {
         return exn.excPtr;
@@ -6626,6 +6628,8 @@ if (Module['wasmBinary']) wasmBinary = Module['wasmBinary'];
   Module['ENV'] = ENV;
   Module['addFunction'] = addFunction;
   Module['removeFunction'] = removeFunction;
+  Module['setValue'] = setValue;
+  Module['getValue'] = getValue;
   Module['UTF8ToString'] = UTF8ToString;
   Module['stringToUTF8'] = stringToUTF8;
   Module['lengthBytesUTF8'] = lengthBytesUTF8;
@@ -6781,11 +6785,8 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'HEAPF32',
   'HEAPF64',
   'HEAP8',
-  'HEAPU8',
   'HEAP16',
   'HEAPU16',
-  'HEAP32',
-  'HEAPU32',
   'HEAP64',
   'HEAPU64',
   'writeStackCookie',
@@ -6833,8 +6834,6 @@ missingLibrarySymbols.forEach(missingLibrarySymbol)
   'getEmptyTableSlot',
   'updateTableMap',
   'getFunctionAddress',
-  'setValue',
-  'getValue',
   'PATH',
   'PATH_FS',
   'UTF8Decoder',
@@ -7049,6 +7048,7 @@ function pkcs11_sab_wi32(offset,value) { var sab = Module._wasm_pkcs11_sab; if (
 function pkcs11_sab_ri32(offset) { var sab = Module._wasm_pkcs11_sab; if (!sab) return 0; var i32 = new Int32Array(sab); return Atomics.load(i32, offset >> 2); }
 function pkcs11_sab_read(offset,dst,len) { var sab = Module._wasm_pkcs11_sab; if (!sab) return; var body = new Uint8Array(sab); for (var i = 0; i < len; i++) HEAPU8[dst + i] = body[offset + i]; }
 function pkcs11_sab_write(offset,src,len) { var sab = Module._wasm_pkcs11_sab; if (!sab) return; var body = new Uint8Array(sab); for (var i = 0; i < len; i++) body[offset + i] = HEAPU8[src + i]; }
+function pkcs11_trace(op_name,sess,mech,in_a,in_b,rv,out_a,out_b) { var name = UTF8ToString(op_name); self.postMessage({ type: 'PKCS11_LOG', payload: { op: name, sess: sess >>> 0, mech: mech >>> 0, inA: in_a, inB: in_b, rv: rv, outA: out_a, outB: out_b, ts: Date.now(), }, }); }
 
 // Imports from the Wasm binary.
 var _main = Module['_main'] = makeInvalidEarlyAccess('_main');
@@ -7069,12 +7069,21 @@ var _wasm_create_peer_enum = Module['_wasm_create_peer_enum'] = makeInvalidEarly
 var _wasm_create_ike_enum = Module['_wasm_create_ike_enum'] = makeInvalidEarlyAccess('_wasm_create_ike_enum');
 var _pkcs11_set_rpc_mode = Module['_pkcs11_set_rpc_mode'] = makeInvalidEarlyAccess('_pkcs11_set_rpc_mode');
 var _pkcs11_wasm_wrap_function_list = Module['_pkcs11_wasm_wrap_function_list'] = makeInvalidEarlyAccess('_pkcs11_wasm_wrap_function_list');
+var _pkcs11_wasm_C_GetFunctionList = Module['_pkcs11_wasm_C_GetFunctionList'] = makeInvalidEarlyAccess('_pkcs11_wasm_C_GetFunctionList');
 var _pkcs11_wasm_rpc_function_list = Module['_pkcs11_wasm_rpc_function_list'] = makeInvalidEarlyAccess('_pkcs11_wasm_rpc_function_list');
 var _register_plugins = Module['_register_plugins'] = makeInvalidEarlyAccess('_register_plugins');
 var _unregister_plugins = Module['_unregister_plugins'] = makeInvalidEarlyAccess('_unregister_plugins');
 var _ntohs = makeInvalidEarlyAccess('_ntohs');
 var _htonl = makeInvalidEarlyAccess('_htonl');
 var _strerror = makeInvalidEarlyAccess('_strerror');
+var _C_GetSlotList = Module['_C_GetSlotList'] = makeInvalidEarlyAccess('_C_GetSlotList');
+var _C_OpenSession = Module['_C_OpenSession'] = makeInvalidEarlyAccess('_C_OpenSession');
+var _C_CloseSession = Module['_C_CloseSession'] = makeInvalidEarlyAccess('_C_CloseSession');
+var _C_Login = Module['_C_Login'] = makeInvalidEarlyAccess('_C_Login');
+var _C_GetAttributeValue = Module['_C_GetAttributeValue'] = makeInvalidEarlyAccess('_C_GetAttributeValue');
+var _C_SignInit = Module['_C_SignInit'] = makeInvalidEarlyAccess('_C_SignInit');
+var _C_Sign = Module['_C_Sign'] = makeInvalidEarlyAccess('_C_Sign');
+var _C_GenerateKeyPair = Module['_C_GenerateKeyPair'] = makeInvalidEarlyAccess('_C_GenerateKeyPair');
 var _emscripten_stack_get_end = makeInvalidEarlyAccess('_emscripten_stack_get_end');
 var _emscripten_stack_get_base = makeInvalidEarlyAccess('_emscripten_stack_get_base');
 var _emscripten_builtin_memalign = makeInvalidEarlyAccess('_emscripten_builtin_memalign');
@@ -7096,6 +7105,9 @@ var dynCall_vi = makeInvalidEarlyAccess('dynCall_vi');
 var dynCall_iii = makeInvalidEarlyAccess('dynCall_iii');
 var dynCall_ii = makeInvalidEarlyAccess('dynCall_ii');
 var dynCall_iiii = makeInvalidEarlyAccess('dynCall_iiii');
+var dynCall_iiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiii');
+var dynCall_iiiiii = makeInvalidEarlyAccess('dynCall_iiiiii');
+var dynCall_iiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiii');
 var dynCall_i = makeInvalidEarlyAccess('dynCall_i');
 var dynCall_vii = makeInvalidEarlyAccess('dynCall_vii');
 var dynCall_viii = makeInvalidEarlyAccess('dynCall_viii');
@@ -7103,8 +7115,6 @@ var dynCall_iiiii = makeInvalidEarlyAccess('dynCall_iiiii');
 var dynCall_ji = makeInvalidEarlyAccess('dynCall_ji');
 var dynCall_vij = makeInvalidEarlyAccess('dynCall_vij');
 var dynCall_viiiii = makeInvalidEarlyAccess('dynCall_viiiii');
-var dynCall_iiiiii = makeInvalidEarlyAccess('dynCall_iiiiii');
-var dynCall_iiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiii');
 var dynCall_iiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiii');
 var dynCall_viiiiii = makeInvalidEarlyAccess('dynCall_viiiiii');
 var dynCall_viiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiii');
@@ -7112,7 +7122,6 @@ var dynCall_diidi = makeInvalidEarlyAccess('dynCall_diidi');
 var dynCall_viidi = makeInvalidEarlyAccess('dynCall_viidi');
 var dynCall_iijii = makeInvalidEarlyAccess('dynCall_iijii');
 var dynCall_v = makeInvalidEarlyAccess('dynCall_v');
-var dynCall_iiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiii');
 var dynCall_viiiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiiii');
 var dynCall_viiiiiiii = makeInvalidEarlyAccess('dynCall_viiiiiiii');
 var dynCall_iiiiiiiiii = makeInvalidEarlyAccess('dynCall_iiiiiiiiii');
@@ -7161,12 +7170,21 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['wasm_create_ike_enum'] != 'undefined', 'missing Wasm export: wasm_create_ike_enum');
   assert(typeof wasmExports['pkcs11_set_rpc_mode'] != 'undefined', 'missing Wasm export: pkcs11_set_rpc_mode');
   assert(typeof wasmExports['pkcs11_wasm_wrap_function_list'] != 'undefined', 'missing Wasm export: pkcs11_wasm_wrap_function_list');
+  assert(typeof wasmExports['pkcs11_wasm_C_GetFunctionList'] != 'undefined', 'missing Wasm export: pkcs11_wasm_C_GetFunctionList');
   assert(typeof wasmExports['pkcs11_wasm_rpc_function_list'] != 'undefined', 'missing Wasm export: pkcs11_wasm_rpc_function_list');
   assert(typeof wasmExports['register_plugins'] != 'undefined', 'missing Wasm export: register_plugins');
   assert(typeof wasmExports['unregister_plugins'] != 'undefined', 'missing Wasm export: unregister_plugins');
   assert(typeof wasmExports['ntohs'] != 'undefined', 'missing Wasm export: ntohs');
   assert(typeof wasmExports['htonl'] != 'undefined', 'missing Wasm export: htonl');
   assert(typeof wasmExports['strerror'] != 'undefined', 'missing Wasm export: strerror');
+  assert(typeof wasmExports['C_GetSlotList'] != 'undefined', 'missing Wasm export: C_GetSlotList');
+  assert(typeof wasmExports['C_OpenSession'] != 'undefined', 'missing Wasm export: C_OpenSession');
+  assert(typeof wasmExports['C_CloseSession'] != 'undefined', 'missing Wasm export: C_CloseSession');
+  assert(typeof wasmExports['C_Login'] != 'undefined', 'missing Wasm export: C_Login');
+  assert(typeof wasmExports['C_GetAttributeValue'] != 'undefined', 'missing Wasm export: C_GetAttributeValue');
+  assert(typeof wasmExports['C_SignInit'] != 'undefined', 'missing Wasm export: C_SignInit');
+  assert(typeof wasmExports['C_Sign'] != 'undefined', 'missing Wasm export: C_Sign');
+  assert(typeof wasmExports['C_GenerateKeyPair'] != 'undefined', 'missing Wasm export: C_GenerateKeyPair');
   assert(typeof wasmExports['emscripten_stack_get_end'] != 'undefined', 'missing Wasm export: emscripten_stack_get_end');
   assert(typeof wasmExports['emscripten_stack_get_base'] != 'undefined', 'missing Wasm export: emscripten_stack_get_base');
   assert(typeof wasmExports['emscripten_builtin_memalign'] != 'undefined', 'missing Wasm export: emscripten_builtin_memalign');
@@ -7188,6 +7206,9 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['dynCall_iii'] != 'undefined', 'missing Wasm export: dynCall_iii');
   assert(typeof wasmExports['dynCall_ii'] != 'undefined', 'missing Wasm export: dynCall_ii');
   assert(typeof wasmExports['dynCall_iiii'] != 'undefined', 'missing Wasm export: dynCall_iiii');
+  assert(typeof wasmExports['dynCall_iiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiiii');
+  assert(typeof wasmExports['dynCall_iiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiii');
+  assert(typeof wasmExports['dynCall_iiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiii');
   assert(typeof wasmExports['dynCall_i'] != 'undefined', 'missing Wasm export: dynCall_i');
   assert(typeof wasmExports['dynCall_vii'] != 'undefined', 'missing Wasm export: dynCall_vii');
   assert(typeof wasmExports['dynCall_viii'] != 'undefined', 'missing Wasm export: dynCall_viii');
@@ -7195,8 +7216,6 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['dynCall_ji'] != 'undefined', 'missing Wasm export: dynCall_ji');
   assert(typeof wasmExports['dynCall_vij'] != 'undefined', 'missing Wasm export: dynCall_vij');
   assert(typeof wasmExports['dynCall_viiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiii');
-  assert(typeof wasmExports['dynCall_iiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiii');
-  assert(typeof wasmExports['dynCall_iiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiii');
   assert(typeof wasmExports['dynCall_iiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiii');
   assert(typeof wasmExports['dynCall_viiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiii');
   assert(typeof wasmExports['dynCall_viiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiii');
@@ -7204,7 +7223,6 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['dynCall_viidi'] != 'undefined', 'missing Wasm export: dynCall_viidi');
   assert(typeof wasmExports['dynCall_iijii'] != 'undefined', 'missing Wasm export: dynCall_iijii');
   assert(typeof wasmExports['dynCall_v'] != 'undefined', 'missing Wasm export: dynCall_v');
-  assert(typeof wasmExports['dynCall_iiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiiii');
   assert(typeof wasmExports['dynCall_viiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiiiii');
   assert(typeof wasmExports['dynCall_viiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_viiiiiiii');
   assert(typeof wasmExports['dynCall_iiiiiiiiii'] != 'undefined', 'missing Wasm export: dynCall_iiiiiiiiii');
@@ -7249,12 +7267,21 @@ function assignWasmExports(wasmExports) {
   _wasm_create_ike_enum = Module['_wasm_create_ike_enum'] = createExportWrapper('wasm_create_ike_enum', 3);
   _pkcs11_set_rpc_mode = Module['_pkcs11_set_rpc_mode'] = createExportWrapper('pkcs11_set_rpc_mode', 1);
   _pkcs11_wasm_wrap_function_list = Module['_pkcs11_wasm_wrap_function_list'] = createExportWrapper('pkcs11_wasm_wrap_function_list', 1);
+  _pkcs11_wasm_C_GetFunctionList = Module['_pkcs11_wasm_C_GetFunctionList'] = createExportWrapper('pkcs11_wasm_C_GetFunctionList', 1);
   _pkcs11_wasm_rpc_function_list = Module['_pkcs11_wasm_rpc_function_list'] = createExportWrapper('pkcs11_wasm_rpc_function_list', 1);
   _register_plugins = Module['_register_plugins'] = createExportWrapper('register_plugins', 0);
   _unregister_plugins = Module['_unregister_plugins'] = createExportWrapper('unregister_plugins', 0);
   _ntohs = createExportWrapper('ntohs', 1);
   _htonl = createExportWrapper('htonl', 1);
   _strerror = createExportWrapper('strerror', 1);
+  _C_GetSlotList = Module['_C_GetSlotList'] = createExportWrapper('C_GetSlotList', 3);
+  _C_OpenSession = Module['_C_OpenSession'] = createExportWrapper('C_OpenSession', 5);
+  _C_CloseSession = Module['_C_CloseSession'] = createExportWrapper('C_CloseSession', 1);
+  _C_Login = Module['_C_Login'] = createExportWrapper('C_Login', 4);
+  _C_GetAttributeValue = Module['_C_GetAttributeValue'] = createExportWrapper('C_GetAttributeValue', 4);
+  _C_SignInit = Module['_C_SignInit'] = createExportWrapper('C_SignInit', 3);
+  _C_Sign = Module['_C_Sign'] = createExportWrapper('C_Sign', 5);
+  _C_GenerateKeyPair = Module['_C_GenerateKeyPair'] = createExportWrapper('C_GenerateKeyPair', 8);
   _emscripten_stack_get_end = wasmExports['emscripten_stack_get_end'];
   _emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'];
   _emscripten_builtin_memalign = createExportWrapper('emscripten_builtin_memalign', 2);
@@ -7276,6 +7303,9 @@ function assignWasmExports(wasmExports) {
   dynCall_iii = createExportWrapper('dynCall_iii', 3);
   dynCall_ii = createExportWrapper('dynCall_ii', 2);
   dynCall_iiii = createExportWrapper('dynCall_iiii', 4);
+  dynCall_iiiiiiiii = createExportWrapper('dynCall_iiiiiiiii', 9);
+  dynCall_iiiiii = createExportWrapper('dynCall_iiiiii', 6);
+  dynCall_iiiiiii = createExportWrapper('dynCall_iiiiiii', 7);
   dynCall_i = createExportWrapper('dynCall_i', 1);
   dynCall_vii = createExportWrapper('dynCall_vii', 3);
   dynCall_viii = createExportWrapper('dynCall_viii', 4);
@@ -7283,8 +7313,6 @@ function assignWasmExports(wasmExports) {
   dynCall_ji = createExportWrapper('dynCall_ji', 2);
   dynCall_vij = createExportWrapper('dynCall_vij', 3);
   dynCall_viiiii = createExportWrapper('dynCall_viiiii', 6);
-  dynCall_iiiiii = createExportWrapper('dynCall_iiiiii', 6);
-  dynCall_iiiiiii = createExportWrapper('dynCall_iiiiiii', 7);
   dynCall_iiiiiiii = createExportWrapper('dynCall_iiiiiiii', 8);
   dynCall_viiiiii = createExportWrapper('dynCall_viiiiii', 7);
   dynCall_viiiiiii = createExportWrapper('dynCall_viiiiiii', 8);
@@ -7292,7 +7320,6 @@ function assignWasmExports(wasmExports) {
   dynCall_viidi = createExportWrapper('dynCall_viidi', 5);
   dynCall_iijii = createExportWrapper('dynCall_iijii', 5);
   dynCall_v = createExportWrapper('dynCall_v', 1);
-  dynCall_iiiiiiiii = createExportWrapper('dynCall_iiiiiiiii', 9);
   dynCall_viiiiiiiii = createExportWrapper('dynCall_viiiiiiiii', 10);
   dynCall_viiiiiiii = createExportWrapper('dynCall_viiiiiiii', 9);
   dynCall_iiiiiiiiii = createExportWrapper('dynCall_iiiiiiiiii', 10);
@@ -7484,6 +7511,8 @@ var wasmImports = {
   invoke_viiiiiiiiii,
   /** @export */
   invoke_viiiiiiiiiiiiiii,
+  /** @export */
+  pkcs11_trace,
   /** @export */
   proc_exit: _proc_exit,
   /** @export */

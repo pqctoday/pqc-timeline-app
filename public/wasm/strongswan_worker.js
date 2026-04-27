@@ -121,6 +121,367 @@ self.onmessage = (e) => {
     return
   }
 
+  // Handle PANEL_PKCS11: panel-driven PKCS#11 ops against THIS worker's
+  // softhsmv3 instance. Lets the panel provision ML-DSA keypair + sign the
+  // X.509 TBSCertificate inside the worker's softhsm so charon's
+  // strongswan-pkcs11 plugin can find the keys at IKE_AUTH time
+  // (CKA_ID lookup matches the cert's SubjectKeyIdentifier).
+  // Reply: { type: 'PANEL_PKCS11_RESULT', reqId, rv, data }
+  if (type === 'PANEL_PKCS11' && self.Module) {
+    const { reqId, op, args } = payload || {}
+    const M = self.Module
+    const reply = (rv, data) =>
+      self.postMessage({ type: 'PANEL_PKCS11_RESULT', payload: { reqId, rv, data } })
+
+    try {
+      // Common PKCS#11 v3.2 attribute / class / mech values. Match
+      // softhsmv3's vendor numerics (verified at trace time).
+      const CK_TRUE = 1
+      const CKA_CLASS = 0x00000000
+      const CKA_TOKEN = 0x00000001
+      const CKA_PRIVATE = 0x00000002
+      const CKA_LABEL = 0x00000003
+      const CKA_KEY_TYPE = 0x00000100
+      const CKA_ID = 0x00000102
+      const CKA_SENSITIVE = 0x00000103
+      const CKA_ENCRYPT = 0x00000104
+      const CKA_DECRYPT = 0x00000105
+      const CKA_WRAP = 0x00000106
+      const CKA_UNWRAP = 0x00000107
+      const CKA_SIGN = 0x00000108
+      const CKA_VERIFY = 0x0000010a
+      const CKA_DERIVE = 0x0000010c
+      const CKA_EXTRACTABLE = 0x00000162
+      const CK_FALSE = 0
+      const CKA_VALUE = 0x00000011
+      const CKA_PARAMETER_SET = 0x0000061d
+      const CKO_PUBLIC_KEY = 2
+      const CKO_PRIVATE_KEY = 3
+      // Verified against pqctoday-hsm/strongswan-pkcs11/pkcs11.h:
+      //   CKK_ML_DSA              = 0x4a
+      //   CKM_ML_DSA_KEY_PAIR_GEN = 0x1c
+      //   CKM_ML_DSA              = 0x1d
+      const CKK_ML_DSA = 0x0000004a
+      const CKM_ML_DSA_KEY_PAIR_GEN = 0x0000001c
+      const CKM_ML_DSA = 0x0000001d
+      const CKP_ML_DSA_44 = 1
+      const CKP_ML_DSA_65 = 2
+      const CKP_ML_DSA_87 = 3
+      const CKF_SERIAL_SESSION = 0x00000004
+      const CKF_RW_SESSION = 0x00000002
+      const CKU_USER = 1
+
+      // Helper: write an attribute template to WASM memory.
+      // attrs: Array<{ type, kind:'bool'|'ulong'|'bytes', value }>
+      // Mirrors the proven panel-side buildTemplate (helpers.ts:109): bool
+      // attrs (CKA_TOKEN/VERIFY/etc) are 1 byte, ulong attrs (CKA_CLASS/
+      // KEY_TYPE/PARAMETER_SET) are 4 bytes, bytes attrs (CKA_ID) are raw.
+      // Wrong size → softhsm returns CKR_ATTRIBUTE_VALUE_INVALID (0x13).
+      const writeAttrTemplate = (attrs) => {
+        const ATTR_SIZE = 12 // sizeof(CK_ATTRIBUTE) on wasm32
+        const tmplPtr = M._malloc(attrs.length * ATTR_SIZE)
+        const valPtrs = []
+        const dv = new DataView(M.HEAPU8.buffer)
+        for (let i = 0; i < attrs.length; i++) {
+          const a = attrs[i]
+          let valPtr, valLen
+          if (a.kind === 'bool') {
+            valLen = 1
+            valPtr = M._malloc(1)
+            M.HEAPU8[valPtr] = a.value ? 1 : 0
+          } else if (a.kind === 'bytes') {
+            valLen = a.value.length
+            valPtr = M._malloc(valLen)
+            M.HEAPU8.set(a.value, valPtr)
+          } else {
+            // 'ulong' (default)
+            valLen = 4
+            valPtr = M._malloc(valLen)
+            dv.setUint32(valPtr, (a.value >>> 0) >>> 0, true)
+          }
+          valPtrs.push(valPtr)
+          dv.setUint32(tmplPtr + i * ATTR_SIZE + 0, a.type >>> 0, true)
+          dv.setUint32(tmplPtr + i * ATTR_SIZE + 4, valPtr, true)
+          dv.setUint32(tmplPtr + i * ATTR_SIZE + 8, valLen, true)
+        }
+        return { tmplPtr, valPtrs, count: attrs.length }
+      }
+      const freeAttrTemplate = ({ tmplPtr, valPtrs }) => {
+        for (const p of valPtrs) M._free(p)
+        M._free(tmplPtr)
+      }
+
+      switch (op) {
+        case 'C_GetSlotList': {
+          // tokenPresent=CK_TRUE (1) → only slots with initialized tokens.
+          const tokenPresent = args.tokenPresent === false ? 0 : 1
+          const cntPtr = M._malloc(4)
+          const dv = new DataView(M.HEAPU8.buffer)
+          dv.setUint32(cntPtr, 0, true)
+          let rv = M._C_GetSlotList(tokenPresent, 0, cntPtr) >>> 0
+          if (rv !== 0) {
+            M._free(cntPtr)
+            reply(rv, {})
+            break
+          }
+          const cnt = new DataView(M.HEAPU8.buffer).getUint32(cntPtr, true)
+          const listPtr = M._malloc(cnt * 4)
+          dv.setUint32(cntPtr, cnt, true)
+          rv = M._C_GetSlotList(tokenPresent, listPtr, cntPtr) >>> 0
+          let slots = []
+          if (rv === 0) {
+            const dv2 = new DataView(M.HEAPU8.buffer)
+            const finalCnt = dv2.getUint32(cntPtr, true)
+            for (let i = 0; i < finalCnt; i++) {
+              slots.push(dv2.getUint32(listPtr + i * 4, true))
+            }
+          }
+          M._free(listPtr)
+          M._free(cntPtr)
+          reply(rv, { slots })
+          break
+        }
+        case 'C_OpenSession': {
+          const slot = args.slot >>> 0
+          const flags = args.flags >>> 0 || (CKF_SERIAL_SESSION | CKF_RW_SESSION)
+          const sessPtr = M._malloc(4)
+          const rv = M._C_OpenSession(slot, flags, 0, 0, sessPtr) >>> 0
+          const hSess = rv === 0 ? new DataView(M.HEAPU8.buffer).getUint32(sessPtr, true) : 0
+          M._free(sessPtr)
+          reply(rv, { hSess })
+          break
+        }
+        case 'C_Login': {
+          const hSess = args.hSess >>> 0
+          const userType = (args.userType ?? CKU_USER) >>> 0
+          const pin = args.pin || '1234'
+          const pinBytes = new TextEncoder().encode(pin)
+          const pinPtr = M._malloc(pinBytes.length)
+          M.HEAPU8.set(pinBytes, pinPtr)
+          const rv = M._C_Login(hSess, userType, pinPtr, pinBytes.length) >>> 0
+          M._free(pinPtr)
+          reply(rv, {})
+          break
+        }
+        case 'C_GenerateKeyPair_MLDSA': {
+          const hSess = args.hSess >>> 0
+          const variant = args.variant === 44 ? 44 : args.variant === 87 ? 87 : 65
+          const paramSet =
+            variant === 44 ? CKP_ML_DSA_44 : variant === 87 ? CKP_ML_DSA_87 : CKP_ML_DSA_65
+          const ckaId = args.ckaId
+            ? args.ckaId instanceof Uint8Array
+              ? args.ckaId
+              : new Uint8Array(args.ckaId)
+            : crypto.getRandomValues(new Uint8Array(20))
+
+          // Mechanism: { mechanism, pParameter=NULL, ulParameterLen=0 }
+          const mechPtr = M._malloc(12)
+          const dv = new DataView(M.HEAPU8.buffer)
+          dv.setUint32(mechPtr + 0, CKM_ML_DSA_KEY_PAIR_GEN, true)
+          dv.setUint32(mechPtr + 4, 0, true)
+          dv.setUint32(mechPtr + 8, 0, true)
+
+          // Mirror the proven panel-side template in
+          // src/wasm/softhsm/pqc.ts::hsm_generateMLDSAKeyPair. Mismatches
+          // produce CKR_ATTRIBUTE_VALUE_INVALID (0x13).
+          // Per PKCS#11 v3.2 §6.67.4, CKA_PARAMETER_SET goes on the public
+          // template only; the mechanism infers it for the private key.
+          const pubAttrs = [
+            { type: CKA_CLASS, kind: 'ulong', value: CKO_PUBLIC_KEY },
+            { type: CKA_KEY_TYPE, kind: 'ulong', value: CKK_ML_DSA },
+            { type: CKA_TOKEN, kind: 'bool', value: true },
+            { type: CKA_VERIFY, kind: 'bool', value: true },
+            { type: CKA_ENCRYPT, kind: 'bool', value: false },
+            { type: CKA_WRAP, kind: 'bool', value: false },
+            { type: CKA_PARAMETER_SET, kind: 'ulong', value: paramSet },
+            { type: CKA_ID, kind: 'bytes', value: ckaId },
+          ]
+          const priAttrs = [
+            { type: CKA_CLASS, kind: 'ulong', value: CKO_PRIVATE_KEY },
+            { type: CKA_KEY_TYPE, kind: 'ulong', value: CKK_ML_DSA },
+            { type: CKA_TOKEN, kind: 'bool', value: true },
+            { type: CKA_PRIVATE, kind: 'bool', value: true },
+            { type: CKA_SENSITIVE, kind: 'bool', value: true },
+            { type: CKA_EXTRACTABLE, kind: 'bool', value: false },
+            { type: CKA_SIGN, kind: 'bool', value: true },
+            { type: CKA_DECRYPT, kind: 'bool', value: false },
+            { type: CKA_UNWRAP, kind: 'bool', value: false },
+            { type: CKA_DERIVE, kind: 'bool', value: false },
+            { type: CKA_ID, kind: 'bytes', value: ckaId },
+          ]
+          const pubT = writeAttrTemplate(pubAttrs)
+          const priT = writeAttrTemplate(priAttrs)
+          const hPubPtr = M._malloc(4)
+          const hPriPtr = M._malloc(4)
+          const rv =
+            M._C_GenerateKeyPair(
+              hSess,
+              mechPtr,
+              pubT.tmplPtr,
+              pubT.count,
+              priT.tmplPtr,
+              priT.count,
+              hPubPtr,
+              hPriPtr
+            ) >>> 0
+          const hPub = rv === 0 ? dv.getUint32(hPubPtr, true) : 0
+          const hPri = rv === 0 ? dv.getUint32(hPriPtr, true) : 0
+          M._free(hPubPtr)
+          M._free(hPriPtr)
+          M._free(mechPtr)
+          freeAttrTemplate(pubT)
+          freeAttrTemplate(priT)
+          reply(rv, { hPub, hPri, ckaId: Array.from(ckaId) })
+          break
+        }
+        case 'C_GetAttributeValue': {
+          const hSess = args.hSess >>> 0
+          const hObj = args.hObj >>> 0
+          const attrType = (args.attrType ?? CKA_VALUE) >>> 0
+          // Two-pass: first get length, then read value.
+          const ATTR_SIZE = 12
+          const tmplPtr = M._malloc(ATTR_SIZE)
+          const dv = new DataView(M.HEAPU8.buffer)
+          dv.setUint32(tmplPtr + 0, attrType, true)
+          dv.setUint32(tmplPtr + 4, 0, true) // pValue = NULL
+          dv.setUint32(tmplPtr + 8, 0, true) // ulValueLen = 0
+          let rv = M._C_GetAttributeValue(hSess, hObj, tmplPtr, 1) >>> 0
+          if (rv !== 0) {
+            M._free(tmplPtr)
+            reply(rv, {})
+            break
+          }
+          const len = new DataView(M.HEAPU8.buffer).getUint32(tmplPtr + 8, true)
+          const valPtr = M._malloc(len)
+          dv.setUint32(tmplPtr + 4, valPtr, true)
+          dv.setUint32(tmplPtr + 8, len, true)
+          rv = M._C_GetAttributeValue(hSess, hObj, tmplPtr, 1) >>> 0
+          let value = null
+          if (rv === 0) {
+            value = new Uint8Array(len)
+            value.set(M.HEAPU8.subarray(valPtr, valPtr + len))
+          }
+          M._free(valPtr)
+          M._free(tmplPtr)
+          reply(rv, { value: value ? Array.from(value) : null, length: len })
+          break
+        }
+        case 'C_Sign_MLDSA': {
+          const hSess = args.hSess >>> 0
+          const hPri = args.hPri >>> 0
+          const data =
+            args.data instanceof Uint8Array ? args.data : new Uint8Array(args.data || [])
+
+          // C_SignInit
+          const mechPtr = M._malloc(12)
+          const dv = new DataView(M.HEAPU8.buffer)
+          dv.setUint32(mechPtr + 0, CKM_ML_DSA, true)
+          dv.setUint32(mechPtr + 4, 0, true)
+          dv.setUint32(mechPtr + 8, 0, true)
+          let rv = M._C_SignInit(hSess, mechPtr, hPri) >>> 0
+          if (rv !== 0) {
+            M._free(mechPtr)
+            reply(rv, {})
+            break
+          }
+
+          // C_Sign — two-pass for length first
+          const dataPtr = M._malloc(data.length)
+          M.HEAPU8.set(data, dataPtr)
+          const sigLenPtr = M._malloc(4)
+          dv.setUint32(sigLenPtr, 0, true)
+          rv = M._C_Sign(hSess, dataPtr, data.length, 0, sigLenPtr) >>> 0
+          if (rv !== 0) {
+            M._free(mechPtr)
+            M._free(dataPtr)
+            M._free(sigLenPtr)
+            reply(rv, {})
+            break
+          }
+          // Some PKCS#11 impls require a fresh SignInit between size-query and full call;
+          // softhsmv3 supports re-init via state machine. Call SignInit again to be safe.
+          M._C_SignInit(hSess, mechPtr, hPri)
+          const sigLen = new DataView(M.HEAPU8.buffer).getUint32(sigLenPtr, true)
+          const sigPtr = M._malloc(sigLen)
+          dv.setUint32(sigLenPtr, sigLen, true)
+          rv = M._C_Sign(hSess, dataPtr, data.length, sigPtr, sigLenPtr) >>> 0
+          let sig = null
+          if (rv === 0) {
+            const finalLen = new DataView(M.HEAPU8.buffer).getUint32(sigLenPtr, true)
+            sig = new Uint8Array(finalLen)
+            sig.set(M.HEAPU8.subarray(sigPtr, sigPtr + finalLen))
+          }
+          M._free(sigPtr)
+          M._free(sigLenPtr)
+          M._free(dataPtr)
+          M._free(mechPtr)
+          reply(rv, { sig: sig ? Array.from(sig) : null })
+          break
+        }
+        case 'C_CloseSession': {
+          const hSess = args.hSess >>> 0
+          const rv = M._C_CloseSession(hSess) >>> 0
+          reply(rv, {})
+          break
+        }
+        default:
+          reply(0x00000054 /* CKR_FUNCTION_NOT_SUPPORTED */, { reason: `unknown op ${op}` })
+      }
+    } catch (err) {
+      self.postMessage({
+        type: 'LOG',
+        payload: { level: 'error', text: `[PANEL_PKCS11] ${op}: ${err.message || err}` },
+      })
+      reply(0x00000005 /* CKR_GENERAL_ERROR */, {})
+    }
+    return
+  }
+
+  // Handle WRITE_FILES: post-INIT addition of files to the WASM FS. Used by
+  // dual-mode VPN provisioning to land cert PEMs after they've been built
+  // (panel can't include them in the initial INIT configs because cert
+  // generation depends on the worker softhsm being up first).
+  if (type === 'WRITE_FILES' && self.Module) {
+    const files = (payload && payload.files) || {}
+    try {
+      const wasmFS = typeof FS !== 'undefined' ? FS : null // eslint-disable-line no-undef
+      if (!wasmFS) {
+        self.postMessage({
+          type: 'LOG',
+          payload: { level: 'error', text: '[WORKER] WRITE_FILES: FS not available' },
+        })
+        return
+      }
+      for (const [path, content] of Object.entries(files)) {
+        // Ensure parent dirs exist.
+        const parts = path.split('/').filter(Boolean)
+        let dir = ''
+        for (let i = 0; i < parts.length - 1; i++) {
+          dir += '/' + parts[i]
+          try {
+            wasmFS.mkdir(dir)
+          } catch (_) {
+            /* exists */
+          }
+        }
+        wasmFS.writeFile(path, content)
+      }
+      self.postMessage({
+        type: 'LOG',
+        payload: {
+          level: 'info',
+          text: `[WORKER] WRITE_FILES wrote ${Object.keys(files).length} file(s)`,
+        },
+      })
+    } catch (err) {
+      self.postMessage({
+        type: 'LOG',
+        payload: { level: 'error', text: `[WORKER] WRITE_FILES failed: ${err.message || err}` },
+      })
+    }
+    return
+  }
+
   if (type !== 'INIT') return
 
   const initConfigs = payload.configs || {}
@@ -308,8 +669,14 @@ self.onmessage = (e) => {
                 const str = utf8ToString(args[0])
                 if (str && (str.endsWith('.so') || str.includes('lib'))) return 1
                 if (str === 'C_GetFunctionList') {
-                  if (self.Module._C_GetFunctionList && self.Module.addFunction)
-                    return self.Module.addFunction(self.Module._C_GetFunctionList, 'ii')
+                  // Prefer the traced wrapper so the strongswan-pkcs11 plugin
+                  // (which dlsym's its function list) sees the shadow CK_FUNCTION_LIST
+                  // with our crypto-op trace shims installed. Falls back to the raw
+                  // softhsmv3 export if the wrapper export isn't present (older WASM).
+                  const fn =
+                    self.Module._pkcs11_wasm_C_GetFunctionList ||
+                    self.Module._C_GetFunctionList
+                  if (fn && self.Module.addFunction) return self.Module.addFunction(fn, 'ii')
                   return 0
                 }
               } catch (_) {}

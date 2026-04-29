@@ -7064,6 +7064,7 @@ var _htons = makeInvalidEarlyAccess('_htons');
 var _wasm_hsm_init = Module['_wasm_hsm_init'] = makeInvalidEarlyAccess('_wasm_hsm_init');
 var _C_GetFunctionList = Module['_C_GetFunctionList'] = makeInvalidEarlyAccess('_C_GetFunctionList');
 var _wasm_set_proposal_mode = Module['_wasm_set_proposal_mode'] = makeInvalidEarlyAccess('_wasm_set_proposal_mode');
+var _wasm_set_auth_mode = Module['_wasm_set_auth_mode'] = makeInvalidEarlyAccess('_wasm_set_auth_mode');
 var _wasm_get_peer_by_name = Module['_wasm_get_peer_by_name'] = makeInvalidEarlyAccess('_wasm_get_peer_by_name');
 var _wasm_create_peer_enum = Module['_wasm_create_peer_enum'] = makeInvalidEarlyAccess('_wasm_create_peer_enum');
 var _wasm_create_ike_enum = Module['_wasm_create_ike_enum'] = makeInvalidEarlyAccess('_wasm_create_ike_enum');
@@ -7081,6 +7082,7 @@ var _C_OpenSession = Module['_C_OpenSession'] = makeInvalidEarlyAccess('_C_OpenS
 var _C_CloseSession = Module['_C_CloseSession'] = makeInvalidEarlyAccess('_C_CloseSession');
 var _C_Login = Module['_C_Login'] = makeInvalidEarlyAccess('_C_Login');
 var _C_GetAttributeValue = Module['_C_GetAttributeValue'] = makeInvalidEarlyAccess('_C_GetAttributeValue');
+var _C_SetAttributeValue = Module['_C_SetAttributeValue'] = makeInvalidEarlyAccess('_C_SetAttributeValue');
 var _C_SignInit = Module['_C_SignInit'] = makeInvalidEarlyAccess('_C_SignInit');
 var _C_Sign = Module['_C_Sign'] = makeInvalidEarlyAccess('_C_Sign');
 var _C_GenerateKeyPair = Module['_C_GenerateKeyPair'] = makeInvalidEarlyAccess('_C_GenerateKeyPair');
@@ -7165,6 +7167,7 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['wasm_hsm_init'] != 'undefined', 'missing Wasm export: wasm_hsm_init');
   assert(typeof wasmExports['C_GetFunctionList'] != 'undefined', 'missing Wasm export: C_GetFunctionList');
   assert(typeof wasmExports['wasm_set_proposal_mode'] != 'undefined', 'missing Wasm export: wasm_set_proposal_mode');
+  assert(typeof wasmExports['wasm_set_auth_mode'] != 'undefined', 'missing Wasm export: wasm_set_auth_mode');
   assert(typeof wasmExports['wasm_get_peer_by_name'] != 'undefined', 'missing Wasm export: wasm_get_peer_by_name');
   assert(typeof wasmExports['wasm_create_peer_enum'] != 'undefined', 'missing Wasm export: wasm_create_peer_enum');
   assert(typeof wasmExports['wasm_create_ike_enum'] != 'undefined', 'missing Wasm export: wasm_create_ike_enum');
@@ -7182,6 +7185,7 @@ function assignWasmExports(wasmExports) {
   assert(typeof wasmExports['C_CloseSession'] != 'undefined', 'missing Wasm export: C_CloseSession');
   assert(typeof wasmExports['C_Login'] != 'undefined', 'missing Wasm export: C_Login');
   assert(typeof wasmExports['C_GetAttributeValue'] != 'undefined', 'missing Wasm export: C_GetAttributeValue');
+  assert(typeof wasmExports['C_SetAttributeValue'] != 'undefined', 'missing Wasm export: C_SetAttributeValue');
   assert(typeof wasmExports['C_SignInit'] != 'undefined', 'missing Wasm export: C_SignInit');
   assert(typeof wasmExports['C_Sign'] != 'undefined', 'missing Wasm export: C_Sign');
   assert(typeof wasmExports['C_GenerateKeyPair'] != 'undefined', 'missing Wasm export: C_GenerateKeyPair');
@@ -7262,6 +7266,7 @@ function assignWasmExports(wasmExports) {
   _wasm_hsm_init = Module['_wasm_hsm_init'] = createExportWrapper('wasm_hsm_init', 3);
   _C_GetFunctionList = Module['_C_GetFunctionList'] = createExportWrapper('C_GetFunctionList', 1);
   _wasm_set_proposal_mode = Module['_wasm_set_proposal_mode'] = createExportWrapper('wasm_set_proposal_mode', 1);
+  _wasm_set_auth_mode = Module['_wasm_set_auth_mode'] = createExportWrapper('wasm_set_auth_mode', 1);
   _wasm_get_peer_by_name = Module['_wasm_get_peer_by_name'] = createExportWrapper('wasm_get_peer_by_name', 2);
   _wasm_create_peer_enum = Module['_wasm_create_peer_enum'] = createExportWrapper('wasm_create_peer_enum', 3);
   _wasm_create_ike_enum = Module['_wasm_create_ike_enum'] = createExportWrapper('wasm_create_ike_enum', 3);
@@ -7279,6 +7284,7 @@ function assignWasmExports(wasmExports) {
   _C_CloseSession = Module['_C_CloseSession'] = createExportWrapper('C_CloseSession', 1);
   _C_Login = Module['_C_Login'] = createExportWrapper('C_Login', 4);
   _C_GetAttributeValue = Module['_C_GetAttributeValue'] = createExportWrapper('C_GetAttributeValue', 4);
+  _C_SetAttributeValue = Module['_C_SetAttributeValue'] = createExportWrapper('C_SetAttributeValue', 4);
   _C_SignInit = Module['_C_SignInit'] = createExportWrapper('C_SignInit', 3);
   _C_Sign = Module['_C_Sign'] = createExportWrapper('C_Sign', 5);
   _C_GenerateKeyPair = Module['_C_GenerateKeyPair'] = createExportWrapper('C_GenerateKeyPair', 8);

@@ -18,6 +18,7 @@ let workerRole = 'responder'
 let pkcs11Sab = null
 let rpcMode = false
 let proposalMode = 0
+let authMode = 'psk'
 
 const originalConsoleError = console.error
 console.error = (...args) => {
@@ -51,6 +52,22 @@ self.onmessage = (e) => {
 
   // Handle START: call charon _main (blocks forever in receive loop)
   if (type === 'START' && self.Module && self.Module._main) {
+    // Late-bind keyIds for the ML-DSA dual-auth flow: the panel generated
+    // the keys post-spawn so the original INIT payload didn't carry them.
+    // wasm_setup_config reads these env vars to build ID_KEY_ID identities.
+    if (payload && typeof ENV !== 'undefined') {
+      if (payload.localKeyId) ENV['WASM_LOCAL_KEYID'] = payload.localKeyId
+      if (payload.remoteKeyId) ENV['WASM_REMOTE_KEYID'] = payload.remoteKeyId
+      if (payload.localKeyId || payload.remoteKeyId) {
+        self.postMessage({
+          type: 'LOG',
+          payload: {
+            level: 'info',
+            text: `[WASM ENV] START set WASM_LOCAL_KEYID=${(payload.localKeyId || '').slice(0, 12)}…, WASM_REMOTE_KEYID=${(payload.remoteKeyId || '').slice(0, 12)}…`,
+          },
+        })
+      }
+    }
     const stackAlloc = self.Module.stackAlloc
     const stackSave = self.Module.stackSave
     const stackRestore = self.Module.stackRestore
@@ -79,6 +96,15 @@ self.onmessage = (e) => {
     // during backend init which happens inside _main().
     if (self.Module._wasm_set_proposal_mode) {
       self.Module._wasm_set_proposal_mode(proposalMode)
+    }
+    // Set auth mode before charon starts — wasm_setup_config reads wasm_auth_mode
+    // during backend init which happens inside _main().
+    const authModeInt = authMode === 'dual' ? 1 : 0
+    self.postMessage({ type: 'LOG', payload: { level: 'info', text: `[WASM-AUTH] authMode='${authMode}' → wasm_auth_mode=${authModeInt}` } })
+    if (self.Module._wasm_set_auth_mode) {
+      self.Module._wasm_set_auth_mode(authModeInt)
+    } else {
+      self.postMessage({ type: 'LOG', payload: { level: 'error', text: '[WASM-AUTH] _wasm_set_auth_mode not exported!' } })
     }
 
     self.postMessage({
@@ -482,6 +508,7 @@ self.onmessage = (e) => {
     return
   }
 
+
   if (type !== 'INIT') return
 
   const initConfigs = payload.configs || {}
@@ -490,6 +517,12 @@ self.onmessage = (e) => {
   pkcs11Sab = payload.sab || null
   rpcMode = payload.rpcMode || false
   proposalMode = payload.proposalMode ?? 0
+  authMode = payload.auth || 'psk'
+  // ML-DSA dual auth: hex strings of CKA_ID bytes per role. wasm_setup_config
+  // reads WASM_LOCAL_KEYID / WASM_REMOTE_KEYID and builds ID_KEY_ID identities,
+  // letting credential_manager.c hit get_private_by_keyid fast path.
+  const localKeyId = payload.localKeyId || ''
+  const remoteKeyId = payload.remoteKeyId || ''
   netInboxSab = payload.netSab || payload.netInboxSab
   if (netInboxSab) {
     netInboxI32 = new Int32Array(netInboxSab, 0, 4)
@@ -574,11 +607,13 @@ self.onmessage = (e) => {
           if (typeof ENV !== 'undefined') {
             if (initPsk) ENV['WASM_PSK'] = initPsk
             ENV['WASM_ROLE'] = workerRole
+            if (localKeyId) ENV['WASM_LOCAL_KEYID'] = localKeyId
+            if (remoteKeyId) ENV['WASM_REMOTE_KEYID'] = remoteKeyId
             self.postMessage({
               type: 'LOG',
               payload: {
                 level: 'info',
-                text: `[WASM ENV] Set WASM_ROLE=${workerRole}, WASM_PSK (${(initPsk || '').length} chars)`,
+                text: `[WASM ENV] Set WASM_ROLE=${workerRole}, WASM_PSK (${(initPsk || '').length} chars), WASM_LOCAL_KEYID=${(localKeyId || '').slice(0, 12)}…, WASM_REMOTE_KEYID=${(remoteKeyId || '').slice(0, 12)}…`,
               },
             })
           }
@@ -603,6 +638,8 @@ self.onmessage = (e) => {
               envObj['STRONGSWAN_CONF_DATA'] = confData
               envObj['WASM_PSK'] = initPsk || ''
               envObj['WASM_ROLE'] = workerRole
+              if (localKeyId) envObj['WASM_LOCAL_KEYID'] = localKeyId
+              if (remoteKeyId) envObj['WASM_REMOTE_KEYID'] = remoteKeyId
               self.postMessage({
                 type: 'LOG',
                 payload: {

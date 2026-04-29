@@ -37,7 +37,7 @@
     "serialize-javascript": ">=7.0.3"
   },
   "dependencies": {
-    "@mlc-ai/web-llm": "^0.2.81",
+    "@mlc-ai/web-llm": "^0.2.82",
     "@noble/curves": "^2.0.1",
     "@noble/hashes": "^2.0.1",
     "@noble/post-quantum": "^0.6.1",
